@@ -1,7 +1,9 @@
-pyyaml
-pandas
-matplotlib
-requests
-PyQt5
-openai
-sentence-transformers
+python_version == '3.11'
+pyyaml==6.0
+pandas==2.0.2
+matplotlib==3.7.1
+requests==2.31.0
+PyQt5==5.15.9
+openai==0.27.8
+python-dotenv==1.0.0
+sentence-transformers==2.2.2
