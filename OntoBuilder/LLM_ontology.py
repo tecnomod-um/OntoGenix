@@ -1,5 +1,6 @@
 from LLM_base.LlmBase import AbstractLlm
 
+import os
 
 class LlmOntology(AbstractLlm):
 
@@ -30,9 +31,7 @@ class LlmOntology(AbstractLlm):
 
             response, self.owl_codeblock = self.autocompletion(previous_input=self.last_prompt, response=response)
 
-            file = self.dataset_path + '_debugging_GPT_RESPONSE.txt'
-            with open(file, 'w') as f:
-                f.write(response)
+            self.save_response(response, self.dataset_path + '_debugging_GPT_RESPONSE.txt', mode='w')
 
         except ValueError as e:
             print(f"An error occurred while extracting text: {e}")
@@ -52,9 +51,7 @@ class LlmOntology(AbstractLlm):
             response, _ = self.autocompletion(previous_input=prompt, response=response)
             print('############ analysis output ########################\n', response)
 
-            file = self.dataset_path + '_debugging_GPT_ANALYSIS.txt'  # HARDCODED !!!
-            with open(file, 'a') as f:
-                f.write(response)
+            self.save_response(response, self.dataset_path + '_debugging_GPT_ANALYSIS.txt', mode='a')
 
             insights = self.extract_text(response, "RATIONALE:", "RDF/XML ONTOLOGY:")
             owl_codeblock = self.extract_text(response, "START", "FINISH")
@@ -75,15 +72,11 @@ class LlmOntology(AbstractLlm):
             print('################### formatted prompt ####################3\n', formatted_prompt)
             response = self.get_api_response(formatted_prompt)
 
-            file = self.dataset_path + '_debugging_GPT_SYNTHESIS.txt'
-            with open(file, 'a') as f:
-                f.write(response)
+            self.save_response(response, self.dataset_path + '_debugging_GPT_SYNTHESIS.txt', mode='w')
 
             self.owl_codeblock = self.extract_text(response, "START", "FINISH")
 
-            file = self.dataset_path + '_ontology_LLM.owl'
-            with open(file, 'w') as f:
-                f.write(self.owl_codeblock)
+            self.save_response(self.owl_codeblock, self.dataset_path + '_ontology_LLM.owl', mode='w')
 
         except ValueError as e:
             print(f"An error occurred while extracting text: {e}")
@@ -112,6 +105,21 @@ class LlmOntology(AbstractLlm):
                     cont += 1
 
         return response, owl_codeblock
+
+    def load_examples(self, folder_path):
+        # Get a list of all files in the folder
+        files = os.listdir(folder_path)
+
+        examples = []
+        # Iterate over the files and perform operations
+        for file_name in files:
+            # Construct the absolute file path
+            file_path = os.path.join(folder_path, file_name)
+            # get the content from this file
+            content = self.load_string_from_file(file_path)
+            examples.append(content)
+
+        return examples
 
 
 

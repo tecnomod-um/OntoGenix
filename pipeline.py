@@ -1,8 +1,8 @@
 from tools import csv2dataset, dataframe2prettyjson, plot_mermaid, extract_text
 
 base_path = './datasets/'
-dataset_folder = 'AmazonRating'
-dataset_file = 'ratings_Beauty'
+dataset_folder = 'BigBasketProducts'
+dataset_file = 'BigBasket'
 file = base_path + dataset_folder + '/' + dataset_file + '.csv'
 
 # get a dataset subsample from a csv file
@@ -79,34 +79,3 @@ ontology_mapper = LlmOntoMapper(mapper_metadata)
 
 rml_code_str = ontology_mapper.interact(json_data=json_data, ontology=ontology_builder.owl_codeblock)
 
-
-
-
-
-
-#
-#
-# # instantiate the LLM_base that generates a mermaid class diagram from an owl ontology
-# from OntoGenix_v_1_2.MermaidOntoFlow.Llm_mermaid import LlmMermaid
-#
-# mermaid_metadata = {'instructions': './OntoGenix_v_1_2/MermaidOntoFlow/instructions.prompt',
-#                     'examples': './OntoGenix_v_1_2/MermaidOntoFlow/examples.prompt',
-#                     'role': 'You are a powerful ontology engineer that translates OWL ontologies in turtle format '
-#                             'to mermaid diagrams.'
-#                     }
-# mermaid = LlmMermaid(mermaid_metadata)
-#
-# diagram_response = mermaid.interact(owl_codeblock)
-# print('######## OUTPUT ############\n', diagram_response)
-#
-# diagram_response_str = extract_text(diagram_response, "Output Tasks:\n", "Finish Statement: FINISH").strip()
-# print('################# OWL CODE ####################\n', diagram_response_str)
-#
-# # write the response in a file
-# file = './datasets/' + dataset_file + '_mermaid.txt'
-# with open(file, 'w') as f:
-#     f.write(diagram_response_str)
-#
-# # generate mermaid plot
-# figure_path = './datasets/' + dataset_file + '_mermaid.png'
-# plot_mermaid(diagram_response_str, figure_path)

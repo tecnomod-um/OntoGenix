@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 import openai
 import os
 from dotenv import load_dotenv, find_dotenv
@@ -36,21 +36,6 @@ class AbstractLlm(ABC):
         with open(file_path, 'r') as file:
             return file.read()
 
-    def load_examples(self, folder_path):
-        # Get a list of all files in the folder
-        files = os.listdir(folder_path)
-
-        examples = []
-        # Iterate over the files and perform operations
-        for file_name in files:
-            # Construct the absolute file path
-            file_path = os.path.join(folder_path, file_name)
-            # get the content from this file
-            content = self.load_string_from_file(file_path)
-            examples.append(content)
-
-        return examples
-
     @staticmethod
     def extract_text(text: str, start_marker: str, end_marker: str) -> str:
         """
@@ -74,4 +59,12 @@ class AbstractLlm(ABC):
         elif end_index == -1:
             raise ValueError("End marker not found in text.")
         return text[start_index:end_index].strip()
+
+    @staticmethod
+    def save_response(response: str, file: str, mode: str = 'w'):
+        try:
+            with open(file, mode) as f:
+                f.write(response)
+        except ValueError as e:
+            print(f"An error occurred: {e}")
 

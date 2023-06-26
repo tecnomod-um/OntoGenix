@@ -22,9 +22,7 @@ class LlmOntoMapper(AbstractLlm):
             response = self.get_api_response(prompt)
             self.rml_code_str = self.extract_text(response, "START", "FINISH")
 
-            file = self.dataset_path + '_rml_mapping_LLM.ttl'
-            with open(file, 'w') as f:
-                f.write(self.rml_code_str)
+            self.save_response(self.rml_code_str, self.dataset_path + '_rml_mapping_LLM.ttl', mode='w')
 
         except ValueError as e:
             print(f"An error occurred while extracting text: {e}")

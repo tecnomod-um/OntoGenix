@@ -73,18 +73,21 @@ class LlmPlanner(AbstractLlm, ABC):
             print(f"An error occurred: {e}")
 
     def update_memories(self, response: str):
-        print('################### ANSWER ##############\n', response)
-        # extract the generated plan from the answer
-        self.short_term_memory = self.extract_text(response, "Updated Memory:", "Output Tasks:").strip()
-        # extract the generated plan from the answer
-        self.plan = self.extract_text(response, "BEGIN", "END").strip()
-        # extract the generated instructions from the answer
-        self.instructions = self.extract_text(response, "START", "FINISH").strip()
-        print('################### PLAN ##############\n', self.plan)
-
         try:
-            file = self.dataset_path + '_general_plan.txt' # HARDCODED !!
-            with open(file, 'a') as f:
-                f.write(self.plan)
+            print('################### ANSWER ##############\n', response)
+            # extract the generated plan from the answer
+            self.short_term_memory = self.extract_text(response, "Updated Memory:", "Output Tasks:").strip()
+            # extract the generated plan from the answer
+            self.plan = self.extract_text(response, "BEGIN", "END")
+            # extract the generated instructions from the answer
+            self.instructions = self.extract_text(response, "START", "FINISH").strip()
+            print('################### PLAN ##############\n', self.plan)
+
+            self.save_response(self.plan, self.dataset_path + '_general_plan.txt', mode='a')
+
         except ValueError as e:
             print(f"An error occurred: {e}")
+
+
+'''akjsdñflkjasdñflkjañsdflkj asdf
+'''
