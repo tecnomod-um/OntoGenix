@@ -25,6 +25,12 @@ OntoGenixConfig:
 
 The program always expects a main folder (`base_path`). Each dataset should have its own subfolder (`dataset_folder`) containing a CSV file `dataset_file`, and the CSV file name in the configuration should not have the `.csv` suffix (The actual file name should have the suffix though).
 
+The Open AI ChatGPT API key should be provided in an environment variable:
+
+```bash
+export OPENAI_API_KEY=...
+```
+
 To execute the pipeline:
 
 ```bash
