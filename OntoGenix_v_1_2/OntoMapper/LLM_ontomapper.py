@@ -16,7 +16,7 @@ class LlmOntoMapper(AbstractLlm):
             )
 
             response = self.get_api_response(prompt)
-            rml_code_str = self.extract_text(response, "RML Mapping:\n", "Finish Statement: FINISH")
+            rml_code_str = self.extract_text(response, "START", "FINISH")
             return rml_code_str
 
         except ValueError as e:

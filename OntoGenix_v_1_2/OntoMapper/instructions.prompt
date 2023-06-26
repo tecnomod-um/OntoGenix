@@ -25,9 +25,10 @@ Now start writing, organize your output by strictly following the output format 
     insights: <reasoning steps about how to apply the mapping between the json data and the ontology>, around 10 to 20 sentences
 
      RML Mapping:
-        <write here the RML content>
-     Finish Statement: <write "FINISH" to indicate the end of the output>
+        START
+            <write here the RML content>
+        FINISH
 
 Very important:
-Do not forget to write Finish Statement: FINISH at the end of your response.
+Do not forget to write FINISH at the end of the RML Mapping output.
 """

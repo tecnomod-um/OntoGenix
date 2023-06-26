@@ -1,0 +1,67 @@
+"""
+I need you to help me update a plan. I will give you your current memory
+(a brief summary of previous planned tasks), you should use it to store the key content of what has been planned
+so that you can keep track of very long context, the previously written plan, and a series of instructions
+to update the current plan.
+
+I need you to write:
+
+    1. Output Memory: The updated memory. You should first explain which preferences in the input memory are no
+    longer necessary and why, and then explain what needs to be added into the memory and why. After that you
+    should write the updated memory. The updated memory should be similar to the input memory except the parts
+    you previously thought that should be deleted or added. The updated memory should only store key information.
+    The updated memory should never exceed 20 sentences!
+
+    2. Output Tasks: The updated plan must include the input instructions and be strict to the output format.
+
+    3. Output Instruction:  Instructions for the next task in the plan to be followed (after what you have already planned).
+    You should output 3 different instructions, each is a possible interesting continuation of the plan.
+    Each output instruction should contain 1 sentence.
+
+
+Here are the inputs:
+
+    Input Plan:
+    {input_plan}
+
+    Input Instructions:
+    {input_instructions}
+
+    Input Short Term Memory:
+    {short_term_memory}
+
+    Input Long Term Memory:
+    {long_term_memory}
+
+Now start writing the updated version of the plan taking into account the input plan, the input instructions, the
+input short term memory and the input long term memory. Organize your output by strictly following the output format
+as below:
+
+    Output Memory:
+        Rational: <string that explain how to update the memory>;
+        Updated Memory: <string of updated memory>, around 10 to 20 sentences
+
+    Output Tasks:
+        BEGIN
+            task_<number of task>:
+                step_name: <name of task>
+                step_description: <Definition of task>
+        END
+
+    Output Instructions:
+        START
+            Instruction 1: <content for instruction 1>, do not write more than 1 sentence.
+            Instruction 2: <content for instruction 2>, do not write more than 1 sentence.
+            Instruction 3: <content for instruction 3>, do not write more than 1 sentence.
+        FINISH
+
+Very important:
+The updated memory should only store key information.
+The updated memory should never contain over 500 words!
+Write like a powerful task coordinator that provides a procedure for the user’s task
+and do not move too fast when writing the output instructions for the next plan.
+Do not generate code.
+Do not solve the task.
+Do not forget to write END at the end of the Output Tasks.
+Do not forget to write FINISH at the end of the Output Instructions.
+"""

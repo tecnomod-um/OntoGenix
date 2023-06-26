@@ -10,7 +10,7 @@ I need you to write:
 
     2. Output Tasks: The generated plan must follow the input instructions and be strict to the output defined format.
 
-    3. Output Instruction:  Instructions for the next task in the plan to be followed (after what you have already planned).
+    3. Output Instructions:  Instructions for the next task in the plan to be followed (after what you have already planned).
     You should output 3 different instructions, each is a possible interesting continuation of the plan.
     Each output instruction should contain 1 sentence.
 
@@ -25,10 +25,11 @@ Here are the inputs:
 Now start writing, organize your output by strictly following the output format as below:
     Output Memory:
     Rational: <string that explain the reasoning steps followed>;
-    Updated Memory: <string that briefly summarizes the csv data and the reasoning steps that guided the generation of the ontology>, around 10 to 20 sentences
+    Updated Memory: <string that briefly summarizes the csv data and the reasoning steps that guided the generation of
+                    the ontology>, around 10 to 20 sentences
 
     Output Tasks:
-        START
+        BEGIN
             task_1:
                 step_name: Identification of the main entities.
                 step_description: The first step is to identify the main entities in the data.
@@ -61,24 +62,22 @@ Now start writing, organize your output by strictly following the output format 
                 step_name: Annotation properties.
                 step_description: Define the annotation properties http://purl.org/dc/elements/1.1/creator and
                                   http://purl.org/dc/elements/1.1/date.
-            ...
-            task_N:
-                step_name: <name of task N>
-                step_description: <Definition of task N>
         END
 
     Output Instructions:
-    Instruction 1: <content for instruction 1>, do not write more than 1 sentence.
-    Instruction 2: <content for instruction 2>, do not write more than 1 sentence.
-    Instruction 3: <content for instruction 3>, do not write more than 1 sentence.
-    Finish Statement: <write "FINISH" to indicate the end of the output>
+        START
+            Instruction 1: <content for instruction 1>, do not write more than 1 sentence.
+            Instruction 2: <content for instruction 2>, do not write more than 1 sentence.
+            Instruction 3: <content for instruction 3>, do not write more than 1 sentence.
+        FINISH
 
 Very important:
 The updated memory should only store key information.
-The updated memory should never contain over 500 words!
 Write like a powerful task coordinator that provides a procedure for the user’s task
 and do not move too fast when writing the output instructions for the next plan.
 Do not generate code.
 Do not solve the task.
-Do not forget to write Finish Statement: FINISH at the end of your response.
+Do not forget to write END at the end of the Output Tasks.
+Do not forget to write FINISH at the end of the Output Instructions.
 """
+

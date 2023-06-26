@@ -26,9 +26,10 @@ Now start writing, organize your output by strictly following the output format 
     insights: <reasoning steps about how to apply the given instructions on the json data>, around 10 to 20 sentences
 
      RDF/XML ONTOLOGY:
-        <write here the RDF/XML content for the proposed ontology>
-     Finish Statement: <write "FINISH" to indicate the end of the output>
+        START
+            <write here the RDF/XML content for the proposed ontology>
+         FINISH
 
 Very important:
-Do not forget to write Finish Statement: FINISH at the end of your response.
+Do not forget to write FINISH at the end of your response.
 """
