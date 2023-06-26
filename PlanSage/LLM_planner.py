@@ -1,7 +1,7 @@
 from abc import ABC
 from typing import Optional
 
-from OntoGenix_v_1_2.LLM.LlmBase import AbstractLlm
+from LLM.LlmBase import AbstractLlm
 
 
 class LlmPlanner(AbstractLlm, ABC):

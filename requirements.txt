@@ -1,0 +1,7 @@
+pyyaml
+pandas
+matplotlib
+requests
+PyQt5
+openai
+sentence-transformers

@@ -1,4 +1,4 @@
-from OntoGenix_v_1_2.tools import csv2dataset, dataframe2prettyjson, plot_mermaid, extract_text
+from tools import csv2dataset, dataframe2prettyjson, plot_mermaid, extract_text
 
 base_path = './datasets/'
 dataset_folder = 'AirlinesCustomerSatisfaction'
@@ -15,7 +15,7 @@ print('######## PROMPT ############\n', json_data)
 
 
 # instantiate the LLM that generates an owl ontology from a json subset data
-from OntoGenix_v_1_2.PlanSage.LLM_planner import LlmPlanner
+from PlanSage.LLM_planner import LlmPlanner
 
 planner_metadata = {
     'first_instructions': './OntoGenix_v_1_2/PlanSage/first_instructions.prompt',
@@ -40,7 +40,7 @@ planner.interaction(
 #-------------------------------------------------------------------------------------------------------
 
 # instantiate the LLM that generates an owl ontology from a json subset data
-from OntoGenix_v_1_2.OntoBuilder.LLM_ontology import LlmOntology
+from OntoBuilder.LLM_ontology import LlmOntology
 
 onto_metadata = {'instructions': './OntoGenix_v_1_2/OntoBuilder/instructions.prompt',
                  'autocompletion':  './OntoGenix_v_1_2/OntoBuilder/auto_completion.prompt',
@@ -68,7 +68,7 @@ for human_ontology in ontology_builder.examples:
 ontology_builder.synthesize()
 
 
-from OntoGenix_v_1_2.OntoMapper.LLM_ontomapper import LlmOntoMapper
+from OntoMapper.LLM_ontomapper import LlmOntoMapper
 
 mapper_metadata = {'instructions': './OntoGenix_v_1_2/OntoMapper/instructions.prompt',
                    'dataset': base_path + dataset_folder + '/' + dataset_file,
