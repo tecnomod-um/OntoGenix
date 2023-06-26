@@ -1,8 +1,17 @@
+# -*- coding: utf-8 -*-
 from tools import csv2dataset, dataframe2prettyjson, plot_mermaid, extract_text
+import yaml
+import io
 
-base_path = './datasets/'
-dataset_folder = 'CustomerComplaint'
-dataset_file = 'complaints'
+with open("config.yaml", 'r') as stream:
+    data_loaded = yaml.safe_load(stream)
+
+config = data_loaded["OntoGenixConfig"]
+
+base_path = config["base_path"]
+dataset_folder = config["dataset_folder"]
+dataset_file = config["dataset_file"]
+
 file = base_path + dataset_folder + '/' + dataset_file + '.csv'
 
 # get a dataset subsample from a csv file
