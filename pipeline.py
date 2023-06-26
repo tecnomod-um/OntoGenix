@@ -1,8 +1,8 @@
 from tools import csv2dataset, dataframe2prettyjson, plot_mermaid, extract_text
 
 base_path = './datasets/'
-dataset_folder = 'AirlinesCustomerSatisfaction'
-dataset_file = 'AirlinesCustomerSatisfaction'
+dataset_folder = 'AmazonRating'
+dataset_file = 'ratings_Beauty'
 file = base_path + dataset_folder + '/' + dataset_file + '.csv'
 
 # get a dataset subsample from a csv file
@@ -18,8 +18,8 @@ print('######## PROMPT ############\n', json_data)
 from PlanSage.LLM_planner import LlmPlanner
 
 planner_metadata = {
-    'first_instructions': './OntoGenix_v_1_2/PlanSage/first_instructions.prompt',
-    'interaction': './OntoGenix_v_1_2/PlanSage/interaction.prompt',
+    'first_instructions': './PlanSage/first_instructions.prompt',
+    'interaction': './PlanSage/interaction.prompt',
     'dataset': base_path + dataset_folder + '/' + dataset_file,
     'role': 'You are a powerfull ontology engineer that generates the reasoning steps needed to generate'
             'an ontology from a json data table.'
@@ -42,11 +42,11 @@ planner.interaction(
 # instantiate the LLM that generates an owl ontology from a json subset data
 from OntoBuilder.LLM_ontology import LlmOntology
 
-onto_metadata = {'instructions': './OntoGenix_v_1_2/OntoBuilder/instructions.prompt',
-                 'autocompletion':  './OntoGenix_v_1_2/OntoBuilder/auto_completion.prompt',
-                 'ontology_analysis': './OntoGenix_v_1_2/OntoBuilder/ontology_analysis.prompt',
-                 'ontology_synthesis': './OntoGenix_v_1_2/OntoBuilder/ontology_synthesis.prompt',
-                 'examples': './OntoGenix_v_1_2/OntoBuilder/examples/',
+onto_metadata = {'instructions': './OntoBuilder/instructions.prompt',
+                 'autocompletion':  './OntoBuilder/auto_completion.prompt',
+                 'ontology_analysis': './OntoBuilder/ontology_analysis.prompt',
+                 'ontology_synthesis': './OntoBuilder/ontology_synthesis.prompt',
+                 'examples': './OntoBuilder/examples/',
                  'dataset': base_path + dataset_folder + '/' + dataset_file,
                  'role': 'You are a powerful ontology engineer that generates OWL ontologies in turtle format.'
                  }
@@ -70,7 +70,7 @@ ontology_builder.synthesize()
 
 from OntoMapper.LLM_ontomapper import LlmOntoMapper
 
-mapper_metadata = {'instructions': './OntoGenix_v_1_2/OntoMapper/instructions.prompt',
+mapper_metadata = {'instructions': './OntoMapper/instructions.prompt',
                    'dataset': base_path + dataset_folder + '/' + dataset_file,
                    'role': 'You are a powerful ontology engineer that generates RML mappings.'
 }
