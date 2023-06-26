@@ -1,4 +1,4 @@
-from LLM.LlmBase import AbstractLlm
+from LLM_base.LlmBase import AbstractLlm
 
 
 class LlmOntology(AbstractLlm):

@@ -1,12 +1,12 @@
 from abc import ABC
 from typing import Optional
 
-from LLM.LlmBase import AbstractLlm
+from LLM_base.LlmBase import AbstractLlm
 
 
 class LlmPlanner(AbstractLlm, ABC):
     """
-    This class represents a language learning model (LLM) ontology. It extends the AbstractLlm class and provides
+    This class represents a language learning model (LLM_base) ontology. It extends the AbstractLlm class and provides
     methods for interacting with the model.
 
     TODO: the long_term_memory mechanism is not implemented.
@@ -17,7 +17,7 @@ class LlmPlanner(AbstractLlm, ABC):
         Initialize the LlmOntology object.
 
         Parameters:
-        metadata (dict): A dictionary containing metadata for the LLM.
+        metadata (dict): A dictionary containing metadata for the LLM_base.
         """
         super().__init__(metadata)
 
@@ -38,7 +38,7 @@ class LlmPlanner(AbstractLlm, ABC):
                     json_data: Optional[str] = None,
                     instructions: Optional[str] = None):
         """
-        Perform the first interaction or a subsequent interaction with the LLM based on the arguments provided.
+        Perform the first interaction or a subsequent interaction with the LLM_base based on the arguments provided.
 
         Parameters:
         input_task (str): The input message. If this is provided, the method will act as first_interaction.
@@ -46,7 +46,7 @@ class LlmPlanner(AbstractLlm, ABC):
         instructions (str): The instructions for the interaction. If this is provided, the method will act as a subsequent interaction.
 
         Returns:
-        str: The response from the LLM.
+        str: The response from the LLM_base.
         """
         try:
             if input_task and json_data:
@@ -65,7 +65,7 @@ class LlmPlanner(AbstractLlm, ABC):
 
 
             print('############## prompt #########################\n', prompt)
-            # Get the response from the LLM
+            # Get the response from the LLM_base
             response = self.get_api_response(prompt)
             self.update_memories(response)
 

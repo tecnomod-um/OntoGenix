@@ -8,13 +8,13 @@ file = base_path + dataset_folder + '/' + dataset_file + '.csv'
 # get a dataset subsample from a csv file
 dataset = csv2dataset(file, max_tokens=800)
 
-# format to json for the LLM and write to a file
+# format to json for the LLM_base and write to a file
 file = base_path + dataset_folder + '/' + dataset_file + '_dataframe_subset.txt'
 json_data = dataframe2prettyjson(dataset, file)
 print('######## PROMPT ############\n', json_data)
 
 
-# instantiate the LLM that generates an owl ontology from a json subset data
+# instantiate the LLM_base that generates an owl ontology from a json subset data
 from PlanSage.LLM_planner import LlmPlanner
 
 planner_metadata = {
@@ -39,7 +39,7 @@ planner.interaction(
 # )
 #-------------------------------------------------------------------------------------------------------
 
-# instantiate the LLM that generates an owl ontology from a json subset data
+# instantiate the LLM_base that generates an owl ontology from a json subset data
 from OntoBuilder.LLM_ontology import LlmOntology
 
 onto_metadata = {'instructions': './OntoBuilder/instructions.prompt',
@@ -86,7 +86,7 @@ rml_code_str = ontology_mapper.interact(json_data=json_data, ontology=ontology_b
 
 #
 #
-# # instantiate the LLM that generates a mermaid class diagram from an owl ontology
+# # instantiate the LLM_base that generates a mermaid class diagram from an owl ontology
 # from OntoGenix_v_1_2.MermaidOntoFlow.Llm_mermaid import LlmMermaid
 #
 # mermaid_metadata = {'instructions': './OntoGenix_v_1_2/MermaidOntoFlow/instructions.prompt',
