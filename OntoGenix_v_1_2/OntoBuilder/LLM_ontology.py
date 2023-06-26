@@ -1,4 +1,4 @@
-from OntoGenix_v_1_1.LLM.LlmBase import AbstractLlm
+from OntoGenix_v_1_2.LLM.LlmBase import AbstractLlm
 
 
 class LlmOntology(AbstractLlm):
@@ -11,6 +11,7 @@ class LlmOntology(AbstractLlm):
         self.ontology_analysis_prompt = self.load_string_from_file(metadata['ontology_analysis'])
         self.ontology_synthesis_prompt = self.load_string_from_file(metadata['ontology_synthesis'])
         self.examples = self.load_examples(metadata['examples'])
+        # path setting to write outputs
         self.dataset_path = metadata['dataset']
         # initialize memories
         self.last_prompt = None
@@ -79,6 +80,10 @@ class LlmOntology(AbstractLlm):
                 f.write(response)
 
             self.owl_codeblock = self.extract_text(response, "START", "FINISH")
+
+            file = self.dataset_path + '_ontology_LLM.owl'
+            with open(file, 'w') as f:
+                f.write(self.owl_codeblock)
 
         except ValueError as e:
             print(f"An error occurred while extracting text: {e}")

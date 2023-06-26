@@ -1,4 +1,4 @@
-from OntoGenix_v_1_1.LLM.LlmBase import AbstractLlm
+from OntoGenix_v_1_2.LLM.LlmBase import AbstractLlm
 
 
 class LlmMermaid(AbstractLlm):

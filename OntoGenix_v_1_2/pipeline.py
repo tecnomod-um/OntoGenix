@@ -1,16 +1,17 @@
 from OntoGenix_v_1_2.tools import csv2dataset, dataframe2prettyjson, plot_mermaid, extract_text
 
+base_path = './datasets/'
+dataset_folder = 'AirlinesCustomerSatisfaction'
 dataset_file = 'AirlinesCustomerSatisfaction'
-file = './datasets/' + dataset_file +  '/' + dataset_file + '.csv'
+file = base_path + dataset_folder + '/' + dataset_file + '.csv'
 
 # get a dataset subsample from a csv file
 dataset = csv2dataset(file, max_tokens=800)
 
 # format to json for the LLM and write to a file
-file = './datasets/' + dataset_file + '/' + dataset_file + '_dataframe_subset.txt'
+file = base_path + dataset_folder + '/' + dataset_file + '_dataframe_subset.txt'
 json_data = dataframe2prettyjson(dataset, file)
 print('######## PROMPT ############\n', json_data)
-
 
 
 # instantiate the LLM that generates an owl ontology from a json subset data
@@ -19,7 +20,7 @@ from OntoGenix_v_1_2.PlanSage.LLM_planner import LlmPlanner
 planner_metadata = {
     'first_instructions': './OntoGenix_v_1_2/PlanSage/first_instructions.prompt',
     'interaction': './OntoGenix_v_1_2/PlanSage/interaction.prompt',
-    'dataset': './datasets/' + dataset_file +  '/' + dataset_file,
+    'dataset': base_path + dataset_folder + '/' + dataset_file,
     'role': 'You are a powerfull ontology engineer that generates the reasoning steps needed to generate'
             'an ontology from a json data table.'
 }
@@ -46,7 +47,7 @@ onto_metadata = {'instructions': './OntoGenix_v_1_2/OntoBuilder/instructions.pro
                  'ontology_analysis': './OntoGenix_v_1_2/OntoBuilder/ontology_analysis.prompt',
                  'ontology_synthesis': './OntoGenix_v_1_2/OntoBuilder/ontology_synthesis.prompt',
                  'examples': './OntoGenix_v_1_2/OntoBuilder/examples/',
-                 'dataset': './datasets/' + dataset_file + '/' + dataset_file,
+                 'dataset': base_path + dataset_folder + '/' + dataset_file,
                  'role': 'You are a powerful ontology engineer that generates OWL ontologies in turtle format.'
                  }
 
@@ -67,24 +68,18 @@ for human_ontology in ontology_builder.examples:
 ontology_builder.synthesize()
 
 
-
-
-
-
 from OntoGenix_v_1_2.OntoMapper.LLM_ontomapper import LlmOntoMapper
 
 mapper_metadata = {'instructions': './OntoGenix_v_1_2/OntoMapper/instructions.prompt',
-                 'role': 'You are a powerful ontology engineer that generates RML mappings.'
-                 }
+                   'dataset': base_path + dataset_folder + '/' + dataset_file,
+                   'role': 'You are a powerful ontology engineer that generates RML mappings.'
+}
+
 ontology_mapper = LlmOntoMapper(mapper_metadata)
 
 rml_code_str = ontology_mapper.interact(json_data=json_data, ontology=ontology_builder.owl_codeblock)
-print('######## OUTPUT ############\n', rml_code_str)
 
-# write the response in a file
-file = './datasets/' + dataset_file +  '/' + dataset_file + '_rml_mappingLLM.ttl'
-with open(file, 'w') as f:
-    f.write(rml_code_str)
+
 
 
 
