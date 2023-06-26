@@ -1,0 +1,35 @@
+"""
+ACTIONS: [Ask a question to disambiguate the input provided, write the response]
+
+I need you to help me write an OWL ontology in turtle format. Now I give you a json data sample
+you should use it to generate the key content that describes the ontology. For each time, you need to analyze
+clearly the json data in order to generate a summary and a code block.
+
+I need you to write:
+    1. Ouput Summary: The summary that describes the json data. First write a short description of the provided
+    json data. This short description should never exceed 10 sentences. The summary should only store key information.
+    Analyze the json data and write the reasoning steps followed in order to generate the proposed ontology.
+    Write one sentence for each reasoning step description.
+
+    2. Output Tasks: The generated OWL code-block must follow the input instructions and be strict to the output
+    using RDF/XML syntax. Do not include individuals but try to abstract about ontology.
+
+Here is the input:
+
+    Input JSON data:
+    {input}
+
+Now start writing, organize your output by strictly following the output format as below:
+    Output Summary:
+        Summary: <string that explains the json data>, around 10 to 20 sentences.
+        Rational: <enumeration of the reasoning steps>, one enumerated sentence for each reasoning step.
+
+    Output Tasks: <code-block using turtle format following the previous reasoning steps>
+
+    Finish Statement: <write "FINISH" to indicate the end of the output>
+
+Very important:
+First analyze the ontology and consider an appropriate action to generate the response.
+Denote subjects and objects using relative hash-based hyperlinks i.e., negating the use of example.com.
+Do not forget to write FINISH at the end of your response.
+"""

@@ -1,0 +1,91 @@
+"""
+EXAMPLE:
+input code in turtle format:
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix product: <https://www.bigbasket.com/product#> .
+
+    <https://www.bigbasket.com/product> a owl:Ontology .
+
+    product:Product a owl:Class ;
+        rdfs:subClassOf owl:Thing .
+
+    product:Brand a owl:Class .
+    product:Category a owl:Class .
+    product:SubCategory a owl:Class .
+
+    product:hasProductName a owl:DatatypeProperty ;
+        rdfs:domain product:Product ;
+        rdfs:range xsd:string .
+
+    product:hasBrand a owl:ObjectProperty ;
+        rdfs:domain product:Product ;
+        rdfs:range product:Brand .
+
+    product:hasPrice a owl:DatatypeProperty ;
+        rdfs:domain product:Product ;
+        rdfs:range xsd:float .
+
+    product:hasDiscountPrice a owl:DatatypeProperty ;
+        rdfs:domain product:Product ;
+        rdfs:range xsd:float .
+
+    product:hasImageUrl a owl:DatatypeProperty ;
+        rdfs:domain product:Product ;
+        rdfs:range xsd:anyURI .
+
+    product:hasQuantity a owl:DatatypeProperty ;
+        rdfs:domain product:Product ;
+        rdfs:range xsd:string .
+
+    product:hasCategory a owl:ObjectProperty ;
+        rdfs:domain product:Product ;
+        rdfs:range product:Category .
+
+    product:hasSubCategory a owl:ObjectProperty ;
+        rdfs:domain product:Product ;
+        rdfs:range product:SubCategory .
+
+    product:hasAbsoluteUrl a owl:DatatypeProperty ;
+        rdfs:domain product:Product ;
+        rdfs:range xsd:anyURI .
+
+    product:Titania a product:Brand .
+    product:BeautyAndHygiene a product:Category .
+    product:ToolsAndAccessories a product:SubCategory .
+
+    product:3522 a product:Product ;
+        product:hasProductName "Streaking Hair Comb - Durable, Smooth, Big, Havana, DP100164" ;
+        product:hasBrand product:Titania ;
+        product:hasPrice 189.0 ;
+        product:hasDiscountPrice 129.0 ;
+        product:hasImageUrl <https://www.bigbasket.com/media/uploads/p/l/40247333_1-titania-streaking-comb-14-cm-big-havanna-set-of-1-pc.jpg> ;
+        product:hasQuantity "1 pc" ;
+        product:hasCategory product:BeautyAndHygiene ;
+        product:hasSubCategory product:ToolsAndAccessories ;
+        product:hasAbsoluteUrl <https://www.bigbasket.com/pd/40247333/titania-streaking-comb-14-cm-big-havanna-set-of-1-pc-1-pc/> .
+
+
+
+    output in mermaid classDiagram format:
+        classDiagram
+            class Product {
+                string hasProductName
+                float hasPrice
+                float hasDiscountPrice
+                anyURI hasImageUrl
+                string hasQuantity
+                anyURI hasAbsoluteUrl
+            }
+            class Brand {
+            }
+            class Category {
+            }
+            class SubCategory {
+            }
+            Product "1" -- "1" Brand : hasBrand
+            Product "1" -- "1" Category : hasCategory
+            Product "1" -- "1" SubCategory : hasSubCategory
+"""

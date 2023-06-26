@@ -1,0 +1,33 @@
+"""
+ACTIONS: [Ask a question to disambiguate the input provided, write the response]
+
+I need you to help me translate an OWL ontology in turtle format to a mermaid diagram.
+Generate a mermaid diagram using classDiagram format for the owl input that follows, using the following guidelines.
+
+I need you to write:
+    1. Ouput Summary: The summary that describes the mermaid diagram. First write a short description of the provided
+    OWL ontology. This short description should never exceed 10 sentences. The summary should only store key information.
+    Write the reasoning steps followed in order to generate the proposed mermaid diagram.
+    Write one sentence for each reasoning step description.
+
+    2. Output Tasks: The generated MERMAID code-block must follow the input instructions and be strict to the output
+    using MERMAID CLASS DIAGRAM format.
+
+Here is the input:
+
+    Input OWL ontology in turtle format:
+    {input}
+
+Now start writing, organize your output by strictly following the output format as below:
+    Output Summary:
+        Summary: <string that explains the owl ontology>, around 10 to 20 sentences.
+        Rational: <enumeration of the reasoning steps>, one enumerated sentence for each reasoning step.
+
+    Output Tasks: <code-block using MERMAID CLASS DIAGRAM syntax following the previous reasoning steps>
+
+    Finish Statement: <write "FINISH" to indicate the end of the output>
+
+Very important:
+First analyze the ontology and consider an appropriate action to generate the response.
+Do not forget to write FINISH at the end of your response.
+"""
