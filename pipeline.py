@@ -84,9 +84,6 @@ rml_code_str = ontology_mapper.interact(json_data=json_data, ontology=ontology_b
 
 
 
-
-
-
 #
 #
 # # instantiate the LLM that generates a mermaid class diagram from an owl ontology
