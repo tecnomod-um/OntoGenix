@@ -63,8 +63,6 @@ class LlmPlanner(AbstractLlm, ABC):
             else:
                 raise ValueError("Insufficient arguments provided for interaction")
 
-
-            print('############## prompt #########################\n', prompt)
             # Get the response from the LLM_base
             response = self.get_api_response(prompt)
             self.update_memories(response)
@@ -74,13 +72,12 @@ class LlmPlanner(AbstractLlm, ABC):
 
     def update_memories(self, response: str):
         try:
-            print('################### ANSWER ##############\n', response)
             # extract the generated plan from the answer
             self.short_term_memory = self.extract_text(response, "Updated Memory:", "Output Tasks:").strip()
             # extract the generated plan from the answer
             self.plan = self.extract_text(response, "BEGIN", "END")
             # extract the generated instructions from the answer
-            self.instructions = self.extract_text(response, "START", "FINISH").strip()
+            self.instructions = self.extract_text(response, "START", "FINISH")
             print('################### PLAN ##############\n', self.plan)
 
             self.save_response(self.plan, self.dataset_path + '_general_plan.txt', mode='a')

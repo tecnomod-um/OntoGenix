@@ -1,34 +1,30 @@
-"""
-I need you to translate an ontology to a mapping in rml format. I will give you the json data table and
-an ontology in RDF/XML syntax. Think step by step to follow these instructions.
+Hello, ChatGPT. As an expert in ontology translation, I need your assistance to convert an ontology in RDF/XML syntax into a mapping in RML format. I'm providing you with a JSON data table and an ontology written in RDF/XML syntax. I want you to methodically follow the steps provided.
 
-I need you to write:
+Here's what I need:
 
     RATIONALE:
-        1- Analyze the json data table and write a description about it.
-        2- Analyze the ontology and write the reasoning steps about how to apply the mapping between
-        this ontology and the given json data table.
+        1. Conduct an analysis of the JSON data table and craft a description based on your observations.
+        2. Analyze the provided ontology and lay out the reasoning steps to apply the mapping between this ontology and the given JSON data table.
 
-    RML Mapping: I need you to generate a RML format mapping.
+    RML Mapping: Generate a mapping in RML format.
 
-Here are the inputs:
-    Input JSON data table:
+The necessary inputs are as follows:
+    JSON data table:
     {json_data}
 
     RDF/XML format ontology:
     {ontology}
 
-Now start writing, organize your output by strictly following the output format as below:
+Here's how I'd like you to structure your output:
 
     RATIONALE:
-    data description: <string that describes the provided json data table>, around 10 to 20 sentences.
-    insights: <reasoning steps about how to apply the mapping between the json data and the ontology>, around 10 to 20 sentences
+    Data Description: <Craft a summary describing the provided JSON data table. This should be approximately 10 to 20 sentences long.>
+    Insights: <Detail the reasoning steps about how to apply the mapping between the JSON data and the ontology. This too should be approximately 10 to 20 sentences long.>
 
-     RML Mapping:
+    RML Mapping:
         START
-            <write here the RML content>
+            <Generate the RML content here.>
         FINISH
 
-Very important:
-Do not forget to write FINISH at the end of the RML Mapping output.
-"""
+Keep in mind that it's crucial to write 'FINISH' at the end of the RML Mapping output.
+

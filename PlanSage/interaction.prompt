@@ -1,25 +1,4 @@
-"""
-I need you to help me update a plan. I will give you your current memory
-(a brief summary of previous planned tasks), you should use it to store the key content of what has been planned
-so that you can keep track of very long context, the previously written plan, and a series of instructions
-to update the current plan.
-
-I need you to write:
-
-    1. Output Memory: The updated memory. You should first explain which preferences in the input memory are no
-    longer necessary and why, and then explain what needs to be added into the memory and why. After that you
-    should write the updated memory. The updated memory should be similar to the input memory except the parts
-    you previously thought that should be deleted or added. The updated memory should only store key information.
-    The updated memory should never exceed 20 sentences!
-
-    2. Output Tasks: The updated plan must include the input instructions and be strict to the output format.
-
-    3. Output Instruction:  Instructions for the next task in the plan to be followed (after what you have already planned).
-    You should output 3 different instructions, each is a possible interesting continuation of the plan.
-    Each output instruction should contain 1 sentence.
-
-
-Here are the inputs:
+Hello, ChatGPT. As a capable plan updater, I need you to assist me in refining an existing plan. You will be provided with current memory data, a pre-established plan, and a set of instructions intended to update the present plan. Here are the necessary inputs:
 
     Input Plan:
     {input_plan}
@@ -33,35 +12,27 @@ Here are the inputs:
     Input Long Term Memory:
     {long_term_memory}
 
-Now start writing the updated version of the plan taking into account the input plan, the input instructions, the
-input short term memory and the input long term memory. Organize your output by strictly following the output format
-as below:
+I request the following outputs:
 
     Output Memory:
-        Rational: <string that explain how to update the memory>;
-        Updated Memory: <string of updated memory>, around 10 to 20 sentences
+    Rational: <Explain which components in the input memory have become obsolete and why, as well as new elements that should be integrated into the memory and the reasons for doing so.>
+    Updated Memory: <Provide an updated version of the memory, incorporating necessary deletions or additions. This should mirror the structure of the input memory but reflect the changes proposed in your rational. The updated memory should be succinct, containing only vital information and not exceeding 20 sentences or 500 words.>
 
     Output Tasks:
-        BEGIN
-            task_<number of task>:
-                step_name: <name of task>
-                step_description: <Definition of task>
-        END
+    BEGIN
+        Present a refined list of tasks that follow the structure of the previous plan but are informed by your updated memory and the input instructions.
+    END
 
     Output Instructions:
-        START
-            Instruction 1: <content for instruction 1>, do not write more than 1 sentence.
-            Instruction 2: <content for instruction 2>, do not write more than 1 sentence.
-            Instruction 3: <content for instruction 3>, do not write more than 1 sentence.
-        FINISH
+    Generate instructions for the next steps in the plan, suggesting potential continuations of the previous tasks. The format should be as follows:
+    START
+        Instruction 1: <Provide an instruction for the next task in the plan, offering an alternative continuation based on the updated plan.>
+        Instruction 2: <Provide a second instruction for the next task in the plan, suggesting a different alternative continuation.>
+        Instruction 3: <Provide a third instruction for the next task in the plan, offering yet another possible direction.>
+    FINISH
 
-Very important:
-The updated memory should only store key information.
-The updated memory should never contain over 500 words!
-Write like a powerful task coordinator that provides a procedure for the user’s task
-and do not move too fast when writing the output instructions for the next plan.
-Do not generate code.
-Do not solve the task.
-Do not forget to write END at the end of the Output Tasks.
-Do not forget to write FINISH at the end of the Output Instructions.
-"""
+Your task is to use the input plan, input instructions, and both short and long-term memory data to refine the current plan. Ensure your outputs strictly adhere to the provided format.
+
+Please remember that the updated memory should contain only key information. Write in the capacity of an effective task coordinator, supplying a transparent procedure for the user's task. Take your time when devising the output instructions for the subsequent plan, focusing on the introduction of new tasks grounded in the input instructions and memory data. Remember, the goal here is to generate an actionable plan update, not to solve the task or create code. Please remember to write 'END' at the end of the Output Tasks and 'FINISH' at the end of the Output Instructions.
+
+

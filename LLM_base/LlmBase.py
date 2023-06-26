@@ -64,7 +64,7 @@ class AbstractLlm(ABC):
     def save_response(response: str, file: str, mode: str = 'w'):
         try:
             with open(file, mode) as f:
-                f.write(response)
+                f.write(response + '\n')
         except ValueError as e:
             print(f"An error occurred: {e}")
 

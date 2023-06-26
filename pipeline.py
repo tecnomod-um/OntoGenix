@@ -1,8 +1,8 @@
 from tools import csv2dataset, dataframe2prettyjson, plot_mermaid, extract_text
 
 base_path = './datasets/'
-dataset_folder = 'CustomerComplaint'
-dataset_file = 'complaints'
+dataset_folder = 'AirlinesCustomerSatisfaction'
+dataset_file = 'AirlinesCustomerSatisfaction'
 file = base_path + dataset_folder + '/' + dataset_file + '.csv'
 
 # get a dataset subsample from a csv file
