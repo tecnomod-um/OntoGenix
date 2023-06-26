@@ -1,6 +1,30 @@
 from typing import Any, Dict
 
 
+def extract_text(text: str, start_marker: str, end_marker: str) -> str:
+    """
+    Extracts a substring of text between two markers and returns it.
+
+    Args:
+        text (str): The text to be searched.
+        start_marker (str): The start marker of the substring.
+        end_marker (str): The end marker of the substring.
+
+    Returns:
+        The substring of text between start_marker and end_marker.
+
+    Raises:
+        ValueError: If start_marker or end_marker is not found in text.
+    """
+    start_index = text.find(start_marker) + len(start_marker)
+    end_index = text.find(end_marker, start_index)
+    if start_index == -1:
+        raise ValueError("Start marker not found in text.")
+    elif end_index == -1:
+        raise ValueError("End marker not found in text.")
+    return text[start_index:end_index].strip()
+
+
 def count_tokens(data: Dict[str, Any]) -> int:
     """
     Count the number of tokens in a nested dictionary.
@@ -26,11 +50,34 @@ def count_tokens(data: Dict[str, Any]) -> int:
     return num_tokens
 
 
+import re
+import yaml
+
+
+
+def preprocess_yaml(yaml_string: str, parse: str) -> str:
+    # Regular expression to find lines starting with "task_"
+    pattern = re.compile(r'^\s*'+parse, re.MULTILINE)
+    # Dedent these lines
+    return pattern.sub(parse, yaml_string)
+
+
+def text2dict(text: str, parse: str="task_") -> dict:
+    try:
+        preprocessed_text = preprocess_yaml(text, parse)
+        plan_dict = yaml.safe_load(preprocessed_text)
+        return plan_dict
+
+    except ValueError as e:
+        print(f"An error occurred while preprocessing the text: {e}")
+        return None
+
+
 import json
 import pandas as pd
 
 
-def dataframe2prettyjson(dataframe: pd.DataFrame, file: str) -> None:
+def dataframe2prettyjson(dataframe: pd.DataFrame, file: str = None, save: bool = False) -> None:
     """
     Convert a Pandas DataFrame to pretty JSON and save it to a file.
 
@@ -47,8 +94,9 @@ def dataframe2prettyjson(dataframe: pd.DataFrame, file: str) -> None:
         parsed = json.loads(json_data)
         pretty_json = json.dumps(parsed, indent=4)
 
-        with open(file, 'w') as f:
-            f.write(pretty_json)
+        if save and file:
+            with open(file, 'w') as f:
+                f.write(pretty_json)
 
         return pretty_json
     except Exception as e:
@@ -104,29 +152,6 @@ def plot_mermaid(diagram: str, path: str = None) -> None:
         # Handle any exception that occurs during the diagram plotting process
         print(f"An error occurred: {str(e)}");
 
-
-def extract_text(text: str, start_marker: str, end_marker: str) -> str:
-    """
-    Extracts a substring of text between two markers and returns it.
-
-    Args:
-        text (str): The text to be searched.
-        start_marker (str): The start marker of the substring.
-        end_marker (str): The end marker of the substring.
-
-    Returns:
-        The substring of text between start_marker and end_marker.
-
-    Raises:
-        ValueError: If start_marker or end_marker is not found in text.
-    """
-    start_index = text.find(start_marker) + len(start_marker)
-    end_index = text.find(end_marker, start_index)
-    if start_index == -1:
-        raise ValueError("Start marker not found in text.")
-    elif end_index == -1:
-        raise ValueError("End marker not found in text.")
-    return text[start_index:end_index]
 
 
 def csv2dataset(file: str, max_tokens: int = 100, encoding: str = 'latin1') -> pd.DataFrame:

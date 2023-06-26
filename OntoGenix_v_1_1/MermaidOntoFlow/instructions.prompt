@@ -23,11 +23,10 @@ Now start writing, organize your output by strictly following the output format 
         Summary: <string that explains the owl ontology>, around 10 to 20 sentences.
         Rational: <enumeration of the reasoning steps>, one enumerated sentence for each reasoning step.
 
-    Output Tasks: <code-block using MERMAID CLASS DIAGRAM syntax following the previous reasoning steps>
-
+    Output Tasks: <MERMAID CLASS DIAGRAM syntax following the previous reasoning steps>
     Finish Statement: <write "FINISH" to indicate the end of the output>
 
 Very important:
 First analyze the ontology and consider an appropriate action to generate the response.
-Do not forget to write FINISH at the end of your response.
+Do not forget to write Finish Statement: FINISH at the end of your response.
 """

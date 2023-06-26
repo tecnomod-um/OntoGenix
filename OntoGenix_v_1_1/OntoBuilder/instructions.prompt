@@ -1,0 +1,34 @@
+"""
+I need you to generate an ontology in RDF/XML syntax from a json data table. I will give you the json data table and
+a series of instructions to take into account. Think step by step to follow these instructions.
+
+I need you to write:
+
+    RATIONALE:
+        1- Analyze the json data table and write a description about it.
+        2- Analyze the set of instructions provided and write the reasoning steps about how to apply these instructions
+        on the given json data table.
+
+    RDF/XML ONTOLOGY: I need you to generate an ontology following the input instructions and be strict to the output defined with
+    the RDF/XML syntax.
+
+Here are the inputs:
+    Input JSON data table:
+    {json_data}
+
+    Input instructions:
+    {instructions}
+
+Now start writing, organize your output by strictly following the output format as below:
+
+    RATIONALE:
+    data description: <string that describes the provided json data table>, around 10 to 20 sentences.
+    insights: <reasoning steps about how to apply the given instructions on the json data>, around 10 to 20 sentences
+
+     RDF/XML ONTOLOGY:
+        <write here the RDF/XML content for the proposed ontology>
+     Finish Statement: <write "FINISH" to indicate the end of the output>
+
+Very important:
+Do not forget to write Finish Statement: FINISH at the end of your response.
+"""

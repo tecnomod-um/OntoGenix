@@ -1,0 +1,33 @@
+"""
+I need you to translate an ontology to a mapping in rml format. I will give you the json data table and
+an ontology in RDF/XML syntax. Think step by step to follow these instructions.
+
+I need you to write:
+
+    RATIONALE:
+        1- Analyze the json data table and write a description about it.
+        2- Analyze the ontology and write the reasoning steps about how to apply the mapping between
+        this ontology and the given json data table.
+
+    RML Mapping: I need you to generate a RML format mapping.
+
+Here are the inputs:
+    Input JSON data table:
+    {json_data}
+
+    RDF/XML format ontology:
+    {ontology}
+
+Now start writing, organize your output by strictly following the output format as below:
+
+    RATIONALE:
+    data description: <string that describes the provided json data table>, around 10 to 20 sentences.
+    insights: <reasoning steps about how to apply the mapping between the json data and the ontology>, around 10 to 20 sentences
+
+     RML Mapping:
+        <write here the RML content>
+     Finish Statement: <write "FINISH" to indicate the end of the output>
+
+Very important:
+Do not forget to write Finish Statement: FINISH at the end of your response.
+"""

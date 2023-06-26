@@ -1,9 +1,13 @@
-from OntoGenix_v_1_0.LLM.LlmBase import AbstractLlm
+from OntoGenix_v_1_1.LLM.LlmBase import AbstractLlm
+
 
 class LlmMermaid(AbstractLlm):
 
     def __init__(self, metadata: dict):
         super().__init__(metadata)
+
+        self.instructions = self.load_string_from_file(metadata['instructions'])
+        self.examples = self.load_string_from_file(metadata['examples'])
 
     def interact(self, message: str):
         try:
