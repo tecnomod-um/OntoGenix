@@ -4,3 +4,4 @@ datasets/
 GUI/
 testing_prompts/
 venv/
+__pycache__/
