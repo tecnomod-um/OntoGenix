@@ -53,7 +53,7 @@ class LlmOntology(AbstractLlm):
 
             self.save_response(response, self.dataset_path + '_debugging_GPT_ANALYSIS.txt', mode='a')
 
-            insights = self.extract_text(response, "RATIONALE:", "RDF/XML ONTOLOGY:")
+            insights = self.extract_text(response, "Insights:", "REVISED RDF/XML ONTOLOGY:")
             owl_codeblock = self.extract_text(response, "START", "FINISH")
             self.analysis.append(owl_codeblock)
             return insights

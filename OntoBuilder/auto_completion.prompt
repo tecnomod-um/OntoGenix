@@ -1,11 +1,9 @@
-"""
-I need you to finish writing the previous task. You were previously feed with the following input:
+I require you to resume the previous task and provide a comprehensive completion. Here's the information you were given before:
 
-Previous input:
+Previous Input:
 {prev_input}
 
-Your incompleted response:
+Your Partial Response:
 {response}
 
-Now continue writing your response and do not forget to write Finish Statement: FINISH at the end of your response.
-"""
+Please, carry on to finalize your response, ensuring to maintain the formal tone required for scientific research, continue the analysis of the JSON data table, apply the provided instructions, identify the entities, classes, relations, and constraints within the JSON data table, and discuss any challenges you foresee in applying the instructions. Additionally, address and correct any inconsistencies or issues identified in your partial response. Continue to construct the RDF/XML ontology as per the context given earlier. Remember to conclude your response with the word 'FINISH'.

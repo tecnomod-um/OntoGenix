@@ -1,35 +1,31 @@
-"""
-I need you to generate an ontology in RDF/XML syntax from a json data table. I will give you the json data table and
-a series of instructions to take into account. Think step by step to follow these instructions.
+I require your expert assistance to generate an ontology in RDF/XML syntax from a provided JSON data table. This task calls for methodical interpretation of the JSON data table and a series of instructions that will also provide the specific context for this task. Be sure to draw context from both the JSON data and the instructions, and adhere closely to the instructions.
 
-I need you to write:
+Your output will comprise two sections:
 
-    RATIONALE:
-        1- Analyze the json data table and write a description about it.
-        2- Analyze the set of instructions provided and write the reasoning steps about how to apply these instructions
-        on the given json data table.
+ANALYSIS:
+    1- Examine the JSON data table meticulously, identify and infer entities, classes, relations, and constraints. Then, provide a detailed description of these elements.
+    2- Study the instructions provided, understand the context they convey and outline the logical process for applying these instructions to the JSON data table. Additionally, discuss potential challenges or difficulties that may arise during this application.
 
-    RDF/XML ONTOLOGY: I need you to generate an ontology following the input instructions and be strict to the output defined with
-    the RDF/XML syntax.
+RDF/XML ONTOLOGY: Leveraging your expert knowledge, construct an ontology in RDF/XML syntax, adhering strictly to the given instructions and context.
+Inputs for your task:
 
-Here are the inputs:
-    Input JSON data table:
-    {json_data}
+JSON Data Table:
+{json_data}
 
-    Input instructions:
-    {instructions}
 
-Now start writing, organize your output by strictly following the output format as below:
+Instructions:
+{instructions}
 
-    RATIONALE:
-    data description: <string that describes the provided json data table>, around 10 to 20 sentences.
-    insights: <reasoning steps about how to apply the given instructions on the json data>, around 10 to 20 sentences
+Structure your response as follows:
 
-     RDF/XML ONTOLOGY:
-        START
-            <write here the RDF/XML content for the proposed ontology>
-         FINISH
 
-Very important:
-Do not forget to write FINISH at the end of your response.
-"""
+ANALYSIS:
+Data Description: <A detailed description of inferred entities, classes, relations, and constraints from the JSON data table, spanning 10 to 20 sentences>
+Insights: <Detail the logical process and potential challenges of applying the provided instructions to the JSON data, written in about 10 to 20 sentences>
+
+RDF/XML ONTOLOGY:
+    START
+        <Develop the RDF/XML content for the proposed ontology here, ensuring strict compliance with the context provided>
+    FINISH
+
+Ensure your response maintains a formal tone suitable for scientific research, and concludes with the word 'FINISH'.
