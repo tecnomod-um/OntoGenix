@@ -1,8 +1,8 @@
 from tools import csv2dataset, dataframe2prettyjson, plot_mermaid, extract_text
 
 base_path = './datasets/'
-dataset_folder = 'AirlinesCustomerSatisfaction'
-dataset_file = 'AirlinesCustomerSatisfaction'
+dataset_folder = 'WalmartProductDetails'
+dataset_file = 'walmart_com-ecommerce_product_details__20190311_20191001_sample'
 file = base_path + dataset_folder + '/' + dataset_file + '.csv'
 
 # get a dataset subsample from a csv file
@@ -30,6 +30,10 @@ planner = LlmPlanner(planner_metadata)
 planner.interaction(
     input_task="Generate an ontology given the input json data table.",
     json_data=json_data
+)
+
+planner.interaction(
+    instructions='''include as fundational prefix https://vocab.um.es#, include this in the task_6 explicitly'''
 )
 
 ############ this section is for a closed loop interaction with the ontology builder ####################

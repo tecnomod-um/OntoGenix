@@ -16,13 +16,14 @@ Human-Engineered Ontology:
 Conduct your analysis systematically and render your output in the precise format outlined below:
 
 IMPROVEMENT STRATEGY:
-Insights: <Narrate your analytical procedure, offer a focused comparison between the ontologies, critique the significant aspects of the human-created ontology, list the potential improvements to your former ontology based on the insights from the human-created ontology, and ensure these improvements align with the provided instructions. If conflicts arise between the instructions and the insights from the human-produced ontology, propose an alternative solution.>
+<Narrate your analytical procedure, offer a focused comparison between the ontologies, critique the significant aspects of the human-created ontology, list the potential improvements to your former ontology based on the insights from the human-created ontology, and ensure these improvements align with the provided instructions. If conflicts arise between the instructions and the insights from the human-produced ontology, propose an alternative solution.>
 
 REVISED RDF/XML ONTOLOGY:
     START
         <Construct the RDF/XML content for the enhanced ontology, infusing the insights from the human-produced ontology and the provided instructions>
     FINISH
-Please maintain a formal tone, as is appropriate for scientific research, and conclude your response with 'FINISH'.
+
+Please maintain a formal tone, as is appropriate for scientific research, and conclude your REVISED RDF/XML ONTOLOGY section with 'FINISH'.
 
 
 

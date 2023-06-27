@@ -13,7 +13,7 @@ class AbstractLlm(ABC):
 
         self.role = metadata['role']
 
-    def get_api_response(self, content: str, temperature=0.5, max_tokens=None, stream=False):
+    def get_api_response(self, content: str, temperature=0.1, max_tokens=None, stream=False):
 
         response = openai.ChatCompletion.create(
             model='gpt-3.5-turbo-16k',

@@ -6,18 +6,18 @@ ANALYSIS:
     1- Examine the JSON data table meticulously, identify and infer entities, classes, relations, and constraints. Then, provide a detailed description of these elements.
     2- Study the instructions provided, understand the context they convey and outline the logical process for applying these instructions to the JSON data table. Additionally, discuss potential challenges or difficulties that may arise during this application.
 
-RDF/XML ONTOLOGY: Leveraging your expert knowledge, construct an ontology in RDF/XML syntax, adhering strictly to the given instructions and context.
+ONTOLOGY: Leveraging your expert knowledge, construct a RDF/XML syntax ontology, adhering strictly to the given instructions and context.
+
 Inputs for your task:
 
 JSON Data Table:
 {json_data}
 
-
 Instructions:
 {instructions}
 
-Structure your response as follows:
 
+Structure your response as follows:
 
 ANALYSIS:
 Data Description: <A detailed description of inferred entities, classes, relations, and constraints from the JSON data table, spanning 10 to 20 sentences>
@@ -25,7 +25,7 @@ Insights: <Detail the logical process and potential challenges of applying the p
 
 RDF/XML ONTOLOGY:
     START
-        <Develop the RDF/XML content for the proposed ontology here, ensuring strict compliance with the context provided>
+        <Develop the RDF/XML syntax content for the proposed ontology here, ensuring strict compliance with the context provided>
     FINISH
 
 Ensure your response maintains a formal tone suitable for scientific research, and concludes with the word 'FINISH'.

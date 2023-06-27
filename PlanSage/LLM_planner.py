@@ -52,6 +52,9 @@ class LlmPlanner(AbstractLlm, ABC):
             if input_task and json_data:
                 # Act as first_interaction
                 prompt = self.first_instructions_prompt.format(input_task=input_task, json_data=json_data)
+                # Get the response from the LLM_base
+                response = self.get_api_response(prompt)
+                self.update_memories(response)
             elif instructions:
                 # Act as a subsequent interaction
                 prompt = self.interaction_prompt.format(
@@ -60,31 +63,29 @@ class LlmPlanner(AbstractLlm, ABC):
                     short_term_memory=self.short_term_memory,
                     long_term_memory=self.long_term_memory
                 )
+                # Get the response from the LLM_base
+                response = self.get_api_response(prompt)
+                self.update_memories(response, first=False)
             else:
                 raise ValueError("Insufficient arguments provided for interaction")
 
-            # Get the response from the LLM_base
-            response = self.get_api_response(prompt)
-            self.update_memories(response)
+
 
         except ValueError as e:
             print(f"An error occurred: {e}")
 
-    def update_memories(self, response: str):
+    def update_memories(self, response: str, first: bool = True):
         try:
+            print('update memories, first: ', first)
+            self.save_response(response, self.dataset_path + '_general_plan.txt', mode='a')
             # extract the generated plan from the answer
-            self.short_term_memory = self.extract_text(response, "Updated Memory:", "Output Tasks:").strip()
+            if first:
+                self.short_term_memory = self.extract_text(response, "Output Memory:", "Output Tasks:").strip()
+            else:
+                self.short_term_memory = self.extract_text(response, "Updated Memory:", "Output Tasks:").strip()
             # extract the generated plan from the answer
-            self.plan = self.extract_text(response, "BEGIN", "END")
+            self.plan = self.extract_text(response, "Output Tasks:", "Output Instructions:").strip()
             # extract the generated instructions from the answer
-            self.instructions = self.extract_text(response, "START", "FINISH")
-            print('################### PLAN ##############\n', self.plan)
-
-            self.save_response(self.plan, self.dataset_path + '_general_plan.txt', mode='a')
-
+            self.instructions = self.extract_text(response, "Output Instructions:", "FINISH").strip()
         except ValueError as e:
             print(f"An error occurred: {e}")
-
-
-'''akjsdñflkjasdñflkjañsdflkj asdf
-'''

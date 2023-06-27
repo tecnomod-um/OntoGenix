@@ -26,5 +26,5 @@ Here's how I'd like you to structure your output:
             <Generate the RML content here.>
         FINISH
 
-Keep in mind that it's crucial to write 'FINISH' at the end of the RML Mapping output.
+Keep in mind that it's crucial to write 'START' and 'FINISH' around the RML Mapping output.
 

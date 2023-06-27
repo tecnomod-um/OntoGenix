@@ -1,49 +1,50 @@
-Hello, ChatGPT. As a competent ontology engineer, I require your expertise in developing a strategy to construct an ontology derived from a provided JSON data table. Here are the necessary inputs:
+Hello, ChatGPT. Given your proficiency as an ontology engineer, I seek your insights in developing a methodology to construct an ontology derived from a provided JSON data table and an input task. Here are the necessary inputs:
 
-    Input Task Description:
-    {input_task}
+Input Task Description:
+{input_task}
 
-    Input Related data in json format:
-    {json_data}
+Input Related data in JSON format:
+{json_data}
 
-I ask you to generate the following outputs:
+I require you to generate the following outputs:
 
-    Output Memory:
-    Concisely explain the reasoning behind the steps you've taken to develop this strategy, factoring in both the task description and JSON data. Please restrict this summary to a maximum of 20 sentences. Additionally, summarize the CSV data and the logic applied in the construction of the ontology, within a range of 10 to 20 sentences.
+Output Memory:
+In an academic tone, elucidate the reasoning underpinning the steps you've adopted in formulating this strategy, considering both the task description and JSON data. Restrict this summary to a maximum of 20 sentences. Further, provide a summary of the JSON data and the logic applied in the construction of the ontology, within a range of 10 to 20 sentences.
 
-    Output Tasks:
-    Craft a sequence of tasks that outline the steps required to create the ontology from the JSON data. These should include:
-    BEGIN
-        - task_1:
-            step_name: Identification of main entities
-            step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
-        - task_2:
-            step_name: Determination of entity properties
-            step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
-        - task_3:
-            step_name: Definition of classes and properties in the ontology
-            step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
-        - task_4:
-            step_name: Establishment of constraints and relationships
-            step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
-        - task_5:
-            step_name: Inclusion of metadata and annotations
-            step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
-        - task_6:
-            step_name: Specification of a base prefix
-            step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
-        - task_7:
-            step_name: Definition of annotation properties
-            step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
-    END
-    Propose any additional tasks you deem necessary for the successful accomplishment of this project, and provide potential challenges along with proposed solutions for these.
+Outline a sequence of tasks that delineate the steps necessary for constructing the ontology from the JSON data. The tasks must be defined with the following format:
 
-    Output Instructions:
-    Construct instructions for the next steps in the strategy, focusing on potential continuations of the previous tasks. The format should be as follows:
-    START
-        Instruction 1: <Provide an instruction for the next task in the plan, offering an alternative continuation based on the updated plan.>
-        Instruction 2: <Provide a second instruction for the next task in the plan, suggesting a different alternative continuation.>
-        Instruction 3: <Provide a third instruction for the next task in the plan, offering yet another possible direction.>
-    FINISH
+Output Tasks:
+    task_1:
+    step_name: Identification of principal entities
+    step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
+    task_2:
+        step_name: Identification of entity properties
+        step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
+    task_3:
+        step_name: Definition of classes and properties within the ontology
+        step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
+    task_4:
+        step_name: Establishment of constraints and interrelations
+        step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
+    task_5:
+        step_name: Inclusion of relevant metadata and annotations
+        step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
+    task_6:
+        step_name: Specification of a foundational prefix
+        step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
+    task_7:
+        step_name: Definition of annotation properties
+        step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
 
-Ensure to conclude the Output Tasks with 'END' and the Output Instructions with 'FINISH'. Remember, the objective is to generate an actionable strategy, not to solve the task or generate code.
+Suggest any additional tasks that you perceive as critical for the successful completion of this project, and articulate potential challenges along with recommended solutions.
+
+Formulate extrictly three instructions for the forthcoming steps in the strategy, focusing on potential continuations of the previous tasks. The format should be as follows:
+
+Output Instructions:
+Instruction 1: <Provide an instruction for the next task in the plan, offering an alternative continuation based on the evolved plan.>
+Instruction 2: <Provide a second instruction for the next task in the plan, suggesting a different alternative route.>
+Instruction 3: <Provide a third instruction for the next task in the plan, presenting yet another feasible direction.>
+
+FINISH
+
+Remember that the goal is to formulate an actionable strategy, not to solve the task or generate code. Ensure that you write "FINISH" at the end of your writting.
