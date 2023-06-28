@@ -1,83 +1,50 @@
-"""
-I need you to help me write a plan to generate an ontology given a json data table.
-You will be feed with the task description to generate the plan and a dataset in JSON format.
+Hello, ChatGPT. Given your proficiency as an ontology engineer, I seek your insights in developing a methodology to construct an ontology derived from a provided JSON data table and an input task. Here are the necessary inputs:
 
-I need you to write:
+Input Task Description:
+{input_task}
 
-    1. Output Memory: A brief summary of the csv data provided and the reasoning steps followed to generate a plan based
-    on the input task description and the provided data in JSON format. You should only store key information.
-    The summary should never exceed 20 sentences!
+Input Related data in JSON format:
+{json_data}
 
-    2. Output Tasks: The generated plan must follow the input instructions and be strict to the output defined format.
+I require you to generate the following outputs:
 
-    3. Output Instructions:  Instructions for the next task in the plan to be followed (after what you have already planned).
-    You should output 3 different instructions, each is a possible interesting continuation of the plan.
-    Each output instruction should contain 1 sentence.
+Output Memory:
+In an academic tone, elucidate the reasoning underpinning the steps you've adopted in formulating this strategy, considering both the task description and JSON data. Restrict this summary to a maximum of 20 sentences. Further, provide a summary of the JSON data and the logic applied in the construction of the ontology, within a range of 10 to 20 sentences.
 
-Here are the inputs:
+Outline a sequence of tasks that delineate the steps necessary for constructing the ontology from the JSON data. The tasks must be defined with the following format:
 
-    Input Task Description:
-    {input_task}
+Output Tasks:
+    task_1:
+    step_name: Identification of principal entities
+    step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
+    task_2:
+        step_name: Identification of entity properties
+        step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
+    task_3:
+        step_name: Definition of classes and properties within the ontology
+        step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
+    task_4:
+        step_name: Establishment of constraints and interrelations
+        step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
+    task_5:
+        step_name: Inclusion of relevant metadata and annotations
+        step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
+    task_6:
+        step_name: Specification of a foundational prefix
+        step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
+    task_7:
+        step_name: Definition of annotation properties
+        step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
 
-    Input Related data in json format:
-    {json_data}
+Suggest any additional tasks that you perceive as critical for the successful completion of this project, and articulate potential challenges along with recommended solutions.
 
-Now start writing, organize your output by strictly following the output format as below:
-    Output Memory:
-    Rational: <string that explain the reasoning steps followed>;
-    Updated Memory: <string that briefly summarizes the csv data and the reasoning steps that guided the generation of
-                    the ontology>, around 10 to 20 sentences
+Formulate extrictly three instructions for the forthcoming steps in the strategy, focusing on potential continuations of the previous tasks. The format should be as follows:
 
-    Output Tasks:
-        BEGIN
-            task_1:
-                step_name: Identification of the main entities.
-                step_description: The first step is to identify the main entities in the data.
-            task_2:
-                step_name: Identification of the properties of the entities.
-                step_description: Next, the author would identify the properties of each entity. For example, a Product
-                                  could have properties such as ProductName, Brand, Image_Url, Category, SubCategory,
-                                  and Absolute_Url. An Offer could have properties such as Price, DiscountPrice,
-                                  and Quantity.
-            task_3:
-                step_name: Definition of classes and properties in the ontology.
-                step_description: Once the entities and their properties have been identified, the author would define
-                                  these classes and properties in the ontology. This would involve the creation of URIs
-                                  for each class and property, and the definition of the relationships between them.
-            task_4:
-                step_name: Definition of constraints and relationships between properties.
-                step_description: Next, the author would define any special constraints or relationships between
-                                  properties. For example, we could have a price property that is a
-                                  sub-property of owl:topDataProperty and is disjoint with discount_price, meaning
-                                  that a product cannot have both a price and a discount_price.
-            task_5:
-                step_name: Inclusion of metadata and annotations.
-                step_description: Finally, the author could include metadata and annotations in the ontology, such as
-                                  creation date, creator, and comments on properties. This can help others understand
-                                  and use the ontology.
-            task_6:
-                step_name: Base prefix.
-                step_description: Use as base prefix -> https://vocab.um.es#.
-            task_7:
-                step_name: Annotation properties.
-                step_description: Define the annotation properties http://purl.org/dc/elements/1.1/creator and
-                                  http://purl.org/dc/elements/1.1/date.
-        END
+Output Instructions:
+Instruction 1: <Provide an instruction for the next task in the plan, offering an alternative continuation based on the evolved plan.>
+Instruction 2: <Provide a second instruction for the next task in the plan, suggesting a different alternative route.>
+Instruction 3: <Provide a third instruction for the next task in the plan, presenting yet another feasible direction.>
 
-    Output Instructions:
-        START
-            Instruction 1: <content for instruction 1>, do not write more than 1 sentence.
-            Instruction 2: <content for instruction 2>, do not write more than 1 sentence.
-            Instruction 3: <content for instruction 3>, do not write more than 1 sentence.
-        FINISH
+FINISH
 
-Very important:
-The updated memory should only store key information.
-Write like a powerful task coordinator that provides a procedure for the user’s task
-and do not move too fast when writing the output instructions for the next plan.
-Do not generate code.
-Do not solve the task.
-Do not forget to write END at the end of the Output Tasks.
-Do not forget to write FINISH at the end of the Output Instructions.
-"""
-
+Remember that the goal is to formulate an actionable strategy, not to solve the task or generate code. Ensure that you write "FINISH" at the end of your writting.

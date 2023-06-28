@@ -41,6 +41,10 @@ planner.interaction(
     json_data=json_data
 )
 
+planner.interaction(
+    instructions='''include as fundational prefix https://vocab.um.es#, include this in the task_6 explicitly'''
+)
+
 ############ this section is for a closed loop interaction with the ontology builder ####################
 # planner.interaction(
 #     instructions='some instructions that comes from the ontology builder during the analysis of human

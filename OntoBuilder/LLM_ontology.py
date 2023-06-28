@@ -49,11 +49,10 @@ class LlmOntology(AbstractLlm):
             response = self.get_api_response(prompt)
 
             response, _ = self.autocompletion(previous_input=prompt, response=response)
-            print('############ analysis output ########################\n', response)
 
             self.save_response(response, self.dataset_path + '_debugging_GPT_ANALYSIS.txt', mode='a')
 
-            insights = self.extract_text(response, "Insights:", "REVISED RDF/XML ONTOLOGY:")
+            insights = self.extract_text(response, "IMPROVEMENT STRATEGY:", "REVISED RDF/XML ONTOLOGY:")
             owl_codeblock = self.extract_text(response, "START", "FINISH")
             self.analysis.append(owl_codeblock)
             return insights
@@ -69,7 +68,6 @@ class LlmOntology(AbstractLlm):
                 for i in range(len(self.analysis))])
 
             formatted_prompt = self.ontology_synthesis_prompt.format(analysis_outputs=analysis_str)
-            print('################### formatted prompt ####################3\n', formatted_prompt)
             response = self.get_api_response(formatted_prompt)
 
             self.save_response(response, self.dataset_path + '_debugging_GPT_SYNTHESIS.txt', mode='w')
@@ -89,7 +87,6 @@ class LlmOntology(AbstractLlm):
             print('Autocompletion ITERATION: ', cont)
             try:
                 owl_codeblock = self.extract_text(response, "START", "FINISH")
-                print('################# OWL CODE ####################\n', owl_codeblock)
                 done = True
             except:
                 try:
@@ -98,7 +95,6 @@ class LlmOntology(AbstractLlm):
                         response=response
                     )
                     response = self.get_api_response(prompt)
-                    print('######## OUTPUT ############\n', response)
                 except:
                     print('ITERATION: ', cont)
                 finally:
