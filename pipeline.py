@@ -1,8 +1,8 @@
 from tools import csv2dataset, dataframe2prettyjson, plot_mermaid, extract_text
 
 base_path = './datasets/'
-dataset_folder = 'WalmartProductDetails'
-dataset_file = 'walmart_com-ecommerce_product_details__20190311_20191001_sample'
+dataset_folder = 'eCommerce'
+dataset_file = 'data'
 file = base_path + dataset_folder + '/' + dataset_file + '.csv'
 
 # get a dataset subsample from a csv file
