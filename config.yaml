@@ -1,4 +1,4 @@
 OntoGenixConfig:
     base_path : "./datasets/"
-    dataset_folder : "CustomerComplaint"
-    dataset_file : "complaints"
+    dataset_folder : "GoodRelations_V1"
+    dataset_file : "v1"

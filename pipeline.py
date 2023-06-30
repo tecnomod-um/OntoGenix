@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from tools import csv2dataset, dataframe2prettyjson, plot_mermaid, extract_text
 import yaml
-import io
 
 with open("config.yaml", 'r') as stream:
     data_loaded = yaml.safe_load(stream)
