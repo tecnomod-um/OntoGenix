@@ -1,7 +1,8 @@
 from LLM_base.LlmBase import AbstractLlm
+import os
+import numpy as np
 
-
-class LlmSemantic(AbstractLlm):
+class LlmSemantico(AbstractLlm):
 
     def __init__(self, metadata: dict):
         super().__init__(metadata)
@@ -29,4 +30,30 @@ class LlmSemantic(AbstractLlm):
 
         except ValueError as e:
             print(f"An error occurred while extracting text: {e}")
+
+    def chunksTransform(self, directory_path):
+        # List all files in the directory
+        files = os.listdir(directory_path)
+        print(files)
+
+        dictionaries = dict()
+
+        # Read each file
+        for it, file in enumerate(files):  # el chunk_32 da fallos porque salen 4 diccionarios
+            print('iteration: ', it, ' of ', len(files))
+            # Construct full file path
+            file_path = os.path.join(directory_path, file)
+
+            # Open each file and read its content
+            if os.path.isfile(file_path):  # Check if it's a file, not a directory
+                with open(file_path, 'r') as f:
+                    chunk = f.read()
+
+                self.interact(chunk)
+
+                dictionaries.update(self.semantic_descriptions)
+
+        np.save(directory_path + 'dictionaries.npy', dictionaries, allow_pickle=True)
+        sentences = list(dictionaries.keys())
+        np.save(directory_path + 'sentences.npy', sentences)
 

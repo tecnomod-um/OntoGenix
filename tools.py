@@ -1,5 +1,27 @@
 from typing import Any, Dict
 
+import os
+from rdflib import Graph, URIRef
+
+def split_rdf(input_file, output_folder, chunk_size=10):
+    g = Graph()
+    g.parse(input_file, format="xml")
+
+    subjects = list(set(g.subjects()))
+    chunks = [subjects[x:x+chunk_size] for x in range(0, len(subjects), chunk_size)]
+
+    for i, chunk in enumerate(chunks, 1):
+        chunk_g = Graph()
+        for subject in chunk:
+            for p, o in g.predicate_objects(URIRef(subject)):
+                chunk_g.add((URIRef(subject), p, o))
+        chunk_file = os.path.join(output_folder, f'chunk_{i}.rdf')
+        chunk_g.serialize(destination=chunk_file, format='xml')
+
+def plot_word_embeddings(result, labels, color='b'):
+    plt.scatter(result[:, 0], result[:, 1], color=color)
+    for i, node in enumerate(labels):
+        plt.annotate(node, (result[i, 0], result[i, 1]))
 
 def extract_text(text: str, start_marker: str, end_marker: str) -> str:
     """
