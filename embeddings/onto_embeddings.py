@@ -14,14 +14,14 @@ directory_path = './datasets/GoodRelations_V1/chunked/'
 
 from SemanticoAI.LLM_semantico import LlmSemantico
 
-semantico_metadata = {
+semanticoAI_metadata = {
     'instructions': './SemanticoAI/instructions.prompt',
     'dataset': base_path + dataset_folder + '/' + dataset_file,
     'role': 'As an expert ontology engineer, SemanticoAI, your task is to analyze an ontology written in rdf/xml syntax.'
 }
-semantico = LlmSemantico(semantico_metadata)
+semanticoAI = LlmSemantico(semanticoAI_metadata)
 
-semantico.chunksTransform(directory_path)
+semanticoAI.chunksTransform(directory_path)
 
 
 from sentence_transformers import SentenceTransformer

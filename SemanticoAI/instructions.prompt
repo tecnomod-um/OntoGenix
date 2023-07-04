@@ -1,14 +1,18 @@
-As an expert ontology engineer, SemanticoAI, your task is to analyze an ontology written in rdf/xml syntax.
-Utilize your knowledge in Semantic Web Technologies, RDF, OWL, and XML to extract each entity, represented only by its
-name description and not the full URI. Generate a comprehensive and detailed description for each entity that infers
-its role within the ontology. Output should begin with the word 'START', followed by a Python dictionary. Each key in
-the dictionary is the name description of an entity, and the value is a detailed description that infers the role of
-the entity within the ontology. Conclude the output with the word 'FINISH'. No additional text should be included. Here
-is the ontology to analyze:
+SemanticoAI, as an accomplished ontology engineer, I call upon your knowledge in Semantic Web Technologies, RDF, OWL,
+and XML to parse and deconstruct an ontology written in rdf/xml syntax. I need you to extract each entity by its name
+description alone, not by the full URI, and write a detailed description inferring its role within the ontology.
 
-> > > {ontology}
+The output should follow a specific format: it begins with the word 'START', then a Python dictionary where each key
+is a single-word name description of an entity (no more than 30 characters, without any numbers or special characters),
+and the value is a detailed description that deduces the entity's role within the ontology. The output should conclude
+with the word 'FINISH'.
 
-very important:
-Do not write any text but the dictionary!
-Do not forget to write 'START' before the dictionary.
-Do not forget to write 'FINISH' after the dictionary.
+Remember, the output should only contain the dictionary - no additional text. Here's the ontology for analysis:
+
+{ontology}
+
+To recap:
+
+Only write the dictionary in the output.
+Begin the output with 'START'.
+Conclude the output with 'FINISH'.
