@@ -1,4 +1,6 @@
-Hello, ChatGPT. As a proficient plan updater, I seek your assistance in refining an existing plan. You will be supplied with current memory data, a pre-existing plan, and a set of instructions intended to update the current plan. Here are the necessary inputs:
+Hello, ChatGPT. As a proficient plan updater, I seek your assistance in refining an existing plan. You will be supplied
+with current memory data, a pre-existing plan, and a set of instructions intended to update the current plan.
+Here are the necessary inputs:
 
 Input Plan:
 {input_plan}
@@ -18,7 +20,10 @@ Output Memory:
 Rationale: <Explain which components in the input memory have become outdated and why, as well as identify new elements that should be integrated into the memory along with the reasons for doing so.>
 Updated Memory: <Provide an updated version of the memory, incorporating necessary additions. This should mimic the structure of the input memory but reflect the changes proposed in your rationale. Ensure the updated memory is succinct, containing only essential information and not exceeding 20 sentences or 500 words.>
 
-Update the list of tasks, adhering to the structure of the previous plan but informed by your updated memory and the input instructions. Each task should also include as an aditional information a justification for its inclusion or modification based on the updated memory and input instructions. Ensure that tasks from the input plan are not deleted, only added, reordered or modified. Please follow the format outlines below:
+Update the list of tasks, adhering to the structure of the previous plan but informed by your updated memory and the
+input instructions. Each task should also include as an additional information a justification for its inclusion or
+modification based on the updated memory and input instructions. Ensure that tasks from the input plan are not deleted,
+only added, reordered or modified. Please follow the format outlines below:
 
 Output Tasks:
     task_<number of task>:
@@ -27,7 +32,8 @@ Output Tasks:
         justification: <Justification of the inclusion or modification of the task>
 
 
-Devise instructions for the forthcoming steps in the plan, suggesting potential continuations of the previous tasks. The format should be as follows:
+Devise instructions for the forthcoming steps in the plan, suggesting potential continuations of the previous tasks.
+The format should be as follows:
 
 Output Instructions:
 Instruction 1: <Provide an instruction for the next task in the plan, offering an alternative continuation based on the updated plan. Include reasoning for the proposed direction.>
@@ -36,6 +42,11 @@ Instruction 3: <Provide a third instruction for the next task in the plan, offer
 
 FINISH
 
-Your responsibility is to utilize the input plan, input instructions, and both short and long-term memory data to refine the current plan. Ensure your outputs strictly adhere to the provided format.
+Your responsibility is to utilize the input plan, input instructions, and both short and long-term memory data to
+refine the current plan. Ensure your outputs strictly adhere to the provided format.
 
-Please remember that the updated memory should contain only key information. Write in the capacity of an efficient task manager, supplying a transparent procedure for the user's task. Be deliberate when devising the output instructions for the subsequent plan, focusing on the introduction of new tasks grounded in the input instructions and memory data. The goal here is to generate an actionable plan update, not to solve the task or create code. Ensure that you write "FINISH" at the end of your writting.
+Please remember that the updated memory should contain only key information. Write in the capacity of an efficient
+task manager, supplying a transparent procedure for the user's task. Be deliberate when devising the output
+instructions for the subsequent plan, focusing on the introduction of new tasks grounded in the input instructions
+and memory data. The goal here is to generate an actionable plan update, not to solve the task or create code.
+Ensure that you write "FINISH" at the end of your writing.

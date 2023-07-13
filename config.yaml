@@ -1,4 +1,4 @@
 OntoGenixConfig:
     base_path : "./datasets/"
-    dataset_folder : "AmazonRating"
-    dataset_file : "ratings_Beauty_ontology_LLM"
+    dataset_folder : "BigBasketProducts"
+    dataset_file : "BigBasket"

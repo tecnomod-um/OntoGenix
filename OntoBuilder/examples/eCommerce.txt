@@ -1,251 +1,543 @@
-
-@prefix : <https://vocab.um.es#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://vocab.um.es> .
-
-<https://vocab.um.es> rdf:type owl:Ontology .
-
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.org/dc/elements/1.1/creator
-<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://vocab.um.es#"
+     xml:base="https://vocab.um.es"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:purl="https://purl.org/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vocab="https://vocab.um.es/"
+     xmlns:schema="https://schema.org/">
+    <owl:Ontology rdf:about="https://vocab.um.es"/>
 
 
-###  http://purl.org/dc/elements/1.1/date
-<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
 
-#################################################################
-#    Object Properties
-#################################################################
-
-###  https://purl.org/ThasSalesArticle
-<https://purl.org/ThasSalesArticle> rdf:type owl:ObjectProperty ;
-                                    rdfs:domain <https://schema.org/Invoice> ;
-                                    rdfs:range <https://purl.org/ontologies/MT/SalesArticle> ;
-                                    rdfs:label "Has sales article" .
 
 
-###  https://purl.org/TsalesCountry
-<https://purl.org/TsalesCountry> rdf:type owl:ObjectProperty .
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
 
 
-###  https://schema.org/PriceSpecification
-<https://schema.org/PriceSpecification> rdf:type owl:ObjectProperty ;
-                                        rdfs:domain <https://schema.org/Invoice> ;
-                                        rdfs:range <https://schema.org/UnitPriceSpecification> .
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
 
 
-###  https://schema.org/priceType
-<https://schema.org/priceType> rdf:type owl:ObjectProperty ;
-                               rdfs:domain <https://schema.org/UnitPriceSpecification> ;
-                               rdfs:range <https://vocab.um.es/PriceType> .
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
 
-#################################################################
-#    Data properties
-#################################################################
-
-###  https://purl.org/Tcomment
-<https://purl.org/Tcomment> rdf:type owl:DatatypeProperty ;
-                            rdfs:range xsd:string ;
-                            rdfs:comment "Description"@en .
 
 
-###  https://purl.org/Tidentifier
-<https://purl.org/Tidentifier> rdf:type owl:DatatypeProperty ;
-                               owl:equivalentProperty <https://schema.org/identifier> ;
-                               rdfs:domain <https://schema.org/Invoice> ;
-                               rdfs:range [ rdf:type rdfs:Datatype ;
-                                            owl:onDatatype xsd:int ;
-                                            owl:withRestrictions ( [ xsd:minInclusive "500000"^^xsd:int
-                                                                   ]
-                                                                   [ xsd:maxInclusive "600000"^^xsd:int
-                                                                   ]
-                                                                 )
-                                          ] ;
-                               rdfs:label "identifier" .
+    <!-- https://purl.org/ThasSalesArticle -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/ThasSalesArticle">
+        <rdfs:domain rdf:resource="https://schema.org/Invoice"/>
+        <rdfs:range rdf:resource="https://purl.org/ontologies/MT/SalesArticle"/>
+        <rdfs:label>Has sales article</rdfs:label>
+    </owl:ObjectProperty>
 
 
-###  https://purl.org/ontologies/MT/GTIN_EAN
-<https://purl.org/ontologies/MT/GTIN_EAN> rdf:type owl:DatatypeProperty ;
-                                          owl:equivalentProperty <https://schema.org/gtin> ;
-                                          rdfs:domain <https://purl.org/ontologies/MT/SalesArticle> ;
-                                          rdfs:range xsd:string .
+
+    <!-- https://purl.org/TsalesCountry -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/TsalesCountry"/>
 
 
-###  https://schema.org/gtin
-<https://schema.org/gtin> rdf:type owl:DatatypeProperty ;
-                          rdfs:label "GTIN" .
+
+    <!-- https://schema.org/PriceSpecification -->
+
+    <owl:ObjectProperty rdf:about="https://schema.org/PriceSpecification">
+        <rdfs:domain rdf:resource="https://purl.org/ontologies/MT/SalesArticle"/>
+        <rdfs:range rdf:resource="https://schema.org/UnitPriceSpecification"/>
+    </owl:ObjectProperty>
 
 
-###  https://schema.org/identifier
-<https://schema.org/identifier> rdf:type owl:DatatypeProperty .
+
+    <!-- https://schema.org/priceType -->
+
+    <owl:ObjectProperty rdf:about="https://schema.org/priceType">
+        <rdfs:domain rdf:resource="https://schema.org/UnitPriceSpecification"/>
+        <rdfs:range rdf:resource="https://vocab.um.es/PriceType"/>
+    </owl:ObjectProperty>
 
 
-###  https://schema.org/price
-<https://schema.org/price> rdf:type owl:DatatypeProperty ;
-                           rdfs:domain <https://schema.org/UnitPriceSpecification> ;
-                           rdfs:range xsd:double .
+
+    <!-- https://vocab.um.es#hasCountry -->
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasCountry">
+        <rdfs:range rdf:resource="https://schema.org/Country"/>
+        <rdfs:label xml:lang="en">country</rdfs:label>
+    </owl:ObjectProperty>
 
 
-###  https://schema.org/priceCurrency
-<https://schema.org/priceCurrency> rdf:type owl:DatatypeProperty ;
-                                   rdfs:domain <https://schema.org/UnitPriceSpecification> ;
-                                   rdfs:range [ rdf:type rdfs:Datatype ;
-                                                owl:oneOf [ rdf:type rdf:List ;
-                                                            rdf:first "GBP" ;
-                                                            rdf:rest rdf:nil
-                                                          ]
-                                              ] .
+
+    <!-- https://vocab.um.es#hasCustomer -->
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasCustomer">
+        <rdfs:range rdf:resource="https://vocab.um.es#Customer"/>
+        <rdfs:label xml:lang="en">has customer</rdfs:label>
+    </owl:ObjectProperty>
 
 
-###  https://vocab.um.es/customer_id
-<https://vocab.um.es/customer_id> rdf:type owl:DatatypeProperty ;
-                                  rdfs:domain <https://schema.org/Invoice> ;
-                                  rdfs:range xsd:string ;
-                                  <http://purl.org/dc/elements/1.1/creator> "Mikel Egaña Aranguren (https://orcid.org/0000-0001-8081-1839)"^^xsd:string ;
-                                  <http://purl.org/dc/elements/1.1/date> "2023-06-09T13:13:05Z"^^xsd:dateTime .
+
+    <!-- https://vocab.um.es#hasProduct -->
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasProduct">
+        <rdfs:range rdf:resource="https://schema.org/Product"/>
+        <rdfs:label xml:lang="en">has product</rdfs:label>
+    </owl:ObjectProperty>
 
 
-###  https://vocab.um.es/date
-<https://vocab.um.es/date> rdf:type owl:DatatypeProperty ;
-                           rdfs:domain <https://schema.org/Invoice> ;
-                           rdfs:range xsd:dateTime ;
-                           <http://purl.org/dc/elements/1.1/creator> "Mikel Egaña Aranguren (https://orcid.org/0000-0001-8081-1839)"^^xsd:string ;
-                           <http://purl.org/dc/elements/1.1/date> "2023-06-09T09:48:23Z"^^xsd:dateTime .
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
 
-###  https://vocab.um.es/quantity
-<https://vocab.um.es/quantity> rdf:type owl:DatatypeProperty ;
-                               rdfs:domain <https://schema.org/Invoice> ;
-                               rdfs:range xsd:integer ;
-                               <http://purl.org/dc/elements/1.1/creator> "Mikel Egaña Aranguren (https://orcid.org/0000-0001-8081-1839)"^^xsd:string ;
-                               <http://purl.org/dc/elements/1.1/date> "2023-06-09T09:44:10Z"^^xsd:dateTime .
 
 
-#################################################################
-#    Classes
-#################################################################
+    <!-- https://purl.org/Tcomment -->
 
-###  https://purl.org/ontologies/MT/SalesArticle
-<https://purl.org/ontologies/MT/SalesArticle> rdf:type owl:Class ;
-                                              owl:equivalentClass <https://schema.org/Product> ;
-                                              rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <https://purl.org/ontologies/MT/GTIN_EAN> ;
-                                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                owl:onDataRange xsd:string
-                                                              ] .
+    <owl:DatatypeProperty rdf:about="https://purl.org/Tcomment">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Description</rdfs:comment>
+    </owl:DatatypeProperty>
 
 
-###  https://schema.org/Country
-<https://schema.org/Country> rdf:type owl:Class ;
-                             owl:equivalentClass [ rdf:type owl:Class ;
-                                                   owl:oneOf ( <https://vocab.um.es/UnitedKingdom>
-                                                             )
-                                                 ] .
+
+    <!-- https://purl.org/Tidentifier -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/Tidentifier">
+        <owl:equivalentProperty rdf:resource="https://schema.org/identifier"/>
+        <rdfs:domain rdf:resource="https://schema.org/Invoice"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">500000</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">600000</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label>identifier</rdfs:label>
+    </owl:DatatypeProperty>
 
 
-###  https://schema.org/Invoice
-<https://schema.org/Invoice> rdf:type owl:Class ;
-                             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                               owl:onProperty <https://purl.org/ThasSalesArticle> ;
-                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                               owl:onClass <https://purl.org/ontologies/MT/SalesArticle>
-                                             ] ,
-                                             [ rdf:type owl:Restriction ;
-                                               owl:onProperty <https://schema.org/PriceSpecification> ;
-                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                               owl:onClass <https://schema.org/UnitPriceSpecification>
-                                             ] ,
-                                             [ rdf:type owl:Restriction ;
-                                               owl:onProperty <https://purl.org/Tcomment> ;
-                                               owl:someValuesFrom xsd:string
-                                             ] ,
-                                             [ rdf:type owl:Restriction ;
-                                               owl:onProperty <https://vocab.um.es/customer_id> ;
-                                               owl:someValuesFrom xsd:string
-                                             ] ,
-                                             [ rdf:type owl:Restriction ;
-                                               owl:onProperty <https://vocab.um.es/date> ;
-                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                               owl:onDataRange xsd:string
-                                             ] ,
-                                             [ rdf:type owl:Restriction ;
-                                               owl:onProperty <https://vocab.um.es/quantity> ;
-                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                               owl:onDataRange xsd:integer
-                                             ] ;
-                             rdfs:label "Invoice"@en .
+
+    <!-- https://purl.org/ontologies/MT/GTIN_EAN -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/ontologies/MT/GTIN_EAN">
+        <owl:equivalentProperty rdf:resource="https://schema.org/gtin"/>
+        <rdfs:domain rdf:resource="https://purl.org/ontologies/MT/SalesArticle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
 
 
-###  https://schema.org/InvoicePrice
-<https://schema.org/InvoicePrice> rdf:type owl:Class ;
-                                  rdfs:subClassOf <https://vocab.um.es/PriceType> .
+
+    <!-- https://schema.org/gtin -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/gtin">
+        <rdfs:label>GTIN</rdfs:label>
+    </owl:DatatypeProperty>
 
 
-###  https://schema.org/Product
-<https://schema.org/Product> rdf:type owl:Class .
+
+    <!-- https://schema.org/identifier -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/identifier"/>
 
 
-###  https://schema.org/UnitPriceSpecification
-<https://schema.org/UnitPriceSpecification> rdf:type owl:Class ;
-                                            rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <https://schema.org/priceType> ;
-                                                              owl:someValuesFrom <https://schema.org/InvoicePrice>
-                                                            ] ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <https://schema.org/price> ;
-                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                              owl:onDataRange xsd:double
-                                                            ] ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <https://schema.org/priceCurrency> ;
-                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                              owl:onDataRange [ rdf:type rdfs:Datatype ;
-                                                                                owl:oneOf [ rdf:type rdf:List ;
-                                                                                            rdf:first "GBP" ;
-                                                                                            rdf:rest rdf:nil
-                                                                                          ]
-                                                                              ]
-                                                            ] .
+
+    <!-- https://schema.org/price -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/price">
+        <rdfs:domain rdf:resource="https://schema.org/UnitPriceSpecification"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
 
 
-###  https://vocab.um.es/PriceType
-<https://vocab.um.es/PriceType> rdf:type owl:Class ;
-                                <http://purl.org/dc/elements/1.1/creator> "Mikel Egaña Aranguren (https://orcid.org/0000-0001-8081-1839)"^^xsd:string ;
-                                <http://purl.org/dc/elements/1.1/date> "2023-06-09T13:10:06Z"^^xsd:dateTime .
+
+    <!-- https://schema.org/priceCurrency -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/priceCurrency">
+        <rdfs:domain rdf:resource="https://schema.org/UnitPriceSpecification"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>GBP</rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
 
 
-#################################################################
-#    Individuals
-#################################################################
 
-###  https://vocab.um.es/UnitedKingdom
-<https://vocab.um.es/UnitedKingdom> rdf:type owl:NamedIndividual ,
-                                             <https://schema.org/Country> ;
-                                    <http://purl.org/dc/elements/1.1/creator> "Mikel Egaña Aranguren (https://orcid.org/0000-0001-8081-1839)"^^xsd:string ;
-                                    <http://purl.org/dc/elements/1.1/date> "2023-06-09T13:15:01Z"^^xsd:dateTime .
+    <!-- https://vocab.um.es#descriptionProduct -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#descriptionProduct">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
 
 
-#################################################################
-#    General axioms
-#################################################################
 
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <https://purl.org/ontologies/MT/SalesArticle>
-                <https://schema.org/Country>
-                <https://schema.org/Invoice>
-                <https://schema.org/UnitPriceSpecification>
-                <https://vocab.um.es/PriceType>
-              )
-] .
+    <!-- https://vocab.um.es/customer_id -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es/customer_id">
+        <rdfs:domain rdf:resource="https://schema.org/Invoice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mikel Egaña Aranguren (https://orcid.org/0000-0001-8081-1839)</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-06-09T13:13:05Z</dc:date>
+    </owl:DatatypeProperty>
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+
+    <!-- https://vocab.um.es/date -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es/date">
+        <rdfs:domain rdf:resource="https://schema.org/Invoice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mikel Egaña Aranguren (https://orcid.org/0000-0001-8081-1839)</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-06-09T09:48:23Z</dc:date>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://vocab.um.es/quantity -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es/quantity">
+        <rdfs:domain rdf:resource="https://purl.org/ontologies/MT/SalesArticle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mikel Egaña Aranguren (https://orcid.org/0000-0001-8081-1839)</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-06-09T09:44:10Z</dc:date>
+    </owl:DatatypeProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://purl.org/ontologies/MT/SalesArticle -->
+
+    <owl:Class rdf:about="https://purl.org/ontologies/MT/SalesArticle">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schema.org/PriceSpecification"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://schema.org/UnitPriceSpecification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasProduct"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://schema.org/Product"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/ontologies/MT/GTIN_EAN"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es/quantity"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">sales article</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://schema.org/Country -->
+
+    <owl:Class rdf:about="https://schema.org/Country">
+        <rdfs:label xml:lang="en">country</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://schema.org/Invoice -->
+
+    <owl:Class rdf:about="https://schema.org/Invoice">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/ThasSalesArticle"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/ontologies/MT/SalesArticle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasCustomer"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://vocab.um.es#Customer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/Tcomment"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es/date"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">invoice</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://schema.org/InvoicePrice -->
+
+    <owl:Class rdf:about="https://schema.org/InvoicePrice">
+        <rdfs:subClassOf rdf:resource="https://vocab.um.es/PriceType"/>
+    </owl:Class>
+
+
+
+    <!-- https://schema.org/Product -->
+
+    <owl:Class rdf:about="https://schema.org/Product">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#descriptionProduct"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">product</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://schema.org/UnitPriceSpecification -->
+
+    <owl:Class rdf:about="https://schema.org/UnitPriceSpecification">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schema.org/priceType"/>
+                <owl:someValuesFrom rdf:resource="https://schema.org/InvoicePrice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schema.org/price"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schema.org/priceCurrency"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:oneOf>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>GBP</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </owl:oneOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+
+    <!-- https://vocab.um.es#Customer -->
+
+    <owl:Class rdf:about="https://vocab.um.es#Customer">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasCountry"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://schema.org/Country"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">customer</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://vocab.um.es/PriceType -->
+
+    <owl:Class rdf:about="https://vocab.um.es/PriceType">
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mikel Egaña Aranguren (https://orcid.org/0000-0001-8081-1839)</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-06-09T13:10:06Z</dc:date>
+    </owl:Class>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://vocab.um.es#Australia -->
+
+    <owl:NamedIndividual rdf:about="https://vocab.um.es#Australia">
+        <rdf:type rdf:resource="https://schema.org/Country"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://vocab.um.es#12386 -->
+
+    <owl:NamedIndividual rdf:about="https://vocab.um.es#12386">
+        <rdf:type rdf:resource="https://vocab.um.es#Customer"/>
+        <hasCountry rdf:resource="https://vocab.um.es#Australia"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://vocab.um.es#22567 -->
+
+    <owl:NamedIndividual rdf:about="https://vocab.um.es#22567">
+        <rdf:type rdf:resource="https://schema.org/Product"/>
+        <descriptionProduct rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20 DOLLY PEGS RETROSPOT</descriptionProduct>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://vocab.um.es#22915 -->
+
+    <owl:NamedIndividual rdf:about="https://vocab.um.es#22915">
+        <rdf:type rdf:resource="https://schema.org/Product"/>
+        <descriptionProduct rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASSORTED BOTTLE TOP  MAGNETS</descriptionProduct>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://vocab.um.es#537676 -->
+
+    <owl:NamedIndividual rdf:about="https://vocab.um.es#537676">
+        <rdf:type rdf:resource="https://schema.org/Invoice"/>
+        <purl:ThasSalesArticle rdf:resource="https://vocab.um.es#537676_22567"/>
+        <purl:ThasSalesArticle rdf:resource="https://vocab.um.es#537676_22915"/>
+        <hasCustomer rdf:resource="https://vocab.um.es#12386"/>
+        <vocab:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12/8/2010 9:53</vocab:date>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://vocab.um.es#537676_22567 -->
+
+    <owl:NamedIndividual rdf:about="https://vocab.um.es#537676_22567">
+        <rdf:type rdf:resource="https://purl.org/ontologies/MT/SalesArticle"/>
+        <schema:PriceSpecification rdf:resource="https://vocab.um.es#537676_22567_24"/>
+        <hasProduct rdf:resource="https://vocab.um.es#22567"/>
+        <vocab:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</vocab:quantity>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://vocab.um.es#537676_22567_24 -->
+
+    <owl:NamedIndividual rdf:about="https://vocab.um.es#537676_22567_24">
+        <rdf:type rdf:resource="https://schema.org/UnitPriceSpecification"/>
+        <schema:price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.25</schema:price>
+        <schema:priceCurrency rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GBP</schema:priceCurrency>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://vocab.um.es#537676_22915 -->
+
+    <owl:NamedIndividual rdf:about="https://vocab.um.es#537676_22915">
+        <rdf:type rdf:resource="https://purl.org/ontologies/MT/SalesArticle"/>
+        <schema:PriceSpecification rdf:resource="https://vocab.um.es#537676_22915_120"/>
+        <hasProduct rdf:resource="https://vocab.um.es#22915"/>
+        <vocab:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</vocab:quantity>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://vocab.um.es#537676_22915_120 -->
+
+    <owl:NamedIndividual rdf:about="https://vocab.um.es#537676_22915_120">
+        <rdf:type rdf:resource="https://schema.org/UnitPriceSpecification"/>
+        <schema:price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.36</schema:price>
+        <schema:priceCurrency rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GBP</schema:priceCurrency>
+    </owl:NamedIndividual>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://purl.org/ontologies/MT/SalesArticle"/>
+            <rdf:Description rdf:about="https://schema.org/Country"/>
+            <rdf:Description rdf:about="https://schema.org/Invoice"/>
+            <rdf:Description rdf:about="https://schema.org/UnitPriceSpecification"/>
+            <rdf:Description rdf:about="https://vocab.um.es/PriceType"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
