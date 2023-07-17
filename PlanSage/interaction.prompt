@@ -17,20 +17,18 @@ Input Long Term Memory:
 I request the following outputs:
 
 Output Memory:
-Rationale: <Explain which components in the input memory have become outdated and why, as well as identify new elements that should be integrated into the memory along with the reasons for doing so.>
-Updated Memory: <Provide an updated version of the memory, incorporating necessary additions. This should mimic the structure of the input memory but reflect the changes proposed in your rationale. Ensure the updated memory is succinct, containing only essential information and not exceeding 20 sentences or 500 words.>
+Rationale: <Explain which components in the input memory have become outdated and why, as well as identify new elements
+that should be integrated into the memory along with the reasons for doing so.>
+Updated Memory: <Provide an updated version of the memory, incorporating necessary additions. This should mimic the
+structure of the input memory but reflect the changes proposed in your rationale. Ensure the updated memory is succinct,
+containing only essential information and not exceeding 20 sentences or 500 words.>
 
 Update the list of tasks, adhering to the structure of the previous plan but informed by your updated memory and the
-input instructions. Each task should also include as an additional information a justification for its inclusion or
-modification based on the updated memory and input instructions. Ensure that tasks from the input plan are not deleted,
-only added, reordered or modified. Please follow the format outlines below:
+input instructions. Ensure that tasks from the input plan are not deleted, only added, reordered or modified. Please
+follow the format outlines below:
 
 Output Tasks:
-    task_<number of task>:
-        step_name: <name for the task>
-        step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
-        justification: <Justification of the inclusion or modification of the task>
-
+    task_<number of task>: <Description of Task>
 
 Devise instructions for the forthcoming steps in the plan, suggesting potential continuations of the previous tasks.
 The format should be as follows:

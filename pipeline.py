@@ -85,17 +85,9 @@ planner.interaction(
     instructions = '''Add a new task that clearly asks to do not add any type of individuals in the ontology.'''
 )
 planner.interaction(
-    instructions = '''Add a new task with the objective of generating for each entity of the ontology a description of the
-    entity and include as a comment, to generate an alternative representative name for the entity as a label and a set
-    os synonyms for that alternative name as a synonyms field in the entity.'''
+    instructions = '''Add a new task to generate a description field for each entity, an alternative name for each entity, 
+    and a set of five synonyms for each entity.'''
 )
-
-############ this section is for a closed loop interaction with the ontology builder ####################
-# planner.interaction(
-#     instructions='some instructions that comes from the ontology builder during the analysis of human
-#     generated ontologies'
-# )
-# -------------------------------------------------------------------------------------------------------
 
 '''########################################## ONTOLOGY ######################################################'''
 
