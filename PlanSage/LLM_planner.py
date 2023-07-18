@@ -75,7 +75,7 @@ class LlmPlanner(AbstractLlm, ABC):
     def update_memories(self, response: str, first: bool = True):
         try:
             print('update memories, first: ', first)
-            self.save_response(response, self.dataset_path + '_general_plan.txt', mode='a')
+            self.save_response(response, self.dataset_path + '_general_plan.txt', mode='w')
             # extract the generated plan from the answer
             if first:
                 self.short_term_memory = self.extract_text(response, "Output Memory:", "Output Tasks:").strip()

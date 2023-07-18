@@ -99,22 +99,23 @@ def count_tokens(data: Dict[str, Any]) -> int:
 
 
 import re
-import yaml
 
 
-
-def preprocess_yaml(yaml_string: str, parse: str) -> str:
-    # Regular expression to find lines starting with "task_"
-    pattern = re.compile(r'^\s*'+parse, re.MULTILINE)
-    # Dedent these lines
-    return pattern.sub(parse, yaml_string)
-
-
-def text2dict(text: str, parse: str="task_") -> dict:
+def text2dict(text: str) -> dict:
     try:
-        preprocessed_text = preprocess_yaml(text, parse)
-        plan_dict = yaml.safe_load(preprocessed_text)
-        return plan_dict
+        # split the text into tasks
+        tasks = re.split('\n', text.strip())
+        # initialize an empty dictionary
+        task_dict = {}
+        # loop over each task
+        for task in tasks:
+            if 'task_' in task:
+                # split the task into number and description
+                task_split = re.split(': ', task, maxsplit=1)
+                # add to the dictionary
+                task_dict[task_split[0].strip()] = task_split[1].strip()
+
+        return task_dict
 
     except ValueError as e:
         print(f"An error occurred while preprocessing the text: {e}")
