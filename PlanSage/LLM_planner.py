@@ -51,26 +51,28 @@ class LlmPlanner(AbstractLlm, ABC):
         try:
             if input_task and json_data:
                 # Act as first_interaction
-                prompt = self.first_instructions_prompt.format(input_task=input_task, json_data=json_data)
+                self.current_prompt = self.first_instructions_prompt.format(input_task=input_task, json_data=json_data)
                 # Get the response from the LLM_base
-                response = self.get_api_response(prompt)
+                response = self.get_api_response(self.current_prompt)
                 self.update_memories(response)
             elif instructions:
                 # Act as a subsequent interaction
-                prompt = self.interaction_prompt.format(
+                self.current_prompt = self.interaction_prompt.format(
                     input_plan=self.plan,
                     input_instructions=instructions,
                     short_term_memory=self.short_term_memory,
                     long_term_memory=self.long_term_memory
                 )
                 # Get the response from the LLM_base
-                response = self.get_api_response(prompt)
+                response = self.get_api_response(self.current_prompt)
                 self.update_memories(response, first=False)
             else:
                 raise ValueError("Insufficient arguments provided for interaction")
 
         except ValueError as e:
             print(f"An error occurred: {e}")
+        finally:
+            self.last_prompt = self.current_prompt
 
     def update_memories(self, response: str, first: bool = True):
         try:

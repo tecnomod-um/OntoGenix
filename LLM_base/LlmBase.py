@@ -12,6 +12,8 @@ class AbstractLlm(ABC):
         openai.api_key = os.getenv('OPENAI_API_KEY')
 
         self.role = metadata['role']
+        self.last_prompt = None
+        self.current_prompt = None
 
     def get_api_response(self, content: str, temperature=0.1, max_tokens=None, stream=False):
 
@@ -30,6 +32,9 @@ class AbstractLlm(ABC):
         )
 
         return response['choices'][0]['message']['content']
+
+    def regenerate(self):
+        return self.get_api_response(self.last_prompt)
 
     @staticmethod
     def load_string_from_file(file_path):

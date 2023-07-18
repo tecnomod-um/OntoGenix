@@ -14,16 +14,18 @@ class LlmOntoMapper(AbstractLlm):
 
     def interact(self, json_data: str, ontology: str, auto_complete: bool = False):
         try:
-            prompt = self.instructions.format(
+            self.current_prompt = self.instructions.format(
                 json_data=json_data,
                 ontology=ontology
             )
 
-            response = self.get_api_response(prompt)
+            response = self.get_api_response(self.current_prompt)
             self.rml_code_str = self.extract_text(response, "START", "FINISH")
 
             self.save_response(self.rml_code_str, self.dataset_path + '_rml_mapping_LLM.ttl', mode='w')
 
         except ValueError as e:
-            print(f"An error occurred while extracting text: {e}")
+            print(f"An error occurred during interaction: {e}")
+        finally:
+            self.last_prompt = self.current_prompt
 

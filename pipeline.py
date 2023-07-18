@@ -80,6 +80,8 @@ planner.interaction(
     instructions = '''Generate a description field, an alternative name and a set of five synonyms for each entity such 
     as classes, object properties or data properties.'''
 )
+response = planner.regenerate()
+planner.update_memories(response)
 
 from tools import text2dict
 

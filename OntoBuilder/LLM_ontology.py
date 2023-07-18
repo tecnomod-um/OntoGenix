@@ -13,7 +13,6 @@ class LlmOntology(AbstractLlm):
         # path setting to write outputs
         self.dataset_path = metadata['dataset']
         # initialize memories
-        self.last_prompt = None
         self.owl_codeblock = None
         self.insights = None
         self.analysis = []
@@ -21,39 +20,40 @@ class LlmOntology(AbstractLlm):
     def interact(self, json_data: str, instructions: str, ontology: Optional[str]):
         try:
             if json_data and instructions and not ontology:
-                self.last_prompt = self.instructions_prompt.format(
+                self.current_prompt = self.instructions_prompt.format(
                     json_data=json_data,
                     instructions=instructions
                 )
 
             elif json_data and instructions and ontology:
-                self.last_prompt = self.instructions_prompt.format(
+                self.current_prompt = self.instructions_prompt.format(
                     json_data=json_data,
                     instructions=instructions,
                     previous_ontology=ontology
                 )
 
-            response = self.get_api_response(self.last_prompt)
+            response = self.get_api_response(self.current_prompt)
 
-            response, self.owl_codeblock = self.autocompletion(previous_input=self.last_prompt, response=response)
+            response, self.owl_codeblock = self.autocompletion(previous_input=self.current_prompt, response=response)
 
             self.save_response(response, self.dataset_path + '_debugging_GPT_RESPONSE.txt', mode='w')
 
         except ValueError as e:
             print(f"An error occurred while extracting text: {e}")
+        finally:
+            self.last_prompt = self.current_prompt
 
 
     def analyze_segment(self, previous_ontology: str, human_ontology: str, item: int):
         try:
-
-            self.last_prompt = self.entities_analysis_prompt.format(
+            self.current_prompt = self.entities_analysis_prompt.format(
                 previous_ontology=previous_ontology,
                 human_ontology=human_ontology
             )
 
-            response = self.get_api_response(self.last_prompt)
+            response = self.get_api_response(self.current_prompt)
 
-            response, improved_owl_codeblock = self.autocompletion(previous_input=self.last_prompt, response=response)
+            response, improved_owl_codeblock = self.autocompletion(previous_input=self.current_prompt, response=response)
 
             self.save_response(response, self.dataset_path + '_debugging_GPT_SEGMENTED_ANALYSIS_item_' + str(item) + '.txt', mode='w')
 
@@ -62,8 +62,10 @@ class LlmOntology(AbstractLlm):
             return self.insights, improved_owl_codeblock
 
         except ValueError as e:
-            print(f"An error occurred while extracting text: {e}")
+            print(f"An error occurred while analyzing the segment: {e}")
             return None
+        finally:
+            self.last_prompt = self.current_prompt
 
     def autocompletion(self, previous_input: str, response: str, max_iter=5):
         owl_codeblock = None
