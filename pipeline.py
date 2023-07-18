@@ -77,16 +77,12 @@ planner.interaction(
     instructions = '''Add a new task to do not add any type of individuals in the ontology.'''
 )
 planner.interaction(
-    instructions = '''Generate a description field, an alternative name and a set of five synonyms for each entity such 
+    instructions = '''Add a new task to generate a description field, an alternative name and a set of five synonyms for each entity such 
     as classes, object properties or data properties.'''
 )
-response = planner.regenerate()
-planner.update_memories(response)
 
-from tools import text2dict
 
-instructions = text2dict(planner.plan)
-[print(key, instructions[key]) for key in instructions.keys()]
+instructions = planner.stable_plan
 
 '''########################################## ONTOLOGY ######################################################'''
 # instantiate the LLM_base that generates an owl ontology from a json subset data
@@ -106,25 +102,22 @@ ontology_builder = LlmOntology(onto_metadata)
 # GENERATE THE FIRST LLM-ONTOLOGY
 instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [1,2,3]])
 print(instructions_subset)
-ontology_builder.interact(json_data=json_data, instructions=instructions_subset, ontology=None)
+ontology_builder.interact(json_data=json_data, rationale=planner.short_term_memory, instructions=instructions_subset, ontology=None, human_ontology=None)
 
-# REFINEMENT OF THE LLM-ONTOLOGY
-instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [4,5,6]])
+# REFINEMENT OF THE LLM-ONTOLOGY [INSTRUCTION BY INSTRUCTION]
+instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [7,8]])
 print(instructions_subset)
-ontology_builder.interact(json_data=json_data, instructions=instructions_subset, ontology=ontology_builder.owl_codeblock)
+ontology_builder.interact(json_data=json_data, rationale=planner.short_term_memory, instructions=instructions_subset, ontology=ontology_builder.owl_codeblock, human_ontology=None)
 
-instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [7]])
-print(instructions_subset)
-ontology_builder.interact(json_data=json_data, instructions=instructions_subset, ontology=ontology_builder.owl_codeblock)
+# REFINEMENT OF THE LLM-ONTOLOGY [INSTRUCTION BY INSTRUCTION]
+from SemanticoAI.utils import load_chunk_samples
+selected_chunks = ['./datasets/GoodRelations_V1/chunks/chunk_41.rdf']
+examples = load_chunk_samples(selected_chunks)
+human_ontology = examples[0]
+ontology_builder.interact(json_data=None, rationale=None, instructions=None, ontology=ontology_builder.owl_codeblock, human_ontology=human_ontology)
 
-instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [8]])
-print(instructions_subset)
-ontology_builder.interact(json_data=json_data, instructions=instructions_subset, ontology=ontology_builder.owl_codeblock)
 
-instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [9]])
-print(instructions_subset)
-ontology_builder.interact(json_data=json_data, instructions=instructions_subset, ontology=ontology_builder.owl_codeblock)
-
+ontology_builder.regenerate()
 
 
 '''########################################## SEMANTICO-AI ######################################################'''

@@ -1,6 +1,6 @@
 I require your expert assistance to generate an ontology in RDF/XML syntax from a provided JSON data table.
-This task calls for methodical interpretation of the JSON data table and a series of instructions that will
-also provide the specific context for this task. Be sure to draw context from both the JSON data and the instructions,
+This task calls for methodical interpretation of the JSON data table, a rationale of the task and a series of instructions that will
+also provide the specific context for this task. Be sure to draw context from the JSON data, the rationale and the instructions,
 and adhere closely to the instructions.
 
 Your output will comprise two sections:
@@ -15,19 +15,22 @@ ONTOLOGY: Leveraging your expert knowledge, construct a RDF/XML syntax ontology,
 
 Inputs for your task:
 
-JSON Data Table:
+**JSON Data Table:**
 {json_data}
 
-Instructions:
+**Rationale:**
+{rationale}
+
+**Instructions:**
 {instructions}
 
 Structure your response as follows:
 
-ANALYSIS:
+**ANALYSIS:**
 Data Description: <A detailed description of the JSON data table, spanning 10 to 20 sentences>
 Insights: <Detail the logical process and potential challenges of applying the provided instructions to the JSON data, written in about 10 to 20 sentences>
 
-RDF/XML ONTOLOGY:
+**RDF/XML ONTOLOGY:**
     START
         <Write the RDF/XML syntax content for the proposed ontology here, ensuring strict compliance with the instructions provided>
     FINISH

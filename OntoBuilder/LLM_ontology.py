@@ -17,55 +17,44 @@ class LlmOntology(AbstractLlm):
         self.insights = None
         self.analysis = []
 
-    def interact(self, json_data: str, instructions: str, ontology: Optional[str]):
+    def interact(self, json_data: str, rationale: str, instructions: str, ontology: Optional[str], human_ontology: Optional[str]):
+        if json_data and rationale and instructions and not ontology:
+            self.current_prompt = self.instructions_prompt.format(
+                json_data=json_data,
+                rationale=rationale,
+                instructions=instructions
+            )
+
+        elif json_data and rationale and instructions and ontology:
+            self.current_prompt = self.instructions_prompt.format(
+                json_data=json_data,
+                rationale=rationale,
+                instructions=instructions,
+                previous_ontology=ontology
+            )
+        elif ontology and human_ontology:
+            self.current_prompt = self.entities_analysis_prompt.format(
+                previous_ontology=ontology,
+                human_ontology=human_ontology
+            )
+
+        self.generate_response()
+
+    def generate_response(self):
         try:
-            if json_data and instructions and not ontology:
-                self.current_prompt = self.instructions_prompt.format(
-                    json_data=json_data,
-                    instructions=instructions
-                )
-
-            elif json_data and instructions and ontology:
-                self.current_prompt = self.instructions_prompt.format(
-                    json_data=json_data,
-                    instructions=instructions,
-                    previous_ontology=ontology
-                )
-
             response = self.get_api_response(self.current_prompt)
 
             response, self.owl_codeblock = self.autocompletion(previous_input=self.current_prompt, response=response)
 
             self.save_response(response, self.dataset_path + '_debugging_GPT_RESPONSE.txt', mode='w')
-
         except ValueError as e:
             print(f"An error occurred while extracting text: {e}")
         finally:
             self.last_prompt = self.current_prompt
 
+    def regenerate(self):
+        self.generate_response()
 
-    def analyze_segment(self, previous_ontology: str, human_ontology: str, item: int):
-        try:
-            self.current_prompt = self.entities_analysis_prompt.format(
-                previous_ontology=previous_ontology,
-                human_ontology=human_ontology
-            )
-
-            response = self.get_api_response(self.current_prompt)
-
-            response, improved_owl_codeblock = self.autocompletion(previous_input=self.current_prompt, response=response)
-
-            self.save_response(response, self.dataset_path + '_debugging_GPT_SEGMENTED_ANALYSIS_item_' + str(item) + '.txt', mode='w')
-
-            self.insights = self.extract_text(response, "IMPROVEMENT STRATEGY:", "REVISED RDF/XML ONTOLOGY:")
-
-            return self.insights, improved_owl_codeblock
-
-        except ValueError as e:
-            print(f"An error occurred while analyzing the segment: {e}")
-            return None
-        finally:
-            self.last_prompt = self.current_prompt
 
     def autocompletion(self, previous_input: str, response: str, max_iter=5):
         owl_codeblock = None
@@ -89,6 +78,8 @@ class LlmOntology(AbstractLlm):
                     cont += 1
 
         return response, owl_codeblock
+
+
 
 
 

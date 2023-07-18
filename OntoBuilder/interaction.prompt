@@ -1,10 +1,9 @@
 Hello, ChatGPT. As an expert in generating ontologies in RDF/XML syntax, I seek your assistance in refining an existing
-ontology. You will be provided with a pre-existing ontology, a set of instructions, and a JSON data table.
+ontology. You will be provided with a pre-existing ontology, the rationale of the task, a set of instructions, and a JSON data table.
 
 Your output should consist of two sections:
 
 ANALYSIS:
-
 Study the provided instructions, understand the conveyed context, and outline the logical process for applying these
 instructions to the previously generated ontology, considering the data table.
 
@@ -17,6 +16,9 @@ Inputs for your task:
 JSON Data Table:
 {json_data}
 
+Rationale:
+{rationale}
+
 Instructions:
 {instructions}
 
@@ -26,7 +28,7 @@ Previous Ontology:
 Structure your response as follows:
 
 ANALYSIS:
-Insights: <Analyze wich of the previous ontology parts should be modified regarding the provided instructions, written in about 10 to 20 sentences>
+Insights: <Analyze which of the previous ontology parts should be modified regarding the provided instructions, written in about 10 to 20 sentences>
 
 RDF/XML ONTOLOGY:
 START

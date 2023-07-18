@@ -1,8 +1,9 @@
 from abc import ABC
 from typing import Optional
+import re
 
 from LLM_base.LlmBase import AbstractLlm
-
+from tools import text2dict, compare_texts
 
 class LlmPlanner(AbstractLlm, ABC):
     """
@@ -29,6 +30,7 @@ class LlmPlanner(AbstractLlm, ABC):
         # Initialize memories
         self.short_term_memory = None
         self.long_term_memory = None
+        self.stable_plan = {}
         self.plan = None
         self.selected_instruction = None
         self.instructions = None # for future use in the GUI
@@ -74,18 +76,62 @@ class LlmPlanner(AbstractLlm, ABC):
         finally:
             self.last_prompt = self.current_prompt
 
+    def regenerate(self):
+        # Reuse the last prompt
+        response = self.get_api_response(self.last_prompt)
+
+        # Check if the last prompt was for the first interaction or a subsequent one
+        if self.instructions:
+            # If it was a subsequent interaction, use the update_memories method for subsequent interactions
+            self.update_memories(response, first=False)
+        else:
+            # If it was the first interaction, use the update_memories method for the first interaction
+            self.update_memories(response, first=True)
+
+        # Return the response from the model
+        return response
+
     def update_memories(self, response: str, first: bool = True):
         try:
             print('update memories, first: ', first)
             self.save_response(response, self.dataset_path + '_general_plan.txt', mode='w')
             # extract the generated plan from the answer
             if first:
-                self.short_term_memory = self.extract_text(response, "Output Memory:", "Output Tasks:").strip()
+                self.short_term_memory = self.extract_text(response, "**Output Memory:**", "**Output Tasks:**").strip()
             else:
-                self.short_term_memory = self.extract_text(response, "Updated Memory:", "Output Tasks:").strip()
+                self.short_term_memory = self.extract_text(response, "**Updated Memory:**", "**Output Tasks:**").strip()
             # extract the generated plan from the answer
-            self.plan = self.extract_text(response, "Output Tasks:", "Output Instructions:").strip()
+            self.plan = self.extract_text(response, "**Output Tasks:**", "**Instructions:**").strip()
+            self.update_plan()
             # extract the generated instructions from the answer
-            self.instructions = self.extract_text(response, "Output Instructions:", "FINISH").strip()
+            self.instructions = self.extract_text(response, "**Instructions:**", "FINISH").strip()
         except ValueError as e:
             print(f"An error occurred: {e}")
+
+    def update_plan(self):
+        if self.stable_plan:
+            old_instructions = "".join([key + ': ' + self.stable_plan[key] + '\n' for key in self.stable_plan.keys()])
+        else:
+            old_instructions = ""
+        print(self.stable_plan)
+        print(old_instructions)
+        updated_instructions = compare_texts(old_instructions, self.plan)
+        print(updated_instructions)
+        positive_tasks = re.findall(r'\[\+\] (.+)', updated_instructions)
+        print(positive_tasks)
+        for task in positive_tasks:
+            if 'task_' in task:
+                new_task = text2dict(task)
+                print('newtask', new_task)
+                if self.stable_plan:
+                    self.stable_plan.update(new_task)
+                else:
+                    for key, value in new_task.items():
+                        print(key, value)
+                        self.stable_plan[key] = value
+
+        print(self.stable_plan)
+
+
+
+
