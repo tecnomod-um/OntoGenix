@@ -50,7 +50,6 @@ json_data = dataframe2prettyjson(dataset, file)
 print('######## PROMPT ############\n', json_data)
 
 
-
 '''########################################## PLAN-INSTRUCTIONS ######################################################'''
 # instantiate the LLM_base that generates an owl ontology from a json subset data
 from PlanSage.LLM_planner import LlmPlanner
@@ -71,7 +70,7 @@ planner.interaction(
 )
 
 planner.interaction(
-    instructions = '''Update task_6 to specifically use as a foundational prefix "https://vocab.um.es#". This update will ensure that the ontology has a unique and identifiable namespace, aligning with the input instructions.'''
+    instructions = '''Rewrite task_6 with this text: Specify as a foundational prefix "https://vocab.um.es#" for the ontology to ensure a clear structure..'''
 )
 planner.interaction(
     instructions = '''Add a new task to do not add any type of individuals in the ontology.'''
@@ -80,7 +79,10 @@ planner.interaction(
     instructions = '''Add a new task to generate a description field, an alternative name and a set of five synonyms for each entity such 
     as classes, object properties or data properties.'''
 )
-
+planner.interaction(
+    instructions = '''Add a new definition in the doctype for the foundational prefix: <!ENTITY um "https://vocab.um.es#">'''
+)
+planner.regenerate()
 
 instructions = planner.stable_plan
 
@@ -100,27 +102,44 @@ onto_metadata = {'instructions': './OntoBuilder/instructions.prompt',
 ontology_builder = LlmOntology(onto_metadata)
 
 # GENERATE THE FIRST LLM-ONTOLOGY
-instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [1,2,3]])
+instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [0,1,2]])
 print(instructions_subset)
-ontology_builder.interact(json_data=json_data, rationale=planner.short_term_memory, instructions=instructions_subset, ontology=None, human_ontology=None)
+ontology_builder.interact(json_data=json_data, rationale=planner.short_term_memory, instructions=instructions_subset)
 
 # REFINEMENT OF THE LLM-ONTOLOGY [INSTRUCTION BY INSTRUCTION]
-instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [7,8]])
+instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [6]])
 print(instructions_subset)
-ontology_builder.interact(json_data=json_data, rationale=planner.short_term_memory, instructions=instructions_subset, ontology=ontology_builder.owl_codeblock, human_ontology=None)
-
-# REFINEMENT OF THE LLM-ONTOLOGY [INSTRUCTION BY INSTRUCTION]
-from SemanticoAI.utils import load_chunk_samples
-selected_chunks = ['./datasets/GoodRelations_V1/chunks/chunk_41.rdf']
-examples = load_chunk_samples(selected_chunks)
-human_ontology = examples[0]
-ontology_builder.interact(json_data=None, rationale=None, instructions=None, ontology=ontology_builder.owl_codeblock, human_ontology=human_ontology)
-
+ontology_builder.interact(json_data=json_data, rationale=planner.short_term_memory, instructions=instructions_subset, ontology=ontology_builder.owl_codeblock)
 
 ontology_builder.regenerate()
 
 
 '''########################################## SEMANTICO-AI ######################################################'''
+
+from tools import split_rdf
+#
+ontology_file = base_path + dataset_folder + '/' + dataset_file + '_owl_code_LLM_base.txt'
+chunks_folder = base_path + dataset_folder + '/chunks/'
+# segment the last llm generated ontology into chunks.
+split_rdf(ontology_file, chunks_folder)
+
+from SemanticoAI.LLM_semantico import LlmSemantico
+from SemanticoAI.utils import save_semantic_descriptions
+
+semanticoAI_metadata = {
+    'instructions': './SemanticoAI/instructions.prompt',
+    'dataset': base_path + dataset_folder + '/' + dataset_file,
+    'role': 'As an expert ontology engineer, SemanticoAI, your task is to analyze an ontology written in rdf/xml syntax.'
+}
+semanticoAI = LlmSemantico(semanticoAI_metadata)
+
+semanticoAI.chunksTransform(base_path + dataset_folder + '/chunks/')
+
+save_semantic_descriptions(
+    base_path + dataset_folder + '/semantic_descriptions.npy',
+    semanticoAI.semantic_descriptions
+)
+
 
 from SemanticoAI.utils import load_semantic_descriptions, process_semantic_descriptions
 
@@ -132,15 +151,19 @@ reference_semantic_descriptions = load_semantic_descriptions(
     './datasets/GoodRelations_V1/semantic_descriptions.npy'
 )
 
-labels = process_semantic_descriptions(semantic_descriptions)
-reference_labels = process_semantic_descriptions(reference_semantic_descriptions)
-all_words = labels + reference_labels
+labels = process_semantic_descriptions(semantic_descriptions, key='proposed_name')
+reference_labels = process_semantic_descriptions(reference_semantic_descriptions, key='proposed_name')
+all_labels = labels + reference_labels
+
+descriptions = process_semantic_descriptions(semantic_descriptions, key='description')
+reference_descriptions = process_semantic_descriptions(reference_semantic_descriptions, key='description')
+all_descriptions = descriptions + reference_descriptions
 
 from embeddings.EmbeddingGenerator import EmbeddingGenerator
 
 embedder = EmbeddingGenerator()
 
-ontology_embeddings = embedder.get_embeddings(all_words)
+ontology_embeddings = embedder.get_embeddings(all_descriptions)
 ontology_embeddings_2D = embedder.get_pca(ontology_embeddings)
 print(ontology_embeddings.shape)
 
@@ -154,27 +177,13 @@ plt.show()
 
 from SemanticoAI.utils import get_relevant_chunks, load_chunk_samples
 
-selected_chunks = get_relevant_chunks(labels, all_words, reference_semantic_descriptions, ontology_embeddings_2D)
+selected_chunks = get_relevant_chunks(labels, all_labels, reference_semantic_descriptions, ontology_embeddings_2D)
 examples = load_chunk_samples(selected_chunks)
 
-'''########################################## OntoBuilder synthetize from examples obtained by embedding strategy ######################################################'''
-
-# ANALYSIS THROUGH COMPARITION OF THE LLM-ONTOLOGY
-for item, human_ontology in enumerate(examples):
-    insights, improved_owl_codeblock = ontology_builder.analyze_segment(
-        previous_ontology=ontology_builder.owl_codeblock,
-        human_ontology=human_ontology,
-        item=5+item
-    )
-
-    owl_codes_comparition = compare_texts(ontology_builder.owl_codeblock, improved_owl_codeblock)
-    print(owl_codes_comparition)
-
-    # REFINE THE LLM-ONTOLOGY TAKING INTO ACCOUNT THE PREVIOUS ANALYSIS
-    insights, owl_codeblock = ontology_builder.synthesize(
-        owl_codes_comparition=owl_codes_comparition,
-        item=2+item
-    )
+# REFINEMENT OF THE LLM-ONTOLOGY [BY COMPARISON WITH HUMAN ONTOLOGY]
+for human_ontology in examples:
+    #  human_ontology = examples[3]  # for testing
+    ontology_builder.interact(ontology=ontology_builder.owl_codeblock, human_ontology=human_ontology)
 
 '''########################################## MAPPING ######################################################'''
 
@@ -188,11 +197,6 @@ mapper_metadata = {'instructions': './OntoMapper/instructions.prompt',
 ontology_mapper = LlmOntoMapper(mapper_metadata)
 
 rml_code_str = ontology_mapper.interact(json_data=json_data, ontology=ontology_builder.owl_codeblock)
-
-
-
-
-
 
 
 

@@ -1,4 +1,12 @@
-You will act as an advanced AI ontology expert. A while ago, you generated an ontology that has been of great use to me. However, I've come across another segment from a different ontology that includes entities associated with the ones in your created ontology. I'd like you to analyze this new segment and consider incorporating its entities into your ontology, taking into account important factors such as interoperability and versatility. I ask you to conduct this analysis with the same clear and methodical communication style demonstrated in my past messages.
+You will act as an advanced AI ontology expert. A while ago, you generated an ontology that has been of great use to me.
+However, I've come across another segment from a different ontology that includes entities associated with the ones in
+your created ontology. I'd like you to analyze this new segment and consider incorporating its entities into your
+ontology, taking into account important factors such as interoperability and versatility and the main goal of the task
+defined in the rationale. I ask you to conduct this analysis with the same clear and methodical communication style
+demonstrated in my past messages.
+
+The rationale to take into account:
+{rationale}
 
 The ontology you previously generated is as follows:
 {previous_ontology}
@@ -9,7 +17,10 @@ The segment from the other ontology is:
 Present your analysis in a structured manner, keeping the output as detailed in the template below:
 
 IMPROVEMENT STRATEGY:
-<Describe your analytical procedure, compare the ontologies critically, highlight significant points of the human-created ontology, propose possible enhancements to your previous ontology based on the human-created one, and make sure the improvements are in line with these instructions. If conflicts occur between the guidelines and the insights from the human-produced ontology, suggest an alternative solution.>
+<Describe your analytical procedure, compare the ontologies critically, highlight significant points of the
+human-created ontology, propose possible enhancements to your previous ontology based on the human-created one and
+in the provided rationale, and make sure the improvements are in line with these instructions. If conflicts occur
+between the guidelines and the insights from the human-produced ontology, suggest an alternative solution.>
 
 REVISED RDF/XML ONTOLOGY:
 START

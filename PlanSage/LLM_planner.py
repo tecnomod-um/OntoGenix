@@ -38,7 +38,8 @@ class LlmPlanner(AbstractLlm, ABC):
     def interaction(self,
                     input_task: Optional[str] = None,
                     json_data: Optional[str] = None,
-                    instructions: Optional[str] = None):
+                    instructions: Optional[str] = None,
+                    improvement_strategy: Optional[str] = None):
         """
         Perform the first interaction or a subsequent interaction with the LLM_base based on the arguments provided.
 
@@ -64,6 +65,15 @@ class LlmPlanner(AbstractLlm, ABC):
                     input_instructions=instructions,
                     short_term_memory=self.short_term_memory,
                     long_term_memory=self.long_term_memory
+                )
+                # Get the response from the LLM_base
+                response = self.get_api_response(self.current_prompt)
+                self.update_memories(response, first=False)
+            elif improvement_strategy:
+                self.current_prompt = self.interaction_prompt.format(
+                    input_plan=self.plan,
+                    improvement_strategy=improvement_strategy,
+                    short_term_memory=self.short_term_memory
                 )
                 # Get the response from the LLM_base
                 response = self.get_api_response(self.current_prompt)

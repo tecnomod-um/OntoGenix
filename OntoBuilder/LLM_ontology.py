@@ -17,14 +17,19 @@ class LlmOntology(AbstractLlm):
         self.insights = None
         self.analysis = []
 
-    def interact(self, json_data: str, rationale: str, instructions: str, ontology: Optional[str], human_ontology: Optional[str]):
+    def interact(self,
+                 json_data: str = None,
+                 rationale: str = None,
+                 instructions: str = None,
+                 ontology: str = None,
+                 human_ontology: str = None):
+
         if json_data and rationale and instructions and not ontology:
             self.current_prompt = self.instructions_prompt.format(
                 json_data=json_data,
                 rationale=rationale,
                 instructions=instructions
             )
-
         elif json_data and rationale and instructions and ontology:
             self.current_prompt = self.instructions_prompt.format(
                 json_data=json_data,
@@ -32,8 +37,9 @@ class LlmOntology(AbstractLlm):
                 instructions=instructions,
                 previous_ontology=ontology
             )
-        elif ontology and human_ontology:
+        elif rationale and ontology and human_ontology:
             self.current_prompt = self.entities_analysis_prompt.format(
+                rationale=rationale,
                 previous_ontology=ontology,
                 human_ontology=human_ontology
             )
@@ -47,6 +53,7 @@ class LlmOntology(AbstractLlm):
             response, self.owl_codeblock = self.autocompletion(previous_input=self.current_prompt, response=response)
 
             self.save_response(response, self.dataset_path + '_debugging_GPT_RESPONSE.txt', mode='w')
+
         except ValueError as e:
             print(f"An error occurred while extracting text: {e}")
         finally:
@@ -54,7 +61,6 @@ class LlmOntology(AbstractLlm):
 
     def regenerate(self):
         self.generate_response()
-
 
     def autocompletion(self, previous_input: str, response: str, max_iter=5):
         owl_codeblock = None
