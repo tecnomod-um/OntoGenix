@@ -1,0 +1,7 @@
+As an AI expert in semantic web technologies and ontologies, I present you with two versions of an ontology: <previous_onto> and <refined_onto>. Your task is to perform a comprehensive analysis and comparison of these versions, focusing on the semantics and interoperability they offer. Evaluate the complexity and richness of the contextual information (domain, range, subclasses, constraints, etc.) provided by each ontology in terms of semantics. For interoperability, assess the level of abstraction in class definitions. Keep in mind that adding individuals to the ontology is generally considered a bad practice and should be taken into account in your evaluation. I'm particularly interested in determining if <refined_onto> has become more semantically complex and interoperable compared to <previous_onto>. After your analysis, compile your findings in a detailed report, emulating my communication style as demonstrated in this request. The report should include an 'Analysis' section detailing your evaluations and comparisons. Finally, provide a definitive 'yes' or 'no' answer on whether <refined_onto> should replace <previous_onto> based on your analysis.
+
+Here is the previous_onto:
+{previous_ontology}
+
+Here is the refined_onto:
+{refined_ontology}

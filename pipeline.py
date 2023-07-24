@@ -70,17 +70,21 @@ planner.interaction(
 )
 
 planner.interaction(
-    instructions = '''Rewrite task_6 with this text: Specify as a foundational prefix "https://vocab.um.es#" for the ontology to ensure a clear structure..'''
+    instructions = '''Rewrite task_6 with this text: Specify as a foundational prefix "https://vocab.um.es#" for the ontology to ensure a clear structure.'''
+)
+planner.interaction(
+    instructions = '''Add a new task that to generate, based on the entities and their relationships, clases that you consider will enhance the interoperability and semantics of the ontology.'''
 )
 planner.interaction(
     instructions = '''Add a new task to do not add any type of individuals in the ontology.'''
 )
 planner.interaction(
-    instructions = '''Add a new task to generate a description field, an alternative name and a set of five synonyms for each entity such 
+    instructions = '''Add a new task to generate a description field, an alternative name and a set of five alternative labels for each entity such 
     as classes, object properties or data properties.'''
 )
 planner.interaction(
-    instructions = '''Add a new definition in the doctype for the foundational prefix: <!ENTITY um "https://vocab.um.es#">'''
+    instructions = '''Add a new task to generate a new definition in the doctype for the foundational prefix: <!ENTITY um "https://vocab.um.es#"> and the 
+    needed one for the rest of the uris defined in the rdf section of the ontology.'''
 )
 planner.regenerate()
 
@@ -95,6 +99,7 @@ onto_metadata = {'instructions': './OntoBuilder/instructions.prompt',
                  'interaction': './OntoBuilder/interaction.prompt',
                  'autocompletion': './OntoBuilder/auto_completion.prompt',
                  'entities_analysis': './OntoBuilder/entities_analysis.prompt',
+                 'entity_improvement': './OntoBuilder/entity_improvement.prompt',
                  'dataset': base_path + dataset_folder + '/' + dataset_file,
                  'role': 'You are a powerful ontology engineer that generates OWL ontologies in turtle format.'
                  }
@@ -102,14 +107,85 @@ onto_metadata = {'instructions': './OntoBuilder/instructions.prompt',
 ontology_builder = LlmOntology(onto_metadata)
 
 # GENERATE THE FIRST LLM-ONTOLOGY
-instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [0,1,2]])
+instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [0,1,2,10]])
 print(instructions_subset)
-ontology_builder.interact(json_data=json_data, rationale=planner.short_term_memory, instructions=instructions_subset)
+ontology_builder.interact(
+    json_data=json_data,
+    rationale=planner.short_term_memory,
+    instructions=instructions_subset
+)
 
 # REFINEMENT OF THE LLM-ONTOLOGY [INSTRUCTION BY INSTRUCTION]
-instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [6]])
+instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [10]])
 print(instructions_subset)
-ontology_builder.interact(json_data=json_data, rationale=planner.short_term_memory, instructions=instructions_subset, ontology=ontology_builder.owl_codeblock)
+ontology_builder.interact(
+    json_data=json_data,
+    rationale=planner.short_term_memory,
+    instructions=instructions_subset,
+    ontology=ontology_builder.owl_codeblock
+)
+
+
+
+# REFINEMENT OF AN ENTITY [INSTRUCTION BY INSTRUCTION]
+instructions_subset = '''Establish constraints and interrelations between the classes and properties and define them for each entity in rdf/xml format. Besides, 
+generate a description field, an alternative name, and a set of five alternative labels for each entity such as classes, object properties, or data properties.'''
+print(instructions_subset)
+entity = '''<owl:Class rdf:about="https://vocab.um.es#ProductName">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>An individual instance of ProductName class represents the name of a product.</rdfs:comment>
+        <skos:altLabel>ItemName</skos:altLabel>
+        <skos:altLabel>ProductTitle</skos:altLabel>
+        <skos:altLabel>ItemTitle</skos:altLabel>
+        <skos:altLabel>ItemLabel</skos:altLabel>
+    </owl:Class>'''
+improved_version = '''<owl:Class rdf:about="https://vocab.um.es#ProductName">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>An individual instance of ProductName class represents the name of a product.</rdfs:comment>
+        <skos:altLabel>ItemName</skos:altLabel>
+        <skos:altLabel>ProductTitle</skos:altLabel>
+        <skos:altLabel>ItemTitle</skos:altLabel>
+        <skos:altLabel>ItemLabel</skos:altLabel>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasPriceValue"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasDiscountPriceValue"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>'''
+reasoning = "we have enhanced the ontology's semantics by adding to the entity definition the constraints, interrelations, alternative labels and description."
+
+from tools import extract_sections_from_rdf, dict_to_rdf
+
+rdf_sections = extract_sections_from_rdf(ontology_builder.owl_codeblock)
+
+for key in rdf_sections.keys():
+    if key in ['class_definitions', 'object_property_definitions', 'data_property_definitions']:
+        for it,next_entity in enumerate(rdf_sections[key]):
+            print('###################################')
+            print(next_entity)
+
+            owl_entity_codeblock = ontology_builder.interactByEntity(
+                ontology=ontology_builder.owl_codeblock,
+                task=instructions_subset,
+                entity=entity,
+                improved_version=improved_version,
+                reasoning=reasoning,
+                next_entity=next_entity
+            )
+            print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
+            print(owl_entity_codeblock)
+            rdf_sections[key][it] = owl_entity_codeblock
+
+            ontology_builder.owl_codeblock = dict_to_rdf(rdf_sections)
+
+print(ontology_builder.owl_codeblock)
 
 ontology_builder.regenerate()
 

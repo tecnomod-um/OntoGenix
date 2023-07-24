@@ -27,4 +27,4 @@ START
 <Formulate the RDF/XML content for the improved ontology, merging insights from the human-produced ontology and the provided guidelines>
 FINISH
 
-Maintain a formal tone appropriate for scientific research throughout and ensure the 'REVISED RDF/XML ONTOLOGY' section concludes with 'FINISH'. Please remember the 100 lines limit for the generated ontology."
+Maintain a formal tone appropriate for scientific research throughout and ensure the 'REVISED RDF/XML ONTOLOGY' section concludes with 'FINISH'.

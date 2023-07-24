@@ -10,12 +10,42 @@ class LlmOntology(AbstractLlm):
         self.instructions_prompt = self.load_string_from_file(metadata['instructions'])
         self.autocompletion_prompt = self.load_string_from_file(metadata['autocompletion'])
         self.entities_analysis_prompt = self.load_string_from_file(metadata['entities_analysis'])
+        self.entity_improvement_prompt = self.load_string_from_file(metadata['entity_improvement'])
         # path setting to write outputs
         self.dataset_path = metadata['dataset']
         # initialize memories
         self.owl_codeblock = None
-        self.insights = None
-        self.analysis = []
+
+    def interactByEntity(self,
+                         ontology: str = None,
+                         task: str = None,
+                         entity: str = None,
+                         improved_version: str = None,
+                         reasoning: str = None,
+                         next_entity: str = None):
+
+        self.current_prompt = self.entity_improvement_prompt.format(
+            ontology=ontology,
+            task=task,
+            entity=entity,
+            improved_version=improved_version,
+            reasoning=reasoning,
+            next_entity=next_entity
+        )
+
+        try:
+            response = self.get_api_response(self.current_prompt)
+
+            owl_entity_codeblock = self.extract_text(response, "START", "FINISH")
+
+            self.save_response(response, self.dataset_path + '_debugging_interactByEntityPrompt.txt', mode='w')
+
+        except ValueError as e:
+            print(f"An error occurred while extracting text: {e}")
+        finally:
+            self.last_prompt = self.current_prompt
+
+        return owl_entity_codeblock
 
     def interact(self,
                  json_data: str = None,

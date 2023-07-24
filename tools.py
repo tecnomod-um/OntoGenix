@@ -5,6 +5,83 @@ from rdflib import Graph, URIRef
 
 import difflib
 
+
+import re
+from lxml import etree
+import difflib
+
+
+def extract_sections_from_rdf(rdf_string):
+    # Extract doctype section using regex
+    doctype_section = re.search('<!DOCTYPE rdf:RDF \[.*?\]>', rdf_string, re.DOTALL)
+    doctype_section = doctype_section.group() if doctype_section else 'Not found'
+    print(doctype_section)
+    # Convert string to bytes
+    rdf_bytes = bytes(rdf_string, encoding='utf-8')
+    # Parse RDF string to an XML object
+    root = etree.fromstring(rdf_bytes)
+    # Extract namespaces
+    namespaces = root.nsmap
+    print(namespaces)
+    # Extract RDF section (uris definitions)
+
+    # Extract class definitions
+    class_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2002/07/owl#}Class')]
+    # Extract object property definitions
+    object_property_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2002/07/owl#}ObjectProperty')]
+    # Extract data property definitions
+    data_property_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2002/07/owl#}DatatypeProperty')]
+    # Extract annotation definitions
+    annotation_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2002/07/owl#}Ontology')]
+
+    rdf_sections = {'doctype_section': doctype_section,
+                    'rdf_section': namespaces,
+                    'namespaces': namespaces,
+                    'class_definitions': class_definitions,
+                    'object_property_definitions': object_property_definitions,
+                    'data_property_definitions': data_property_definitions,
+                    'annotation_definitions': annotation_definitions}
+
+    return rdf_sections
+
+
+def dict_to_rdf(rdf_sections):
+    # Initialize root element
+    root = etree.Element('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF', rdf_sections['rdf_section'], nsmap=rdf_sections['namespaces'])
+
+    # Define namespaces
+    namespaces = rdf_sections['namespaces']
+
+    # Register namespaces
+    for prefix, uri in namespaces.items():
+        etree.register_namespace(prefix, uri)
+
+    # Helper function to add children to root
+    def add_children(items):
+        for item in items:
+            # Parse the XML string using the defined namespaces
+            parser = etree.XMLParser(ns_clean=True, recover=True, remove_blank_text=True)
+            child = etree.fromstring(item, parser=parser)
+            root.append(child)
+
+    # Add class definitions
+    add_children(rdf_sections['class_definitions'])
+
+    # Add object property definitions
+    add_children(rdf_sections['object_property_definitions'])
+
+    # Add data property definitions
+    add_children(rdf_sections['data_property_definitions'])
+
+    # Add annotation definitions
+    add_children(rdf_sections['annotation_definitions'])
+
+    # Convert root to string and prepend doctype
+    rdf_string = f'{rdf_sections["doctype_section"][0]}\n{etree.tostring(root, pretty_print=True).decode()}'
+
+    return rdf_string
+
+
 def compare_texts(text1, text2):
     text1 = text1.replace(' xmlns', '\nxmlns')
     text2 = text2.replace(' xmlns', '\nxmlns')

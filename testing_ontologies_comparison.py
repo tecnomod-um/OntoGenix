@@ -16,10 +16,10 @@ def extract_sections_from_rdf(rdf_string):
     root = etree.fromstring(rdf_bytes)
     # Extract namespaces
     namespaces = root.nsmap
+
     print(namespaces)
     # Extract RDF section (uris definitions)
-    rdf_section = root.attrib
-    print(rdf_section)
+
     # Extract class definitions
     class_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2002/07/owl#}Class')]
     # Extract object property definitions
@@ -29,20 +29,22 @@ def extract_sections_from_rdf(rdf_string):
     # Extract annotation definitions
     annotation_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2002/07/owl#}Ontology')]
 
-    return {
-        'doctype_section': doctype_section,
-        'rdf_section': rdf_section,
-        'namespaces': namespaces,
-        'class_definitions': class_definitions,
-        'object_property_definitions': object_property_definitions,
-        'data_property_definitions': data_property_definitions,
-        'annotation_definitions': annotation_definitions
-    }
+    rdf_sections = {'doctype_section': doctype_section,
+                    'rdf_section': None,
+                    'namespaces': {uri.split(':')[0]: "".join(uri.split(':')[1:]) for uri in namespaces},
+                    'class_definitions': class_definitions,
+                    'object_property_definitions': object_property_definitions,
+                    'data_property_definitions': data_property_definitions,
+                    'annotation_definitions': annotation_definitions}
+
+    rdf_sections['rdf_section'] = rdf_sections['namespaces']
+
+    return rdf_sections
 
 
-def dict_to_rdf(rdf_dict):
+def dict_to_rdf(rdf_sections):
     # Initialize root element
-    root = etree.Element('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF', rdf_dict['rdf_section'], nsmap=rdf_dict['namespaces'])
+    root = etree.Element('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF', rdf_sections['rdf_section'], nsmap=rdf_sections['namespaces'])
 
     # Helper function to add children to root
     def add_children(items):
@@ -51,19 +53,19 @@ def dict_to_rdf(rdf_dict):
             root.append(child)
 
     # Add class definitions
-    add_children(rdf_dict['class_definitions'])
+    add_children(rdf_sections['class_definitions'])
 
     # Add object property definitions
-    add_children(rdf_dict['object_property_definitions'])
+    add_children(rdf_sections['object_property_definitions'])
 
     # Add data property definitions
     add_children(rdf_dict['data_property_definitions'])
 
     # Add annotation definitions
-    add_children(rdf_dict['annotation_definitions'])
+    add_children(rdf_sections['annotation_definitions'])
 
     # Convert root to string and prepend doctype
-    rdf_string = f'{rdf_dict["doctype_section"][0]}\n{etree.tostring(root, pretty_print=True).decode()}'
+    rdf_string = f'{rdf_sections["doctype_section"][0]}\n{etree.tostring(root, pretty_print=True).decode()}'
 
     return rdf_string
 
@@ -118,9 +120,6 @@ def get_type_and_name(rdf_string):
 
 def check_types_and_names(type_name1, type_name2):
     return True if type_name1 == type_name2 else False
-
-
-
 
 
 # Extract sections from the two RDF/XML strings

@@ -1,24 +1,32 @@
-ChatGPT, your role is to act as an expert ontology engineer to help me improve a given ontology.
-The aim is to create an abstract ontology that enhances interoperability, avoids producing individuals,
-and refrains from using the foundational prefix of the example.com URI.
+ChatGPT, your role is to act as an expert ontology engineer to help me improve a given ontology entity. I will feed you
+with the full ontology, the entity to be improved and the task that will guide you to how to improve the given entity.
 
-First, familiarize yourself with the provided ontology and the specific task for its improvement.
-Then, we will iterate through each section or entity of the ontology one by one.
 
-Your task for each section or entity is to critically analyze it and propose improvements to ensure
-it aligns with the stated objective. I expect you to provide an improved version of each inputted entity
-or section along with an explanation of your proposed modifications.
+Your task for the entity is to critically analyze the ontology given the task provided and propose improvements to the
+given entity to ensure it aligns with the stated objective. I expect you to provide an improved version of the inputted
+entity along with an explanation of your proposed modifications in a structured manner as defined later.
 
-My communication style is typically concise, direct, and straightforward. Please mirror this style in your responses.
+This is the ontology {ontology}, and the task for improvement of the entity is: {task}.
 
-Here's an example interaction:
+Here I give you an example:
 
-User: 'This is the ontology {ontology}, and the task for improvement is {task}.'
+This is an example entity to be improved: {entity}
+This is the improved version of this example entity: {improved_version}
+The changes were made due to the following rationale: {reasoning}
 
-ChatGPT: 'Got it, let's begin the process. Please input the first section or entity.'
+Now I will feed you with another entity. Please present your analysis in a structured manner, keeping the output as
+detailed in the template below:
 
-User: 'The first entity is {entity}.'
+The next entity is:
+{next_entity}
 
-ChatGPT: 'After reviewing {entity}, an improved version could be {improved_version}. The changes were made due to {reasoning}.'
+IMPROVEMENT STRATEGY:
+<Describe your analytical procedure and propose possible enhancements based on the provided task.>
 
-User: 'Please improve now this entity based on the task and the ontology provided: {next_entity}''
+REVISED RDF/XML ENTITY:
+START
+<Formulate the RDF/XML content for the improved entity>
+FINISH
+
+Maintain a formal tone appropriate for scientific research throughout and do not generate a codeblock in xml format
+instead ensure the 'REVISED RDF/XML ENTITY' section starts with 'START' and concludes with 'FINISH'.
