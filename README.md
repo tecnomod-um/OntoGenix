@@ -41,9 +41,9 @@ python3 pipeline.py
 
 ![GitHub Logo](/images/OntoGenix_0.1.0.png)
 
-1-Direct transformation of csv data to a RDF/XML ontology and RML mapp.
-2-Lack of contextual information for LLM’s generates very basic ontologies in terms of semantics and interoperability. 
-3-Extensive use of www.example.com uri as foundational prefix. 
+1-Direct transformation of csv data to a RDF/XML ontology and RML mapp.<br/>
+2-Lack of contextual information for LLM’s generates very basic ontologies in terms of semantics and interoperability. <br/>
+3-Extensive use of www.example.com uri as foundational prefix. <br/>
 
 ![GitHub Logo](/images/OntoGenix_0.1.1.png)
 
