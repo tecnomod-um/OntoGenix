@@ -1,4 +1,4 @@
-![image](https://github.com/mikelval82/OntoGenix/assets/57663701/6d101171-be08-4319-a6a4-9e23bec46934)# OntoGenix
+# OntoGenix
 
 A semi-automatic systems to generate OWL ontologies from CSV datasets using LLMs.
 
