@@ -12,13 +12,14 @@ class AbstractLlm(ABC):
         openai.api_key = os.getenv('OPENAI_API_KEY')
 
         self.role = metadata['role']
+        self.model = metadata['model']
         self.last_prompt = None
         self.current_prompt = None
 
     def get_api_response(self, content: str, temperature=0.1, max_tokens=None, stream=False):
 
         response = openai.ChatCompletion.create(
-            model='gpt-3.5-turbo-16k-0613',
+            model=self.model,
             messages=[{
                 'role': 'system',
                 'content': self.role

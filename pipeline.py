@@ -59,7 +59,8 @@ planner_metadata = {
     'interaction': './PlanSage/interaction.prompt',
     'dataset': base_path + dataset_folder + '/' + dataset_file,
     'role': 'You are a powerfull ontology engineer that generates the reasoning steps needed to generate'
-            'an ontology from a json data table.'
+            'an ontology from a json data table.',
+    'model':'gpt-4-32k-0314'
 }
 
 planner = LlmPlanner(planner_metadata)
@@ -101,7 +102,8 @@ onto_metadata = {'instructions': './OntoBuilder/instructions.prompt',
                  'entities_analysis': './OntoBuilder/entities_analysis.prompt',
                  'entity_improvement': './OntoBuilder/entity_improvement.prompt',
                  'dataset': base_path + dataset_folder + '/' + dataset_file,
-                 'role': 'You are a powerful ontology engineer that generates OWL ontologies in turtle format.'
+                 'role': 'You are a powerful ontology engineer that generates OWL ontologies in turtle format.',
+                 'model':'gpt-3.5-turbo-16k'
                  }
 
 ontology_builder = LlmOntology(onto_metadata)
@@ -267,8 +269,9 @@ from OntoMapper.LLM_ontomapper import LlmOntoMapper
 
 mapper_metadata = {'instructions': './OntoMapper/instructions.prompt',
                    'dataset': base_path + dataset_folder + '/' + dataset_file,
-                   'role': 'You are a powerful ontology engineer that generates RML mappings.'
-                   }
+                   'role': 'You are a powerful ontology engineer that generates RML mappings.',
+                   'model':'gpt-3.5-turbo-16k'
+}
 
 ontology_mapper = LlmOntoMapper(mapper_metadata)
 
