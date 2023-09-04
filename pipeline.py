@@ -83,8 +83,8 @@ planner.interaction(
     as classes, object properties or data properties.'''
 )
 planner.interaction(
-    instructions = '''Add a new task to generate a new definition in the doctype for the foundational prefix: <!ENTITY um "https://vocab.um.es#"> and the 
-    needed one for the rest of the uris defined in the rdf section of the ontology.'''
+    instructions = '''Add a new task to generate a new definition in the doctype for the foundational prefix: <!ENTITY um "https://vocab.um.es#"> and the ones
+    needed for the rest of the uris defined in the rdf section of the ontology.'''
 )
 planner.regenerate()
 
@@ -107,7 +107,7 @@ onto_metadata = {'instructions': './OntoBuilder/instructions.prompt',
 ontology_builder = LlmOntology(onto_metadata)
 
 # GENERATE THE FIRST LLM-ONTOLOGY
-instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [0,1,2,10]])
+instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [0,1,2]])
 print(instructions_subset)
 ontology_builder.interact(
     json_data=json_data,
