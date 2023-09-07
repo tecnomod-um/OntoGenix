@@ -5,6 +5,9 @@ Here's what I need:
     RATIONALE:
         1. Conduct an analysis of the JSON data table and craft a description based on your observations.
         2. Analyze the provided ontology and lay out the reasoning steps to apply the mapping between this ontology and the given JSON data table.
+            2.1 Asegurate que al crear las uris de las instancias son únicas, si es necesario combinando columnas.
+            2.2 Asegurate que añades todos los prefijos necesarios al comienzo del rml.
+            2.2 Asegurate que añades correctamente las referencias a los prefijos en cada bloque de definición de la tripleta
 
     RML Mapping: Generate a mapping in RML format.
 
@@ -19,7 +22,8 @@ Here's how I'd like you to structure your output:
 
     RATIONALE:
     Data Description: <Craft a summary describing the provided JSON data table. This should be approximately 10 to 20 sentences long.>
-    Insights: <Detail the reasoning steps about how to apply the mapping between the JSON data and the ontology. This too should be approximately 10 to 20 sentences long.>
+    Insights: <Detail the reasoning steps about how to apply the mapping between the JSON data and the ontology.
+                This too should be approximately 10 to 20 sentences long.>
 
     RML Mapping:
         START

@@ -26,15 +26,8 @@ structure of the input memory but reflect the changes proposed in your rationale
 containing only essential information and not exceeding 20 sentences or 500 words.>
 
 Update the list of tasks, adhering to the structure of the previous plan but informed by your updated memory and the
-input instructions. Ensure that tasks from the input plan are not deleted, only added, reordered or updated. Please
-follow the format outlines below:
-
-task_1 - ...
-task_2 - …
-…
-task_N - …
-
-Start writing here the list of tasks:
+input instructions. Ensure that tasks from the input plan are not deleted, only added, reordered or updated. Start
+writing here the list of tasks:
 
 **Output Tasks:**
 task_<number of task>: <Description of the task to be added, reordered or updated>

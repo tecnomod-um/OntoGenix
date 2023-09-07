@@ -10,6 +10,12 @@ import re
 from lxml import etree
 import difflib
 
+check = ''''<!DOCTYPE rdf:RDF [
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+    <!ENTITY um "https://vocab.um.es#">
+]>'''
 
 def extract_sections_from_rdf(rdf_string):
     # Extract doctype section using regex
@@ -17,7 +23,7 @@ def extract_sections_from_rdf(rdf_string):
     doctype_section = doctype_section.group() if doctype_section else 'Not found'
     print(doctype_section)
     # Convert string to bytes
-    rdf_bytes = bytes(rdf_string, encoding='utf-8')
+    rdf_bytes = bytes(rdf_string, encoding='utf-8').strip(b'\n')
     # Parse RDF string to an XML object
     root = etree.fromstring(rdf_bytes)
     # Extract namespaces
@@ -26,9 +32,9 @@ def extract_sections_from_rdf(rdf_string):
     # Extract RDF section (uris definitions)
 
     # Extract class definitions
-    class_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2002/07/owl#}Class')]
+    class_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2000/01/rdf-schema#}Class')]
     # Extract object property definitions
-    object_property_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2002/07/owl#}ObjectProperty')]
+    object_property_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/1999/02/22-rdf-syntax-ns#}Property')]
     # Extract data property definitions
     data_property_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2002/07/owl#}DatatypeProperty')]
     # Extract annotation definitions

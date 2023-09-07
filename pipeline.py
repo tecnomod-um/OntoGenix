@@ -60,7 +60,7 @@ planner_metadata = {
     'dataset': base_path + dataset_folder + '/' + dataset_file,
     'role': 'You are a powerfull ontology engineer that generates the reasoning steps needed to generate'
             'an ontology from a json data table.',
-    'model':'gpt-4-32k-0314'
+    'model':'gpt-4'
 }
 
 planner = LlmPlanner(planner_metadata)
@@ -103,13 +103,13 @@ onto_metadata = {'instructions': './OntoBuilder/instructions.prompt',
                  'entity_improvement': './OntoBuilder/entity_improvement.prompt',
                  'dataset': base_path + dataset_folder + '/' + dataset_file,
                  'role': 'You are a powerful ontology engineer that generates OWL ontologies in turtle format.',
-                 'model':'gpt-3.5-turbo-16k'
+                 'model': 'gpt-4'
                  }
 
 ontology_builder = LlmOntology(onto_metadata)
 
 # GENERATE THE FIRST LLM-ONTOLOGY
-instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [0,1,2]])
+instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [0]])
 print(instructions_subset)
 ontology_builder.interact(
     json_data=json_data,
@@ -167,25 +167,25 @@ from tools import extract_sections_from_rdf, dict_to_rdf
 
 rdf_sections = extract_sections_from_rdf(ontology_builder.owl_codeblock)
 
-for key in rdf_sections.keys():
-    if key in ['class_definitions', 'object_property_definitions', 'data_property_definitions']:
-        for it,next_entity in enumerate(rdf_sections[key]):
-            print('###################################')
-            print(next_entity)
+for key in ['class_definitions', 'object_property_definitions', 'data_property_definitions']:
+    for it,next_entity in enumerate(rdf_sections[key]):
+        print('###################################')
+        print(next_entity)
 
-            owl_entity_codeblock = ontology_builder.interactByEntity(
-                ontology=ontology_builder.owl_codeblock,
-                task=instructions_subset,
-                entity=entity,
-                improved_version=improved_version,
-                reasoning=reasoning,
-                next_entity=next_entity
-            )
-            print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
-            print(owl_entity_codeblock)
-            rdf_sections[key][it] = owl_entity_codeblock
+        owl_entity_codeblock = ontology_builder.interactByEntity(
+            ontology=ontology_builder.owl_codeblock,
+            task=instructions_subset,
+            entity=entity,
+            improved_version=improved_version,
+            reasoning=reasoning,
+            next_entity=next_entity
+        )
+        print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
+        print(owl_entity_codeblock)
+        rdf_sections[key][it] = owl_entity_codeblock
 
-            ontology_builder.owl_codeblock = dict_to_rdf(rdf_sections)
+
+ontology_builder.owl_codeblock = dict_to_rdf(rdf_sections)
 
 print(ontology_builder.owl_codeblock)
 
@@ -281,7 +281,21 @@ rml_code_str = ontology_mapper.interact(json_data=json_data, ontology=ontology_b
 
 
 
+'''########################################## MAPPING ######################################################'''
 
+import morph_kgc
+import pandas as pd
+import json
 
+# Reading JSON data from a file
+with open("./datasets/BigBasketProducts/json_data.json") as f:
+    json_data = json.load(f)
 
+# Converting JSON data to a pandas DataFrame
+df = pd.DataFrame(json_data)
 
+# Writing DataFrame to a CSV file
+df.to_csv("./datasets/BigBasketProducts/csv_data.csv", index=False)
+
+graph = morph_kgc.materialize('./datasets/BigBasketProducts/config.ini')
+graph.serialize(destination='./datasets/BigBasketProducts/data.nt', format='ntriples', endoding="utf-8")

@@ -14,16 +14,10 @@ In an academic tone, explain the reasoning behind the steps you've taken to form
 both the task description and JSON data. Limit this explanation to a maximum of 20 sentences. Also, provide a summary of
 the JSON data and the logic applied in creating the ontology, within a range of 10 to 20 sentences.
 
-Next, layout a series of tasks that highlight the steps necessary to build the ontology from the JSON data. The tasks
-should be formatted as follows:
-
-task_1 - ...
-task_2 - …
-…
-task_N - …
-
 Start writing here the list of tasks. I give you a set of predefined ones. Propose any other tasks that you think are
-crucial for this project's successful completion, detailing potential challenges and suggested solutions:
+crucial for this project's successful completion, detailing potential challenges and suggested solutions. Next, layout a
+series of tasks that highlight the steps necessary to build the ontology from the JSON data. The tasks should be
+formatted as follows::
 
 **Output Tasks:**
 task_1: <Identification of principal entities>
