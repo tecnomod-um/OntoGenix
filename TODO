@@ -6,3 +6,13 @@ short term memory that will be the appropriate context for the onto builder to b
 
 - The extract_sections_from_rdf in the tools package must be generalized for extracting classes using a set of different
 uris. Also add try catch building blocks.
+
+- Revise every prompt on every agent. 
+
+- Rewrite the pipeline:
+	- First perform the generation of the ontology more straitforward. 
+	- The rml must be done in two steps, first generate the rationalle and then the rml code. 
+	- The embeddings strategy must be clarified.
+
+
+
