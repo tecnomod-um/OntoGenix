@@ -5,6 +5,89 @@ from rdflib import Graph, URIRef
 
 import difflib
 
+
+import re
+from lxml import etree
+import difflib
+
+check = ''''<!DOCTYPE rdf:RDF [
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+    <!ENTITY um "https://vocab.um.es#">
+]>'''
+
+def extract_sections_from_rdf(rdf_string):
+    # Extract doctype section using regex
+    doctype_section = re.search('<!DOCTYPE rdf:RDF \[.*?\]>', rdf_string, re.DOTALL)
+    doctype_section = doctype_section.group() if doctype_section else 'Not found'
+    print(doctype_section)
+    # Convert string to bytes
+    rdf_bytes = bytes(rdf_string, encoding='utf-8').strip(b'\n')
+    # Parse RDF string to an XML object
+    root = etree.fromstring(rdf_bytes)
+    # Extract namespaces
+    namespaces = root.nsmap
+    print(namespaces)
+    # Extract RDF section (uris definitions)
+
+    # Extract class definitions
+    class_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2000/01/rdf-schema#}Class')]
+    # Extract object property definitions
+    object_property_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/1999/02/22-rdf-syntax-ns#}Property')]
+    # Extract data property definitions
+    data_property_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2002/07/owl#}DatatypeProperty')]
+    # Extract annotation definitions
+    annotation_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2002/07/owl#}Ontology')]
+
+    rdf_sections = {'doctype_section': doctype_section,
+                    'rdf_section': namespaces,
+                    'namespaces': namespaces,
+                    'class_definitions': class_definitions,
+                    'object_property_definitions': object_property_definitions,
+                    'data_property_definitions': data_property_definitions,
+                    'annotation_definitions': annotation_definitions}
+
+    return rdf_sections
+
+
+def dict_to_rdf(rdf_sections):
+    # Initialize root element
+    root = etree.Element('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF', rdf_sections['rdf_section'], nsmap=rdf_sections['namespaces'])
+
+    # Define namespaces
+    namespaces = rdf_sections['namespaces']
+
+    # Register namespaces
+    for prefix, uri in namespaces.items():
+        etree.register_namespace(prefix, uri)
+
+    # Helper function to add children to root
+    def add_children(items):
+        for item in items:
+            # Parse the XML string using the defined namespaces
+            parser = etree.XMLParser(ns_clean=True, recover=True, remove_blank_text=True)
+            child = etree.fromstring(item, parser=parser)
+            root.append(child)
+
+    # Add class definitions
+    add_children(rdf_sections['class_definitions'])
+
+    # Add object property definitions
+    add_children(rdf_sections['object_property_definitions'])
+
+    # Add data property definitions
+    add_children(rdf_sections['data_property_definitions'])
+
+    # Add annotation definitions
+    add_children(rdf_sections['annotation_definitions'])
+
+    # Convert root to string and prepend doctype
+    rdf_string = f'{rdf_sections["doctype_section"][0]}\n{etree.tostring(root, pretty_print=True).decode()}'
+
+    return rdf_string
+
+
 def compare_texts(text1, text2):
     text1 = text1.replace(' xmlns', '\nxmlns')
     text2 = text2.replace(' xmlns', '\nxmlns')
@@ -99,22 +182,23 @@ def count_tokens(data: Dict[str, Any]) -> int:
 
 
 import re
-import yaml
 
 
-
-def preprocess_yaml(yaml_string: str, parse: str) -> str:
-    # Regular expression to find lines starting with "task_"
-    pattern = re.compile(r'^\s*'+parse, re.MULTILINE)
-    # Dedent these lines
-    return pattern.sub(parse, yaml_string)
-
-
-def text2dict(text: str, parse: str="task_") -> dict:
+def text2dict(text: str) -> dict:
     try:
-        preprocessed_text = preprocess_yaml(text, parse)
-        plan_dict = yaml.safe_load(preprocessed_text)
-        return plan_dict
+        # split the text into tasks
+        tasks = re.split('\n', text.strip())
+        # initialize an empty dictionary
+        task_dict = {}
+        # loop over each task
+        for task in tasks:
+            if 'task_' in task:
+                # split the task into number and description
+                task_split = re.split(': ', task, maxsplit=1)
+                # add to the dictionary
+                task_dict[task_split[0].strip()] = task_split[1].strip()
+
+        return task_dict
 
     except ValueError as e:
         print(f"An error occurred while preprocessing the text: {e}")

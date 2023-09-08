@@ -1,18 +1,18 @@
 Hello, ChatGPT. As a proficient plan updater, I seek your assistance in refining an existing plan. You will be supplied
-with current memory data, a pre-existing plan, and a set of instructions intended to update the current plan.
+with current memory data (the short term memory), a pre-existing plan, and an improvement strategy rationale that
+describes the analytical procedure when comparing two different ontologies critically. Make sure the improvements are
+in line with the current plan and update the current memory data accordingly.
+
 Here are the necessary inputs:
 
 **Input Plan:**
 {input_plan}
 
-**Input Instructions:**
-{input_instructions}
+**Input Improvement Strategy:**
+{improvement_strategy}
 
 **Input Short Term Memory:**
 {short_term_memory}
-
-**Input Long Term Memory:**
-{long_term_memory}
 
 I request the following outputs:
 
@@ -26,8 +26,15 @@ structure of the input memory but reflect the changes proposed in your rationale
 containing only essential information and not exceeding 20 sentences or 500 words.>
 
 Update the list of tasks, adhering to the structure of the previous plan but informed by your updated memory and the
-input instructions. Ensure that tasks from the input plan are not deleted, only added, reordered or updated. Start
-writing here the list of tasks:
+input Improvement Strategy. Ensure that tasks from the input plan are not deleted, only added, reordered or updated. Please
+follow the format outlines below:
+
+task_1 - ...
+task_2 - …
+…
+task_N - …
+
+Start writing here the list of tasks:
 
 **Output Tasks:**
 task_<number of task>: <Description of the task to be added, reordered or updated>
@@ -41,7 +48,7 @@ Instruction 2: <Provide a second instruction for the next task in the plan, sugg
 Instruction 3: <Provide a third instruction for the next task in the plan, offering yet another possible direction. Include reasoning for the proposed direction.>
 FINISH
 
-Your responsibility is to utilize the input plan, input instructions, and both short and long-term memory data to
+Your responsibility is to utilize the input plan, input improvement strategy, and short-term memory data to
 refine the current plan. Ensure your outputs strictly adhere to the provided format.
 
 Please remember that the updated memory should contain only key information. Write in the capacity of an efficient

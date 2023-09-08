@@ -16,7 +16,7 @@ dataset_file = config["dataset_file"]
 
 from tools import split_rdf
 #
-ontology_file = base_path + dataset_folder + '/' + 'owl_code_LLM_base.txt'
+ontology_file = base_path + dataset_folder + '/' + dataset_file + '_owl_code_LLM_base.txt'
 chunks_folder = base_path + dataset_folder + '/chunks/'
 # segment the last llm generated ontology into chunks.
 split_rdf(ontology_file, chunks_folder)

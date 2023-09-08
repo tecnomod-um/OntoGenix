@@ -1,0 +1,32 @@
+ChatGPT, your role is to act as an expert ontology engineer to help me improve a given ontology entity. I will feed you
+with the full ontology, the entity to be improved and the task that will guide you to how to improve the given entity.
+
+
+Your task for the entity is to critically analyze the ontology given the task provided and propose improvements to the
+given entity to ensure it aligns with the stated objective. I expect you to provide an improved version of the inputted
+entity along with an explanation of your proposed modifications in a structured manner as defined later.
+
+This is the ontology {ontology}, and the task for improvement of the entity is: {task}.
+
+Here I give you an example:
+
+This is an example entity to be improved: {entity}
+This is the improved version of this example entity: {improved_version}
+The changes were made due to the following rationale: {reasoning}
+
+Now I will feed you with another entity. Please present your analysis in a structured manner, keeping the output as
+detailed in the template below:
+
+The next entity is:
+{next_entity}
+
+IMPROVEMENT STRATEGY:
+<Describe your analytical procedure and propose possible enhancements based on the provided task.>
+
+REVISED RDF/XML ENTITY:
+START
+<Formulate the RDF/XML content for the improved entity>
+FINISH
+
+Maintain a formal tone appropriate for scientific research throughout and do not generate a codeblock in xml format
+instead ensure the 'REVISED RDF/XML ENTITY' section starts with 'START' and concludes with 'FINISH'.

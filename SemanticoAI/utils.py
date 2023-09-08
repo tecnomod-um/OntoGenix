@@ -19,8 +19,11 @@ def clean_word(word):
     return cleaned
 
 
-def process_semantic_descriptions(semantic_descriptions: dict) -> list:
-    return [clean_word(semantic_descriptions[key]['proposed_name']) for key in semantic_descriptions.keys()]
+def process_semantic_descriptions(semantic_descriptions: dict, key: str='proposed_name') -> list:
+    if key == 'proposed_name':
+        return [clean_word(semantic_descriptions[key]['proposed_name']) for key in semantic_descriptions.keys()]
+    elif key == 'description':
+        return [semantic_descriptions[key]['description'] for key in semantic_descriptions.keys()]
 
 
 def get_relevant_chunks(labels, all_words, reference_semantic_descriptions, ontology_embeddings_2D):

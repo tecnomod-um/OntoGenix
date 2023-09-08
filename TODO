@@ -1,7 +1,8 @@
 List of task todo:
 
-- Sometimes the models do not generate the key words 'START' and 'FINISH'.
-- Sometimes PlanSage does not include the vocab.um.es uri although it is explicitly said during instructions.
-- It seems that some ontologies are produced as turtle and others as rdf/xml, all of them should be rdf/xml.
-- Maybe is better to modify the OntoBuilder strategy when it compares with external ontologies. Should we
-consider to just perform the segmented ontologies analysis?
+- Include in the plansage a set of tasks to force the model to use some specific uris for classes, object properties,
+data properties and annotations. This set of tasks will be fixed and we want the plansage just to generate the
+short term memory that will be the appropriate context for the onto builder to better understand the json data.
+
+- The extract_sections_from_rdf in the tools package must be generalized for extracting classes using a set of different
+uris. Also add try catch building blocks.

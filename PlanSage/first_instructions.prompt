@@ -1,47 +1,37 @@
-Hello, ChatGPT. Given your proficiency as an ontology engineer, I seek your guidance in crafting a methodology to build an ontology using a provided JSON data table and a task input. Here are the necessary inputs:
+Hello, ChatGPT. Given your proficiency as an ontology engineer, I seek your guidance in crafting a methodology to build
+an ontology using a provided JSON data table and a task input. Here are the necessary inputs:
 
-Input Task Description:
+**Input Task Description:**
 {input_task}
 
-Input Related data in JSON format:
+**Input Related data in JSON format:**
 {json_data}
 
 The outputs I need from you are as follows:
 
-Output Memory:
-In an academic tone, explain the reasoning behind the steps you've taken to formulate this strategy, taking into account both the task description and JSON data. Limit this explanation to a maximum of 20 sentences. Also, provide a summary of the JSON data and the logic applied in creating the ontology, within a range of 10 to 20 sentences.
+**Output Memory:**
+In an academic tone, explain the reasoning behind the steps you've taken to formulate this strategy, taking into account
+both the task description and JSON data. Limit this explanation to a maximum of 20 sentences. Also, provide a summary of
+the JSON data and the logic applied in creating the ontology, within a range of 10 to 20 sentences.
 
-Next, layout a series of tasks that highlight the steps necessary to build the ontology from the JSON data. The tasks should be formatted as follows:
+Start writing here the list of tasks. I give you a set of predefined ones. Propose any other tasks that you think are
+crucial for this project's successful completion, detailing potential challenges and suggested solutions. Next, layout a
+series of tasks that highlight the steps necessary to build the ontology from the JSON data. The tasks should be
+formatted as follows::
 
-Output Tasks:
-task_1:
-step_name: Identification of principal entities
-step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
-task_2:
-step_name: Identification of entity properties
-step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
-task_3:
-step_name: Definition of classes and properties within the ontology
-step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
-task_4:
-step_name: Establishment of constraints and interrelations
-step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
-task_5:
-step_name: Inclusion of relevant metadata and annotations
-step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
-task_6:
-step_name: Specification of a foundational prefix
-step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
-task_7:
-step_name: Definition of annotation properties
-step_description: <Description of Task along with Potential Challenges and Proposed Solutions>
+**Output Tasks:**
+task_1: <Identification of principal entities>
+task_2: <Identification of entity properties>
+task_3: <Definition of classes and properties within the ontology>
+task_4: <Establishment of constraints and interrelations>
+task_5: <Inclusion of relevant metadata and annotations>
+task_6: <Specification of a foundational prefix>
+task_7: <Definition of annotation properties>
 
-Propose any other tasks that you think are crucial for this project's successful completion, detailing potential challenges and suggested solutions.
+Formulate strictly three instructions for the next steps in the strategy, focusing on the possible continuations of the
+previous tasks. The instructions should be formatted as follows:
 
-Formulate strictly three instructions for the next steps in the strategy, focusing on the possible continuations of the previous tasks. The instructions should be formatted as follows:
-
-Output Instructions:
-START
+**Instructions:**
 Instruction 1: <Provide an instruction for the next task in the plan, offering an alternative continuation based on the evolved plan.>
 Instruction 2: <Provide a second instruction for the next task in the plan, suggesting a different alternative route.>
 Instruction 3: <Provide a third instruction for the next task in the plan, presenting yet another feasible direction.>

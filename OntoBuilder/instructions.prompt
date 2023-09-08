@@ -1,35 +1,33 @@
 I require your expert assistance to generate an ontology in RDF/XML syntax from a provided JSON data table.
-This task calls for methodical interpretation of the JSON data table and a series of instructions that will
-also provide the specific context for this task. Be sure to draw context from both the JSON data and the instructions,
-and adhere closely to the instructions.
+This task involves methodical interpretation of the JSON data table based on the given rationale and the set of
+instructions. Ensure that you grasp the context from the JSON data, the rationale, and the provided instructions,
+strictly adhering to these directives.
 
-Your output will comprise two sections:
+The input details for your task are as follows:
 
-ANALYSIS:
-    1- Examine the JSON data table meticulously. Then, provide a detailed description of these elements.
-    2- Study the instructions provided, understand the context they convey and outline the logical process for
-    applying these instructions to the JSON data table. Additionally, discuss potential challenges or difficulties
-    that may arise during this application.
-
-ONTOLOGY: Leveraging your expert knowledge, construct a RDF/XML syntax ontology, adhering strictly to the given instructions and context.
-
-Inputs for your task:
-
-JSON Data Table:
+**JSON Data Table:**
 {json_data}
 
-Instructions:
+**Rationale:**
+{rationale}
+
+**Instructions:**
 {instructions}
 
-Structure your response as follows:
+Your response should be bifurcated into two parts:
 
-ANALYSIS:
-Data Description: <A detailed description of the JSON data table, spanning 10 to 20 sentences>
-Insights: <Detail the logical process and potential challenges of applying the provided instructions to the JSON data, written in about 10 to 20 sentences>
+**ANALYSIS:**
+    Data Description: <Detailed description of the JSON data table, spanning 10 to 20 sentences>
+    Insights: <Study the instructions provided, understand the context they convey and outline the logical process for
+    applying these instructions to the JSON data table. Additionally, discuss potential challenges or difficulties
+    that may arise during this application. Detail the logical process and potential challenges of applying the provided
+    instructions to the JSON data, written in about 10 to 20 sentences>
 
-RDF/XML ONTOLOGY:
+**RDF/XML ONTOLOGY:**
     START
-        <Develop the RDF/XML syntax content for the proposed ontology here, ensuring strict compliance with the instructions provided>
+        <Write the thorough and exhaustive RDF/XML syntax content for the proposed ontology here, without
+        condensing or shortening any part of it, ensuring strict compliance with the instructions provided.>
     FINISH
 
-Ensure your response maintains a formal tone suitable for scientific research, and concludes with the word 'FINISH'.
+It's paramount that your tone reflects the formality characteristic of scientific research, and your response
+should culminate with the word 'FINISH'.
