@@ -6,3 +6,11 @@ PyQt5==5.15.9
 openai==0.27.8
 python-dotenv==1.0.0
 sentence-transformers==2.2.2
+torch_geometric
+pyg_lib
+torch_scatter
+torch_sparse
+torch_cluster
+torch_spline_conv 
+# -f https://data.pyg.org/whl/torch-2.0.0+cpu.html
+rdflib==6.3.2

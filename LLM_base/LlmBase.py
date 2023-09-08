@@ -14,7 +14,7 @@ class AbstractLlm(ABC):
         self.role = metadata['role']
         self.model = metadata['model']
 
-    def get_api_response(self, content: str, temperature=0.1, max_tokens=None, stream=False):
+    def get_api_response(self, content: str, temperature=0, max_tokens=None, stream=False):
 
         response = openai.ChatCompletion.create(
             model=self.model,

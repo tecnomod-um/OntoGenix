@@ -1,0 +1,7 @@
+List of task todo:
+
+- Sometimes the models do not generate the key words 'START' and 'FINISH'.
+- Sometimes PlanSage does not include the vocab.um.es uri although it is explicitly said during instructions.
+- It seems that some ontologies are produced as turtle and others as rdf/xml, all of them should be rdf/xml.
+- Maybe is better to modify the OntoBuilder strategy when it compares with external ontologies. Should we
+consider to just perform the segmented ontologies analysis?

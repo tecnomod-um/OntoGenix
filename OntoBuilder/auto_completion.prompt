@@ -1,4 +1,4 @@
-I require you to resume the previous task and provide a comprehensive completion. Here's the information you were given before:
+I will resume the previous task and provide a comprehensive completion. Here's the information you were given before:
 
 Previous Input:
 {prev_input}
@@ -6,4 +6,4 @@ Previous Input:
 Your Partial Response:
 {response}
 
-Please, carry on to finalize your response, ensuring to maintain the formal tone required for scientific research, continue the analysis of the JSON data table, apply the provided instructions, identify the entities, classes, relations, and constraints within the JSON data table, and discuss any challenges you foresee in applying the instructions. Additionally, address and correct any inconsistencies or issues identified in your partial response. Continue to construct the ontology in RDF/XML syntax as per the context given earlier. Remember to conclude your response with the word 'FINISH'.
+Please continue with the finalization of your response, ensuring that you maintain the required formal tone suitable for scientific research. Proceed with the analysis of the JSON data table, following the provided instructions. Identify the entities, classes, relations, and constraints within the JSON data table, and discuss any challenges you anticipate in applying the instructions. Additionally, address and rectify any inconsistencies or issues identified in your partial response. Construct the ontology in RDF/XML syntax, as per the earlier context, and remember to limit your response to no more than 100 lines. Conclude your response with the word 'FINISH'.

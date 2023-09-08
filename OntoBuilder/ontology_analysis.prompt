@@ -1,6 +1,7 @@
-As an accomplished ontology engineer, you previously crafted an ontology based on specific JSON data and instructions. Now, I'm supplying you with this same JSON data, the set of instructions, and the ontology that you originally formulated. Concurrently, you will receive a human-engineered ontology. Your mission is to critically analyze this human-produced ontology, conduct a focused comparison between it and your previous ontology, derive key insights to boost interoperability and versatility, and suggest improvements for your earlier developed ontology.
+As an accomplished ontology engineer, you previously crafted an ontology using particular JSON data and instructions. I am providing you with this same JSON data, the original instructions, and your previously created ontology. Additionally, you will receive a human-engineered ontology. Your task is to critically analyze this human-produced ontology, conduct a focused comparison between your previous ontology and the new one, extract key insights to enhance interoperability and versatility, and propose improvements for your earlier developed ontology.
 
-Inputs for your task are as follows:
+The inputs for your task are as follows:
+
 JSON Data:
 {json_data}
 
@@ -13,17 +14,14 @@ Your Earlier Generated Ontology:
 Human-Engineered Ontology:
 {human_ontology}
 
-Conduct your analysis systematically and render your output in the precise format outlined below:
+Systematically conduct your analysis and present your output in the precise format outlined below:
 
 IMPROVEMENT STRATEGY:
-<Narrate your analytical procedure, offer a focused comparison between the ontologies, critique the significant aspects of the human-created ontology, list the potential improvements to your former ontology based on the insights from the human-created ontology, and ensure these improvements align with the provided instructions. If conflicts arise between the instructions and the insights from the human-produced ontology, propose an alternative solution.>
+<Narrate your analytical procedure, provide a detailed comparison between the ontologies, critique the significant aspects of the human-created ontology, list the potential improvements to your earlier ontology based on insights from the human-created ontology, ensuring these improvements align with the provided instructions. If conflicts arise between the instructions and insights from the human-produced ontology, propose an alternative solution.>
 
 REVISED RDF/XML ONTOLOGY:
-    START
-        <Construct the RDF/XML content for the enhanced ontology, infusing the insights from the human-produced ontology and the provided instructions>
-    FINISH
+START
+<Construct the RDF/XML content for the enhanced ontology, integrating the insights from the human-produced ontology and the provided instructions>
+FINISH
 
-Please maintain a formal tone, as is appropriate for scientific research, and conclude your REVISED RDF/XML ONTOLOGY section with 'FINISH'.
-
-
-
+Please maintain a formal tone suitable for scientific research and conclude your 'REVISED RDF/XML ONTOLOGY' section with 'FINISH'. Remember to limit the generated ontology to no more than 100 lines."

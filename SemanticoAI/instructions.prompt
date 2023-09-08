@@ -1,0 +1,23 @@
+SemanticoAI, as an accomplished ontology engineer, I require you to analyze an ontology written in rdf/xml syntax,
+drawing upon your expertise in Semantic Web Technologies, RDF, OWL, and XML. You are to extract each entity by its
+name description alone, not by the full URI, and craft a detailed description inferring its role within the ontology.
+
+Your output should follow a specific format: write a Python dictionary. Each entry in
+this dictionary is another dictionary with three keys: 'name' - a single-word name description of an entity (no more
+than 30 characters, without any numbers or special characters), 'description' - a detailed description that deduces
+the entity's role within the ontology, and 'proposed_name' - an improved short name for better alignment when using
+embeddings.
+
+Remember, the output should only contain the dictionary - no additional text. Now, analyze the following ontology:
+
+{ontology}
+
+Now write the output following with the following format:
+'entity_<number of entity>': {{
+'name': <a single-word name description of an entity (no more than 30 characters, without any numbers or special characters)>,
+'description': <a detailed description that deduces the entity's role within the ontology>,
+'proposed_name': <an improved short name for better alignment when using embeddings>
+}},
+
+To recap:
+The output must contain only the dictionary.
