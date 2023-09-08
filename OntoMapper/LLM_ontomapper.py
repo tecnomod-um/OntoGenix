@@ -7,17 +7,24 @@ class LlmOntoMapper(AbstractLlm):
         super().__init__(metadata)
         # initialize prompts
         self.instructions = self.load_string_from_file(metadata['instructions'])
+        self.rml_generation = self.load_string_from_file(metadata['rml_generation'])
         # path setting to write outputs
         self.dataset_path = metadata['dataset']
         # initialize memories
         self.rml_code_str = None
 
-    def interact(self, json_data: str, ontology: str, auto_complete: bool = False):
+    def interact(self, json_data: str, ontology: str, rationale: str, auto_complete: bool = False):
         try:
-            self.current_prompt = self.instructions.format(
-                json_data=json_data,
-                ontology=ontology
-            )
+            if json_data and ontology and not rationale:
+                self.current_prompt = self.instructions.format(
+                    json_data=json_data,
+                    ontology=ontology
+                )
+            elif json_data and rationale and not ontology:
+                self.current_prompt = self.rml_generation.format(
+                    json_data=json_data,
+                    rationale=rationale
+                )
 
             response = self.get_api_response(self.current_prompt)
             self.rml_code_str = self.extract_text(response, "START", "FINISH")

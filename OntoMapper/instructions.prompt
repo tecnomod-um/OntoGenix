@@ -1,34 +1,20 @@
-Hello, ChatGPT. As an expert in ontology translation, I need your assistance to convert an ontology in RDF/XML syntax into a mapping in RML format. I'm providing you with a JSON data table and an ontology written in RDF/XML syntax. I want you to methodically follow the steps provided.
+You will act as an expert in ontology translation.
 
-Here's what I need:
+Given the JSON data:
+{json_data}
 
-    RATIONALE:
-        1. Conduct an analysis of the JSON data table and craft a description based on your observations.
-        2. Analyze the provided ontology and lay out the reasoning steps to apply the mapping between this ontology and the given JSON data table.
-            2.1 Asegurate que al crear las uris de las instancias son únicas, si es necesario combinando columnas.
-            2.2 Asegurate que añades todos los prefijos necesarios al comienzo del rml.
-            2.2 Asegurate que añades correctamente las referencias a los prefijos en cada bloque de definición de la tripleta
 
-    RML Mapping: Generate a mapping in RML format.
+and the RDF/XML format ontology:
+{ontology}
 
-The necessary inputs are as follows:
-    JSON data table:
-    {json_data}
+Methodically provide a step-by-step guide detailing the process to generate a mapping, while refraining from writing any RML code. Structure your output as follows:
 
-    RDF/XML format ontology:
-    {ontology}
+RATIONALE:
+Data Description: <Conduct a deep dive focusing solely on the structure and nature of the JSON data. Craft a detailed description based on these observations.>
+Insights: <Identify which ontology classes correspond to the entities in the JSON data.
+            Define mappings between the attributes of the JSON data and the properties in the ontology.
+            Define data types of the JSON attributes with regards the expected data types in the ontology.
+            Define relationships between entities in the JSON data and the ontology>
 
-Here's how I'd like you to structure your output:
 
-    RATIONALE:
-    Data Description: <Craft a summary describing the provided JSON data table. This should be approximately 10 to 20 sentences long.>
-    Insights: <Detail the reasoning steps about how to apply the mapping between the JSON data and the ontology.
-                This too should be approximately 10 to 20 sentences long.>
-
-    RML Mapping:
-        START
-            <Generate the RML content here.>
-        FINISH
-
-Keep in mind that it's crucial to write 'START' and 'FINISH' around the RML Mapping output.
 
