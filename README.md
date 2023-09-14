@@ -1,6 +1,6 @@
 # OntoGenix
 
-A semi-automatic systems to generate OWL ontologies from CSV datasets using LLMs.
+The project utilizes the OpenAI GPT-4 model to develop a semi-automatic system that generates OWL ontologies and RML mappings from CSV datasets using LLMs.
 
 ## Architecture
 
