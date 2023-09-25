@@ -65,7 +65,7 @@ import configparser
 config = configparser.ConfigParser()
 # Define a new section and its options (key-value pairs)
 config['DataSourceCSV'] = {
-    'mappings': base_path + dataset_folder + '/mapping.csv.ttl',
+    'mappings': base_path + dataset_folder + '/' + dataset_file + '_rml_mapping_LLM.csv.ttl',
     'file_path': base_path + dataset_folder + '/csv_data.csv'
 }
 # Write the changes back to the file
@@ -120,6 +120,7 @@ ontology_builder = LlmOntology(onto_metadata)
 '''
 This section will help to generate the first and most basic ontology version based on the high level definition 
 provided using natural language. The outcome should reflect the high level architecture of the ontology description.
+This first version could be enough complete to generate the rml mapping using the OntoMapper LLM in the next section.
 '''
 ontology_builder.interact(
     json_data=json_data,
@@ -128,7 +129,7 @@ ontology_builder.interact(
 # ontology_builder.regenerate() # run this line of code if you want to regenerate the LLM answer.
 ontology_context = ontology_builder.answer # to get the full contextualized answer from the ontology generator LLM.
 print(ontology_context) # -> this will be used later for the RML MAPPING step.
-print(ontology_builder.codeblock) # to get the ontology codeblox in RDF/XML syntax from the ontology generator LLM.
+print(ontology_builder.codeblock) # to get the ontology codeblock in RDF/XML syntax from the ontology generator LLM.
 
 # --------------- GENERATE CODE FOR EACH ENTITY ----------------------------------
 '''
@@ -197,7 +198,7 @@ from OntoMapper.LLM_ontomapper import LlmOntoMapper
 mapper_metadata = {'instructions': './OntoMapper/instructions.prompt',
                    'dataset': base_path + dataset_folder + '/' + dataset_file,
                    'role': 'You are a powerful ontology engineer that generates RML mappings.',
-                   'model':'gpt-3.5-turbo-16k'
+                   'model':'gpt-4'
 }
 # build the ontology mapping generator LLM
 ontology_mapper = LlmOntoMapper(mapper_metadata)
@@ -208,7 +209,6 @@ print(ontology_mapper.rml_codeblock)
 
 '''######################### Kowledge Graph Generation from RML code ###############################################'''
 import morph_kgc
-
 
 # You should have first created the config.ini file.
 graph = morph_kgc.materialize(base_path + dataset_folder + '/' + 'config.ini')

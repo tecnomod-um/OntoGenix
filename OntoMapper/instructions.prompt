@@ -14,13 +14,14 @@ Structure your output in the following format:
         IMPORTANT!! The rml mapping will reference a CSV file not a JSON.
         Follow this format for the definition of classes mappings:
 
-        <#TriplesMapEntity1> a rr:TriplesMap;
+        '''turtle
+        <#TriplesMapEntity> a rr:TriplesMap;
             rml:logicalSource [
                 rml:source "csv_data.csv";
                 rml:referenceFormulation ql:CSV
             ];
             rr:subjectMap [
-                rr:template "EntityURI/{Entity1}";
+                rr:template "EntityURI/{{Entity1}}";
             ];
             rr:predicateObjectMap [
                 rr:predicate ex:Property;
@@ -35,10 +36,11 @@ Structure your output in the following format:
                 rml:referenceFormulation ql:CSV
             ];
             rr:subjectMap [
-                rr:template "EntityURI/{Entity2}";
+                rr:template "EntityURI/{{Entity2}}";
             ].
 
         >
+        '''
 
 Do not explain your answer, just write the rml code. Do no write notes at the end of your writing.
 Generate appropriate URIs and combine columns if necessary.

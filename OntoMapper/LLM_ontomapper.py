@@ -20,7 +20,7 @@ class LlmOntoMapper(AbstractLlm):
             self.get_api_response(self.current_prompt)
             # extract the rml codeblock
             self.rml_codeblock = self.extract_text(self.answer, "'''turtle", "'''")
-
+            # write the answer to a txt file.
             self.save_response(self.rml_codeblock, self.dataset_path + '_rml_mapping_LLM.csv.ttl', mode='w')
 
         except ValueError as e:
