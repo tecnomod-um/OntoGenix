@@ -1,20 +1,48 @@
-You will act as an expert in ontology translation.
+Hello, ChatGPT. As an expert in ontology translation, I need your assistance to generate a mapping in RML format.
+I'm providing you with an ontology and the rationale describing the json data source and the insights describing the semantic structure of the ontology.
+I want you to methodically follow the steps provided in the rationale.
 
-Given the JSON data:
-{json_data}
+The necessary inputs are as follows:
+{rationale}
 
+Structure your output in the following format:
 
-and the RDF/XML format ontology:
-{ontology}
+<Generate the RML content here:
+        Ensure that when creating the URIs of the instances, they are unique, combine columns if necessary and do not use "http://example.org".
+        Ensure you add all the necessary prefixes at the beginning of the RML. Ensure you correctly add the references
+        to the prefixes in each triple definition block.
+        IMPORTANT!! The rml mapping will reference a CSV file not a JSON.
+        Follow this format for the definition of classes mappings:
 
-Methodically provide a step-by-step guide detailing the process to generate a mapping, while refraining from writing any RML code. Structure your output as follows:
+        <#TriplesMapEntity1> a rr:TriplesMap;
+            rml:logicalSource [
+                rml:source "csv_data.csv";
+                rml:referenceFormulation ql:CSV
+            ];
+            rr:subjectMap [
+                rr:template "EntityURI/{Entity1}";
+            ];
+            rr:predicateObjectMap [
+                rr:predicate ex:Property;
+                rr:objectMap [
+                    rr:parentTriplesMap <#Property>;
+                ];
+            ].
 
-RATIONALE:
-Data Description: <Conduct a deep dive focusing solely on the structure and nature of the JSON data. Craft a detailed description based on these observations.>
-Insights: <Identify which ontology classes correspond to the entities in the JSON data.
-            Define mappings between the attributes of the JSON data and the properties in the ontology.
-            Define data types of the JSON attributes with regards the expected data types in the ontology.
-            Define relationships between entities in the JSON data and the ontology>
+        <#TriplesMapEntity2> a rr:TriplesMap;
+            rml:logicalSource [
+                rml:source "csv_data.csv";
+                rml:referenceFormulation ql:CSV
+            ];
+            rr:subjectMap [
+                rr:template "EntityURI/{Entity2}";
+            ].
 
+        >
 
-
+Do not explain your answer, just write the rml code. Do no write notes at the end of your writing.
+Generate appropriate URIs and combine columns if necessary.
+Do not use "http://example.org" or "http://example.com" instead make use of the base prefix.
+Create a mapping for each class.
+Do not forget to add the prefixes.
+Do not shorten your answer.

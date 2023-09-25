@@ -12,13 +12,6 @@ TODO:
     IDEAS:
     - The OntoBuilder strategy comprises four stages:
         + Generate a fundamental ontology.
-        + Analyze a selection of example ontologies. This phase could be addressed in alternative ways:
-            a) let the user select the example set of ontologies.
-            b) preselect a representative set and use always the same set.(current approach: NOT WORKING)
-            c) have a big set of ontologies that are represented in an embedding space as a graph level. The generated
-            ontology by the LLM is then embbeded in that space and compared with the ones closer to it, that will be
-            used as the set of examples.
-        + Synthesize to create an enhanced ontology.
         + Search for related entities in a database of segmented ontologies using semanticoAI and embeddings. BEST OPTION!!!
         + Incorporate relevant entities if they are deemed beneficial.
 
@@ -37,265 +30,187 @@ dataset_folder = config["dataset_folder"]
 dataset_file = config["dataset_file"]
 
 file = base_path + dataset_folder + '/' + dataset_file + '.csv'
+print(file)
 
-'''########################################## DATA2JSON ######################################################'''
-from tools import csv2dataset, dataframe2prettyjson
+'''########################################## CHUNK CSV ######################################################'''
+from tools import csv2dataset
 
 # get a dataset subsample from a csv file
-dataset = csv2dataset(file, max_tokens=800)
+dataset = csv2dataset(file, max_tokens=200)
+print(dataset.head())
+
+'''########################################## DATAFRAME subsample 2 JSON ######################################################'''
+from tools import dataframe2prettyjson
 
 # format to json for the LLM_base and write to a file
-file = base_path + dataset_folder + '/' + dataset_file + '_dataframe_subset.txt'
-json_data = dataframe2prettyjson(dataset, file)
+json_data = dataframe2prettyjson(dataset, base_path + dataset_folder + '/json_data.json', save=True)
 print('######## PROMPT ############\n', json_data)
 
+'''########################################## JSON subsample 2 CSV ######################################################'''
+import pandas as pd
+import json
+
+# Reading JSON data from a file
+with open(base_path + dataset_folder + '/' + "json_data.json") as f:
+    json_data = json.load(f)
+# Converting JSON data to a pandas DataFrame
+df = pd.DataFrame(json_data)
+# Writing DataFrame to a CSV file
+df.to_csv(base_path + dataset_folder + '/' + "csv_data.csv", index=False)
+
+'''########################################## MORPHKG config file ######################################################'''
+import configparser
+
+# Initialize Config Parser
+config = configparser.ConfigParser()
+# Define a new section and its options (key-value pairs)
+config['DataSourceCSV'] = {
+    'mappings': base_path + dataset_folder + '/mapping.csv.ttl',
+    'file_path': base_path + dataset_folder + '/csv_data.csv'
+}
+# Write the changes back to the file
+with open(base_path + dataset_folder + '/config.ini', 'w') as configfile:
+    config.write(configfile)
 
 '''########################################## PLAN-INSTRUCTIONS ######################################################'''
-# instantiate the LLM_base that generates an owl ontology from a json subset data
 from PlanSage.LLM_planner import LlmPlanner
 
+# set metadata
 planner_metadata = {
-    'first_instructions': './PlanSage/first_instructions.prompt',
-    'interaction': './PlanSage/interaction.prompt',
+    'instructions': './PlanSage/instructions.prompt',
     'dataset': base_path + dataset_folder + '/' + dataset_file,
-    'role': 'You are a powerfull ontology engineer that generates the reasoning steps needed to generate'
-            'an ontology from a json data table.',
+    'role': 'You are a powerful ontology engineer that generates the reasoning steps needed to generate'
+            'the context needed to create an ontology from a json data table.',
     'model':'gpt-4'
 }
-
+# build the planner LLM
 planner = LlmPlanner(planner_metadata)
+# define the high level structure of the ontology in natural language.
+input_task='''Generate the steps required to generate an ontology given the input json data table. 
+    I want the ontology to be focused on the entity "CustomerComplaint". This will be linked to the following entities
+    as object properties: "State", "Product", "ProblemOfComplaint" and "Company".
+    "CustomerComplaint" connects to "Product" which must have "SubProduct" as object property.  
+    "CustomerComplaint" connects to "ProblemOfComplaint" which must have "ProblemSubCategory" as object property.
+    "Company" connects to "CompanyResponse" which must have "Resolution" as object property. 
+    "CustomerComplaint" connects to "CompanyResponse".
+    Define the approppriate data type properties for each class.
+    Employ as a foundational prefix "https://vocab.um.es".'''
 
+# interact with the LLM model to generate the context.
 planner.interaction(
-    input_task="Generate the steps required to generate an ontology given the input json data table.",
+    input_task=input_task,
     json_data=json_data
 )
-
-planner.interaction(
-    instructions = '''Rewrite task_6 with this text: Specify as a foundational prefix "https://vocab.um.es#" for the ontology to ensure a clear structure.'''
-)
-planner.interaction(
-    instructions = '''Add a new task that to generate, based on the entities and their relationships, clases that you consider will enhance the interoperability and semantics of the ontology.'''
-)
-planner.interaction(
-    instructions = '''Add a new task to do not add any type of individuals in the ontology.'''
-)
-planner.interaction(
-    instructions = '''Add a new task to generate a description field, an alternative name and a set of five alternative labels for each entity such 
-    as classes, object properties or data properties.'''
-)
-planner.interaction(
-    instructions = '''Add a new task to generate a new definition in the doctype for the foundational prefix: <!ENTITY um "https://vocab.um.es#"> and the ones
-    needed for the rest of the uris defined in the rdf section of the ontology.'''
-)
-planner.regenerate()
-
-instructions = planner.stable_plan
+# planner.regenerate() # run this line of code if you want to regenerate the LLM answer.
+print(planner.answer) # the LLM answer
 
 '''########################################## ONTOLOGY ######################################################'''
-# instantiate the LLM_base that generates an owl ontology from a json subset data
 from OntoBuilder.LLM_ontology import LlmOntology
-
-
+# set metadata
 onto_metadata = {'instructions': './OntoBuilder/instructions.prompt',
-                 'interaction': './OntoBuilder/interaction.prompt',
-                 'autocompletion': './OntoBuilder/auto_completion.prompt',
-                 'entities_analysis': './OntoBuilder/entities_analysis.prompt',
                  'entity_improvement': './OntoBuilder/entity_improvement.prompt',
                  'dataset': base_path + dataset_folder + '/' + dataset_file,
-                 'role': 'You are a powerful ontology engineer that generates OWL ontologies in turtle format.',
+                 'role': 'You are a powerful ontology engineer that generates OWL ontologies in RDF/XML format.',
                  'model': 'gpt-4'
                  }
-
+# build the ontology generator LLM
 ontology_builder = LlmOntology(onto_metadata)
 
-# GENERATE THE FIRST LLM-ONTOLOGY
-instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [0]])
-print(instructions_subset)
+# --------------------- GENERATE THE BASE ONTOLOGY --------------------------------
+'''
+This section will help to generate the first and most basic ontology version based on the high level definition 
+provided using natural language. The outcome should reflect the high level architecture of the ontology description.
+'''
 ontology_builder.interact(
     json_data=json_data,
-    rationale=planner.short_term_memory,
-    instructions=instructions_subset
+    rationale=planner.answer # you first need to generate a proper context with LLM planner.
 )
+# ontology_builder.regenerate() # run this line of code if you want to regenerate the LLM answer.
+ontology_context = ontology_builder.answer # to get the full contextualized answer from the ontology generator LLM.
+print(ontology_context) # -> this will be used later for the RML MAPPING step.
+print(ontology_builder.codeblock) # to get the ontology codeblox in RDF/XML syntax from the ontology generator LLM.
 
-# REFINEMENT OF THE LLM-ONTOLOGY [INSTRUCTION BY INSTRUCTION]
-instructions_subset = str([task for it, task in enumerate(instructions.values()) if it in [10]])
-print(instructions_subset)
-ontology_builder.interact(
-    json_data=json_data,
-    rationale=planner.short_term_memory,
-    instructions=instructions_subset,
-    ontology=ontology_builder.owl_codeblock
-)
-
-
-
-# REFINEMENT OF AN ENTITY [INSTRUCTION BY INSTRUCTION]
-instructions_subset = '''Establish constraints and interrelations between the classes and properties and define them for each entity in rdf/xml format. Besides, 
-generate a description field, an alternative name, and a set of five alternative labels for each entity such as classes, object properties, or data properties.'''
-print(instructions_subset)
-entity = '''<owl:Class rdf:about="https://vocab.um.es#ProductName">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:comment>An individual instance of ProductName class represents the name of a product.</rdfs:comment>
-        <skos:altLabel>ItemName</skos:altLabel>
-        <skos:altLabel>ProductTitle</skos:altLabel>
-        <skos:altLabel>ItemTitle</skos:altLabel>
-        <skos:altLabel>ItemLabel</skos:altLabel>
-    </owl:Class>'''
-improved_version = '''<owl:Class rdf:about="https://vocab.um.es#ProductName">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:comment>An individual instance of ProductName class represents the name of a product.</rdfs:comment>
-        <skos:altLabel>ItemName</skos:altLabel>
-        <skos:altLabel>ProductTitle</skos:altLabel>
-        <skos:altLabel>ItemTitle</skos:altLabel>
-        <skos:altLabel>ItemLabel</skos:altLabel>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocab.um.es#hasPriceValue"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocab.um.es#hasDiscountPriceValue"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>'''
-reasoning = "we have enhanced the ontology's semantics by adding to the entity definition the constraints, interrelations, alternative labels and description."
-
+# --------------- GENERATE CODE FOR EACH ENTITY ----------------------------------
+'''
+This section will help to generate the codeblock for a specific entity. You must pass to the LLM model the entity to be
+improved. The entity to be input could be an existing one in the generated ontology or an alternative one that it is 
+not already in the definition of the ontology. In the following I show two different use cases, one for a class entity 
+and another one for an [object property/data type property]. 
+'''
 from tools import extract_sections_from_rdf, dict_to_rdf
 
-rdf_sections = extract_sections_from_rdf(ontology_builder.owl_codeblock)
+# extract sections from the RDF/XML owl codeblock
+rdf_sections = extract_sections_from_rdf(ontology_builder.codeblock)
+print(rdf_sections.keys())
 
-for key in ['class_definitions', 'object_property_definitions', 'data_property_definitions']:
-    for it,next_entity in enumerate(rdf_sections[key]):
-        print('###################################')
-        print(next_entity)
-
-        owl_entity_codeblock = ontology_builder.interactByEntity(
-            ontology=ontology_builder.owl_codeblock,
-            task=instructions_subset,
-            entity=entity,
-            improved_version=improved_version,
-            reasoning=reasoning,
-            next_entity=next_entity
-        )
-        print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
-        print(owl_entity_codeblock)
-        rdf_sections[key][it] = owl_entity_codeblock
-
-
-ontology_builder.owl_codeblock = dict_to_rdf(rdf_sections)
-
-print(ontology_builder.owl_codeblock)
-
-ontology_builder.regenerate()
-
-
-'''########################################## SEMANTICO-AI ######################################################'''
-
-from tools import split_rdf
-#
-ontology_file = base_path + dataset_folder + '/' + dataset_file + '_owl_code_LLM_base.txt'
-chunks_folder = base_path + dataset_folder + '/chunks/'
-# segment the last llm generated ontology into chunks.
-split_rdf(ontology_file, chunks_folder)
-
-from SemanticoAI.LLM_semantico import LlmSemantico
-from SemanticoAI.utils import save_semantic_descriptions
-
-semanticoAI_metadata = {
-    'instructions': './SemanticoAI/instructions.prompt',
-    'dataset': base_path + dataset_folder + '/' + dataset_file,
-    'role': 'As an expert ontology engineer, SemanticoAI, your task is to analyze an ontology written in rdf/xml syntax.'
-}
-semanticoAI = LlmSemantico(semanticoAI_metadata)
-
-semanticoAI.chunksTransform(base_path + dataset_folder + '/chunks/')
-
-save_semantic_descriptions(
-    base_path + dataset_folder + '/semantic_descriptions.npy',
-    semanticoAI.semantic_descriptions
+# --- Class entities improvement suggestions
+print(rdf_sections['class_definitions'])
+# define the task
+'''
+This task prompt has been proved useful for class entities. 
+DO NOT CHANGE IT! 
+'''
+task = '''Scrutinize the ontology, the data description and the insights to identify intrinsic constraints and relationships.
+Clearly follow the instructions given in the insights to define the constraints and relationships.
+Do not forget to reference all the object properties and data properties mentioned in the insights as related with the given entity.
+Do not forget to define for object properties restrictions the "onClass" parameter.
+Do not forget to define for data type properties restrictions the "onDataRange" parameter.'''
+# for each class entity
+entity_index = 0 # get the desired section by index
+next_entity = rdf_sections['class_definitions'][entity_index]
+print(next_entity)
+# generate the LLM answer
+ontology_builder.interact(
+    rationale=ontology_context,
+    next_entity=next_entity,
+    task=task
 )
+print(ontology_builder.codeblock) # check the entity codeblock generated by the LLM
 
-
-from SemanticoAI.utils import load_semantic_descriptions, process_semantic_descriptions
-
-semantic_descriptions = load_semantic_descriptions(
-    base_path + dataset_folder + '/semantic_descriptions.npy'
+# --- Object and Data property entities improvement suggestions
+'''
+This task prompt has been proved useful for object properties and data type properties. 
+DO NOT CHANGE IT! 
+'''
+# define the task
+task = '''Append relevant metadata and annotations to provide context, provenance, or additional insights for each 
+entity. Do not change the original entity name. Define a description field, propose an alternative name, and devise 
+a set of five alternative labels to ensure comprehensiveness and flexibility in understanding and usage. Consider to 
+define equivalent properties if known or it exist in the ontology, otherwise, do not create fictional ones.'''
+# for each class entity
+print(rdf_sections['object_property_definitions']) # or rdf_sections['data_property_definitions']
+entity_index = 0 # get the desired section by index
+next_entity = rdf_sections['object_property_definitions'][entity_index] # or rdf_sections['data_property_definitions'][entity_index]
+print(next_entity)
+# generate the LLM answer
+ontology_builder.interact(
+    rationale=ontology_context,
+    next_entity=next_entity,
+    task=task
 )
-
-reference_semantic_descriptions = load_semantic_descriptions(
-    './datasets/GoodRelations_V1/semantic_descriptions.npy'
-)
-
-labels = process_semantic_descriptions(semantic_descriptions, key='proposed_name')
-reference_labels = process_semantic_descriptions(reference_semantic_descriptions, key='proposed_name')
-all_labels = labels + reference_labels
-
-descriptions = process_semantic_descriptions(semantic_descriptions, key='description')
-reference_descriptions = process_semantic_descriptions(reference_semantic_descriptions, key='description')
-all_descriptions = descriptions + reference_descriptions
-
-from embeddings.EmbeddingGenerator import EmbeddingGenerator
-
-embedder = EmbeddingGenerator()
-
-ontology_embeddings = embedder.get_embeddings(all_descriptions)
-ontology_embeddings_2D = embedder.get_pca(ontology_embeddings)
-print(ontology_embeddings.shape)
-
-import matplotlib.pyplot as plt
-from tools import plot_word_embeddings
-
-plt.figure()
-plot_word_embeddings(ontology_embeddings_2D[:len(labels)], labels)
-plot_word_embeddings(ontology_embeddings_2D[len(labels):], reference_labels, color='r')
-plt.show()
-
-from SemanticoAI.utils import get_relevant_chunks, load_chunk_samples
-
-selected_chunks = get_relevant_chunks(labels, all_labels, reference_semantic_descriptions, ontology_embeddings_2D)
-examples = load_chunk_samples(selected_chunks)
-
-# REFINEMENT OF THE LLM-ONTOLOGY [BY COMPARISON WITH HUMAN ONTOLOGY]
-for human_ontology in examples:
-    #  human_ontology = examples[3]  # for testing
-    ontology_builder.interact(ontology=ontology_builder.owl_codeblock, human_ontology=human_ontology)
+print(ontology_builder.codeblock) # check the entity codeblock generated by the LLM
 
 '''########################################## MAPPING ######################################################'''
-
 from OntoMapper.LLM_ontomapper import LlmOntoMapper
 
+# set metadata
 mapper_metadata = {'instructions': './OntoMapper/instructions.prompt',
                    'dataset': base_path + dataset_folder + '/' + dataset_file,
                    'role': 'You are a powerful ontology engineer that generates RML mappings.',
                    'model':'gpt-3.5-turbo-16k'
 }
-
+# build the ontology mapping generator LLM
 ontology_mapper = LlmOntoMapper(mapper_metadata)
+# generate the rml code for mapping the ontology with regards the source data.
+ontology_mapper.interact(rationale=ontology_context)
+# ontology_mapper.regenerate() # run this line of code if you want to regenerate the LLM answer.
+print(ontology_mapper.rml_codeblock)
 
-rml_code_str = ontology_mapper.interact(json_data=json_data, ontology=ontology_builder.owl_codeblock)
-
-
-
-
-
-'''########################################## MAPPING ######################################################'''
-
+'''######################### Kowledge Graph Generation from RML code ###############################################'''
 import morph_kgc
-import pandas as pd
-import json
 
-# Reading JSON data from a file
-with open("./datasets/BigBasketProducts/json_data.json") as f:
-    json_data = json.load(f)
 
-# Converting JSON data to a pandas DataFrame
-df = pd.DataFrame(json_data)
+# You should have first created the config.ini file.
+graph = morph_kgc.materialize(base_path + dataset_folder + '/' + 'config.ini')
+graph.serialize(destination=base_path + dataset_folder + '/' + 'data.nt', format='ntriples', endoding="utf-8")
 
-# Writing DataFrame to a CSV file
-df.to_csv("./datasets/BigBasketProducts/csv_data.csv", index=False)
-
-graph = morph_kgc.materialize('./datasets/BigBasketProducts/config.ini')
-graph.serialize(destination='./datasets/BigBasketProducts/data.nt', format='ntriples', endoding="utf-8")

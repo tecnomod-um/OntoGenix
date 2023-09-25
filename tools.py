@@ -10,50 +10,48 @@ import re
 from lxml import etree
 import difflib
 
-check = ''''<!DOCTYPE rdf:RDF [
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
-    <!ENTITY um "https://vocab.um.es#">
-]>'''
+
+def get_subsections(namespaces, root, section_type):
+    definitions = []
+    for uri in namespaces.values():
+        insert = '{uri}'.format(uri=uri)
+        classes = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{' + insert + '}'+section_type)]
+        for c in classes:
+            definitions.append(c)
+    return definitions
 
 def extract_sections_from_rdf(rdf_string):
-    # Extract doctype section using regex
-    doctype_section = re.search('<!DOCTYPE rdf:RDF \[.*?\]>', rdf_string, re.DOTALL)
-    doctype_section = doctype_section.group() if doctype_section else 'Not found'
-    print(doctype_section)
     # Convert string to bytes
     rdf_bytes = bytes(rdf_string, encoding='utf-8').strip(b'\n')
     # Parse RDF string to an XML object
     root = etree.fromstring(rdf_bytes)
     # Extract namespaces
     namespaces = root.nsmap
-    print(namespaces)
-    # Extract RDF section (uris definitions)
-
+    # ---------------- Extract RDF section (uris definitions)
     # Extract class definitions
-    class_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2000/01/rdf-schema#}Class')]
+    class_definitions = get_subsections(namespaces, root, 'Class')
     # Extract object property definitions
-    object_property_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/1999/02/22-rdf-syntax-ns#}Property')]
+    object_property_definitions = get_subsections(namespaces, root, 'Property')
     # Extract data property definitions
-    data_property_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2002/07/owl#}DatatypeProperty')]
-    # Extract annotation definitions
-    annotation_definitions = [etree.tostring(e, pretty_print=True).decode() for e in root.findall('.//{http://www.w3.org/2002/07/owl#}Ontology')]
+    data_property_definitions = get_subsections(namespaces, root, 'DatatypeProperty')
 
-    rdf_sections = {'doctype_section': doctype_section,
-                    'rdf_section': namespaces,
-                    'namespaces': namespaces,
-                    'class_definitions': class_definitions,
-                    'object_property_definitions': object_property_definitions,
-                    'data_property_definitions': data_property_definitions,
-                    'annotation_definitions': annotation_definitions}
+    rdf_sections = {
+        'namespaces': namespaces,
+        'class_definitions': class_definitions,
+        'object_property_definitions': object_property_definitions,
+        'data_property_definitions': data_property_definitions
+    }
 
     return rdf_sections
 
 
 def dict_to_rdf(rdf_sections):
     # Initialize root element
-    root = etree.Element('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF', rdf_sections['rdf_section'], nsmap=rdf_sections['namespaces'])
+    root = etree.Element(
+        '{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF',
+        rdf_sections['namespaces'],
+        nsmap=rdf_sections['namespaces']
+    )
 
     # Define namespaces
     namespaces = rdf_sections['namespaces']
@@ -79,11 +77,8 @@ def dict_to_rdf(rdf_sections):
     # Add data property definitions
     add_children(rdf_sections['data_property_definitions'])
 
-    # Add annotation definitions
-    add_children(rdf_sections['annotation_definitions'])
-
     # Convert root to string and prepend doctype
-    rdf_string = f'{rdf_sections["doctype_section"][0]}\n{etree.tostring(root, pretty_print=True).decode()}'
+    rdf_string = f'{rdf_sections["namespaces"]}\n{etree.tostring(root, pretty_print=True).decode()}'
 
     return rdf_string
 
@@ -209,20 +204,20 @@ import json
 import pandas as pd
 
 
-def dataframe2prettyjson(dataframe: pd.DataFrame, file: str = None, save: bool = False) -> None:
+def dataframe2prettyjson(dataframe: pd.DataFrame, file: str = None, save: bool = False) -> str:
     """
-    Convert a Pandas DataFrame to pretty JSON and save it to a file.
+    Convert a Pandas DataFrame to pretty JSON and optionally save it to a file.
 
     Args:
         dataframe (pd.DataFrame): The input DataFrame.
         file (str): The file path to save the pretty JSON.
+        save (bool): Whether to save the JSON to a file.
 
     Returns:
-        None
+        str: The pretty JSON string representation.
     """
     try:
         json_data = dataframe.to_json(orient='columns')
-
         parsed = json.loads(json_data)
         pretty_json = json.dumps(parsed, indent=4)
 
@@ -231,10 +226,13 @@ def dataframe2prettyjson(dataframe: pd.DataFrame, file: str = None, save: bool =
                 f.write(pretty_json)
 
         return pretty_json
+    except json.JSONDecodeError as je:
+        print(f"JSON Decode Error: {str(je)}")
+    except ValueError as ve:
+        print(f"Value Error: {str(ve)}")
     except Exception as e:
-        # Handle any exception that occurs during the JSON conversion and file writing process
-        print(f"An error occurred: {str(e)}")
-        return None
+        print(f"An unexpected error occurred: {str(e)}")
+        return ""
 
 
 import matplotlib.pyplot as plt

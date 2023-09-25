@@ -13,10 +13,11 @@ class AbstractLlm(ABC):
 
         self.role = metadata['role']
         self.model = metadata['model']
+        self.answer = None
         self.last_prompt = None
         self.current_prompt = None
 
-    def get_api_response(self, content: str, temperature=0.1, max_tokens=None, stream=False):
+    def get_api_response(self, content: str, temperature=0, max_tokens=None, stream=False):
 
         response = openai.ChatCompletion.create(
             model=self.model,
@@ -31,8 +32,7 @@ class AbstractLlm(ABC):
             max_tokens=max_tokens,
             stream=stream
         )
-
-        return response['choices'][0]['message']['content']
+        self.answer = response['choices'][0]['message']['content']
 
     def regenerate(self):
         return self.get_api_response(self.last_prompt)
