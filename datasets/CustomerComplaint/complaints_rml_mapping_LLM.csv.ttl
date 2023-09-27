@@ -1,0 +1,144 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vocab: <https://vocab.um.es#> .
+
+<#TriplesMapCustomerComplaint> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/CustomerComplaint/{Complaint ID}";
+        rr:class vocab:CustomerComplaint
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:dateReceived;
+        rr:objectMap [ rr:column "Date received"; rr:datatype xsd:date ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:narrative;
+        rr:objectMap [ rr:column "Consumer complaint narrative"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasState;
+        rr:objectMap [ rr:parentTriplesMap <#TriplesMapState> ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasProduct;
+        rr:objectMap [ rr:parentTriplesMap <#TriplesMapProduct> ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasProblem;
+        rr:objectMap [ rr:parentTriplesMap <#TriplesMapProblemOfComplaint> ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasCompany;
+        rr:objectMap [ rr:parentTriplesMap <#TriplesMapCompany> ]
+    ].
+
+<#TriplesMapState> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/State/{State}";
+        rr:class vocab:State
+    ].
+
+<#TriplesMapProduct> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Product/{Product}";
+        rr:class vocab:Product
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasSubProduct;
+        rr:objectMap [ rr:parentTriplesMap <#TriplesMapSubProduct> ]
+    ].
+
+<#TriplesMapSubProduct> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/SubProduct/{Sub-product}";
+        rr:class vocab:SubProduct
+    ].
+
+<#TriplesMapProblemOfComplaint> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/ProblemOfComplaint/{Issue}";
+        rr:class vocab:ProblemOfComplaint
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasSubProblem;
+        rr:objectMap [ rr:parentTriplesMap <#TriplesMapProblemSubCategory> ]
+    ].
+
+<#TriplesMapProblemSubCategory> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/ProblemSubCategory/{Sub-issue}";
+        rr:class vocab:ProblemSubCategory
+    ].
+
+<#TriplesMapCompany> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Company/{Company}";
+        rr:class vocab:Company
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasResponse;
+        rr:objectMap [ rr:parentTriplesMap <#TriplesMapCompanyResponse> ]
+    ].
+
+<#TriplesMapCompanyResponse> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/CompanyResponse/{Complaint ID}";
+        rr:class vocab:CompanyResponse
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:response;
+        rr:objectMap [ rr:column "Company response to consumer"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:timelyResponse;
+        rr:objectMap [ rr:column "Timely response?"; rr:datatype xsd:boolean ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasResolution;
+        rr:objectMap [ rr:parentTriplesMap <#TriplesMapResolution> ]
+    ].
+
+<#TriplesMapResolution> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Resolution/{Complaint ID}";
+        rr:class vocab:Resolution
+    ].
+

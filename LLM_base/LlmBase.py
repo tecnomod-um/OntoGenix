@@ -37,6 +37,7 @@ class AbstractLlm(ABC):
     def regenerate(self):
         return self.get_api_response(self.last_prompt)
 
+
     @staticmethod
     def load_string_from_file(file_path):
         with open(file_path, 'r') as file:

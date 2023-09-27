@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#SomeItems">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+    <rdfs:subClassOf rdf:resource="http://schema.org/Product"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#ProductOrServiceModel"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Individual"/>
+    <owl:equivalentClass rdf:resource="http://purl.org/goodrelations/v1#ProductOrServicesSomeInstancesPlaceholder"/>
+    <rdfs:label xml:lang="en">Some items</rdfs:label>
+    <rdfs:comment xml:lang="en">A placeholder instance for unknown instances of a mass-produced commodity. This is used as a computationally cheap work-around for such instances that are not individually exposed on the Web but just stated to exist (i.e., which are existentially quantified).
+
+Example: An instance of this class can represent an anonymous set of green Siemens1234 phones. It is different from the gr:ProductOrServiceModel Siemens1234, since this refers to the make and model, and it is different from a particular instance of this make and model (e.g. my individual phone) since the latter can be sold only once.
+
+Note: This class is the new, shorter form of the former gr:ProductOrServicesSomeInstancesPlaceholder.
+		
+Compatibility with schema.org: This class is (approximately) a subclass of http://schema.org/Product.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#QuantitativeValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A quantitative value is a numerical interval that represents the range of a certain gr:quantitativeProductOrServiceProperty in terms of the lower and upper bounds for a particular gr:ProductOrService. It is to be interpreted in combination with the respective unit of measurement. Most quantitative values are intervals even if they are in practice often treated as a single point value.
+	
+Example: a weight between 10 and 25 kilogramms, a length between 10 and 15 milimeters.
+
+Compatibility with schema.org: This class is equivalent to http://schema.org/Quantity.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">Quantitative value</rdfs:label>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Location"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#OpeningHoursSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessFunction"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessEntityType"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#WarrantyScope"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Brand"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Offering"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#PaymentMethod"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#WarrantyPromise"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#QualitativeValue"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#DeliveryMethod"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessEntity"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#DayOfWeek"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#TypeAndQuantityNode"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#DeliveryModeMail">
+    <rdf:type rdf:resource="http://purl.org/goodrelations/v1#DeliveryMethod"/>
+    <rdfs:comment xml:lang="en">Delivery via regular mail service (private or public postal services).</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">Delivery mode mail (delivery method)</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

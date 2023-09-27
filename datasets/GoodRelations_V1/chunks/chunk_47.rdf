@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#WarrantyScope">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The warranty scope represents types of services that will be provided free of charge by the vendor or manufacturer in the case of a defect (e.g. labor and parts, just parts), as part of the warranty included in an gr:Offering. The actual services may be provided by the gr:BusinessEntity making the offering, by the manufacturer of the product, or by a third party. 
+
+Examples: Parts and Labor, Parts</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">Warranty scope</rdfs:label>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Location"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#OpeningHoursSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessFunction"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessEntityType"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Brand"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Offering"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#PaymentMethod"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#WarrantyPromise"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#DeliveryMethod"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessEntity"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#DayOfWeek"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#TypeAndQuantityNode"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#isSimilarTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+    <rdfs:label xml:lang="en">is similar to (0..*)</rdfs:label>
+    <rdfs:domain rdf:nodeID="Ndd8e5bed5ccd4f33801859fe1ce4d5c6"/>
+    <rdfs:comment xml:lang="en">This states that a given gr:ProductOrService is similar to another product or service. Of course, this is a subjective statement; when interpreting it, the trust in the origin of the statement should be taken into account.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#offers">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#Offering"/>
+    <rdfs:label xml:lang="en">offers (0..*)</rdfs:label>
+    <rdfs:domain rdf:nodeID="Na3b8b625add94977b3988accce9b6caf"/>
+    <rdfs:comment xml:lang="en">This links a gr:BusinessEntity to the offers (gr:Offering) it makes. If you want to express interest in receiving offers, use gr:seeks instead.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#includesObject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#TypeAndQuantityNode"/>
+    <rdfs:label xml:lang="en">includes object (0..*)</rdfs:label>
+    <rdfs:domain rdf:nodeID="Nf3fff97eb835413fb97be7755f44b9a4"/>
+    <rdfs:comment xml:lang="en">This object property links a gr:Offering to one or multiple gr:TypeAndQuantityNode or nodes that specify the components that are included in the respective offer.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#isAccessoryOrSparePartFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+    <rdfs:label xml:lang="en">is accessory or spare part for (0..*)</rdfs:label>
+    <rdfs:domain rdf:nodeID="N6f19b7e271b047cf86c1d77dbbab160b"/>
+    <rdfs:comment xml:lang="en">This states that a particular gr:ProductOrService is an accessory or spare part for another product or service.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#PartsAndLabor-PickUp">
+    <rdf:type rdf:resource="http://purl.org/goodrelations/v1#WarrantyScope"/>
+    <rdfs:comment xml:lang="en">In case of a defect or malfunction, the buying party has the right to request from the selling gr:Business Entity to pick-up the good from its current location to a suitable service location, where the functionality of the good will be restored. All transportation, labor, parts, and materials needed to fix the problem will be covered by the selling business entity or one of its partnering business entities.
+  
+Note: This is just a rough classification for filtering offers. It is up to the buying party to check the exact scope and terms and conditions of the gr:WarrantyPromise.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">Parts and labor / pick up (warranty scope)</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

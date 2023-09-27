@@ -1,0 +1,26 @@
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasDeparture> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasLegRoomService> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasDepartureDelay> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#CustomerFeedback/2178> <https://vocab.um.es#hasSatisfaction> "satisfied" .
+<https://vocab.um.es#CustomerFeedback/2178> <https://vocab.um.es#hasFlightClass> "Eco" .
+<https://vocab.um.es#CustomerFeedback/2178> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://vocab.um.es#CustomerFeedback> .
+<https://vocab.um.es#CustomerFeedback/2178> <https://vocab.um.es#hasGender> "Female" .
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasFoodAndDrink> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#CustomerFeedback/2178> <https://vocab.um.es#hasCustomerType> "Loyal Customer" .
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasWifi> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasOnlineBooking> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasBaggageHandling> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasCheckinService> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasInflightEntertainment> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#CustomerFeedback/2178> <https://vocab.um.es#hasTypeOfTravel> "Personal Travel" .
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasOnlineSupport> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#EvaluationItem/2178> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://vocab.um.es#EvaluationItem> .
+<https://vocab.um.es#CustomerFeedback/2178> <https://vocab.um.es#hasAge> "70"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasSeatComfort> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasOnlineBoarding> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasArrivalDelay> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasOnlineBoarding> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasGateLocation> "3"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#EvaluationItem/2178> <https://vocab.um.es#hasCleanliness> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#CustomerFeedback/2178> <https://vocab.um.es#hasFlightDistance> "500"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://vocab.um.es#CustomerFeedback/2178> <https://vocab.um.es#hasEvaluationItem> <https://vocab.um.es#EvaluationItem/2178> .

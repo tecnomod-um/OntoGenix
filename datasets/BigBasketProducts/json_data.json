@@ -1,0 +1,84 @@
+{
+    "ProductName": {
+        "4571": "Idli Stand/Maker - With 4 Plates and 3 Cavities, Perfect For Big Pressure Cooker",
+        "1466": "Namkeen - Khara Boondi",
+        "3466": "Herbal Mint and Cucumber Face Spray",
+        "7": "Potato (Loose)",
+        "1502": "Fairness Cream - For Men, Helps In Dark Spot and Oil Reduction, Sun Protection",
+        "8043": "Beautiful Swastik Pearl Studded Rakhi - UAKR28",
+        "1088": "Safe Sun Uv Screen Matte Gel PA+++ - SPF 50"
+    },
+    "Brand": {
+        "4571": "Segovia",
+        "1466": "Tasties",
+        "3466": "Khadi Natural",
+        "7": "Fresho",
+        "1502": "Fair And Handsome ",
+        "8043": "Unique Arts and Interiors",
+        "1088": "Lotus Herbals"
+    },
+    "Price": {
+        "4571": 949.0,
+        "1466": 267.0,
+        "3466": 125.0,
+        "7": 50.32,
+        "1502": 85.0,
+        "8043": 149.0,
+        "1088": 720.0
+    },
+    "DiscountPrice": {
+        "4571": 479.0,
+        "1466": 170.01,
+        "3466": 87.0,
+        "7": 38.75,
+        "1502": 80.0,
+        "8043": 95.0,
+        "1088": 503.98
+    },
+    "Image_Url": {
+        "4571": "https://www.bigbasket.com/media/uploads/p/l/40234623_2-segovia-idli-standmaker-with-4-plates-3-cavities-perfect-for-big-pressure-cooker.jpg",
+        "1466": "https://www.bigbasket.com/media/uploads/p/l/1216243_1-tasties-namkeen-khara-boondi.jpg",
+        "3466": "https://www.bigbasket.com/media/uploads/p/l/40171512_3-khadi-natural-herbal-mint-cucumber-face-spray.jpg",
+        "7": "https://www.bigbasket.com/media/uploads/p/l/40048457_9-fresho-potato-new-crop.jpg",
+        "1502": "https://www.bigbasket.com/media/uploads/p/l/263924_3-fair-and-handsome-fairness-cream-for-men-helps-in-dark-spot-oil-reduction-sun-protection.jpg",
+        "8043": "https://www.bigbasket.com/media/uploads/p/l/40112039_6-unique-arts-interiors-beautiful-swastik-pearl-studded-rakhi-uakr28.jpg",
+        "1088": "https://www.bigbasket.com/media/uploads/p/l/1209595_1-lotus-herbals-safe-sun-uv-screen-matte-gel-pa-spf-50.jpg"
+    },
+    "Quantity": {
+        "4571": "1 pc",
+        "1466": "3x150 g",
+        "3466": "100 ml",
+        "7": "1 kg",
+        "1502": "30 g",
+        "8043": "1 pc",
+        "1088": "2x50 g"
+    },
+    "Category": {
+        "4571": "Kitchen, Garden and Pets",
+        "1466": "Snacks and Branded Foods",
+        "3466": "Beauty and Hygiene",
+        "7": "Fruits and Vegetables",
+        "1502": "Beauty and Hygiene",
+        "8043": "Cleaning and Household",
+        "1088": "Beauty and Hygiene"
+    },
+    "SubCategory": {
+        "4571": "Kitchen Tools and Other Accessories",
+        "1466": "Namkeen and Savoury Snacks",
+        "3466": "Face Care",
+        "7": "Potato, Onion and Tomato",
+        "1502": "Face and Body",
+        "8043": "Rakhi",
+        "1088": "Face Care"
+    },
+    "Absolute_Url": {
+        "4571": "https://www.bigbasket.com/pd/40234623/segovia-idli-standmaker-with-4-plates-3-cavities-perfect-for-big-pressure-cooker-1-pc/",
+        "1466": "https://www.bigbasket.com/pd/1216243/tasties-namkeen-khara-boondi-3x150-g/",
+        "3466": "https://www.bigbasket.com/pd/40171512/khadi-natural-herbal-mint-cucumber-face-spray-100-ml/",
+        "7": "https://www.bigbasket.com/pd/40048457/fresho-potato-new-crop-1-kg/",
+        "1502": "https://www.bigbasket.com/pd/263924/fair-and-handsome-fairness-cream-for-men-helps-in-dark-spot-oil-reduction-sun-protection-30-g/",
+        "8043": "https://www.bigbasket.com/pd/40112039/unique-arts-interiors-beautiful-swastik-pearl-studded-rakhi-uakr28-1-pc/",
+        "1088": "https://www.bigbasket.com/pd/1209595/lotus-herbals-safe-sun-uv-screen-matte-gel-pa-spf-50-2x50-g/"
+    }
+}
+

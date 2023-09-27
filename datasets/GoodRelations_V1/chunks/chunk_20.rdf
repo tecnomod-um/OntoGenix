@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#hasMaxValueInteger">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:label xml:lang="en">has max value integer (1..1)</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValueInteger"/>
+    <rdfs:comment xml:lang="en">This property captures the upper limit of a gr:QuantitativeValueInteger instance.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#hasMaxValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#hasMaxValueFloat">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">has max value float (1..1)</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValueFloat"/>
+    <rdfs:comment xml:lang="en">This property captures the upper limit of a gr:QuantitativeValueFloat instance.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#hasMaxValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#ProductOrServiceModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+    <rdfs:subClassOf rdf:resource="http://schema.org/Product"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#SomeItems"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessEntity"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Individual"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Brand"/>
+    <rdfs:label xml:lang="en">Product or service model</rdfs:label>
+    <rdfs:comment xml:lang="en">A product or service model is a intangible entity that specifies some characteristics of a group of similar, usually mass-produced products, in the sense of a prototype. In case of mass-produced products, there exists a relation gr:hasMakeAndModel between the actual product or service (gr:Individual or gr:SomeItems) and the prototype (gr:ProductOrServiceModel). GoodRelations treats product or service models as "prototypes" instead of a completely separate kind of entities, because this allows using the same domain-specific properties (e.g. gr:weight) for describing makes and models and for describing actual products.
+
+Examples: Ford T, Volkswagen Golf, Sony Ericsson W123 cell phone
+
+Note: An actual product or service (gr:Individual) by default shares the features of its model (e.g. the weight). However, this requires non-standard reasoning. See http://wiki.goodrelations-vocabulary.org/Axioms for respective rule sets.
+	
+Compatibility with schema.org: This class is (approximately) a subclass of http://schema.org/Product.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#qualitativeProductOrServiceProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#QualitativeValue"/>
+    <rdfs:label xml:lang="en">qualitative product or service property (0..*)</rdfs:label>
+    <rdfs:domain rdf:nodeID="N11a708d476ed458085fdb0481eae7813"/>
+    <rdfs:comment xml:lang="en">This is the super property of all qualitative properties for products and services. All properties in product or service ontologies for which gr:QualitativeValue instances are specified are subproperties of this property.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#color">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">color (0..1)</rdfs:label>
+    <rdfs:domain rdf:nodeID="N7116d0eda7aa445894cde01db6211870"/>
+    <rdfs:comment xml:lang="en">The color of the product.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#datatypeProductOrServiceProperty"/>
+  </rdf:Description>
+</rdf:RDF>

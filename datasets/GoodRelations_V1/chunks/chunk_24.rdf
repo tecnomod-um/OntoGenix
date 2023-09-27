@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#BusinessEntity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Location"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#OpeningHoursSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessFunction"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessEntityType"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Brand"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Offering"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#PaymentMethod"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#WarrantyPromise"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#WarrantyScope"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#DeliveryMethod"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#DayOfWeek"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#TypeAndQuantityNode"/>
+    <owl:equivalentClass rdf:nodeID="Nc8c48c90e45d41d48a3770c8b09291e0"/>
+    <rdfs:label xml:lang="en">Business entity</rdfs:label>
+    <rdfs:comment xml:lang="en">An instance of this class represents the legal agent making (or seeking) a particular offering. This can be a legal body or a person. A business entity has at least a primary mailing address and contact details. For this, typical address standards (vCard) and location data (geo, WGS84) can be attached. Note that the location of the business entity is not necessarily the location from which the product or service is being available (e.g. the branch or store). Use gr:Location for stores and branches.
+		
+Example: Siemens Austria AG, Volkswagen Ltd., Peter Miller's Cell phone Shop LLC
+
+Compatibility with schema.org: This class is equivalent to the union of http://schema.org/Person and http://schema.org/Organization.		
+</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#UnitPriceSpecification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#PaymentChargeSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#DeliveryChargeSpecification"/>
+    <rdfs:label xml:lang="en">Unit price specification</rdfs:label>
+    <rdfs:comment xml:lang="en">A unit price specification is a conceptual entity that specifies the price asked for a given gr:Offering by the respective gr:Business Entity. An offering may be linked to multiple unit price specifications that specify alternative prices for non-overlapping sets of conditions (e.g. quantities or sales regions) or with differing validity periods. 
+
+A unit price specification is characterized by (1) the lower and upper limits and the unit of measurement of the eligible quantity, (2) by a monetary amount per unit of the product or service, and (3)  whether this prices includes local sales taxes, namely VAT.
+	
+Example: The price, including VAT, for 1 kg of a given material is 5 Euros per kg for 0 - 5 kg and 4 Euros for quantities above 5 kg.
+
+The eligible quantity interval for a given price is specified using the object property gr:hasEligibleQuantity, which points to an instance of gr:QuantitativeValue. The currency is specified using the gr:hasCurrency property, which points to an ISO 4217 currency code. The unit of measurement for the eligible quantity is specified using the gr:hasUnitOfMeasurement datatype property, which points to an UN/CEFACT Common Code (3 characters).
+	
+In most cases, the appropriate unit of measurement is the UN/CEFACT Common Code "C62" for "Unit or piece", since a gr:Offering is defined by the quantity and unit of measurement of all items included (e.g. "1 kg of bananas plus a 2 kg of apples"). As long at the offering consists of only one item, it is also possible to use an unit of measurement of choice for specifying the price per unit. For bundles, however, only  "C62" for "Unit or piece" is a valid unit of measurement.
+
+You can assume that the price is given per unit or piece if there is no gr:hasUnitOfMeasurement property attached to the price.
+	
+Whether VAT and sales taxes are included in this price is specified using the property gr:valueAddedTaxIncluded (xsd:boolean).
+	
+The price per unit of measurement is specified as a float value of the gr:hasCurrencyValue property. The currency is specified via the gr:hasCurrency datatype property. Whether the price includes VAT or not is indicated by the gr:valueAddedTaxIncluded datatype property.
+
+The property priceType can be used to indicate that the price is a retail price recommendation only (i.e. a list price). 
+
+If the price can only be given as a range, use gr:hasMaxCurrencyValue and gr:hasMinCurrencyValue for the upper and lower bounds.
+
+Important: When querying for the price, always use gr:hasMaxCurrencyValue and gr:hasMinCurrencyValue.
+
+Note 1: Due to the complexity of pricing scenarios in various industries, it may be necessary to create extensions of this fundamental model of price specifications. Such can be done easily by importing and refining the GoodRelations ontology.
+
+Note 2: For Google, attaching a gr:validThrough statement to a gr:UnitPriceSpecification is mandatory. 
+</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#Reseller">
+    <rdf:type rdf:resource="http://purl.org/goodrelations/v1#BusinessEntityType"/>
+    <rdfs:comment xml:lang="en">The gr:BusinessEntityType representing such agents that are purchasing the scope of products included in the gr:Offering for resale on the market. Resellers are also businesses, i.e., they are officially registered with the public administration and strive for profits by their activities.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">Reseller (business entity type)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#hasISICv4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:label xml:lang="en">has ISIC v4 (0..*)</rdfs:label>
+    <rdfs:domain rdf:nodeID="Nb554c37eee864c93ab8f54500c935448"/>
+    <rdfs:comment xml:lang="en">The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular gr:BusinessEntity or gr:Location. See http://unstats.un.org/unsd/cr/registry/isic-4.asp for more information.
+
+Note: While ISIC codes are sometimes misused for classifying products or services, they are designed and suited only for classifying business establishments.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#JCB">
+    <rdf:type rdf:resource="http://purl.org/goodrelations/v1#PaymentMethodCreditCard"/>
+    <rdfs:comment xml:lang="en">Payment by credit or debit cards issued by the JCB network.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">JCB (payment method)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#PayPal">
+    <rdf:type rdf:resource="http://purl.org/goodrelations/v1#PaymentMethod"/>
+    <rdfs:comment xml:lang="en">Payment via the PayPal payment service.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">PayPal (payment method)</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

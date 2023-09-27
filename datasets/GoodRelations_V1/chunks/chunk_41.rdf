@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#hasMPN">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://schema.org/productID"/>
+    <rdfs:label xml:lang="en">has MPN (0..*)</rdfs:label>
+    <rdfs:domain rdf:nodeID="Nca51e76502f0416bbe7f3d2b1d1c4d00"/>
+    <rdfs:comment xml:lang="en">The Manufacturer Part Number or MPN is a unique identifier for a product, service, or bundle from the perspective of a particular manufacturer. MPNs can be assigned to products or product datasheets, or bundles. Accordingly, the domain of this property is the union of gr:ProductOrService (the common superclass of goods and datasheets), and gr:Offering.
+
+Important: Be careful when assuming two products or services instances or offering instances to be identical based on the MPN. Since MPNs are unique only for the same gr:BusinessEntity, this holds only when the two MPN values refer to the same gr:BusinessEntity. Such can be done by taking into account the provenance of the data. 
+
+Usually, the properties gr:hasEAN_UCC-13 and gr:hasGTIN-14 are much more reliable identifiers, because they are globally unique.
+
+See also http://en.wikipedia.org/wiki/Part_number</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#DeliveryMethod">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A delivery method is a standardized procedure for transferring the product or service to the destination of fulfilment chosen by the customer. Delivery methods are characterized by the means of transportation used, and by the organization or group that is the contracting party for the sending gr:BusinessEntity (this is important, since the contracted party may subcontract the fulfilment to smaller, regional businesses).
+
+Examples: Delivery by mail, delivery by direct download, delivery by UPS</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">Delivery method</rdfs:label>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Location"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#OpeningHoursSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessFunction"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessEntityType"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Brand"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Offering"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#PaymentMethod"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#WarrantyPromise"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#WarrantyScope"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessEntity"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#DayOfWeek"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#TypeAndQuantityNode"/>
+  </rdf:Description>
+</rdf:RDF>

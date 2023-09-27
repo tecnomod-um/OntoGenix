@@ -1,0 +1,499 @@
+
+
+Hello, ChatGPT. Given your proficiency as an ontology engineer, I seek your guidance in crafting a methodology to build
+an ontology using a provided JSON data table and a task input. Here are the necessary inputs:
+
+**Input Related data in JSON format:**
+AirlinesCustomerSatisfaction = {
+    "satisfaction": {
+        "2178": "satisfied"
+    },
+    "Gender": {
+        "2178": "Female"
+    },
+    "Customer Type": {
+        "2178": "Loyal Customer"
+    },
+    "Age": {
+        "2178": 70
+    },
+    "Type of Travel": {
+        "2178": "Personal Travel"
+    },
+    "Class": {
+        "2178": "Eco"
+    },
+    "Flight Distance": {
+        "2178": 500
+    },
+    "Seat comfort": {
+        "2178": 4
+    },
+    "Departure/Arrival time convenient": {
+        "2178": 5
+    },
+    "Food and drink": {
+        "2178": 4
+    },
+    "Gate location": {
+        "2178": 3
+    },
+    "Inflight wifi service": {
+        "2178": 2
+    },
+    "Inflight entertainment": {
+        "2178": 4
+    },
+    "Online support": {
+        "2178": 2
+    },
+    "Ease of Online booking": {
+        "2178": 2
+    },
+    "On-board service": {
+        "2178": 4
+    },
+    "Leg room service": {
+        "2178": 5
+    },
+    "Baggage handling": {
+        "2178": 5
+    },
+    "Checkin service": {
+        "2178": 5
+    },
+    "Cleanliness": {
+        "2178": 4
+    },
+    "Online boarding": {
+        "2178": 2
+    },
+    "Departure Delay in Minutes": {
+        "2178": 0
+    },
+    "Arrival Delay in Minutes": {
+        "2178": 0.0
+    }
+}
+
+
+**Input Task Description:**
+Generate the steps required to generate an ontology given the input json data table.
+I want the ontology to be focused on the "CustomerFeedback" entity as the main class with the "EvaluationItem" as the main object property. "CustomerFeedback" should have as object properties "Age", "Satisfaction", "Gender", "FlightDistance", "FlightClass", "TypeOfTravel", "CustomerType" and "EvaluationItem". These object properties will allow the ontology to represent the features of each customer. "EvaluationItem" should have as data type properties "ArrivalDelay", "DepartureDelay", "OnlineBoarding", "SeatConfort", "Departure", "FoodAndDrink", "GateLocation", "wifi", "OnlineSupport", "OnlineBooking", "LegRoomService", "ChekinService" and "Cleanliness" to allow for each customer to define their satisfaction evaluation.
+
+The outputs I need from you are as follows:
+
+**Rationale:**
+In an academic tone, explain the reasoning behind the steps you've taken to formulate this strategy, taking into account
+both the task description and JSON data. Limit this explanation to a maximum of 20 sentences. Also, provide a summary of
+the JSON data and the logic applied in creating the ontology, within a range of 10 to 20 sentences.
+
+Start writing here the list of tasks. I give you a set of predefined ones. Next, layout a
+series of tasks that highlight the steps necessary to build the ontology from the JSON data. The tasks should be
+formatted as follows::
+
+**Output Global Tasks:**
+task_1: <Identification of classes>
+task_2: <Identification of object properties>
+task_3: <Identification of data properties. Data properties should refer to type of values not relations.>
+task_4: <Definition of a structure for the identified classes, subclasses, object properties and data properties.>
+task_5: <Specification of a foundational prefix "https://vocab.um.es#" for the ontology to ensure a clear structure. Define it as an owl type.>
+task_6: <Use of external ontologies to defines types, like: schema, XMLSchema#, owl, ...>
+task_7:<Generate appropriate domain and range for each object or data type property>
+
+
+Please note that the goal here is to outline an actionable strategy, not to solve the task or generate code.
+
+######################################## LLM ANSWER: SHORT TERM MEMORY AND LIST OF TASKS ################################################################
+
+
+
+**Rationale:**
+Given the task to create an ontology, I formulated a strategy considering the JSON data and task description. The JSON data provides specific information regarding customer feedback on airline services, detailing various service elements and customer-specific attributes. The methodology applied is based on transforming this granular data into a structured ontology, focusing on hierarchical classes, object properties, and data properties, to facilitate semantic querying and inferencing. The principal class, “CustomerFeedback”, and its respective object properties are deduced from the JSON keys, while "EvaluationItem" incorporates detailed aspects of customer evaluation as data type properties. This transformation allows us to semantically link intricate components of customer feedback, providing a conceptual model to comprehend intricate relationships and characteristics within the data. Utilizing an academic tone, this ontology's creation process is systematic, involving the identification, classification, and definition of various ontological elements based on the input JSON, ensuring a comprehensive representation of customer feedback within the airline domain. The ontology ensures the alignment of data properties with their respective types and ensures coherence and conformity with external ontology definitions, like schema and XMLSchema#.
+
+**Summary:**
+The JSON data encapsulates discrete customer feedback on airline services, elucidated through a set of attributes and evaluations related to various aspects of the travel experience. The ontology, strategically designed, focuses on creating a holistic view of this multifaceted information through a principal class, "CustomerFeedback," representing inherent customer attributes, and "EvaluationItem," reflecting individual evaluation parameters. The ontology amalgamates this granular information, forming semantically enriched links between intricate data components, enabling enhanced understanding, querying, and inferencing within the airline customer feedback domain. The strategic transformation of JSON data to ontology is grounded in systematic classification, definition, and alignment, ensuring comprehensive, coherent representation.
+
+**Output Global Tasks:**
+task_1: <Identification of classes>
+- Identify the main class as “CustomerFeedback”.
+- Identify “EvaluationItem” as a connected class to represent evaluation aspects.
+
+task_2: <Identification of object properties>
+- Identify object properties within “CustomerFeedback” as "Age", "Satisfaction", "Gender", "FlightDistance", "FlightClass", "TypeOfTravel", "CustomerType", and "EvaluationItem".
+
+task_3: <Identification of data properties. Data properties should refer to type of values not relations.>
+- Extract data properties within “EvaluationItem” from JSON keys, i.e., "ArrivalDelay", "DepartureDelay", "OnlineBoarding", "SeatComfort", "Departure", "FoodAndDrink", "GateLocation", "Wifi", "OnlineSupport", "OnlineBooking", "LegRoomService", "CheckinService", and "Cleanliness".
+
+task_4: <Definition of a structure for the identified classes, subclasses, object properties and data properties.>
+- Define the hierarchical structure and relationships between “CustomerFeedback” and “EvaluationItem”, specifying the connected object and data properties.
+
+task_5: <Specification of a foundational prefix "https://vocab.um.es#" for the ontology to ensure a clear structure. Define it as an owl type.>
+- Assign the foundational prefix to the ontology and specify it as an owl type to ensure the ontology has a well-defined structure and is compliant with web ontology language standards.
+
+task_6: <Use of external ontologies to defines types, like: schema, XMLSchema#, owl, ...>
+- Leverage external ontologies to define and validate the types of the identified classes, object properties, and data properties, ensuring semantic coherence and interoperability.
+
+task_7:<Generate appropriate domain and range for each object or data type property>
+- Define the domain and range for each identified object and data property, ensuring that they are semantically accurate and logically consistent with the overall ontology structure.
+
+
+
+######################################## PROMPT FOR THE FIRST GENERAL TASKS ####################################################################
+
+I require your expert assistance to generate an ontology in RDF/XML syntax from a provided JSON data table.
+This task involves methodical interpretation of the JSON data table based on the given rationale and the set of
+instructions. Ensure that you grasp the context from the JSON data, the rationale, and the provided instructions,
+strictly adhering to these directives.
+
+The input details for your task are as follows:
+
+**JSON Data Table:**
+AirlinesCustomerSatisfaction = {
+    "satisfaction": {
+        "2178": "satisfied"
+    },
+    "Gender": {
+        "2178": "Female"
+    },
+    "Customer Type": {
+        "2178": "Loyal Customer"
+    },
+    "Age": {
+        "2178": 70
+    },
+    "Type of Travel": {
+        "2178": "Personal Travel"
+    },
+    "Class": {
+        "2178": "Eco"
+    },
+    "Flight Distance": {
+        "2178": 500
+    },
+    "Seat comfort": {
+        "2178": 4
+    },
+    "Departure/Arrival time convenient": {
+        "2178": 5
+    },
+    "Food and drink": {
+        "2178": 4
+    },
+    "Gate location": {
+        "2178": 3
+    },
+    "Inflight wifi service": {
+        "2178": 2
+    },
+    "Inflight entertainment": {
+        "2178": 4
+    },
+    "Online support": {
+        "2178": 2
+    },
+    "Ease of Online booking": {
+        "2178": 2
+    },
+    "On-board service": {
+        "2178": 4
+    },
+    "Leg room service": {
+        "2178": 5
+    },
+    "Baggage handling": {
+        "2178": 5
+    },
+    "Checkin service": {
+        "2178": 5
+    },
+    "Cleanliness": {
+        "2178": 4
+    },
+    "Online boarding": {
+        "2178": 2
+    },
+    "Departure Delay in Minutes": {
+        "2178": 0
+    },
+    "Arrival Delay in Minutes": {
+        "2178": 0.0
+    }
+}
+
+
+
+
+**Rationale:**
+Given the task to create an ontology, I formulated a strategy considering the JSON data and task description. The JSON data provides specific information regarding customer feedback on airline services, detailing various service elements and customer-specific attributes. The methodology applied is based on transforming this granular data into a structured ontology, focusing on hierarchical classes, object properties, and data properties, to facilitate semantic querying and inferencing. The principal class, “CustomerFeedback”, and its respective object properties are deduced from the JSON keys, while "EvaluationItem" incorporates detailed aspects of customer evaluation as data type properties. This transformation allows us to semantically link intricate components of customer feedback, providing a conceptual model to comprehend intricate relationships and characteristics within the data. Utilizing an academic tone, this ontology's creation process is systematic, involving the identification, classification, and definition of various ontological elements based on the input JSON, ensuring a comprehensive representation of customer feedback within the airline domain. The ontology ensures the alignment of data properties with their respective types and ensures coherence and conformity with external ontology definitions, like schema and XMLSchema#.
+
+**Summary:**
+The JSON data encapsulates discrete customer feedback on airline services, elucidated through a set of attributes and evaluations related to various aspects of the travel experience. The ontology, strategically designed, focuses on creating a holistic view of this multifaceted information through a principal class, "CustomerFeedback," representing inherent customer attributes, and "EvaluationItem," reflecting individual evaluation parameters. The ontology amalgamates this granular information, forming semantically enriched links between intricate data components, enabling enhanced understanding, querying, and inferencing within the airline customer feedback domain. The strategic transformation of JSON data to ontology is grounded in systematic classification, definition, and alignment, ensuring comprehensive, coherent representation.
+
+**Output Global Tasks:**
+task_1: <Identification of classes>
+- Identify the main class as “CustomerFeedback”.
+- Identify “EvaluationItem” as a connected class to represent evaluation aspects.
+
+task_2: <Identification of object properties>
+- Identify object properties within “CustomerFeedback” as "Age", "Satisfaction", "Gender", "FlightDistance", "FlightClass", "TypeOfTravel", "CustomerType", and "EvaluationItem".
+
+task_3: <Identification of data properties. Data properties should refer to type of values not relations.>
+- Extract data properties within “EvaluationItem” from JSON keys, i.e., "ArrivalDelay", "DepartureDelay", "OnlineBoarding", "SeatComfort", "Departure", "FoodAndDrink", "GateLocation", "Wifi", "OnlineSupport", "OnlineBooking", "LegRoomService", "CheckinService", and "Cleanliness".
+
+task_4: <Definition of a structure for the identified classes, subclasses, object properties and data properties.>
+- Define the hierarchical structure and relationships between “CustomerFeedback” and “EvaluationItem”, specifying the connected object and data properties.
+
+task_5: <Specification of a foundational prefix "https://vocab.um.es#" for the ontology to ensure a clear structure. Define it as an owl type.>
+- Assign the foundational prefix to the ontology and specify it as an owl type to ensure the ontology has a well-defined structure and is compliant with web ontology language standards.
+
+task_6: <Use of external ontologies to defines types, like: schema, XMLSchema#, owl, ...>
+- Leverage external ontologies to define and validate the types of the identified classes, object properties, and data properties, ensuring semantic coherence and interoperability.
+
+task_7:<Generate appropriate domain and range for each object or data type property>
+- Define the domain and range for each identified object and data property, ensuring that they are semantically accurate and logically consistent with the overall ontology structure.
+
+
+
+Your response should be bifurcated into two parts:
+
+**ANALYSIS:**
+    Data Description: <Detailed description of the JSON data table, spanning 10 to 20 sentences>
+    Insights: <Study the instructions provided, understand the context they convey and outline the logical process for
+    applying these instructions to the JSON data table. Additionally, discuss potential challenges or difficulties
+    that may arise during this application. Detail the logical process and potential challenges of applying the provided
+    instructions to the JSON data, written in about 10 to 20 sentences>
+
+**RDF/XML ONTOLOGY:**
+    <Write the thorough and exhaustive RDF/XML syntax content for the proposed ontology here, without
+    condensing or shortening any part of it, ensuring strict compliance with the instructions provided.
+    Focus on the logical structure of the ontology, therefore generate the object properties for every class
+    you define in order to get all the classes interconnected in a logical manner as suggested in the rational.
+    Do not and labels nor comments or descriptions,
+    and Do not add instances.>
+
+It's paramount that your tone reflects the formality characteristic of scientific research.
+Do not write any introduction or explanations at the end of the writing.
+Do not add any note at the end of the writing.
+
+
+########################################### LLM ANSWER: FIRST RDF/XML SYNTAX ONTOLOGY ##################################################################
+
+
+
+
+
+
+
+
+
+
+
+################################# PROMPT TO IMPROVE ENTITY BY ENTITY ##############################################################
+
+
+ChatGPT, your role is to act as an expert ontology engineer to help me improve a given ontology entity. I will feed you
+with the full ontology, the data description from which the ontology was defined and the insights behind the design of
+the proposed ontology. Critically analyze the ontology, the data description, the insights and the task provided
+and propose improvements to the given entity to ensure it aligns with the stated objective. I expect you to provide an
+improved version of the inputted entity.
+
+### **ANALYSIS:**
+#### Data Description:
+The provided JSON data represents customer satisfaction metrics associated with airlines services. It is a hierarchical and structured form of data where specific customer feedback attributes are identified by distinct keys. These keys embody various customer-specific attributes and evaluations such as "satisfaction", "Gender", "Customer Type", "Age", "Type of Travel", "Class", and "Flight Distance". Additionally, the data further incorporates customer evaluations on several service elements like "Seat comfort", "Departure/Arrival time convenient", "Food and drink", "Gate location", and "Inflight wifi service" among others. Each of these attributes is associated with a unique identifier, "2178", representing a specific customer feedback entry. Moreover, some attributes represent categorical data, like "Gender" and "Class", while others depict numerical data, such as "Age" and "Flight Distance". The evaluations of service elements are quantitatively represented, allowing a precise assessment of customer satisfaction. The meticulous structure of the JSON data facilitates a systematic extraction and transformation process to derive a structured and coherent ontology.
+
+#### Insights:
+The instructions elucidate a meticulous process of creating a structured ontology from the given JSON data, focusing on hierarchical classes, object properties, and data properties. A critical interpretation of these directives reveals a focus on transforming granular data into a structured ontology to ensure semantic accuracy and coherence. The logical application of these instructions involves identifying and classifying main and connected classes, extracting object and data properties, defining relationships, and specifying domains and ranges for each property. A potential challenge is maintaining the logical consistency and semantic accuracy during the transformation of JSON keys to object and data properties while ensuring the correct alignment with external ontologies. Another difficulty may arise in defining the domain and range for each property, ensuring that they are semantically accurate and logically consistent with the overall ontology structure. The adherence to the prescribed foundational prefix and the strict compliance with the web ontology language standards are paramount to maintain coherence and interoperability in the ontology creation process.
+
+### **RDF/XML ONTOLOGY:**
+
+```xml
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:vocab="https://vocab.um.es#">
+
+    <owl:Ontology rdf:about="https://vocab.um.es#AirlinesCustomerSatisfactionOntology"/>
+
+    <!-- Declaration of Classes -->
+    <owl:Class rdf:about="https://vocab.um.es#CustomerFeedback"/>
+    <owl:Class rdf:about="https://vocab.um.es#EvaluationItem"/>
+
+    <!-- Declaration of Object Properties -->
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasAge"/>
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasSatisfaction"/>
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasGender"/>
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasFlightDistance"/>
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasFlightClass"/>
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasTypeOfTravel"/>
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasCustomerType"/>
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasEvaluationItem"/>
+
+    <!-- Declaration of Data Properties -->
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasArrivalDelay"/>
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasDepartureDelay"/>
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasOnlineBoarding"/>
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasSeatComfort"/>
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasDeparture"/>
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasFoodAndDrink"/>
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasGateLocation"/>
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasWifi"/>
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasOnlineSupport"/>
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasOnlineBooking"/>
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasLegRoomService"/>
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasCheckinService"/>
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasCleanliness"/>
+
+    <!-- Class Structure and Property Domains and Ranges -->
+    <rdf:Description rdf:about="https://vocab.um.es#hasAge">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasSatisfaction">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasGender">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasFlightDistance">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasFlightClass">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasTypeOfTravel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasCustomerType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasEvaluationItem">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#EvaluationItem"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasArrivalDelay">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#EvaluationItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasDepartureDelay">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#EvaluationItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasOnlineBoarding">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#EvaluationItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasSeatComfort">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#EvaluationItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasDeparture">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#EvaluationItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasFoodAndDrink">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#EvaluationItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasGateLocation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#EvaluationItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasWifi">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#EvaluationItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasOnlineSupport">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#EvaluationItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasOnlineBooking">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#EvaluationItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasLegRoomService">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#EvaluationItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasCheckinService">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#EvaluationItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://vocab.um.es#hasCleanliness">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="https://vocab.um.es#EvaluationItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+
+</rdf:RDF>
+
+```
+
+This RDF/XML syntax outlines a structured ontology adhering to the directives specified. It presents a robust foundation to further develop and integrate a comprehensive knowledge graph utilizing the data available in the JSON dataset. It maintains a clear hierarchy and structure, interconnecting classes and properties logically as envisaged in the rationale.
+
+
+**Next Entity:**
+    <owl:Class rdf:about="https://vocab.um.es#CustomerFeedback"/>
+
+**Task:**
+Scrutinize the ontology, the data description and the insights to identify intrinsic constraints and relationships.
+Clearly follow the instructions given in the insights to define the contraints and relationships.
+Do not forget to reference all the object properties and data properties mentioned in the insights as related with the given entity.
+Do not forget to define for object properties restrictions the "onClass" parameter.
+Do not forget to define for data type properties restrictions the "onDataRange" parameter.
+
+
+**Output**
+<Formulate the RDF/XML content for the **Entity** provided.>
+
+You must directly encode the RDF/XML content of the given entity, not the entire ontology.
+Do not write any explanations at the beggning of the writing.
+Do not write any explanations at the end of the writing.
+Do not add any note at the end of the writing.

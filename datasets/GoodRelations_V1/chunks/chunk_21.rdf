@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://purl.org/goodrelations/v1#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#Monday">
+    <rdf:type rdf:resource="http://purl.org/goodrelations/v1#DayOfWeek"/>
+    <ns1:hasNext rdf:resource="http://purl.org/goodrelations/v1#Tuesday"/>
+    <ns1:hasPrevious rdf:resource="http://purl.org/goodrelations/v1#Sunday"/>
+    <rdfs:label xml:lang="en">Monday (day of week)</rdfs:label>
+    <rdfs:comment xml:lang="en">Monday as a day of the week.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <ns1:displayPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ns1:displayPosition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#hasWarrantyScope">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#WarrantyScope"/>
+    <rdfs:label xml:lang="en">has warranty scope (0..1)</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#WarrantyPromise"/>
+    <rdfs:comment xml:lang="en">This states the gr:WarrantyScope of a given gr:WarrantyPromise.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+</rdf:RDF>

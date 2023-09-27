@@ -1,0 +1,70 @@
+<base:sales_product/Potato%20%28Loose%29> <https://vocab.um.es#BrandName> "Fresho" .
+<base:sales_product/Namkeen%20-%20Khara%20Boondi> <https://vocab.um.es#Absolute_Url> "https://www.bigbasket.com/pd/1216243/tasties-namkeen-khara-boondi-3x150-g/" .
+<base:sales_product/Potato%20%28Loose%29> <https://vocab.um.es#Absolute_Url> "https://www.bigbasket.com/pd/40048457/fresho-potato-new-crop-1-kg/" .
+<base:sales_product/Herbal%20Mint%20and%20Cucumber%20Face%20Spray> <https://vocab.um.es#Absolute_Url> "https://www.bigbasket.com/pd/40171512/khadi-natural-herbal-mint-cucumber-face-spray-100-ml/" .
+<base:sales_product/Fairness%20Cream%20-%20For%20Men%2C%20Helps%20In%20Dark%20Spot%20and%20Oil%20Reduction%2C%20Sun%20Protection> <https://vocab.um.es#hasOffer> <base:offer/Fairness%20Cream%20-%20For%20Men%2C%20Helps%20In%20Dark%20Spot%20and%20Oil%20Reduction%2C%20Sun%20Protection> .
+<base:sales_product/Idli%20Stand%2FMaker%20-%20With%204%20Plates%20and%203%20Cavities%2C%20Perfect%20For%20Big%20Pressure%20Cooker> <https://vocab.um.es#BrandName> "Segovia" .
+<base:offer/Beautiful%20Swastik%20Pearl%20Studded%20Rakhi%20-%20UAKR28> <https://vocab.um.es#Quantity> "1 pc" .
+<base:offer/Fairness%20Cream%20-%20For%20Men%2C%20Helps%20In%20Dark%20Spot%20and%20Oil%20Reduction%2C%20Sun%20Protection> <https://vocab.um.es#Price> "85.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<base:sales_product/Potato%20%28Loose%29> <https://vocab.um.es#Image_Url> "https://www.bigbasket.com/media/uploads/p/l/40048457_9-fresho-potato-new-crop.jpg" .
+<base:offer/Herbal%20Mint%20and%20Cucumber%20Face%20Spray> <https://vocab.um.es#DiscountPrice> "87.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<base:sales_product/Namkeen%20-%20Khara%20Boondi> <https://vocab.um.es#SubCategory> "Namkeen and Savoury Snacks" .
+<base:sales_product/Beautiful%20Swastik%20Pearl%20Studded%20Rakhi%20-%20UAKR28> <https://vocab.um.es#Absolute_Url> "https://www.bigbasket.com/pd/40112039/unique-arts-interiors-beautiful-swastik-pearl-studded-rakhi-uakr28-1-pc/" .
+<base:sales_product/Herbal%20Mint%20and%20Cucumber%20Face%20Spray> <https://vocab.um.es#Brand> "Khadi Natural" .
+<base:sales_product/Herbal%20Mint%20and%20Cucumber%20Face%20Spray> <https://vocab.um.es#SubCategory> "Face Care" .
+<base:offer/Herbal%20Mint%20and%20Cucumber%20Face%20Spray> <https://vocab.um.es#Quantity> "100 ml" .
+<base:sales_product/Safe%20Sun%20Uv%20Screen%20Matte%20Gel%20PA%2B%2B%2B%20-%20SPF%2050> <https://vocab.um.es#Image_Url> "https://www.bigbasket.com/media/uploads/p/l/1209595_1-lotus-herbals-safe-sun-uv-screen-matte-gel-pa-spf-50.jpg" .
+<base:offer/Namkeen%20-%20Khara%20Boondi> <https://vocab.um.es#Quantity> "3x150 g" .
+<base:sales_product/Herbal%20Mint%20and%20Cucumber%20Face%20Spray> <https://vocab.um.es#hasOffer> <base:offer/Herbal%20Mint%20and%20Cucumber%20Face%20Spray> .
+<base:offer/Fairness%20Cream%20-%20For%20Men%2C%20Helps%20In%20Dark%20Spot%20and%20Oil%20Reduction%2C%20Sun%20Protection> <https://vocab.um.es#Quantity> "30 g" .
+<base:sales_product/Namkeen%20-%20Khara%20Boondi> <https://vocab.um.es#hasOffer> <base:offer/Namkeen%20-%20Khara%20Boondi> .
+<base:offer/Namkeen%20-%20Khara%20Boondi> <https://vocab.um.es#DiscountPrice> "170.01"^^<http://www.w3.org/2001/XMLSchema#double> .
+<base:offer/Idli%20Stand%2FMaker%20-%20With%204%20Plates%20and%203%20Cavities%2C%20Perfect%20For%20Big%20Pressure%20Cooker> <https://vocab.um.es#Price> "949.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<base:sales_product/Fairness%20Cream%20-%20For%20Men%2C%20Helps%20In%20Dark%20Spot%20and%20Oil%20Reduction%2C%20Sun%20Protection> <https://vocab.um.es#BrandName> "Fair And Handsome " .
+<base:sales_product/Namkeen%20-%20Khara%20Boondi> <https://vocab.um.es#Brand> "Tasties" .
+<base:offer/Herbal%20Mint%20and%20Cucumber%20Face%20Spray> <https://vocab.um.es#Price> "125.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<base:sales_product/Idli%20Stand%2FMaker%20-%20With%204%20Plates%20and%203%20Cavities%2C%20Perfect%20For%20Big%20Pressure%20Cooker> <https://vocab.um.es#Absolute_Url> "https://www.bigbasket.com/pd/40234623/segovia-idli-standmaker-with-4-plates-3-cavities-perfect-for-big-pressure-cooker-1-pc/" .
+<base:sales_product/Potato%20%28Loose%29> <https://vocab.um.es#hasOffer> <base:offer/Potato%20%28Loose%29> .
+<base:sales_product/Potato%20%28Loose%29> <https://vocab.um.es#Category> "Fruits and Vegetables" .
+<base:sales_product/Safe%20Sun%20Uv%20Screen%20Matte%20Gel%20PA%2B%2B%2B%20-%20SPF%2050> <https://vocab.um.es#Absolute_Url> "https://www.bigbasket.com/pd/1209595/lotus-herbals-safe-sun-uv-screen-matte-gel-pa-spf-50-2x50-g/" .
+<base:sales_product/Safe%20Sun%20Uv%20Screen%20Matte%20Gel%20PA%2B%2B%2B%20-%20SPF%2050> <https://vocab.um.es#SubCategory> "Face Care" .
+<base:sales_product/Safe%20Sun%20Uv%20Screen%20Matte%20Gel%20PA%2B%2B%2B%20-%20SPF%2050> <https://vocab.um.es#Brand> "Lotus Herbals" .
+<base:offer/Idli%20Stand%2FMaker%20-%20With%204%20Plates%20and%203%20Cavities%2C%20Perfect%20For%20Big%20Pressure%20Cooker> <https://vocab.um.es#DiscountPrice> "479.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<base:sales_product/Herbal%20Mint%20and%20Cucumber%20Face%20Spray> <https://vocab.um.es#Image_Url> "https://www.bigbasket.com/media/uploads/p/l/40171512_3-khadi-natural-herbal-mint-cucumber-face-spray.jpg" .
+<base:sales_product/Beautiful%20Swastik%20Pearl%20Studded%20Rakhi%20-%20UAKR28> <https://vocab.um.es#hasOffer> <base:offer/Beautiful%20Swastik%20Pearl%20Studded%20Rakhi%20-%20UAKR28> .
+<base:sales_product/Beautiful%20Swastik%20Pearl%20Studded%20Rakhi%20-%20UAKR28> <https://vocab.um.es#Brand> "Unique Arts and Interiors" .
+<base:sales_product/Potato%20%28Loose%29> <https://vocab.um.es#SubCategory> "Potato, Onion and Tomato" .
+<base:offer/Potato%20%28Loose%29> <https://vocab.um.es#Price> "50.32"^^<http://www.w3.org/2001/XMLSchema#double> .
+<base:offer/Beautiful%20Swastik%20Pearl%20Studded%20Rakhi%20-%20UAKR28> <https://vocab.um.es#Price> "149.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<base:sales_product/Herbal%20Mint%20and%20Cucumber%20Face%20Spray> <https://vocab.um.es#BrandName> "Khadi Natural" .
+<base:offer/Safe%20Sun%20Uv%20Screen%20Matte%20Gel%20PA%2B%2B%2B%20-%20SPF%2050> <https://vocab.um.es#Quantity> "2x50 g" .
+<base:sales_product/Fairness%20Cream%20-%20For%20Men%2C%20Helps%20In%20Dark%20Spot%20and%20Oil%20Reduction%2C%20Sun%20Protection> <https://vocab.um.es#Image_Url> "https://www.bigbasket.com/media/uploads/p/l/263924_3-fair-and-handsome-fairness-cream-for-men-helps-in-dark-spot-oil-reduction-sun-protection.jpg" .
+<base:offer/Safe%20Sun%20Uv%20Screen%20Matte%20Gel%20PA%2B%2B%2B%20-%20SPF%2050> <https://vocab.um.es#DiscountPrice> "503.98"^^<http://www.w3.org/2001/XMLSchema#double> .
+<base:sales_product/Idli%20Stand%2FMaker%20-%20With%204%20Plates%20and%203%20Cavities%2C%20Perfect%20For%20Big%20Pressure%20Cooker> <https://vocab.um.es#Category> "Kitchen, Garden and Pets" .
+<base:offer/Idli%20Stand%2FMaker%20-%20With%204%20Plates%20and%203%20Cavities%2C%20Perfect%20For%20Big%20Pressure%20Cooker> <https://vocab.um.es#Quantity> "1 pc" .
+<base:sales_product/Beautiful%20Swastik%20Pearl%20Studded%20Rakhi%20-%20UAKR28> <https://vocab.um.es#Image_Url> "https://www.bigbasket.com/media/uploads/p/l/40112039_6-unique-arts-interiors-beautiful-swastik-pearl-studded-rakhi-uakr28.jpg" .
+<base:sales_product/Namkeen%20-%20Khara%20Boondi> <https://vocab.um.es#Image_Url> "https://www.bigbasket.com/media/uploads/p/l/1216243_1-tasties-namkeen-khara-boondi.jpg" .
+<base:sales_product/Idli%20Stand%2FMaker%20-%20With%204%20Plates%20and%203%20Cavities%2C%20Perfect%20For%20Big%20Pressure%20Cooker> <https://vocab.um.es#Brand> "Segovia" .
+<base:sales_product/Potato%20%28Loose%29> <https://vocab.um.es#Brand> "Fresho" .
+<base:sales_product/Idli%20Stand%2FMaker%20-%20With%204%20Plates%20and%203%20Cavities%2C%20Perfect%20For%20Big%20Pressure%20Cooker> <https://vocab.um.es#Image_Url> "https://www.bigbasket.com/media/uploads/p/l/40234623_2-segovia-idli-standmaker-with-4-plates-3-cavities-perfect-for-big-pressure-cooker.jpg" .
+<base:offer/Beautiful%20Swastik%20Pearl%20Studded%20Rakhi%20-%20UAKR28> <https://vocab.um.es#DiscountPrice> "95.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<base:sales_product/Idli%20Stand%2FMaker%20-%20With%204%20Plates%20and%203%20Cavities%2C%20Perfect%20For%20Big%20Pressure%20Cooker> <https://vocab.um.es#hasOffer> <base:offer/Idli%20Stand%2FMaker%20-%20With%204%20Plates%20and%203%20Cavities%2C%20Perfect%20For%20Big%20Pressure%20Cooker> .
+<base:sales_product/Namkeen%20-%20Khara%20Boondi> <https://vocab.um.es#BrandName> "Tasties" .
+<base:offer/Potato%20%28Loose%29> <https://vocab.um.es#Quantity> "1 kg" .
+<base:sales_product/Herbal%20Mint%20and%20Cucumber%20Face%20Spray> <https://vocab.um.es#Category> "Beauty and Hygiene" .
+<base:sales_product/Safe%20Sun%20Uv%20Screen%20Matte%20Gel%20PA%2B%2B%2B%20-%20SPF%2050> <https://vocab.um.es#hasOffer> <base:offer/Safe%20Sun%20Uv%20Screen%20Matte%20Gel%20PA%2B%2B%2B%20-%20SPF%2050> .
+<base:sales_product/Fairness%20Cream%20-%20For%20Men%2C%20Helps%20In%20Dark%20Spot%20and%20Oil%20Reduction%2C%20Sun%20Protection> <https://vocab.um.es#Absolute_Url> "https://www.bigbasket.com/pd/263924/fair-and-handsome-fairness-cream-for-men-helps-in-dark-spot-oil-reduction-sun-protection-30-g/" .
+<base:offer/Fairness%20Cream%20-%20For%20Men%2C%20Helps%20In%20Dark%20Spot%20and%20Oil%20Reduction%2C%20Sun%20Protection> <https://vocab.um.es#DiscountPrice> "80.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<base:offer/Namkeen%20-%20Khara%20Boondi> <https://vocab.um.es#Price> "267.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<base:sales_product/Safe%20Sun%20Uv%20Screen%20Matte%20Gel%20PA%2B%2B%2B%20-%20SPF%2050> <https://vocab.um.es#BrandName> "Lotus Herbals" .
+<base:sales_product/Namkeen%20-%20Khara%20Boondi> <https://vocab.um.es#Category> "Snacks and Branded Foods" .
+<base:sales_product/Fairness%20Cream%20-%20For%20Men%2C%20Helps%20In%20Dark%20Spot%20and%20Oil%20Reduction%2C%20Sun%20Protection> <https://vocab.um.es#SubCategory> "Face and Body" .
+<base:sales_product/Idli%20Stand%2FMaker%20-%20With%204%20Plates%20and%203%20Cavities%2C%20Perfect%20For%20Big%20Pressure%20Cooker> <https://vocab.um.es#SubCategory> "Kitchen Tools and Other Accessories" .
+<base:sales_product/Beautiful%20Swastik%20Pearl%20Studded%20Rakhi%20-%20UAKR28> <https://vocab.um.es#BrandName> "Unique Arts and Interiors" .
+<base:sales_product/Fairness%20Cream%20-%20For%20Men%2C%20Helps%20In%20Dark%20Spot%20and%20Oil%20Reduction%2C%20Sun%20Protection> <https://vocab.um.es#Brand> "Fair And Handsome " .
+<base:sales_product/Safe%20Sun%20Uv%20Screen%20Matte%20Gel%20PA%2B%2B%2B%20-%20SPF%2050> <https://vocab.um.es#Category> "Beauty and Hygiene" .
+<base:sales_product/Beautiful%20Swastik%20Pearl%20Studded%20Rakhi%20-%20UAKR28> <https://vocab.um.es#SubCategory> "Rakhi" .
+<base:sales_product/Fairness%20Cream%20-%20For%20Men%2C%20Helps%20In%20Dark%20Spot%20and%20Oil%20Reduction%2C%20Sun%20Protection> <https://vocab.um.es#Category> "Beauty and Hygiene" .
+<base:offer/Potato%20%28Loose%29> <https://vocab.um.es#DiscountPrice> "38.75"^^<http://www.w3.org/2001/XMLSchema#double> .
+<base:sales_product/Beautiful%20Swastik%20Pearl%20Studded%20Rakhi%20-%20UAKR28> <https://vocab.um.es#Category> "Cleaning and Household" .
+<base:offer/Safe%20Sun%20Uv%20Screen%20Matte%20Gel%20PA%2B%2B%2B%20-%20SPF%2050> <https://vocab.um.es#Price> "720.0"^^<http://www.w3.org/2001/XMLSchema#double> .

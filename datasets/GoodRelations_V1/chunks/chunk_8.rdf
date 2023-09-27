@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#Individual">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+    <rdfs:subClassOf rdf:resource="http://schema.org/Product"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#SomeItems"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#ProductOrServiceModel"/>
+    <owl:equivalentClass rdf:resource="http://purl.org/goodrelations/v1#ActualProductOrServiceInstance"/>
+    <rdfs:label xml:lang="en">Individual</rdfs:label>
+    <rdfs:comment xml:lang="en">A gr:Individual is an actual product or service instance, i.e., a single identifiable object or action that creates some increase in utility (in the economic sense) for the individual possessing or using this very object (product) or for the individual in whose favor this very action is being taken (service). Products or services are types of goods in the economic sense. For an overview of goods and commodities in economics, see Milgate (1987).
+
+Examples: MyThinkpad T60, the pint of beer standing in front of me, my Volkswagen Golf, the haircut that I received or will be receiving at a given date and time.
+
+Note 1: In many cases, product or service instances are not explicitly exposed on the Web but only claimed to exist (i.e. existentially quantified). In this case, use gr:SomeItems.
+Note 2: This class is the new, shorter form of the former gr:ActualProductOrServiceInstance.
+
+Compatibility with schema.org: This class is a subclass of http://schema.org/Product.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#hasPrevious">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#DayOfWeek"/>
+    <owl:inverseOf rdf:resource="http://purl.org/goodrelations/v1#hasNext"/>
+    <rdfs:label xml:lang="en">has previous (0..1)</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#DayOfWeek"/>
+    <rdfs:comment xml:lang="en">This ordering relation for gr:DayOfWeek indicates that the subject is directly preceeded by the object.
+
+Example: Tuesday hasPrevious Monday
+
+Since days of the week are a cycle, this property is not transitive.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#availableDeliveryMethods">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#DeliveryMethod"/>
+    <rdfs:label xml:lang="en">available delivery methods (0..*)</rdfs:label>
+    <rdfs:domain rdf:nodeID="N6d41e443afbb4b17be64a1ecb6c4745e"/>
+    <rdfs:comment xml:lang="en">This specifies the gr:DeliveryMethod or methods available for a given gr:Offering.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#hasMinCurrencyValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:label xml:lang="en">has min currency value (1..1)</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+    <rdfs:comment xml:lang="en">This property specifies the LOWER BOUND of the amount of money for a price RANGE per unit, shipping charges, or payment charges. The currency and other relevant details are attached to the respective gr:PriceSpecification etc.
+For a gr:UnitPriceSpecification, this is the LOWER BOUND for the price for one unit or bundle (as specified in the unit of measurement of the unit price specification) of the respective gr:ProductOrService. For a gr:DeliveryChargeSpecification or a gr:PaymentChargeSpecification, it is the LOWER BOUND of the price per delivery or payment.
+
+Using gr:hasCurrencyValue sets the upper and lower bounds to the same given value, i.e., x gr:hasCurrencyValue y implies x gr:hasMinCurrencyValue y, x gr:hasMaxCurrencyValue y.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#PartsAndLabor-BringIn">
+    <rdf:type rdf:resource="http://purl.org/goodrelations/v1#WarrantyScope"/>
+    <rdfs:comment xml:lang="en">In case of a defect or malfunction, the buying party has the right to transport the good to a service location determined by the the selling gr:BusinessEntity and will not be be charged for labor, parts, and materials needed to fix the problem. All those costs will be covered by the selling business entity or one of its partnering business entities.
+
+Note: This is just a rough classification for filtering offers. It is up to the buying party to check the exact scope and terms and conditions of the gr:WarrantyPromise.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">Parts and labor / bring-in (warranty scope)</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

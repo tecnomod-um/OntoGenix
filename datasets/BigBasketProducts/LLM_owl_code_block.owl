@@ -1,0 +1,282 @@
+
+
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:schema="http://schema.org/"
+    xmlns:vocab="https://vocab.um.es#">
+
+    <!-- Definition for the sales_product class -->
+    <owl:Class rdf:about="https://vocab.um.es#sales_product">
+
+        <!-- Restrictions for the object properties related to the sales_product class -->
+
+        <!-- BrandName is an object property of the sales_product class -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#BrandName"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Brand is an object property of the sales_product class -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#Brand"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Category is an object property of the sales_product class -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#Category"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- SubCategory is an object property of the sales_product class -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#SubCategory"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Image_Url is an object property of the sales_product class -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#Image_Url"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Absolute_Url is an object property of the sales_product class -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#Absolute_Url"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Each sales_product can have multiple offers -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasOffer"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+    </owl:Class>
+
+    <!-- Definition for the offer class -->
+    <owl:Class rdf:about="https://vocab.um.es#offer">
+
+        <!-- Restrictions for the data properties related to the offer class -->
+
+        <!-- Price is a datatype property of the offer class -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#Price"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- DiscountPrice is a datatype property of the offer class -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#DiscountPrice"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Quantity is a datatype property of the offer class -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#Quantity"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+    </owl:Class>
+
+
+    <!-- Object Properties for sales_product class -->
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#BrandName">
+        <rdfs:domain rdf:resource="https://vocab.um.es#sales_product"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:comment xml:lang="en">The BrandName property is used to specify the brand or manufacturer associated with a particular sales product. It is a critical attribute in distinguishing products and establishing brand loyalty among consumers.</rdfs:comment>
+        <rdfs:label xml:lang="en">Brand Name</rdfs:label>
+        <rdfs:label xml:lang="en">Product Manufacturer</rdfs:label>
+        <rdfs:label xml:lang="en">Manufacturer Name</rdfs:label>
+        <rdfs:label xml:lang="en">Brand Identifier</rdfs:label>
+        <rdfs:label xml:lang="en">Product Brand</rdfs:label>
+        <owl:equivalentProperty rdf:resource="http://schema.org/brand"/>
+        <dct:creator xml:lang="en">UM Vocab Development Team</dct:creator>
+        <dct:created rdf:datatype="&xsd;date">2023-09-19</dct:created>
+        <dct:modified rdf:datatype="&xsd;date">2023-09-19</dct:modified>
+        <skos:altLabel xml:lang="en">Brand Moniker</skos:altLabel>
+    </owl:ObjectProperty>
+
+    <!-- Enhanced definition for the Brand ObjectProperty -->
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#Brand">
+        <!-- Task 1: Append relevant metadata and annotations -->
+        <rdfs:label xml:lang="en">Brand</rdfs:label>
+        <rdfs:comment xml:lang="en">A property to represent the brand or manufacturer associated with a specific product.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://schema.org/brand"/>
+        <dc:creator xml:lang="en">Ontology Engineering Team</dc:creator>
+        <dc:date xml:lang="en">2023-09-20</dc:date>
+        <!-- Task 2: Description field, alternative name, and set of alternative labels -->
+        <rdfs:description xml:lang="en">The 'Brand' property links a product to its manufacturer or brand, providing insights into the origin and reputation of the product.</rdfs:description>
+        <skos:altLabel xml:lang="en">Manufacturer</skos:altLabel>
+        <skos:altLabel xml:lang="en">ProductBrand</skos:altLabel>
+        <skos:altLabel xml:lang="en">BrandName</skos:altLabel>
+        <skos:altLabel xml:lang="en">Maker</skos:altLabel>
+        <skos:altLabel xml:lang="en">ProductMaker</skos:altLabel>
+        <!-- Task 3: Define equivalent properties -->
+        <owl:equivalentProperty rdf:resource="http://schema.org/brand"/>
+    </owl:ObjectProperty>
+
+
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#Category">
+        <rdfs:domain rdf:resource="https://vocab.um.es#sales_product"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:comment xml:lang="en">The Category property is used to classify the sales product into a broad, high-level grouping. It helps in product categorization and understanding its broader classification in the product hierarchy.</rdfs:comment>
+        <rdfs:label xml:lang="en">Product Category</rdfs:label>
+        <rdfs:label xml:lang="en">Main Category</rdfs:label>
+        <rdfs:label xml:lang="en">Primary Classification</rdfs:label>
+        <rdfs:label xml:lang="en">Product Grouping</rdfs:label>
+        <rdfs:label xml:lang="en">Product Type</rdfs:label>
+        <owl:equivalentProperty rdf:resource="http://schema.org/category"/>
+        <skos:altLabel xml:lang="en">Merchandise Category</skos:altLabel>
+        <skos:altLabel xml:lang="en">Product Segment</skos:altLabel>
+        <skos:altLabel xml:lang="en">Item Category</skos:altLabel>
+        <skos:altLabel xml:lang="en">Goods Classification</skos:altLabel>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#SubCategory">
+        <rdfs:domain rdf:resource="https://vocab.um.es#sales_product"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:comment xml:lang="en">The SubCategory property is used to further classify the sales product into a more specific grouping within its main category. It aids in refining product categorization for better granularity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Product Sub-Category</rdfs:label>
+        <rdfs:label xml:lang="en">Secondary Category</rdfs:label>
+        <rdfs:label xml:lang="en">Detailed Classification</rdfs:label>
+        <rdfs:label xml:lang="en">Product Subgroup</rdfs:label>
+        <rdfs:label xml:lang="en">Product Subtype</rdfs:label>
+        <owl:equivalentProperty rdf:resource="http://schema.org/additionalType"/>
+        <skos:altLabel xml:lang="en">Merchandise Sub-Category</skos:altLabel>
+        <skos:altLabel xml:lang="en">Product Detail Type</skos:altLabel>
+        <skos:altLabel xml:lang="en">Item Secondary Category</skos:altLabel>
+        <skos:altLabel xml:lang="en">Goods Sub-Classification</skos:altLabel>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#Image_Url">
+        <rdfs:domain rdf:resource="https://vocab.um.es#sales_product"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:comment xml:lang="en">The Image_Url property provides a link to the visual representation or image of the sales product. It can be used to display images on websites, applications, or other platforms where visualization of the product is necessary.</rdfs:comment>
+        <rdfs:label xml:lang="en">Product Image URL</rdfs:label>
+        <rdfs:label xml:lang="en">Product Image Link</rdfs:label>
+        <rdfs:label xml:lang="en">Sales Product Picture</rdfs:label>
+        <rdfs:label xml:lang="en">Merchandise Image Address</rdfs:label>
+        <rdfs:label xml:lang="en">Product Display Image</rdfs:label>
+        <owl:equivalentProperty rdf:resource="http://schema.org/image"/>
+        <skos:altLabel xml:lang="en">Item Image Link</skos:altLabel>
+        <skos:altLabel xml:lang="en">Goods Image URL</skos:altLabel>
+        <skos:altLabel xml:lang="en">Sales Product Image Source</skos:altLabel>
+        <skos:altLabel xml:lang="en">Product Photo Address</skos:altLabel>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#Absolute_Url">
+        <rdfs:domain rdf:resource="https://vocab.um.es#sales_product"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:comment xml:lang="en">The Absolute_Url property specifies the complete internet address of the sales product. This URL can be used to directly navigate to the product's web page or digital presence.</rdfs:comment>
+        <rdfs:label xml:lang="en">Product Web Link</rdfs:label>
+        <rdfs:label xml:lang="en">Full Product URL</rdfs:label>
+        <rdfs:label xml:lang="en">Complete Web Address of Product</rdfs:label>
+        <rdfs:label xml:lang="en">Direct Product Link</rdfs:label>
+        <rdfs:label xml:lang="en">Sales Product Web Reference</rdfs:label>
+        <skos:altLabel xml:lang="en">Product Internet Address</skos:altLabel>
+        <skos:altLabel xml:lang="en">Digital Product Link</skos:altLabel>
+        <skos:altLabel xml:lang="en">Merchandise Web URL</skos:altLabel>
+        <skos:altLabel xml:lang="en">Official Product Link</skos:altLabel>
+        <skos:altLabel xml:lang="en">Direct URL for Sales Product</skos:altLabel>
+    </owl:ObjectProperty>
+
+
+
+
+    <!-- Data Properties for offer class -->
+    <owl:DatatypeProperty rdf:about="http://schema.org/price">
+        <rdfs:domain rdf:resource="http://schema.org/Offer"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:comment xml:lang="en">The price property indicates the monetary value associated with a specific offer. It defines the cost at which the product or service described in the offer is sold.</rdfs:comment>
+        <rdfs:label xml:lang="en">Offer Price</rdfs:label>
+        <rdfs:label xml:lang="en">Cost</rdfs:label>
+        <rdfs:label xml:lang="en">Sale Price</rdfs:label>
+        <rdfs:label xml:lang="en">Amount</rdfs:label>
+        <rdfs:label xml:lang="en">Value</rdfs:label>
+        <skos:altLabel xml:lang="en">Monetary Amount</skos:altLabel>
+        <skos:altLabel xml:lang="en">List Price</skos:altLabel>
+        <skos:altLabel xml:lang="en">Price Point</skos:altLabel>
+        <skos:altLabel xml:lang="en">Sale Value</skos:altLabel>
+        <skos:altLabel xml:lang="en">Offer Value</skos:altLabel>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#DiscountPrice">
+        <rdfs:domain rdf:resource="http://schema.org/Offer"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:comment xml:lang="en">The discounted price of a product or service in a specific offer. It's the price after applying any promotions or discounts.</rdfs:comment>
+        <rdfs:label xml:lang="en">Discounted Price</rdfs:label>
+        <rdfs:label xml:lang="en">Offered Price</rdfs:label>
+        <rdfs:label xml:lang="en">Sale Price</rdfs:label>
+        <rdfs:label xml:lang="en">Promotion Price</rdfs:label>
+        <rdfs:label xml:lang="en">Reduced Price</rdfs:label>
+        <skos:altLabel xml:lang="en">Price After Discount</skos:altLabel>
+        <skos:altLabel xml:lang="en">Discount Amount</skos:altLabel>
+        <skos:altLabel xml:lang="en">Markdown Price</skos:altLabel>
+        <skos:altLabel xml:lang="en">Special Offer Price</skos:altLabel>
+        <skos:altLabel xml:lang="en">Bargain Price</skos:altLabel>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#Quantity">
+        <rdfs:domain rdf:resource="https://vocab.um.es#sales_product"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:comment xml:lang="en">The available quantity or stock level of a specific sales product.</rdfs:comment>
+        <rdfs:label xml:lang="en">Product Quantity</rdfs:label>
+        <rdfs:label xml:lang="en">Stock Level</rdfs:label>
+        <rdfs:label xml:lang="en">Available Stock</rdfs:label>
+        <rdfs:label xml:lang="en">Inventory Count</rdfs:label>
+        <rdfs:label xml:lang="en">Stock Quantity</rdfs:label>
+        <skos:altLabel xml:lang="en">Total Stock</skos:altLabel>
+        <skos:altLabel xml:lang="en">Quantity in Hand</skos:altLabel>
+        <skos:altLabel xml:lang="en">Inventory Level</skos:altLabel>
+        <skos:altLabel xml:lang="en">Supply Quantity</skos:altLabel>
+        <skos:altLabel xml:lang="en">Current Stock</skos:altLabel>
+    </owl:DatatypeProperty>
+
+    <!-- Relationship between sales_product and offer -->
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasOffer">
+        <rdfs:domain rdf:resource="https://vocab.um.es#sales_product"/>
+        <rdfs:range rdf:resource="http://schema.org/Offer"/>
+        <rdfs:comment xml:lang="en">The hasOffer property indicates that a particular sales product is associated with a specific offer. This relationship provides details about pricing, discounts, and other offer-specific details.</rdfs:comment>
+        <rdfs:label xml:lang="en">Associated Offer</rdfs:label>
+        <rdfs:label xml:lang="en">Product's Offer</rdfs:label>
+        <rdfs:label xml:lang="en">Sales Product Deal</rdfs:label>
+        <rdfs:label xml:lang="en">Offer Details</rdfs:label>
+        <rdfs:label xml:lang="en">Promotional Offer</rdfs:label>
+        <skos:altLabel xml:lang="en">Discount Offer</skos:altLabel>
+        <skos:altLabel xml:lang="en">Sales Offer</skos:altLabel>
+        <skos:altLabel xml:lang="en">Product Deal</skos:altLabel>
+        <skos:altLabel xml:lang="en">Promo Details</skos:altLabel>
+        <skos:altLabel xml:lang="en">Sales Product Promotion</skos:altLabel>
+    </owl:ObjectProperty>
+
+
+
+</rdf:RDF>

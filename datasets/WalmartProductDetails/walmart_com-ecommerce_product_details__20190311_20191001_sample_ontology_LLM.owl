@@ -1,0 +1,57 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+                 xmlns:owl="http://www.w3.org/2002/07/owl#"
+                 xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+                 xmlns:um="https://vocab.um.es#">
+
+          <!-- Classes -->
+          <owl:Class rdf:about="https://vocab.um.es#Product"/>
+          <owl:Class rdf:about="https://vocab.um.es#Brand"/>
+          <owl:Class rdf:about="https://vocab.um.es#Category"/>
+          <owl:Class rdf:about="https://vocab.um.es#Price"/>
+          <owl:Class rdf:about="https://vocab.um.es#Size"/>
+          <owl:Class rdf:about="https://vocab.um.es#Availability"/>
+          <owl:Class rdf:about="https://vocab.um.es#Description"/>
+          <owl:Class rdf:about="https://vocab.um.es#Gtin"/>
+          <owl:Class rdf:about="https://vocab.um.es#Customer"/>
+          <owl:Class rdf:about="https://vocab.um.es#City"/>
+          <owl:Class rdf:about="https://vocab.um.es#State"/>
+          <owl:Class rdf:about="https://vocab.um.es#ZipCodePrefix"/>
+          <owl:Class rdf:about="https://vocab.um.es#Country"/>
+
+          <!-- Properties -->
+          <owl:ObjectProperty rdf:about="https://vocab.um.es#hasBrand"/>
+          <owl:ObjectProperty rdf:about="https://vocab.um.es#hasCategory"/>
+          <owl:ObjectProperty rdf:about="https://vocab.um.es#hasPrice"/>
+          <owl:ObjectProperty rdf:about="https://vocab.um.es#hasSize"/>
+          <owl:ObjectProperty rdf:about="https://vocab.um.es#hasAvailability"/>
+          <owl:ObjectProperty rdf:about="https://vocab.um.es#hasDescription"/>
+          <owl:ObjectProperty rdf:about="https://vocab.um.es#hasGtin"/>
+          <owl:ObjectProperty rdf:about="https://vocab.um.es#hasCity"/>
+          <owl:ObjectProperty rdf:about="https://vocab.um.es#hasState"/>
+          <owl:ObjectProperty rdf:about="https://vocab.um.es#hasZipCodePrefix"/>
+          <owl:ObjectProperty rdf:about="https://vocab.um.es#hasCountry"/>
+
+          <!-- Individuals -->
+          <owl:NamedIndividual rdf:about="https://vocab.um.es#Product1">
+            <rdf:type rdf:resource="https://vocab.um.es#Product"/>
+            <https://vocab.um.es#hasBrand rdf:resource="https://vocab.um.es#Brand1"/>
+            <https://vocab.um.es#hasCategory rdf:resource="https://vocab.um.es#Category1"/>
+            <https://vocab.um.es#hasPrice rdf:resource="https://vocab.um.es#Price1"/>
+            <https://vocab.um.es#hasSize rdf:resource="https://vocab.um.es#Size1"/>
+            <https://vocab.um.es#hasAvailability rdf:resource="https://vocab.um.es#Availability1"/>
+            <https://vocab.um.es#hasDescription rdf:resource="https://vocab.um.es#Description1"/>
+            <https://vocab.um.es#hasGtin rdf:resource="https://vocab.um.es#Gtin1"/>
+          </owl:NamedIndividual>
+
+          <!-- Customer individuals and their properties -->
+          <owl:NamedIndividual rdf:about="https://vocab.um.es#Customer1">
+            <rdf:type rdf:resource="https://vocab.um.es#Customer"/>
+            <https://vocab.um.es#hasCity rdf:resource="https://vocab.um.es#City1"/>
+            <https://vocab.um.es#hasZipCodePrefix rdf:resource="https://vocab.um.es#ZipCodePrefix1"/>
+            <https://vocab.um.es#hasCustomerRef rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CustomerRef1</https://vocab.um.es#hasCustomerRef>
+          </owl:NamedIndividual>
+
+          <!-- More customer individuals and their properties -->
+
+        </rdf:RDF>

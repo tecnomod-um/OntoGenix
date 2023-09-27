@@ -1,0 +1,125 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix vocab: <https://vocab.um.es#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+<#TriplesMapCustomerFeedback> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#CustomerFeedback/{CustomerID}";
+        rr:class vocab:CustomerFeedback;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasAge;
+        rr:objectMap [ rr:column "Age"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasSatisfaction;
+        rr:objectMap [ rr:column "satisfaction"; rr:datatype xsd:string ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasGender;
+        rr:objectMap [ rr:column "Gender"; rr:datatype xsd:string ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasFlightDistance;
+        rr:objectMap [ rr:column "FlightDistance"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasFlightClass;
+        rr:objectMap [ rr:column "Class"; rr:datatype xsd:string ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasTypeOfTravel;
+        rr:objectMap [ rr:column "TypeOfTravel"; rr:datatype xsd:string ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasCustomerType;
+        rr:objectMap [ rr:column "CustomerType"; rr:datatype xsd:string ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasEvaluationItem;
+        rr:objectMap [ rr:parentTriplesMap <#TriplesMapEvaluationItem> ];
+    ].
+
+
+<#TriplesMapEvaluationItem> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#EvaluationItem/{CustomerID}";
+        rr:class vocab:EvaluationItem;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasArrivalDelay;
+        rr:objectMap [ rr:column "ArrivalDelay"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasDepartureDelay;
+        rr:objectMap [ rr:column "DepartureDelay"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasOnlineBoarding;
+        rr:objectMap [ rr:column "OnboardService"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasSeatComfort;
+        rr:objectMap [ rr:column "SeatComfort"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasDeparture;
+        rr:objectMap [ rr:column "Departure"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasFoodAndDrink;
+        rr:objectMap [ rr:column "FoodAndDrink"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasGateLocation;
+        rr:objectMap [ rr:column "GateLocation"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasWifi;
+        rr:objectMap [ rr:column "InflightWifiService"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasOnlineSupport;
+        rr:objectMap [ rr:column "OnlineSupport"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasOnlineBooking;
+        rr:objectMap [ rr:column "OnlineBooking"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasLegRoomService;
+        rr:objectMap [ rr:column "LegRoomService"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasCheckinService;
+        rr:objectMap [ rr:column "CheckinService"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasCleanliness;
+        rr:objectMap [ rr:column "Cleanliness"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasInflightEntertainment;
+        rr:objectMap [ rr:column "InflightEntertainment"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasBaggageHandling;
+        rr:objectMap [ rr:column "BaggageHandling"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasOnlineBoarding;
+        rr:objectMap [ rr:column "OnlineBoarding"; rr:datatype xsd:integer ];
+    ].
+
+
+

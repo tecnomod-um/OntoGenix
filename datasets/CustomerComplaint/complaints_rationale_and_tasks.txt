@@ -1,0 +1,27 @@
+**Rationale:**
+
+The JSON data provided is a structured representation of customer complaints, with each key-value pair representing a specific aspect of the complaint. The task is to create an ontology that captures the relationships between these aspects. The ontology will be centered around the "CustomerComplaint" entity, which will be linked to other entities such as "State", "Product", "ProblemOfComplaint", and "Company". 
+
+The ontology will also capture the hierarchical relationships between entities. For instance, "Product" will have "SubProduct" as an object property, and "ProblemOfComplaint" will have "ProblemSubCategory" as an object property. This hierarchical structure is important for capturing the granularity of the data. 
+
+The ontology will also capture the relationship between the "Company" and "CompanyResponse", with "Resolution" as an object property of "CompanyResponse". This will allow us to understand how companies respond to complaints and the outcomes of these responses. 
+
+The ontology will also define appropriate data type properties for each class. This is crucial for ensuring that the data is correctly typed and can be accurately processed and analyzed. 
+
+Finally, the ontology will use the foundational prefix "https://vocab.um.es" to ensure a clear structure and to facilitate interoperability with other ontologies.
+
+**Output Tasks:**
+
+task_1: Identification of classes: Identify the main classes from the JSON data, such as "CustomerComplaint", "State", "Product", "ProblemOfComplaint", "Company", "CompanyResponse", "SubProduct", "ProblemSubCategory", and "Resolution".
+
+task_2: Identification of object properties: Identify the relationships between the classes, such as the relationship between "CustomerComplaint" and "State", "Product", "ProblemOfComplaint", and "Company", and the hierarchical relationships between "Product" and "SubProduct", "ProblemOfComplaint" and "ProblemSubCategory", and "CompanyResponse" and "Resolution".
+
+task_3: Identification of data properties: Identify the data properties for each class, such as the date of the complaint, the narrative of the complaint, the company's response to the complaint, and whether the response was timely.
+
+task_4: Definition of a structure for the identified classes, subclasses, object properties and data properties: Define a structure that captures the relationships between the classes, the hierarchy of the subclasses, and the data properties of each class.
+
+task_5: Specification of a foundational prefix "https://vocab.um.es#" for the ontology to ensure a clear structure. Define it as an owl type.
+
+task_6: Use of external ontologies to defines types, like: schema, XMLSchema#, owl, ...: Use external ontologies to define the types of the data properties, such as the date of the complaint, the narrative of the complaint, the company's response to the complaint, and whether the response was timely.
+
+task_7: Generate appropriate domain and range for each object or data type property: Define the domain and range for each object and data type property to ensure that the data is correctly typed and can be accurately processed and analyzed.

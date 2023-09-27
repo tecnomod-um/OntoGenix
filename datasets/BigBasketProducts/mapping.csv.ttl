@@ -1,0 +1,71 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix vocab: <https://vocab.um.es#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix base: <https://data.um.es/resource/> .
+
+<#TriplesMapSalesProduct> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "base:sales_product/{ProductName}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:Brand;
+        rr:objectMap [ rr:column "Brand" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:Category;
+        rr:objectMap [ rr:column "Category" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:SubCategory;
+        rr:objectMap [ rr:column "SubCategory" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:Image_Url;
+        rr:objectMap [ rr:column "Image_Url" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:Absolute_Url;
+        rr:objectMap [ rr:column "Absolute_Url" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasOffer;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapOffer>;
+        ]
+    ].
+
+<#TriplesMapOffer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "base:offer/{ProductName}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:Price;
+        rr:objectMap [
+            rr:column "Price";
+            rr:datatype xsd:double
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:DiscountPrice;
+        rr:objectMap [
+            rr:column "DiscountPrice";
+            rr:datatype xsd:double
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:Quantity;
+        rr:objectMap [
+            rr:column "Quantity";
+            rr:datatype xsd:string
+        ]
+    ].

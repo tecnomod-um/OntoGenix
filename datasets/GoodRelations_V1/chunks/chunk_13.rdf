@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#hasMinValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">has min value (0..1)</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    <rdfs:comment xml:lang="en">This property captures the lower limit of a gr:QuantitativeValue instance.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/Offer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#Offering"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#LocationOfSalesOrServiceProvisioning">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:equivalentClass rdf:resource="http://purl.org/goodrelations/v1#Location"/>
+    <rdfs:label xml:lang="en">Location of sales or service provisioning (DEPRECATED)</rdfs:label>
+    <rdfs:comment xml:lang="en">DEPRECATED - This class is superseded by gr:Location. Replace all occurrences of gr:LocationOfSalesOrServiceProvisioning by gr:Location, if possible.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#weight">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    <rdfs:label xml:lang="en">weight (0..1)</rdfs:label>
+    <rdfs:domain rdf:nodeID="Nf113c157aeee40b4a99528a23eb7081f"/>
+    <rdfs:comment xml:lang="en">The weight of the gr:ProductOrService.
+Typical unit code(s): GRM for gram, KGM for kilogram, LBR for pound</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#quantitativeProductOrServiceProperty"/>
+  </rdf:Description>
+</rdf:RDF>

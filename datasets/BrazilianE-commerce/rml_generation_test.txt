@@ -1,0 +1,99 @@
+
+Hello, ChatGPT. As an expert in ontology translation, I need your assistance to generate a mapping in RML format.
+I'm providing you with an ontology and the rationalle describing the json data source and the insights describing the semantic structure of the ontology.
+I want you to methodically follow the steps provided in the rationale.
+
+The necessary inputs are as follows:
+
+**ANALYSIS:**
+
+**Data Description:**
+The JSON data table provides structured e-commerce data from Brazil, meticulously encapsulating customer-related attributes. It encompasses distinct keys representing different attributes, namely 'customer_id', 'customer_unique_id', 'customer_zip_code_prefix', 'customer_city', and 'customer_state'. Each attribute has an associated set of data points, providing detailed, individualized insights. For instance, 'customer_id' and 'customer_unique_id' house unique identifier strings, serving as distinct markers for individual customers. The 'customer_zip_code_prefix' harbors numeric representations of postal codes, associating customers with specific geographical areas. 'customer_city' and 'customer_state' hold string values representing the geographic demarcations pertaining to individual customers. These are indicative of the cities and states respectively, that the customers reside in, allowing for the extraction of geographic and demographic insights. This structured encapsulation ensures a nuanced, coherent view of individualized customer data, facilitating a detailed exploration of geographic and identifier-specific dynamics inherent within the e-commerce landscape.
+
+**Insights:**
+Applying the provided instructions to the JSON data table involves a methodical conversion process, ensuring the accurate representation of entities, relationships, and hierarchies inherent within the data. The logical process encompasses the identification of classes, defining object and data properties, establishing relationships, and specifying domains and ranges. The potential challenge lies in maintaining the integrity and coherency of relationships and hierarchies while translating the JSON data into an ontology. Attention to detail is crucial to avoid overlooking any nuances within the data, and meticulousness is paramount in interlinking classes and properties to avoid semantic inaccuracies. Another potential challenge is the seamless incorporation of external ontologies to enhance semantic richness and interoperability. The emphasis on maintaining the logical structure and interconnections necessitates a precise, thoughtful approach, ensuring that the ontology is a true, coherent reflection of the structured JSON data provided.
+
+**RDF/XML ONTOLOGY:**
+```xml
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema#"
+    xmlns:vocab="https://vocab.um.es#">
+
+    <owl:Ontology rdf:about="https://vocab.um.es#">
+
+    <owl:Class rdf:about="https://vocab.um.es#Customer"/>
+    <owl:Class rdf:about="https://vocab.um.es#City"/>
+    <owl:Class rdf:about="https://vocab.um.es#State"/>
+    <owl:Class rdf:about="https://vocab.um.es#ZipCodePrefix"/>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasCity">
+        <rdfs:domain rdf:resource="https://vocab.um.es#State"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#City"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasZipCodePrefix">
+        <rdfs:domain rdf:resource="https://vocab.um.es#City"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#ZipCodePrefix"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasState">
+        <rdfs:domain rdf:resource="https://vocab.um.es#City"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#State"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasCustomer">
+        <rdfs:domain rdf:resource="https://vocab.um.es#ZipCodePrefix"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#Customer"/>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasCustomerRef">
+        <rdfs:domain rdf:resource="https://vocab.um.es#Customer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+</rdf:RDF>
+```
+
+
+Structure your output in the following format:
+
+<Generate the RML content here:
+        Ensure that when creating the URIs of the instances, they are unique, combine columns if necessary and do not use "http://example.org".
+        Ensure you add all the necessary prefixes at the beginning of the RML. Ensure you correctly add the references
+        to the prefixes in each triple definition block.
+        IMPORTANT!! The rml mapping will reference a CSV file not a JSON.
+        Follow this format for the definition of classes mappings:
+
+        <#TriplesMapEntity1> a rr:TriplesMap;
+            rml:logicalSource [
+                rml:source "csv_data.csv";
+                rml:referenceFormulation ql:CSV
+            ];
+            rr:subjectMap [
+                rr:template "EntityURI/{Entity1}";
+            ];
+            rr:predicateObjectMap [
+                rr:predicate ex:Property;
+                rr:objectMap [
+                    rr:parentTriplesMap <#Property>;
+                ];
+            ].
+
+        <#TriplesMapEntity2> a rr:TriplesMap;
+            rml:logicalSource [
+                rml:source "csv_data.csv";
+                rml:referenceFormulation ql:CSV
+            ];
+            rr:subjectMap [
+                rr:template "EntityURI/{Entity2}";
+            ].
+
+        >
+
+Do not explain your answer, just write the rml code. Do no write notes at the end of your writing.
+Generate appropriate URIs and combine columns if necessary.
+Do not use "http://example.org" or "http://example.com" instead make use of the base prefix.
+Create a mapping for each class.
+Do not forget to add the prefixes.
+Do not shorten your answer.

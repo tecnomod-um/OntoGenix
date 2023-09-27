@@ -1,0 +1,83 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix vocab: <https://vocab.um.es#> .
+@prefix schema: <http://schema.org/> .
+
+<#TriplesMapInvoice> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#invoice/{InvoiceNo}";
+        rr:class vocab:invoice;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:hasSalesArticle;
+        rr:objectMap [
+            rr:template "https://vocab.um.es#salesArticle/{StockCode}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:customer;
+        rr:objectMap [
+            rr:template "https://vocab.um.es#customer/{CustomerID}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:country;
+        rr:objectMap [
+            rr:template "https://vocab.um.es#country/{Country}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:InvoiceDate;
+        rr:objectMap [
+            rml:reference "InvoiceDate";
+        ];
+    ].
+
+<#TriplesMapSalesArticle> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#salesArticle/{StockCode}";
+        rr:class vocab:salesArticle;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:product;
+        rr:objectMap [
+            rr:template "https://vocab.um.es#product/{Description}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:unitPriceSpecification;
+        rr:objectMap [
+            rr:template "http://schema.org/UnitPriceSpecification/{UnitPrice}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:Quantity;
+        rr:objectMap [
+            rml:reference "Quantity";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate vocab:Description;
+        rr:objectMap [
+            rml:reference "Description";
+        ];
+    ].
+
+<#TriplesMapUnitPriceSpecification> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "csv_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "http://schema.org/UnitPriceSpecification/{UnitPrice}";
+        rr:class schema:UnitPriceSpecification;
+    ].

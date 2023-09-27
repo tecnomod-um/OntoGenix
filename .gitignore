@@ -1,6 +1,6 @@
 .idea/
 .env
-datasets/
+datasets/**/*.csv
 GUI/
 testing_prompts/
 venv/

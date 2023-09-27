@@ -1,0 +1,121 @@
+
+Hello, ChatGPT. As an expert in ontology translation, I need your assistance to generate a mapping in RML format.
+I'm providing you with an ontology and the rationalle describing the json data source and the insights describing the semantic structure of the ontology.
+I want you to methodically follow the steps provided in the rationale.
+
+The necessary inputs are as follows:
+
+### **ANALYSIS:**
+
+#### Data Description:
+The JSON data table comprehensively encapsulates a series of products available on a retail platform, represented with a unique identifier and accompanied by detailed attributes. Each product entity is meticulously characterized by a set of properties that encompass the name, brand, category, sub-category, price details, and imagery along with specific URLs for each product. This structured dataset exhibits intrinsic relationships that connote a hierarchical and categorical segmentation of the products, fostering a meticulous ontology building process. The information outlined in the data table permits the delineation of attributes into distinctive classes and properties, facilitating a seamless translation into a structured ontology representation. Moreover, the data table, encompassing diverse categories like food items, beauty products, and kitchen utilities, showcases the potential for a multi-faceted ontology design that can serve as a robust knowledge representation model.
+
+#### Insights:
+The rationale and instructions presented delineate a structured approach to transform the JSON data table into a coherent ontology. A cornerstone in this process is the identification and establishment of the primary class "sales_product," which serves as a nexus, linking various object and data properties. The detailed tasks outline a meticulous process of segregating attributes as object properties and establishing datatype properties within the "offer" class. However, the construction process is not without potential challenges. For instance, a precise definition of domains and ranges requires a deep understanding of the data structure and the relationships therein. Moreover, the integration of external ontologies such as schema.org necessitates compliance with global standards and interoperability with existing knowledge graphs. A potential difficulty could also arise in maintaining the logical coherence and hierarchal structure when defining connections between classes and properties, particularly when distinguishing between object and data properties.
+
+### **RDF/XML ONTOLOGY:**
+
+```xml
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:vocab="https://vocab.um.es#"
+    xmlns:schema="http://schema.org/">
+
+    <!-- Definition of sales_product class -->
+    <owl:Class rdf:about="https://vocab.um.es#sales_product"/>
+
+    <!-- Definition of offer class from schema.org -->
+    <owl:Class rdf:about="http://schema.org/Offer"/>
+
+    <!-- Object properties definition -->
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasBrand">
+        <rdfs:domain rdf:resource="https://vocab.um.es#sales_product"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasCategory">
+        <rdfs:domain rdf:resource="https://vocab.um.es#sales_product"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasSubCategory">
+        <rdfs:domain rdf:resource="https://vocab.um.es#sales_product"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasImageUrl">
+        <rdfs:domain rdf:resource="https://vocab.um.es#sales_product"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasAbsoluteUrl">
+        <rdfs:domain rdf:resource="https://vocab.um.es#sales_product"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasOffer">
+        <rdfs:domain rdf:resource="https://vocab.um.es#sales_product"/>
+        <rdfs:range rdf:resource="http://schema.org/Offer"/>
+    </owl:ObjectProperty>
+
+    <!-- Data properties definition within offer class -->
+    <owl:DatatypeProperty rdf:about="http://schema.org/price">
+        <rdfs:domain rdf:resource="http://schema.org/Offer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/discountPrice">
+        <rdfs:domain rdf:resource="http://schema.org/Offer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/priceCurrency">
+        <rdfs:domain rdf:resource="http://schema.org/Offer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#quantity">
+        <rdfs:domain rdf:resource="http://schema.org/Offer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+</rdf:RDF>
+```
+
+Structure your output in the following format:
+
+<Generate the RML content here:
+        Ensure that when creating the URIs of the instances, they are unique, combine columns if necessary and do not use "http://example.org".
+        Ensure you add all the necessary prefixes at the beginning of the RML. Ensure you correctly add the references
+        to the prefixes in each triple definition block.
+        IMPORTANT!! The rml mapping will reference a CSV file not a JSON.
+        Follow this format for the definition of classes mappings:
+
+        <#TriplesMapEntity1> a rr:TriplesMap;
+            rml:logicalSource [
+                rml:source "csv_data.csv";
+                rml:referenceFormulation ql:CSV
+            ];
+            rr:subjectMap [
+                rr:template "EntityURI/{Entity1}";
+            ];
+            rr:predicateObjectMap [
+                rr:predicate ex:Property;
+                rr:objectMap [
+                    rr:parentTriplesMap <#Property>;
+                ];
+            ].
+
+        <#TriplesMapEntity2> a rr:TriplesMap;
+            rml:logicalSource [
+                rml:source "csv_data.csv";
+                rml:referenceFormulation ql:CSV
+            ];
+            rr:subjectMap [
+                rr:template "EntityURI/{Entity2}";
+            ].
+
+        >
+
+Do not explain your answer, just write the rml code. Do no write notes at the end of your writing.
+Generate appropriate URIs and combine columns if necessary.
+Do not use "http://example.org" or "http://example.com" instead make use of the base prefix.
+Create a mapping for each class.
+Do not forget to add the prefixes.
+Do not shorten your answer.

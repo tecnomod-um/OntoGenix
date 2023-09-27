@@ -1,0 +1,71 @@
+{
+    "satisfaction": {
+        "50627": "dissatisfied"
+    },
+    "Gender": {
+        "50627": "Male"
+    },
+    "Customer Type": {
+        "50627": "disloyal Customer"
+    },
+    "Age": {
+        "50627": 25
+    },
+    "Type of Travel": {
+        "50627": "Business travel"
+    },
+    "Class": {
+        "50627": "Business"
+    },
+    "Flight Distance": {
+        "50627": 1681
+    },
+    "Seat comfort": {
+        "50627": 3
+    },
+    "Departure/Arrival time convenient": {
+        "50627": 0
+    },
+    "Food and drink": {
+        "50627": 3
+    },
+    "Gate location": {
+        "50627": 1
+    },
+    "Inflight wifi service": {
+        "50627": 3
+    },
+    "Inflight entertainment": {
+        "50627": 3
+    },
+    "Online support": {
+        "50627": 3
+    },
+    "Ease of Online booking": {
+        "50627": 3
+    },
+    "On-board service": {
+        "50627": 5
+    },
+    "Leg room service": {
+        "50627": 2
+    },
+    "Baggage handling": {
+        "50627": 5
+    },
+    "Checkin service": {
+        "50627": 3
+    },
+    "Cleanliness": {
+        "50627": 5
+    },
+    "Online boarding": {
+        "50627": 3
+    },
+    "Departure Delay in Minutes": {
+        "50627": 0
+    },
+    "Arrival Delay in Minutes": {
+        "50627": 0.0
+    }
+}

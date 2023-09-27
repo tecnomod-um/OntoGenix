@@ -1,0 +1,92 @@
+**ANALYSIS:**
+
+**Data Description:**
+The JSON data table provided is a structured representation of customer complaints. Each key-value pair in the JSON data represents a specific aspect of the complaint. The keys include 'Date received', 'Product', 'Sub-product', 'Issue', 'Sub-issue', 'Consumer complaint narrative', 'Company public response', 'Company', 'State', 'ZIP code', 'Tags', 'Consumer consent provided?', 'Submitted via', 'Date sent to company', 'Company response to consumer', 'Timely response?', 'Consumer disputed?', and 'Complaint ID'. The values associated with these keys provide specific details about each complaint, such as the date it was received, the product or service it relates to, the specific issue and sub-issue, the narrative of the complaint, the company's response, and other relevant details. Each complaint is identified by a unique ID.
+
+**Insights:**
+The instructions provided indicate that the task is to create an ontology that captures the relationships between the different aspects of the complaints represented in the JSON data. The ontology will be centered around the "CustomerComplaint" entity, which will be linked to other entities such as "State", "Product", "ProblemOfComplaint", and "Company". The ontology will also capture the hierarchical relationships between entities, such as the relationship between "Product" and "SubProduct", and "ProblemOfComplaint" and "ProblemSubCategory". This will require careful interpretation of the JSON data to identify these relationships. The ontology will also define appropriate data type properties for each class, which will require a thorough understanding of the data types represented in the JSON data. One potential challenge in this task is ensuring that the ontology accurately captures the granularity of the data, particularly in relation to the hierarchical relationships between entities. Another potential challenge is ensuring that the data is correctly typed, which will require careful consideration of the data types represented in the JSON data.
+
+**RDF/XML ONTOLOGY:**
+
+```xml
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:vocab="https://vocab.um.es#">
+
+    <owl:Ontology rdf:about="https://vocab.um.es#"/>
+
+    <owl:Class rdf:about="https://vocab.um.es#CustomerComplaint"/>
+    <owl:Class rdf:about="https://vocab.um.es#State"/>
+    <owl:Class rdf:about="https://vocab.um.es#Product"/>
+    <owl:Class rdf:about="https://vocab.um.es#SubProduct"/>
+    <owl:Class rdf:about="https://vocab.um.es#ProblemOfComplaint"/>
+    <owl:Class rdf:about="https://vocab.um.es#ProblemSubCategory"/>
+    <owl:Class rdf:about="https://vocab.um.es#Company"/>
+    <owl:Class rdf:about="https://vocab.um.es#CompanyResponse"/>
+    <owl:Class rdf:about="https://vocab.um.es#Resolution"/>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasState">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#State"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasProduct">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#Product"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasSubProduct">
+        <rdfs:domain rdf:resource="https://vocab.um.es#Product"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#SubProduct"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasProblem">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#ProblemOfComplaint"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasSubProblem">
+        <rdfs:domain rdf:resource="https://vocab.um.es#ProblemOfComplaint"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#ProblemSubCategory"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasCompany">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#Company"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasResponse">
+        <rdfs:domain rdf:resource="https://vocab.um.es#Company"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#CompanyResponse"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasResolution">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CompanyResponse"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#Resolution"/>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#dateReceived">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#narrative">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#response">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CompanyResponse"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#timelyResponse">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CompanyResponse"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>
+```

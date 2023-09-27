@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#Location">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#OpeningHoursSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessFunction"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessEntityType"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Brand"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Offering"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#PaymentMethod"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#WarrantyPromise"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#WarrantyScope"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#DeliveryMethod"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessEntity"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#DayOfWeek"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#TypeAndQuantityNode"/>
+    <owl:equivalentClass rdf:resource="http://purl.org/goodrelations/v1#LocationOfSalesOrServiceProvisioning"/>
+    <rdfs:label xml:lang="en">Location</rdfs:label>
+    <rdfs:comment xml:lang="en">A location is a point or area of interest from which a particular product or service is available, e.g. a store, a bus stop, a gas station, or a ticket booth. The difference to gr:BusinessEntity is that the gr:BusinessEntity is the legal entity (e.g. a person or corporation) making the offer, while gr:Location is the store, office, or place. A chain restaurant will e.g. have one legal entity but multiple restaurant locations. Locations are characterized by an address or geographical position and a set of opening hour specifications for various days of the week.
+		
+Example: A rental car company may offer the Business Function Lease Out of cars from two locations, one in Fort Myers, Florida, and one in Boston, Massachussetts. Both stations are open 7:00 - 23:00 Mondays through Saturdays.
+
+Note: Typical address standards (vcard) and location data (geo, WGC84) should be attached to a gr:Location node. Since there already exist established vocabularies for this, the GoodRelations ontology does not provide respective attributes. Instead, the use of respective vocabularies is recommended. However, the gr:hasGlobalLocationNumber property is  provided for linking to public identifiers for business locations.
+		
+Compatibility with schema.org: This class is equivalent to http://schema.org/Place.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#PaymentMethod">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction. This element is mostly used for specifying the types of payment accepted by a gr:BusinessEntity.
+
+Examples: VISA, MasterCard, Diners, cash, or bank transfer in advance.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">Payment method</rdfs:label>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Location"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#OpeningHoursSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessFunction"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessEntityType"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Brand"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#Offering"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#WarrantyPromise"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#WarrantyScope"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#DeliveryMethod"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#BusinessEntity"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#DayOfWeek"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#TypeAndQuantityNode"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#availabilityEnds">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">availability ends (0..1)</rdfs:label>
+    <rdfs:domain rdf:nodeID="Nc01177c62b5e40e1be386b9f4c6d0ef4"/>
+    <rdfs:comment xml:lang="en">This property specifies the end of the availability of the gr:ProductOrService included in the gr:Offering.
+The difference to the properties gr:validFrom and gr:validThrough is that those specify the period of time during which the offer is valid and can be accepted.
+
+Example: I offer to lease my boat for the period of August 1 - August 31, 2010, but you must accept by offer no later than July 15.
+
+A time-zone should be specified. For a time in GMT/UTC, simply add a "Z" following the time:
+
+2008-05-30T09:30:10Z.
+
+Alternatively, you can specify an offset from the UTC time by adding a positive or negative time following the time:
+
+2008-05-30T09:30:10-09:00
+
+or
+
+2008-05-30T09:30:10+09:00.
+
+Note: There is another property gr:availableAtOrFrom, which is used to indicate the gr:Location (e.g. store or shop) from which the goods would be available.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+</rdf:RDF>

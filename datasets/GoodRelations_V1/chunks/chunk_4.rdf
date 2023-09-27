@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#greaterOrEqual">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#QualitativeValue"/>
+    <owl:inverseOf rdf:resource="http://purl.org/goodrelations/v1#lesserOrEqual"/>
+    <rdfs:label xml:lang="en">greater or equal (0..*)</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#QualitativeValue"/>
+    <rdfs:comment xml:lang="en">This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#category">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">category (0..*)</rdfs:label>
+    <rdfs:domain rdf:nodeID="Nc801c1a6983645cead1641b100625ab7"/>
+    <rdfs:comment xml:lang="en">The name of a category to which this gr:ProductOrService, gr:Offering, gr:BusinessEntity, or gr:Location belongs.
+	
+Note 1: For products, it is better to add an rdf:type statement referring to a GoodRelations-compliant ontology for vertical industries instead, but if you just have a short text label, gr:category is simpler.
+Note 2: You can use greater signs or slashes to informally indicate a category hierarchy, e.g. "restaurants/asian_restaurants" or "cables &gt; usb_cables"
+</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#Enduser">
+    <rdf:type rdf:resource="http://purl.org/goodrelations/v1#BusinessEntityType"/>
+    <rdfs:comment xml:lang="en">The gr:BusinessEntityType representing such agents that are purchasing the good or service for private consumption, in particular not for resale or for usage within an industrial enterprise. By default, a Business Entity is an Enduser.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">Enduser (business entity type)</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

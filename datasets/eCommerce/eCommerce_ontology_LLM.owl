@@ -1,0 +1,320 @@
+<rdf:RDF
+    xml:base="https://vocab.um.es"
+    xmlns:dc="http://purl.org/dc/elements/1.1#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:vocab="https://vocab.um.es#"
+    xmlns:schema="http://schema.org#">
+
+    <owl:Class rdf:about="https://vocab.um.es#Invoice">
+        <!-- Constraints and Interrelations -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#belongsTo"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                <owl:onClass rdf:resource="https://vocab.um.es#Customer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasStockCode"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                <owl:onClass rdf:resource="https://vocab.um.es#StockCode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#originatesFrom"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                <owl:onClass rdf:resource="https://vocab.um.es#Country"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <!-- Metadata and Annotations -->
+        <schema:description>A document that provides details of a sale transaction and the products involved.</schema:description>
+        <rdfs:comment>Represents invoices generated from sales transactions.</rdfs:comment>
+        <owl:equivalentClass rdf:resource="http://schema.org/Invoice"/>
+        <!-- Description, Alternative Name, and Labels -->
+        <rdfs:label>Invoice</rdfs:label>
+        <schema:alternateName>BillingStatement</schema:alternateName>
+        <skos:altLabel>Bill</skos:altLabel>
+        <skos:altLabel>SalesReceipt</skos:altLabel>
+        <skos:altLabel>PurchaseStatement</skos:altLabel>
+        <skos:altLabel>TransactionDocument</skos:altLabel>
+        <skos:altLabel>PaymentInvoice</skos:altLabel>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://vocab.um.es#StockCode">
+        <!-- Implementing constraints and interrelations -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasStockCode"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                <owl:onClass rdf:resource="https://vocab.um.es#Invoice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Adding metadata and annotations -->
+        <schema:description>An identifier assigned to a particular product or set of products for inventory tracking and management purposes.</schema:description>
+        <rdfs:comment>Represents the unique stock code assigned to products for better inventory management.</rdfs:comment>
+        <rdfs:label>StockCode</rdfs:label>
+
+        <!-- Alternative Name and Labels -->
+        <skos:altLabel>InventoryCode</skos:altLabel>
+        <skos:altLabel>ProductIdentifier</skos:altLabel>
+        <skos:altLabel>StockID</skos:altLabel>
+        <skos:altLabel>SKU</skos:altLabel> <!-- Commonly used term for Stock Keeping Unit -->
+        <skos:altLabel>ItemCode</skos:altLabel>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://vocab.um.es#Product">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasStockCode"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                <owl:onClass rdf:resource="https://vocab.um.es#StockCode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#Description"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <schema:description>A tangible or intangible commodity available for transactions or use.</schema:description>
+        <rdfs:comment>Represents items or services that can be bought, sold, or used.</rdfs:comment>
+        <rdfs:label>Product</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://schema.org/Product"/>
+        <skos:altLabel>Commodity</skos:altLabel>
+        <skos:altLabel>Goods</skos:altLabel>
+        <skos:altLabel>Merchandise</skos:altLabel>
+        <skos:altLabel>Item</skos:altLabel>
+        <skos:altLabel>TradeItem</skos:altLabel>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://vocab.um.es#Customer">
+        <!-- Task_2 Metadata and Annotations -->
+        <rdfs:comment>A representation of an individual or entity that engages in the act of purchasing or intending to purchase goods or services.</rdfs:comment>
+        <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator">OpenAI Ontology Team</owl:AnnotationProperty>
+        <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date">2023-09-15</owl:AnnotationProperty>
+
+        <!-- Task_4 Description, Alternative Name, and Labels -->
+        <schema:description>An entity that makes a purchase or displays the intent to make a purchase.</schema:description>
+        <rdfs:label>Customer</rdfs:label>
+        <skos:altLabel>Buyer</skos:altLabel>
+        <skos:altLabel>Purchaser</skos:altLabel>
+        <skos:altLabel>Consumer</skos:altLabel>
+        <skos:altLabel>Client</skos:altLabel>
+        <skos:altLabel>Shopper</skos:altLabel>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://vocab.um.es#Country">
+
+        <!-- Task 2: Metadata and Annotations -->
+        <schema:description>An identified area of land distinguished by its distinct political entity or geographical boundaries.</schema:description>
+        <rdfs:comment>Represents a country in the world, related to an Invoice's origin.</rdfs:comment>
+
+        <!-- Task 3: Equivalent Entity -->
+        <owl:equivalentClass rdf:resource="http://schema.org/Country"/>
+
+        <!-- Task 4: Description and Alternative Labels -->
+        <rdfs:label>Country</rdfs:label>
+        <skos:altLabel>Nation</skos:altLabel>
+        <skos:altLabel>State</skos:altLabel>
+        <skos:altLabel>Land</skos:altLabel>
+        <skos:altLabel>Realm</skos:altLabel>
+        <skos:altLabel>Territory</skos:altLabel>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://vocab.um.es#Price">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#isPricedAt"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                <owl:onClass rdf:resource="https://vocab.um.es#StockCode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <schema:description>The monetary value associated with a product or service.</schema:description>
+        <rdfs:comment>Represents the cost or value of items in the given context.</rdfs:comment>
+        <rdfs:label>Price</rdfs:label>
+        <skos:altLabel>Cost</skos:altLabel>
+        <skos:altLabel>Value</skos:altLabel>
+        <skos:altLabel>Expense</skos:altLabel>
+        <skos:altLabel>Rate</skos:altLabel>
+        <skos:altLabel>Amount</skos:altLabel>
+        <owl:equivalentClass rdf:resource="http://another-ontology.org#Cost"/>
+        <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+        <rdfs:seeAlso rdf:resource="http://another-ontology.org#Value"/>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#belongsTo">
+        <!-- Equivalent property based on popular ontologies -->
+        <!-- Since no perfect match was found in schema.org or similar, I'm omitting the equivalentProperty annotation -->
+
+
+        <!-- Labels and Description -->
+        <rdfs:label>belongsTo</rdfs:label>
+        <rdfs:comment>An assertion that the given invoice is associated with and owned by a particular customer.</rdfs:comment>
+        <schema:description>A relationship that establishes ownership of an invoice by a customer, indicating whom the invoice has been addressed to.</schema:description>
+
+        <!-- Alternative Labels -->
+        <skos:altLabel>invoiceOwnedBy</skos:altLabel>
+        <skos:altLabel>invoiceFor</skos:altLabel>
+        <skos:altLabel>billTo</skos:altLabel>
+        <skos:altLabel>associatedWithCustomer</skos:altLabel>
+        <skos:altLabel>invoiceRecipient</skos:altLabel>
+
+        <!-- Domain and Range -->
+        <rdfs:domain rdf:resource="https://vocab.um.es#Invoice"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#Customer"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasStockCode">
+        <!-- Equivalent property: In this case, we are not adding one as there isn't a known direct equivalent in popular vocabularies. -->
+        <rdfs:label>hasStockCode</rdfs:label>
+        <rdfs:comment>Links an invoice to a unique stock code that identifies a product or SKU.</rdfs:comment>
+        <schema:description>A property associating an invoice with a unique identifier for products or SKUs in a commercial system.</schema:description>
+
+        <!-- Alternative labels for comprehensiveness and flexibility -->
+        <skos:altLabel>containsSKU</skos:altLabel>
+        <skos:altLabel>invoiceProductIdentifier</skos:altLabel>
+        <skos:altLabel>productCodeInInvoice</skos:altLabel>
+        <skos:altLabel>stockIDinInvoice</skos:altLabel>
+        <skos:altLabel>listsStockCode</skos:altLabel>
+
+        <rdfs:domain rdf:resource="https://vocab.um.es#Invoice"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#StockCode"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#isPricedAt">
+        <!-- Equivalent Property -->
+        <owl:equivalentProperty rdf:resource="http://schema.org/price"/>
+
+        <!-- Labels and Description -->
+        <rdfs:label>isPricedAt</rdfs:label>
+        <rdfs:comment>Links a product's stock code to its associated price.</rdfs:comment>
+        <schema:description>An object property that associates a product's unique stock code identifier with its respective price value in the system.</schema:description>
+
+        <!-- Alternative Labels -->
+        <skos:altLabel>pricingOf</skos:altLabel>
+        <skos:altLabel>priceTagFor</skos:altLabel>
+        <skos:altLabel>stockCodePrice</skos:altLabel>
+        <skos:altLabel>costOfStock</skos:altLabel>
+        <skos:altLabel>listedPriceFor</skos:altLabel>
+
+        <!-- Domain and Range -->
+        <rdfs:domain rdf:resource="https://vocab.um.es#StockCode"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#Price"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasProduct">
+        <!-- Task 1: Metadata and Annotations -->
+        <rdfs:label>hasProduct</rdfs:label>
+        <rdfs:comment>Relates a unique stock code to the actual product it represents.</rdfs:comment>
+        <schema:description>Property that associates a specific stock code to the product within an inventory system.</schema:description>
+
+        <!-- Task 2: Description Field and Alternate Names -->
+        <skos:altLabel>productCode</skos:altLabel>
+        <skos:altLabel>stockItem</skos:altLabel>
+        <skos:altLabel>itemForCode</skos:altLabel>
+        <skos:altLabel>productForCode</skos:altLabel>
+        <skos:altLabel>codeRepresents</skos:altLabel>
+
+        <!-- Task 3: Equivalent Properties (only if known, fictional ones not created) -->
+        <owl:equivalentProperty rdf:resource="http://schema.org/ProductModel"/>
+
+        <!-- Original Details -->
+        <rdfs:domain rdf:resource="https://vocab.um.es#StockCode"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#Product"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#originatesFrom">
+        <owl:equivalentProperty rdf:resource="http://schema.org/countryOfOrigin"/>
+        <rdfs:label>Origin Country of Invoice</rdfs:label>
+        <rdfs:comment>Indicates the country from which the invoice was generated or the goods/services originated.</rdfs:comment>
+        <schema:description>Refers to the country where the goods or services, as stated in the invoice, were produced or rendered.</schema:description>
+        <skos:altLabel>invoiceCountry</skos:altLabel>
+        <skos:altLabel>billFromCountry</skos:altLabel>
+        <skos:altLabel>producedIn</skos:altLabel>
+        <skos:altLabel>serviceOrigin</skos:altLabel>
+        <skos:altLabel>billOrigin</skos:altLabel>
+        <rdfs:domain rdf:resource="https://vocab.um.es#Invoice"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#Country"/>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#InvoiceDate">
+        <rdfs:label>InvoiceDate</rdfs:label>
+        <rdfs:comment>Date when the invoice was generated or issued.</rdfs:comment>
+        <schema:description>The specific date and time when an invoice was formally issued or generated in the system.</schema:description>
+        <skos:altLabel>billDate</skos:altLabel>
+        <skos:altLabel>invoiceIssuedDate</skos:altLabel>
+        <skos:altLabel>billingTimestamp</skos:altLabel>
+        <skos:altLabel>invoiceCreationDate</skos:altLabel>
+        <skos:altLabel>dateOfInvoice</skos:altLabel>
+        <rdfs:domain rdf:resource="https://vocab.um.es#Invoice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <!-- For the equivalent property, we will assume that http://schema.org/ has a similar property. If it doesn't, this can be omitted. -->
+        <owl:equivalentProperty rdf:resource="http://schema.org/invoiceDate"/>
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#Description">
+        <!-- Original Property Name -->
+        <rdfs:label>Description</rdfs:label>
+
+        <!-- Metadata Annotations -->
+        <rdfs:comment>Provides a detailed description of a product.</rdfs:comment>
+        <schema:description>Textual representation of a product's features, usage, or any other related information.</schema:description>
+
+        <!-- Alternative Name and Labels -->
+        <skos:altLabel>productDetails</skos:altLabel>
+        <skos:altLabel>productInfo</skos:altLabel>
+        <skos:altLabel>productSummary</skos:altLabel>
+        <skos:altLabel>itemDescription</skos:altLabel>
+        <skos:altLabel>productNarrative</skos:altLabel>
+
+        <!-- Domain and Range -->
+        <rdfs:domain rdf:resource="https://vocab.um.es#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+
+        <!-- Equivalent Property -->
+        <owl:equivalentProperty rdf:resource="http://schema.org/description"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#UnitPrice">
+        <rdfs:label>UnitPrice</rdfs:label>
+        <rdfs:comment>Denotes the unit price of a product or service, representing the cost per individual unit.</rdfs:comment>
+        <schema:description>The price attributed to a single unit of a product or service.</schema:description>
+        <skos:altLabel>itemUnitCost</skos:altLabel>
+        <skos:altLabel>singleUnitPrice</skos:altLabel>
+        <skos:altLabel>productUnitCost</skos:altLabel>
+        <skos:altLabel>perUnitPrice</skos:altLabel>
+        <skos:altLabel>basePrice</skos:altLabel>
+        <rdfs:domain rdf:resource="https://vocab.um.es#Price"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <owl:equivalentProperty rdf:resource="http://schema.org/price"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#Quantity">
+        <!-- Task 1: Metadata and Annotations -->
+        <rdfs:label>Quantity</rdfs:label>
+        <rdfs:comment>Specifies the quantity of items or products listed in an invoice.</rdfs:comment>
+
+        <!-- Task 2: Description and Alternative Labels -->
+        <schema:description>The numerical count of a specific item or product present in a particular invoice.</schema:description>
+        <skos:altLabel>itemCount</skos:altLabel>
+        <skos:altLabel>productQuantity</skos:altLabel>
+        <skos:altLabel>numberOfItems</skos:altLabel>
+        <skos:altLabel>totalItems</skos:altLabel>
+        <skos:altLabel>itemNumber</skos:altLabel>
+
+        <rdfs:domain rdf:resource="https://vocab.um.es#Invoice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <!-- Task 3: Equivalent Properties - Not provided as we aren't creating fictional ones and there is no known equivalent -->
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

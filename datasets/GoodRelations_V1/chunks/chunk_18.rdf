@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://purl.org/goodrelations/v1#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#hasMakeAndModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#ProductOrServiceModel"/>
+    <rdfs:label xml:lang="en">has make and model (0..1)</rdfs:label>
+    <rdfs:domain rdf:nodeID="Na21f46aed9514e6693adc3c85852b090"/>
+    <rdfs:comment xml:lang="en">This states that an actual product instance (gr:Individual) or a placeholder instance for multiple, unidentified such instances (gr:SomeItems) is one occurence of a particular gr:ProductOrServiceModel.
+
+Example: myFordT hasMakeAndModel FordT.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#hasNAICS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:label xml:lang="en">has NAICS (0..*)</rdfs:label>
+    <rdfs:domain rdf:nodeID="N998ffaee433b48f9b8c06361b809c256"/>
+    <rdfs:comment xml:lang="en">The North American Industry Classification System (NAICS) code for a particular gr:BusinessEntity.
+See http://www.census.gov/eos/www/naics/ for more details.
+
+Note: While NAICS codes are sometimes misused for classifying products or services, they are designed and suited only for classifying business establishments.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#PublicHolidays">
+    <rdf:type rdf:resource="http://purl.org/goodrelations/v1#DayOfWeek"/>
+    <rdfs:comment xml:lang="en">A placeholder for all official public holidays at the gr:Location. This allows specifying the opening hours on public holidays. If a given day is a public holiday, this specification supersedes the opening hours for the respective day of the week.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">Public holidays (day of week)</rdfs:label>
+    <ns1:displayPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</ns1:displayPosition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/rights">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+</rdf:RDF>
