@@ -5,8 +5,10 @@ FROM python:3.11.2
 WORKDIR /usr/src/app
 
 # Copy the local package directories to the container's workspace.
-COPY . .
+#COPY . .
+COPY requirements.txt ./
 
+RUN pip install --upgrade pip
 # Install any needed Python packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
