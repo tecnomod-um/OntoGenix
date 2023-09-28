@@ -12,7 +12,7 @@ def clean_word(word):
 
 def process_semantic_descriptions(semantic_descriptions: dict, key: str = 'proposed_name') -> list:
     if key == 'proposed_name':
-        return [semantic_descriptions[key]['proposed_name'] for key in semantic_descriptions.keys()]
+        return [clean_word(semantic_descriptions[key]['proposed_name']) for key in semantic_descriptions.keys()]
     elif key == 'description':
         return [semantic_descriptions[key]['description'] for key in semantic_descriptions.keys()]
 

@@ -76,7 +76,7 @@ def dict_to_rdf(rdf_sections):
     return rdf_string
 
 
-def split_rdf(input_file, output_folder, chunk_size=10):
+def split_rdf(input_file: str, output_folder: str, chunk_size: int = 10):
     g = Graph()
     g.parse(input_file, format="xml")
 
