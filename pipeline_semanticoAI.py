@@ -12,7 +12,7 @@ dataset_folder = config["dataset_folder"]
 dataset_file = config["dataset_file"]
 
 '''################################## ONTOLOGY SEGMENTATION ############################################'''
-from rdf_tools import split_rdf
+from tools.rdf_tools import split_rdf
 
 # segments an ontology into chunks to save them in a folder.
 split_rdf(
@@ -99,7 +99,7 @@ ontology_embeddings_2D = embedder.get_pca(ontology_embeddings)
 print(ontology_embeddings.shape)
 
 import matplotlib.pyplot as plt
-from custom_plots import plot_word_embeddings
+from tools.custom_plots import plot_word_embeddings
 
 plt.figure()
 plot_word_embeddings(ontology_embeddings_2D[:len(labels)], labels)

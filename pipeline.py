@@ -1,21 +1,4 @@
 # -*- coding: utf-8 -*-
-'''
-TODO:
-    CODING TASKS:
-    - Check openai Embeddings instead of sentence-transformer bert model.
-    - Refine the Mapper strategy: At present, it's fairly straightforward and direct. It could be enriched with
-    external libraries to generate the kgraph from the data source, the ontology, and the mapping definition, to
-    consider the errors produced in the refinement loop. This would necessitate the use of libraries capable of
-    automated kgraph creation, if they exist.
-    - Code refactoring: This should be an ongoing, daily process.
-
-    IDEAS:
-    - The OntoBuilder strategy comprises four stages:
-        + Generate a fundamental ontology.
-        + Search for related entities in a database of segmented ontologies using semanticoAI and embeddings. BEST OPTION!!!
-        + Incorporate relevant entities if they are deemed beneficial.
-
-'''
 
 '''########################################## YAML CONFIG ######################################################'''
 import yaml
@@ -33,14 +16,14 @@ file = base_path + dataset_folder + '/' + dataset_file + '.csv'
 print(file)
 
 '''########################################## CHUNK CSV ######################################################'''
-from tools import csv2dataset
+from tools.tools import csv2dataset
 
 # get a dataset subsample from a csv file
 dataset = csv2dataset(file, max_tokens=200)
 print(dataset.head())
 
 '''########################################## DATAFRAME subsample 2 JSON ######################################################'''
-from tools import dataframe2prettyjson
+from tools.tools import dataframe2prettyjson
 
 # format to json for the LLM_base and write to a file
 json_data = dataframe2prettyjson(dataset, base_path + dataset_folder + '/json_data.json', save=True)
@@ -138,7 +121,7 @@ improved. The entity to be input could be an existing one in the generated ontol
 not already in the definition of the ontology. In the following I show two different use cases, one for a class entity 
 and another one for an [object property/data type property]. 
 '''
-from tools import extract_sections_from_rdf, dict_to_rdf
+from tools.rdf_tools import extract_sections_from_rdf
 
 # extract sections from the RDF/XML owl codeblock
 rdf_sections = extract_sections_from_rdf(ontology_builder.codeblock)
