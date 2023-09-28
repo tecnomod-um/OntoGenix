@@ -2,7 +2,7 @@ import re
 import matplotlib.pyplot as plt
 from collections import Counter
 from sentence_transformers import util
-
+import numpy as np
 
 def clean_word(word):
     cleaned = "".join([char.lower() for char in word if not char.isnumeric()])
@@ -12,7 +12,7 @@ def clean_word(word):
 
 def process_semantic_descriptions(semantic_descriptions: dict, key: str = 'proposed_name') -> list:
     if key == 'proposed_name':
-        return [clean_word(semantic_descriptions[key]['proposed_name']) for key in semantic_descriptions.keys()]
+        return [semantic_descriptions[key]['proposed_name'] for key in semantic_descriptions.keys()]
     elif key == 'description':
         return [semantic_descriptions[key]['description'] for key in semantic_descriptions.keys()]
 
