@@ -3,6 +3,6 @@
 datasets/**/*.csv
 GUI/
 testing_prompts/
-venv/
+.venv/
 **/__pycache__/
 
