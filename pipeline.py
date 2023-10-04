@@ -190,18 +190,15 @@ ontology_mapper.interact(rationale=ontology_context)
 # ontology_mapper.regenerate() # run this line of code if you want to regenerate the LLM answer.
 print(ontology_mapper.rml_codeblock)
 
+
+
 '''######################### Kowledge Graph Generation from RML code ###############################################'''
 from KG_Generator.KGEN import KGen
 
-# You should have first created the config.ini file.
-kgen = KGen()
-kgen.dataset_path = base_path + dataset_folder + '/' + 'config.ini'
-kgen.destination_path = base_path + dataset_folder + '/' + 'data.nt'
-
-from REPL.REPL import PythonREPL
-
-repl = PythonREPL()
-
-output =  repl.run(kgen().run())
-
+kgen = KGen(
+    dataset=base_path+dataset_folder+'/config.ini',
+    destination=base_path+dataset_folder+'/data.nt'
+)
+output = kgen.run()
+print(output)
 
