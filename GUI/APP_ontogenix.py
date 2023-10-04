@@ -5,7 +5,7 @@
 @institution: %( Departamento de informática y sistemas, Universidad de Murcia )
 @DOI:
 """
-from GUI.GuiBehavior import GuiBehavior
+from GuiBehavior import GuiBehavior
 
 from PyQt5.QtWidgets import QApplication
 import sys
@@ -21,7 +21,7 @@ class APP(QApplication):
         sys.exit(self.exec_())
 
     def load_style(self):
-        with open("GUI/css/Genetive.qss") as f:
+        with open("./css/Genetive.qss") as f:
             self.setStyleSheet(f.read())
 
 
