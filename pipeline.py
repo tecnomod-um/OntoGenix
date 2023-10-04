@@ -191,9 +191,17 @@ ontology_mapper.interact(rationale=ontology_context)
 print(ontology_mapper.rml_codeblock)
 
 '''######################### Kowledge Graph Generation from RML code ###############################################'''
-import morph_kgc
+from KG_Generator.KGEN import KGen
 
 # You should have first created the config.ini file.
-graph = morph_kgc.materialize(base_path + dataset_folder + '/' + 'config.ini')
-graph.serialize(destination=base_path + dataset_folder + '/' + 'data.nt', format='ntriples', endoding="utf-8")
+kgen = KGen()
+kgen.dataset_path = base_path + dataset_folder + '/' + 'config.ini'
+kgen.destination_path = base_path + dataset_folder + '/' + 'data.nt'
+
+from REPL.REPL import PythonREPL
+
+repl = PythonREPL()
+
+output =  repl.run(kgen().run())
+
 
