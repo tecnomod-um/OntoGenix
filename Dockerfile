@@ -5,12 +5,13 @@ FROM python:3.11.2
 WORKDIR /usr/src/app
 
 # Copy the local package directories to the container's workspace.
-#COPY . .
-COPY requirements.txt ./
+ADD . ./
+# COPY requirements.txt ./
 
 RUN pip install --upgrade pip
 # Install any needed Python packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Define the command to run on container start
-CMD [ "python", "./pipeline.py" ] 
+# CMD [ "python", "./pipeline.py" ] 
+ENTRYPOINT ["tail", "-f", "/dev/null"]
