@@ -25,9 +25,7 @@ class LlmPlanner(AbstractLlm, ABC):
         self.instructions_prompt = self.load_string_from_file(metadata['instructions'])
         self.dataset_path = metadata['dataset']
 
-    def interaction(self,
-                    input_task: Optional[str] = None,
-                    json_data: Optional[str] = None):
+    def interaction(self, input_task: Optional[str] = None, json_data: Optional[str] = None):
         """
         Perform the first interaction or a subsequent interaction with the LLM_base based on the arguments provided.
 
