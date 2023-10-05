@@ -6,3 +6,5 @@ python-dotenv
 lxml
 rdflib
 morph-kgc
+sklearn
+sentence_transformers

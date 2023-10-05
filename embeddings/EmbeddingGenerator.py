@@ -1,6 +1,6 @@
 from sentence_transformers import SentenceTransformer
 from sklearn.decomposition import PCA
-from typing import Union
+from typing import Union, List
 import numpy as np
 
 
