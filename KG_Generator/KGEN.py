@@ -3,6 +3,7 @@ import sys
 from io import StringIO
 import morph_kgc
 
+
 class KGen:
 
     def __init__(self, dataset, destination):
@@ -12,7 +13,7 @@ class KGen:
 
     def run(self):
         old_stdout = sys.stdout
-        sys.stdout = mystdout = StringIO()
+        sys.stdout = StringIO()
         try:
             # run the commands needed to generate the knowledge graph
             self._generateKG()
