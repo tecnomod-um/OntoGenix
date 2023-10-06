@@ -8,3 +8,6 @@ rdflib
 morph-kgc
 scikit-learn
 sentence_transformers
+matplotlib
+PyQt5
+PySide2
