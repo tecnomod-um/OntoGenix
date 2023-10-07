@@ -1,17 +1,15 @@
-# Use an official Python runtime as the base image
-FROM python:3.11.2
+FROM python:3.11.3
 
-# Set the working directory inside the container
 WORKDIR /usr/src/app
 
-# Copy the local package directories to the container's workspace.
 ADD . ./
-# COPY requirements.txt ./
 
-RUN pip install --upgrade pip
-# Install any needed Python packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# RUN pip install --upgrade pip
 
-# Define the command to run on container start
+# RUN pip install --no-cache-dir -r requirements.txt
+
 # CMD [ "python", "./pipeline.py" ] 
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+
+# docker run -v `pwd`/data:/data ontogenix ./cmd.sh a
+CMD [ "cmd.sh" , "x" ] 
+
