@@ -51,8 +51,6 @@ example output in mermaid classDiagram format:
 
     classDiagram
         class SalesOrder {
-            +hasProduct: SalesArticle
-            +hasCustomer: Customer
             +Rating: double
             +Timestamp: integer
         }

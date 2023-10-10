@@ -35,7 +35,7 @@ QLabel
 	background-color: transparent;
 	color: #454544;
 	font-weight: bold;
-	font-size: 13px;
+	font-size: 20px;
 
 }
 
@@ -45,7 +45,7 @@ QPushButton
 {
 	background-color: #5c55e9;
 	color: #fff;
-	font-size: 13px;
+	font-size: 20px;
 	font-weight: bold;
 	border-top-right-radius: 15px;
 	border-top-left-radius: 0px;
@@ -82,7 +82,7 @@ QCheckBox
 {
 	background-color: transparent;
 	color: #5c55e9;
-	font-size: 10px;
+	font-size: 20px;
 	font-weight: bold;
 	border: none;
 	border-radius: 5px;
@@ -149,7 +149,7 @@ QListView
 {
 	background-color: #5c55e9;
 	color: #fff;
-	font-size: 14px;
+	font-size: 20px;
 	font-weight: bold;
 	show-decoration-selected: 0;
 	border-radius: 4px;
@@ -458,4 +458,19 @@ QScrollBar::sub-page:vertical
     height: 0px;
     background-color: #d8dce6;
 
+}
+
+QTextEdit {
+    color: black;
+}
+
+QTabBar::tab {
+    color: black;
+}
+QGroupBox {
+    color: black;
+}
+
+QPushButton {
+    border-radius: 10px;
 }
