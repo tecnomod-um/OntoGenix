@@ -3,70 +3,233 @@
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns:vocab="https://vocab.um.es#">
+    xmlns:vocab="https://vocab.um.es#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#">
 
     <owl:Ontology rdf:about="https://vocab.um.es#"/>
 
-    <owl:Class rdf:about="https://vocab.um.es#CustomerComplaint"/>
-    <owl:Class rdf:about="https://vocab.um.es#State"/>
-    <owl:Class rdf:about="https://vocab.um.es#Product"/>
-    <owl:Class rdf:about="https://vocab.um.es#SubProduct"/>
-    <owl:Class rdf:about="https://vocab.um.es#ProblemOfComplaint"/>
-    <owl:Class rdf:about="https://vocab.um.es#ProblemSubCategory"/>
-    <owl:Class rdf:about="https://vocab.um.es#Company"/>
-    <owl:Class rdf:about="https://vocab.um.es#CompanyResponse"/>
-    <owl:Class rdf:about="https://vocab.um.es#Resolution"/>
+    <owl:Class rdf:about="https://vocab.um.es#CustomerComplaint">
+        <!-- Object Property Restrictions -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasState"/>
+                <owl:someValuesFrom rdf:resource="https://vocab.um.es#State"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
 
-    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasState">
-        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
-        <rdfs:range rdf:resource="https://vocab.um.es#State"/>
-    </owl:ObjectProperty>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasProduct"/>
+                <owl:someValuesFrom rdf:resource="https://vocab.um.es#Product"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
 
-    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasProduct">
-        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
-        <rdfs:range rdf:resource="https://vocab.um.es#Product"/>
-    </owl:ObjectProperty>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasProblem"/>
+                <owl:someValuesFrom rdf:resource="https://vocab.um.es#ProblemOfComplaint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
 
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasCompany"/>
+                <owl:someValuesFrom rdf:resource="https://vocab.um.es#Company"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Data Type Property Restrictions -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#dateReceived"/>
+                <owl:hasValue rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#narrative"/>
+                <owl:hasValue rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+    </owl:Class>
+
+    <owl:Class rdf:about="https://vocab.um.es#State">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="en">State</rdfs:label>
+        <rdfs:comment xml:lang="en">A geographical and administrative division representing states within a country where the complaint originated.</rdfs:comment>
+
+        <!-- Restriction on the State being associated with a CustomerComplaint through hasState object property -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasState"/>
+                <owl:someValuesFrom rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://vocab.um.es#Product">
+        <!-- Hierarchical relationship between Product and SubProduct -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasSubProduct"/>
+                <owl:someValuesFrom rdf:resource="https://vocab.um.es#SubProduct"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <!-- Data type property indicating the product's name -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#productName"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <!-- Object property indicating which complaints are related to this product -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasComplaint"/>
+                <owl:someValuesFrom rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://vocab.um.es#SubProduct">
+        <rdfs:subClassOf rdf:resource="https://vocab.um.es#Product"/>
+    </owl:Class>
+
+    <!-- Object Properties and Constraints related to SubProduct -->
+
+    <!-- Relation between Product and SubProduct -->
     <owl:ObjectProperty rdf:about="https://vocab.um.es#hasSubProduct">
         <rdfs:domain rdf:resource="https://vocab.um.es#Product"/>
         <rdfs:range rdf:resource="https://vocab.um.es#SubProduct"/>
     </owl:ObjectProperty>
 
-    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasProblem">
-        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+    <!-- All SubProducts are necessarily associated with a main Product -->
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://vocab.um.es#hasSubProduct"/>
+        <owl:someValuesFrom rdf:resource="https://vocab.um.es#SubProduct"/>
+        <owl:onClass rdf:resource="https://vocab.um.es#Product"/>
+    </owl:Restriction>
+
+    <!-- Data Properties and Constraints related to SubProduct -->
+
+    <!-- Since the insights mention the need for a data type property for each class,
+        let's introduce a "description" data property for the SubProduct to describe its characteristics -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#subProductDescription">
+        <rdfs:domain rdf:resource="https://vocab.um.es#SubProduct"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Ensure that each SubProduct has a description -->
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://vocab.um.es#subProductDescription"/>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
+
+    <owl:Class rdf:about="https://vocab.um.es#ProblemOfComplaint">
+        <!-- Specifying the relationship between ProblemOfComplaint and ProblemSubCategory as per insights -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasSubProblem"/>
+                <owl:someValuesFrom rdf:resource="https://vocab.um.es#ProblemSubCategory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Specifying that every ProblemOfComplaint is potentially part of a CustomerComplaint -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasProblem"/>
+                <owl:onClass rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://vocab.um.es#ProblemSubCategory">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasSubProblem"/>
+                <owl:someValuesFrom rdf:resource="https://vocab.um.es#ProblemOfComplaint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasCompany"/>
+                <owl:someValuesFrom rdf:resource="https://vocab.um.es#Company"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#relatedToComplaint">
+        <rdfs:domain rdf:resource="https://vocab.um.es#ProblemSubCategory"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#underProblem">
+        <rdfs:domain rdf:resource="https://vocab.um.es#ProblemSubCategory"/>
         <rdfs:range rdf:resource="https://vocab.um.es#ProblemOfComplaint"/>
     </owl:ObjectProperty>
 
-    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasSubProblem">
-        <rdfs:domain rdf:resource="https://vocab.um.es#ProblemOfComplaint"/>
-        <rdfs:range rdf:resource="https://vocab.um.es#ProblemSubCategory"/>
-    </owl:ObjectProperty>
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#description">
+        <rdfs:domain rdf:resource="https://vocab.um.es#ProblemSubCategory"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
 
-    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasCompany">
-        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
-        <rdfs:range rdf:resource="https://vocab.um.es#Company"/>
-    </owl:ObjectProperty>
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#count">
+        <rdfs:domain rdf:resource="https://vocab.um.es#ProblemSubCategory"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
 
-    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasResponse">
+    <owl:Class rdf:about="https://vocab.um.es#Company">
+        <!-- This class represents companies that can be associated with a CustomerComplaint. -->
+
+        <!-- Relating the company with the complaints filed against it. -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasCompany"/>
+                <owl:someValuesFrom rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Relating the company with its respective response to complaints. -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasResponse"/>
+                <owl:onClass rdf:resource="https://vocab.um.es#CompanyResponse"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- To capture other relevant details about the company, you can add DatatypeProperties like 'name', 'address', 'contactInfo', etc.
+             For example, capturing company's name: -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#companyName"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+    </owl:Class>
+
+    <!-- This is the datatype property to store the company's name. -->
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#companyName">
         <rdfs:domain rdf:resource="https://vocab.um.es#Company"/>
-        <rdfs:range rdf:resource="https://vocab.um.es#CompanyResponse"/>
-    </owl:ObjectProperty>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
 
+    <!-- Entity: CompanyResponse -->
+    <owl:Class rdf:about="https://vocab.um.es#CompanyResponse"/>
+
+    <!-- ObjectProperty: hasResolution -->
     <owl:ObjectProperty rdf:about="https://vocab.um.es#hasResolution">
         <rdfs:domain rdf:resource="https://vocab.um.es#CompanyResponse"/>
         <rdfs:range rdf:resource="https://vocab.um.es#Resolution"/>
     </owl:ObjectProperty>
 
-    <owl:DatatypeProperty rdf:about="https://vocab.um.es#dateReceived">
-        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="https://vocab.um.es#narrative">
-        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-
+    <!-- DataProperties for CompanyResponse -->
     <owl:DatatypeProperty rdf:about="https://vocab.um.es#response">
         <rdfs:domain rdf:resource="https://vocab.um.es#CompanyResponse"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -76,5 +239,340 @@
         <rdfs:domain rdf:resource="https://vocab.um.es#CompanyResponse"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
+
+    <!-- Constraints and Relationships for CompanyResponse -->
+
+    <!-- Each CompanyResponse has exactly one Resolution -->
+    <rdf:Description rdf:about="https://vocab.um.es#CompanyResponse">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasResolution"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+
+    <!-- Each CompanyResponse has exactly one string-based response -->
+    <rdf:Description rdf:about="https://vocab.um.es#CompanyResponse">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#response"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+
+    <!-- Each CompanyResponse indicates whether the response was timely (as a boolean) -->
+    <rdf:Description rdf:about="https://vocab.um.es#CompanyResponse">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#timelyResponse"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+
+    <owl:Class rdf:about="https://vocab.um.es#Resolution">
+        <!-- Restriction to specify that every Resolution is associated with only one CompanyResponse -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasResolution"/>
+                <owl:onClass rdf:resource="https://vocab.um.es#CompanyResponse"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <!-- Restriction to specify that a Resolution has a description, which is a string -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#description"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <!-- Data property for the description of a Resolution -->
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#description">
+        <rdfs:domain rdf:resource="https://vocab.um.es#Resolution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasState">
+        <!-- Task 1: Append relevant metadata and annotations -->
+        <rdfs:label xml:lang="en">State of Complaint</rdfs:label>
+        <rdfs:comment xml:lang="en">Property indicating the state or status of a particular customer complaint.</rdfs:comment>
+        <dc:creator xml:lang="en">OpenAI Ontology Team</dc:creator>
+        <dc:date xml:lang="en">2023-10-11</dc:date>
+
+        <!-- Task 2: Define a description field, propose an alternative name, and devise a set of five alternative labels -->
+        <rdfs:description xml:lang="en">This property represents the current condition, phase, or status that a complaint resides in.</rdfs:description>
+        <skos:altLabel xml:lang="en">ComplaintStatus</skos:altLabel>
+        <skos:altLabel xml:lang="en">ComplaintCondition</skos:altLabel>
+        <skos:altLabel xml:lang="en">CurrentStateOfComplaint</skos:altLabel>
+        <skos:altLabel xml:lang="en">ComplaintPhase</skos:altLabel>
+        <skos:altLabel xml:lang="en">IssueState</skos:altLabel>
+
+        <!-- Task 3: Define equivalent properties if known -->
+        <!-- As no equivalent properties are provided, this section remains empty. -->
+
+        <!-- Original Domain and Range -->
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#State"/>
+    </owl:ObjectProperty>
+
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasProduct">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#Product"/>
+        <!-- task_1: Metadata and Annotations -->
+        <rdfs:comment xml:lang="en">This property links a customer complaint to the related product.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://vocab.um.es#"/>
+        <owl:versionInfo xml:lang="en">Version 1.0</owl:versionInfo>
+        <dc:creator xml:lang="en">Ontology Engineering Team</dc:creator>
+        <!-- task_2: Description field, Alternative name, and Labels -->
+        <rdfs:label xml:lang="en">hasProduct</rdfs:label>
+        <rdfs:label xml:lang="en">productOfComplaint</rdfs:label>
+        <rdfs:label xml:lang="en">relatedProduct</rdfs:label>
+        <rdfs:label xml:lang="en">complaintForProduct</rdfs:label>
+        <rdfs:label xml:lang="en">associatedProduct</rdfs:label>
+        <rdfs:label xml:lang="en">linkedProduct</rdfs:label>
+        <skos:altLabel xml:lang="en">Product in Issue</skos:altLabel>
+        <skos:definition xml:lang="en">A property that establishes a relationship between a customer complaint and the product that the complaint pertains to.</skos:definition>
+        <!-- task_3: Equivalent properties (none provided, so none added) -->
+    </owl:ObjectProperty>
+
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasSubProduct">
+        <rdfs:domain rdf:resource="https://vocab.um.es#Product"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#SubProduct"/>
+        <rdfs:label xml:lang="en">Has Sub-Product</rdfs:label>
+        <rdfs:label xml:lang="en">Contains Sub-Product</rdfs:label>
+        <rdfs:label xml:lang="en">Incorporates Sub-Product</rdfs:label>
+        <rdfs:label xml:lang="en">Comprises Sub-Product</rdfs:label>
+        <rdfs:label xml:lang="en">Associated with Sub-Product</rdfs:label>
+        <rdfs:comment xml:lang="en">This property links a product to its specific sub-products or variants.</rdfs:comment>
+        <owl:alternativeName>Links to Sub-Product</owl:alternativeName>
+        <dc:creator xml:lang="en">OpenAI Ontology Engineering Team</dc:creator>
+        <dc:date>2023-10-11</dc:date>
+        <dc:description xml:lang="en">A relation indicating that a product has a specific sub-product or variant.</dc:description>
+    </owl:ObjectProperty>
+
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasProblem">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#ProblemOfComplaint"/>
+        <!-- Task 1: Metadata and Annotations -->
+        <rdfs:comment xml:lang="en">This property links a customer complaint to the specific problem or issue being reported.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://vocab.um.es#"/>
+        <rdfs:label xml:lang="en">Has Problem</rdfs:label>
+        <!-- Task 2: Description, Alternative Name, and Labels -->
+        <rdfs:description xml:lang="en">The specific issue or concern described in a customer complaint.</rdfs:description>
+        <vocab:alternativeName>ProblemAssociated</vocab:alternativeName>
+        <vocab:altLabel>ComplaintIssue</vocab:altLabel>
+        <vocab:altLabel>AssociatedProblem</vocab:altLabel>
+        <vocab:altLabel>ReportedIssue</vocab:altLabel>
+        <vocab:altLabel>ComplaintConcern</vocab:altLabel>
+        <vocab:altLabel>MainProblem</vocab:altLabel>
+        <!-- Task 3: Equivalent Properties (none added as none were specified) -->
+    </owl:ObjectProperty>
+
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasSubProblem">
+        <rdfs:domain rdf:resource="https://vocab.um.es#ProblemOfComplaint"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#ProblemSubCategory"/>
+        <rdfs:comment xml:lang="en">This property links a specific problem of complaint to its related sub-category of problems.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Sub-Problem</rdfs:label>
+        <rdfs:label xml:lang="en">Associated Sub-Problem</rdfs:label>
+        <rdfs:label xml:lang="en">Linked Sub-Problem</rdfs:label>
+        <rdfs:label xml:lang="en">Related Sub-Problem</rdfs:label>
+        <rdfs:label xml:lang="en">Contains Sub-Problem</rdfs:label>
+        <owl:alternativeName>RelatesSubProblemTo</owl:alternativeName>
+        <dc:creator xml:lang="en">OpenAI Ontology Team</dc:creator>
+        <dc:date>2023-10-11</dc:date>
+        <dc:description xml:lang="en">A property indicating the relationship between a general problem and its more specific sub-problem.</dc:description>
+    </owl:ObjectProperty>
+
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasCompany">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#Company"/>
+
+        <!-- Task 1: Metadata and Annotations -->
+        <rdfs:comment xml:lang="en">This property links a customer complaint to the company related to the complaint.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://vocab.um.es#"/>
+        <owl:versionInfo xml:lang="en">Version 1.0</owl:versionInfo>
+        <dc:creator xml:lang="en">OpenAI Ontology Team</dc:creator>
+        <dc:date xml:lang="en">2023-10-11</dc:date>
+
+        <!-- Task 2: Description, Alternative Name and Labels -->
+        <rdfs:label xml:lang="en">Company Associated</rdfs:label>
+        <rdfs:label xml:lang="en">Related Company</rdfs:label>
+        <rdfs:label xml:lang="en">Complaint's Company</rdfs:label>
+        <rdfs:label xml:lang="en">Company in Complaint</rdfs:label>
+        <rdfs:label xml:lang="en">Associated Business</rdfs:label>
+        <skos:altLabel xml:lang="en">Concerned Company</skos:altLabel>
+        <skos:definition xml:lang="en">An object property that associates a customer complaint with the concerned company.</skos:definition>
+
+        <!-- Task 3: Equivalent Properties -->
+        <!-- As no equivalent properties are mentioned, none are added. -->
+
+    </owl:ObjectProperty>
+
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasResponse">
+        <rdfs:domain rdf:resource="https://vocab.um.es#Company"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#CompanyResponse"/>
+        <!-- Task 1: Append relevant metadata and annotations -->
+        <rdfs:comment>This property associates a company with its respective response to customer complaints or inquiries.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://vocab.um.es#"/>
+        <owl:versionInfo>Version 1.1</owl:versionInfo>
+        <dc:creator xml:lang="en">Ontology Engineering Team - UM</dc:creator>
+        <!-- Task 2: Define a description field, propose an alternative name, and alternative labels -->
+        <dc:description xml:lang="en">A property that connects a company to its specific response related to a complaint or inquiry. It is vital for tracking company feedback or reactions to customer issues.</dc:description>
+        <skos:altLabel xml:lang="en">responseFromCompany</skos:altLabel>
+        <skos:altLabel xml:lang="en">companyFeedback</skos:altLabel>
+        <skos:altLabel xml:lang="en">companyReaction</skos:altLabel>
+        <skos:altLabel xml:lang="en">companyReply</skos:altLabel>
+        <skos:altLabel xml:lang="en">responseByCompany</skos:altLabel>
+    </owl:ObjectProperty>
+
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasResolution">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CompanyResponse"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#Resolution"/>
+        <rdfs:label xml:lang="en">Has Resolution</rdfs:label>
+        <rdfs:label xml:lang="en">Possesses Resolution</rdfs:label>
+        <rdfs:label xml:lang="en">Holds Resolution</rdfs:label>
+        <rdfs:label xml:lang="en">Contains Resolution</rdfs:label>
+        <rdfs:label xml:lang="en">Features Resolution</rdfs:label>
+        <rdfs:comment xml:lang="en">This property links a company's response to the resolution associated with it.</rdfs:comment>
+        <skos:altLabel>Resolution Relation</skos:altLabel>
+        <owl:versionInfo xml:lang="en">Version 1.1</owl:versionInfo>
+        <dc:date xml:lang="en">2023-10-11</dc:date>
+        <dc:creator xml:lang="en">ChatGPT Ontology Team</dc:creator>
+    </owl:ObjectProperty>
+
+
+    <!-- Additional properties related to the Product class -->
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasComplaint">
+        <rdfs:domain rdf:resource="https://vocab.um.es#Product"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+        <!-- Task 1: Metadata and Annotations -->
+        <rdfs:comment xml:lang="en">This property relates a product to a customer complaint regarding that product.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://vocab.um.es#"/>
+        <owl:versionInfo xml:lang="en">Version 1.0</owl:versionInfo>
+        <!-- Task 2: Description and Alternative Labels -->
+        <rdfs:label xml:lang="en">has complaint</rdfs:label>
+        <skos:altLabel xml:lang="en">is related to complaint</skos:altLabel>
+        <skos:altLabel xml:lang="en">is subject of complaint</skos:altLabel>
+        <skos:altLabel xml:lang="en">receives complaint for</skos:altLabel>
+        <skos:altLabel xml:lang="en">associated with complaint</skos:altLabel>
+        <skos:altLabel xml:lang="en">has feedback</skos:altLabel>
+        <skos:definition xml:lang="en">A property that links a product to a customer complaint pertaining to it.</skos:definition>
+        <!-- Task 3: Equivalent Properties -->
+        <!-- No known equivalent properties for this entity in the given ontology. -->
+    </owl:ObjectProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#productName">
+        <rdfs:domain rdf:resource="https://vocab.um.es#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <!-- task_1: Metadata and Annotations -->
+        <rdfs:comment xml:lang="en">Name of the product.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://vocab.um.es#"/>
+        <rdfs:label xml:lang="en">Product Name</rdfs:label>
+        <owl:versionInfo>Version 1.0</owl:versionInfo>
+        <!-- task_2: Description, Alternative name, and Labels -->
+        <rdfs:description xml:lang="en">The official name given to a product.</rdfs:description>
+        <vocab:alternativeName>productTitle</vocab:alternativeName>
+        <vocab:label xml:lang="en">Product Title</vocab:label>
+        <vocab:label xml:lang="en">ProductName</vocab:label>
+        <vocab:label xml:lang="en">Item Name</vocab:label>
+        <vocab:label xml:lang="en">Product Designation</vocab:label>
+        <vocab:label xml:lang="en">Product Identifier</vocab:label>
+    </owl:DatatypeProperty>
+
+
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#dateReceived">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <!-- Task 1: Metadata and Annotations -->
+        <rdfs:comment xml:lang="en">The date on which the customer complaint was received.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://vocab.um.es#"/>
+        <rdfs:label xml:lang="en">Date Received</rdfs:label>
+        <!-- Task 2: Description, Alternative Name, and Alternative Labels -->
+        <rdfs:seeAlso rdf:resource="https://vocab.um.es#definition-dateReceived"/> <!-- Link to external definition or documentation -->
+        <vocab:alternativeName>ComplaintReceivedDate</vocab:alternativeName>
+        <vocab:alternativeLabel>Receipt Date</vocab:alternativeLabel>
+        <vocab:alternativeLabel>Complaint Date</vocab:alternativeLabel>
+        <vocab:alternativeLabel>Submission Date</vocab:alternativeLabel>
+        <vocab:alternativeLabel>Report Date</vocab:alternativeLabel>
+        <vocab:alternativeLabel>Entry Date</vocab:alternativeLabel>
+        <!-- Task 3: Equivalent Properties (only if existent) -->
+        <!-- No known equivalent properties for this entity in the given ontology. -->
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#narrative">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerComplaint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">Narrative</rdfs:label>
+        <rdfs:label xml:lang="en">Customer Complaint Description</rdfs:label>
+        <rdfs:label xml:lang="en">Complaint Detail</rdfs:label>
+        <rdfs:label xml:lang="en">Issue Narrative</rdfs:label>
+        <rdfs:label xml:lang="en">Complaint Summary</rdfs:label>
+        <rdfs:comment>A detailed description or account of the customer's complaint.</rdfs:comment>
+        <owl:equivalentProperty rdf:resource="http://example.org/similarOntology/complaintDescription"/>
+        <vocab:alternativeName>ComplaintNarrative</vocab:alternativeName>
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#response">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CompanyResponse"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <!-- task_1: Append relevant metadata and annotations -->
+        <rdfs:comment xml:lang="en">This property represents the textual response provided by a company to a customer complaint.</rdfs:comment>
+        <dc:creator xml:lang="en">Ontology Design Team at UM</dc:creator>
+        <dc:date xml:lang="en">2023-10-11</dc:date>
+        <!-- task_2: Define a description field, propose an alternative name, and devise a set of five alternative labels -->
+        <rdfs:isDefinedBy rdf:resource="https://vocab.um.es#CompanyResponse"/>
+        <skos:altLabel xml:lang="en">company_reply</skos:altLabel>
+        <skos:altLabel xml:lang="en">official_answer</skos:altLabel>
+        <skos:altLabel xml:lang="en">corporate_feedback</skos:altLabel>
+        <skos:altLabel xml:lang="en">business_response</skos:altLabel>
+        <skos:altLabel xml:lang="en">organization_rejoinder</skos:altLabel>
+        <!-- task_3: Consider to define equivalent properties if known or it exists in the ontology -->
+        <!-- No known equivalent properties, so none are added -->
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#timelyResponse">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CompanyResponse"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <!-- Task 1: Append metadata and annotations -->
+        <rdfs:comment xml:lang="en">Indicates whether the company's response was timely or not.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://vocab.um.es"/>
+        <owl:versionInfo>1.1</owl:versionInfo>
+        <!-- Task 2: Add description, alternative name, and labels -->
+        <rdfs:label xml:lang="en">Timely Response</rdfs:label>
+        <rdfs:label xml:lang="es">Respuesta a Tiempo</rdfs:label>
+        <rdfs:label xml:lang="fr">Réponse en Temps</rdfs:label>
+        <rdfs:label xml:lang="de">Rechtzeitige Antwort</rdfs:label>
+        <rdfs:label xml:lang="it">Risposta Tempestiva</rdfs:label>
+        <skos:altLabel xml:lang="en">Prompt Response</skos:altLabel>
+        <skos:prefLabel xml:lang="en">On-Time Response</skos:prefLabel>
+        <dct:description xml:lang="en">A datatype property that represents if the company's response to a complaint was delivered in a timely manner.</dct:description>
+        <!-- Task 3: Equivalent properties -->
+        <!-- No known equivalent property for this entity in the ontology -->
+    </owl:DatatypeProperty>
+
 
 </rdf:RDF>

@@ -25,8 +25,9 @@ class LlmOntoMapper(AbstractLlm):
 
     async def interact(self, rationale: str):
         try:
+            csv_data = self._dataset_path.split('/')[-1]
             # format the prompt
-            self.current_prompt = self.instructions.format(rationale=rationale)
+            self.current_prompt = self.instructions.format(rationale=rationale, csv_data=csv_data)
             # Get the response from the LLM_base
             async for chunk in self.get_async_api_response(self.current_prompt):
                 yield chunk

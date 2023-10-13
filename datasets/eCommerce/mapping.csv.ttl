@@ -6,7 +6,7 @@
 
 <#TriplesMapInvoice> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "data.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
@@ -40,7 +40,7 @@
 
 <#TriplesMapSalesArticle> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "data.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
@@ -74,7 +74,7 @@
 
 <#TriplesMapUnitPriceSpecification> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "data.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [

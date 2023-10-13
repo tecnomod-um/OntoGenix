@@ -29,18 +29,6 @@ from tools.tools import dataframe2prettyjson
 json_data = dataframe2prettyjson(dataset, base_path + dataset_folder + '/json_data.json', save=True)
 print('######## PROMPT ############\n', json_data)
 
-'''########################################## JSON subsample 2 CSV ######################################################'''
-import pandas as pd
-import json
-
-# Reading JSON data from a file
-with open(base_path + dataset_folder + '/' + "json_data.json") as f:
-    json_data = json.load(f)
-# Converting JSON data to a pandas DataFrame
-df = pd.DataFrame(json_data)
-# Writing DataFrame to a CSV file
-df.to_csv(base_path + dataset_folder + '/' + "csv_data.csv", index=False)
-
 '''########################################## MORPHKG config file ######################################################'''
 import configparser
 
@@ -206,4 +194,3 @@ kgen = KGen(
 )
 output = kgen.run()
 print(output)
-

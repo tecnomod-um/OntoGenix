@@ -1,0 +1,762 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:airline="https://vocab.um.es#">
+
+    <!-- Declaration of Classes -->
+    <!-- Entity: Customer -->
+    <owl:Class rdf:about="https://vocab.um.es#Customer">
+        <!-- Object Properties Restrictions -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasTravelDetails"/>
+                <owl:onClass rdf:resource="https://vocab.um.es#TravelDetails"/>
+                <owl:someValuesFrom rdf:resource="https://vocab.um.es#TravelDetails"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#gaveFeedbackOn"/>
+                <owl:onClass rdf:resource="https://vocab.um.es#EvaluationItem"/>
+                <owl:someValuesFrom rdf:resource="https://vocab.um.es#EvaluationItem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Data Properties Restrictions -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasAge"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasGender"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasCustomerType"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasSatisfaction"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <!-- Enhancement of TravelDetails Entity -->
+    <owl:Class rdf:about="https://vocab.um.es#TravelDetails">
+        <!-- A customer has a single instance of TravelDetails -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasTravelDetails"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Type of Travel is a required attribute for TravelDetails -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasTypeOfTravel"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Flight class is a required attribute for TravelDetails -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasClass"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Flight Distance should be positive -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasFlightDistance"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Departure and Arrival delays are represented in minutes and should be non-negative -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasDepartureDelayInMinutes"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasArrivalDelayInMinutes"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <!-- Declaration of the Class CustomerFeedback -->
+    <owl:Class rdf:about="https://vocab.um.es#CustomerFeedback">
+        <!-- Linking to the EvaluationItem -->
+        <rdfs:subClassOf rdf:resource="https://vocab.um.es#EvaluationItem"/>
+        <!-- Constraints and Relationships for the feedback properties -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasSeatComfortRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasTimeConvenienceRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <!-- (Continue similarly for all other feedback properties...) -->
+
+        <!-- Example for another property -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasFoodAndDrinkRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <!-- Entity: EvaluationItem -->
+    <owl:Class rdf:about="https://vocab.um.es#EvaluationItem">
+
+        <!-- Relationship with Customer class through the "gaveFeedbackOn" object property -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#gaveFeedbackOn"/>
+                <owl:someValuesFrom rdf:resource="https://vocab.um.es#Customer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- Constraints and relationships related to data type properties for the EvaluationItem class -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasSeatComfortRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasTimeConvenienceRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasFoodAndDrinkRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasGateLocationRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasInflightWifiServiceRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasInflightEntertainmentRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasOnlineSupportRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasOnlineBookingEaseRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasOnboardServiceRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasLegRoomServiceRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasBaggageHandlingRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasCheckinServiceRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasCleanlinessRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocab.um.es#hasOnlineBoardingRating"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+    </owl:Class>
+
+    <!-- Declaration of Object Properties for Customer -->
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasTravelDetails">
+        <!-- Metadata and Annotations -->
+        <rdfs:label xml:lang="en">Travel Details</rdfs:label>
+        <rdfs:label xml:lang="es">Detalles del Viaje</rdfs:label>
+        <rdfs:label xml:lang="fr">Détails du Voyage</rdfs:label>
+        <rdfs:label xml:lang="de">Reisedetails</rdfs:label>
+        <rdfs:label xml:lang="zh">旅行详情</rdfs:label>
+        <rdfs:comment xml:lang="en">A property that links a customer to their specific travel details.</rdfs:comment>
+        <owl:versionInfo>Version 1.1</owl:versionInfo>
+        <dc:creator xml:lang="en">OpenAI Ontology Team</dc:creator>
+        <dc:date>2023-10-13</dc:date>
+
+        <!-- Domain and Range -->
+        <rdfs:domain rdf:resource="https://vocab.um.es#Customer"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#TravelDetails"/>
+
+        <!-- Description Field, Alternative Name and Labels -->
+        <dc:description xml:lang="en">This property establishes a relationship between a customer and the specifics of their travel, such as flight distance, type of travel, and flight class.</dc:description>
+        <rdfs:altLabel xml:lang="en">holdsTravelDetails</rdfs:altLabel>
+        <rdfs:altLabel xml:lang="en">possessesTravelDetails</rdfs:altLabel>
+        <rdfs:altLabel xml:lang="en">ownsTravelDetails</rdfs:altLabel>
+        <rdfs:altLabel xml:lang="en">containsTravelDetails</rdfs:altLabel>
+        <rdfs:altLabel xml:lang="en">maintainsTravelDetails</rdfs:altLabel>
+
+        <!-- Equivalent Properties (For this task, no equivalent properties have been added, as there aren't any known in the ontology) -->
+    </owl:ObjectProperty>
+
+
+    <!-- Declaration of Object Properties for Customer -->
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#gaveFeedbackOn">
+        <rdfs:domain rdf:resource="https://vocab.um.es#Customer"/>
+        <rdfs:range rdf:resource="https://vocab.um.es#EvaluationItem"/>
+
+        <!-- Metadata and annotations for context, provenance, or additional insights -->
+        <rdfs:comment>This property relates a customer to the specific evaluation item they provided feedback on.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://vocab.um.es"/>
+        <rdfs:label>gave feedback on</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://example.org/related_documentation_or_resources"/>
+
+        <!-- Description field, alternative name, and set of five alternative labels -->
+        <owl:equivalentProperty rdf:resource="http://www.example.org/similarProperty"/>
+        <rdfs:description>The property that connects a customer to the specific aspect or feature of the service they evaluated or commented on.</rdfs:description>
+        <skos:altLabel>provided feedback for</skos:altLabel>
+        <skos:altLabel>commented on</skos:altLabel>
+        <skos:altLabel>reviewed aspect</skos:altLabel>
+        <skos:altLabel>evaluated feature</skos:altLabel>
+        <skos:altLabel>rated item</skos:altLabel>
+
+    </owl:ObjectProperty>
+
+
+    <!-- Declaration of Data Type Properties for Customer -->
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasAge">
+        <!-- Task 1: Append relevant metadata and annotations -->
+        <rdfs:label xml:lang="en">Age</rdfs:label>
+        <rdfs:comment xml:lang="en">Specifies the age of a customer in years.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://vocab.um.es#"/>
+        <dc:creator xml:lang="en">UM Ontology Team</dc:creator>
+        <dc:date xml:lang="en">2023-10-13</dc:date>
+        <dc:source xml:lang="en">UM Airline Ontology</dc:source>
+
+        <!-- Task 2: Define a description field, propose an alternative name, and devise a set of five alternative labels -->
+        <rdfs:description xml:lang="en">The age property signifies the number of years since the birth of a customer.</rdfs:description>
+        <skos:altLabel xml:lang="en">YearsOld</skos:altLabel>
+        <skos:altLabel xml:lang="en">YearsSinceBirth</skos:altLabel>
+        <skos:altLabel xml:lang="en">AgeInYears</skos:altLabel>
+        <skos:altLabel xml:lang="en">CustomerAge</skos:altLabel>
+        <skos:altLabel xml:lang="en">NumberofYears</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Age</skos:prefLabel>
+
+        <!-- Task 3: Consider to define equivalent properties if known or it exist in the ontology -->
+        <!-- As no equivalent properties are provided or known, no fictional ones are created. -->
+
+        <!-- Retaining original domain and range definitions -->
+        <rdfs:domain rdf:resource="https://vocab.um.es#Customer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasGender">
+        <!-- Task 1: Append relevant metadata and annotations -->
+        <rdfs:label xml:lang="en">Gender</rdfs:label>
+        <rdfs:comment xml:lang="en">Specifies the gender of a customer. It can be male, female, or other.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://vocab.um.es#"/>
+        <owl:versionInfo xml:lang="en">Version 1.0</owl:versionInfo>
+        <dc:creator xml:lang="en">OpenAI</dc:creator>
+        <dc:date xml:lang="en">2023-10-13</dc:date>
+
+        <!-- Task 2: Define a description field, propose an alternative name, and devise a set of five alternative labels -->
+        <rdfs:description xml:lang="en">This property indicates the gender classification of the customer. It is a broad categorization based on societal and biological factors.</rdfs:description>
+        <skos:altLabel xml:lang="en">Sex</skos:altLabel>
+        <skos:altLabel xml:lang="en">Gender Identity</skos:altLabel>
+        <skos:altLabel xml:lang="en">Gender Type</skos:altLabel>
+        <skos:altLabel xml:lang="en">Gender Classification</skos:altLabel>
+        <skos:altLabel xml:lang="en">Gender Category</skos:altLabel>
+
+        <!-- Task 3: Consider to define equivalent properties if known -->
+        <!-- No equivalent properties known in this context -->
+
+        <!-- Original Domain and Range -->
+        <rdfs:domain rdf:resource="https://vocab.um.es#Customer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasCustomerType">
+        <rdfs:domain rdf:resource="https://vocab.um.es#Customer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A property representing the type or category of a customer in the airline context.</rdfs:comment>
+        <rdfs:label>hasCustomerType</rdfs:label>
+        <rdfs:label>customerCategory</rdfs:label>
+        <rdfs:label>clientType</rdfs:label>
+        <rdfs:label>passengerClassification</rdfs:label>
+        <rdfs:label>typeOfCustomer</rdfs:label>
+        <rdfs:label>airlineClientType</rdfs:label>
+        <skos:altLabel>Client Classification</skos:altLabel>
+        <dc:description>This property is used to specify the type of customer, such as "Regular", "Business", "First-Time", "VIP", etc., based on the airline's categorization.</dc:description>
+        <dc:creator>ChatGPT Ontology Team</dc:creator>
+        <dc:date>2023-10-13</dc:date>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasSatisfaction">
+        <rdfs:domain rdf:resource="https://vocab.um.es#Customer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <!-- task_1: Append relevant metadata and annotations -->
+        <dc:creator>Airline Ontology Team</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-10-13</dc:date>
+        <dcterms:description>Represents the overall satisfaction level of a customer based on their airline experience.</dcterms:description>
+        <rdfs:comment>An attribute to gauge the contentment of the customer after availing airline services.</rdfs:comment>
+        <!-- task_2: Define a description field, propose an alternative name, and devise a set of five alternative labels -->
+        <rdfs:label>Satisfaction Level</rdfs:label>
+        <rdfs:label>Customer Contentment</rdfs:label>
+        <rdfs:label>Customer Satisfaction Score</rdfs:label>
+        <rdfs:label>Contentment Level</rdfs:label>
+        <rdfs:label>Airline Experience Rating</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="https://vocab.um.es#CustomerSatisfactionMeasure"/>
+        <!-- task_3: Equivalent properties (none specified for this ontology, hence none provided) -->
+    </owl:DatatypeProperty>
+
+    <!-- Declaration of Data Properties for CustomerFeedback -->
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasSeatComfortRating">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">Seat Comfort Rating</rdfs:label>
+        <rdfs:label xml:lang="es">Calificación de Comodidad del Asiento</rdfs:label>
+        <rdfs:label xml:lang="fr">Évaluation du Confort du Siège</rdfs:label>
+        <rdfs:label xml:lang="de">Sitzkomfortbewertung</rdfs:label>
+        <rdfs:label xml:lang="zh">座椅舒适度评分</rdfs:label>
+        <rdfs:comment>A rating given by the customer evaluating the comfort of the airline seat.</rdfs:comment>
+        <owl:equivalentProperty rdf:resource="https://another-ontology.org#seatComfortScore"/>
+        <dc:creator>Ontology Engineering Team</dc:creator>
+        <dct:created>2023-10-13</dct:created>
+        <dct:alternative>Comfort Rating for Seat</dct:alternative>
+        <dct:alternative>Rating for Seat Comfort</dct:alternative>
+        <dct:alternative>Seat's Comfort Score</dct:alternative>
+        <dct:alternative>Airline Seat Comfort Level</dct:alternative>
+        <dct:alternative>Evaluation of Seat Comfort</dct:alternative>
+        <dct:description>This property captures the rating given by customers specifically focusing on the comfort of the seat during their flight.</dct:description>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasTimeConvenienceRating">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">Time Convenience Rating</rdfs:label>
+        <rdfs:label xml:lang="en">Time Appropriateness Rating</rdfs:label>
+        <rdfs:label xml:lang="en">Time Suitability Score</rdfs:label>
+        <rdfs:label xml:lang="en">Flight Timing Rating</rdfs:label>
+        <rdfs:label xml:lang="en">Travel Timing Feedback</rdfs:label>
+        <rdfs:comment xml:lang="en">This property indicates the customer's satisfaction level regarding the convenience of the flight timing. The rating is based on a scale, where a higher value indicates better satisfaction.</rdfs:comment>
+        <owl:equivalentProperty rdf:resource="https://vocab.um.es#hasFlightTimingSatisfaction"/>
+        <skos:altLabel xml:lang="en">Timing Convenience</skos:altLabel>
+        <skos:altLabel xml:lang="en">Convenience of Timing</skos:altLabel>
+        <skos:altLabel xml:lang="en">Timing Appropriateness</skos:altLabel>
+        <skos:altLabel xml:lang="en">Suitability of Time</skos:altLabel>
+        <skos:altLabel xml:lang="en">Time Suitability Feedback</skos:altLabel>
+        <dct:description xml:lang="en">A property that denotes the customer's feedback about the appropriateness of the flight's timing in terms of their convenience and preference.</dct:description>
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasFoodAndDrinkRating">
+        <!-- Metadata and Annotations for Context, Provenance, or Additional Insights -->
+        <rdfs:comment xml:lang="en">Rating given by the customer regarding the quality and taste of the food and drinks provided during the flight.</rdfs:comment>
+        <rdfs:label xml:lang="en">Food and Drink Quality Rating</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <dc:creator xml:lang="en">Airline Ontology Team</dc:creator>
+        <dc:date xml:lang="en">2023-10-13</dc:date>
+
+        <!-- Description Field -->
+        <dc:description xml:lang="en">A numerical value representing the satisfaction level of the customer about the food and drinks offered during their flight. It is generally used to evaluate the quality, variety, taste, and presentation of the meals and beverages.</dc:description>
+
+        <!-- Alternative Name -->
+        <skos:altLabel xml:lang="en">MealQualityRating</skos:altLabel>
+
+        <!-- Set of Five Alternative Labels -->
+        <skos:altLabel xml:lang="en">BeverageQualityScore</skos:altLabel>
+        <skos:altLabel xml:lang="en">InflightMealRating</skos:altLabel>
+        <skos:altLabel xml:lang="en">DrinkTasteRating</skos:altLabel>
+        <skos:altLabel xml:lang="en">AirlineFoodScore</skos:altLabel>
+        <skos:altLabel xml:lang="en">MealSatisfactionScore</skos:altLabel>
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasGateLocationRating">
+        <!-- Task 1: Append metadata and annotations -->
+        <rdfs:label xml:lang="en">Gate Location Rating</rdfs:label>
+        <rdfs:comment xml:lang="en">Rating given by a customer regarding the location and convenience of the gate from which they boarded their flight.</rdfs:comment>
+        <dc:creator xml:lang="en">Airline Ontology Team</dc:creator>
+        <dc:date xml:lang="en">2023-10-13</dc:date>
+        <dc:source xml:lang="en">https://vocab.um.es/airline-ontology</dc:source>
+
+        <!-- Task 2: Description field, alternative name, and five alternative labels -->
+        <rdfs:description xml:lang="en">A numeric rating that indicates the customer's satisfaction level with the location of the boarding gate, where higher values indicate greater satisfaction.</rdfs:description>
+        <airline:alternativeName xml:lang="en">BoardingGateLocationRating</airline:alternativeName>
+        <airline:alternativeLabel xml:lang="en">Boarding Gate Score</airline:alternativeLabel>
+        <airline:alternativeLabel xml:lang="en">Gate Position Rating</airline:alternativeLabel>
+        <airline:alternativeLabel xml:lang="en">Gate Location Score</airline:alternativeLabel>
+        <airline:alternativeLabel xml:lang="en">Airport Gate Rating</airline:alternativeLabel>
+        <airline:alternativeLabel xml:lang="en">Terminal Gate Feedback</airline:alternativeLabel>
+
+        <!-- Task 3: Equivalent properties (For demonstration only. If none exist in the given ontology, this would be left out.) -->
+        <!-- Example: <owl:equivalentProperty rdf:resource="http://anotherontology.org#GateRating"/> -->
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasInflightWifiServiceRating">
+        <!-- Metadata and Annotations for context, provenance, or additional insights -->
+        <rdfs:label xml:lang="en">Inflight Wifi Service Rating</rdfs:label>
+        <rdfs:label xml:lang="es">Calificación del Servicio de Wifi en Vuelo</rdfs:label>
+        <rdfs:label xml:lang="fr">Note du Service Wifi à Bord</rdfs:label>
+        <rdfs:label xml:lang="de">Bewertung des WLAN-Dienstes an Bord</rdfs:label>
+        <rdfs:label xml:lang="zh">机上无线网络服务评级</rdfs:label>
+        <rdfs:comment xml:lang="en">Rating given by the customer regarding the quality and performance of the inflight wifi service provided by the airline.</rdfs:comment>
+        <owl:alternativeName xml:lang="en">Airplane Wifi Quality Score</owl:alternativeName>
+        <dc:creator xml:lang="en">Airline Feedback System</dc:creator>
+        <dc:date xml:lang="en">2023-10-13</dc:date>
+        <!-- Description field and alternative labels -->
+        <dct:description xml:lang="en">A property that captures the customer's satisfaction rating about the inflight wifi service offered during their flight.</dct:description>
+        <skos:altLabel xml:lang="en">Wifi Quality on Flight</skos:altLabel>
+        <skos:altLabel xml:lang="en">Flight Wifi Rating</skos:altLabel>
+        <skos:altLabel xml:lang="en">Onboard Internet Rating</skos:altLabel>
+        <skos:altLabel xml:lang="en">Airplane Wifi Rating</skos:altLabel>
+        <skos:altLabel xml:lang="en">Wireless Service in Flight Score</skos:altLabel>
+        <!-- Domain and Range specification -->
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasInflightEntertainmentRating">
+        <!-- Metadata and annotations to provide context, provenance, or additional insights -->
+        <rdfs:label xml:lang="en">In-flight Entertainment Rating</rdfs:label>
+        <rdfs:label xml:lang="es">Calificación de Entretenimiento a Bordo</rdfs:label>
+        <rdfs:label xml:lang="fr">Évaluation du divertissement en vol</rdfs:label>
+        <rdfs:label xml:lang="de">Bordunterhaltung Bewertung</rdfs:label>
+        <rdfs:label xml:lang="zh">机上娱乐评级</rdfs:label>
+        <rdfs:comment xml:lang="en">Rating given by the customer based on the in-flight entertainment services provided during the flight.</rdfs:comment>
+        <owl:equivalentProperty rdf:resource="http://example.org/flightEntertainmentScore"/>
+        <!-- Proposed alternative name for the property -->
+        <rdfs:altLabel>In-flight Entertainment Score</rdfs:altLabel>
+        <rdfs:altLabel>Flight Entertainment Rating</rdfs:altLabel>
+        <rdfs:altLabel>Airborne Entertainment Grade</rdfs:altLabel>
+        <rdfs:altLabel>Entertainment in Air Rating</rdfs:altLabel>
+        <rdfs:altLabel>Onboard Movie and Music Rating</rdfs:altLabel>
+        <!-- Defining the domain and range of the property -->
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasOnlineSupportRating">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+
+        <!-- Metadata and Annotations -->
+        <rdfs:label xml:lang="en">Online Support Rating</rdfs:label>
+        <rdfs:label xml:lang="es">Calificación de Soporte en Línea</rdfs:label>
+        <rdfs:label xml:lang="fr">Évaluation du Support en Ligne</rdfs:label>
+        <rdfs:label xml:lang="de">Online-Support-Bewertung</rdfs:label>
+        <rdfs:label xml:lang="zh">在线支持评级</rdfs:label>
+        <rdfs:comment xml:lang="en">This property represents the rating a customer gives to the online support service of an airline.</rdfs:comment>
+        <owl:versionInfo xml:lang="en">Version 1.0 - Initial version based on customer feedback for airline services.</owl:versionInfo>
+        <dc:creator rdf:resource="https://www.example.org/creator#JohnDoe"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-10-13</dc:date>
+        <skos:altLabel>Support Rating Online</skos:altLabel>
+        <skos:altLabel>Rating for Digital Support</skos:altLabel>
+        <skos:altLabel>Web Support Score</skos:altLabel>
+        <skos:altLabel>Helpdesk Online Rating</skos:altLabel>
+        <skos:altLabel>Customer Service Online Score</skos:altLabel>
+        <skos:prefLabel>Online Support Rating</skos:prefLabel>
+        <dct:description xml:lang="en">A quantitative measure, usually between 1 to 5, indicating the quality and responsiveness of an airline's online support service as perceived by the customer.</dct:description>
+        <!-- Alternate Name -->
+        <skos:altLabel>Online Assistance Rating</skos:altLabel>
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasOnlineBookingEaseRating">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+
+        <!-- Metadata and Annotations -->
+        <rdfs:comment>Represents the ease of booking online as rated by the customer.</rdfs:comment>
+        <dc:creator>Ontology Development Team</dc:creator>
+        <dc:date>2023-10-13</dc:date>
+        <skos:definition>Rating given by the customer based on the ease of booking online.</skos:definition>
+        <dc:source>Customer Feedback Surveys 2023</dc:source>
+
+        <skos:altLabel>Online Booking Simplicity Rating</skos:altLabel>
+        <skos:altLabel>Online Booking User-friendliness Score</skos:altLabel>
+        <skos:altLabel>Digital Booking Ease Grade</skos:altLabel>
+        <skos:altLabel>Web Booking Convenience Rating</skos:altLabel>
+        <skos:altLabel>Internet Booking Ease Score</skos:altLabel>
+
+        <skos:prefLabel>Online Booking Ease Rating</skos:prefLabel>
+
+        <rdfs:isDefinedBy>An evaluation metric representing the ease with which customers found the online booking process.</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasOnboardServiceRating">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <!-- Metadata and Annotations -->
+        <rdfs:label xml:lang="en">Onboard Service Rating</rdfs:label>
+        <rdfs:label xml:lang="es">Valoración del Servicio a Bordo</rdfs:label>
+        <rdfs:label xml:lang="de">Bewertung des Bordservices</rdfs:label>
+        <rdfs:label xml:lang="fr">Évaluation du service à bord</rdfs:label>
+        <rdfs:label xml:lang="zh">机上服务评级</rdfs:label>
+        <rdfs:comment>The rating given by a customer regarding the service provided onboard the flight.</rdfs:comment>
+        <owl:equivalentProperty rdf:resource="https://example.org#inFlightServiceRating"/>
+        <airline:alternativeName>On-flight Service Evaluation</airline:alternativeName>
+        <airline:description>The score assigned by a passenger to gauge the quality and experience of the services provided during the flight.</airline:description>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasLegRoomServiceRating">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <!-- Metadata and Annotations -->
+        <rdfs:label xml:lang="en">Leg Room Rating</rdfs:label>
+        <rdfs:label xml:lang="es">Valoración del Espacio para Piernas</rdfs:label>
+        <rdfs:label xml:lang="de">Beinfreiheit Bewertung</rdfs:label>
+        <rdfs:label xml:lang="fr">Évaluation de l'espace pour les jambes</rdfs:label>
+        <rdfs:label xml:lang="zh">腿部空间评级</rdfs:label>
+        <rdfs:comment>The rating given by a customer regarding the legroom space provided during the flight.</rdfs:comment>
+        <owl:equivalentProperty rdf:resource="https://example.org#inFlightLegSpaceRating"/>
+        <airline:alternativeName>Flight Leg Space Evaluation</airline:alternativeName>
+        <airline:description>The score assigned by a passenger to assess the comfort and space for legs during the flight.</airline:description>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasBaggageHandlingRating">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <!-- Metadata and Annotations -->
+        <rdfs:label xml:lang="en">Baggage Handling Rating</rdfs:label>
+        <rdfs:label xml:lang="es">Valoración de Manejo de Equipaje</rdfs:label>
+        <rdfs:label xml:lang="de">Gepäckabfertigung Bewertung</rdfs:label>
+        <rdfs:label xml:lang="fr">Évaluation de la gestion des bagages</rdfs:label>
+        <rdfs:label xml:lang="zh">行李处理评级</rdfs:label>
+        <rdfs:comment>The rating given by a customer regarding the handling and management of baggage during their travel experience.</rdfs:comment>
+        <owl:equivalentProperty rdf:resource="https://example.org#luggageManagementRating"/>
+        <airline:alternativeName>Luggage Handling Evaluation</airline:alternativeName>
+        <airline:description>The score assigned by a passenger based on the effectiveness and care in managing their luggage during the journey.</airline:description>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasCheckinServiceRating">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <!-- Metadata and Annotations -->
+        <rdfs:label xml:lang="en">Check-in Service Rating</rdfs:label>
+        <rdfs:label xml:lang="es">Valoración del Servicio de Check-in</rdfs:label>
+        <rdfs:label xml:lang="de">Check-in Service Bewertung</rdfs:label>
+        <rdfs:label xml:lang="fr">Évaluation du service d'enregistrement</rdfs:label>
+        <rdfs:label xml:lang="zh">登机服务评级</rdfs:label>
+        <rdfs:comment>The rating given by a customer regarding the check-in service during their travel experience.</rdfs:comment>
+        <owl:equivalentProperty rdf:resource="https://example.org#registrationServiceRating"/>
+        <airline:alternativeName>Registration Service Evaluation</airline:alternativeName>
+        <airline:description>The score assigned by a passenger based on the efficiency and experience during the check-in or registration process.</airline:description>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasCleanlinessRating">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <!-- Metadata and Annotations -->
+        <rdfs:label xml:lang="en">Cleanliness Rating</rdfs:label>
+        <rdfs:label xml:lang="es">Valoración de Limpieza</rdfs:label>
+        <rdfs:label xml:lang="de">Sauberkeitsbewertung</rdfs:label>
+        <rdfs:label xml:lang="fr">Évaluation de propreté</rdfs:label>
+        <rdfs:label xml:lang="zh">清洁度评级</rdfs:label>
+        <rdfs:comment>The rating given by a customer regarding the cleanliness of the airline's facilities and services.</rdfs:comment>
+        <owl:equivalentProperty rdf:resource="https://example.org#hygieneRating"/>
+        <airline:alternativeName>Hygiene Evaluation</airline:alternativeName>
+        <airline:description>The score assigned by a passenger based on the perceived cleanliness and hygiene standards maintained by the airline during the travel.</airline:description>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasOnlineBoardingRating">
+        <rdfs:domain rdf:resource="https://vocab.um.es#CustomerFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <!-- Metadata and Annotations -->
+        <rdfs:label xml:lang="en">Online Boarding Rating</rdfs:label>
+        <rdfs:label xml:lang="es">Valoración de Embarque en Línea</rdfs:label>
+        <rdfs:label xml:lang="de">Online-Boarding-Bewertung</rdfs:label>
+        <rdfs:label xml:lang="fr">Évaluation de l'embarquement en ligne</rdfs:label>
+        <rdfs:label xml:lang="zh">在线登机评级</rdfs:label>
+        <rdfs:comment>The rating given by a customer regarding the online boarding experience with the airline.</rdfs:comment>
+        <owl:equivalentProperty rdf:resource="https://example.org#digitalBoardingRating"/>
+        <airline:alternativeName>Digital Boarding Evaluation</airline:alternativeName>
+        <airline:description>The score assigned by a passenger based on the convenience and efficiency of the online boarding process offered by the airline.</airline:description>
+    </owl:DatatypeProperty>
+
+    <!-- Declaration of Data Properties for TravelDetails -->
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasFlightDistance">
+        <rdfs:domain rdf:resource="https://vocab.um.es#TravelDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <!-- Metadata and Annotations -->
+        <rdfs:label xml:lang="en">Flight Distance</rdfs:label>
+        <rdfs:label xml:lang="es">Distancia del Vuelo</rdfs:label>
+        <rdfs:label xml:lang="de">Flugentfernung</rdfs:label>
+        <rdfs:label xml:lang="fr">Distance de vol</rdfs:label>
+        <rdfs:label xml:lang="zh">飞行距离</rdfs:label>
+        <rdfs:comment>The total distance covered by a flight measured in kilometers or miles.</rdfs:comment>
+        <airline:alternativeName>Travel Span</airline:alternativeName>
+        <airline:description>The measured length of a journey taken by an aircraft between two points.</airline:description>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasTypeOfTravel">
+        <rdfs:domain rdf:resource="https://vocab.um.es#TravelDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <!-- Metadata and Annotations -->
+        <rdfs:label xml:lang="en">Type of Travel</rdfs:label>
+        <rdfs:label xml:lang="es">Tipo de Viaje</rdfs:label>
+        <rdfs:label xml:lang="de">Reiseart</rdfs:label>
+        <rdfs:label xml:lang="fr">Type de voyage</rdfs:label>
+        <rdfs:label xml:lang="zh">旅行类型</rdfs:label>
+        <rdfs:comment>The category of a travel segment, typically differentiated as 'business' or 'personal' among others.</rdfs:comment>
+        <airline:alternativeName>Travel Classification</airline:alternativeName>
+        <airline:description>The categorization of a journey based on its primary purpose or nature.</airline:description>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasClass">
+        <rdfs:domain rdf:resource="https://vocab.um.es#TravelDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <!-- Metadata and Annotations -->
+        <rdfs:label xml:lang="en">Travel Class</rdfs:label>
+        <rdfs:label xml:lang="es">Clase de Viaje</rdfs:label>
+        <rdfs:label xml:lang="de">Reiseklasse</rdfs:label>
+        <rdfs:label xml:lang="fr">Classe de voyage</rdfs:label>
+        <rdfs:label xml:lang="zh">旅行类别</rdfs:label>
+        <rdfs:comment>The seating or service class of a flight segment, such as 'economy', 'business', or 'first class'.</rdfs:comment>
+        <airline:alternativeName>Flight Seating Category</airline:alternativeName>
+        <airline:description>The specific category of service provided on a flight, often linked with cabin amenities and seat arrangements.</airline:description>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasDepartureDelayInMinutes">
+        <rdfs:domain rdf:resource="https://vocab.um.es#TravelDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <!-- Metadata and Annotations -->
+        <rdfs:label xml:lang="en">Departure Delay (Minutes)</rdfs:label>
+        <rdfs:label xml:lang="es">Retraso de Salida (Minutos)</rdfs:label>
+        <rdfs:label xml:lang="de">Abflugverspätung (Minuten)</rdfs:label>
+        <rdfs:label xml:lang="fr">Retard de départ (Minutes)</rdfs:label>
+        <rdfs:label xml:lang="zh">出发延迟（分钟）</rdfs:label>
+        <rdfs:comment>The amount of time a flight is delayed during departure, measured in minutes.</rdfs:comment>
+        <airline:alternativeName>Flight Departure Lateness</airline:alternativeName>
+        <airline:description>The duration by which a flight's departure is postponed beyond its scheduled time, specified in minutes.</airline:description>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#hasArrivalDelayInMinutes">
+        <rdfs:domain rdf:resource="https://vocab.um.es#TravelDetails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <!-- Metadata and Annotations -->
+        <rdfs:label xml:lang="en">Arrival Delay (Minutes)</rdfs:label>
+        <rdfs:label xml:lang="es">Retraso de Llegada (Minutos)</rdfs:label>
+        <rdfs:label xml:lang="de">Ankunftsverspätung (Minuten)</rdfs:label>
+        <rdfs:label xml:lang="fr">Retard d'arrivée (Minutes)</rdfs:label>
+        <rdfs:label xml:lang="zh">到达延迟（分钟）</rdfs:label>
+        <rdfs:comment>The amount of time a flight is delayed upon arrival, measured in minutes.</rdfs:comment>
+        <airline:alternativeName>Flight Arrival Lateness</airline:alternativeName>
+        <airline:description>The duration by which a flight's arrival is postponed beyond its scheduled time, specified in minutes.</airline:description>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

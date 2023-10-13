@@ -5,7 +5,7 @@
 
 <#TriplesMapCustomer> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "olist_customers_dataset_no_quotes.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
@@ -19,7 +19,7 @@
 
 <#TriplesMapCity> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "olist_customers_dataset_no_quotes.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
@@ -37,7 +37,7 @@
 
 <#TriplesMapState> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "olist_customers_dataset_no_quotes.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
@@ -51,7 +51,7 @@
 
 <#TriplesMapZipCodePrefix> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "olist_customers_dataset_no_quotes.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [

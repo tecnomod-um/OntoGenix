@@ -17,7 +17,7 @@ Structure your output in the following format:
         '''turtle
         <#TriplesMapEntity> a rr:TriplesMap;
             rml:logicalSource [
-                rml:source "csv_data.csv";
+                rml:source {csv_data};
                 rml:referenceFormulation ql:CSV
             ];
             rr:subjectMap [
@@ -32,7 +32,7 @@ Structure your output in the following format:
 
         <#TriplesMapEntity2> a rr:TriplesMap;
             rml:logicalSource [
-                rml:source "csv_data.csv";
+                rml:source {csv_data};
                 rml:referenceFormulation ql:CSV
             ];
             rr:subjectMap [
