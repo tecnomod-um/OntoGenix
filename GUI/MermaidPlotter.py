@@ -26,7 +26,7 @@ class MermaidPlotter(QWidget):
 
     def plot(self, graph, mermaid_type=''):
         self.ax_mermaid.clear()
-        self.draw_graph(graph)
+        self._draw_graph(graph)
         self.ax_mermaid.set_title(mermaid_type)
         # Remove the axes lines
         self.ax_mermaid.spines['top'].set_visible(False)
@@ -39,8 +39,9 @@ class MermaidPlotter(QWidget):
         self.ax_mermaid.xaxis.set_ticks([])
         self.canvas.draw()
 
-    def draw_graph(self, graph):
+    def _draw_graph(self, graph):
         try:
+            print(graph)
             graphbytes = graph.encode("ascii")
             base64_bytes = base64.b64encode(graphbytes)
             base64_string = base64_bytes.decode("ascii")

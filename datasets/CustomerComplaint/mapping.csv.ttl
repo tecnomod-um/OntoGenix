@@ -6,7 +6,7 @@
 
 <#TriplesMapCustomerComplaint> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "complaints.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
@@ -40,7 +40,7 @@
 
 <#TriplesMapState> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "complaints.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
@@ -50,7 +50,7 @@
 
 <#TriplesMapProduct> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "complaints.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
@@ -64,7 +64,7 @@
 
 <#TriplesMapSubProduct> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "complaints.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
@@ -74,7 +74,7 @@
 
 <#TriplesMapProblemOfComplaint> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "complaints.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
@@ -88,7 +88,7 @@
 
 <#TriplesMapProblemSubCategory> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "complaints.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
@@ -98,7 +98,7 @@
 
 <#TriplesMapCompany> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "complaints.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
@@ -112,7 +112,7 @@
 
 <#TriplesMapCompanyResponse> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "complaints.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
@@ -134,7 +134,7 @@
 
 <#TriplesMapResolution> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "complaints.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [

@@ -9,12 +9,15 @@ class LlmMermaid(AbstractLlm):
         self.instructions = self.load_string_from_file(metadata['instructions'])
         self.examples = self.load_string_from_file(metadata['examples'])
 
-    def interact(self, message: str):
+    def interact(self, ontology: str):
         try:
-            prompt = self.instructions.format(input=message) + self.examples
-            response = self.get_api_response(prompt)
-            return response
+            self.current_prompt = self.instructions.format(ontology=ontology, examples=self.examples)
+            self.get_api_response(self.current_prompt)
 
         except ValueError as e:
             print(f"An error occurred while extracting text: {e}")
-            return None
+        finally:
+            self.last_prompt = self.current_prompt
+
+    def get_diagram(self):
+        return self.extract_text(self.answer, start_marker="```mermaid", end_marker="```")

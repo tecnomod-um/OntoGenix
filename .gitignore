@@ -1,6 +1,7 @@
 .idea/
 .env
 datasets/**/*.csv
+datasets/**/*.nt
 testing_prompts/
 .venv/
 **/__pycache__/

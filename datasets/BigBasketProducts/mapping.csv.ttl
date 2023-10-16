@@ -2,70 +2,76 @@
 @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix vocab: <https://vocab.um.es#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix base: <https://data.um.es/resource/> .
+@prefix schema: <http://schema.org/> .
 
 <#TriplesMapSalesProduct> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "BigBasket.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "base:sales_product/{ProductName}";
+        rr:template "https://vocab.um.es/sales_product/{ProductName}";
     ];
     rr:predicateObjectMap [
-        rr:predicate vocab:Brand;
-        rr:objectMap [ rr:column "Brand" ]
+        rr:predicate vocab:hasBrand;
+        rr:objectMap [
+            rml:reference "Brand";
+        ];
     ];
     rr:predicateObjectMap [
-        rr:predicate vocab:Category;
-        rr:objectMap [ rr:column "Category" ]
+        rr:predicate vocab:hasCategory;
+        rr:objectMap [
+            rml:reference "Category";
+        ];
     ];
     rr:predicateObjectMap [
-        rr:predicate vocab:SubCategory;
-        rr:objectMap [ rr:column "SubCategory" ]
+        rr:predicate vocab:hasSubCategory;
+        rr:objectMap [
+            rml:reference "SubCategory";
+        ];
     ];
     rr:predicateObjectMap [
-        rr:predicate vocab:Image_Url;
-        rr:objectMap [ rr:column "Image_Url" ]
+        rr:predicate vocab:hasImageUrl;
+        rr:objectMap [
+            rml:reference "Image_Url";
+        ];
     ];
     rr:predicateObjectMap [
-        rr:predicate vocab:Absolute_Url;
-        rr:objectMap [ rr:column "Absolute_Url" ]
+        rr:predicate vocab:hasAbsoluteUrl;
+        rr:objectMap [
+            rml:reference "Absolute_Url";
+        ];
     ];
     rr:predicateObjectMap [
         rr:predicate vocab:hasOffer;
         rr:objectMap [
-            rr:parentTriplesMap <#TriplesMapOffer>;
-        ]
+            rr:template "http://schema.org/Offer/{ProductName}/{DiscountPrice}";
+        ];
     ].
 
 <#TriplesMapOffer> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "csv_data.csv";
+        rml:source "BigBasket.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "base:offer/{ProductName}";
+        rr:template "http://schema.org/Offer/{ProductName}/{DiscountPrice}";
     ];
     rr:predicateObjectMap [
-        rr:predicate vocab:Price;
+        rr:predicate schema:price;
         rr:objectMap [
-            rr:column "Price";
-            rr:datatype xsd:double
-        ]
+            rml:reference "Price";
+        ];
     ];
     rr:predicateObjectMap [
-        rr:predicate vocab:DiscountPrice;
+        rr:predicate schema:discountPrice;
         rr:objectMap [
-            rr:column "DiscountPrice";
-            rr:datatype xsd:double
-        ]
+            rml:reference "DiscountPrice";
+        ];
     ];
     rr:predicateObjectMap [
-        rr:predicate vocab:Quantity;
+        rr:predicate vocab:quantity;
         rr:objectMap [
-            rr:column "Quantity";
-            rr:datatype xsd:string
-        ]
+            rml:reference "Quantity";
+        ];
     ].

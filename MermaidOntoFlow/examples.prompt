@@ -1,91 +1,64 @@
-"""
-EXAMPLE:
-input code in turtle format:
-    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-    @prefix owl: <http://www.w3.org/2002/07/owl#> .
-    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-    @prefix product: <https://www.bigbasket.com/product#> .
+ontology example:
+    <rdf:RDF
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:owl="http://www.w3.org/2002/07/owl#"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema#"
+        xmlns:vocab="https://vocab.um.es#">
 
-    <https://www.bigbasket.com/product> a owl:Ontology .
+        <owl:Ontology rdf:about="https://vocab.um.es#">
 
-    product:Product a owl:Class ;
-        rdfs:subClassOf owl:Thing .
+            <owl:Class rdf:about="https://vocab.um.es#SalesOrder"/>
+            <owl:Class rdf:about="https://vocab.um.es#Customer"/>
+            <owl:Class rdf:about="https://vocab.um.es#SalesArticle"/>
 
-    product:Brand a owl:Class .
-    product:Category a owl:Class .
-    product:SubCategory a owl:Class .
+            <owl:ObjectProperty rdf:about="https://vocab.um.es#hasProduct">
+                <rdfs:domain rdf:resource="https://vocab.um.es#SalesOrder"/>
+                <rdfs:range rdf:resource="https://vocab.um.es#SalesArticle"/>
+            </owl:ObjectProperty>
 
-    product:hasProductName a owl:DatatypeProperty ;
-        rdfs:domain product:Product ;
-        rdfs:range xsd:string .
+            <owl:ObjectProperty rdf:about="https://vocab.um.es#hasCustomer">
+                <rdfs:domain rdf:resource="https://vocab.um.es#SalesOrder"/>
+                <rdfs:range rdf:resource="https://vocab.um.es#Customer"/>
+            </owl:ObjectProperty>
 
-    product:hasBrand a owl:ObjectProperty ;
-        rdfs:domain product:Product ;
-        rdfs:range product:Brand .
+            <owl:DatatypeProperty rdf:about="https://vocab.um.es#Rating">
+                <rdfs:domain rdf:resource="https://vocab.um.es#SalesOrder"/>
+                <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:DatatypeProperty>
 
-    product:hasPrice a owl:DatatypeProperty ;
-        rdfs:domain product:Product ;
-        rdfs:range xsd:float .
+            <owl:DatatypeProperty rdf:about="https://vocab.um.es#Timestamp">
+                <rdfs:domain rdf:resource="https://vocab.um.es#SalesOrder"/>
+                <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:DatatypeProperty>
 
-    product:hasDiscountPrice a owl:DatatypeProperty ;
-        rdfs:domain product:Product ;
-        rdfs:range xsd:float .
+            <owl:DatatypeProperty rdf:about="https://vocab.um.es#UserID">
+                <rdfs:domain rdf:resource="https://vocab.um.es#Customer"/>
+                <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:DatatypeProperty>
 
-    product:hasImageUrl a owl:DatatypeProperty ;
-        rdfs:domain product:Product ;
-        rdfs:range xsd:anyURI .
+            <owl:DatatypeProperty rdf:about="https://vocab.um.es#ProductID">
+                <rdfs:domain rdf:resource="https://vocab.um.es#SalesArticle"/>
+                <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:DatatypeProperty>
 
-    product:hasQuantity a owl:DatatypeProperty ;
-        rdfs:domain product:Product ;
-        rdfs:range xsd:string .
-
-    product:hasCategory a owl:ObjectProperty ;
-        rdfs:domain product:Product ;
-        rdfs:range product:Category .
-
-    product:hasSubCategory a owl:ObjectProperty ;
-        rdfs:domain product:Product ;
-        rdfs:range product:SubCategory .
-
-    product:hasAbsoluteUrl a owl:DatatypeProperty ;
-        rdfs:domain product:Product ;
-        rdfs:range xsd:anyURI .
-
-    product:Titania a product:Brand .
-    product:BeautyAndHygiene a product:Category .
-    product:ToolsAndAccessories a product:SubCategory .
-
-    product:3522 a product:Product ;
-        product:hasProductName "Streaking Hair Comb - Durable, Smooth, Big, Havana, DP100164" ;
-        product:hasBrand product:Titania ;
-        product:hasPrice 189.0 ;
-        product:hasDiscountPrice 129.0 ;
-        product:hasImageUrl <https://www.bigbasket.com/media/uploads/p/l/40247333_1-titania-streaking-comb-14-cm-big-havanna-set-of-1-pc.jpg> ;
-        product:hasQuantity "1 pc" ;
-        product:hasCategory product:BeautyAndHygiene ;
-        product:hasSubCategory product:ToolsAndAccessories ;
-        product:hasAbsoluteUrl <https://www.bigbasket.com/pd/40247333/titania-streaking-comb-14-cm-big-havanna-set-of-1-pc-1-pc/> .
+        </owl:Ontology>
+    </rdf:RDF>
 
 
 
-    output in mermaid classDiagram format:
-        classDiagram
-            class Product {
-                string hasProductName
-                float hasPrice
-                float hasDiscountPrice
-                anyURI hasImageUrl
-                string hasQuantity
-                anyURI hasAbsoluteUrl
-            }
-            class Brand {
-            }
-            class Category {
-            }
-            class SubCategory {
-            }
-            Product "1" -- "1" Brand : hasBrand
-            Product "1" -- "1" Category : hasCategory
-            Product "1" -- "1" SubCategory : hasSubCategory
-"""
+example output in mermaid classDiagram format:
+
+    classDiagram
+        class SalesOrder {
+            +Rating: double
+            +Timestamp: integer
+        }
+        class Customer {
+            +UserID: string
+        }
+        class SalesArticle {
+            +ProductID: string
+        }
+        SalesOrder --|> SalesArticle: hasProduct
+        SalesOrder --|> Customer: hasCustomer
