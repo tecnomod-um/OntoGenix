@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QMainWindow, QFileDialog
-from PyQt5.QtCore import QTimer, QCoreApplication
+from PyQt5.QtCore import QTimer, QCoreApplication, pyqtSignal
 from PyQt5 import QtWidgets, QtCore, uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
@@ -20,9 +20,9 @@ from MermaidOntoFlow.Llm_mermaid import LlmMermaid
 
 class GuiBehavior(QMainWindow):
 
-    planner_interaction_signal = pyqtSignal()
-    ontobuilder_interaction_signal = pyqtSignal()
-    ontomapper_interaction_signal = pyqtSignal()
+    planner_interaction_signal: pyqtSignal | pyqtSignal = pyqtSignal()
+    ontobuilder_interaction_signal: pyqtSignal | pyqtSignal = pyqtSignal()
+    ontomapper_interaction_signal: pyqtSignal | pyqtSignal = pyqtSignal()
 
     def __init__(self):
         QMainWindow.__init__(self, parent=None)
@@ -57,14 +57,10 @@ class GuiBehavior(QMainWindow):
         # -- log manager
         self.log = log(self.logger)
 
-        # -- pyqtsignals
+        # -- signalising
         self.planner_interaction_signal.connect(self._trigger_create_ontology)
         self.ontobuilder_interaction_signal.connect(self._trigger_create_mapping)
         self.ontomapper_interaction_signal.connect(self.create_mermaid)
-
-    def on_interaction_finished(self):
-        # This function will be called when the asynchronous interaction is finished
-        print("Interaction finished!")
 
     def _run_asyncio_loop(self):
         """Run the asyncio event loop for a short duration."""
