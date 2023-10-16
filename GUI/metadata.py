@@ -1,6 +1,7 @@
 import configparser
 import os
 
+
 class MetadataManager:
 
     base_path = None
