@@ -37,17 +37,6 @@ class LlmOntoMapper(AbstractLlm):
         finally:
             self.last_prompt = self.current_prompt
 
-    async def regenerate(self):
-        try:
-            # Reuse the last prompt
-            async for chunk in self.get_async_api_response(self.current_prompt):
-                yield chunk
-
-        except ValueError as e:
-            print(f"An error occurred while extracting text: {e}")
-        finally:
-            self.last_prompt = self.current_prompt
-
     def get_rml_codeblock(self):
         return self.extract_text(self.answer, start_marker="```turtle", end_marker="```")
 

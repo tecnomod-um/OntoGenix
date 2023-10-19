@@ -3,6 +3,7 @@ import openai
 import os
 from dotenv import load_dotenv, find_dotenv
 
+
 class AbstractLlm(ABC):
 
     def __init__(self, metadata: dict):
@@ -15,6 +16,7 @@ class AbstractLlm(ABC):
         self.answer = ""
         self.last_prompt = None
         self.current_prompt = None
+        self.stream_control = True
 
     def get_api_response(self, content: str, temperature=0, max_tokens=None, stream=False):
         response = openai.ChatCompletion.create(
@@ -46,18 +48,39 @@ class AbstractLlm(ABC):
                 }],
                 temperature=temperature,
                 max_tokens=max_tokens,
-                stream=stream
-        ):
+                stream=stream):
             data = chunk["choices"][0].get("delta", {}).get("content")
+
             if data is not None:
                 self.answer+=data
                 yield data
 
+    async def regenerate(self):
+        try:
+            # Reuse the last prompt
+            async for chunk in self.get_async_api_response(self.current_prompt):
+                yield chunk
 
+        except ValueError as e:
+            print(f"An error occurred while extracting text: {e}")
+        finally:
+            self.last_prompt = self.current_prompt
 
-    def regenerate(self):
-        return self.get_api_response(self.last_prompt)
+    async def continue_writing(self):
+        try:
+            continue_prompt = '''You did not finish your writing during your last answer.
 
+                                        This is your last answer:
+                                        {answer}
+
+                                        Complete the previous answer and continue from where you stopped.'''
+            continue_prompt.format(answer=self.answer)
+            # Reuse the last prompt
+            async for chunk in self.get_async_api_response(continue_prompt):
+                yield chunk
+
+        except ValueError as e:
+            print(f"An error occurred while extracting text: {e}")
 
     @staticmethod
     def load_string_from_file(file_path):
