@@ -28,7 +28,6 @@ class State(Enum):
     ONTOLOGY_CLASSES = "ONTOLOGY_CLASSES"
     ONTOLOGY_PROPERTIES = "ONTOLOGY_PROPERTIES"
     MAPPING = "MAPPING"
-    MERMAID = "MERMAID"
 
 
 class GuiBehavior(QMainWindow):
@@ -60,6 +59,7 @@ class GuiBehavior(QMainWindow):
         self.chat_save_btn.clicked.connect(self.chat_save)
         self.ontology_save_btn.clicked.connect(lambda: self.save(self.ontology_textedit.toPlainText(), extension="owl"))
         self.mapping_save_btn.clicked.connect(lambda: self.save(self.mapping_textedit.toPlainText(), extension="rml"))
+        self.mermaid_btn.clicked.connect(self.create_mermaid)
         self.LLMANSWER_scrollbar = self.LLManswer_textedit.verticalScrollBar()
         self.state_cbox.currentIndexChanged.connect(self._handle_state)
 
@@ -180,8 +180,6 @@ class GuiBehavior(QMainWindow):
             await self.improve_entity(mode="properties")
         elif self.state == State.MAPPING:
             await self.create_mapping()
-        elif self.state == State.MERMAID:
-            await self.create_mermaid()
 
         self.LLManswer_textedit.insertPlainText('\n')
         self.LLManswer_textedit.insertPlainText('***************************************************************************')
@@ -246,7 +244,7 @@ class GuiBehavior(QMainWindow):
             self.mermaid_generator.interact(self.ontology_textedit.toPlainText())
             graph = self.mermaid_generator.get_diagram()
             self.mermaid_widget.plot(graph)
-            self.OUTPUT_tab.setCurrentIndex(2)
+            self.OUTPUT_tab.setCurrentIndex(3)
         except Exception as e:
             self.log.myprint_error(f"An error occurred while generating the mermaid diagram: {e}")
             self.OUTPUT_tab.setCurrentIndex(4)

@@ -9,11 +9,6 @@ an ontology using a provided JSON data table and a task input. Here are the nece
 
 The outputs I need from you are as follows:
 
-**Rationale:**
-In an academic tone, explain the reasoning behind the steps you've taken to formulate this strategy, taking into account
-both the task description and JSON data. Limit this explanation to a maximum of 20 sentences. Also, provide a summary of
-the JSON data and the logic applied in creating the ontology, within a range of 10 to 20 sentences.
-
 Start writing here the list of tasks. I give you a set of predefined ones. Next, layout a
 series of tasks that highlight the steps necessary to build the ontology from the JSON data. The tasks should be
 formatted as follows::
