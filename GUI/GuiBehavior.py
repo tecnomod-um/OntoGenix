@@ -1,13 +1,17 @@
-from PyQt5.QtWidgets import QMainWindow, QFileDialog
+from PyQt5.QtWidgets import QMainWindow, QFileDialog, QDialog, QVBoxLayout, QTreeView
 from PyQt5.QtCore import QTimer, QCoreApplication
 from PyQt5 import QtWidgets, QtCore, uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QTextCursor
-from PyQt5.QtWidgets import QMainWindow, QDialog, QVBoxLayout, QTreeView
 from PyQt5.QtGui import QColor
 from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtWidgets import QApplication, QPlainTextEdit
+from PyQt5.QtGui import QColor, QTextCharFormat, QFont, QSyntaxHighlighter
+from PyQt5.QtCore import Qt, QRegularExpression
 from collections import OrderedDict
 import asyncio
+from markdown import markdown
+import sys
 
 from GUI.metadata import MetadataManager
 from GUI.log import log
@@ -75,6 +79,7 @@ class GuiBehavior(QMainWindow):
 
         # -- log manager
         self.log = log(self.logger)
+
 
     def chat_edit(self):
         current_state = self.LLManswer_textedit.isReadOnly()
@@ -148,9 +153,7 @@ class GuiBehavior(QMainWindow):
         elif self.state == State.MAPPING:
             await self.create_mapping()
 
-        self.LLManswer_textedit.insertPlainText('\n')
-        self.LLManswer_textedit.insertPlainText('***************************************************************************')
-        self.LLManswer_textedit.insertPlainText('\n')
+        self.LLManswer_textedit.insertPlainText("\n\n")
         self.LLManswer_textedit.setEnabled(True)
 
     async def create_initial_context(self, prompt: str, state: State):
@@ -160,7 +163,8 @@ class GuiBehavior(QMainWindow):
                 data_description=self.plan_builder.data_description,
                 state=state):
 
-            self.LLManswer_textedit.insertPlainText(data_chunk)
+            # self.LLManswer_textedit.insertPlainText(data_chunk)
+            self.LLManswer_textedit.setHtml(markdown(self.plan_builder.answer))
             self.LLMANSWER_scrollbar.setValue(self.LLMANSWER_scrollbar.maximum())
             QCoreApplication.processEvents()
 
@@ -171,7 +175,8 @@ class GuiBehavior(QMainWindow):
                 entity=prompt,
                 state=state):
 
-            self.LLManswer_textedit.insertPlainText(data_chunk)
+            # self.LLManswer_textedit.insertPlainText(data_chunk)
+            self.LLManswer_textedit.setHtml(markdown(self.ontology_builder.answer))
             self.LLMANSWER_scrollbar.setValue(self.LLMANSWER_scrollbar.maximum())
             QCoreApplication.processEvents()
 
@@ -181,7 +186,8 @@ class GuiBehavior(QMainWindow):
     async def create_mapping(self):
         rationale = self.plan_builder.rationale + '\n' + self.ontology_textedit.toPlainText()
         async for data_chunk in self.ontology_mapper.interact(rationale=rationale):
-            self.LLManswer_textedit.insertPlainText(data_chunk)
+            # self.LLManswer_textedit.insertPlainText(data_chunk)
+            elf.LLManswer_textedit.setHtml(markdown(self.ontology_mapper.answer))
             self.LLMANSWER_scrollbar.setValue(self.LLMANSWER_scrollbar.maximum())
             QCoreApplication.processEvents()
 
