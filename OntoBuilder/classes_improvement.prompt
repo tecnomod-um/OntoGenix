@@ -4,15 +4,17 @@ the proposed ontology. Critically analyze the ontology, the data description, th
 and propose improvements to the given entity to ensure it aligns with the stated objective. I expect you to provide an
 improved version of the inputted entity.
 
-**Input:**
+**Input Related data description:**
+{data_description}
+
+**Rationale:**
 {rationale}
 
 **Next Entity:**
-{next_entity}
+{entity}
 
 **Task:**
-Scrutinize the ontology, the data description and the insights to identify intrinsic constraints and relationships.
-Clearly follow the instructions given in the insights to define the contraints and relationships.
+Clearly follow the instructions given in the data description to define the constraints and relationships.
 Do not forget to reference all the object properties and data properties mentioned in the insights as related with the given entity.
 Do not forget to define for object properties restrictions the "onClass" parameter.
 Do not forget to define for data type properties restrictions the "onDataRange" parameter.

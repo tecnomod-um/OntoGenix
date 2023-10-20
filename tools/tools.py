@@ -33,7 +33,7 @@ def dataframe2prettyjson(dataframe: pd.DataFrame, file: str = None, save: bool =
         str: The pretty JSON string representation.
     """
     try:
-        json_data = dataframe.to_json(orient='columns')
+        json_data = dataframe.to_json(orient='index')
         parsed = json.loads(json_data)
         pretty_json = json.dumps(parsed, indent=4)
 
@@ -117,3 +117,40 @@ def csv2dataset(file: str, max_tokens: int = 100, encoding: str = 'latin1') -> p
     # Return the reduced dataset
     return dataset
 
+
+def csv_statistical_description(file: str, encoding: str = 'latin1') -> pd.DataFrame:
+    print(file)
+    # Read the CSV file into a pandas DataFrame
+    dataset = pd.read_csv(file, low_memory=False, encoding=encoding)
+    print(dataset.head())
+
+    # This will include count, mean, standard deviation, min, quartiles, and max.
+    numeric_summary = dataset.describe().transpose()
+
+    # Determine which columns are likely text data
+    threshold = 10  # adjust as necessary
+    likely_text = dataset.select_dtypes(include='object').apply(lambda col: col.nunique() > threshold)
+    text_columns = dataset[likely_text.index[likely_text]]
+    # Create a summary for text columns
+    if not text_columns.empty:
+        text_summary = pd.DataFrame({
+            'non_null_count': text_columns.apply(lambda col: col.notnull().sum()),
+            'unique_count': text_columns.apply(lambda col: col.nunique())
+        })
+    else:
+        text_summary = pd.DataFrame(index=['non_null_count', 'unique_count'])  # Empty DataFrame with the desired index
+
+    # Exclude likely text columns from the categorical summary
+    categorical_columns = likely_text.index[~likely_text]
+    if not categorical_columns.empty:
+        categorical_summary = dataset[categorical_columns].apply(lambda x: x.value_counts()).transpose()
+    else:
+        categorical_summary = pd.DataFrame()  # Empty DataFrame
+
+    # Ensure indices are matching
+    merged_summary = pd.concat([numeric_summary, text_summary, categorical_summary], axis=0)
+    # Handle missing values (if any)
+    merged_summary = merged_summary.fillna('-')
+
+    # Return the reduced dataset
+    return merged_summary

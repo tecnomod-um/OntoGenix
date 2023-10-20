@@ -3,7 +3,6 @@ import openai
 import os
 from dotenv import load_dotenv, find_dotenv
 
-
 class AbstractLlm(ABC):
 
     def __init__(self, metadata: dict):

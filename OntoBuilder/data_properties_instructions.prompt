@@ -12,7 +12,7 @@ The input details for your task are as follows:
 {rationale}
 
 **Class to be defined by its corresponding data type properties:**
-{class_entity}
+{entity}
 
 **RDF/XML ONTOLOGY:**
     <Write the thorough and exhaustive RDF/XML syntax content for the proposed ontology here, without

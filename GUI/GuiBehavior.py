@@ -11,8 +11,7 @@ import asyncio
 
 from GUI.metadata import MetadataManager
 from GUI.log import log
-from tools.tools import csv2dataset
-from tools.tools import dataframe2prettyjson
+from tools.tools import csv2dataset, dataframe2prettyjson, csv_statistical_description
 from PlanSage.LLM_planner import LlmPlanner
 from OntoBuilder.LLM_ontology import LlmOntology
 from OntoMapper.LLM_ontomapper import LlmOntoMapper
@@ -54,7 +53,6 @@ class GuiBehavior(QMainWindow):
                 self.query_prompt_textedit.toPlainText()
             )
         )
-        # self.regenerate_btn.clicked.connect(self._start_manage_regenerate)
         self.chat_edit_btn.clicked.connect(self.chat_edit)
         self.chat_save_btn.clicked.connect(self.chat_save)
         self.ontology_save_btn.clicked.connect(lambda: self.save(self.ontology_textedit.toPlainText(), extension="owl"))
@@ -72,7 +70,7 @@ class GuiBehavior(QMainWindow):
         self.state = State.DATA_DESCRIPTION
 
         # -- data containers --
-        self.csv_data = None
+        # self.csv_data = None
         self.json_data = None
 
         # -- log manager
@@ -129,35 +127,6 @@ class GuiBehavior(QMainWindow):
         self.loop.stop()
         self.loop.run_forever()
 
-    # def _start_manage_regenerate(self):
-    #     asyncio.ensure_future(self.regenerate_answer())
-    #
-    # async def regenerate_answer(self):
-    #     self.LLManswer_textedit.clear()
-    #     if self.state == State.INIT_CONTEXT:
-    #         async for data_chunk in self.plan_builder.regenerate():
-    #             self.LLManswer_textedit.insertPlainText(data_chunk)
-    #             self.LLMANSWER_scrollbar.setValue(self.LLMANSWER_scrollbar.maximum())
-    #             QCoreApplication.processEvents()
-    #
-    #     elif self.state == State.BASE_ONTOLOGY:
-    #         async for data_chunk in self.ontology_builder.regenerate():
-    #             self.LLManswer_textedit.insertPlainText(data_chunk)
-    #             self.LLMANSWER_scrollbar.setValue(self.LLMANSWER_scrollbar.maximum())
-    #             QCoreApplication.processEvents()
-    #
-    #     elif self.state == State.ONTOLOGY_ENTITY:
-    #         async for data_chunk in self.ontology_builder.regenerate():
-    #             self.LLManswer_textedit.insertPlainText(data_chunk)
-    #             self.LLMANSWER_scrollbar.setValue(self.LLMANSWER_scrollbar.maximum())
-    #             QCoreApplication.processEvents()
-    #
-    #     elif self.state == State.MAPPING:
-    #         async for data_chunk in self.ontology_mapper.regenerate():
-    #             self.LLManswer_textedit.insertPlainText(data_chunk)
-    #             self.LLMANSWER_scrollbar.setValue(self.LLMANSWER_scrollbar.maximum())
-    #             QCoreApplication.processEvents()
-
     def _start_manage_prompt(self, prompt):
         """Start the asynchronous _manage_prompt method."""
         asyncio.ensure_future(self._manage_prompt(prompt))
@@ -166,18 +135,16 @@ class GuiBehavior(QMainWindow):
         self.LLManswer_textedit.setEnabled(False)
         self.moveCursorToEnd()
 
-        if self.state == State.DATA_DESCRIPTION:
-            await self.create_data_description(prompt)
-        elif self.state == State.INIT_CONTEXT:
-            await self.create_initial_context(prompt)
-        elif self.state == State.ONTOLOGY_OBJECT_PROPERTIES:
-            await self.create_object_properties_ontology()
-        elif self.state == State.ONTOLOGY_DATA_PROPERTIES:
-            await self.create_data_properties_ontology()
-        elif self.state == State.ONTOLOGY_CLASSES:
-            await self.improve_entity(mode="classes")
-        elif self.state == State.ONTOLOGY_PROPERTIES:
-            await self.improve_entity(mode="properties")
+        if self.state in [State.DATA_DESCRIPTION, State.INIT_CONTEXT]:
+            await self.create_initial_context(prompt, state=self.state)
+
+        elif self.state in [State.ONTOLOGY_OBJECT_PROPERTIES,
+                            State.ONTOLOGY_DATA_PROPERTIES,
+                            State.ONTOLOGY_CLASSES,
+                            State.ONTOLOGY_PROPERTIES]:
+
+            await self.generate_ontology(prompt, state=self.state)
+
         elif self.state == State.MAPPING:
             await self.create_mapping()
 
@@ -186,49 +153,28 @@ class GuiBehavior(QMainWindow):
         self.LLManswer_textedit.insertPlainText('\n')
         self.LLManswer_textedit.setEnabled(True)
 
-    async def create_data_description(self, prompt: str):
+    async def create_initial_context(self, prompt: str, state: State):
         async for data_chunk in self.plan_builder.interaction(
                 input_task=prompt,
-                json_data=self.json_data):
-
-            self.LLManswer_textedit.insertPlainText(data_chunk)
-            self.LLMANSWER_scrollbar.setValue(self.LLMANSWER_scrollbar.maximum())
-            QCoreApplication.processEvents()
-
-    async def create_initial_context(self, prompt: str):
-        async for data_chunk in self.plan_builder.interaction(
-                input_task=prompt,
-                data_description=self.plan_builder.data_description):
-
-            self.LLManswer_textedit.insertPlainText(data_chunk)
-            self.LLMANSWER_scrollbar.setValue(self.LLMANSWER_scrollbar.maximum())
-            QCoreApplication.processEvents()
-
-    async def create_object_properties_ontology(self):
-        async for data_chunk in self.ontology_builder.interact(
+                json_data=self.json_data,
                 data_description=self.plan_builder.data_description,
-                rationale=self.plan_builder.rationale):
+                state=state):
+
             self.LLManswer_textedit.insertPlainText(data_chunk)
             self.LLMANSWER_scrollbar.setValue(self.LLMANSWER_scrollbar.maximum())
             QCoreApplication.processEvents()
 
-    async def create_data_properties_ontology(self):
+    async def generate_ontology(self, prompt: str, state: State):
         async for data_chunk in self.ontology_builder.interact(
                 data_description=self.plan_builder.data_description,
                 rationale=self.plan_builder.rationale,
-                class_entity=self.entity_lineEdit.text()):
+                entity=prompt,
+                state=state):
+
             self.LLManswer_textedit.insertPlainText(data_chunk)
             self.LLMANSWER_scrollbar.setValue(self.LLMANSWER_scrollbar.maximum())
             QCoreApplication.processEvents()
 
-    async def improve_entity(self, mode: str):
-        async for data_chunk in self.ontology_builder.interact(
-                rationale=self.ontology_builder.answer,
-                next_entity=self.entity_lineEdit.text(),
-                mode=mode):
-            self.LLManswer_textedit.insertPlainText(data_chunk)
-            self.LLMANSWER_scrollbar.setValue(self.LLMANSWER_scrollbar.maximum())
-            QCoreApplication.processEvents()
         self.OUTPUT_tab.setCurrentIndex(1)
         QCoreApplication.processEvents()
 
@@ -280,15 +226,17 @@ class GuiBehavior(QMainWindow):
             self.log.myprint_in(f"loading the csv dataset: {fileName}")
             self.metadata_manager.parse_datasetPath(fileName)
             self.metadata_manager.create_config4morph()
+            # set path into LLMs
             self.plan_builder.dataset_path = self.metadata_manager.dataset_base_path()
             self.ontology_builder.dataset_path = self.metadata_manager.dataset_base_path()
             self.ontology_mapper.dataset_path = self.metadata_manager.dataset_base_path()
             # get, chunk and format the dataset
-            self.csv_data = csv2dataset(
-                self.metadata_manager.dataset_full_path(),
-                max_tokens=int(self.chunksize_lineEdit.text())
-            )
-            self.json_data = dataframe2prettyjson(self.csv_data)
+            # self.csv_data = csv2dataset(
+            #     self.metadata_manager.dataset_full_path(),
+            #     max_tokens=int(self.chunksize_lineEdit.text())
+            # )
+            dataframe = csv_statistical_description(self.metadata_manager.dataset_full_path())
+            self.json_data = dataframe2prettyjson(dataframe)
 
             # show in gui
             self.csv_textedit.setText(self.json_data)

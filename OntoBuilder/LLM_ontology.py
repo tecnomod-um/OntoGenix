@@ -3,6 +3,7 @@ from typing import Optional
 import copy
 import os
 
+
 class LlmOntology(AbstractLlm):
 
     def __init__(self, metadata: dict):
@@ -29,34 +30,32 @@ class LlmOntology(AbstractLlm):
     async def interact(self,
                         data_description: str = None,
                         rationale: str = None,
-                        class_entity: str = None,
-                        next_entity: str = None,
-                        mode: str = "properties"):
+                        entity: str = None,
+                        state = None):
         try:
 
-            if data_description and rationale and not class_entity:
+            if state.value=="ONTOLOGY_OBJECT_PROPERTIES":
                 self.current_prompt = self.object_properties_instructions.format(
                     data_description=data_description,
                     rationale=rationale
                 )
-            elif data_description and rationale and class_entity:
-                print(data_description)
-                print(rationale)
-                print(class_entity)
+            elif state.value=="ONTOLOGY_DATA_PROPERTIES":
                 self.current_prompt = self.data_properties_instructions.format(
                     data_description=data_description,
                     rationale=rationale,
-                    class_entity=class_entity
+                    entity=entity
                 )
-            elif rationale and next_entity and mode == "classes":
+            elif state.value=="ONTOLOGY_CLASSES":
                 self.current_prompt = self.classes_improvement.format(
+                    data_description=data_description,
                     rationale=rationale,
-                    next_entity=next_entity
+                    entity=entity
                 )
-            elif rationale and next_entity and mode == "properties":
+            elif state.value=="ONTOLOGY_PROPERTIES":
                 self.current_prompt = self.properties_improvement.format(
+                    data_description=data_description,
                     rationale=rationale,
-                    next_entity=next_entity
+                    entity=entity
                 )
 
             # Get the response from the LLM_base

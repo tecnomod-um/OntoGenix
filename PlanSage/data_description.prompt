@@ -7,8 +7,8 @@ Hello, ChatGPT. Given your proficiency as an ontology engineer, I seek your guid
 {input_task}
 
 **Data Description:**
-Critically analyze the json data content to generate a synthethized description of the data.
-Separate the columns synthetized descriptions by the posible relations with each of the classes to which they can be related.
+Critically analyze the json data content to generate a synthesized description of the data.
+Separate the columns synthesized descriptions by the possible relations with each of the classes to which they can be related.
 Summarize the provided json data content in a structured manner:
 
 **Data Description:**
@@ -23,8 +23,9 @@ enumerate for each object property: <object_property_name: domain - range>
 **Data Type Properties:**
 enumerate for each data type property: <data_property_name: domain - range>
 
-**Relations:**
-enumerate the possible relations
+**Cardinality:**
+infer the cardinality for each column in the json data, write this information as a table. The cardinality must be
+inferred as: one-to-many, many-to-many, many-to-one.
 
 Do not add descriptions.
 Do not write any introduction or explanations at the end of the writing.

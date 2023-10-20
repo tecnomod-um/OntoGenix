@@ -266,7 +266,7 @@ p, li { white-space: pre-wrap; }
            </property>
           </widget>
          </item>
-         <item row="3" column="0" colspan="10">
+         <item row="3" column="0" colspan="9">
           <widget class="QTextEdit" name="query_prompt_textedit">
            <property name="html">
             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -338,13 +338,6 @@ p, li { white-space: pre-wrap; }
          </item>
          <item row="1" column="6">
           <widget class="QLineEdit" name="entity_lineEdit"/>
-         </item>
-         <item row="1" column="8">
-          <widget class="QPushButton" name="regenerate_btn">
-           <property name="text">
-            <string>Regenerate</string>
-           </property>
-          </widget>
          </item>
         </layout>
        </widget>
