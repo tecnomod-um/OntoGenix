@@ -8,3 +8,5 @@ rdflib
 morph-kgc
 sklearn
 sentence_transformers
+PyQt5
+markdown
