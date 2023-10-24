@@ -3,6 +3,12 @@ from typing import Optional
 import copy
 import os
 
+from enum import Enum
+
+class OntologyState(Enum):
+    ONTOLOGY_OBJECT_PROPERTIES = "ONTOLOGY_OBJECT_PROPERTIES"
+    ONTOLOGY_DATA_PROPERTIES = "ONTOLOGY_DATA_PROPERTIES"
+    ONTOLOGY_ENTITY = "ONTOLOGY_ENTITY"
 
 class LlmOntology(AbstractLlm):
 
@@ -31,28 +37,21 @@ class LlmOntology(AbstractLlm):
                         data_description: str = None,
                         rationale: str = None,
                         entity: str = None,
-                        state = None):
+                        state: OntologyState = None):
         try:
-
-            if state.value=="ONTOLOGY_OBJECT_PROPERTIES":
+            if state.value == OntologyState.ONTOLOGY_OBJECT_PROPERTIES.value:
                 self.current_prompt = self.object_properties_instructions.format(
                     data_description=data_description,
                     rationale=rationale
                 )
-            elif state.value=="ONTOLOGY_DATA_PROPERTIES":
+            elif state.value == OntologyState.ONTOLOGY_DATA_PROPERTIES.value:
                 self.current_prompt = self.data_properties_instructions.format(
                     data_description=data_description,
                     rationale=rationale,
                     entity=entity
                 )
-            elif state.value=="ONTOLOGY_CLASSES":
-                self.current_prompt = self.classes_improvement.format(
-                    data_description=data_description,
-                    rationale=rationale,
-                    entity=entity
-                )
-            elif state.value=="ONTOLOGY_PROPERTIES":
-                self.current_prompt = self.properties_improvement.format(
+            elif state.value == OntologyState.ONTOLOGY_ENTITY.value:
+                self.current_prompt = self.entity_improvement.format(
                     data_description=data_description,
                     rationale=rationale,
                     entity=entity

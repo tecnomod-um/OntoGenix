@@ -15,7 +15,9 @@
 
 
 ## PlanSage agent Integration Tasks:
-  - [x] Include a set of tasks to force the model to use some specific URIs for classes, object properties, data properties, and annotations. These tasks are fixed, and the goal for PlanSage is to generate the short-term memory that will provide the appropriate context for the OntoBuilder to better understand the JSON data.
+  - [x] Include a set of tasks to force the model to use some specific URIs for classes, object properties, data properties, and annotations. 
+These tasks are fixed, and the goal for PlanSage is to generate the short-term memory that will provide the appropriate 
+context for the OntoBuilder to better understand the JSON data.
 
 ### Note:
 The tasks listed are crucial for enhancing the model's ability to understand and interpret JSON data effectively by using specific URIs.

@@ -14,7 +14,7 @@ Structure your output in the following format:
         IMPORTANT!! The rml mapping will reference a CSV file not a JSON.
         Follow this format for the definition of classes mappings:
 
-        '''turtle
+        ```turtle
         <#TriplesMapEntity> a rr:TriplesMap;
             rml:logicalSource [
                 rml:source {csv_data};
@@ -40,7 +40,7 @@ Structure your output in the following format:
             ].
 
         >
-        '''
+        ```
 
 Do not explain your answer, just write the rml code. Do no write notes at the end of your writing.
 Generate appropriate URIs and combine columns if necessary.

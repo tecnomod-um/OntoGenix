@@ -10,12 +10,13 @@ from PyQt5.QtGui import QColor, QTextCharFormat, QFont, QSyntaxHighlighter
 from PyQt5.QtCore import Qt, QRegularExpression
 from collections import OrderedDict
 import asyncio
-from markdown import markdown
 import sys
+import re
+import markdown
 
 from GUI.metadata import MetadataManager
 from GUI.log import log
-from tools.tools import csv2dataset, dataframe2prettyjson, csv_statistical_description
+from tools.tools import csv2dataset, dataframe2prettyjson, csv_statistical_description, load_string_from_file
 from PlanSage.LLM_planner import LlmPlanner
 from OntoBuilder.LLM_ontology import LlmOntology
 from OntoMapper.LLM_ontomapper import LlmOntoMapper
@@ -23,13 +24,12 @@ from MermaidOntoFlow.Llm_mermaid import LlmMermaid
 from enum import Enum
 
 
-class State(Enum):
-    DATA_DESCRIPTION = "DATA_DESCRIPTION"
-    INIT_CONTEXT = "INIT_CONTEXT"
+class OntologyState(Enum):
+    DESCRIPTION = "DATA_DESCRIPTION"
+    INIT_CONTEXT = "INITIAL_CONTEXT"
     ONTOLOGY_OBJECT_PROPERTIES = "ONTOLOGY_OBJECT_PROPERTIES"
     ONTOLOGY_DATA_PROPERTIES = "ONTOLOGY_DATA_PROPERTIES"
-    ONTOLOGY_CLASSES = "ONTOLOGY_CLASSES"
-    ONTOLOGY_PROPERTIES = "ONTOLOGY_PROPERTIES"
+    ONTOLOGY_ENTITY = "ONTOLOGY_ENTITY"
     MAPPING = "MAPPING"
 
 
@@ -41,7 +41,6 @@ class GuiBehavior(QMainWindow):
         # ------ show ----------
         self.showMaximized()
         self.OUTPUT_tab.setCurrentIndex(0)
-        self.entity_lineEdit.setReadOnly(True)
         self.LLManswer_textedit.setReadOnly(True)
         self.csv_textedit.setReadOnly(True)
         # ---------- Setup asyncio event loop with Qt ----------
@@ -71,15 +70,14 @@ class GuiBehavior(QMainWindow):
         self.ontology_builder = LlmOntology(self.metadata_manager.onto_metadata)
         self.ontology_mapper = LlmOntoMapper(self.metadata_manager.mapper_metadata)
         self.mermaid_generator = LlmMermaid(self.metadata_manager.mermaid_metadata)
-        self.state = State.DATA_DESCRIPTION
+        self.state = OntologyState.DESCRIPTION
+        self._handle_state()
 
         # -- data containers --
-        # self.csv_data = None
         self.json_data = None
 
         # -- log manager
         self.log = log(self.logger)
-
 
     def chat_edit(self):
         current_state = self.LLManswer_textedit.isReadOnly()
@@ -88,44 +86,32 @@ class GuiBehavior(QMainWindow):
     def chat_save(self):
         answer_text = self.LLManswer_textedit.toPlainText()
 
-        if self.state == ChatState.INIT_CONTEXT:
-            self.plan_builder.answer = answer_text
+        if self.state == ChatState.DESCRIPTIOM:
+            self.plan_builder.data_description = answer_text
+
+        elif self.state == ChatState.INIT_CONTEXT:
+            self.ontology_mapper.rationale = answer_text
+
         elif self.state == ChatState.MAPPING:
             self.ontology_mapper.answer = answer_text
+
         elif self.state in {ChatState.ONTOLOGY_OBJECT_PROPERTIES,
                             ChatState.ONTOLOGY_DATA_PROPERTIES,
-                            ChatState.ONTOLOGY_CLASSES,
-                            ChatState.ONTOLOGY_PROPERTIES}:
+                            ChatState.ONTOLOGY_ENTITY}:
             self.ontology_builder.answer = answer_text
         else:
             raise log.myprint_error(f"Unexpected state: {self.state}")
 
-    def set_state(self, new_state_str: str):
-        try:
-            # Try to convert the string to a State enum member
-            new_state = State[new_state_str]
-        except KeyError:
-            # The string does not correspond to a valid State enum member
-            raise ValueError(f"Invalid state: {new_state_str}")
-        # Update the state
-        self.state = new_state
-
     def _handle_state(self):
-        next_state = State[self.state_cbox.currentText()]
+        self.state = OntologyState[self.state_cbox.currentText()]
+        guidelines = load_string_from_file("./Help_Guidelines/guidelines.md")
+        html = markdown.markdown(guidelines)
+        self.help_textEdit.setHtml(html)
 
-        if next_state in [State.ONTOLOGY_DATA_PROPERTIES, State.ONTOLOGY_CLASSES, State.ONTOLOGY_PROPERTIES]:
-            self.entity_lineEdit.setReadOnly(False)
-        else:
-            self.entity_lineEdit.setReadOnly(True)
-            self.entity_lineEdit.clear()
-
-        self.state = next_state
-
-    def moveCursorToEnd(self):
+    def move_cursor_to_end(self):
         cursor = self.LLManswer_textedit.textCursor()
         cursor.movePosition(QTextCursor.End)
         self.LLManswer_textedit.setTextCursor(cursor)
-
 
     def _run_asyncio_loop(self):
         """Run the asyncio event loop for a short duration."""
@@ -137,57 +123,49 @@ class GuiBehavior(QMainWindow):
         asyncio.ensure_future(self._manage_prompt(prompt))
 
     async def _manage_prompt(self, prompt):
+        self.CHATs_tab.setCurrentIndex(1)
         self.LLManswer_textedit.setEnabled(False)
-        self.moveCursorToEnd()
+        self.move_cursor_to_end()
+        self.LLManswer_textedit.clear()
 
-        if self.state in [State.DATA_DESCRIPTION, State.INIT_CONTEXT]:
-            await self.create_initial_context(prompt, state=self.state)
+        if self.state in [OntologyState.DESCRIPTION, OntologyState.INIT_CONTEXT]:
+            await self.create_initial_context(prompt)
 
-        elif self.state in [State.ONTOLOGY_OBJECT_PROPERTIES,
-                            State.ONTOLOGY_DATA_PROPERTIES,
-                            State.ONTOLOGY_CLASSES,
-                            State.ONTOLOGY_PROPERTIES]:
+        elif self.state in [OntologyState.ONTOLOGY_OBJECT_PROPERTIES,
+                            OntologyState.ONTOLOGY_DATA_PROPERTIES,
+                            OntologyState.ONTOLOGY_ENTITY]:
+            await self.generate_ontology(prompt)
 
-            await self.generate_ontology(prompt, state=self.state)
-
-        elif self.state == State.MAPPING:
+        elif self.state == OntologyState.MAPPING:
             await self.create_mapping()
 
         self.LLManswer_textedit.insertPlainText("\n\n")
         self.LLManswer_textedit.setEnabled(True)
 
-    async def create_initial_context(self, prompt: str, state: State):
-        async for data_chunk in self.plan_builder.interaction(
+    async def create_initial_context(self, prompt: str):
+        async for _ in self.plan_builder.interaction(
                 input_task=prompt,
                 json_data=self.json_data,
                 data_description=self.plan_builder.data_description,
-                state=state):
-
-            # self.LLManswer_textedit.insertPlainText(data_chunk)
-            self.LLManswer_textedit.setHtml(markdown(self.plan_builder.answer))
+                state=self.state):
+            self.LLManswer_textedit.setPlainText(self.plan_builder.answer)
             self.LLMANSWER_scrollbar.setValue(self.LLMANSWER_scrollbar.maximum())
             QCoreApplication.processEvents()
 
-    async def generate_ontology(self, prompt: str, state: State):
-        async for data_chunk in self.ontology_builder.interact(
+    async def generate_ontology(self, prompt: str):
+        async for _ in self.ontology_builder.interact(
                 data_description=self.plan_builder.data_description,
                 rationale=self.plan_builder.rationale,
                 entity=prompt,
-                state=state):
-
-            # self.LLManswer_textedit.insertPlainText(data_chunk)
-            self.LLManswer_textedit.setHtml(markdown(self.ontology_builder.answer))
+                state=self.state):
+            self.LLManswer_textedit.setPlainText(self.ontology_builder.answer)
             self.LLMANSWER_scrollbar.setValue(self.LLMANSWER_scrollbar.maximum())
             QCoreApplication.processEvents()
 
-        self.OUTPUT_tab.setCurrentIndex(1)
-        QCoreApplication.processEvents()
-
     async def create_mapping(self):
         rationale = self.plan_builder.rationale + '\n' + self.ontology_textedit.toPlainText()
-        async for data_chunk in self.ontology_mapper.interact(rationale=rationale):
-            # self.LLManswer_textedit.insertPlainText(data_chunk)
-            elf.LLManswer_textedit.setHtml(markdown(self.ontology_mapper.answer))
+        async for _ in self.ontology_mapper.interact(rationale=rationale):
+            self.LLManswer_textedit.setPlainText(self.ontology_mapper.answer)
             self.LLMANSWER_scrollbar.setValue(self.LLMANSWER_scrollbar.maximum())
             QCoreApplication.processEvents()
 
@@ -236,11 +214,6 @@ class GuiBehavior(QMainWindow):
             self.plan_builder.dataset_path = self.metadata_manager.dataset_base_path()
             self.ontology_builder.dataset_path = self.metadata_manager.dataset_base_path()
             self.ontology_mapper.dataset_path = self.metadata_manager.dataset_base_path()
-            # get, chunk and format the dataset
-            # self.csv_data = csv2dataset(
-            #     self.metadata_manager.dataset_full_path(),
-            #     max_tokens=int(self.chunksize_lineEdit.text())
-            # )
             dataframe = csv_statistical_description(self.metadata_manager.dataset_full_path())
             self.json_data = dataframe2prettyjson(dataframe)
 

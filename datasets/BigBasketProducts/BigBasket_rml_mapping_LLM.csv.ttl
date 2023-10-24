@@ -1,0 +1,70 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix ex: <http://www.example.org/ontology#> .
+
+<#TriplesMapSalesProduct> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "BigBasket.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "http://www.example.org/sales_product/{ProductName}";
+        rr:class ex:sales_product;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:BrandName;
+        rr:objectMap [ rml:reference "Brand" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:Category;
+        rr:objectMap [ rml:reference "Category" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:eligibleQuantity;
+        rr:objectMap [ rml:reference "Quantity" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:SubCategory;
+        rr:objectMap [ rml:reference "SubCategory" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:Image_Url;
+        rr:objectMap [ rml:reference "Image_Url" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:Absolute_Url;
+        rr:objectMap [ rml:reference "Absolute_Url" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasOffer;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapOffer>;
+        ];
+    ].
+
+<#TriplesMapOffer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "BigBasket.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "http://www.example.org/offer/{ProductName}_{Price}_{DiscountPrice}";
+        rr:class ex:offer;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:Price;
+        rr:objectMap [ rml:reference "Price" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:DiscountPrice;
+        rr:objectMap [ rml:reference "DiscountPrice" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:priceCurrency;
+        rr:objectMap [ rr:constant "USD" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:Quantity;
+        rr:objectMap [ rml:reference "Quantity" ];
+    ].

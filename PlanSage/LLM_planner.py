@@ -2,6 +2,11 @@ from abc import ABC
 from typing import Optional
 
 from LLM_base.LlmBase import AbstractLlm
+from enum import Enum
+
+class OntologyState(Enum):
+    DESCRIPTION = "DATA_DESCRIPTION"
+    INIT_CONTEXT = "INITIAL_CONTEXT"
 
 class LlmPlanner(AbstractLlm, ABC):
     """
@@ -43,7 +48,7 @@ class LlmPlanner(AbstractLlm, ABC):
     async def interaction(self, input_task: Optional[str] = None,
                           json_data: Optional[str] = None,
                           data_description: Optional[str] = None,
-                          state = None):
+                          state: OntologyState = None):
         """
         Perform the first interaction or a subsequent interaction with the LLM_base based on the arguments provided.
 
@@ -55,7 +60,7 @@ class LlmPlanner(AbstractLlm, ABC):
         str: Chunks of the response from the LLM_base.
         """
         try:
-            if state.value=="DATA_DESCRIPTION":
+            if state.value == OntologyState.DESCRIPTION.value:
                 # Act as first_interaction
                 self.current_prompt = self.data_description_prompt.format(input_task=input_task, json_data=json_data)
                 # Get the response from the LLM_base
@@ -64,7 +69,7 @@ class LlmPlanner(AbstractLlm, ABC):
                 # permanently store the generated data description answer
                 self.data_description = self.answer
 
-            elif state.value=="INIT_CONTEXT":
+            elif state.value == OntologyState.INIT_CONTEXT.value:
                 # Act as first_interaction
                 self.current_prompt = self.instructions_prompt.format(data_description=data_description)
                 # Get the response from the LLM_base
@@ -74,6 +79,7 @@ class LlmPlanner(AbstractLlm, ABC):
                 self.rationale = self.answer
 
             else:
+                print(state, OntologyState.DESCRIPTION, state == OntologyState.DESCRIPTION)
                 raise ValueError("Insufficient arguments provided for interaction")
 
         except ValueError as e:

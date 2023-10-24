@@ -3,7 +3,7 @@ import numpy as np
 import os
 import json
 import pandas as pd
-
+import re
 
 def list_files(path):
     files = os.listdir(path)
@@ -154,3 +154,23 @@ def csv_statistical_description(file: str, encoding: str = 'latin1') -> pd.DataF
 
     # Return the reduced dataset
     return merged_summary
+
+
+def preprocess_md(md_text):
+    # Capture everything between the triple backticks
+    code_blocks = re.findall(r'```.*?```', md_text, re.DOTALL)
+
+    for block in code_blocks:
+        # Replace the angle brackets of only the specific starting and ending tags
+        escaped_block = block.replace("<rdf:RDF", "&lt;rdf:RDF")
+        escaped_block = escaped_block.replace("</rdf:RDF>", "&lt;/rdf:RDF&gt;")
+
+        # Substitute the original block with the escaped one
+        md_text = md_text.replace(block, escaped_block)
+
+    return md_text
+
+
+def load_string_from_file(file_path):
+    with open(file_path, 'r') as file:
+        return file.read()
