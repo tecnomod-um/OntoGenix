@@ -10,6 +10,8 @@ git clone https://github.com/mikelval82/OntoGenix.git
 cd Ontogenix
 
 pip install -r requirements.txt
+
+export OPENAI_API_KEY=...
 ```
 
 ## Execution
@@ -17,8 +19,6 @@ pip install -r requirements.txt
 The Open AI ChatGPT API key should be provided in an environment variable:
 
 ```bash
-export OPENAI_API_KEY=...
-
 python -m GUI
 ```
 
