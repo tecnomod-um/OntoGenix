@@ -8,9 +8,6 @@ The input details for your task are as follows:
 **Input Related data description:**
 {data_description}
 
-**Rationale:**
-{rationale}
-
 **Class to be defined by its corresponding data type properties:**
 {entity}
 

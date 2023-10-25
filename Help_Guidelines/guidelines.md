@@ -29,15 +29,7 @@
 
 ---
 
-### **2.2. INIT_CONTEXT**
-
-- **Purpose**: Aimed at crafting a description of tasks. This will set the context for the LLM.
-  
-- **Note**: There's no need for a prompt in this step.
-
----
-
-### **2.3. ONTOLOGY_OBJECT_PROPERTIES**
+### **2.2. ONTOLOGY_OBJECT_PROPERTIES**
 
 - **Purpose**: This step is pivotal for creating the ontology's OWL definition, with a spotlight on classes and their associated object properties.
   
@@ -45,7 +37,7 @@
 
 ---
 
-### **2.4. ONTOLOGY_DATA_PROPERTIES**
+### **2.3. ONTOLOGY_DATA_PROPERTIES**
 
 - **Purpose**: Here, the OWL definition of the ontology is generated. The spotlight is on classes and their data properties.
 
@@ -53,7 +45,7 @@
 
 ---
 
-### **2.5. ONTOLOGY_ENTITY**
+### **2.4. ONTOLOGY_ENTITY**
 
 - **Purpose**: Tailored to formulating the ontology's OWL definition for specific entities.
   

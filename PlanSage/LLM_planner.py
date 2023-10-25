@@ -27,11 +27,11 @@ class LlmPlanner(AbstractLlm, ABC):
 
         # initialize prompts
         self.data_description_prompt = self.load_string_from_file(metadata['data_description'])
-        self.instructions_prompt = self.load_string_from_file(metadata['instructions'])
+        # self.instructions_prompt = self.load_string_from_file(metadata['instructions'])
         # initialize containers
         self._dataset_path = metadata['dataset']
         self.data_description = None
-        self.rationale = None
+        # self.rationale = None
 
         # Getter for name
     @property
@@ -69,17 +69,16 @@ class LlmPlanner(AbstractLlm, ABC):
                 # permanently store the generated data description answer
                 self.data_description = self.answer
 
-            elif state.value == OntologyState.INIT_CONTEXT.value:
-                # Act as first_interaction
-                self.current_prompt = self.instructions_prompt.format(data_description=data_description)
-                # Get the response from the LLM_base
-                async for chunk in self.get_async_api_response(self.current_prompt):
-                    yield chunk
-                # permanently store the generated rationale answer
-                self.rationale = self.answer
+            # elif state.value == OntologyState.INIT_CONTEXT.value:
+            #     # Act as first_interaction
+            #     self.current_prompt = self.instructions_prompt.format(data_description=data_description)
+            #     # Get the response from the LLM_base
+            #     async for chunk in self.get_async_api_response(self.current_prompt):
+            #         yield chunk
+            #     # permanently store the generated rationale answer
+            #     self.rationale = self.answer
 
             else:
-                print(state, OntologyState.DESCRIPTION, state == OntologyState.DESCRIPTION)
                 raise ValueError("Insufficient arguments provided for interaction")
 
         except ValueError as e:

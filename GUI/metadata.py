@@ -20,8 +20,7 @@ class MetadataManager:
     onto_metadata = {
         'object_properties_instructions': './OntoBuilder/object_properties_instructions.prompt',
         'data_properties_instructions': './OntoBuilder/data_properties_instructions.prompt',
-        'classes_improvement': './OntoBuilder/classes_improvement.prompt',
-        'properties_improvement': './OntoBuilder/properties_improvement.prompt',
+        'entity_improvement': './OntoBuilder/entity_improvement.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates OWL ontologies in RDF/XML format.',
         'model': 'gpt-4'#'gpt-3.5-turbo'

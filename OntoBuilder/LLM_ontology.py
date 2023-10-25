@@ -17,8 +17,7 @@ class LlmOntology(AbstractLlm):
         # initialize prompts
         self.object_properties_instructions = self.load_string_from_file(metadata['object_properties_instructions'])
         self.data_properties_instructions = self.load_string_from_file(metadata['data_properties_instructions'])
-        self.classes_improvement = self.load_string_from_file(metadata['classes_improvement'])
-        self.properties_improvement = self.load_string_from_file(metadata['properties_improvement'])
+        self.entity_improvement = self.load_string_from_file(metadata['entity_improvement'])
         # path setting to write outputs
         self._dataset_path = metadata['dataset']
 
@@ -35,25 +34,25 @@ class LlmOntology(AbstractLlm):
 
     async def interact(self,
                         data_description: str = None,
-                        rationale: str = None,
+                        # rationale: str = None,
                         entity: str = None,
                         state: OntologyState = None):
         try:
             if state.value == OntologyState.ONTOLOGY_OBJECT_PROPERTIES.value:
                 self.current_prompt = self.object_properties_instructions.format(
-                    data_description=data_description,
-                    rationale=rationale
+                    data_description=data_description
+                    # rationale=rationale
                 )
             elif state.value == OntologyState.ONTOLOGY_DATA_PROPERTIES.value:
                 self.current_prompt = self.data_properties_instructions.format(
                     data_description=data_description,
-                    rationale=rationale,
+                    # rationale=rationale,
                     entity=entity
                 )
             elif state.value == OntologyState.ONTOLOGY_ENTITY.value:
                 self.current_prompt = self.entity_improvement.format(
                     data_description=data_description,
-                    rationale=rationale,
+                    # rationale=rationale,
                     entity=entity
                 )
 
