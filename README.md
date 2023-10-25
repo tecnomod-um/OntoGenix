@@ -2,6 +2,10 @@
 
 The project utilizes the OpenAI GPT-4 model to develop a semi-automatic system that generates OWL ontologies and RML mappings from CSV datasets using LLMs.
 
+## GUI
+
+![GitHub Logo](/images/OntoGenix_GUI.png)
+
 ## Installation
 
 ```bash
