@@ -9,7 +9,7 @@ class KGen:
     def __init__(self, dataset, destination):
         self.dataset = dataset
         self.destination = destination
-        self.output = "DONE"
+        self.error_feedback = "NO ERROR"
 
     def run(self):
         old_stdout = sys.stdout
@@ -19,13 +19,11 @@ class KGen:
             self._generateKG()
             # updates
             sys.stdout = old_stdout
-            
+            self.error_feedback = "DONE"
         except Exception:
             # catch exception 
             sys.stdout = old_stdout
-            self.output = traceback.format_exc()
-
-        return self.output
+            self.error_feedback = traceback.format_exc()
 
     def _generateKG(self):
         graph = morph_kgc.materialize(self.dataset)

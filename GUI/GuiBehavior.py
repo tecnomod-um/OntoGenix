@@ -20,6 +20,7 @@ from PlanSage.LLM_planner import LlmPlanner
 from OntoBuilder.LLM_ontology import LlmOntology
 from OntoMapper.LLM_ontomapper import LlmOntoMapper
 from MermaidOntoFlow.Llm_mermaid import LlmMermaid
+from KG_Generator.RAG import RAG_OntoMapper
 
 
 class OntologyState(Enum):
@@ -68,10 +69,13 @@ class GuiBehavior(QMainWindow):
 
         # Instantiate supporting classes
         self.metadata_manager = MetadataManager()
+        # Instantiate LLM agents
         self.plan_builder = LlmPlanner(self.metadata_manager.planner_metadata)
         self.ontology_builder = LlmOntology(self.metadata_manager.onto_metadata)
         self.ontology_mapper = LlmOntoMapper(self.metadata_manager.mapper_metadata)
         self.mermaid_generator = LlmMermaid(self.metadata_manager.mermaid_metadata)
+        # Instantiate RAG systems
+        self.RAG_ontomapper = RAG_OntoMapper(self.ontology_mapper, self.plan_builder)
 
         self.state = OntologyState.DESCRIPTION
         self._handle_state()
@@ -167,7 +171,6 @@ class GuiBehavior(QMainWindow):
             self.plan_builder.interaction,
             input_task=prompt,
             json_data=self.json_data,
-            data_description=self.plan_builder.data_description,
             state=self.state,
             agent=self.plan_builder
         )
@@ -185,11 +188,8 @@ class GuiBehavior(QMainWindow):
 
     async def create_mapping(self) -> None:
         """Create mapping using the rationale and ontology text."""
-        await self._process_interaction(
-            self.ontology_mapper.interact,
-            rationale=self.plan_builder.data_description,
-            agent=self.ontology_mapper
-        )
+        await self.RAG_ontomapper.loop()
+        self.LLManswer_textedit.setPlainText(self.ontology_mapper.answer)
 
     def create_mermaid(self) -> None:
         """Generate a mermaid diagram from the ontology text."""
@@ -250,7 +250,8 @@ class GuiBehavior(QMainWindow):
                 self.plan_builder.dataset_path = dataset_base_path
                 self.ontology_builder.dataset_path = dataset_base_path
                 self.ontology_mapper.dataset_path = dataset_base_path
-
+                self.RAG_ontomapper.build_kgen(self.metadata_manager.base_path, self.metadata_manager.dataset_folder)
+                print("que tenemos aqui: " + self.ontology_mapper.dataset_path)
                 # Convert the CSV data to JSON and display in GUI
                 dataframe = csv_statistical_description(self.metadata_manager.dataset_full_path())
                 self.json_data = dataframe2prettyjson(dataframe)

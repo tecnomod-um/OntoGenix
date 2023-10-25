@@ -28,6 +28,7 @@ class MetadataManager:
 
     mapper_metadata = {
         'instructions': './OntoMapper/instructions.prompt',
+        'error_instructions': './OntoMapper/error_instructions.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates RML mappings.',
         'model': 'gpt-4'#'gpt-3.5-turbo'
@@ -61,7 +62,7 @@ class MetadataManager:
         return self.construct_path(self.base_path, self.dataset_folder, f'{self.dataset_file}.csv')
 
     def dataset_base_path(self) -> str:
-        return self.construct_path(self.base_path, self.dataset_folder, self.dataset_file+'/')
+        return self.construct_path(self.base_path, self.dataset_folder, self.dataset_file)
 
     def create_config4morph(self):
         config = configparser.ConfigParser()
