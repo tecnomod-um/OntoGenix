@@ -77,11 +77,6 @@
            </item>
            <item>
             <property name="text">
-             <string>INIT_CONTEXT</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
              <string>ONTOLOGY_OBJECT_PROPERTIES</string>
             </property>
            </item>

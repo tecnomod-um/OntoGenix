@@ -8,9 +8,6 @@ The input details for your task are as follows:
 **Input Related data description:**
 {data_description}
 
-**Rationale:**
-{rationale}
-
 **RDF/XML ONTOLOGY:**
     <Write the thorough and exhaustive RDF/XML syntax content for the proposed ontology here, without
     condensing or shortening any part of it, ensuring strict compliance with the instructions provided.
