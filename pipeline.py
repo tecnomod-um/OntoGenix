@@ -48,7 +48,6 @@ from enum import Enum
 
 class OntologyState(Enum):
     DESCRIPTION = "DATA_DESCRIPTION"
-    INIT_CONTEXT = "INITIAL_CONTEXT"
     ONTOLOGY_OBJECT_PROPERTIES = "ONTOLOGY_OBJECT_PROPERTIES"
     ONTOLOGY_DATA_PROPERTIES = "ONTOLOGY_DATA_PROPERTIES"
     ONTOLOGY_ENTITY = "ONTOLOGY_ENTITY"
@@ -58,7 +57,6 @@ from PlanSage.LLM_planner import LlmPlanner
 
 # set metadata
 planner_metadata = {
-        'instructions': './PlanSage/instructions.prompt',
         'data_description': './PlanSage/data_description.prompt',
         'dataset': base_path + dataset_folder + '/' + dataset_file,
         'role': 'You are a powerful ontology engineer that generates the reasoning steps needed to generate'
@@ -84,22 +82,13 @@ async for chunk_data in planner.interaction(
         state=OntologyState.DESCRIPTION):
     print(chunk_data, end='') # the LLM answer
 
-# interact with the LLM model to generate the data description.
-async for chunk_data in planner.interaction(
-        input_task=None,
-        json_data=json_data,
-        data_description=planner.data_description,
-        state=OntologyState.INIT_CONTEXT):
-    print(chunk_data, end='') # the LLM answer
-
 '''########################################## ONTOLOGY ######################################################'''
 from OntoBuilder.LLM_ontology import LlmOntology
 # set metadata
 onto_metadata = {
         'object_properties_instructions': './OntoBuilder/object_properties_instructions.prompt',
         'data_properties_instructions': './OntoBuilder/data_properties_instructions.prompt',
-        'classes_improvement': './OntoBuilder/classes_improvement.prompt',
-        'properties_improvement': './OntoBuilder/properties_improvement.prompt',
+        'entity_improvement': './OntoBuilder/entity_improvement.prompt',
         'dataset': base_path + dataset_folder + '/' + dataset_file,
         'role': 'You are a powerful ontology engineer that generates OWL ontologies in RDF/XML format.',
         'model': 'gpt-4'#'gpt-3.5-turbo'
@@ -116,7 +105,6 @@ just for the classes and object properties.
 '''
 async for chunk_data in ontology_builder.interact(
         data_description=planner.data_description,
-        rationale=planner.rationale,
         entity=None,
         state=OntologyState.ONTOLOGY_OBJECT_PROPERTIES):
     print(chunk_data, end='') # the LLM answer
@@ -128,7 +116,6 @@ just for the classes and data properties.
 '''
 async for chunk_data in ontology_builder.interact(
         data_description=planner.data_description,
-        rationale=planner.rationale,
         entity=None,
         state=OntologyState.ONTOLOGY_DATA_PROPERTIES):
     print(chunk_data, end='') # the LLM answer
@@ -156,7 +143,6 @@ next_entity = 'Product'
 # generate the LLM answer
 async for chunk_data in ontology_builder.interact(
         data_description=planner.data_description,
-        rationale=planner.rationale,
         entity=task.format(next_entity=next_entity),
         state=OntologyState.ONTOLOGY_ENTITY):
     print(chunk_data, end='') # the LLM answer
@@ -177,7 +163,6 @@ next_entity =  'Price'
 # generate the LLM answer
 async for chunk_data in ontology_builder.interact(
         data_description=planner.data_description,
-        rationale=planner.rationale,
         entity=task.format(next_entity=next_entity),
         state=OntologyState.ONTOLOGY_ENTITY):
     print(chunk_data, end='') # the LLM answer
