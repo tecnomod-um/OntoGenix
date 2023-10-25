@@ -170,10 +170,12 @@ async for chunk_data in ontology_builder.interact(
 from OntoMapper.LLM_ontomapper import LlmOntoMapper
 
 # set metadata
-mapper_metadata = {'instructions': './OntoMapper/instructions.prompt',
-                   'dataset': base_path + dataset_folder + '/' + dataset_file,
-                   'role': 'You are a powerful ontology engineer that generates RML mappings.',
-                   'model':'gpt-4'
+mapper_metadata = {
+    'instructions': './OntoMapper/instructions.prompt',
+    'error_instructions': './OntoMapper/error_instructions.prompt',
+    'dataset': base_path + dataset_folder + '/' + dataset_file,
+    'role': 'You are a powerful ontology engineer that generates RML mappings.',
+    'model':'gpt-4'
 }
 # build the ontology mapping generator LLM
 ontology_mapper = LlmOntoMapper(mapper_metadata)
@@ -197,3 +199,31 @@ kgen = KGen(
 )
 output = kgen.run()
 print(output)
+
+'''######################### RAG: Kowledge Graph Generation ###############################################'''
+from OntoMapper.LLM_ontomapper import LlmOntoMapper
+
+# set metadata
+mapper_metadata = {
+    'instructions': './OntoMapper/instructions.prompt',
+    'error_instructions': './OntoMapper/error_instructions.prompt',
+    'dataset': base_path + dataset_folder + '/' + dataset_file,
+    'role': 'You are a powerful ontology engineer that generates RML mappings.',
+    'model':'gpt-4'
+}
+# build the ontology mapping generator LLM
+ontology_mapper = LlmOntoMapper(mapper_metadata)
+
+from KG_Generator.RAG import RAG_OntoMapper
+
+RAG_ontomapper = RAG_OntoMapper(
+    data_description=data_description,#planner.data_description
+    ontology_mapper=ontology_mapper,
+    base_path=base_path,
+    dataset_folder=dataset_folder
+)
+import asyncio
+
+asyncio.run(RAG_ontomapper.iterate())
+
+print(ontology_mapper.get_rml_codeblock())

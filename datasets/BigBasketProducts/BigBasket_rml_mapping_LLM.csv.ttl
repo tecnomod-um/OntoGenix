@@ -2,15 +2,15 @@
 @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix : <https://vocab.um.es#> .
-@prefix schema: <http://schema.org/> .
+@prefix ex: <http://schema.org/> .
 
 <#TriplesMapSalesProduct> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "BigBasket.csv";
+        rml:source "BigBasket";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#SalesProduct/{ProductName}";
+        rr:template "https://vocab.um.es/sales_product/{ProductName}";
         rr:class :sales_product;
     ];
     rr:predicateObjectMap [
@@ -38,7 +38,7 @@
         rr:objectMap [ rml:reference "Absolute_Url" ];
     ];
     rr:predicateObjectMap [
-        rr:predicate schema:hasOffer;
+        rr:predicate ex:hasOffer;
         rr:objectMap [
             rr:parentTriplesMap <#TriplesMapOffer>;
         ];
@@ -46,11 +46,11 @@
 
 <#TriplesMapOffer> a rr:TriplesMap;
     rml:logicalSource [
-        rml:source "BigBasket.csv";
+        rml:source "BigBasket";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#Offer/{ProductName}";
+        rr:template "https://vocab.um.es/offer/{ProductName}";
         rr:class :offer;
     ];
     rr:predicateObjectMap [
@@ -62,7 +62,7 @@
         rr:objectMap [ rml:reference "DiscountPrice" ];
     ];
     rr:predicateObjectMap [
-        rr:predicate schema:priceCurrency;
+        rr:predicate ex:priceCurrency;
         rr:objectMap [ rr:constant "USD" ];
     ];
     rr:predicateObjectMap [
