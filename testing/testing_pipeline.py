@@ -3,7 +3,7 @@
 '''########################################## YAML CONFIG ######################################################'''
 import yaml
 
-with open("config.yaml", 'r') as stream:
+with open("./testing/config.yaml", 'r') as stream:
     data_loaded = yaml.safe_load(stream)
 
 config = data_loaded["OntoGenixConfig"]
