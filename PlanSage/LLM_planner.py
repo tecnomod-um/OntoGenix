@@ -6,7 +6,6 @@ from enum import Enum
 
 class OntologyState(Enum):
     DESCRIPTION = "DATA_DESCRIPTION"
-    INIT_CONTEXT = "INITIAL_CONTEXT"
 
 class LlmPlanner(AbstractLlm, ABC):
     """
@@ -27,11 +26,9 @@ class LlmPlanner(AbstractLlm, ABC):
 
         # initialize prompts
         self.data_description_prompt = self.load_string_from_file(metadata['data_description'])
-        # self.instructions_prompt = self.load_string_from_file(metadata['instructions'])
         # initialize containers
         self._dataset_path = metadata['dataset']
         self.data_description = None
-        # self.rationale = None
 
         # Getter for name
     @property
@@ -47,7 +44,6 @@ class LlmPlanner(AbstractLlm, ABC):
 
     async def interaction(self, input_task: Optional[str] = None,
                           json_data: Optional[str] = None,
-                          data_description: Optional[str] = None,
                           state: OntologyState = None):
         """
         Perform the first interaction or a subsequent interaction with the LLM_base based on the arguments provided.
@@ -68,15 +64,6 @@ class LlmPlanner(AbstractLlm, ABC):
                     yield chunk
                 # permanently store the generated data description answer
                 self.data_description = self.answer
-
-            # elif state.value == OntologyState.INIT_CONTEXT.value:
-            #     # Act as first_interaction
-            #     self.current_prompt = self.instructions_prompt.format(data_description=data_description)
-            #     # Get the response from the LLM_base
-            #     async for chunk in self.get_async_api_response(self.current_prompt):
-            #         yield chunk
-            #     # permanently store the generated rationale answer
-            #     self.rationale = self.answer
 
             else:
                 raise ValueError("Insufficient arguments provided for interaction")

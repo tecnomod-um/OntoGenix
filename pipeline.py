@@ -78,7 +78,6 @@ data type properties to the "offer" class.'''
 async for chunk_data in planner.interaction(
         input_task=input_task,
         json_data=json_data,
-        data_description=None,
         state=OntologyState.DESCRIPTION):
     print(chunk_data, end='') # the LLM answer
 
