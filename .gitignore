@@ -1,6 +1,6 @@
 .idea/
 .env
-datasets/**/*.csv
+#datasets/**/*.csv
 datasets/**/*.nt
 testing_prompts/
 .venv/
