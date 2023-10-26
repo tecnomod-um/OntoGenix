@@ -7,6 +7,7 @@ class MetadataManager:
     base_path = None
     dataset_folder = None
     dataset_file = None
+    api_key_path = "./GUI/.env"
 
     planner_metadata = {
         'instructions': './GUI/PlanSage/instructions.prompt',
@@ -14,7 +15,8 @@ class MetadataManager:
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates the reasoning steps needed to generate'
                 'the context needed to create an ontology from a json data table.',
-        'model': 'gpt-4'#'gpt-3.5-turbo'
+        'model': 'gpt-4'#'gpt-3.5-turbo',
+        'api_key_path':api_key_path
     }
 
     onto_metadata = {
@@ -23,21 +25,24 @@ class MetadataManager:
         'entity_improvement': './GUI/OntoBuilder/entity_improvement.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates OWL ontologies in RDF/XML format.',
-        'model': 'gpt-4'#'gpt-3.5-turbo'
+        'model': 'gpt-4'#'gpt-3.5-turbo',
+        'api_key_path':api_key_path
     }
 
     mapper_metadata = {
         'instructions': './GUI/OntoMapper/instructions.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates RML mappings.',
-        'model': 'gpt-4'#'gpt-3.5-turbo'
+        'model': 'gpt-4'#'gpt-3.5-turbo',
+        'api_key_path':api_key_path
     }
 
     mermaid_metadata = {
         'instructions': './GUI/MermaidOntoFlow/instructions.prompt',
         'examples': './GUI/MermaidOntoFlow/examples.prompt',
         'role': 'You are a mermaid diagramming engineer that generates class Diagrams.',
-        'model': 'gpt-3.5-turbo'
+        'model': 'gpt-3.5-turbo',
+        'api_key_path':api_key_path
     }
 
     def construct_path(self, *args) -> str:

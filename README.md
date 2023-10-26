@@ -1,6 +1,9 @@
 # OntoGenix
 
-The project utilizes the OpenAI GPT-4 model to develop a semi-automatic system that generates OWL ontologies and RML mappings from CSV datasets using LLMs.
+The project utilizes the OpenAI GPT-4 model to develop a semi-automatic system that generates OWL ontologies and RML mappings from CSV datasets using LLMs. 
+
+**Important:**
+Acces to GPT-4 is required so you need to create an account and ask for acces to this model.
 
 ## GUI
 
@@ -15,8 +18,11 @@ cd Ontogenix
 
 pip install -r requirements.txt
 
-#The Open AI ChatGPT API key should be provided in an environment variable:
-export OPENAI_API_KEY=...
+#Create a .env file inside GUI directory containing the openai api_key
+cd GUI
+
+touch .env
+#write your openai api_key in .env file
 ```
 
 ## Execution

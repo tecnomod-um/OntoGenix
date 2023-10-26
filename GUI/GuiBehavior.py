@@ -167,7 +167,6 @@ class GuiBehavior(QMainWindow):
             self.plan_builder.interaction,
             input_task=prompt,
             json_data=self.json_data,
-            data_description=self.plan_builder.data_description,
             state=self.state,
             agent=self.plan_builder
         )

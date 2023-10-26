@@ -1,5 +1,5 @@
 .idea/
-.env
+GUI/.env
 #datasets/**/*.csv
 datasets/**/*.nt
 testing/
