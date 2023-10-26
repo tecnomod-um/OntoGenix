@@ -2,7 +2,10 @@
 .env
 #datasets/**/*.csv
 datasets/**/*.nt
+testing/
 testing_prompts/
 .venv/
 **/__pycache__/
+TODO.md
+IDEAS.pptx
 

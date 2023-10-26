@@ -15,11 +15,11 @@ from enum import Enum
 # Internal modules imports
 from GUI.metadata import MetadataManager
 from GUI.log import log
-from tools.tools import csv2dataset, dataframe2prettyjson, csv_statistical_description, load_string_from_file
-from PlanSage.LLM_planner import LlmPlanner
-from OntoBuilder.LLM_ontology import LlmOntology
-from OntoMapper.LLM_ontomapper import LlmOntoMapper
-from MermaidOntoFlow.Llm_mermaid import LlmMermaid
+from GUI.tools.tools import csv2dataset, dataframe2prettyjson, csv_statistical_description, load_string_from_file
+from GUI.PlanSage.LLM_planner import LlmPlanner
+from GUI.OntoBuilder.LLM_ontology import LlmOntology
+from GUI.OntoMapper.LLM_ontomapper import LlmOntoMapper
+from GUI.MermaidOntoFlow.Llm_mermaid import LlmMermaid
 
 
 class OntologyState(Enum):
@@ -44,7 +44,7 @@ class GuiBehavior(QMainWindow):
         self.OUTPUT_tab.setCurrentIndex(0)
         self.LLManswer_textedit.setReadOnly(True)
         self.csv_textedit.setReadOnly(True)
-        guidelines = load_string_from_file("./Help_Guidelines/guidelines.md")
+        guidelines = load_string_from_file("./GUI/Help_Guidelines/guidelines.md")
         html = markdown.markdown(guidelines)
         self.help_textEdit.setHtml(html)
 

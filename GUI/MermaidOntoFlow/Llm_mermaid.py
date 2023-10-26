@@ -1,4 +1,4 @@
-from LLM_base.LlmBase import AbstractLlm
+from GUI.LLM_base.LlmBase import AbstractLlm
 
 
 class LlmMermaid(AbstractLlm):

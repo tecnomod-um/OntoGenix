@@ -1,7 +1,7 @@
 from abc import ABC
 from typing import Optional
 
-from LLM_base.LlmBase import AbstractLlm
+from GUI.LLM_base.LlmBase import AbstractLlm
 from enum import Enum
 
 class OntologyState(Enum):

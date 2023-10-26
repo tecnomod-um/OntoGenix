@@ -9,8 +9,8 @@ class MetadataManager:
     dataset_file = None
 
     planner_metadata = {
-        'instructions': './PlanSage/instructions.prompt',
-        'data_description': './PlanSage/data_description.prompt',
+        'instructions': './GUI/PlanSage/instructions.prompt',
+        'data_description': './GUI/PlanSage/data_description.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates the reasoning steps needed to generate'
                 'the context needed to create an ontology from a json data table.',
@@ -18,24 +18,24 @@ class MetadataManager:
     }
 
     onto_metadata = {
-        'object_properties_instructions': './OntoBuilder/object_properties_instructions.prompt',
-        'data_properties_instructions': './OntoBuilder/data_properties_instructions.prompt',
-        'entity_improvement': './OntoBuilder/entity_improvement.prompt',
+        'object_properties_instructions': './GUI/OntoBuilder/object_properties_instructions.prompt',
+        'data_properties_instructions': './GUI/OntoBuilder/data_properties_instructions.prompt',
+        'entity_improvement': './GUI/OntoBuilder/entity_improvement.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates OWL ontologies in RDF/XML format.',
         'model': 'gpt-4'#'gpt-3.5-turbo'
     }
 
     mapper_metadata = {
-        'instructions': './OntoMapper/instructions.prompt',
+        'instructions': './GUI/OntoMapper/instructions.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates RML mappings.',
         'model': 'gpt-4'#'gpt-3.5-turbo'
     }
 
     mermaid_metadata = {
-        'instructions': './MermaidOntoFlow/instructions.prompt',
-        'examples': './MermaidOntoFlow/examples.prompt',
+        'instructions': './GUI/MermaidOntoFlow/instructions.prompt',
+        'examples': './GUI/MermaidOntoFlow/examples.prompt',
         'role': 'You are a mermaid diagramming engineer that generates class Diagrams.',
         'model': 'gpt-3.5-turbo'
     }
