@@ -15,7 +15,7 @@ class MetadataManager:
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates the reasoning steps needed to generate'
                 'the context needed to create an ontology from a json data table.',
-        'model': 'gpt-4'#'gpt-3.5-turbo',
+        'model': 'gpt-3.5-turbo', #'gpt-4'
         'api_key_path':api_key_path
     }
 
@@ -25,7 +25,7 @@ class MetadataManager:
         'entity_improvement': './GUI/OntoBuilder/entity_improvement.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates OWL ontologies in RDF/XML format.',
-        'model': 'gpt-4'#'gpt-3.5-turbo',
+        'model': 'gpt-3.5-turbo', #'gpt-4'
         'api_key_path':api_key_path
     }
 
@@ -33,7 +33,7 @@ class MetadataManager:
         'instructions': './GUI/OntoMapper/instructions.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates RML mappings.',
-        'model': 'gpt-4'#'gpt-3.5-turbo',
+        'model': 'gpt-3.5-turbo', #'gpt-4'
         'api_key_path':api_key_path
     }
 
