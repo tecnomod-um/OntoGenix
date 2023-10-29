@@ -3,7 +3,7 @@
 The project utilizes the OpenAI GPT-4 model to develop a semi-automatic system that generates OWL ontologies and RML mappings from CSV datasets using LLMs. 
 
 **Important:**
-Acces to GPT-4 is required so you need to create an account and ask for acces to this model.
+Access to GPT-4 is required so you need to create an account and ask for acces to this model.
 
 ## GUI
 
