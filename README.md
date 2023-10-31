@@ -21,8 +21,9 @@ pip install -r requirements.txt
 #Create a .env file inside GUI directory containing the openai api_key
 cd GUI
 
-touch .env
+touch ./GUI/.env
 #write your openai api_key in .env file
+OPENAI_API_KEY="your-api-key"
 ```
 
 ## Execution
