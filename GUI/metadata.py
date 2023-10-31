@@ -31,7 +31,7 @@ class MetadataManager:
 
     mapper_metadata = {
         'instructions': './GUI/OntoMapper/instructions.prompt',
-        'error_instructions': './OntoMapper/error_instructions.prompt',
+        'error_instructions': './GUI/OntoMapper/error_instructions.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates RML mappings.',
         'model': 'gpt-3.5-turbo', #'gpt-4'
