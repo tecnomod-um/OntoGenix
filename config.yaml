@@ -1,4 +1,0 @@
-OntoGenixConfig:
-    base_path : "./datasets/"
-    dataset_folder : "BigBasketProducts"
-    dataset_file : "BigBasket"

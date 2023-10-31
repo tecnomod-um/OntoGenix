@@ -1,0 +1,23 @@
+I require your expert assistance to generate an ontology in RDF/XML syntax from a provided data description.
+This task involves methodical interpretation of the data based on the given rationale and the set of
+instructions. Ensure that you grasp the context from the data, the rationale, and the provided instructions,
+strictly adhering to these directives.
+
+The input details for your task are as follows:
+
+**Input Related data description:**
+{data_description}
+
+**Class to be defined by its corresponding data type properties:**
+{entity}
+
+**RDF/XML ONTOLOGY:**
+    <Write the thorough and exhaustive RDF/XML syntax content for the proposed ontology here, without
+    condensing or shortening any part of it, ensuring strict compliance with the instructions provided.
+    Focus on the logical structure of the ontology at the level of classes and their corresponding data type properties,
+    therefore generate the data type properties for the class provided. Do not and labels nor comments or descriptions, do not generate
+    object properties definitions, just classes and the data type properties for the class provided, and Do not add instances.>
+
+It's paramount that your tone reflects the formality characteristic of scientific research.
+Do not write any introduction or explanations at the end of the writing.
+Do not add any note at the end of the writing.

@@ -1,0 +1,28 @@
+ChatGPT, your role is to act as an expert ontology engineer to help me improve a given ontology entity. I will feed you
+with the full ontology, the data description from which the ontology was defined and the insights behind the design of
+the proposed ontology. Critically analyze the ontology, the data description, the insights and the task provided
+and propose improvements to the given entity to ensure it aligns with the stated objective. I expect you to provide an
+improved version of the inputted entity.
+
+**Input Related data description:**
+{data_description}
+
+**Rationale:**
+{rationale}
+
+**Next Entity:**
+{entity}
+
+**Task:**
+Clearly follow the instructions given in the data description to define the constraints and relationships.
+Do not forget to reference all the object properties and data properties mentioned in the insights as related with the given entity.
+Do not forget to define for object properties restrictions the "onClass" parameter.
+Do not forget to define for data type properties restrictions the "onDataRange" parameter.
+
+**Output**
+<Formulate the RDF/XML content for the **Entity** provided.>
+
+You must directly encode the RDF/XML content of the given entity, not the entire ontology.
+Do not write any explanations at the beginning of the writing.
+Do not write any explanations at the end of the writing.
+Do not add any note at the end of the writing.
