@@ -41,18 +41,15 @@ class LlmOntology(AbstractLlm):
             if state.value == OntologyState.ONTOLOGY_OBJECT_PROPERTIES.value:
                 self.current_prompt = self.object_properties_instructions.format(
                     data_description=data_description
-                    # rationale=rationale
                 )
             elif state.value == OntologyState.ONTOLOGY_DATA_PROPERTIES.value:
                 self.current_prompt = self.data_properties_instructions.format(
                     data_description=data_description,
-                    # rationale=rationale,
                     entity=entity
                 )
             elif state.value == OntologyState.ONTOLOGY_ENTITY.value:
                 self.current_prompt = self.entity_improvement.format(
                     data_description=data_description,
-                    # rationale=rationale,
                     entity=entity
                 )
 

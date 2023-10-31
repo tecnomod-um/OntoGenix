@@ -180,7 +180,6 @@ class GuiBehavior(QMainWindow):
         await self._process_interaction(
             self.ontology_builder.interact,
             data_description=self.plan_builder.data_description,
-            # rationale=self.plan_builder.rationale,
             entity=prompt,
             state=self.state,
             agent=self.ontology_builder
