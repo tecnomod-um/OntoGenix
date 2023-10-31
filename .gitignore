@@ -1,6 +1,6 @@
 .idea/
 GUI/.env
-#datasets/**/*.csv
+datasets/**/*.csv
 datasets/**/*.nt
 testing/
 testing_prompts/
