@@ -1,0 +1,6 @@
+/home/mikel/PycharmProjects/OntoGenix/datasets/AirlinesCustomerSatisfaction.csv filter=lfs diff=lfs merge=lfs -text
+/home/mikel/PycharmProjects/OntoGenix/datasets/AmazonRating.csv filter=lfs diff=lfs merge=lfs -text
+/home/mikel/PycharmProjects/OntoGenix/datasets/BigBasketProducts.csv filter=lfs diff=lfs merge=lfs -text
+/home/mikel/PycharmProjects/OntoGenix/datasets/BrazilianE-commerce.csv filter=lfs diff=lfs merge=lfs -text
+/home/mikel/PycharmProjects/OntoGenix/datasets/CustomerComplaint.csv filter=lfs diff=lfs merge=lfs -text
+/home/mikel/PycharmProjects/OntoGenix/datasets/eCommerce.csv filter=lfs diff=lfs merge=lfs -text
