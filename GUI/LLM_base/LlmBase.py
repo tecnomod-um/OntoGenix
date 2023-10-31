@@ -1,13 +1,14 @@
 from abc import ABC
 import openai
 import os
-from dotenv import load_dotenv, find_dotenv
+from dotenv import dotenv_values
 
 class AbstractLlm(ABC):
 
     def __init__(self, metadata: dict):
 
-        openai.api_key_path = metadata['api_key_path']
+        config = dotenv_values(metadata['api_key_path'])
+        openai.api_key = config['OPENAI_API_KEY']
 
         self.role = metadata['role']
         self.model = metadata['model']
