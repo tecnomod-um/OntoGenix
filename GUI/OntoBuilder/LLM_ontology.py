@@ -34,7 +34,6 @@ class LlmOntology(AbstractLlm):
 
     async def interact(self,
                         data_description: str = None,
-                        # rationale: str = None,
                         entity: str = None,
                         state: OntologyState = None):
         try:

@@ -17,7 +17,7 @@ Structure your output in the following format:
         ```turtle
         <#TriplesMapEntity> a rr:TriplesMap;
             rml:logicalSource [
-                rml:source {csv_data};
+                rml:source "{csv_data}";
                 rml:referenceFormulation ql:CSV
             ];
             rr:subjectMap [
@@ -32,7 +32,7 @@ Structure your output in the following format:
 
         <#TriplesMapEntity2> a rr:TriplesMap;
             rml:logicalSource [
-                rml:source {csv_data};
+                rml:source "{csv_data}";
                 rml:referenceFormulation ql:CSV
             ];
             rr:subjectMap [
@@ -41,10 +41,10 @@ Structure your output in the following format:
 
         >
         ```
-
-Do not explain your answer, just write the rml code. Do no write notes at the end of your writing.
 Generate appropriate URIs and combine columns if necessary.
 Do not use "http://example.org" or "http://example.com" instead make use of the base prefix.
 Create a mapping for each class.
 Do not forget to add the prefixes.
 Do not shorten your answer.
+Do not explain your answer, just write the rml code.
+Do no write notes at the end of your writing.

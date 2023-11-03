@@ -10,9 +10,6 @@ improved version of the inputted entity.
 **Next Entity:**
 {entity}
 
-**Task:**
-{task}
-
 **Output**
 <Formulate the RDF/XML content for the **Entity** provided.>
 

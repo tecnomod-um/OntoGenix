@@ -7,6 +7,7 @@ class LlmOntoMapper(AbstractLlm):
         super().__init__(metadata)
         # initialize prompts
         self.instructions = self.load_string_from_file(metadata['instructions'])
+        self.error_instructions = self.load_string_from_file(metadata['error_instructions'])
         # path setting to write outputs
         self._dataset_path = metadata['dataset']
         # initialize memories
@@ -23,11 +24,15 @@ class LlmOntoMapper(AbstractLlm):
             raise ValueError("Name must be a string!")
         self._dataset_path = path
 
-    async def interact(self, rationale: str):
+    async def interact(self, rationale: str=None, error: str=None):
         try:
             csv_data = self._dataset_path.split('/')[-1]
-            # format the prompt
-            self.current_prompt = self.instructions.format(rationale=rationale, csv_data=csv_data)
+            print("---------------------------------------------------- csv_data ->", csv_data)
+            print("---------- error ->", error)
+            if rationale and not error:
+                self.current_prompt = self.instructions.format(rationale=rationale, csv_data=csv_data)
+            elif rationale and error:
+                self.current_prompt = self.error_instructions.format(rationale=rationale, error=error, csv_data=csv_data)
             # Get the response from the LLM_base
             async for chunk in self.get_async_api_response(self.current_prompt):
                 yield chunk
@@ -39,4 +44,3 @@ class LlmOntoMapper(AbstractLlm):
 
     def get_rml_codeblock(self):
         return self.extract_text(self.answer, start_marker="```turtle", end_marker="```")
-
