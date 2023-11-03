@@ -187,8 +187,18 @@ class GuiBehavior(QMainWindow):
 
     async def create_mapping(self) -> None:
         """Create mapping using the rationale and ontology text."""
-        await self.RAG_ontomapper.loop()
-        self.LLManswer_textedit.setPlainText(self.ontology_mapper.answer)
+        for cont in range(self.RAG_ontomapper.max_iter):
+            if self.RAG_ontomapper.kgen.error_feedback != "DONE":
+                await self._process_interaction(
+                    self.ontology_mapper.interact,
+                    rationale=self.plan_builder.data_description,
+                    error=self.RAG_ontomapper.kgen.error_feedback,
+                    agent=self.ontology_mapper
+                )
+
+                self.RAG_ontomapper.generateKG()
+            else:
+                break
 
     def create_mermaid(self) -> None:
         """Generate a mermaid diagram from the ontology text."""
@@ -248,8 +258,13 @@ class GuiBehavior(QMainWindow):
                 dataset_base_path = self.metadata_manager.dataset_base_path()
                 self.plan_builder.dataset_path = dataset_base_path
                 self.ontology_builder.dataset_path = dataset_base_path
-                self.ontology_mapper.dataset_path = dataset_base_path
-                self.RAG_ontomapper.build_kgen(self.metadata_manager.base_path, self.metadata_manager.dataset_folder)
+                self.ontology_mapper.dataset_path = self.metadata_manager.dataset_full_path()
+                print("que paz tenemos en mapper: ", self.ontology_mapper.dataset_path)
+                self.RAG_ontomapper.build_kgen(
+                    self.metadata_manager.base_path,
+                    self.metadata_manager.dataset_folder,
+                    self.metadata_manager.dataset_file
+                )
                 # Convert the CSV data to JSON and display in GUI
                 dataframe = csv_statistical_description(self.metadata_manager.dataset_full_path())
                 self.json_data = dataframe2prettyjson(dataframe)

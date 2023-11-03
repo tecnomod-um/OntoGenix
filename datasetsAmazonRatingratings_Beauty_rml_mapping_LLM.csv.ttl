@@ -1,0 +1,39 @@
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix ex: <https://vocab.um.es#> .
+
+<#TriplesMapProduct> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "ratings_Beauty.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Product/{ProductId}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasRating;
+        rr:objectMap [
+            rr:column "Rating";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasTimestamp;
+        rr:objectMap [
+            rr:column "Timestamp";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasUserId;
+        rr:objectMap [
+            rr:column "UserId";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ex:hasProductId;
+        rr:objectMap [
+            rr:column "ProductId";
+        ];
+    ].
+
+Note: The above RML mapping is generated based on the provided ontology and data description. The URIs for the instances are created using the base prefix "https://vocab.um.es#". The "ratings_Beauty.csv" file is used as the logical source with CSV reference formulation. The mapping includes the necessary predicate-object maps for the data type properties defined in the ontology.

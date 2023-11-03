@@ -21,7 +21,7 @@ class APP(QApplication):
         sys.exit(self.exec_())
 
     def load_style(self):
-        with open("GUI/css/Manjaro.qss") as f:
+        with open("./GUI/css/Manjaro.qss") as f:
             self.setStyleSheet(f.read())
 
 
