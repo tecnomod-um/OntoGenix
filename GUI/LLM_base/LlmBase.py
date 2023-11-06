@@ -8,6 +8,7 @@ class AbstractLlm(ABC):
     def __init__(self, metadata: dict):
 
         config = dotenv_values(metadata['api_key_path'])
+        print(config)
         openai.api_key = config['OPENAI_API_KEY']
 
         self.role = metadata['role']
