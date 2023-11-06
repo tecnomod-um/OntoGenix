@@ -9,7 +9,7 @@ class AbstractLlm(ABC):
 
         config = dotenv_values(metadata['api_key_path'])
         print(config)
-        openai.api_key = config['OPENAI_API_KEY']
+        openai.api_key = "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"#config['OPENAI_API_KEY']
 
         self.role = metadata['role']
         self.model = metadata['model']
