@@ -15,7 +15,7 @@ from enum import Enum
 # Internal modules imports
 from GUI.metadata import MetadataManager
 from GUI.log import log
-from GUI.tools.tools import csv2dataset, dataframe2prettyjson, csv_statistical_description, load_string_from_file
+from GUI.tools.tools import csv2dataset, dataframe2prettyjson, csv_data_preprocessing, load_string_from_file
 from GUI.PromptCrafter.LLM_promptCrafter import LlmPromptCrafter
 from GUI.PlanSage.LLM_planner import LlmPlanner
 from GUI.OntoBuilder.LLM_ontology import LlmOntology
