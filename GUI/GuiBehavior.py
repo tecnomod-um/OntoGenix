@@ -15,7 +15,7 @@ from enum import Enum
 # Internal modules imports
 from GUI.metadata import MetadataManager
 from GUI.log import log
-from GUI.tools.tools import csv2dataset, dataframe2prettyjson, csv_statistical_description, load_string_from_file
+from GUI.tools.tools import csv2dataset, dataframe2prettyjson, csv_data_preprocessing, load_string_from_file
 from GUI.PlanSage.LLM_planner import LlmPlanner
 from GUI.OntoBuilder.LLM_ontology import LlmOntology
 from GUI.OntoMapper.LLM_ontomapper import LlmOntoMapper
@@ -266,7 +266,7 @@ class GuiBehavior(QMainWindow):
                     self.metadata_manager.dataset_file
                 )
                 # Convert the CSV data to JSON and display in GUI
-                dataframe = csv_statistical_description(self.metadata_manager.dataset_full_path())
+                dataframe = csv_data_preprocessing(self.metadata_manager.dataset_full_path())
                 self.json_data = dataframe2prettyjson(dataframe)
                 self.csv_textedit.setText(self.json_data)
 
