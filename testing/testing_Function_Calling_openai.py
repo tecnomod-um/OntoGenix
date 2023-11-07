@@ -5,22 +5,23 @@ import openai
 # Setting OpenAI API key
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-def structure_definition():
-    print('structure_definition')
+def create_initial_context():
+    print('create_initial_context')
 
-def ontology_building():
-    print('ontology_building')
+def generate_ontology():
+    print('generate_ontology')
 
-def mapping():
-    print('mapping')
+def create_mapping():
+    print('create_mapping')
+
 
 def exit():
     print("exit")
 
 AVAILABLE_FUNCTIONS = {
-    "structure_definition": structure_definition,
-    "ontology_building": ontology_building,
-    "mapping": mapping,
+    "create_initial_context": create_initial_context,
+    "generate_ontology": generate_ontology,
+    "create_mapping": create_mapping,
     "exit":exit
 }
 
@@ -30,7 +31,7 @@ def select_process(method: str):
 def create_initial_response(messages, function_data, function_name):
     """Generates an initial response from OpenAI's GPT-3 model using user's message."""
     return openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-3.5-turbo",
         messages=messages,
         functions=function_data,
         function_call={"name": function_name}
@@ -55,7 +56,7 @@ functions_data = [
       "parameters": {
         "type": "object",
         "properties": {
-          "method": {"type": "string", "enum": ["structure_definition", "ontology_building", "mapping", "exit"],
+          "method": {"type": "string", "enum": ["create_initial_context", "generate_ontology", "create_mapping", "exit"],
                   "description": "Ontology engineering self-assembling program interface."},
         }
       }
@@ -63,11 +64,15 @@ functions_data = [
 ]
 
 
+
 user_message = '''I want the ontology to be focused on the "Product" entity as the main class "sales_product". 
 Each product will have the following object properties: "BrandName", "Brand", "Category", "eligibleQuantity", 
 "SubCategory", "Image_Url", "Absolute_Url". We propose to add an external entity "hasOffer" from the schema.org 
 ontology to be an object property of "sales_product". The entities "Price", "DiscountPrice", "priceCurrency" 
 (from schema) and "Quantity" will be set as data type properties to the "offer" class.'''
+
+user_message = '''propose an ontology based on the given json dataset'''
+
 
 user_message = '''Generate the mapping'''
 
@@ -83,3 +88,5 @@ response = create_initial_response(
 )
 # Process the response and order pizza
 process_function_response(response, select_process)
+
+

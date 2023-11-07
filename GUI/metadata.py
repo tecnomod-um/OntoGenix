@@ -1,40 +1,56 @@
 import configparser
 import os
 
+
 class MetadataManager:
 
     base_path = None
     dataset_folder = None
     dataset_file = None
+    api_key_path = "./GUI/.env"
+
+    crafter_metadata =  {
+        'prompt_crafting': './GUI/PromptCrafter/prompt_crafting.prompt',
+        'role': 'You are a powerful ontology engineer that helps to craft the perfect prompt to define the high level structure of the ontology.',
+        'model': 'gpt-4', #'gpt-3.5-turbo'
+        'api_key_path':api_key_path
+    }
 
     planner_metadata = {
-        'instructions': './PlanSage/instructions.prompt',
+        'instructions': './GUI/PlanSage/instructions.prompt',
+        'data_description': './GUI/PlanSage/data_description.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates the reasoning steps needed to generate'
                 'the context needed to create an ontology from a json data table.',
-        'model': 'gpt-4'#'gpt-3.5-turbo'
+        'model': 'gpt-4', #'gpt-3.5-turbo'
+        'api_key_path':api_key_path
     }
 
     onto_metadata = {
-        'instructions': './OntoBuilder/instructions.prompt',
-        'entity_improvement': './OntoBuilder/entity_improvement.prompt',
+        'object_properties_instructions': './GUI/OntoBuilder/object_properties_instructions.prompt',
+        'data_properties_instructions': './GUI/OntoBuilder/data_properties_instructions.prompt',
+        'entity_improvement': './GUI/OntoBuilder/entity_improvement.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates OWL ontologies in RDF/XML format.',
-        'model': 'gpt-4'#'gpt-3.5-turbo'
+        'model': 'gpt-4', #'gpt-3.5-turbo'
+        'api_key_path':api_key_path
     }
 
     mapper_metadata = {
-        'instructions': './OntoMapper/instructions.prompt',
+        'instructions': './GUI/OntoMapper/instructions.prompt',
+        'error_instructions': './GUI/OntoMapper/error_instructions.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates RML mappings.',
-        'model': 'gpt-4'#'gpt-3.5-turbo'
+        'model': 'gpt-4', #'gpt-3.5-turbo'
+        'api_key_path':api_key_path
     }
 
     mermaid_metadata = {
-        'instructions': './MermaidOntoFlow/instructions.prompt',
-        'examples': './MermaidOntoFlow/examples.prompt',
+        'instructions': './GUI/MermaidOntoFlow/instructions.prompt',
+        'examples': './GUI/MermaidOntoFlow/examples.prompt',
         'role': 'You are a mermaid diagramming engineer that generates class Diagrams.',
-        'model': 'gpt-3.5-turbo'
+        'model': 'gpt-3.5-turbo',
+        'api_key_path':api_key_path
     }
 
     def construct_path(self, *args) -> str:
@@ -43,12 +59,25 @@ class MetadataManager:
     def parse_datasetPath(self, given_path: str):
         # Get the relative path from the specified directory
         relative_path = os.path.relpath(given_path, os.getcwd())
+
         # Now split the relative path into its components
         path_parts = relative_path.split(os.sep)
-        # Construct the desired outputs
-        self.base_path = os.path.join('.', path_parts[0], '')  # Adding a trailing slash
-        self.dataset_folder = path_parts[1]
-        self.dataset_file = os.path.splitext(path_parts[2])[0]  # Removing the file extension
+
+        # Handle the base path
+        if len(path_parts) > 2:
+            self.base_path = os.path.join('.', *path_parts[:-2])
+        else:
+            self.base_path = "./"
+
+        # Handle the dataset folder
+        if len(path_parts) > 2:
+            self.dataset_folder = path_parts[-2]
+        else:
+            self.dataset_folder = ""
+
+        # Handle the dataset file
+        self.dataset_file = os.path.splitext(path_parts[-1])[0]  # Removing the file extension
+
         # Output
         print(f'base_path : "{self.base_path}"')
         print(f'dataset_folder : "{self.dataset_folder}"')

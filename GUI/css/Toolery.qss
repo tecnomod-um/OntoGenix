@@ -474,3 +474,4 @@ QGroupBox {
 QPushButton {
     border-radius: 10px;
 }
+

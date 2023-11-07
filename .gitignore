@@ -1,8 +1,9 @@
 .idea/
-.env
+GUI/.env
 datasets/**/*.csv
 datasets/**/*.nt
 testing_prompts/
 .venv/
 **/__pycache__/
+IDEAS.pptx
 
