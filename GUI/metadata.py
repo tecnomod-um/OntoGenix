@@ -9,6 +9,13 @@ class MetadataManager:
     dataset_file = None
     api_key_path = "./GUI/.env"
 
+    crafter_metadata =  {
+        'prompt_crafting': './GUI/PromptCrafter/prompt_crafting.prompt',
+        'role': 'You are a powerful ontology engineer that helps to craft the perfect prompt to define the high level structure of the ontology.',
+        'model': 'gpt-4', #'gpt-3.5-turbo'
+        'api_key_path':api_key_path
+    }
+
     planner_metadata = {
         'instructions': './GUI/PlanSage/instructions.prompt',
         'data_description': './GUI/PlanSage/data_description.prompt',

@@ -15,7 +15,8 @@ from enum import Enum
 # Internal modules imports
 from GUI.metadata import MetadataManager
 from GUI.log import log
-from GUI.tools.tools import csv2dataset, dataframe2prettyjson, csv_data_preprocessing, load_string_from_file
+from GUI.tools.tools import csv2dataset, dataframe2prettyjson, csv_statistical_description, load_string_from_file
+from GUI.PromptCrafter.LLM_promptCrafter import LlmPromptCrafter
 from GUI.PlanSage.LLM_planner import LlmPlanner
 from GUI.OntoBuilder.LLM_ontology import LlmOntology
 from GUI.OntoMapper.LLM_ontomapper import LlmOntoMapper
@@ -25,7 +26,7 @@ from GUI.KG_Generator.RAG import RAG_OntoMapper
 
 class OntologyState(Enum):
     """Enum class to represent different states of ontology."""
-
+    PROMPT_CRAFT = "PROMPT_CRAFT"
     DESCRIPTION = "DATA_DESCRIPTION"
     ONTOLOGY_OBJECT_PROPERTIES = "ONTOLOGY_OBJECT_PROPERTIES"
     ONTOLOGY_DATA_PROPERTIES = "ONTOLOGY_DATA_PROPERTIES"
@@ -70,6 +71,7 @@ class GuiBehavior(QMainWindow):
         # Instantiate supporting classes
         self.metadata_manager = MetadataManager()
         # Instantiate LLM agents
+        self.prompt_crafter = LlmPromptCrafter(self.metadata_manager.crafter_metadata)
         self.plan_builder = LlmPlanner(self.metadata_manager.planner_metadata)
         self.ontology_builder = LlmOntology(self.metadata_manager.onto_metadata)
         self.ontology_mapper = LlmOntoMapper(self.metadata_manager.mapper_metadata)
@@ -77,7 +79,7 @@ class GuiBehavior(QMainWindow):
         # Instantiate RAG systems
         self.RAG_ontomapper = RAG_OntoMapper(self.ontology_mapper, self.plan_builder)
 
-        self.state = OntologyState.DESCRIPTION
+        self.state = OntologyState.PROMPT_CRAFT
         self._handle_state()
 
         # Data container
@@ -138,7 +140,9 @@ class GuiBehavior(QMainWindow):
         # Determine action based on current state
         print('#####################################')
         print(self.state)
-        if self.state in [OntologyState.DESCRIPTION]:
+        if self.state in [OntologyState.PROMPT_CRAFT]:
+            await self.generate_crafted_prompt(prompt)
+        elif self.state in [OntologyState.DESCRIPTION]:
             await self.create_initial_context(prompt)
         elif self.state in [OntologyState.ONTOLOGY_OBJECT_PROPERTIES,
                             OntologyState.ONTOLOGY_DATA_PROPERTIES,
@@ -164,6 +168,19 @@ class GuiBehavior(QMainWindow):
         # Append extra newline and re-enable text edit
         self.LLManswer_textedit.insertPlainText("\n\n")
         self.LLManswer_textedit.setEnabled(True)
+
+    async def generate_crafted_prompt(self, prompt: str) -> None:
+        """Helps the user to craft the best prompt."""
+        await self._process_interaction(
+            self.prompt_crafter.interaction,
+            prompt=prompt,
+            json_data=self.json_data,
+            agent=self.prompt_crafter
+        )
+        
+        self.query_prompt_textedit.clear()
+        self.query_prompt_textedit.setText(self.prompt_crafter.crafted_prompt)
+
 
     async def create_initial_context(self, prompt: str) -> None:
         """Create the initial context based on user's prompt."""
