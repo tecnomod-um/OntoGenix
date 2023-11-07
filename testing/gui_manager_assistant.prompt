@@ -1,8 +1,38 @@
-Your current state is:
-{current_state}
+Hello, ChatGPT. As a proficient plan updater. You will be supplied with current memory data.
+Here are the necessary inputs:
 
-your current query is:
+**Input Query:**
 {prompt}
 
+**Current State:**
+{current_state}
+
+**Input Short Term Memory:**
+{short_term_memory}
+
+
+I request the following outputs:
+
+**Output Memory:**
+Rationale: <Explain which components in the input memory have become outdated and why, as well as identify new elements
+that should be integrated into the memory along with the reasons for doing so.>
+
+**Updated Memory:**
+<Provide an updated version of the memory, incorporating necessary additions. This should mimic the
+structure of the input memory but reflect the changes proposed in your rationale. Ensure the updated memory is succinct,
+containing only essential information and not exceeding 20 sentences or 500 words.>
+
+Devise instructions for the forthcoming steps, suggesting potential continuations of the previous tasks.
+The format should be as follows:
+
+**Instructions:**
+Instruction : <Provide an instruction for the next task in the plan, offering an alternative continuation based on the updated plan. Include reasoning for the proposed direction.>
+
+Your responsibility is to utilize the input plan, input instructions, short-term memory data to
+guide the process.
+
+Ensure your outputs strictly adhere to the provided format.
+Please remember that the updated memory should contain only key information.
+Be deliberate when devising the output instruction.
 
 

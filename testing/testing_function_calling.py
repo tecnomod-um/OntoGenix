@@ -42,23 +42,32 @@ class GuiManager(AbstractLlm, ABC):
         # initialize prompts
         self.role = self.load_string_from_file(metadata['role'])
         self.instructions = self.load_string_from_file(metadata['instructions'])
+        # Initialize memories
+        self.short_term_memory = None
 
     async def interaction(self, prompt: str, current_state: str):
         try:
-
-            # Act as first_interaction
-            self.current_prompt = self.instructions.format(prompt=prompt, current_state=current_state)
+            self.current_prompt = self.instructions.format(
+                prompt=prompt,
+                current_state=current_state,
+                short_term_memory=self.short_term_memory)
             # Get the response from the LLM_base
             async for chunk in self.get_async_api_response(self.current_prompt):
                 yield chunk
-
-            else:
-                raise ValueError("Insufficient arguments provided for interaction")
 
         except ValueError as e:
             print(f"An error occurred: {e}")
         finally:
             self.last_prompt = self.current_prompt
+
+    def update_memories(self, response: str, first: bool = True):
+        try:
+            if first:
+                self.short_term_memory = self.extract_text(response, "**Output Memory:**", "**Output Tasks:**").strip()
+            else:
+                self.short_term_memory = self.extract_text(response, "**Updated Memory:**", "**Output Tasks:**").strip()
+        except ValueError as e:
+            print(f"An error occurred: {e}")
 
 
 class FunctionCaller(ABC):
@@ -168,6 +177,9 @@ metadata = {
 }
 gui_manager = GuiManager(metadata)
 
-state = "start"
-async for chunk in gui_manager.interaction(state):
+prompt = "i want to focus on the product class"
+state = "PROMPT_CRAFT"
+async for chunk in gui_manager.interaction(prompt, state):
     print(chunk, end="")
+
+# gui_manager.update_memories(gui_manager.answer, first=True)
