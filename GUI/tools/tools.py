@@ -154,7 +154,7 @@ def summarize_text_columns(dataset: pd.DataFrame, threshold: int = 10) -> pd.Dat
     return pd.DataFrame(index=text_columns.index)
 
 def summarize_categorical_columns(dataset: pd.DataFrame, threshold: int = 10) -> pd.DataFrame:
-    likely_categorical = dataset.select_dtypes(include='object').apply(lambda col: col.nunique() <= threshold)
+    likely_categorical = dataset.select_dtypes(include=['object', 'int', 'float']).apply(lambda col: col.nunique() <= threshold)
     categorical_columns = dataset[likely_categorical.index[likely_categorical]]
     if not categorical_columns.empty:
         summary_data = {
@@ -187,11 +187,11 @@ def remove_dash_entries(summary):
 
 
 def csv_statistical_description(dataset: pd.DataFrame) -> pd.DataFrame:
+    categorical_summary = summarize_categorical_columns(dataset)
     numeric_summary = describe_numeric_columns(dataset)
     text_summary = summarize_text_columns(dataset)
-    categorical_summary = summarize_categorical_columns(dataset)
 
-    summary = merge_summaries(numeric_summary, text_summary, categorical_summary)
+    summary = merge_summaries(categorical_summary, text_summary, numeric_summary)
 
     # Convertir el DataFrame a un diccionario y luego limpiar las entradas que tienen un valor de "-"
     summary_dict = summary.to_dict(orient='index')
