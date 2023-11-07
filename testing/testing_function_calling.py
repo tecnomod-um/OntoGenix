@@ -1,9 +1,112 @@
 import os
 import json
 import openai
+from abc import ABC
+import openai
+import os
+from dotenv import dotenv_values
+from GUI.LLM_base.LlmBase import AbstractLlm
 
-# Setting OpenAI API key
-openai.api_key = os.getenv("OPENAI_API_KEY")
+from abc import ABC
+from typing import Optional
+
+from GUI.LLM_base.LlmBase import AbstractLlm
+from enum import Enum
+
+class OntologyState(Enum):
+    """Enum class to represent different states of ontology."""
+    PROMPT_CRAFT = "PROMPT_CRAFT"
+    DESCRIPTION = "DATA_DESCRIPTION"
+    ONTOLOGY_OBJECT_PROPERTIES = "ONTOLOGY_OBJECT_PROPERTIES"
+    ONTOLOGY_DATA_PROPERTIES = "ONTOLOGY_DATA_PROPERTIES"
+    ONTOLOGY_ENTITY = "ONTOLOGY_ENTITY"
+    MAPPING = "MAPPING"
+
+class GuiManager(AbstractLlm, ABC):
+    """
+    This class represents a language learning model (LLM_base) ontology. It extends the AbstractLlm class and provides
+    methods for interacting with the model.
+
+    TODO: the long_term_memory mechanism is not implemented.
+    """
+
+    def __init__(self, metadata: dict):
+        """
+        Initialize the LlmOntology object.
+
+        Parameters:
+        metadata (dict): A dictionary containing metadata for the LLM_base.
+        """
+        super().__init__(metadata)
+
+        # initialize prompts
+        self.role = self.load_string_from_file(metadata['role'])
+        self.instructions = self.load_string_from_file(metadata['instructions'])
+
+    async def interaction(self, prompt: str, current_state: str):
+        try:
+
+            # Act as first_interaction
+            self.current_prompt = self.instructions.format(prompt=prompt, current_state=current_state)
+            # Get the response from the LLM_base
+            async for chunk in self.get_async_api_response(self.current_prompt):
+                yield chunk
+
+            else:
+                raise ValueError("Insufficient arguments provided for interaction")
+
+        except ValueError as e:
+            print(f"An error occurred: {e}")
+        finally:
+            self.last_prompt = self.current_prompt
+
+
+class FunctionCaller(ABC):
+
+    def __init__(self, metadata: dict):
+
+        config = dotenv_values(metadata['api_key_path'])
+        openai.api_key = config['OPENAI_API_KEY']
+
+        self.role = metadata['role']
+        self.model = metadata['model']
+        self.functions_data = metadata['functions_data']
+
+    def interaction(self, content: str, function_name: object, temperature=0):
+        try:
+            response = openai.ChatCompletion.create(
+                    model=self.model,
+                    messages=[{
+                        'role': 'system',
+                        'content': self.role
+                    }, {
+                        'role': 'user',
+                        'content': content,
+                    }],
+                    temperature=temperature,
+                    functions=self.functions_data,
+                    function_call={"name": "select_process"}
+            )
+            self._process_function_response(response, function_name)
+
+        except Exception as e:
+            print("Exception: {e}".format(e=e))
+
+    def _process_function_response(self, response, function_callback):
+        """Processes the response message from model and calls the intended function.
+        :param function_callback: callback function which be called with the corresponding arguments.
+        :return: the function to be returned
+        """
+        response_message = response["choices"][0]["message"]
+        function_args = json.loads(response_message["function_call"]["arguments"])
+        function_response = function_callback(**function_args)
+        return function_response
+
+
+
+
+def load_dataset():
+    print("dataset loaded")
 
 def structure_definition():
     print('structure_definition')
@@ -17,69 +120,54 @@ def mapping():
 def exit():
     print("exit")
 
-AVAILABLE_FUNCTIONS = {
-    "structure_definition": structure_definition,
-    "ontology_building": ontology_building,
-    "mapping": mapping,
-    "exit":exit
-}
-
 def select_process(method: str):
     AVAILABLE_FUNCTIONS[method]()
 
-def create_initial_response(messages, function_data, function_name):
-    """Generates an initial response from OpenAI's GPT-3 model using user's message."""
-    return openai.ChatCompletion.create(
-        model="gpt-4",
-        messages=messages,
-        functions=function_data,
-        function_call={"name": function_name}
-    )
 
-def process_function_response(response, function_to_call):
-    """Processes the response message from model and calls the intended function."""
-    response_message = response["choices"][0]["message"]
-    function_name = response_message["function_call"]["name"]
-    function_args = json.loads(response_message["function_call"]["arguments"])
-    function_response = function_to_call(**function_args)
-    return function_response
-
-
-
-
-# Defining the data for 'select_method' function
+AVAILABLE_FUNCTIONS = {
+    "load_dataset": load_dataset,
+    "structure_definition": structure_definition,
+    "ontology_building": ontology_building,
+    "mapping": mapping,
+    "exit": exit
+}
 functions_data = [
     {
-      "name": "select_process",
-      "description": "Can select the engineering step for creating an ontology using LLMs",
-      "parameters": {
-        "type": "object",
-        "properties": {
-          "method": {"type": "string", "enum": ["structure_definition", "ontology_building", "mapping", "exit"],
-                  "description": "Ontology engineering self-assembling program interface."},
+        "name": "select_process",
+        "description": "Can select the engineering step for creating an ontology using LLMs",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "method": {
+                    "type": "string",
+                    "enum": ["load_dataset", "structure_definition", "ontology_building", "mapping", "exit"],
+                    "description": "Ontology engineering self-assembling program interface."},
+            }
         }
-      }
     }
 ]
 
-
-user_message = '''I want the ontology to be focused on the "Product" entity as the main class "sales_product". 
-Each product will have the following object properties: "BrandName", "Brand", "Category", "eligibleQuantity", 
-"SubCategory", "Image_Url", "Absolute_Url". We propose to add an external entity "hasOffer" from the schema.org 
-ontology to be an object property of "sales_product". The entities "Price", "DiscountPrice", "priceCurrency" 
-(from schema) and "Quantity" will be set as data type properties to the "offer" class.'''
-
-user_message = '''Generate the mapping'''
-
-initial_message = {
-    "role": "assistant",
-    "content": user_message
+metadata = {
+    'role': "you are a powerful ontology engineer that must select the appropriate function to be called.",
+    'model': 'gpt-3.5-turbo',
+    'api_key_path': "./GUI/.env",
+    'functions_data': functions_data
 }
-# Creating initial Response
-response = create_initial_response(
-    [initial_message],
-    functions_data,
-    "select_process"
-)
-# Process the response and order pizza
-process_function_response(response, select_process)
+
+function_caller = FunctionCaller(metadata)
+
+prompt = "hello"
+function_caller.interaction(prompt, select_process)
+
+
+metadata = {
+    'role': "./testing/gui_manager_role.prompt",
+    'instructions': "./testing/gui_manager_role.prompt",
+    'model': 'gpt-3.5-turbo',
+    'api_key_path': "./GUI/.env"
+}
+gui_manager = GuiManager(metadata)
+
+state = "start"
+async for chunk in gui_manager.interaction(state):
+    print(chunk, end="")
