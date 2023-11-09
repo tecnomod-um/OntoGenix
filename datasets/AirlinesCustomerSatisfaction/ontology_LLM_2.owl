@@ -1,0 +1,106 @@
+@prefix : <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+
+:Customer a owl:Class .
+:Flight a owl:Class .
+:Service a owl:Class .
+:Satisfaction a owl:Class .
+
+:hasAge a owl:ObjectProperty ;
+    rdfs:domain :Customer ;
+    rdfs:range xsd:integer .
+
+:hasArrivalDelay a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasBaggageHandlingRating a owl:ObjectProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:hasCheckinServiceRating a owl:ObjectProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:hasCleanlinessRating a owl:ObjectProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:hasDepartureDelay a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasTimeConvenienceRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasOnlineBookingEaseRating a owl:ObjectProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:hasFlightDistance a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasFoodAndDrinkRating a owl:ObjectProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:hasGateLocationRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasInflightEntertainmentRating a owl:ObjectProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:hasInflightWifiServiceRating a owl:ObjectProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:hasLegRoomServiceRating a owl:ObjectProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:hasOnBoardServiceRating a owl:ObjectProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:hasOnlineBoardingRating a owl:ObjectProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:hasOnlineSupportRating a owl:ObjectProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:hasSeatComfortRating a owl:ObjectProperty ;
+    rdfs:domain :Service ;
+    rdfs:range xsd:integer .
+
+:hasClass a owl:ObjectProperty ;
+    rdfs:domain :Customer ;
+    rdfs:range xsd:string .
+
+:isCustomerType a owl:ObjectProperty ;
+    rdfs:domain :Customer ;
+    rdfs:range xsd:string .
+
+:hasFAIR_URI a owl:ObjectProperty ;
+    rdfs:domain :Customer ;
+    rdfs:range xsd:string .
+
+:isGender a owl:ObjectProperty ;
+    rdfs:domain :Customer ;
+    rdfs:range xsd:string .
+
+:isTypeOfTravel a owl:ObjectProperty ;
+    rdfs:domain :Customer ;
+    rdfs:range xsd:string .
+
+:isSatisfied a owl:ObjectProperty ;
+    rdfs:domain :Satisfaction ;
+    rdfs:range xsd:string .

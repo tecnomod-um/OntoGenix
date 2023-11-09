@@ -27,8 +27,7 @@ class MetadataManager:
     }
 
     onto_metadata = {
-        'object_properties_instructions': './GUI/OntoBuilder/object_properties_instructions.prompt',
-        'data_properties_instructions': './GUI/OntoBuilder/data_properties_instructions.prompt',
+        'ontology_instructions': './GUI/OntoBuilder/ontology_instructions.prompt',
         'entity_improvement': './GUI/OntoBuilder/entity_improvement.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates OWL ontologies in RDF/XML format.',

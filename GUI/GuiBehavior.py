@@ -28,8 +28,7 @@ class OntologyState(Enum):
     """Enum class to represent different states of ontology."""
     PROMPT_CRAFT = "PROMPT_CRAFT"
     DESCRIPTION = "DATA_DESCRIPTION"
-    ONTOLOGY_OBJECT_PROPERTIES = "ONTOLOGY_OBJECT_PROPERTIES"
-    ONTOLOGY_DATA_PROPERTIES = "ONTOLOGY_DATA_PROPERTIES"
+    ONTOLOGY = "ONTOLOGY"
     ONTOLOGY_ENTITY = "ONTOLOGY_ENTITY"
     MAPPING = "MAPPING"
 
@@ -100,14 +99,10 @@ class GuiBehavior(QMainWindow):
         if self.state == OntologyState.DESCRIPTION:
             self.plan_builder.data_description = answer_text
 
-        # elif self.state == OntologyState.INIT_CONTEXT:
-        #     self.plan_builder.rationale = answer_text
-
         elif self.state == OntologyState.MAPPING:
             self.ontology_mapper.answer = answer_text
 
-        elif self.state in {OntologyState.ONTOLOGY_OBJECT_PROPERTIES,
-                            OntologyState.ONTOLOGY_DATA_PROPERTIES,
+        elif self.state in {OntologyState.ONTOLOGY,
                             OntologyState.ONTOLOGY_ENTITY}:
             self.ontology_builder.answer = answer_text
 
@@ -118,6 +113,8 @@ class GuiBehavior(QMainWindow):
     def _handle_state(self):
         """Set the current state based on the state combobox and load the help guidelines."""
         self.state = OntologyState[self.state_cbox.currentText()]
+        if self.state != OntologyState.DESCRIPTION:
+            self.query_prompt_textedit.clear()
 
 
     def move_cursor_to_end(self):
@@ -137,15 +134,11 @@ class GuiBehavior(QMainWindow):
 
     async def _manage_prompt(self, prompt: str) -> None:
         """Manage the user's prompt based on the current ontology state."""
-        # Determine action based on current state
-        print('#####################################')
-        print(self.state)
         if self.state in [OntologyState.PROMPT_CRAFT]:
             await self.generate_crafted_prompt(prompt)
         elif self.state in [OntologyState.DESCRIPTION]:
             await self.create_initial_context(prompt)
-        elif self.state in [OntologyState.ONTOLOGY_OBJECT_PROPERTIES,
-                            OntologyState.ONTOLOGY_DATA_PROPERTIES,
+        elif self.state in [OntologyState.ONTOLOGY,
                             OntologyState.ONTOLOGY_ENTITY]:
             await self.generate_ontology(prompt)
         elif self.state == OntologyState.MAPPING:

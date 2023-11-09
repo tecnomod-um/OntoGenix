@@ -6,8 +6,7 @@ import os
 from enum import Enum
 
 class OntologyState(Enum):
-    ONTOLOGY_OBJECT_PROPERTIES = "ONTOLOGY_OBJECT_PROPERTIES"
-    ONTOLOGY_DATA_PROPERTIES = "ONTOLOGY_DATA_PROPERTIES"
+    ONTOLOGY = "ONTOLOGY"
     ONTOLOGY_ENTITY = "ONTOLOGY_ENTITY"
 
 class LlmOntology(AbstractLlm):
@@ -15,8 +14,7 @@ class LlmOntology(AbstractLlm):
     def __init__(self, metadata: dict):
         super().__init__(metadata)
         # initialize prompts
-        self.object_properties_instructions = self.load_string_from_file(metadata['object_properties_instructions'])
-        self.data_properties_instructions = self.load_string_from_file(metadata['data_properties_instructions'])
+        self.ontology_instructions = self.load_string_from_file(metadata['ontology_instructions'])
         self.entity_improvement = self.load_string_from_file(metadata['entity_improvement'])
         # path setting to write outputs
         self._dataset_path = metadata['dataset']
@@ -37,14 +35,9 @@ class LlmOntology(AbstractLlm):
                         entity: str = None,
                         state: OntologyState = None):
         try:
-            if state.value == OntologyState.ONTOLOGY_OBJECT_PROPERTIES.value:
-                self.current_prompt = self.object_properties_instructions.format(
+            if state.value == OntologyState.ONTOLOGY.value:
+                self.current_prompt = self.ontology_instructions.format(
                     data_description=data_description
-                )
-            elif state.value == OntologyState.ONTOLOGY_DATA_PROPERTIES.value:
-                self.current_prompt = self.data_properties_instructions.format(
-                    data_description=data_description,
-                    entity=entity
                 )
             elif state.value == OntologyState.ONTOLOGY_ENTITY.value:
                 self.current_prompt = self.entity_improvement.format(

@@ -13,43 +13,51 @@
     ];
     rr:subjectMap [
         rr:template "https://vocab.um.es#Product/{FAIR_URI}";
-        rr:class :Product;
+        rr:class schema:Product;
     ];
     rr:predicateObjectMap [
-        rr:predicate :hasAbsoluteUrl;
-        rr:objectMap [ rml:reference "Absolute_Url"; ]
+        rr:predicate schema:hasBrand;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapBrand>;
+        ];
     ];
     rr:predicateObjectMap [
-        rr:predicate :hasFAIR_URI;
-        rr:objectMap [ rml:reference "FAIR_URI"; ]
+        rr:predicate schema:hasCategory;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCategory>;
+        ];
     ];
     rr:predicateObjectMap [
-        rr:predicate :hasImageUrl;
-        rr:objectMap [ rml:reference "Image_Url"; ]
+        rr:predicate schema:hasPrice;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapPrice>;
+        ];
     ];
     rr:predicateObjectMap [
-        rr:predicate :hasProductName;
-        rr:objectMap [ rml:reference "ProductName"; ]
+        rr:predicate schema:hasDiscountPrice;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapDiscountPrice>;
+        ];
     ];
     rr:predicateObjectMap [
-        rr:predicate :hasQuantity;
-        rr:objectMap [ rml:reference "Quantity"; ]
+        rr:predicate schema:hasAbsoluteUrl;
+        rr:objectMap [ rr:column "Absolute_Url"; rr:datatype xsd:anyURI ];
     ];
     rr:predicateObjectMap [
-        rr:predicate :hasBrand;
-        rr:objectMap [ rr:parentTriplesMap <#TriplesMapBrand>; ]
+        rr:predicate schema:hasFAIR_URI;
+        rr:objectMap [ rr:column "FAIR_URI"; rr:datatype xsd:anyURI ];
     ];
     rr:predicateObjectMap [
-        rr:predicate :hasCategory;
-        rr:objectMap [ rr:parentTriplesMap <#TriplesMapCategory>; ]
+        rr:predicate schema:hasImageUrl;
+        rr:objectMap [ rr:column "Image_Url"; rr:datatype xsd:anyURI ];
     ];
     rr:predicateObjectMap [
-        rr:predicate :hasPrice;
-        rr:objectMap [ rr:parentTriplesMap <#TriplesMapPrice>; ]
+        rr:predicate schema:hasProductName;
+        rr:objectMap [ rr:column "ProductName"; rr:datatype xsd:string ];
     ];
     rr:predicateObjectMap [
-        rr:predicate :hasDiscountPrice;
-        rr:objectMap [ rr:parentTriplesMap <#TriplesMapDiscountPrice>; ]
+        rr:predicate schema:hasQuantity;
+        rr:objectMap [ rr:column "Quantity"; rr:datatype xsd:string ];
     ].
 
 <#TriplesMapBrand> a rr:TriplesMap;
@@ -58,8 +66,8 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#Brand/{Brand}{FAIR_URI}";
-        rr:class :Brand;
+        rr:template "https://vocab.um.es#Brand/{Brand}";
+        rr:class schema:Brand;
     ].
 
 <#TriplesMapCategory> a rr:TriplesMap;
@@ -68,12 +76,14 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#Category/{Category}{FAIR_URI}";
-        rr:class :Category;
+        rr:template "https://vocab.um.es#Category/{Category}";
+        rr:class schema:Category;
     ];
     rr:predicateObjectMap [
-        rr:predicate :hasSubCategory;
-        rr:objectMap [ rr:parentTriplesMap <#TriplesMapSubCategory>; ]
+        rr:predicate schema:hasSubCategory;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSubCategory>;
+        ];
     ].
 
 <#TriplesMapSubCategory> a rr:TriplesMap;
@@ -82,8 +92,8 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#SubCategory/{SubCategory}{FAIR_URI}";
-        rr:class :SubCategory;
+        rr:template "https://vocab.um.es#SubCategory/{SubCategory}";
+        rr:class schema:SubCategory;
     ].
 
 <#TriplesMapPrice> a rr:TriplesMap;
@@ -92,12 +102,12 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#Price/{Price}{FAIR_URI}";
-        rr:class :Price;
+        rr:template "https://vocab.um.es#Price/{Price}";
+        rr:class schema:Price;
     ];
     rr:predicateObjectMap [
-        rr:predicate :hasPriceValue;
-        rr:objectMap [ rml:reference "Price"; ]
+        rr:predicate schema:hasPriceValue;
+        rr:objectMap [ rr:column "Price"; rr:datatype xsd:float ];
     ].
 
 <#TriplesMapDiscountPrice> a rr:TriplesMap;
@@ -106,10 +116,10 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#DiscountPrice/{DiscountPrice}{FAIR_URI}";
-        rr:class :DiscountPrice;
+        rr:template "https://vocab.um.es#DiscountPrice/{DiscountPrice}";
+        rr:class schema:DiscountPrice;
     ];
     rr:predicateObjectMap [
-        rr:predicate :hasDiscountPriceValue;
-        rr:objectMap [ rml:reference "DiscountPrice"; ]
+        rr:predicate schema:hasDiscountPriceValue;
+        rr:objectMap [ rr:column "DiscountPrice"; rr:datatype xsd:float ];
     ].
