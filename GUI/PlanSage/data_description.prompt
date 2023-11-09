@@ -6,7 +6,6 @@ Hello, ChatGPT. Given your proficiency as an ontology engineer, I seek your guid
 **Task:**
 {input_task}
 
-**Data Description:**
 Critically analyze the json data content to generate a synthesized description of the data.
 Separate the columns synthesized descriptions by the possible relations with each of the classes to which they can be related.
 Summarize the provided json data content in a structured manner:
