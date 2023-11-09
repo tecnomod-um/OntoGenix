@@ -1,4 +1,4 @@
-I require your expert assistance to generate an ontology in RDF/XML syntax from a provided data description.
+I require your expert assistance to generate an ontology in TURTLE syntax from a provided data description.
 This task involves methodical interpretation of the data based on the given rationale and the set of
 instructions. Ensure that you grasp the context from the data, the rationale, and the provided instructions,
 strictly adhering to these directives.
@@ -11,8 +11,8 @@ The input details for your task are as follows:
 **Class to be defined by its corresponding data type properties:**
 {entity}
 
-**RDF/XML ONTOLOGY:**
-    <You must directly encode the RDF/XML content of the given entity, not the entire ontology.
+**TURTLE ONTOLOGY:**
+    <You must directly encode the TURTLE content of the given entity, not the entire ontology.
     Generate the data type properties for the class provided. Do not and labels nor comments or descriptions, do not generate
     object properties definitions, just classes and the data type properties for the class provided, and Do not add instances.>
 
