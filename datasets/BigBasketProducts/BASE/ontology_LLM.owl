@@ -1,0 +1,59 @@
+@prefix : <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+
+:Product a owl:Class .
+:Brand a owl:Class .
+:Category a owl:Class .
+:SubCategory a owl:Class .
+:Price a owl:Class .
+:DiscountPrice a owl:Class .
+
+:hasBrand a owl:ObjectProperty ;
+    owl:domain :Product ;
+    owl:range :Brand .
+
+:hasCategory a owl:ObjectProperty ;
+    owl:domain :Product ;
+    owl:range :Category .
+
+:hasSubCategory a owl:ObjectProperty ;
+    owl:domain :Category ;
+    owl:range :SubCategory .
+
+:hasPrice a owl:ObjectProperty ;
+    owl:domain :Product ;
+    owl:range :Price .
+
+:hasDiscountPrice a owl:ObjectProperty ;
+    owl:domain :Product ;
+    owl:range :DiscountPrice .
+
+:hasAbsoluteUrl a owl:DatatypeProperty ;
+    owl:domain :Product ;
+    owl:range xsd:string .
+
+:hasFAIR_URI a owl:DatatypeProperty ;
+    owl:domain :Product ;
+    owl:range xsd:string .
+
+:hasImageUrl a owl:DatatypeProperty ;
+    owl:domain :Product ;
+    owl:range xsd:string .
+
+:hasProductName a owl:DatatypeProperty ;
+    owl:domain :Product ;
+    owl:range xsd:string .
+
+:hasQuantity a owl:DatatypeProperty ;
+    owl:domain :Product ;
+    owl:range xsd:string .
+
+:hasPriceValue a owl:DatatypeProperty ;
+    owl:domain :Price ;
+    owl:range xsd:float .
+
+:hasDiscountPriceValue a owl:DatatypeProperty ;
+    owl:domain :DiscountPrice ;
+    owl:range xsd:float .

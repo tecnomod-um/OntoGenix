@@ -1,0 +1,55 @@
+**Foundational Prefix:**
+@prefix : <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+**Data Description:**
+1. Absolute_Url: text - The absolute URL of the product - Any valid URL
+2. Brand: text - The brand of the product - Any valid brand name
+3. Category: text - The category of the product - Any valid category name
+4. FAIR_URI: text - The FAIR URI of the product - Any valid URI
+5. Image_Url: text - The image URL of the product - Any valid URL
+6. ProductName: text - The name of the product - Any valid product name
+7. Quantity: text - The quantity of the product in the invoice - Any valid quantity
+8. SubCategory: text - The subcategory of the product - Any valid subcategory name
+9. DiscountPrice: Numerical - The discounted price of the product in the invoice - Any valid price
+10. Price: Numerical - The original price of the product - Any valid price
+
+**Classes:**
+1. :Invoice
+2. :Product
+3. :Brand
+4. :Category
+5. :SubCategory
+
+**Object Properties:**
+1. :hasProduct: :Invoice - :Product
+2. :hasBrand: :Product - :Brand
+3. :hasCategory: :Product - :Category
+4. :hasSubCategory: :Product - :SubCategory
+
+**Data Type Properties:**
+1. :hasAbsoluteUrl: :Product - xsd:anyURI
+2. :hasFairUri: :Product - xsd:anyURI
+3. :hasImageUrl: :Product - xsd:anyURI
+4. :hasProductName: :Product - xsd:string
+5. :hasQuantity: :Invoice - xsd:string
+6. :hasDiscountPrice: :Invoice - xsd:float
+7. :hasPrice: :Invoice - xsd:float
+
+**Link of each entity to external resources:**
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+**Cardinality:**
+| Column Name   | Cardinality |
+| ------------- | ----------- |
+| Absolute_Url  | one-to-one  |
+| Brand         | many-to-one |
+| Category      | one-to-one  |
+| FAIR_URI      | one-to-one  |
+| Image_Url     | one-to-one  |
+| ProductName   | one-to-one  |
+| Quantity      | one-to-many |
+| SubCategory   | one-to-one  |
+| DiscountPrice | one-to-many |
+| Price         | one-to-many |
