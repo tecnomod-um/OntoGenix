@@ -16,9 +16,8 @@ from enum import Enum
 class OntologyState(Enum):
     """Enum class to represent different states of ontology."""
     PROMPT_CRAFT = "PROMPT_CRAFT"
-    DESCRIPTION = "DATA_DESCRIPTION"
-    ONTOLOGY_OBJECT_PROPERTIES = "ONTOLOGY_OBJECT_PROPERTIES"
-    ONTOLOGY_DATA_PROPERTIES = "ONTOLOGY_DATA_PROPERTIES"
+    DATA_DESCRIPTION = "DATA_DESCRIPTION"
+    ONTOLOGY = "ONTOLOGY"
     ONTOLOGY_ENTITY = "ONTOLOGY_ENTITY"
     MAPPING = "MAPPING"
 
@@ -62,10 +61,7 @@ class GuiManager(AbstractLlm, ABC):
 
     def update_memories(self, response: str, first: bool = True):
         try:
-            if first:
-                self.short_term_memory = self.extract_text(response, "**Output Memory:**", "**Output Tasks:**").strip()
-            else:
-                self.short_term_memory = self.extract_text(response, "**Updated Memory:**", "**Output Tasks:**").strip()
+            self.short_term_memory = self.extract_text(response, "**Updated Memory:**", "**Instructions:**").strip()
         except ValueError as e:
             print(f"An error occurred: {e}")
 
@@ -158,7 +154,7 @@ functions_data = [
 
 metadata = {
     'role': "you are a powerful ontology engineer that must select the appropriate function to be called.",
-    'model': 'gpt-3.5-turbo',
+    'model': 'gpt-3.5-turbo-1106',
     'api_key_path': "./GUI/.env",
     'functions_data': functions_data
 }
@@ -172,7 +168,7 @@ function_caller.interaction(prompt, select_process)
 metadata = {
     'role': "./testing/gui_manager_role.prompt",
     'instructions': "./testing/gui_manager_role.prompt",
-    'model': 'gpt-3.5-turbo',
+    'model': 'gpt-4-1106-preview',
     'api_key_path': "./GUI/.env"
 }
 gui_manager = GuiManager(metadata)

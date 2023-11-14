@@ -22,10 +22,9 @@ that should be integrated into the memory along with the reasons for doing so.>
 structure of the input memory but reflect the changes proposed in your rationale. Ensure the updated memory is succinct,
 containing only essential information and not exceeding 20 sentences or 500 words.>
 
+**Instructions:**
 Devise instructions for the forthcoming steps, suggesting potential continuations of the previous tasks.
 The format should be as follows:
-
-**Instructions:**
 Instruction : <Provide an instruction for the next task in the plan, offering an alternative continuation based on the updated plan. Include reasoning for the proposed direction.>
 
 Your responsibility is to utilize the input plan, input instructions, short-term memory data to
