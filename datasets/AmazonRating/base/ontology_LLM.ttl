@@ -1,0 +1,57 @@
+@prefix um: <https://vocab.um.es#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+
+### Classes
+um:Product a owl:Class .
+um:User a owl:Class .
+um:Review a owl:Class .
+um:Timestamp a owl:Class .
+um:Rating a owl:Class ;
+    rdfs:subClassOf um:Review .
+
+### Object Properties
+um:hasReview a owl:ObjectProperty ;
+    rdfs:domain um:User ;
+    rdfs:range um:Review .
+
+um:reviewedProduct a owl:ObjectProperty ;
+    rdfs:domain um:Review ;
+    rdfs:range um:Product .
+
+um:hasRating a owl:ObjectProperty ;
+    rdfs:domain um:Review ;
+    rdfs:range um:Rating .
+
+um:hasTimestamp a owl:ObjectProperty ;
+    rdfs:domain um:Review ;
+    rdfs:range um:Timestamp .
+
+### Data Type Properties
+um:hasFAIR_URI a owl:DatatypeProperty ;
+    rdfs:domain um:Review ;
+    rdfs:range xsd:string .
+
+um:hasProductId a owl:DatatypeProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range xsd:string .
+
+um:hasRatingValue a owl:DatatypeProperty ;
+    rdfs:domain um:Rating ;
+    rdfs:range xsd:int .
+
+um:hasUserId a owl:DatatypeProperty ;
+    rdfs:domain um:User ;
+    rdfs:range xsd:string .
+
+um:hasTimestampValue a owl:DatatypeProperty ;
+    rdfs:domain um:Timestamp ;
+    rdfs:range xsd:dateTimeStamp .
+
+### Links to external resources
+um:ProductId owl:sameAs schema:Product .
+um:UserId owl:sameAs schema:Person .
+um:Rating owl:sameAs schema:Rating .
+um:Timestamp owl:sameAs xsd:dateTimeStamp .

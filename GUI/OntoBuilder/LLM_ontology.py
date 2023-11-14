@@ -31,12 +31,14 @@ class LlmOntology(AbstractLlm):
         self._dataset_path = path
 
     async def interact(self,
+                        json_data: str = None,
                         data_description: str = None,
                         entity: str = None,
                         state: OntologyState = None):
         try:
             if state.value == OntologyState.ONTOLOGY.value:
                 self.current_prompt = self.ontology_instructions.format(
+                    json_data=json_data,
                     data_description=data_description
                 )
             elif state.value == OntologyState.ONTOLOGY_ENTITY.value:

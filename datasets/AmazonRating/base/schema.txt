@@ -1,0 +1,39 @@
+
+
+**Foundational Prefix:**
+@prefix um: <https://vocab.um.es#> .
+
+**Data Description:**
+1. FAIR_URI: text - unique identifier for each record - no range specified
+2. ProductId: text - identifier for products - no range specified
+3. Rating: categorical - assessment score given to a product - 1 to 5
+4. UserId: text - identifier for users - no range specified
+5. Timestamp: Numerical - time when the rating was recorded - 1081900800 to 1405987200
+
+**Classes:**
+1. Product
+2. User
+3. Review
+4. Timestamp
+
+**Subclasses:**
+1. Rating: subclassof -> Review
+
+**Object Properties:**
+1. hasReview: domain - User; range - Review
+2. reviewedProduct: domain - Review; range - Product
+3. hasRating: domain - Review; range - Rating
+4. hasTimestamp: domain - Review; range - Timestamp
+
+**Data Type Properties:**
+1. hasFAIR_URI: domain - Review; range - xsd:string
+2. hasProductId: domain - Product; range - xsd:string
+3. hasRatingValue: domain - Rating; range - xsd:int
+4. hasUserId: domain - User; range - xsd:string
+5. hasTimestampValue: domain - Timestamp; range - xsd:dateTimeStamp
+
+**Link of each entity to external resources:**
+1. ProductId: owl:sameAs - schema:Product
+2. UserId: owl:sameAs - schema:Person
+3. Rating: owl:sameAs - schema:Rating
+4. Timestamp: owl:sameAs - XMLSchema#:dateTimeStamp

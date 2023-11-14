@@ -189,6 +189,7 @@ class GuiBehavior(QMainWindow):
         """Generate the ontology based on user's prompt."""
         await self._process_interaction(
             self.ontology_builder.interact,
+            json_data=self.json_data,
             data_description=self.plan_builder.data_description,
             entity=prompt,
             state=self.state,

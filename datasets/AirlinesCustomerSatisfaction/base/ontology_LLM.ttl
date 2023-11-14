@@ -1,0 +1,225 @@
+@prefix : <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:Age a owl:Class .
+:ArrivalDelayInMinutes a owl:Class .
+:BaggageHandling a owl:Class .
+:CheckinService a owl:Class .
+:Cleanliness a owl:Class .
+:DepartureDelayInMinutes a owl:Class .
+:DepartureArrivalTimeConvenient a owl:Class .
+:EaseOfOnlineBooking a owl:Class .
+:FlightDistance a owl:Class .
+:FoodAndDrink a owl:Class .
+:GateLocation a owl:Class .
+:InflightEntertainment a owl:Class .
+:InflightWifiService a owl:Class .
+:LegRoomService a owl:Class .
+:OnBoardService a owl:Class .
+:OnlineBoarding a owl:Class .
+:OnlineSupport a owl:Class .
+:SeatComfort a owl:Class .
+:Class a owl:Class .
+:CustomerType a owl:Class .
+:FAIR_URI a owl:Class .
+:Gender a owl:Class .
+:TypeOfTravel a owl:Class .
+:satisfaction a owl:Class .
+
+:Individual a owl:Class .
+:Flight a owl:Class .
+:Record a owl:Class .
+
+:hasAge a owl:ObjectProperty ;
+    rdfs:domain :Individual ;
+    rdfs:range :Age .
+
+:hasArrivalDelay a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :ArrivalDelayInMinutes .
+
+:hasBaggageHandlingRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :BaggageHandling .
+
+:hasCheckinServiceRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :CheckinService .
+
+:hasCleanlinessRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :Cleanliness .
+
+:hasDepartureDelay a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :DepartureDelayInMinutes .
+
+:hasDepartureArrivalTimeConvenienceRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :DepartureArrivalTimeConvenient .
+
+:hasEaseOfOnlineBookingRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :EaseOfOnlineBooking .
+
+:hasFlightDistance a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :FlightDistance .
+
+:hasFoodAndDrinkRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :FoodAndDrink .
+
+:hasGateLocationRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :GateLocation .
+
+:hasInflightEntertainmentRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :InflightEntertainment .
+
+:hasInflightWifiServiceRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :InflightWifiService .
+
+:hasLegRoomServiceRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :LegRoomService .
+
+:hasOnBoardServiceRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :OnBoardService .
+
+:hasOnlineBoardingRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :OnlineBoarding .
+
+:hasOnlineSupportRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :OnlineSupport .
+
+:hasSeatComfortRating a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :SeatComfort .
+
+:hasClass a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :Class .
+
+:hasCustomerType a owl:ObjectProperty ;
+    rdfs:domain :Individual ;
+    rdfs:range :CustomerType .
+
+:hasFAIR_URI a owl:ObjectProperty ;
+    rdfs:domain :Record ;
+    rdfs:range :FAIR_URI .
+
+:hasGender a owl:ObjectProperty ;
+    rdfs:domain :Individual ;
+    rdfs:range :Gender .
+
+:hasTypeOfTravel a owl:ObjectProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range :TypeOfTravel .
+
+:hasSatisfaction a owl:ObjectProperty ;
+    rdfs:domain :Individual ;
+    rdfs:range :satisfaction .
+
+:hasAge a owl:DatatypeProperty ;
+    rdfs:domain :Individual ;
+    rdfs:range xsd:integer .
+
+:hasArrivalDelay a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasBaggageHandlingRating a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasCheckinServiceRating a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasCleanlinessRating a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasDepartureDelay a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasDepartureArrivalTimeConvenienceRating a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasEaseOfOnlineBookingRating a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasFlightDistance a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasFoodAndDrinkRating a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasGateLocationRating a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasInflightEntertainmentRating a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasInflightWifiServiceRating a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasLegRoomServiceRating a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasOnBoardServiceRating a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasOnlineBoardingRating a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasOnlineSupportRating a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasSeatComfortRating a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:integer .
+
+:hasClass a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:string .
+
+:hasCustomerType a owl:DatatypeProperty ;
+    rdfs:domain :Individual ;
+    rdfs:range xsd:string .
+
+:hasFAIR_URI a owl:DatatypeProperty ;
+    rdfs:domain :Record ;
+    rdfs:range xsd:string .
+
+:hasGender a owl:DatatypeProperty ;
+    rdfs:domain :Individual ;
+    rdfs:range xsd:string .
+
+:hasTypeOfTravel a owl:DatatypeProperty ;
+    rdfs:domain :Flight ;
+    rdfs:range xsd:string .
+
+:hasSatisfaction a owl:DatatypeProperty ;
+    rdfs:domain :Individual ;
+    rdfs:range xsd:string .

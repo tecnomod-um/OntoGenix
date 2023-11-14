@@ -1,0 +1,59 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <https://vocab.um.es#> .
+
+:Customer a owl:Class .
+
+:Address a owl:Class .
+
+:Identifier a owl:Class .
+
+:Customer_ID a owl:Class ;
+    rdfs:subClassOf :Identifier .
+
+:Customer_Unique_ID a owl:Class ;
+    rdfs:subClassOf :Identifier .
+
+:FAIR_URI a owl:Class ;
+    rdfs:subClassOf :Identifier .
+
+:City a owl:Class ;
+    rdfs:subClassOf :Address .
+
+:State a owl:Class ;
+    rdfs:subClassOf :Address .
+
+:Zip_Code_Prefix a owl:Class ;
+    rdfs:subClassOf :Address .
+
+:hasAddress a owl:ObjectProperty ;
+    rdfs:domain :Customer ;
+    rdfs:range :Address .
+
+:hasIdentifier a owl:ObjectProperty ;
+    rdfs:domain :Customer ;
+    rdfs:range :Identifier .
+
+:hasCustomerCity a owl:DatatypeProperty ;
+    rdfs:domain :Address ;
+    rdfs:range xsd:string .
+
+:hasCustomerState a owl:DatatypeProperty ;
+    rdfs:domain :Address ;
+    rdfs:range xsd:string .
+
+:hasCustomerZipCodePrefix a owl:DatatypeProperty ;
+    rdfs:domain :Address ;
+    rdfs:range xsd:integer .
+
+:hasFAIR_URI a owl:DatatypeProperty ;
+    rdfs:domain :Identifier ;
+    rdfs:range xsd:string .
+
+:hasCustomerID a owl:DatatypeProperty ;
+    rdfs:domain :Identifier ;
+    rdfs:range xsd:string .
+
+:hasCustomerUniqueID a owl:DatatypeProperty ;
+    rdfs:domain :Identifier ;
+    rdfs:range xsd:string .

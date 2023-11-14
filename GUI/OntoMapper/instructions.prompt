@@ -44,8 +44,7 @@ Structure your output in the following format:
         ```
 Generate appropriate URIs and combine columns if necessary.
 Do not use "http://example.org" or "http://example.com" instead make use of the base prefix.
-Create a mapping for each class.
-Do not forget to add the prefixes.
-Do not shorten your answer.
+Do not shorten your answer, finish completely the mapping definition!
+Do not shorten your answer with notes like this: "# Additional mappings for entities...would follow the same pattern as above."
 Do not explain your answer, just write the rml code.
 Do no write notes at the end of your writing.

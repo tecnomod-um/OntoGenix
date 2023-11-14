@@ -1,0 +1,127 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+
+<#TriplesMapInvoice> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Invoice/{InvoiceNo}{FAIR_URI}";
+        rr:class um:Invoice
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:InvoiceDate;
+        rr:objectMap [ rml:reference "InvoiceDate" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasSalesArticle;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSalesArticle>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:customer;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCustomer>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:country;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCountry>;
+        ]
+    ].
+
+<#TriplesMapSalesArticle> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/SalesArticle/{StockCode}{FAIR_URI}";
+        rr:class um:SalesArticle
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:Quantity;
+        rr:objectMap [ rml:reference "Quantity" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:Description;
+        rr:objectMap [ rml:reference "Description" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:product;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapProduct>;
+        ]
+    ].
+
+<#TriplesMapCustomer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Customer/{CustomerID}";
+        rr:class um:Customer
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [ rr:constant schema:Person ]
+    ].
+
+<#TriplesMapCountry> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Country/{Country}{FAIR_URI}";
+        rr:class um:Country
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [ rr:constant schema:Country ]
+    ].
+
+<#TriplesMapProduct> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Product/{StockCode}{FAIR_URI}";
+        rr:class um:Product
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [ rr:constant schema:Product ]
+    ].
+
+<#TriplesMapUnitPriceSpecification> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/UnitPriceSpecification/{StockCode}{FAIR_URI}";
+        rr:class um:UnitPriceSpecification
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:InvoicePrice;
+        rr:objectMap [ rml:reference "UnitPrice" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:PriceType;
+        rr:objectMap [ rr:constant "Unit" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [ rr:constant schema:UnitPriceSpecification ]
+    ].

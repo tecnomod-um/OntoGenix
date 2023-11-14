@@ -1,0 +1,53 @@
+
+
+**Foundational Prefix:**
+@prefix um: <https://vocab.um.es#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+
+**Data Description:**
+1. Country: text - The country associated with the data entry - [18 unique values]
+2. Description: text - Textual description of an item - [737 unique values]
+3. FAIR_URI: text - A unique identifier for the data entry - [1000 unique values]
+4. InvoiceDate: text - The date when the invoice was issued - [924 unique values]
+5. InvoiceNo: text - A unique number identifying the invoice - [923 unique values]
+6. StockCode: text - A unique code identifying a stock item - [730 unique values]
+7. CustomerID: Numerical - A unique identifier for a customer - [min: 12362, max: 18272, mean: 15161.9868073879]
+8. Quantity: Numerical - The quantity of items - [min: -360, max: 600, mean: 10.935]
+9. UnitPrice: Numerical - The price per unit of an item - [min: 0.0, max: 50.0, mean: 3.393771]
+
+**Classes:**
+1. Invoice
+2. Customer
+3. Product
+4. Transaction
+
+**Subclasses:**
+1. InvoiceEntry: subclassof -> Invoice
+2. ProductDescription: subclassof -> Product
+3. ProductPrice: subclassof -> Product
+4. ProductStock: subclassof -> Product
+
+**Object Properties:**
+1. hasCustomer: domain - Invoice, range - Customer
+2. hasProduct: domain - Invoice, range - Product
+3. hasTransaction: domain - Customer, range - Transaction
+
+**Data Type Properties:**
+1. countryName: domain - Invoice, range - xsd:string
+2. descriptionText: domain - ProductDescription, range - xsd:string
+3. fairURI: domain - Invoice, range - xsd:string
+4. invoiceDate: domain - Invoice, range - xsd:date
+5. invoiceNumber: domain - Invoice, range - xsd:string
+6. stockCode: domain - ProductStock, range - xsd:string
+7. customerID: domain - Customer, range - xsd:integer
+8. quantity: domain - Transaction, range - xsd:integer
+9. unitPrice: domain - ProductPrice, range - xsd:decimal
+
+**Link of each entity to external resources:**
+1. Invoice, Customer, Product, Transaction: rdfs:subClassOf schema:Thing
+2. countryName, descriptionText, fairURI, invoiceDate, invoiceNumber, stockCode: rdfs:subPropertyOf schema:Text
+3. customerID: rdfs:subPropertyOf schema:Number
+4. quantity, unitPrice: rdfs:subPropertyOf schema:QuantitativeValue

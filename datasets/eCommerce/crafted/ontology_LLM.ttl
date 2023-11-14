@@ -1,0 +1,63 @@
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+
+### Classes
+um:Invoice a owl:Class .
+um:SalesArticle a owl:Class .
+um:Customer a owl:Class .
+um:Country a owl:Class .
+um:Product a owl:Class .
+um:UnitPriceSpecification a owl:Class .
+
+### Subclasses
+um:Product rdfs:subClassOf um:SalesArticle .
+um:UnitPriceSpecification rdfs:subClassOf schema:PriceSpecification .
+
+### Object Properties
+um:hasSalesArticle a owl:ObjectProperty ;
+    rdfs:domain um:Invoice ;
+    rdfs:range um:SalesArticle .
+
+um:customer a owl:ObjectProperty ;
+    rdfs:domain um:Invoice ;
+    rdfs:range um:Customer .
+
+um:country a owl:ObjectProperty ;
+    rdfs:domain um:Invoice ;
+    rdfs:range um:Country .
+
+um:product a owl:ObjectProperty ;
+    rdfs:domain um:SalesArticle ;
+    rdfs:range um:Product .
+
+um:InvoicePrice a owl:ObjectProperty ;
+    rdfs:domain um:UnitPriceSpecification ;
+    rdfs:range xsd:decimal .
+
+um:PriceType a owl:ObjectProperty ;
+    rdfs:domain um:UnitPriceSpecification ;
+    rdfs:range xsd:string .
+
+### Data Type Properties
+um:InvoiceDate a owl:DatatypeProperty ;
+    rdfs:domain um:Invoice ;
+    rdfs:range xsd:string .
+
+um:Quantity a owl:DatatypeProperty ;
+    rdfs:domain um:SalesArticle ;
+    rdfs:range xsd:integer .
+
+um:Description a owl:DatatypeProperty ;
+    rdfs:domain um:SalesArticle ;
+    rdfs:range xsd:string .
+
+### Links to external resources
+um:CustomerID owl:sameAs schema:Person .
+um:Country owl:sameAs schema:Country .
+um:Product owl:sameAs schema:Product .
+um:UnitPriceSpecification owl:sameAs schema:UnitPriceSpecification .
+um:InvoiceDate owl:sameAs schema:DateTime .
+um:Quantity owl:sameAs schema:QuantitativeValue .
+um:Description owl:sameAs schema:Description .
