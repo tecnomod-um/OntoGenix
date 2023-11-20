@@ -1,23 +1,51 @@
-@prefix rr: <http://www.w3.org/ns/r2rml#>.
-@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
-@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix owl: <http://www.w3.org/2002/07/owl#>.
-@prefix schema: <http://schema.org/>.
-@prefix um: <https://vocab.um.es#>.
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix um: <https://vocab.um.es#> .
+@prefix schema: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
-<#TriplesMapResource> a rr:TriplesMap;
+<#TriplesMapReview> a rr:TriplesMap;
     rml:logicalSource [
         rml:source "Chunk_ratings_Beauty.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#Resource/{FAIR_URI}";
-        rr:class um:Resource
+        rr:template "https://vocab.um.es#Review/{FAIR_URI}";
+        rr:class um:Review
     ];
     rr:predicateObjectMap [
         rr:predicate um:hasFAIR_URI;
-        rr:objectMap [ rml:reference "FAIR_URI" ]
+        rr:objectMap [ rr:column "FAIR_URI" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasReview;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapUser>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:reviewedProduct;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapProduct>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasRating;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapRating>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasTimestamp;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTimestamp>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [ rr:column "FAIR_URI" ]
     ].
 
 <#TriplesMapProduct> a rr:TriplesMap;
@@ -31,13 +59,15 @@
     ];
     rr:predicateObjectMap [
         rr:predicate um:hasProductId;
-        rr:objectMap [ rml:reference "ProductId" ]
+        rr:objectMap [ rr:column "ProductId" ]
     ];
     rr:predicateObjectMap [
-        rr:predicate um:hasReview;
-        rr:objectMap [
-            rr:parentTriplesMap <#TriplesMapProductReview>;
-        ]
+        rr:predicate schema:Product;
+        rr:objectMap [ rr:column "ProductId" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [ rr:column "ProductId" ]
     ].
 
 <#TriplesMapUser> a rr:TriplesMap;
@@ -51,51 +81,55 @@
     ];
     rr:predicateObjectMap [
         rr:predicate um:hasUserId;
-        rr:objectMap [ rml:reference "UserId" ]
+        rr:objectMap [ rr:column "UserId" ]
     ];
     rr:predicateObjectMap [
-        rr:predicate um:hasEvent;
-        rr:objectMap [
-            rr:parentTriplesMap <#TriplesMapUserEvent>;
-        ]
+        rr:predicate schema:Person;
+        rr:objectMap [ rr:column "UserId" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [ rr:column "UserId" ]
     ].
 
-<#TriplesMapProductReview> a rr:TriplesMap;
+<#TriplesMapRating> a rr:TriplesMap;
     rml:logicalSource [
         rml:source "Chunk_ratings_Beauty.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#ProductReview/{FAIR_URI}";
-        rr:class um:ProductReview
+        rr:template "https://vocab.um.es#Rating/{FAIR_URI}";
+        rr:class um:Rating
     ];
     rr:predicateObjectMap [
-        rr:predicate um:hasRating;
+        rr:predicate um:hasRatingValue;
         rr:objectMap [
-            rml:reference "Rating";
-            rr:datatype xsd:integer
+            rr:column "Rating";
+            rr:datatype xsd:int
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate um:reviewedBy;
-        rr:objectMap [
-            rr:parentTriplesMap <#TriplesMapUser>;
-        ]
+        rr:predicate schema:Rating;
+        rr:objectMap [ rr:column "Rating" ]
     ].
 
-<#TriplesMapUserEvent> a rr:TriplesMap;
+<#TriplesMapTimestamp> a rr:TriplesMap;
     rml:logicalSource [
         rml:source "Chunk_ratings_Beauty.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#UserEvent/{FAIR_URI}";
-        rr:class um:UserEvent
+        rr:template "https://vocab.um.es#Timestamp/{FAIR_URI}";
+        rr:class um:Timestamp
     ];
     rr:predicateObjectMap [
-        rr:predicate um:hasTimestamp;
+        rr:predicate um:hasTimestampValue;
         rr:objectMap [
-            rml:reference "Timestamp";
+            rr:column "Timestamp";
             rr:datatype xsd:dateTimeStamp
         ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:DateTime;
+        rr:objectMap [ rr:column "Timestamp" ]
     ].
