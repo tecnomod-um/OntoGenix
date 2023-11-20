@@ -3,36 +3,10 @@ import urllib.parse
 import hashlib
 import json
 
+def read_csv_file(file: str, encoding: str = 'latin1') -> pd.DataFrame:
+    """Read the CSV file into a pandas DataFrame."""
+    return pd.read_csv(file, low_memory=False, encoding=encoding)
 
-def dataframe2prettyjson(dataframe: pd.DataFrame, file: str = None, save: bool = False) -> str:
-    """
-    Convert a Pandas DataFrame to pretty JSON and optionally save it to a file.
-
-    Args:
-        dataframe (pd.DataFrame): The input DataFrame.
-        file (str): The file path to save the pretty JSON.
-        save (bool): Whether to save the JSON to a file.
-
-    Returns:
-        str: The pretty JSON string representation.
-    """
-    try:
-        json_data = dataframe.to_json(orient='index')
-        parsed = json.loads(json_data)
-        pretty_json = json.dumps(parsed, indent=4)
-
-        if save and file:
-            with open(file, 'w') as f:
-                f.write(pretty_json)
-
-        return pretty_json
-    except json.JSONDecodeError as je:
-        print(f"JSON Decode Error: {str(je)}")
-    except ValueError as ve:
-        print(f"Value Error: {str(ve)}")
-    except Exception as e:
-        print(f"An unexpected error occurred: {str(e)}")
-        return ""
 
 
 def clean_slug(text):
@@ -123,9 +97,7 @@ def find_unique_identifier(df):
     return None
 
 
-def read_csv_file(file: str, encoding: str = 'latin1') -> pd.DataFrame:
-    """Read the CSV file into a pandas DataFrame."""
-    return pd.read_csv(file, low_memory=False, encoding=encoding)
+
 
 
 def describe_numeric_columns(dataset: pd.DataFrame) -> pd.DataFrame:
@@ -211,6 +183,38 @@ def csv_data_preprocessing(file: str, encoding: str = 'latin1'):
 
     print(dataset.head())
     return csv_statistical_description(dataset)
+
+
+
+def dataframe2prettyjson(dataframe: pd.DataFrame, file: str = None, save: bool = False) -> str:
+    """
+    Convert a Pandas DataFrame to pretty JSON and optionally save it to a file.
+
+    Args:
+        dataframe (pd.DataFrame): The input DataFrame.
+        file (str): The file path to save the pretty JSON.
+        save (bool): Whether to save the JSON to a file.
+
+    Returns:
+        str: The pretty JSON string representation.
+    """
+    try:
+        json_data = dataframe.to_json(orient='index')
+        parsed = json.loads(json_data)
+        pretty_json = json.dumps(parsed, indent=4)
+
+        if save and file:
+            with open(file, 'w') as f:
+                f.write(pretty_json)
+
+        return pretty_json
+    except json.JSONDecodeError as je:
+        print(f"JSON Decode Error: {str(je)}")
+    except ValueError as ve:
+        print(f"Value Error: {str(ve)}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {str(e)}")
+        return ""
 
 file = 'datasets/AirlinesCustomerSatisfaction/AirlinesCustomerSatisfaction.csv'
 # Example usage:
