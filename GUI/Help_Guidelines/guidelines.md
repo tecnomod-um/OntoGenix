@@ -11,13 +11,18 @@
 
 ---
 
-## **2. ONTOLOGY GENERATION**
+## **2. PROMPT CRAFTING**
+
+- **Purpose**: A step towards the generation of the prompt that guides to the objective high level structure description of the ontology.
+
+---
+## **3. ONTOLOGY GENERATION**
 
 - **Purpose**: The main objective here is to construct the ontology. This will be done through a sequence of structured sub-steps:
 
 ---
 
-### **2.1. DESCRIPTION**
+### **3.1. DESCRIPTION**
 
 - **Purpose**: Two primary tasks will be carried out:
   - Provide a concise summary of the dataset using natural language.
@@ -29,23 +34,15 @@
 
 ---
 
-### **2.2. ONTOLOGY_OBJECT_PROPERTIES**
+### **3.2. ONTOLOGY**
 
-- **Purpose**: This step is pivotal for creating the ontology's OWL definition, with a spotlight on classes and their associated object properties.
+- **Purpose**: This step is pivotal for creating the ontology's OWL definition, with a spotlight on classes and their associated object and data properties.
   
 - **Note**: This process is automatic and doesn't require a prompt.
 
 ---
 
-### **2.3. ONTOLOGY_DATA_PROPERTIES**
-
-- **Purpose**: Here, the OWL definition of the ontology is generated. The spotlight is on classes and their data properties.
-
-- **Special Case**: If any class has an extensive set of data properties, it's crucial to highlight the specific class in the prompt. This will assist in tailoring its data properties.
-
----
-
-### **2.4. ONTOLOGY_ENTITY**
+### **3.3. ONTOLOGY_ENTITY**
 
 - **Purpose**: Tailored to formulating the ontology's OWL definition for specific entities.
   
@@ -79,8 +76,10 @@ All these tasks are to be done for the entity: `{EntityName}`
 
 ---
 
-## **3. MAPPING**
+## **4. MAPPING**
 
 - **Purpose**: In this phase, a mapping is created by making use of the ontology in conjunction with the original CSV dataset.
+
+- **Note**: This process is automatic and doesn't require a prompt.
 
 ---

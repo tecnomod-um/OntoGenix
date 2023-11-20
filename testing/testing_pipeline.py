@@ -85,8 +85,7 @@ async for chunk_data in planner.interaction(
 from OntoBuilder.LLM_ontology import LlmOntology
 # set metadata
 onto_metadata = {
-        'object_properties_instructions': './OntoBuilder/object_properties_instructions.prompt',
-        'data_properties_instructions': './OntoBuilder/data_properties_instructions.prompt',
+        'object_properties_instructions': './OntoBuilder/ontology_instructions.prompt',
         'entity_improvement': './OntoBuilder/entity_improvement.prompt',
         'dataset': base_path + dataset_folder + '/' + dataset_file,
         'role': 'You are a powerful ontology engineer that generates OWL ontologies in RDF/XML format.',

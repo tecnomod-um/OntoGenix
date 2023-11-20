@@ -1,0 +1,6 @@
+I want the ontology to be focused on the "InvoiceNo" as "invoice" class and "StockCode" as "sales article" class.
+Each "invoice" should connect to at least one "sales article" using the object property "hasSalesArticle".
+The "invoice" class should have as object properties "customer" and "country", and as data type properties "InvoiceDate".
+The "sales article" class should have as object properties the "StockCode" as a "product" and "UnitPriceSpecification", and as data type properties "Quantity" and "Description".
+The "UnitPrice" can be represented with an external class from schema.org "UnitPriceSpecification" having "InvoicePrice" and "PriceType" as object properties.
+

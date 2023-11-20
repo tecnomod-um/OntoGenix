@@ -121,17 +121,18 @@ def csv2dataset(file: str, max_tokens: int = 100, encoding: str = 'latin1') -> p
     return dataset
 
 
+
+def read_csv_file(file: str, encoding: str = 'latin1') -> pd.DataFrame:
+    """Read the CSV file into a pandas DataFrame."""
+    return pd.read_csv(file, low_memory=False, encoding=encoding)
+
+
 def find_unique_identifier(df):
     for column in df.columns:
         # Check if all values in the column are unique
         if df[column].is_unique and not df[column].hasnans:
             return column
     return None
-
-
-def read_csv_file(file: str, encoding: str = 'latin1') -> pd.DataFrame:
-    """Read the CSV file into a pandas DataFrame."""
-    return pd.read_csv(file, low_memory=False, encoding=encoding)
 
 
 def describe_numeric_columns(dataset: pd.DataFrame) -> pd.DataFrame:

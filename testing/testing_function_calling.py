@@ -1,25 +1,118 @@
 import os
 import json
-import openai
+from openai import OpenAI
 from abc import ABC
-import openai
 import os
 from dotenv import dotenv_values
-from GUI.LLM_base.LlmBase import AbstractLlm
 
 from abc import ABC
 from typing import Optional
-
-from GUI.LLM_base.LlmBase import AbstractLlm
 from enum import Enum
 
 class OntologyState(Enum):
     """Enum class to represent different states of ontology."""
+    LOAD_DATASET = "LOAD_DATASET"
     PROMPT_CRAFT = "PROMPT_CRAFT"
     DATA_DESCRIPTION = "DATA_DESCRIPTION"
     ONTOLOGY = "ONTOLOGY"
     ONTOLOGY_ENTITY = "ONTOLOGY_ENTITY"
     MAPPING = "MAPPING"
+
+
+def load_string_from_file(file_path):
+    with open(file_path, 'r') as file:
+        return file.read()
+
+class AbstractLlm(ABC):
+
+    def __init__(self, model, name, instructions, tools, files: list):
+        # get api key
+        config = dotenv_values(metadata['api_key_path'])
+        # agent entities
+        self.client = OpenAI(api_key = config['OPENAI_API_KEY'])
+        self.assistant = self.client.beta.assistants.create(
+            model=model,
+            name=name,
+            instructions=instructions,
+            tools=tools,
+            file_ids=files
+        )
+        self.thread = client.beta.threads.create()
+
+    def add_message(self, thread_id=None, role="user", content=""):
+        message = self.client.beta.threads.messages.create(
+            thread_id=thread_id,
+            role=role,
+            content=content
+        )
+        return message
+
+    def run_assistant(self, thread_id=None, assistant_id=None):
+        run = self.client.beta.threads.runs.create(
+            thread_id=thread_id,
+            assistant_id=assistant_id
+        )
+        return run
+
+    def check_status(self, thread_id=None, run_id=None):
+        run = self.client.beta.threads.runs.retrieve(
+            thread_id=thread_id,
+            run_id=run_id
+        )
+        return run
+
+def load_dataset():
+    print("dataset loaded")
+
+def prompt_crafting():
+    print('structure_definition')
+
+def ontology_building():
+    print('ontology_building')
+
+def mapping():
+    print('mapping')
+
+def exit():
+    print("exit")
+
+
+tools=[{
+    "type": "function",
+    "function": {
+      "name": "load_dataset",
+      "description": "Loads a CSV dataset",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "path": {"type": "string", "description": "The path to the csv dataset"}
+        },
+        "required": ["path"]
+      }
+    }
+  }, {
+    "type": "function",
+    "function": {
+      "name": "prompt_crafting",
+      "description": "Helps to craft a prompt",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "location": {"type": "string", "description": "The city and state e.g. San Francisco, CA"},
+        },
+        "required": ["location"]
+      }
+    }
+  }]
+
+llm_base = AbstractLlm(
+    "gpt-4-1106-preview",
+    "base",
+    load_string_from_file("./testing/gui_manager_role.prompt")
+
+)
+
+
 
 class GuiManager(AbstractLlm, ABC):
     """
@@ -75,22 +168,15 @@ class FunctionCaller(ABC):
 
         self.role = metadata['role']
         self.model = metadata['model']
-        self.functions_data = metadata['functions_data']
+        self.tools = metadata['tools']
 
     def interaction(self, content: str, function_name: object, temperature=0):
         try:
-            response = openai.ChatCompletion.create(
+            assystant = openai.ChatCompletion.create(
+                    name="Function Caller",
+                    instructions=self.role,
                     model=self.model,
-                    messages=[{
-                        'role': 'system',
-                        'content': self.role
-                    }, {
-                        'role': 'user',
-                        'content': content,
-                    }],
-                    temperature=temperature,
-                    functions=self.functions_data,
-                    function_call={"name": "select_process"}
+                    tools=self.tools,
             )
             self._process_function_response(response, function_name)
 
@@ -110,20 +196,6 @@ class FunctionCaller(ABC):
 
 
 
-def load_dataset():
-    print("dataset loaded")
-
-def structure_definition():
-    print('structure_definition')
-
-def ontology_building():
-    print('ontology_building')
-
-def mapping():
-    print('mapping')
-
-def exit():
-    print("exit")
 
 def select_process(method: str):
     AVAILABLE_FUNCTIONS[method]()

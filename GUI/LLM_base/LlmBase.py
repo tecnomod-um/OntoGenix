@@ -1,14 +1,16 @@
 from abc import ABC
-import openai
+from openai import OpenAI
 import os
 from dotenv import dotenv_values
+
 
 class AbstractLlm(ABC):
 
     def __init__(self, metadata: dict):
 
         config = dotenv_values(metadata['api_key_path'])
-        openai.api_key = config['OPENAI_API_KEY']
+
+        self.client = OpenAI(api_key = config['OPENAI_API_KEY'])
 
         self.role = metadata['role']
         self.model = metadata['model']
@@ -18,7 +20,7 @@ class AbstractLlm(ABC):
         self.stream_control = True
 
     def get_api_response(self, content: str, temperature=0, max_tokens=None, stream=False):
-        response = openai.ChatCompletion.create(
+        completion = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{
                     'role': 'system',
@@ -32,11 +34,11 @@ class AbstractLlm(ABC):
                 stream=stream
         )
 
-        self.answer = response['choices'][0]['message']['content']
+        self.answer = completion.choices[0].message.content
 
     async def get_async_api_response(self, content: str, temperature=0, max_tokens=None, stream=True):
         self.answer = ""
-        async for chunk in await openai.ChatCompletion.acreate(
+        completion = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{
                     'role': 'system',
@@ -47,11 +49,13 @@ class AbstractLlm(ABC):
                 }],
                 temperature=temperature,
                 max_tokens=max_tokens,
-                stream=stream):
-            data = chunk["choices"][0].get("delta", {}).get("content")
+                stream=stream
+        )
 
+        for chunk in completion:
+            data = chunk.choices[0].delta.content
             if data is not None:
-                self.answer+=data
+                self.answer += data
                 yield data
 
     async def regenerate(self):

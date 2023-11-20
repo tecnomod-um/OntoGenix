@@ -1,0 +1,44 @@
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+### Classes
+um:ZipCodePrefix a owl:Class .
+um:State a owl:Class .
+um:Customer a owl:Class .
+um:City a owl:Class .
+
+### Object Properties
+um:hasCity a owl:ObjectProperty ;
+    rdfs:domain um:State ;
+    rdfs:range um:City .
+
+um:hasZipCodePrefix a owl:ObjectProperty ;
+    rdfs:domain um:City ;
+    rdfs:range um:ZipCodePrefix .
+
+um:hasState a owl:ObjectProperty ;
+    rdfs:domain um:City ;
+    rdfs:range um:State .
+
+um:hasCity a owl:ObjectProperty ;
+    rdfs:domain um:ZipCodePrefix ;
+    rdfs:range um:City .
+
+um:hasZipCodePrefix a owl:ObjectProperty ;
+    rdfs:domain um:Customer ;
+    rdfs:range um:ZipCodePrefix .
+
+um:hasCity a owl:ObjectProperty ;
+    rdfs:domain um:Customer ;
+    rdfs:range um:City .
+
+um:hasState a owl:ObjectProperty ;
+    rdfs:domain um:Customer ;
+    rdfs:range um:State .
+
+### Data Type Properties
+um:hasCustomerRef a owl:DatatypeProperty ;
+    rdfs:domain um:Customer ;
+    rdfs:range xsd:string .

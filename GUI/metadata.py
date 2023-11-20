@@ -12,7 +12,7 @@ class MetadataManager:
     crafter_metadata =  {
         'prompt_crafting': './GUI/PromptCrafter/prompt_crafting.prompt',
         'role': 'You are a powerful ontology engineer that helps to craft the perfect prompt to define the high level structure of the ontology.',
-        'model': 'gpt-4', #'gpt-3.5-turbo'
+        'model': 'gpt-4-1106-preview', #'gpt-3.5-turbo'
         'api_key_path':api_key_path
     }
 
@@ -22,17 +22,16 @@ class MetadataManager:
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates the reasoning steps needed to generate'
                 'the context needed to create an ontology from a json data table.',
-        'model': 'gpt-4', #'gpt-3.5-turbo'
+        'model': 'gpt-4-1106-preview', #'gpt-3.5-turbo'
         'api_key_path':api_key_path
     }
 
     onto_metadata = {
-        'object_properties_instructions': './GUI/OntoBuilder/object_properties_instructions.prompt',
-        'data_properties_instructions': './GUI/OntoBuilder/data_properties_instructions.prompt',
+        'ontology_instructions': './GUI/OntoBuilder/ontology_instructions.prompt',
         'entity_improvement': './GUI/OntoBuilder/entity_improvement.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates OWL ontologies in RDF/XML format.',
-        'model': 'gpt-4', #'gpt-3.5-turbo'
+        'model': 'gpt-4-1106-preview', #'gpt-3.5-turbo'
         'api_key_path':api_key_path
     }
 
@@ -41,7 +40,7 @@ class MetadataManager:
         'error_instructions': './GUI/OntoMapper/error_instructions.prompt',
         'dataset': None,
         'role': 'You are a powerful ontology engineer that generates RML mappings.',
-        'model': 'gpt-4', #'gpt-3.5-turbo'
+        'model': 'gpt-4-1106-preview', #'gpt-3.5-turbo'
         'api_key_path':api_key_path
     }
 
@@ -49,7 +48,7 @@ class MetadataManager:
         'instructions': './GUI/MermaidOntoFlow/instructions.prompt',
         'examples': './GUI/MermaidOntoFlow/examples.prompt',
         'role': 'You are a mermaid diagramming engineer that generates class Diagrams.',
-        'model': 'gpt-3.5-turbo',
+        'model': 'gpt-4-1106-preview',
         'api_key_path':api_key_path
     }
 
