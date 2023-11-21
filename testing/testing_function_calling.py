@@ -43,14 +43,18 @@ class AbstractLlm(ABC):
 
         self.tool_calls = response.choices[0].message.tool_calls
 
-    async def get_async_api_response(self, role: str, content: str, temperature=0, stream=True):
+    async def get_async_api_response(self, content: str, temperature=0, stream=True):
         self.answer = ""
         completion = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{
-                    'role': role,
+                    'role': 'system',
+                    'content': self.role
+                }, {
+                    'role': 'user',
                     'content': content,
                 }],
+                tools=tools,
                 temperature=temperature,
                 stream=stream
         )
@@ -136,32 +140,48 @@ class GuiManager(AbstractLlm, ABC):
         # initialize prompts
         self.instructions = self.load_string_from_file(metadata['instructions'])
         self.available_functions = metadata['available_functions']
+        self.tools = metadata['tools']
         # Initialize memories
         self.short_term_memory = ""
+        self.action = None
+        self._current_state = "None"
 
+    @property
+    def current_state(self):
+        return self._current_state
 
-    async def interaction(self, prompt: str = "", current_state: str = ""):
+    @current_state.setter
+    def current_state(self, value: str):
+        if not isinstance(value, str):
+            raise ValueError("Name must be a string.")
+        self._current_state = value
+
+    async def interaction(self, content: str = ""):
         try:
             # format the current prompt
             self.current_prompt = self.instructions.format(
-                prompt=prompt,
-                current_state=current_state,
+                prompt=content,
+                current_state=self.current_state,
                 short_term_memory=self.short_term_memory)
 
             # Get the response from the LLM_base
-            async for chunk in self.get_async_api_response(role='system', content=self.current_prompt):
+            async for chunk in self.get_async_api_response(content=self.current_prompt):
                 yield chunk
 
+            # update the short term memory
             self.update_memories(self.answer)
+
+            # let's perform the corresponding action.
+            self.select_process()
 
         except ValueError as e:
             print(f"An error occurred: {e}")
         finally:
             self.last_prompt = self.current_prompt
 
-    def select_process(self, content: str, tools=None):
+    def select_process(self):
         try:
-            self.function_calling(content=content, tools=tools)
+            self.function_calling(content=self.action, tools=self.tools)
             self._process_function_response()
 
         except Exception as e:
@@ -170,9 +190,10 @@ class GuiManager(AbstractLlm, ABC):
     def update_memories(self, response: str):
         try:
             self.short_term_memory = self.extract_text(response, "**Updated Memory:**", "**Actions:**").strip()
+            self.action = self.extract_text(gui_manager.answer, "Action:", "Next State:").strip()
+            self.current_state = self.extract_text(gui_manager.answer, "Next State:", "Rationale:").strip()
         except ValueError as e:
             print(f"An error occurred: {e}")
-
 
 
 from testing.auxiliar_api import *
@@ -190,29 +211,18 @@ metadata = {
     'instructions': "./testing/gui_manager_role.prompt",
     'model': 'gpt-4-1106-preview',
     'api_key_path': "./GUI/.env",
-    'available_functions': available_functions
+    'available_functions': available_functions,
+    'tools': tools
 }
 
 gui_manager = GuiManager(metadata)
 
-class OntologyState(Enum):
-    """Enum class to represent different states of ontology."""
-    PROMPT_CRAFT = "PROMPT_CRAFT"
-    HIGH_LEVEL_STRUCTURE = "HIGH_LEVEL_STRUCTURE"
-    ONTOLOGY = "ONTOLOGY"
-    ONTOLOGY_ENTITY = "ONTOLOGY_ENTITY"
-    MAPPING = "MAPPING"
+prompt = '''lets generate the ontology'''
 
-
-prompt = '''lets define the structure of the ontology and then generate the ontology and the mapping.
-'''
-current_state = OntologyState.PROMPT_CRAFT
-async for chunk in gui_manager.interaction(prompt=prompt, current_state=current_state.value):
+async for chunk in gui_manager.interaction(content=prompt):
     print(chunk, end="")
 
-
-prompt = gui_manager.extract_text(gui_manager.answer, "Action:", "Rationale:").strip()
-gui_manager.select_process(content=prompt, tools=tools)
+print(gui_manager.current_state)
 
 
 
