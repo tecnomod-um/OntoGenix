@@ -1,14 +1,6 @@
-# Generation of mappings by large language models
+# Generation of mappings with OntoGenix
 
-The experiments consist on asking an LLM to generate the mappings combining the previous two subtasks. The main goal of these experiments is to learn if LLMs can help and how, what kind of interaction processes and contextual information can be defined.
-
-## Testing software
-
-The asessment of the mappings have been manually done, although [software](../software/software-LLM.md) has been used for generating the mappings.
-
-## Description of the experiment
-
-Elements to compare:
+## Elements to compare
 
 | Dataset | Human generated mapping | LLM generated mapping |
 | ------- | ----------------------- | --------------------- |
