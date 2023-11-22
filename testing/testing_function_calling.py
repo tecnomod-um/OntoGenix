@@ -1,85 +1,229 @@
 import os
 import json
-import openai
+from openai import OpenAI
+from abc import ABC
+import os
+from dotenv import dotenv_values
 
-# Setting OpenAI API key
-openai.api_key = os.getenv("OPENAI_API_KEY")
+from abc import ABC
+from typing import Optional
+from enum import Enum
 
-def structure_definition():
-    print('structure_definition')
 
-def ontology_building():
-    print('ontology_building')
+class AbstractLlm(ABC):
 
-def mapping():
-    print('mapping')
+    def __init__(self, metadata: dict):
+        # set api key path
+        config = dotenv_values(metadata['api_key_path'])
+        # create a client with its api key
+        self.client = OpenAI(api_key = config['OPENAI_API_KEY'])
+        # set client properties
+        self.model = metadata['model']
+        self.role = metadata['role']
+        self.answer = ""
+        self.tool_calls = None
 
-def exit():
-    print("exit")
+        # set utilities
+        self.last_prompt = None
+        self.current_prompt = None
 
-AVAILABLE_FUNCTIONS = {
-    "structure_definition": structure_definition,
+    def function_calling(self, content: str, tools=None):
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=[{
+                'role': 'system',
+                'content': self.role
+            }, {
+                'role': 'user',
+                'content': content,
+            }],
+            tools=tools,
+            temperature=0
+        )
+
+        self.tool_calls = response.choices[0].message.tool_calls
+
+    async def get_async_api_response(self, content: str, temperature=0, stream=True):
+        self.answer = ""
+        completion = self.client.chat.completions.create(
+                model=self.model,
+                messages=[{
+                    'role': 'system',
+                    'content': self.role
+                }, {
+                    'role': 'user',
+                    'content': content,
+                }],
+                tools=tools,
+                temperature=temperature,
+                stream=stream
+        )
+
+        for chunk in completion:
+            data = chunk.choices[0].delta.content
+            if data is not None:
+                self.answer += data
+                yield data
+
+    def _process_function_response(self):
+        """Processes the response message from model and calls the intended function.
+        :param function_callback: callback function which be called with the corresponding arguments.
+        :return: the function to be returned
+        """
+        for tool_call in self.tool_calls:
+            function_name = tool_call.function.name
+            print("function_name: ", function_name)
+
+            # Check if the function exists in metadata
+            if function_name in metadata['available_functions']:
+                function_to_call = metadata['available_functions'][function_name]
+
+                try:
+                    # Assuming arguments are in JSON format
+                    function_args = json.loads(tool_call.function.arguments)
+                    # Calling the function with unpacked arguments
+                    function_to_call(**function_args)
+                except json.JSONDecodeError as e:
+                    print(f"Error decoding JSON: {e}")
+                except Exception as e:
+                    print(f"Error during function call: {e}")
+            else:
+                print(f"Function {function_name} not found in metadata.")
+
+    @staticmethod
+    def load_string_from_file(file_path):
+        with open(file_path, 'r') as file:
+            return file.read()
+
+    @staticmethod
+    def extract_text(text: str, start_marker: str, end_marker: str) -> str:
+        """
+        Extracts a substring of text between two markers and returns it.
+
+        Args:
+            text (str): The text to be searched.
+            start_marker (str): The start marker of the substring.
+            end_marker (str): The end marker of the substring.
+
+        Returns:
+            The substring of text between start_marker and end_marker.
+
+        Raises:
+            ValueError: If start_marker or end_marker is not found in text.
+        """
+        start_index = text.find(start_marker) + len(start_marker)
+        end_index = text.find(end_marker, start_index)
+        if start_index == -1:
+            raise ValueError("Start marker not found in text.")
+        elif end_index == -1:
+            raise ValueError("End marker not found in text.")
+        return text[start_index:end_index].strip()
+
+
+class GuiManager(AbstractLlm, ABC):
+    """
+    This class represents a language learning model (LLM_base) ontology. It extends the AbstractLlm class and provides
+    methods for interacting with the model.
+
+    TODO: the long_term_memory mechanism is not implemented.
+    """
+
+    def __init__(self, metadata: dict):
+        """
+        Initialize the LlmOntology object.
+
+        Parameters:
+        metadata (dict): A dictionary containing metadata for the LLM_base.
+        """
+        super().__init__(metadata)
+
+        # initialize prompts
+        self.instructions = self.load_string_from_file(metadata['instructions'])
+        self.available_functions = metadata['available_functions']
+        self.tools = metadata['tools']
+        # Initialize memories
+        self.short_term_memory = ""
+        self.action = None
+        self._current_state = "None"
+
+    @property
+    def current_state(self):
+        return self._current_state
+
+    @current_state.setter
+    def current_state(self, value: str):
+        if not isinstance(value, str):
+            raise ValueError("Name must be a string.")
+        self._current_state = value
+
+    async def interaction(self, content: str = ""):
+        try:
+            # format the current prompt
+            self.current_prompt = self.instructions.format(
+                prompt=content,
+                current_state=self.current_state,
+                short_term_memory=self.short_term_memory)
+
+            # Get the response from the LLM_base
+            async for chunk in self.get_async_api_response(content=self.current_prompt):
+                yield chunk
+
+            # update the short term memory
+            self.update_memories(self.answer)
+
+            # let's perform the corresponding action.
+            self.select_process()
+
+        except ValueError as e:
+            print(f"An error occurred: {e}")
+        finally:
+            self.last_prompt = self.current_prompt
+
+    def select_process(self):
+        try:
+            self.function_calling(content=self.action, tools=self.tools)
+            self._process_function_response()
+
+        except Exception as e:
+            print("Exception: {e}".format(e=e))
+
+    def update_memories(self, response: str):
+        try:
+            self.short_term_memory = self.extract_text(response, "**Updated Memory:**", "**Actions:**").strip()
+            self.action = self.extract_text(gui_manager.answer, "Action:", "Next State:").strip()
+            self.current_state = self.extract_text(gui_manager.answer, "Next State:", "Rationale:").strip()
+        except ValueError as e:
+            print(f"An error occurred: {e}")
+
+
+from testing.auxiliar_api import *
+
+available_functions = {
+    "prompt_crafting": prompt_crafting,
+    "data_description": data_description,
     "ontology_building": ontology_building,
-    "mapping": mapping,
-    "exit":exit
+    "ontology_entity_enrichment": ontology_entity_enrichment,
+    "mapping": mapping
 }
 
-def select_process(method: str):
-    AVAILABLE_FUNCTIONS[method]()
-
-def create_initial_response(messages, function_data, function_name):
-    """Generates an initial response from OpenAI's GPT-3 model using user's message."""
-    return openai.ChatCompletion.create(
-        model="gpt-4",
-        messages=messages,
-        functions=function_data,
-        function_call={"name": function_name}
-    )
-
-def process_function_response(response, function_to_call):
-    """Processes the response message from model and calls the intended function."""
-    response_message = response["choices"][0]["message"]
-    function_name = response_message["function_call"]["name"]
-    function_args = json.loads(response_message["function_call"]["arguments"])
-    function_response = function_to_call(**function_args)
-    return function_response
-
-
-
-
-# Defining the data for 'select_method' function
-functions_data = [
-    {
-      "name": "select_process",
-      "description": "Can select the engineering step for creating an ontology using LLMs",
-      "parameters": {
-        "type": "object",
-        "properties": {
-          "method": {"type": "string", "enum": ["structure_definition", "ontology_building", "mapping", "exit"],
-                  "description": "Ontology engineering self-assembling program interface."},
-        }
-      }
-    }
-]
-
-
-user_message = '''I want the ontology to be focused on the "Product" entity as the main class "sales_product". 
-Each product will have the following object properties: "BrandName", "Brand", "Category", "eligibleQuantity", 
-"SubCategory", "Image_Url", "Absolute_Url". We propose to add an external entity "hasOffer" from the schema.org 
-ontology to be an object property of "sales_product". The entities "Price", "DiscountPrice", "priceCurrency" 
-(from schema) and "Quantity" will be set as data type properties to the "offer" class.'''
-
-user_message = '''Generate the mapping'''
-
-initial_message = {
-    "role": "assistant",
-    "content": user_message
+metadata = {
+    'role': "you are a powerful ontology engineer that must select the appropriate function to be called.",
+    'instructions': "./testing/gui_manager_role.prompt",
+    'model': 'gpt-4-1106-preview',
+    'api_key_path': "./GUI/.env",
+    'available_functions': available_functions,
+    'tools': tools
 }
-# Creating initial Response
-response = create_initial_response(
-    [initial_message],
-    functions_data,
-    "select_process"
-)
-# Process the response and order pizza
-process_function_response(response, select_process)
+
+gui_manager = GuiManager(metadata)
+
+prompt = '''lets generate the ontology'''
+
+async for chunk in gui_manager.interaction(content=prompt):
+    print(chunk, end="")
+
+print(gui_manager.current_state)
+
+
+
+

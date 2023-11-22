@@ -1,4 +1,4 @@
-# Qt imports
+
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QDialog, QVBoxLayout, QTreeView, QApplication, QPlainTextEdit
 from PyQt5.QtCore import QTimer, QCoreApplication, Qt, QRegularExpression, pyqtSignal
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QTextCursor, QColor, QTextCharFormat, QFont, QSyntaxHighlighter
@@ -107,7 +107,6 @@ class GuiBehavior(QMainWindow):
             self.ontology_builder.answer = answer_text
 
         else:
-            # Unexpected state error
             raise log.myprint_error(f"Unexpected state: {self.state}")
 
     def _handle_state(self):

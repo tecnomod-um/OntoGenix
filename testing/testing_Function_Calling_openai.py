@@ -14,6 +14,7 @@ def generate_ontology():
 def create_mapping():
     print('create_mapping')
 
+
 def exit():
     print("exit")
 
@@ -63,7 +64,15 @@ functions_data = [
 ]
 
 
+
+user_message = '''I want the ontology to be focused on the "Product" entity as the main class "sales_product". 
+Each product will have the following object properties: "BrandName", "Brand", "Category", "eligibleQuantity", 
+"SubCategory", "Image_Url", "Absolute_Url". We propose to add an external entity "hasOffer" from the schema.org 
+ontology to be an object property of "sales_product". The entities "Price", "DiscountPrice", "priceCurrency" 
+(from schema) and "Quantity" will be set as data type properties to the "offer" class.'''
+
 user_message = '''propose an ontology based on the given json dataset'''
+
 
 user_message = '''Generate the mapping'''
 
@@ -80,4 +89,4 @@ response = create_initial_response(
 # Process the response and order pizza
 process_function_response(response, select_process)
 
-print('fin')
+
