@@ -64,7 +64,7 @@ tools=[
                         "description": "The entity from the ontology to be enriched.",
                     }
                 },
-                "required": []
+                "required": ["entity"]
             }
         }
     },

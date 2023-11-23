@@ -162,17 +162,17 @@ class GuiManager(AbstractLlm, ABC):
             self.current_prompt = self.instructions.format(
                 prompt=content,
                 current_state=self.current_state,
-                short_term_memory=self.short_term_memory)
+                short_term_memory=self.short_term_memory
+            )
 
             # Get the response from the LLM_base
             async for chunk in self.get_async_api_response(content=self.current_prompt):
                 yield chunk
 
             # update the short term memory
-            self.update_memories(self.answer)
-
-            # let's perform the corresponding action.
-            self.select_process()
+            if self.update_memories(self.answer):
+                # let's perform the corresponding action.
+                self.select_process()
 
         except ValueError as e:
             print(f"An error occurred: {e}")
@@ -181,8 +181,11 @@ class GuiManager(AbstractLlm, ABC):
 
     def select_process(self):
         try:
-            self.function_calling(content=self.action, tools=self.tools)
-            self._process_function_response()
+            print('------------------------------------------')
+            print(self.action, ' -> ', self.available_functions.keys())
+            if self.action in self.available_functions.keys():
+                self.function_calling(content=self.action, tools=self.tools)
+                self._process_function_response()
 
         except Exception as e:
             print("Exception: {e}".format(e=e))
@@ -192,8 +195,10 @@ class GuiManager(AbstractLlm, ABC):
             self.short_term_memory = self.extract_text(response, "**Updated Memory:**", "**Actions:**").strip()
             self.action = self.extract_text(gui_manager.answer, "Action:", "Next State:").strip()
             self.current_state = self.extract_text(gui_manager.answer, "Next State:", "Rationale:").strip()
+            return True
         except ValueError as e:
             print(f"An error occurred: {e}")
+            return False
 
 
 from testing.auxiliar_api import *
@@ -217,13 +222,126 @@ metadata = {
 
 gui_manager = GuiManager(metadata)
 
-prompt = '''lets generate the ontology'''
+prompt = '''add cardinality restrictions to product class'''
 
 async for chunk in gui_manager.interaction(content=prompt):
     print(chunk, end="")
+print('----------------------------------------------------------------')
 
-print(gui_manager.current_state)
 
 
+
+class State:
+    def __init__(self, name):
+        self.name = name
+
+class Transition:
+    def __init__(self, from_state, to_state, action, requires_confirmation):
+        self.from_state = from_state
+        self.to_state = to_state
+        self.action = action
+        self.requires_confirmation = requires_confirmation
+
+    def is_valid(self, reached_states):
+        if self.from_state == PROMPT_CRAFT and self.to_state == ONTOLOGY_ENTITY:
+            # Check if ONTOLOGY has been reached previously
+            return ONTOLOGY in reached_states
+        return True
+
+class Automaton:
+    def __init__(self):
+        self.states = {}
+        self.transitions = []
+        self._reached_states = set()
+
+    @property
+    def reached_states(self):
+        return list(self._reached_states)
+
+    def add_state(self, name):
+        state = State(name)
+        self.states[name] = state
+        return state
+
+    def add_transition(self, from_state, to_state, action, requires_confirmation):
+        transition = Transition(from_state, to_state, action, requires_confirmation)
+        self.transitions.append(transition)
+
+    def can_transition(self, from_state, to_state):
+        for transition in self.transitions:
+            if (
+                transition.from_state.name == from_state
+                and transition.to_state.name == to_state
+            ):
+                if not transition.is_valid(self.reached_states):
+                    return False  # Transition is not valid based on conditions
+                return True
+        return False
+
+    def perform_transition(self, from_state, to_state):
+        if self.can_transition(from_state, to_state):
+            self._reached_states.add(to_state)
+            return True
+        return False
+
+    def possible_next_states(self, current_state_name):
+        possible_states = []
+        for transition in self.transitions:
+            if transition.from_state.name == current_state_name:
+                possible_states.append(transition.to_state.name)
+        return possible_states
+
+# Create the automaton
+automaton = Automaton()
+
+# Define states
+PROMPT_CRAFT = automaton.add_state("PROMPT_CRAFT")
+HIGH_LEVEL_STRUCTURE = automaton.add_state("HIGH_LEVEL_STRUCTURE")
+ONTOLOGY = automaton.add_state("ONTOLOGY")
+ONTOLOGY_ENTITY = automaton.add_state("ONTOLOGY_ENTITY")
+MAPPING = automaton.add_state("MAPPING")
+None_STATE = automaton.add_state("None")
+
+# Define transitions
+automaton.add_transition(None_STATE, PROMPT_CRAFT, "prompt_crafting", False)
+automaton.add_transition(None_STATE, HIGH_LEVEL_STRUCTURE, "data_description", False)
+
+automaton.add_transition(PROMPT_CRAFT, PROMPT_CRAFT, "prompt_crafting", True)
+automaton.add_transition(PROMPT_CRAFT, HIGH_LEVEL_STRUCTURE, "data_description", True)
+automaton.add_transition(PROMPT_CRAFT, ONTOLOGY_ENTITY, "ontology_building", True)
+
+automaton.add_transition(HIGH_LEVEL_STRUCTURE, ONTOLOGY, "ontology_building", False)
+automaton.add_transition(HIGH_LEVEL_STRUCTURE, MAPPING, "mapping", False)
+
+automaton.add_transition(ONTOLOGY, PROMPT_CRAFT, "prompt_crafting", False)
+automaton.add_transition(ONTOLOGY, HIGH_LEVEL_STRUCTURE, "data_description", False)
+automaton.add_transition(ONTOLOGY, ONTOLOGY_ENTITY, "ontology_entity_enrichment", False)
+automaton.add_transition(ONTOLOGY, MAPPING, "mapping", False)
+
+automaton.add_transition(ONTOLOGY_ENTITY, PROMPT_CRAFT, "prompt_crafting", False)
+automaton.add_transition(ONTOLOGY_ENTITY, HIGH_LEVEL_STRUCTURE, "data_description", False)
+automaton.add_transition(ONTOLOGY_ENTITY, MAPPING, "mapping", False)
+
+automaton.add_transition(MAPPING, PROMPT_CRAFT, "prompt_crafting", False)
+automaton.add_transition(MAPPING, HIGH_LEVEL_STRUCTURE, "data_description", False)
+automaton.add_transition(MAPPING, ONTOLOGY_ENTITY, "ontology_entity_enrichment", False)
+
+
+
+
+
+# Test the automaton with transitions
+current_state = PROMPT_CRAFT
+next_state = HIGH_LEVEL_STRUCTURE
+
+if automaton.can_transition(current_state.name, next_state.name):
+    print(f"Transition from {current_state.name} to {next_state.name} is possible.")
+    # Perform transitions and update reached_states
+    automaton.perform_transition(current_state.name, next_state.name)
+else:
+    print(f"Transition from {current_state.name} to {next_state.name} is not possible.")
+
+print("Possible transitions are: ", automaton.possible_next_states(current_state.name))
+print("Reached States:", automaton.reached_states)
 
 
