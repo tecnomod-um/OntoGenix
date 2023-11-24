@@ -12,23 +12,21 @@ Provide clear guidance, avoiding technical jargon but ready to explain complex t
 5. ACTION: "mapping": Mapping datasets in RML format based on the structured design. -> corresponds to STATE: MAPPING
 6. ACTION: "None": to wait for user confirmation. -> corresponds to STATE: NONE_STATE
 
+Inputs:
+
 **Input Query:**
-lets define an ontology
+{prompt}
 
 **Current State:**
-None
+{current_state}
 
 **Possible Transitions:**
-PROMPT_CRAFT
+{transitions}
 
 Required outputs:
 
-**Updated Memory:**
-States History: <Update the states performed including current state but not next state.>
-
 **Actions:**
 Action: <Specify one of these possible actions: prompt_crafting, data_description, ontology_building, ontology_entity_enrichment, mapping or None (to wait for user confirmation)>
-Current State:<Specify the current state.>
 Rationale: <Briefly describe the next possible actions based on the possible transitions to be performed.>
 Confirmation: <If current state is PROMPT_CRAFT then ask:  "CONTINUE CRAFTING?: Yes/No - (yes means proceed with the prompt crafting process.)  ">
 
@@ -37,4 +35,3 @@ Do not generate code.
 Do not solve the task.
 Just adhere to the instructions given.
 Do not answer in your rationale something like "There is no need for user confirmation at this stage, as the user's intent is clear and matches the capabilities of the current state." when moving away from PROMPT_CRAFT state.
-ALWAYS ASK FOR CONFIRMATION IN ORDER TO MOVE FROM PROMPT_CRAFT STATE TO HIGH_LEVEL_STRUCTURE or ONTOLOGY_ENTITY states!!
