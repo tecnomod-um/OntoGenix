@@ -16,8 +16,7 @@ class AbstractLlm(ABC):
         # set api key path
         config = dotenv_values(metadata['api_key_path'])
         # create a client with its api key
-        #self.client = OpenAI(api_key = config['OPENAI_API_KEY'])
-        self.client = OpenAI(api_key='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')
+        self.client = OpenAI(api_key = config['OPENAI_API_KEY'])
         # set client properties
         self.model = metadata['model']
         self.role = metadata['role']
