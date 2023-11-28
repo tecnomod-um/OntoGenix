@@ -2,55 +2,46 @@
 
 **Foundational Prefix:**
 @prefix um: <https://vocab.um.es#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 **Data Description:**
-1. Absolute_Url: text - The full URL of the product - xsd:anyURI
-2. Brand: text - The name of the brand associated with the product - xsd:string
-3. Category: text - The category to which the product belongs - xsd:string
-4. FAIR_URI: text - A unique identifier for the product within a FAIR data system - xsd:anyURI
-5. Image_Url: text - The URL of the product's image - xsd:anyURI
-6. ProductName: text - The name of the product - xsd:string
-7. Quantity: text - The quantity of the product available for sale - xsd:string
-8. SubCategory: text - The subcategory to which the product belongs - xsd:string
-9. DiscountPrice: Numerical - The discounted price of the product - xsd:decimal
-10. Price: Numerical - The original price of the product - xsd:decimal
+1. Absolute_Url: text - URL of the product - unique for each product
+2. Brand: text - Name of the product brand - multiple products can have the same brand
+3. Category: text - Category of the product - limited to 11 unique categories
+4. FAIR_URI: text - Unique identifier for the product in a FAIR data context - unique for each product
+5. Image_Url: text - URL of the product image - unique for each product
+6. ProductName: text - Name of the product - mostly unique with some duplicates
+7. Quantity: text - Quantity in which the product is available - 224 unique quantities
+8. SubCategory: text - Subcategory of the product - 203 unique subcategories
+9. DiscountPrice: Numerical - Discounted price of the product - ranges from 9.5 to 3200
+10. Price: Numerical - Original price of the product - ranges from 12.86 to 7195
 
 **Classes:**
-1. sales_product
-2. offer
+1. um:sales_product
+2. schema:Offer
 
 **Subclasses:**
-No subclasses defined.
+<No subclasses defined>
 
 **Object Properties:**
-1. hasBrand: domain - sales_product, range - xsd:string
-2. hasCategory: domain - sales_product, range - xsd:string
-3. hasEligibleQuantity: domain - offer, range - xsd:string
-4. hasSubCategory: domain - sales_product, range - xsd:string
-5. hasImage: domain - sales_product, range - xsd:anyURI
-6. hasAbsoluteUrl: domain - sales_product, range - xsd:anyURI
-7. hasOffer: domain - sales_product, range - offer (from schema.org)
+1. um:BrandName: domain - um:sales_product; range - xsd:string
+2. um:Brand: domain - um:sales_product; range - xsd:string
+3. um:Category: domain - um:sales_product; range - xsd:string
+4. um:eligibleQuantity: domain - schema:Offer; range - xsd:string
+5. um:SubCategory: domain - um:sales_product; range - xsd:string
+6. um:Image_Url: domain - um:sales_product; range - xsd:anyURI
+7. um:Absolute_Url: domain - um:sales_product; range - xsd:anyURI
+8. um:hasOffer: domain - um:sales_product; range - schema:Offer
 
 **Data Type Properties:**
-1. hasProductName: domain - sales_product, range - xsd:string
-2. hasPrice: domain - offer, range - xsd:decimal
-3. hasDiscountPrice: domain - offer, range - xsd:decimal
-4. hasPriceCurrency: domain - offer, range - xsd:string
+1. um:Price: domain - schema:Offer; range - xsd:float
+2. um:DiscountPrice: domain - schema:Offer; range - xsd:float
+3. schema:priceCurrency: domain - schema:Offer; range - xsd:string
+4. um:Quantity: domain - schema:Offer; range - xsd:string
 
 **Link of each entity to external resources:**
-- sales_product: owl:Class
-- offer: owl:Class
-- hasBrand: owl:ObjectProperty
-- hasCategory: owl:ObjectProperty
-- hasEligibleQuantity: owl:ObjectProperty
-- hasSubCategory: owl:ObjectProperty
-- hasImage: owl:ObjectProperty
-- hasAbsoluteUrl: owl:ObjectProperty
-- hasOffer: owl:ObjectProperty (from schema.org)
-- hasProductName: owl:DatatypeProperty
-- hasPrice: owl:DatatypeProperty
-- hasDiscountPrice: owl:DatatypeProperty
-- hasPriceCurrency: owl:DatatypeProperty (from schema.org)
+- um:sales_product and um:hasOffer are linked to schema:Product and schema:Offer respectively.
+- Data type properties um:Price, um:DiscountPrice, and schema:priceCurrency are linked to schema:priceSpecification.
+- Object and data type properties use xsd datatypes where appropriate.

@@ -2,8 +2,27 @@
 @prefix rml: <http://semweb.mmlab.be/ns/rml#>.
 @prefix ql: <http://semweb.mmlab.be/ns/ql#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix um: <https://vocab.um.es#>.
 @prefix schema: <http://schema.org/>.
+@prefix um: <https://vocab.um.es#>.
+
+<#TriplesMapCompany> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Company/{FAIR_URI}";
+        rr:class um:Company;
+        rr:termType rr:IRI
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:companyName;
+        rr:objectMap [ rml:reference "Company" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:Organization ]
+    ].
 
 <#TriplesMapComplaint> a rr:TriplesMap;
     rml:logicalSource [
@@ -12,102 +31,20 @@
     ];
     rr:subjectMap [
         rr:template "https://vocab.um.es#Complaint/{FAIR_URI}";
-        rr:class schema:CreativeWork
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasResponse;
-        rr:objectMap [
-            rr:parentTriplesMap <#TriplesMapResponse>;
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasProduct;
-        rr:objectMap [
-            rr:parentTriplesMap <#TriplesMapProduct>;
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasIssue;
-        rr:objectMap [
-            rr:parentTriplesMap <#TriplesMapIssue>;
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:filedIn;
-        rr:objectMap [
-            rr:parentTriplesMap <#TriplesMapLocation>;
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:submittedThrough;
-        rr:objectMap [
-            rr:parentTriplesMap <#TriplesMapSubmission>;
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasCompany;
-        rr:objectMap [
-            rr:parentTriplesMap <#TriplesMapCompany>;
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:uniqueIdentifier;
-        rr:objectMap [
-            rr:column "FAIR_URI";
-            rr:datatype xsd:anyURI
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:dateReceived;
-        rr:objectMap [
-            rr:column "Date received";
-            rr:datatype xsd:date
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:complaintNarrative;
-        rr:objectMap [
-            rr:column "Consumer complaint narrative";
-            rr:datatype xsd:string
-        ];
+        rr:class um:Complaint;
+        rr:termType rr:IRI
     ];
     rr:predicateObjectMap [
         rr:predicate um:complaintID;
-        rr:objectMap [
-            rr:column "Complaint ID";
-            rr:datatype xsd:integer
-        ];
+        rr:objectMap [ rml:reference "Complaint ID"; rr:datatype xsd:integer ]
     ];
     rr:predicateObjectMap [
-        rr:predicate um:tag;
-        rr:objectMap [
-            rr:column "Tags";
-            rr:datatype xsd:string
-        ];
-    ].
-
-<#TriplesMapCompany> a rr:TriplesMap;
-    rml:logicalSource [
-        rml:source "Chunk_complaints.csv";
-        rml:referenceFormulation ql:CSV
-    ];
-    rr:subjectMap [
-        rr:template "https://vocab.um.es#Company/{Company}{FAIR_URI}";
-        rr:class schema:Organization
+        rr:predicate um:fairURI;
+        rr:objectMap [ rml:reference "FAIR_URI"; rr:datatype xsd:anyURI ]
     ];
     rr:predicateObjectMap [
-        rr:predicate um:companyName;
-        rr:objectMap [
-            rr:column "Company";
-            rr:datatype xsd:string
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:dateSentToCompany;
-        rr:objectMap [
-            rr:column "Date sent to company";
-            rr:datatype xsd:date
-        ];
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:Article ]
     ].
 
 <#TriplesMapConsumer> a rr:TriplesMap;
@@ -116,22 +53,13 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#Consumer/{Consumer complaint narrative}{FAIR_URI}";
-        rr:class schema:Person
+        rr:template "https://vocab.um.es#Consumer/{FAIR_URI}";
+        rr:class um:Consumer;
+        rr:termType rr:IRI
     ];
     rr:predicateObjectMap [
-        rr:predicate um:consumerConsent;
-        rr:objectMap [
-            rr:column "Consumer consent provided?";
-            rr:datatype xsd:boolean
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:consumerDisputed;
-        rr:objectMap [
-            rr:column "Consumer disputed?";
-            rr:datatype xsd:boolean
-        ];
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:Person ]
     ].
 
 <#TriplesMapProduct> a rr:TriplesMap;
@@ -140,22 +68,17 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#Product/{Product}{FAIR_URI}";
-        rr:class schema:Product
+        rr:template "https://vocab.um.es#Product/{FAIR_URI}";
+        rr:class um:Product;
+        rr:termType rr:IRI
     ];
     rr:predicateObjectMap [
         rr:predicate um:productType;
-        rr:objectMap [
-            rr:column "Product";
-            rr:datatype xsd:string
-        ];
+        rr:objectMap [ rml:reference "Product" ]
     ];
     rr:predicateObjectMap [
-        rr:predicate um:subProductType;
-        rr:objectMap [
-            rr:column "Sub-product";
-            rr:datatype xsd:string
-        ];
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:Product ]
     ].
 
 <#TriplesMapIssue> a rr:TriplesMap;
@@ -164,22 +87,17 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#Issue/{Issue}{FAIR_URI}";
-        rr:class schema:Thing
+        rr:template "https://vocab.um.es#Issue/{FAIR_URI}";
+        rr:class um:Issue;
+        rr:termType rr:IRI
     ];
     rr:predicateObjectMap [
         rr:predicate um:issueDescription;
-        rr:objectMap [
-            rr:column "Issue";
-            rr:datatype xsd:string
-        ];
+        rr:objectMap [ rml:reference "Issue" ]
     ];
     rr:predicateObjectMap [
-        rr:predicate um:subIssueDescription;
-        rr:objectMap [
-            rr:column "Sub-issue";
-            rr:datatype xsd:string
-        ];
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:Thing ]
     ].
 
 <#TriplesMapResponse> a rr:TriplesMap;
@@ -188,29 +106,13 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#Response/{Company response to consumer}{FAIR_URI}";
-        rr:class schema:Thing
+        rr:template "https://vocab.um.es#Response/{FAIR_URI}";
+        rr:class um:Response;
+        rr:termType rr:IRI
     ];
     rr:predicateObjectMap [
-        rr:predicate um:publicResponse;
-        rr:objectMap [
-            rr:column "Company public response";
-            rr:datatype xsd:string
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:consumerResponse;
-        rr:objectMap [
-            rr:column "Company response to consumer";
-            rr:datatype xsd:string
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:timelyResponse;
-        rr:objectMap [
-            rr:column "Timely response?";
-            rr:datatype xsd:boolean
-        ];
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:ReplyAction ]
     ].
 
 <#TriplesMapSubmission> a rr:TriplesMap;
@@ -219,15 +121,17 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#Submission/{Submitted via}{FAIR_URI}";
-        rr:class schema:Thing
+        rr:template "https://vocab.um.es#Submission/{FAIR_URI}";
+        rr:class um:Submission;
+        rr:termType rr:IRI
     ];
     rr:predicateObjectMap [
         rr:predicate um:submissionMethod;
-        rr:objectMap [
-            rr:column "Submitted via";
-            rr:datatype xsd:string
-        ];
+        rr:objectMap [ rml:reference "Submitted via" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:SendAction ]
     ].
 
 <#TriplesMapLocation> a rr:TriplesMap;
@@ -236,20 +140,19 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#Location/{State}{FAIR_URI}";
-        rr:class schema:Place
+        rr:template "https://vocab.um.es#Location/{FAIR_URI}";
+        rr:class um:Location;
+        rr:termType rr:IRI
     ];
     rr:predicateObjectMap [
-        rr:predicate um:state;
-        rr:objectMap [
-            rr:column "State";
-            rr:datatype xsd:string
-        ];
+        rr:predicate um:stateName;
+        rr:objectMap [ rml:reference "State" ]
     ];
     rr:predicateObjectMap [
         rr:predicate um:zipCode;
-        rr:objectMap [
-            rr:column "ZIP code";
-            rr:datatype xsd:string
-        ];
+        rr:objectMap [ rml:reference "ZIP code"; rr:datatype xsd:integer ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:Place ]
     ].

@@ -1,11 +1,11 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix um: <https://vocab.um.es#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rr: <http://www.w3.org/ns/r2rml#> .
-@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
-@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 
 <#TriplesMapCustomerFeedback> a rr:TriplesMap;
     rml:logicalSource [
@@ -13,7 +13,7 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#CustomerFeedback/{FAIR_URI}";
+        rr:template "https://vocab.um.es/CustomerFeedback/{FAIR_URI}";
         rr:class um:CustomerFeedback
     ];
     rr:predicateObjectMap [
@@ -26,27 +26,33 @@
     ];
     rr:predicateObjectMap [
         rr:predicate um:hasCustomerSatisfaction;
-        rr:objectMap [ rr:column "satisfaction"; rr:datatype xsd:string ]
+        rr:objectMap [
+            rr:template "https://vocab.um.es/CustomerSatisfaction/{satisfaction}{FAIR_URI}";
+        ]
     ];
     rr:predicateObjectMap [
         rr:predicate um:hasCustomerGender;
-        rr:objectMap [ rr:column "Gender"; rr:datatype xsd:string ]
+        rr:objectMap [
+            rr:template "https://vocab.um.es/CustomerGender/{Gender}{FAIR_URI}";
+        ]
     ];
     rr:predicateObjectMap [
         rr:predicate um:hasFlightClass;
-        rr:objectMap [ rr:column "Class"; rr:datatype xsd:string ]
+        rr:objectMap [
+            rr:template "https://vocab.um.es/FlightClass/{Class}{FAIR_URI}";
+        ]
     ];
     rr:predicateObjectMap [
         rr:predicate um:hasTypeOfTravel;
-        rr:objectMap [ rr:column "Type of Travel"; rr:datatype xsd:string ]
+        rr:objectMap [
+            rr:template "https://vocab.um.es/TypeOfTravel/{Type of Travel}{FAIR_URI}";
+        ]
     ];
     rr:predicateObjectMap [
         rr:predicate um:hasCustomerType;
-        rr:objectMap [ rr:column "Customer Type"; rr:datatype xsd:string ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasEvaluationItem;
-        rr:objectMap [ rr:parentTriplesMap <#TriplesMapEvaluationItem> ]
+        rr:objectMap [
+            rr:template "https://vocab.um.es/CustomerType/{Customer Type}{FAIR_URI}";
+        ]
     ].
 
 <#TriplesMapEvaluationItem> a rr:TriplesMap;
@@ -55,58 +61,60 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#EvaluationItem/{FAIR_URI}";
+        rr:template "https://vocab.um.es/EvaluationItem/{FAIR_URI}";
         rr:class um:EvaluationItem
     ];
     rr:predicateObjectMap [
-        rr:predicate um:hasArrivalDelay;
-        rr:objectMap [ rr:column "Arrival Delay in Minutes"; rr:datatype xsd:integer ]
+        rr:predicate um:hasRating;
+        rr:objectMap [ rr:column "Baggage handling"; rr:datatype xsd:integer ]
+    ].
+
+<#TriplesMapCustomerSatisfaction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
     ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasDepartureDelay;
-        rr:objectMap [ rr:column "Departure Delay in Minutes"; rr:datatype xsd:integer ]
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/CustomerSatisfaction/{satisfaction}{FAIR_URI}";
+        rr:class um:CustomerSatisfaction
+    ].
+
+<#TriplesMapCustomerGender> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
     ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasOnlineBoardingRating;
-        rr:objectMap [ rr:column "Online boarding"; rr:datatype xsd:integer ]
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/CustomerGender/{Gender}{FAIR_URI}";
+        rr:class um:CustomerGender
+    ].
+
+<#TriplesMapFlightClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
     ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasSeatComfortRating;
-        rr:objectMap [ rr:column "Seat comfort"; rr:datatype xsd:integer ]
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/FlightClass/{Class}{FAIR_URI}";
+        rr:class um:FlightClass
+    ].
+
+<#TriplesMapTypeOfTravel> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
     ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasDepartureRating;
-        rr:objectMap [ rr:column "Departure/Arrival time convenient"; rr:datatype xsd:integer ]
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/TypeOfTravel/{Type of Travel}{FAIR_URI}";
+        rr:class um:TypeOfTravel
+    ].
+
+<#TriplesMapCustomerType> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
     ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasFoodAndDrinkRating;
-        rr:objectMap [ rr:column "Food and drink"; rr:datatype xsd:integer ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasGateLocationRating;
-        rr:objectMap [ rr:column "Gate location"; rr:datatype xsd:integer ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasWifiRating;
-        rr:objectMap [ rr:column "Inflight wifi service"; rr:datatype xsd:integer ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasOnlineSupportRating;
-        rr:objectMap [ rr:column "Online support"; rr:datatype xsd:integer ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasOnlineBookingRating;
-        rr:objectMap [ rr:column "Ease of Online booking"; rr:datatype xsd:integer ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasLegRoomServiceRating;
-        rr:objectMap [ rr:column "Leg room service"; rr:datatype xsd:integer ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasCheckinServiceRating;
-        rr:objectMap [ rr:column "Checkin service"; rr:datatype xsd:integer ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasCleanlinessRating;
-        rr:objectMap [ rr:column "Cleanliness"; rr:datatype xsd:integer ]
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/CustomerType/{Customer Type}{FAIR_URI}";
+        rr:class um:CustomerType
     ].

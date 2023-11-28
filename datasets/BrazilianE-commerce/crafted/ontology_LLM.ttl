@@ -1,44 +1,53 @@
-@prefix um: <https://vocab.um.es#> .
+
+
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://vocab.um.es#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-### Classes
-um:ZipCodePrefix a owl:Class .
-um:State a owl:Class .
-um:Customer a owl:Class .
-um:City a owl:Class .
+:ZipCodePrefix rdf:type owl:Class ;
+               rdfs:subClassOf owl:Thing .
 
-### Object Properties
-um:hasCity a owl:ObjectProperty ;
-    rdfs:domain um:State ;
-    rdfs:range um:City .
+:State rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing .
 
-um:hasZipCodePrefix a owl:ObjectProperty ;
-    rdfs:domain um:City ;
-    rdfs:range um:ZipCodePrefix .
+:Customer rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
 
-um:hasState a owl:ObjectProperty ;
-    rdfs:domain um:City ;
-    rdfs:range um:State .
+:City rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
 
-um:hasCity a owl:ObjectProperty ;
-    rdfs:domain um:ZipCodePrefix ;
-    rdfs:range um:City .
+:hasCity rdf:type owl:ObjectProperty ;
+         rdfs:domain :State ;
+         rdfs:range :City .
 
-um:hasZipCodePrefix a owl:ObjectProperty ;
-    rdfs:domain um:Customer ;
-    rdfs:range um:ZipCodePrefix .
+:hasZipCodePrefix rdf:type owl:ObjectProperty ;
+                  rdfs:domain :City ;
+                  rdfs:range :ZipCodePrefix .
 
-um:hasCity a owl:ObjectProperty ;
-    rdfs:domain um:Customer ;
-    rdfs:range um:City .
+:hasState rdf:type owl:ObjectProperty ;
+          rdfs:domain :City ;
+          rdfs:range :State .
 
-um:hasState a owl:ObjectProperty ;
-    rdfs:domain um:Customer ;
-    rdfs:range um:State .
+:hasCity rdf:type owl:ObjectProperty ;
+         rdfs:domain :ZipCodePrefix ;
+         rdfs:range :City .
 
-### Data Type Properties
-um:hasCustomerRef a owl:DatatypeProperty ;
-    rdfs:domain um:Customer ;
-    rdfs:range xsd:string .
+:hasZipCodePrefix rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Customer ;
+                  rdfs:range :ZipCodePrefix .
+
+:hasCity rdf:type owl:ObjectProperty ;
+         rdfs:domain :Customer ;
+         rdfs:range :City .
+
+:hasCustomerRef rdf:type owl:ObjectProperty ;
+                rdfs:domain :Customer ;
+                rdfs:range owl:Thing .
+
+:hasCustomerRef rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Customer ;
+                rdfs:range xsd:string .
+```

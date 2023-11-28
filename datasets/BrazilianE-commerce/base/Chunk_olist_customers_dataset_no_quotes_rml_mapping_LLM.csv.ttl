@@ -3,7 +3,7 @@
 @prefix ql: <http://semweb.mmlab.be/ns/ql#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix um: <https://vocab.um.es#>.
-@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix schema: <http://schema.org/>.
 
 <#TriplesMapCustomer> a rr:TriplesMap;
     rml:logicalSource [
@@ -11,8 +11,8 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#Customer/{customer_unique_id}";
-        rr:class um:Customer
+        rr:template "https://vocab.um.es#Customer/{FAIR_URI}";
+        rr:class schema:Person
     ];
     rr:predicateObjectMap [
         rr:predicate um:hasIdentifier;
@@ -29,7 +29,19 @@
     rr:predicateObjectMap [
         rr:predicate um:hasAddress;
         rr:objectMap [
-            rr:parentTriplesMap <#TriplesMapAddress>;
+            rr:parentTriplesMap <#TriplesMapState>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasAddress;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCity>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasAddress;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapZipCodePrefix>;
         ];
     ].
 
@@ -40,12 +52,12 @@
     ];
     rr:subjectMap [
         rr:template "https://vocab.um.es#Customer_ID/{customer_id}";
-        rr:class um:Customer_ID
+        rr:class um:Identifier
     ];
     rr:predicateObjectMap [
         rr:predicate um:hasCustomerID;
         rr:objectMap [
-            rml:reference "customer_id";
+            rr:column "customer_id";
             rr:datatype xsd:string
         ];
     ].
@@ -57,60 +69,63 @@
     ];
     rr:subjectMap [
         rr:template "https://vocab.um.es#Customer_Unique_ID/{customer_unique_id}";
-        rr:class um:Customer_Unique_ID
+        rr:class um:Identifier
     ];
     rr:predicateObjectMap [
         rr:predicate um:hasCustomerUniqueID;
         rr:objectMap [
-            rml:reference "customer_unique_id";
+            rr:column "customer_unique_id";
             rr:datatype xsd:string
         ];
     ].
 
-<#TriplesMapFAIRURI> a rr:TriplesMap;
+<#TriplesMapState> a rr:TriplesMap;
     rml:logicalSource [
         rml:source "Chunk_olist_customers_dataset_no_quotes.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#FAIR_URI/{FAIR_URI}";
-        rr:class um:FAIR_URI
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasFAIR_URI;
-        rr:objectMap [
-            rml:reference "FAIR_URI";
-            rr:datatype xsd:string
-        ];
-    ].
-
-<#TriplesMapAddress> a rr:TriplesMap;
-    rml:logicalSource [
-        rml:source "Chunk_olist_customers_dataset_no_quotes.csv";
-        rml:referenceFormulation ql:CSV
-    ];
-    rr:subjectMap [
-        rr:template "https://vocab.um.es#Address/{customer_zip_code_prefix}";
-        rr:class um:Address
-    ];
-    rr:predicateObjectMap [
-        rr:predicate um:hasCustomerCity;
-        rr:objectMap [
-            rml:reference "customer_city";
-            rr:datatype xsd:string
-        ];
+        rr:template "https://vocab.um.es#State/{customer_state}";
+        rr:class schema:PostalAddress
     ];
     rr:predicateObjectMap [
         rr:predicate um:hasCustomerState;
         rr:objectMap [
-            rml:reference "customer_state";
+            rr:column "customer_state";
             rr:datatype xsd:string
         ];
+    ].
+
+<#TriplesMapCity> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_olist_customers_dataset_no_quotes.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#City/{customer_city}";
+        rr:class schema:PostalAddress
     ];
     rr:predicateObjectMap [
-        rr:predicate um:hasCustomerZipCodePrefix;
+        rr:predicate um:hasCustomerCity;
         rr:objectMap [
-            rml:reference "customer_zip_code_prefix";
+            rr:column "customer_city";
+            rr:datatype xsd:string
+        ];
+    ].
+
+<#TriplesMapZipCodePrefix> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_olist_customers_dataset_no_quotes.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Zip_Code_Prefix/{customer_zip_code_prefix}";
+        rr:class schema:PostalAddress
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasZipCodePrefix;
+        rr:objectMap [
+            rr:column "customer_zip_code_prefix";
             rr:datatype xsd:integer
         ];
     ].

@@ -1,58 +1,53 @@
 
 
 **Foundational Prefix:**
-@prefix um: <https://vocab.um.es#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+<https://vocab.um.es#>
 
 **Data Description:**
-1. Absolute_Url: text - The full URL of a product or item - String
-2. Brand: text - The name of the brand associated with the product - String
-3. Category: text - The general category to which the product belongs - String
-4. FAIR_URI: text - A unique identifier for the product in the form of a URI - String
-5. Image_Url: text - The URL of the product's image - String
-6. ProductName: text - The name of the product - String
-7. Quantity: text - The available quantity of the product - String
-8. SubCategory: text - A more specific category within the general category - String
-9. DiscountPrice: Numerical - The discounted price of the product - Decimal
-10. Price: Numerical - The original price of the product - Decimal
+<Absolute_Url: text - The full URL of a product - string>
+<Brand: text - The name of the brand associated with a product - string>
+<Category: text - The general category to which a product belongs - string>
+<FAIR_URI: text - A unique identifier for a product within a FAIR data system - string>
+<Image_Url: text - The URL of an image associated with a product - string>
+<ProductName: text - The name of a product - string>
+<Quantity: text - The available quantity of a product - string>
+<SubCategory: text - A more specific category within the general category of a product - string>
+<DiscountPrice: Numerical - The discounted price of a product - decimal>
+<Price: Numerical - The original price of a product - decimal>
 
 **Classes:**
-1. Product
-2. Brand
-3. Category
-4. PriceDetails
+<Product>
+<Brand>
+<Category>
+<SubCategory>
+<PriceDetails>
 
 **Subclasses:**
-1. SubCategory: subclassof -> Category
+<SubCategory: subclassof -> Category>
 
 **Object Properties:**
-1. hasBrand: domain - Product; range - Brand
-2. hasCategory: domain - Product; range - Category
-3. hasSubCategory: domain - Product; range - SubCategory
-4. hasPriceDetails: domain - Product; range - PriceDetails
+<hasBrand: domain - Product; range - Brand>
+<hasCategory: domain - Product; range - Category>
+<hasSubCategory: domain - Product; range - SubCategory>
+<hasPriceDetails: domain - Product; range - PriceDetails>
 
 **Data Type Properties:**
-1. absoluteUrl: domain - Product; range - xsd:string
-2. fairUri: domain - Product; range - xsd:string
-3. imageUrl: domain - Product; range - xsd:string
-4. productName: domain - Product; range - xsd:string
-5. quantity: domain - Product; range - xsd:string
-6. discountPrice: domain - PriceDetails; range - xsd:decimal
-7. price: domain - PriceDetails; range - xsd:decimal
+<hasAbsoluteUrl: domain - Product; range - xsd:anyURI>
+<hasFAIRUri: domain - Product; range - xsd:anyURI>
+<hasImageUrl: domain - Product; range - xsd:anyURI>
+<hasProductName: domain - Product; range - xsd:string>
+<hasQuantity: domain - Product; range - xsd:string>
+<hasDiscountPrice: domain - PriceDetails; range - xsd:decimal>
+<hasPrice: domain - PriceDetails; range - xsd:decimal>
 
 **Link of each entity to external resources:**
-1. Product: owl:Thing
-2. Brand: owl:Thing
-3. Category: owl:Thing
-4. SubCategory: owl:Thing
-5. PriceDetails: owl:Thing
-6. absoluteUrl: rdfs:Literal
-7. fairUri: rdfs:Literal
-8. imageUrl: rdfs:Literal
-9. productName: rdfs:Literal
-10. quantity: rdfs:Literal
-11. discountPrice: xsd:decimal
-12. price: xsd:decimal
+<hasAbsoluteUrl: type - owl:sameAs>
+<hasFAIRUri: type - owl:sameAs>
+<hasImageUrl: type - owl:sameAs>
+<hasProductName: type - rdfs:label>
+<hasBrand: type - schema:Brand>
+<hasCategory: type - schema:Category>
+<hasSubCategory: type - schema:isPartOf>
+<hasQuantity: type - schema:QuantitativeValue>
+<hasDiscountPrice: type - schema:OfferPriceSpecification>
+<hasPrice: type - schema:PriceSpecification>

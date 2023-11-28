@@ -1,57 +1,51 @@
-@prefix um: <https://vocab.um.es#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://vocab.um.es#> .
 
-### Classes
-um:Product a owl:Class .
-um:User a owl:Class .
-um:Review a owl:Class .
-um:Timestamp a owl:Class .
-um:Rating a owl:Class ;
-    rdfs:subClassOf um:Review .
+:Record a owl:Class .
 
-### Object Properties
-um:hasReview a owl:ObjectProperty ;
-    rdfs:domain um:User ;
-    rdfs:range um:Review .
+:Product a owl:Class .
 
-um:reviewedProduct a owl:ObjectProperty ;
-    rdfs:domain um:Review ;
-    rdfs:range um:Product .
+:User a owl:Class .
 
-um:hasRating a owl:ObjectProperty ;
-    rdfs:domain um:Review ;
-    rdfs:range um:Rating .
+:Assessment a owl:Class ;
+           rdfs:subClassOf :Record .
 
-um:hasTimestamp a owl:ObjectProperty ;
-    rdfs:domain um:Review ;
-    rdfs:range um:Timestamp .
+:TimePoint a owl:Class ;
+           rdfs:subClassOf :Record .
 
-### Data Type Properties
-um:hasFAIR_URI a owl:DatatypeProperty ;
-    rdfs:domain um:Review ;
-    rdfs:range xsd:string .
+:hasProduct a owl:ObjectProperty ;
+            rdfs:domain :Record ;
+            rdfs:range :Product .
 
-um:hasProductId a owl:DatatypeProperty ;
-    rdfs:domain um:Product ;
-    rdfs:range xsd:string .
+:hasUser a owl:ObjectProperty ;
+          rdfs:domain :Record ;
+          rdfs:range :User .
 
-um:hasRatingValue a owl:DatatypeProperty ;
-    rdfs:domain um:Rating ;
-    rdfs:range xsd:int .
+:hasAssessment a owl:ObjectProperty ;
+               rdfs:domain :Record ;
+               rdfs:range :Assessment .
 
-um:hasUserId a owl:DatatypeProperty ;
-    rdfs:domain um:User ;
-    rdfs:range xsd:string .
+:hasTimePoint a owl:ObjectProperty ;
+              rdfs:domain :Record ;
+              rdfs:range :TimePoint .
 
-um:hasTimestampValue a owl:DatatypeProperty ;
-    rdfs:domain um:Timestamp ;
-    rdfs:range xsd:dateTimeStamp .
+:fairURI a owl:DatatypeProperty ;
+         rdfs:domain :Record ;
+         rdfs:range xsd:anyURI .
 
-### Links to external resources
-um:ProductId owl:sameAs schema:Product .
-um:UserId owl:sameAs schema:Person .
-um:Rating owl:sameAs schema:Rating .
-um:Timestamp owl:sameAs xsd:dateTimeStamp .
+:productId a owl:DatatypeProperty ;
+           rdfs:domain :Product ;
+           rdfs:range xsd:string .
+
+:ratingValue a owl:DatatypeProperty ;
+             rdfs:domain :Assessment ;
+             rdfs:range xsd:integer .
+
+:userId a owl:DatatypeProperty ;
+        rdfs:domain :User ;
+        rdfs:range xsd:string .
+
+:timestampValue a owl:DatatypeProperty ;
+                rdfs:domain :TimePoint ;
+                rdfs:range xsd:dateTime .

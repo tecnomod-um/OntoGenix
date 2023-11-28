@@ -5,8 +5,6 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix schema: <http://schema.org/> .
 
 <#TriplesMapSalesOrder> a rr:TriplesMap;
     rml:logicalSource [
@@ -14,51 +12,33 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#SalesOrder/{FAIR_URI}";
+        rr:template "https://vocab.um.es/SalesOrder/{FAIR_URI}";
         rr:class um:SalesOrder
     ];
     rr:predicateObjectMap [
         rr:predicate um:hasProduct;
         rr:objectMap [
-            rr:template "https://vocab.um.es#SalesArticle/{ProductId}"
+            rr:template "https://vocab.um.es/SalesArticle/{ProductId}"
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate um:hasCustomer;
         rr:objectMap [
-            rr:template "https://vocab.um.es#Customer/{UserId}"
+            rr:template "https://vocab.um.es/Customer/{UserId}"
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate um:hasRating;
+        rr:predicate um:rating;
         rr:objectMap [
             rml:reference "Rating";
-            rr:datatype xsd:int
+            rr:datatype xsd:integer
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate um:hasTimestamp;
+        rr:predicate um:timestamp;
         rr:objectMap [
             rml:reference "Timestamp";
-            rr:datatype xsd:dateTimeStamp
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate owl:sameAs;
-        rr:objectMap [
-            rml:reference "FAIR_URI"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate schema:ratingValue;
-        rr:objectMap [
-            rml:reference "Rating"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate schema:DateTime;
-        rr:objectMap [
-            rml:reference "Timestamp"
+            rr:datatype xsd:dateTime
         ]
     ].
 
@@ -68,26 +48,14 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#Customer/{UserId}";
+        rr:template "https://vocab.um.es/Customer/{UserId}";
         rr:class um:Customer
     ];
     rr:predicateObjectMap [
-        rr:predicate um:hasUserId;
+        rr:predicate um:userId;
         rr:objectMap [
             rml:reference "UserId";
             rr:datatype xsd:string
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate owl:sameAs;
-        rr:objectMap [
-            rml:reference "UserId"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate schema:Person;
-        rr:objectMap [
-            rml:reference "UserId"
         ]
     ].
 
@@ -97,25 +65,13 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "https://vocab.um.es#SalesArticle/{ProductId}";
+        rr:template "https://vocab.um.es/SalesArticle/{ProductId}";
         rr:class um:SalesArticle
     ];
     rr:predicateObjectMap [
-        rr:predicate um:hasProductId;
+        rr:predicate um:productId;
         rr:objectMap [
             rml:reference "ProductId";
             rr:datatype xsd:string
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate owl:sameAs;
-        rr:objectMap [
-            rml:reference "ProductId"
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate schema:Product;
-        rr:objectMap [
-            rml:reference "ProductId"
         ]
     ].

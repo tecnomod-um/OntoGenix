@@ -1,39 +1,55 @@
 
 
 **Foundational Prefix:**
-@prefix um: <https://vocab.um.es#> .
+<https://vocab.um.es#>
 
 **Data Description:**
-1. FAIR_URI: text - unique identifier for each record - no range specified
-2. ProductId: text - identifier for products - no range specified
-3. Rating: categorical - assessment score given to a product - 1 to 5
-4. UserId: text - identifier for users - no range specified
-5. Timestamp: Numerical - time when the rating was recorded - 1081900800 to 1405987200
+<FAIR_URI: text - unique identifier for each record - any valid URI>
+<ProductId: text - identifier for a product - any valid text string>
+<Rating: categorical - assessment score given to a product - 1 to 5>
+<UserId: text - identifier for a user - any valid text string>
+<Timestamp: Numerical - point in time when the rating was given - Unix timestamp>
 
 **Classes:**
-1. Product
-2. User
-3. Review
-4. Timestamp
+<Record>
+<Product>
+<User>
+<Assessment>
+<TimePoint>
 
 **Subclasses:**
-1. Rating: subclassof -> Review
+<Assessment: subclassof -> Record>
+<TimePoint: subclassof -> Record>
 
 **Object Properties:**
-1. hasReview: domain - User; range - Review
-2. reviewedProduct: domain - Review; range - Product
-3. hasRating: domain - Review; range - Rating
-4. hasTimestamp: domain - Review; range - Timestamp
+<hasProduct: domain - Record, range - Product>
+<hasUser: domain - Record, range - User>
+<hasAssessment: domain - Record, range - Assessment>
+<hasTimePoint: domain - Record, range - TimePoint>
 
 **Data Type Properties:**
-1. hasFAIR_URI: domain - Review; range - xsd:string
-2. hasProductId: domain - Product; range - xsd:string
-3. hasRatingValue: domain - Rating; range - xsd:int
-4. hasUserId: domain - User; range - xsd:string
-5. hasTimestampValue: domain - Timestamp; range - xsd:dateTimeStamp
+<fairURI: domain - Record, range - xsd:anyURI>
+<productId: domain - Product, range - xsd:string>
+<ratingValue: domain - Assessment, range - xsd:integer>
+<userId: domain - User, range - xsd:string>
+<timestampValue: domain - TimePoint, range - xsd:dateTime>
 
 **Link of each entity to external resources:**
-1. ProductId: owl:sameAs - schema:Product
-2. UserId: owl:sameAs - schema:Person
-3. Rating: owl:sameAs - schema:Rating
-4. Timestamp: owl:sameAs - XMLSchema#:dateTimeStamp
+<Record: owl:Class>
+<Product: owl:Class>
+<User: owl:Class>
+<Assessment: owl:Class>
+<TimePoint: owl:Class>
+<hasProduct: owl:ObjectProperty>
+<hasUser: owl:ObjectProperty>
+<hasAssessment: owl:ObjectProperty>
+<hasTimePoint: owl:ObjectProperty>
+<fairURI: owl:DatatypeProperty>
+<productId: owl:DatatypeProperty>
+<ratingValue: owl:DatatypeProperty>
+<userId: owl:DatatypeProperty>
+<timestampValue: owl:DatatypeProperty>
+<xsd:anyURI: XMLSchema#>
+<xsd:string: XMLSchema#>
+<xsd:integer: XMLSchema#>
+<xsd:dateTime: XMLSchema#>

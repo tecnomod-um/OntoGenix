@@ -1,0 +1,40 @@
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+### Classes
+um:SalesOrder rdf:type owl:Class .
+um:Customer rdf:type owl:Class .
+um:SalesArticle rdf:type owl:Class .
+
+### Object Properties
+um:hasProduct rdf:type owl:ObjectProperty ;
+    rdfs:domain um:SalesOrder ;
+    rdfs:range um:SalesArticle .
+
+um:hasCustomer rdf:type owl:ObjectProperty ;
+    rdfs:domain um:SalesOrder ;
+    rdfs:range um:Customer .
+
+### Data Type Properties
+um:rating rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:SalesOrder ;
+    rdfs:range xsd:integer .
+
+um:timestamp rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:SalesOrder ;
+    rdfs:range xsd:dateTime .
+
+um:userId rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Customer ;
+    rdfs:range xsd:string .
+
+um:productId rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:SalesArticle ;
+    rdfs:range xsd:string .
+
+### Datatypes
+xsd:integer rdf:type rdfs:Datatype .
+xsd:dateTime rdf:type rdfs:Datatype .
+xsd:string rdf:type rdfs:Datatype .

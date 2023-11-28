@@ -1,59 +1,68 @@
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix : <https://vocab.um.es#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix um: <https://vocab.um.es#> .
 
-:Customer a owl:Class .
+um:Customer rdf:type owl:Class ;
+    rdfs:subClassOf schema:Person .
 
-:Address a owl:Class .
+um:Address rdf:type owl:Class ;
+    rdfs:subClassOf schema:PostalAddress .
 
-:Identifier a owl:Class .
+um:Identifier rdf:type owl:Class ;
+    rdfs:subClassOf schema:Thing .
 
-:Customer_ID a owl:Class ;
-    rdfs:subClassOf :Identifier .
+um:Customer_ID rdf:type owl:Class ;
+    rdfs:subClassOf um:Identifier .
 
-:Customer_Unique_ID a owl:Class ;
-    rdfs:subClassOf :Identifier .
+um:Customer_Unique_ID rdf:type owl:Class ;
+    rdfs:subClassOf um:Identifier .
 
-:FAIR_URI a owl:Class ;
-    rdfs:subClassOf :Identifier .
+um:State rdf:type owl:Class ;
+    rdfs:subClassOf um:Address .
 
-:City a owl:Class ;
-    rdfs:subClassOf :Address .
+um:City rdf:type owl:Class ;
+    rdfs:subClassOf um:Address .
 
-:State a owl:Class ;
-    rdfs:subClassOf :Address .
+um:Zip_Code_Prefix rdf:type owl:Class ;
+    rdfs:subClassOf um:Address .
 
-:Zip_Code_Prefix a owl:Class ;
-    rdfs:subClassOf :Address .
+um:hasAddress rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Customer ;
+    rdfs:range um:Address .
 
-:hasAddress a owl:ObjectProperty ;
-    rdfs:domain :Customer ;
-    rdfs:range :Address .
+um:hasIdentifier rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Customer ;
+    rdfs:range um:Identifier .
 
-:hasIdentifier a owl:ObjectProperty ;
-    rdfs:domain :Customer ;
-    rdfs:range :Identifier .
-
-:hasCustomerCity a owl:DatatypeProperty ;
-    rdfs:domain :Address ;
+um:hasFAIR_URI rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Identifier ;
     rdfs:range xsd:string .
 
-:hasCustomerState a owl:DatatypeProperty ;
-    rdfs:domain :Address ;
+um:hasCustomerCity rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:City ;
     rdfs:range xsd:string .
 
-:hasCustomerZipCodePrefix a owl:DatatypeProperty ;
-    rdfs:domain :Address ;
+um:hasCustomerID rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Customer_ID ;
+    rdfs:range xsd:string .
+
+um:hasCustomerState rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:State ;
+    rdfs:range xsd:string .
+
+um:hasCustomerUniqueID rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Customer_Unique_ID ;
+    rdfs:range xsd:string .
+
+um:hasZipCodePrefix rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Zip_Code_Prefix ;
     rdfs:range xsd:integer .
 
-:hasFAIR_URI a owl:DatatypeProperty ;
-    rdfs:domain :Identifier ;
-    rdfs:range xsd:string .
+xsd:string rdf:type rdfs:Datatype ;
+    owl:equivalentClass XMLSchema#string .
 
-:hasCustomerID a owl:DatatypeProperty ;
-    rdfs:domain :Identifier ;
-    rdfs:range xsd:string .
-
-:hasCustomerUniqueID a owl:DatatypeProperty ;
-    rdfs:domain :Identifier ;
-    rdfs:range xsd:string .
+xsd:integer rdf:type rdfs:Datatype ;
+    owl:equivalentClass XMLSchema#integer .
