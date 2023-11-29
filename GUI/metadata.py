@@ -1,6 +1,7 @@
 import configparser
 import os
 
+from GUI.GuiManager.tools_definition import tools, available_functions
 
 class MetadataManager:
 
@@ -8,6 +9,15 @@ class MetadataManager:
     dataset_folder = None
     dataset_file = None
     api_key_path = "./GUI/.env"
+
+    genie_metadata = {
+        'role': "you are a powerful ontology engineer that must select the appropriate function to be called.",
+        'instructions': "./testing/gui_manager_role.prompt",
+        'model': 'gpt-4-1106-preview',
+        'api_key_path': "./GUI/.env",
+        'available_functions': available_functions,
+        'tools': tools
+    }
 
     crafter_metadata =  {
         'prompt_crafting': './GUI/PromptCrafter/prompt_crafting.prompt',

@@ -1,20 +1,11 @@
+available_functions = {
+    "prompt_crafting": None,
+    "data_description": None,
+    "ontology_building": None,
+    "ontology_entity_enrichment": None,
+    "mapping": None
+}
 
-def prompt_crafting(prompt: str):
-    print('prompt_crafting: ', prompt)
-
-def data_description(prompt: str):
-    print('data_description: ', prompt)
-
-def ontology_building(prompt: str):
-    print('ontology_building: ', prompt)
-
-def ontology_entity_enrichment(prompt: str, entity: str):
-    print('ontology_entity_enrichment: ')
-    print(prompt)
-    print(entity)
-
-def mapping(prompt: str):
-    print('mapping: ', prompt)
 
 tools=[
     {

@@ -16,6 +16,7 @@ from enum import Enum
 from GUI.metadata import MetadataManager
 from GUI.log import log
 from GUI.tools.tools import csv2dataset, dataframe2prettyjson, csv_data_preprocessing, load_string_from_file
+from GUI.GuiManager.LLM_Genie import Genie
 from GUI.PromptCrafter.LLM_promptCrafter import LlmPromptCrafter
 from GUI.PlanSage.LLM_planner import LlmPlanner
 from GUI.OntoBuilder.LLM_ontology import LlmOntology
@@ -69,7 +70,14 @@ class GuiBehavior(QMainWindow):
 
         # Instantiate supporting classes
         self.metadata_manager = MetadataManager()
+        self.metadata_manager.genie_metadata['available_functions']["prompt_crafting"] = self.generate_crafted_prompt
+        self.metadata_manager.genie_metadata['available_functions']["data_description"] = self.create_initial_context
+        self.metadata_manager.genie_metadata['available_functions']["ontology_building"] = self.generate_ontology
+        self.metadata_manager.genie_metadata['available_functions']["ontology_entity_enrichment"] = self.generate_crafted_prompt
+        self.metadata_manager.genie_metadata['available_functions']["mapping"] = self.create_mapping
+
         # Instantiate LLM agents
+        self.genie = Genie(self.metadata_manager.genie_metadata)
         self.prompt_crafter = LlmPromptCrafter(self.metadata_manager.crafter_metadata)
         self.plan_builder = LlmPlanner(self.metadata_manager.planner_metadata)
         self.ontology_builder = LlmOntology(self.metadata_manager.onto_metadata)

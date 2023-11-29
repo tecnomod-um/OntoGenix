@@ -38,10 +38,13 @@ class AbstractLlm(ABC):
                 'content': content,
             }],
             tools=tools,
-            temperature=0
         )
-
-        self.tool_calls = response.choices[0].message.tool_calls
+        try:
+            self.tool_calls = response.choices[0].message.tool_calls
+            print('function calling: tool calls -> ', self.tool_calls)
+            print(response.choices[0].message)
+        except:
+            print('No tool calls generated: ', response.choices[0].message)
 
     async def get_async_api_response(self, content: str, temperature=0, stream=True):
         self.answer = ""
@@ -70,25 +73,26 @@ class AbstractLlm(ABC):
         :param function_callback: callback function which be called with the corresponding arguments.
         :return: the function to be returned
         """
-        for tool_call in self.tool_calls:
-            function_name = tool_call.function.name
-            print("function_name: ", function_name)
+        if self.tool_calls is not None:
+            for tool_call in self.tool_calls:
+                function_name = tool_call.function.name
+                print("function_name: ", function_name)
 
-            # Check if the function exists in metadata
-            if function_name in metadata['available_functions']:
-                function_to_call = metadata['available_functions'][function_name]
+                # Check if the function exists in metadata
+                if function_name in metadata['available_functions']:
+                    function_to_call = metadata['available_functions'][function_name]
 
-                try:
-                    # Assuming arguments are in JSON format
-                    function_args = json.loads(tool_call.function.arguments)
-                    # Calling the function with unpacked arguments
-                    function_to_call(**function_args)
-                except json.JSONDecodeError as e:
-                    print(f"Error decoding JSON: {e}")
-                except Exception as e:
-                    print(f"Error during function call: {e}")
-            else:
-                print(f"Function {function_name} not found in metadata.")
+                    try:
+                        # Assuming arguments are in JSON format
+                        function_args = json.loads(tool_call.function.arguments)
+                        # Calling the function with unpacked arguments
+                        function_to_call(**function_args)
+                    except json.JSONDecodeError as e:
+                        print(f"Error decoding JSON: {e}")
+                    except Exception as e:
+                        print(f"Error during function call: {e}")
+                else:
+                    print(f"Function {function_name} not found in metadata.")
 
     @staticmethod
     def load_string_from_file(file_path):
@@ -253,6 +257,7 @@ class GuiManager(AbstractLlm, ABC):
 
         # initialize prompts
         self.instructions = self.load_string_from_file(metadata['instructions'])
+        self.query = None
         self.available_functions = metadata['available_functions']
         self.tools = metadata['tools']
         # Initialize automata
@@ -260,6 +265,7 @@ class GuiManager(AbstractLlm, ABC):
 
     async def interaction(self, content: str = ""):
         try:
+            self.query = content
             # format the current prompt
             self.current_prompt = self.instructions.format(
                 prompt=content,
@@ -286,8 +292,9 @@ class GuiManager(AbstractLlm, ABC):
             print('\n -----------select_process-------------------')
             print(self.automata.droid.action, ' -> ', self.available_functions.keys())
             if self.automata.droid.action in self.available_functions.keys():
+                print('Action: ' + self.automata.droid.action + ' prompt: ' + self.query)
                 self.function_calling(
-                    content=self.automata.droid.action, 
+                    content='Action: ' + self.automata.droid.action + ' prompt: ' + self.query,
                     tools=self.tools
                 )
                 self._process_function_response()
@@ -329,14 +336,19 @@ metadata = {
 
 gui_manager = GuiManager(metadata)
 
-prompt = '''lets enrich the entity product'''
+prompt = '''lets enrich the ontology entity productID'''
 
 async for chunk in gui_manager.interaction(content=prompt):
     print(chunk, end="")
 
 print('------------------final states--------------------')
 print("current_state: ", gui_manager.automata.droid.current_state.name)
-[print(state.name, end=" ") for state in gui_manager.automata.droid.reached_states]
+[print(state.name, end=" -> ") for state in gui_manager.automata.droid.reached_states]
 print("\n possible_next_states: ", gui_manager.automata.droid.possible_next_states())
+
+
+
+
+
 
 
