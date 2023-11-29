@@ -133,9 +133,9 @@ class Transition:
         self.requires_confirmation = requires_confirmation
 
     def is_valid(self, reached_states):
-        if self.from_state == PROMPT_CRAFT and self.to_state == ONTOLOGY_ENTITY:
+        if self.from_state.name == "PROMPT_CRAFT" and self.to_state.name == "ONTOLOGY_ENTITY":
             # Check if ONTOLOGY has been reached previously
-            return ONTOLOGY in reached_states
+            return "ONTOLOGY" in [state.name for state in reached_states]
         return True
 
 class Automaton:
@@ -162,10 +162,11 @@ class Automaton:
         self.transitions.append(transition)
 
     def can_transition(self, from_state, to_state):
+        print("can_transition->", ' from_state ', from_state, from_state.name, ' to_state ', to_state, to_state.name )
         for transition in self.transitions:
             if (
-                transition.from_state.name == from_state
-                and transition.to_state.name == to_state
+                transition.from_state.name == from_state.name
+                and transition.to_state.name == to_state.name
             ):
                 if not transition.is_valid(self.reached_states):
                     return False  # Transition is not valid based on conditions
@@ -173,9 +174,15 @@ class Automaton:
         return False
 
     def perform_transition(self, to_state):
+        print('to_state: ', to_state, to_state.name)
         if self.can_transition(self.current_state, to_state):
             self._reached_states.add(to_state)
             self.current_state = to_state
+            print('realizo perform transition')
+            return True
+        else:
+            print('not perform transition')
+            return False
 
     def possible_next_states(self):
         possible_states = []
@@ -211,6 +218,7 @@ class Automata_Manager:
 
         self.droid.add_transition(HIGH_LEVEL_STRUCTURE, ONTOLOGY, "ontology_building", False)
         self.droid.add_transition(HIGH_LEVEL_STRUCTURE, MAPPING, "mapping", False)
+        self.droid.add_transition(HIGH_LEVEL_STRUCTURE, PROMPT_CRAFT, "prompt_crafting", False)
 
         self.droid.add_transition(ONTOLOGY, PROMPT_CRAFT, "prompt_crafting", False)
         self.droid.add_transition(ONTOLOGY, HIGH_LEVEL_STRUCTURE, "data_description", False)
@@ -255,7 +263,7 @@ class GuiManager(AbstractLlm, ABC):
             # format the current prompt
             self.current_prompt = self.instructions.format(
                 prompt=content,
-                current_state=self.automata.droid.current_state,
+                current_state=self.automata.droid.current_state.name,
                 transitions=self.automata.droid.possible_next_states()
             )
 
@@ -275,7 +283,7 @@ class GuiManager(AbstractLlm, ABC):
 
     def select_process(self):
         try:
-            print('------------------------------------------')
+            print('\n -----------select_process-------------------')
             print(self.automata.droid.action, ' -> ', self.available_functions.keys())
             if self.automata.droid.action in self.available_functions.keys():
                 self.function_calling(
@@ -287,12 +295,14 @@ class GuiManager(AbstractLlm, ABC):
         except Exception as e:
             print("Exception: {e}".format(e=e))
 
+
     def update_memories(self, response: str):
         try:
-            self.automata.droid.action = self.extract_text(gui_manager.answer, "Action:", "Rationale:").strip()
-            next_state = self.extract_text(gui_manager.answer, "Next State:", "Confirmation:").strip()
-            self.automata.droid.perform_transition(next_state)
-            return True
+            print('\n ------------update_memories------------------')
+            self.automata.droid.action = self.extract_text(response, "Action:", "**Next state:**").strip()
+            print('action: ', self.automata.droid.action)
+            next_state = self.extract_text(response, "Next State:", "**Confirmation:**").strip()
+            return self.automata.droid.perform_transition(self.automata.droid.states[next_state])
         except ValueError as e:
             print(f"An error occurred: {e}")
             return False
@@ -319,14 +329,14 @@ metadata = {
 
 gui_manager = GuiManager(metadata)
 
-prompt = '''add cardinality restrictions to product class'''
-
+prompt = '''lets enrich the entity product'''
 
 async for chunk in gui_manager.interaction(content=prompt):
     print(chunk, end="")
 
-
-
-
+print('------------------final states--------------------')
+print("current_state: ", gui_manager.automata.droid.current_state.name)
+[print(state.name, end=" ") for state in gui_manager.automata.droid.reached_states]
+print("\n possible_next_states: ", gui_manager.automata.droid.possible_next_states())
 
 

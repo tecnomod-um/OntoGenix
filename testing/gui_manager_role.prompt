@@ -25,9 +25,16 @@ Inputs:
 
 Required outputs:
 
+**Rationale:**
+Rationale: <Briefly describe the next possible actions based on the possible transitions to be performed.>
+
 **Actions:**
 Action: <Specify one of these possible actions: prompt_crafting, data_description, ontology_building, ontology_entity_enrichment, mapping or None (to wait for user confirmation)>
-Rationale: <Briefly describe the next possible actions based on the possible transitions to be performed.>
+
+**Next state:**
+Next State: <suggest the next state in one word>
+
+**Confirmation:**
 Confirmation: <If current state is PROMPT_CRAFT then ask:  "CONTINUE CRAFTING?: Yes/No - (yes means proceed with the prompt crafting process.)  ">
 
 ATTENTION!!
