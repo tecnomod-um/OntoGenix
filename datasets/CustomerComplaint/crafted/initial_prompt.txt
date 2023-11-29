@@ -1,0 +1,4 @@
+The ontology will be centered around the "CustomerComplaint" entity, which will be linked to other entities such as "State", "Product", "ProblemOfComplaint", and "Company".
+The ontology will also capture the hierarchical relationships between entities. For instance, "Product" will have "SubProduct" as an object property, and "ProblemOfComplaint" will have "ProblemSubCategory" as an object property. This hierarchical structure is important for capturing the granularity of the data.
+The ontology will also capture the relationship between the "Company" and "CompanyResponse", with "Resolution" as an object property of "CompanyResponse". This will allow us to understand how companies respond to complaints and the outcomes of these responses.
+

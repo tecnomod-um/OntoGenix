@@ -1,0 +1,5 @@
+I want the ontology to be focused on "customer_zip_code_prefix" as the "ZipCodePrefix" class, "customer_state" as "State" class, "customer_id" as "Customer" and "customer_city" as "City".
+"State" class must have as an object property "hasCity" to link at least one city to each state.
+"City" class must have as object properties "hasZipCodePrefix" and "hasState".
+"ZipCodePrefix" class must have as an object property "hasCity".
+"Customer" class must have as object properties "hasZipCodePrefix", "hasCity", and the data type property "hasCutomerRef".

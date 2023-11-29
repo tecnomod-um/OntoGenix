@@ -1,0 +1,159 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix um: <https://vocab.um.es#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+
+<#TriplesMapInvoice> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Invoice/{FAIR_URI}";
+        rr:class um:Invoice
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:countryName;
+        rr:objectMap [ rml:reference "Country" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:fairURI;
+        rr:objectMap [ rml:reference "FAIR_URI" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:invoiceDate;
+        rr:objectMap [ rml:reference "InvoiceDate" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:invoiceNumber;
+        rr:objectMap [ rml:reference "InvoiceNo" ]
+    ].
+
+<#TriplesMapCustomer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Customer/{CustomerID}";
+        rr:class um:Customer
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:customerID;
+        rr:objectMap [ rml:reference "CustomerID" ]
+    ].
+
+<#TriplesMapProduct> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Product/{StockCode}";
+        rr:class um:Product
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:stockCode;
+        rr:objectMap [ rml:reference "StockCode" ]
+    ].
+
+<#TriplesMapProductDescription> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/ProductDescription/{Description}{FAIR_URI}";
+        rr:class um:ProductDescription
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:descriptionText;
+        rr:objectMap [ rml:reference "Description" ]
+    ].
+
+<#TriplesMapProductPrice> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/ProductPrice/{UnitPrice}{FAIR_URI}";
+        rr:class um:ProductPrice
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:unitPrice;
+        rr:objectMap [ rml:reference "UnitPrice" ]
+    ].
+
+<#TriplesMapProductStock> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/ProductStock/{StockCode}";
+        rr:class um:ProductStock
+    ].
+
+<#TriplesMapTransaction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Transaction/{FAIR_URI}";
+        rr:class um:Transaction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:quantity;
+        rr:objectMap [ rml:reference "Quantity" ]
+    ].
+
+<#TriplesMapInvoiceCustomer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Invoice/{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasCustomer;
+        rr:objectMap [
+            rr:template "https://vocab.um.es/Customer/{CustomerID}"
+        ]
+    ].
+
+<#TriplesMapInvoiceProduct> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Invoice/{FAIR_URI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasProduct;
+        rr:objectMap [
+            rr:template "https://vocab.um.es/Product/{StockCode}"
+        ]
+    ].
+
+<#TriplesMapCustomerTransaction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_data.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Customer/{CustomerID}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasTransaction;
+        rr:objectMap [
+            rr:template "https://vocab.um.es/Transaction/{FAIR_URI}"
+        ]
+    ].

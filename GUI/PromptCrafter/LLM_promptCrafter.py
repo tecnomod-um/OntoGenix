@@ -27,9 +27,7 @@ class LlmPromptCrafter(AbstractLlm, ABC):
         self.crafted_prompt = None
 
 
-    async def interaction(self, input_task: Optional[str] = None,
-                          json_data: Optional[str] = None,
-                          state: OntologyState = None):
+    async def interaction(self, prompt: Optional[str] = None, json_data: Optional[str] = None):
         """
         Perform the first interaction or a subsequent interaction with the LLM_base based on the arguments provided.
 
@@ -41,17 +39,17 @@ class LlmPromptCrafter(AbstractLlm, ABC):
         str: Chunks of the response from the LLM_base.
         """
         try:
-            if state.value == OntologyState.DESCRIPTION.value:
-                # Act as first_interaction
-                self.current_prompt = self.data_description_prompt.format(input_task=input_task, json_data=json_data)
-                # Get the response from the LLM_base
-                async for chunk in self.get_async_api_response(self.current_prompt):
-                    yield chunk
-                # permanently store the generated data description answer
-                self.data_description = self.answer
-
-            else:
-                raise ValueError("Insufficient arguments provided for interaction")
+            # Act as first_interaction
+            self.current_prompt = self.data_description_prompt.format(prompt=prompt, json_data=json_data)
+            # Get the response from the LLM_base
+            async for chunk in self.get_async_api_response(self.current_prompt):
+                yield chunk
+            # permanently store the generated prompt
+            self.crafted_prompt = self.extract_text(
+                self.answer, 
+                start_marker="**Prompt:**", 
+                end_marker="**Critique:**"
+            )
 
         except ValueError as e:
             print(f"An error occurred: {e}")

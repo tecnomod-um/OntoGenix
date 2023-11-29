@@ -1,0 +1,175 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix um: <https://vocab.um.es#> .
+@prefix schema: <http://schema.org/> .
+
+um:Complaint rdf:type owl:Class ;
+    owl:equivalentClass schema:CreativeWork .
+
+um:Company rdf:type owl:Class ;
+    owl:equivalentClass schema:Organization .
+
+um:Consumer rdf:type owl:Class ;
+    owl:equivalentClass schema:Person .
+
+um:Product rdf:type owl:Class ;
+    owl:equivalentClass schema:Product .
+
+um:Issue rdf:type owl:Class ;
+    owl:equivalentClass schema:Thing .
+
+um:Response rdf:type owl:Class ;
+    owl:equivalentClass schema:Thing .
+
+um:Submission rdf:type owl:Class ;
+    owl:equivalentClass schema:Thing .
+
+um:Location rdf:type owl:Class ;
+    owl:equivalentClass schema:Place .
+
+um:PublicResponse rdf:type owl:Class ;
+    rdfs:subClassOf um:Response .
+
+um:ConsumerResponse rdf:type owl:Class ;
+    rdfs:subClassOf um:Response .
+
+um:ComplaintNarrative rdf:type owl:Class ;
+    rdfs:subClassOf um:Complaint .
+
+um:Consent rdf:type owl:Class ;
+    rdfs:subClassOf um:Submission .
+
+um:Dispute rdf:type owl:Class ;
+    rdfs:subClassOf um:Consumer .
+
+um:ComplaintDate rdf:type owl:Class ;
+    rdfs:subClassOf um:Complaint .
+
+um:CompanyDate rdf:type owl:Class ;
+    rdfs:subClassOf um:Company .
+
+um:FAIR_URI rdf:type owl:Class ;
+    rdfs:subClassOf um:Complaint .
+
+um:SubIssue rdf:type owl:Class ;
+    rdfs:subClassOf um:Issue .
+
+um:SubProduct rdf:type owl:Class ;
+    rdfs:subClassOf um:Product .
+
+um:SubmissionMethod rdf:type owl:Class ;
+    rdfs:subClassOf um:Submission .
+
+um:Tag rdf:type owl:Class ;
+    rdfs:subClassOf um:Complaint .
+
+um:Timeliness rdf:type owl:Class ;
+    rdfs:subClassOf um:Response .
+
+um:ComplaintID rdf:type owl:Class ;
+    rdfs:subClassOf um:Complaint .
+
+um:ZIPCode rdf:type owl:Class ;
+    rdfs:subClassOf um:Location .
+
+um:hasResponse rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Complaint ;
+    rdfs:range um:Response .
+
+um:hasProduct rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Complaint ;
+    rdfs:range um:Product .
+
+um:hasIssue rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Complaint ;
+    rdfs:range um:Issue .
+
+um:filedIn rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Complaint ;
+    rdfs:range um:Location .
+
+um:submittedThrough rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Complaint ;
+    rdfs:range um:Submission .
+
+um:hasCompany rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Complaint ;
+    rdfs:range um:Company .
+
+um:companyName rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Company ;
+    rdfs:range xsd:string .
+
+um:publicResponse rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:PublicResponse ;
+    rdfs:range xsd:string .
+
+um:consumerResponse rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:ConsumerResponse ;
+    rdfs:range xsd:string .
+
+um:complaintNarrative rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:ComplaintNarrative ;
+    rdfs:range xsd:string .
+
+um:consumerConsent rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Consent ;
+    rdfs:range xsd:boolean .
+
+um:consumerDisputed rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Dispute ;
+    rdfs:range xsd:boolean .
+
+um:dateReceived rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:ComplaintDate ;
+    rdfs:range xsd:date .
+
+um:dateSentToCompany rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:CompanyDate ;
+    rdfs:range xsd:date .
+
+um:uniqueIdentifier rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:FAIR_URI ;
+    rdfs:range xsd:anyURI .
+
+um:issueDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Issue ;
+    rdfs:range xsd:string .
+
+um:productType rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range xsd:string .
+
+um:state rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Location ;
+    rdfs:range xsd:string .
+
+um:subIssueDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:SubIssue ;
+    rdfs:range xsd:string .
+
+um:subProductType rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:SubProduct ;
+    rdfs:range xsd:string .
+
+um:submissionMethod rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:SubmissionMethod ;
+    rdfs:range xsd:string .
+
+um:tag rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Tag ;
+    rdfs:range xsd:string .
+
+um:timelyResponse rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Timeliness ;
+    rdfs:range xsd:boolean .
+
+um:complaintID rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:ComplaintID ;
+    rdfs:range xsd:integer .
+
+um:zipCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:ZIPCode ;
+    rdfs:range xsd:string .

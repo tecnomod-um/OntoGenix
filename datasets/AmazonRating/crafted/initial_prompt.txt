@@ -1,0 +1,4 @@
+I want the ontology to be focused on the "ProductID" entity as "SalesOrder" which should have two main object properties: "ProductID" as "SalesArticle" and "UerID" as "Customer"  that will be linked to the "SalesOrder" class by the relations "hasProduct" and "hasCustomer".
+I want "SalesOrder" to have as data type properties "Rating" and "Timestamp".
+I also want that "Customer" to have as a data type property the "UerID".
+In addition I want that "SalesArticle" has as a data type property the "ProductID".

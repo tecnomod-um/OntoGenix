@@ -1,0 +1,340 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix : <https://vocab.um.es#> .
+
+<#TriplesMapAge> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Age/{FAIR_URI}";
+        rr:class :Age;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasAge;
+        rr:objectMap [ rml:reference "Age" ];
+    ].
+
+<#TriplesMapArrivalDelay> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/ArrivalDelay/{FAIR_URI}";
+        rr:class :ArrivalDelayInMinutes;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasArrivalDelay;
+        rr:objectMap [ rml:reference "Arrival Delay in Minutes" ];
+    ].
+
+<#TriplesMapBaggageHandling> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/BaggageHandling/{FAIR_URI}";
+        rr:class :BaggageHandling;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasBaggageHandlingRating;
+        rr:objectMap [ rml:reference "Baggage handling" ];
+    ].
+
+<#TriplesMapCheckinService> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/CheckinService/{FAIR_URI}";
+        rr:class :CheckinService;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasCheckinServiceRating;
+        rr:objectMap [ rml:reference "Checkin service" ];
+    ].
+
+<#TriplesMapCleanliness> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Cleanliness/{FAIR_URI}";
+        rr:class :Cleanliness;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasCleanlinessRating;
+        rr:objectMap [ rml:reference "Cleanliness" ];
+    ].
+
+<#TriplesMapDepartureDelay> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/DepartureDelay/{FAIR_URI}";
+        rr:class :DepartureDelayInMinutes;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasDepartureDelay;
+        rr:objectMap [ rml:reference "Departure Delay in Minutes" ];
+    ].
+
+<#TriplesMapDepartureArrivalTimeConvenient> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/DepartureArrivalTimeConvenient/{FAIR_URI}";
+        rr:class :DepartureArrivalTimeConvenient;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasDepartureArrivalTimeConvenienceRating;
+        rr:objectMap [ rml:reference "Departure/Arrival time convenient" ];
+    ].
+
+<#TriplesMapEaseOfOnlineBooking> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/EaseOfOnlineBooking/{FAIR_URI}";
+        rr:class :EaseOfOnlineBooking;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasEaseOfOnlineBookingRating;
+        rr:objectMap [ rml:reference "Ease of Online booking" ];
+    ].
+
+<#TriplesMapFlightDistance> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/FlightDistance/{FAIR_URI}";
+        rr:class :FlightDistance;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasFlightDistance;
+        rr:objectMap [ rml:reference "Flight Distance" ];
+    ].
+
+<#TriplesMapFoodAndDrink> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/FoodAndDrink/{FAIR_URI}";
+        rr:class :FoodAndDrink;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasFoodAndDrinkRating;
+        rr:objectMap [ rml:reference "Food and drink" ];
+    ].
+
+<#TriplesMapGateLocation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/GateLocation/{FAIR_URI}";
+        rr:class :GateLocation;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasGateLocationRating;
+        rr:objectMap [ rml:reference "Gate location" ];
+    ].
+
+<#TriplesMapInflightEntertainment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/InflightEntertainment/{FAIR_URI}";
+        rr:class :InflightEntertainment;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasInflightEntertainmentRating;
+        rr:objectMap [ rml:reference "Inflight entertainment" ];
+    ].
+
+<#TriplesMapInflightWifiService> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/InflightWifiService/{FAIR_URI}";
+        rr:class :InflightWifiService;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasInflightWifiServiceRating;
+        rr:objectMap [ rml:reference "Inflight wifi service" ];
+    ].
+
+<#TriplesMapLegRoomService> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/LegRoomService/{FAIR_URI}";
+        rr:class :LegRoomService;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasLegRoomServiceRating;
+        rr:objectMap [ rml:reference "Leg room service" ];
+    ].
+
+<#TriplesMapOnBoardService> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/OnBoardService/{FAIR_URI}";
+        rr:class :OnBoardService;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasOnBoardServiceRating;
+        rr:objectMap [ rml:reference "On-board service" ];
+    ].
+
+<#TriplesMapOnlineBoarding> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/OnlineBoarding/{FAIR_URI}";
+        rr:class :OnlineBoarding;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasOnlineBoardingRating;
+        rr:objectMap [ rml:reference "Online boarding" ];
+    ].
+
+<#TriplesMapOnlineSupport> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/OnlineSupport/{FAIR_URI}";
+        rr:class :OnlineSupport;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasOnlineSupportRating;
+        rr:objectMap [ rml:reference "Online support" ];
+    ].
+
+<#TriplesMapSeatComfort> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/SeatComfort/{FAIR_URI}";
+        rr:class :SeatComfort;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasSeatComfortRating;
+        rr:objectMap [ rml:reference "Seat comfort" ];
+    ].
+
+<#TriplesMapClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Class/{FAIR_URI}";
+        rr:class :Class;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasClass;
+        rr:objectMap [ rml:reference "Class" ];
+    ].
+
+<#TriplesMapCustomerType> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/CustomerType/{FAIR_URI}";
+        rr:class :CustomerType;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasCustomerType;
+        rr:objectMap [ rml:reference "Customer Type" ];
+    ].
+
+<#TriplesMapFAIR_URI> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/FAIR_URI/{FAIR_URI}";
+        rr:class :FAIR_URI;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasFAIR_URI;
+        rr:objectMap [ rml:reference "FAIR_URI" ];
+    ].
+
+<#TriplesMapGender> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Gender/{FAIR_URI}";
+        rr:class :Gender;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasGender;
+        rr:objectMap [ rml:reference "Gender" ];
+    ].
+
+<#TriplesMapTypeOfTravel> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/TypeOfTravel/{FAIR_URI}";
+        rr:class :TypeOfTravel;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasTypeOfTravel;
+        rr:objectMap [ rml:reference "Type of Travel" ];
+    ].
+
+<#TriplesMapSatisfaction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Satisfaction/{FAIR_URI}";
+        rr:class :Satisfaction;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasSatisfaction;
+        rr:objectMap [ rml:reference "satisfaction" ];
+    ].

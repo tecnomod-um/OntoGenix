@@ -1,0 +1,126 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix um: <https://vocab.um.es#>.
+
+<#TriplesMapMovie> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Top_200_Movies_Dataset_2023(Cleaned).csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Movie/{FAIR_URI}";
+        rr:class um:Movie
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasDistributor;
+        rr:objectMap [
+            rr:template "https://vocab.um.es#Distributor/{Distributor}{FAIR_URI}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasTheater;
+        rr:objectMap [
+            rr:template "https://vocab.um.es#Theater/{Theaters}{FAIR_URI}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasFinancialInformation;
+        rr:objectMap [
+            rr:template "https://vocab.um.es#FinancialInformation/{TotalGross}{FAIR_URI}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasRanking;
+        rr:objectMap [
+            rr:template "https://vocab.um.es#Ranking/{ï»¿Rank}{FAIR_URI}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:fairURI;
+        rr:objectMap [ rr:column "FAIR_URI"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:releaseDate;
+        rr:objectMap [ rr:column "Release Date"; rr:datatype xsd:date ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:titleName;
+        rr:objectMap [ rr:column "Title"; rr:datatype xsd:string ]
+    ].
+
+<#TriplesMapDistributor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Top_200_Movies_Dataset_2023(Cleaned).csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Distributor/{Distributor}{FAIR_URI}";
+        rr:class um:Distributor
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:distributorName;
+        rr:objectMap [ rr:column "Distributor"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [ rr:column "Distributor"; rr:datatype xsd:string ]
+    ].
+
+<#TriplesMapTheater> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Top_200_Movies_Dataset_2023(Cleaned).csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Theater/{Theaters}{FAIR_URI}";
+        rr:class um:Theater
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:theaterCount;
+        rr:objectMap [ rr:column "Theaters"; rr:datatype xsd:integer ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:NumberOfItems;
+        rr:objectMap [ rr:column "Theaters"; rr:datatype xsd:integer ]
+    ].
+
+<#TriplesMapFinancialInformation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Top_200_Movies_Dataset_2023(Cleaned).csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#FinancialInformation/{TotalGross}{FAIR_URI}";
+        rr:class um:FinancialInformation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:totalGrossAmount;
+        rr:objectMap [ rr:column "Total Gross"; rr:datatype xsd:decimal ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:MonetaryAmount;
+        rr:objectMap [ rr:column "Total Gross"; rr:datatype xsd:decimal ]
+    ].
+
+<#TriplesMapRanking> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Top_200_Movies_Dataset_2023(Cleaned).csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Ranking/{ï»¿Rank}{FAIR_URI}";
+        rr:class um:Ranking
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:rankPosition;
+        rr:objectMap [ rr:column "ï»¿Rank"; rr:datatype xsd:integer ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:position;
+        rr:objectMap [ rr:column "ï»¿Rank"; rr:datatype xsd:integer ]
+    ].

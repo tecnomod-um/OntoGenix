@@ -1,4 +1,4 @@
-# Qt imports
+
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QDialog, QVBoxLayout, QTreeView, QApplication, QPlainTextEdit
 from PyQt5.QtCore import QTimer, QCoreApplication, Qt, QRegularExpression, pyqtSignal
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QTextCursor, QColor, QTextCharFormat, QFont, QSyntaxHighlighter
@@ -15,7 +15,8 @@ from enum import Enum
 # Internal modules imports
 from GUI.metadata import MetadataManager
 from GUI.log import log
-from GUI.tools.tools import csv2dataset, dataframe2prettyjson, csv_statistical_description, load_string_from_file
+from GUI.tools.tools import csv2dataset, dataframe2prettyjson, csv_data_preprocessing, load_string_from_file
+from GUI.PromptCrafter.LLM_promptCrafter import LlmPromptCrafter
 from GUI.PlanSage.LLM_planner import LlmPlanner
 from GUI.OntoBuilder.LLM_ontology import LlmOntology
 from GUI.OntoMapper.LLM_ontomapper import LlmOntoMapper
@@ -25,10 +26,9 @@ from GUI.KG_Generator.RAG import RAG_OntoMapper
 
 class OntologyState(Enum):
     """Enum class to represent different states of ontology."""
-
+    PROMPT_CRAFT = "PROMPT_CRAFT"
     DESCRIPTION = "DATA_DESCRIPTION"
-    ONTOLOGY_OBJECT_PROPERTIES = "ONTOLOGY_OBJECT_PROPERTIES"
-    ONTOLOGY_DATA_PROPERTIES = "ONTOLOGY_DATA_PROPERTIES"
+    ONTOLOGY = "ONTOLOGY"
     ONTOLOGY_ENTITY = "ONTOLOGY_ENTITY"
     MAPPING = "MAPPING"
 
@@ -70,6 +70,7 @@ class GuiBehavior(QMainWindow):
         # Instantiate supporting classes
         self.metadata_manager = MetadataManager()
         # Instantiate LLM agents
+        self.prompt_crafter = LlmPromptCrafter(self.metadata_manager.crafter_metadata)
         self.plan_builder = LlmPlanner(self.metadata_manager.planner_metadata)
         self.ontology_builder = LlmOntology(self.metadata_manager.onto_metadata)
         self.ontology_mapper = LlmOntoMapper(self.metadata_manager.mapper_metadata)
@@ -77,7 +78,7 @@ class GuiBehavior(QMainWindow):
         # Instantiate RAG systems
         self.RAG_ontomapper = RAG_OntoMapper(self.ontology_mapper, self.plan_builder)
 
-        self.state = OntologyState.DESCRIPTION
+        self.state = OntologyState.PROMPT_CRAFT
         self._handle_state()
 
         # Data container
@@ -98,24 +99,21 @@ class GuiBehavior(QMainWindow):
         if self.state == OntologyState.DESCRIPTION:
             self.plan_builder.data_description = answer_text
 
-        # elif self.state == OntologyState.INIT_CONTEXT:
-        #     self.plan_builder.rationale = answer_text
-
         elif self.state == OntologyState.MAPPING:
             self.ontology_mapper.answer = answer_text
 
-        elif self.state in {OntologyState.ONTOLOGY_OBJECT_PROPERTIES,
-                            OntologyState.ONTOLOGY_DATA_PROPERTIES,
+        elif self.state in {OntologyState.ONTOLOGY,
                             OntologyState.ONTOLOGY_ENTITY}:
             self.ontology_builder.answer = answer_text
 
         else:
-            # Unexpected state error
             raise log.myprint_error(f"Unexpected state: {self.state}")
 
     def _handle_state(self):
         """Set the current state based on the state combobox and load the help guidelines."""
         self.state = OntologyState[self.state_cbox.currentText()]
+        if self.state != OntologyState.DESCRIPTION:
+            self.query_prompt_textedit.clear()
 
 
     def move_cursor_to_end(self):
@@ -135,13 +133,11 @@ class GuiBehavior(QMainWindow):
 
     async def _manage_prompt(self, prompt: str) -> None:
         """Manage the user's prompt based on the current ontology state."""
-        # Determine action based on current state
-        print('#####################################')
-        print(self.state)
-        if self.state in [OntologyState.DESCRIPTION]:
+        if self.state in [OntologyState.PROMPT_CRAFT]:
+            await self.generate_crafted_prompt(prompt)
+        elif self.state in [OntologyState.DESCRIPTION]:
             await self.create_initial_context(prompt)
-        elif self.state in [OntologyState.ONTOLOGY_OBJECT_PROPERTIES,
-                            OntologyState.ONTOLOGY_DATA_PROPERTIES,
+        elif self.state in [OntologyState.ONTOLOGY,
                             OntologyState.ONTOLOGY_ENTITY]:
             await self.generate_ontology(prompt)
         elif self.state == OntologyState.MAPPING:
@@ -165,6 +161,19 @@ class GuiBehavior(QMainWindow):
         self.LLManswer_textedit.insertPlainText("\n\n")
         self.LLManswer_textedit.setEnabled(True)
 
+    async def generate_crafted_prompt(self, prompt: str) -> None:
+        """Helps the user to craft the best prompt."""
+        await self._process_interaction(
+            self.prompt_crafter.interaction,
+            prompt=prompt,
+            json_data=self.json_data,
+            agent=self.prompt_crafter
+        )
+        
+        self.query_prompt_textedit.clear()
+        self.query_prompt_textedit.setText(self.prompt_crafter.crafted_prompt)
+
+
     async def create_initial_context(self, prompt: str) -> None:
         """Create the initial context based on user's prompt."""
         await self._process_interaction(
@@ -179,6 +188,7 @@ class GuiBehavior(QMainWindow):
         """Generate the ontology based on user's prompt."""
         await self._process_interaction(
             self.ontology_builder.interact,
+            json_data=self.json_data,
             data_description=self.plan_builder.data_description,
             entity=prompt,
             state=self.state,
@@ -266,7 +276,7 @@ class GuiBehavior(QMainWindow):
                     self.metadata_manager.dataset_file
                 )
                 # Convert the CSV data to JSON and display in GUI
-                dataframe = csv_statistical_description(self.metadata_manager.dataset_full_path())
+                dataframe = csv_data_preprocessing(self.metadata_manager.dataset_full_path())
                 self.json_data = dataframe2prettyjson(dataframe)
                 self.csv_textedit.setText(self.json_data)
 

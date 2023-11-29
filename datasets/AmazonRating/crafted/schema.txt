@@ -1,0 +1,42 @@
+
+
+**Foundational Prefix:**
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+**Data Description:**
+1. FAIR_URI: text - A unique identifier for each entry - no range specified
+2. ProductId: text - Identifier for a product - no range specified
+3. Rating: categorical - Assessment score for a product - 1 to 5
+4. UserId: text - Identifier for a user - no range specified
+5. Timestamp: Numerical - Time when the rating was recorded - 1081900800 to 1405987200
+
+**Classes:**
+1. SalesOrder
+2. Customer
+3. SalesArticle
+
+**Subclasses:**
+1. Customer: subclassof -> owl:Thing
+2. SalesArticle: subclassof -> owl:Thing
+3. SalesOrder: subclassof -> owl:Thing
+
+**Object Properties:**
+1. hasProduct: domain - SalesOrder; range - SalesArticle
+2. hasCustomer: domain - SalesOrder; range - Customer
+
+**Data Type Properties:**
+1. hasProductId: domain - SalesArticle; range - xsd:string
+2. hasUserId: domain - Customer; range - xsd:string
+3. hasRating: domain - SalesOrder; range - xsd:int
+4. hasTimestamp: domain - SalesOrder; range - xsd:dateTimeStamp
+
+**Link of each entity to external resources:**
+- FAIR_URI: owl:sameAs
+- ProductId: schema:Product
+- Rating: schema:ratingValue
+- UserId: schema:Person
+- Timestamp: schema:DateTime

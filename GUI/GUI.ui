@@ -72,17 +72,17 @@
            </property>
            <item>
             <property name="text">
+             <string>PROMPT_CRAFT</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
              <string>DESCRIPTION</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>ONTOLOGY_OBJECT_PROPERTIES</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>ONTOLOGY_DATA_PROPERTIES</string>
+             <string>ONTOLOGY</string>
             </property>
            </item>
            <item>

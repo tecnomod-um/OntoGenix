@@ -1,0 +1,67 @@
+@prefix um: <https://vocab.um.es#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+### Classes
+um:Product rdf:type owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+um:Brand rdf:type owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+um:Category rdf:type owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+um:SubCategory rdf:type owl:Class ;
+    rdfs:subClassOf um:Category .
+
+um:PriceDetails rdf:type owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+### Object Properties
+um:hasBrand rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range um:Brand .
+
+um:hasCategory rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range um:Category .
+
+um:hasSubCategory rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range um:SubCategory .
+
+um:hasPriceDetails rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range um:PriceDetails .
+
+### Data Type Properties
+um:absoluteUrl rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range xsd:string .
+
+um:fairUri rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range xsd:string .
+
+um:imageUrl rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range xsd:string .
+
+um:productName rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range xsd:string .
+
+um:quantity rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range xsd:string .
+
+um:discountPrice rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:PriceDetails ;
+    rdfs:range xsd:decimal .
+
+um:price rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:PriceDetails ;
+    rdfs:range xsd:decimal .

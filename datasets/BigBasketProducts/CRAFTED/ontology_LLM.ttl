@@ -1,0 +1,54 @@
+@prefix um: <https://vocab.um.es#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+
+### Classes
+um:sales_product a owl:Class .
+um:offer a owl:Class .
+
+### Object Properties
+um:hasBrand a owl:ObjectProperty ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:string .
+
+um:hasCategory a owl:ObjectProperty ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:string .
+
+um:hasEligibleQuantity a owl:ObjectProperty ;
+    rdfs:domain um:offer ;
+    rdfs:range xsd:string .
+
+um:hasSubCategory a owl:ObjectProperty ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:string .
+
+um:hasImage a owl:ObjectProperty ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:anyURI .
+
+um:hasAbsoluteUrl a owl:ObjectProperty ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:anyURI .
+
+schema:hasOffer a owl:ObjectProperty ;
+    rdfs:domain um:sales_product ;
+    rdfs:range um:offer .
+
+### Data Type Properties
+um:hasProductName a owl:DatatypeProperty ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:string .
+
+um:hasPrice a owl:DatatypeProperty ;
+    rdfs:domain um:offer ;
+    rdfs:range xsd:decimal .
+
+um:hasDiscountPrice a owl:DatatypeProperty ;
+    rdfs:domain um:offer ;
+    rdfs:range xsd:decimal .
+
+schema:hasPriceCurrency a owl:DatatypeProperty ;
+    rdfs:domain um:offer ;
+    rdfs:range xsd:string .
