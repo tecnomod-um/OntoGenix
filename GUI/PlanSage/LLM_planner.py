@@ -43,30 +43,24 @@ class LlmPlanner(AbstractLlm, ABC):
         self._dataset_path = path
 
     async def interaction(self, input_task: Optional[str] = None,
-                          json_data: Optional[str] = None,
-                          state: OntologyState = None):
+                          json_data: Optional[str] = None):
         """
         Perform the first interaction or a subsequent interaction with the LLM_base based on the arguments provided.
 
         Parameters:
         input_task (str): The input message.
         json_data (str): The input data in JSON format.
-        data_description (str): The description of the JSON data.
         Yields:
         str: Chunks of the response from the LLM_base.
         """
         try:
-            if state.value == OntologyState.DESCRIPTION.value:
-                # Act as first_interaction
-                self.current_prompt = self.data_description_prompt.format(input_task=input_task, json_data=json_data)
-                # Get the response from the LLM_base
-                async for chunk in self.get_async_api_response(self.current_prompt):
-                    yield chunk
-                # permanently store the generated data description answer
-                self.data_description = self.answer
-
-            else:
-                raise ValueError("Insufficient arguments provided for interaction")
+            # Act as first_interaction
+            self.current_prompt = self.data_description_prompt.format(input_task=input_task, json_data=json_data)
+            # Get the response from the LLM_base
+            async for chunk in self.get_async_api_response(self.current_prompt):
+                yield chunk
+            # permanently store the generated data description answer
+            self.data_description = self.answer
 
         except ValueError as e:
             print(f"An error occurred: {e}")

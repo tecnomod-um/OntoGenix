@@ -2,22 +2,24 @@ from abc import ABC
 from openai import OpenAI
 import os
 from dotenv import dotenv_values
-
+import json
 
 class AbstractLlm(ABC):
 
     def __init__(self, metadata: dict):
-
+        # set api key path
         config = dotenv_values(metadata['api_key_path'])
-
+        # create a client with its api key
         self.client = OpenAI(api_key = config['OPENAI_API_KEY'])
-
+        # set client properties
         self.role = metadata['role']
         self.model = metadata['model']
         self.answer = ""
+        self.tool_calls = None
+        self.available_functions = None
+        # set utilities
         self.last_prompt = None
         self.current_prompt = None
-        self.stream_control = True
 
     def get_api_response(self, content: str, temperature=0, max_tokens=None, stream=False):
         completion = self.client.chat.completions.create(
@@ -35,6 +37,22 @@ class AbstractLlm(ABC):
         )
 
         self.answer = completion.choices[0].message.content
+
+    def function_calling(self, content: str, tools=None):
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=[{
+                'role': 'system',
+                'content': self.role
+            }, {
+                'role': 'user',
+                'content': content,
+            }],
+            tools=tools,
+            temperature=0
+        )
+
+        self.tool_calls = response.choices[0].message.tool_calls
 
     async def get_async_api_response(self, content: str, temperature=0, max_tokens=None, stream=True):
         self.answer = ""
@@ -84,6 +102,32 @@ class AbstractLlm(ABC):
 
         except ValueError as e:
             print(f"An error occurred while extracting text: {e}")
+
+    async def _process_function_response(self):
+        """Processes the response message from model and calls the intended function.
+        :param function_callback: callback function which be called with the corresponding arguments.
+        :return: the function to be returned
+        """
+        for tool_call in self.tool_calls:
+            function_name = tool_call.function.name
+            print("function_name: ", function_name)
+
+            # Check if the function exists in metadata
+            if function_name in self.available_functions:
+                function_to_call = self.available_functions[function_name]
+
+                try:
+                    # Assuming arguments are in JSON format
+                    function_args = json.loads(tool_call.function.arguments)
+                    print("function arguments: ", function_args)
+                    # Calling the function with unpacked arguments
+                    await function_to_call(**function_args)
+                except json.JSONDecodeError as e:
+                    print(f"Error decoding JSON: {e}")
+                except Exception as e:
+                    print(f"Error during function call: {e}")
+            else:
+                print(f"Function {function_name} not found in metadata.")
 
     @staticmethod
     def load_string_from_file(file_path):
