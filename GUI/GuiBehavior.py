@@ -248,7 +248,6 @@ class GuiBehavior(QMainWindow):
                 self.plan_builder.dataset_path = dataset_base_path
                 self.ontology_builder.dataset_path = dataset_base_path
                 self.ontology_mapper.dataset_path = self.metadata_manager.dataset_full_path()
-                print("que paz tenemos en mapper: ", self.ontology_mapper.dataset_path)
                 self.RAG_OntoMapper.build_kgen(
                     self.metadata_manager.base_path,
                     self.metadata_manager.dataset_folder,
