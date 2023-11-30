@@ -90,8 +90,9 @@ class GuiBehavior(QMainWindow):
         # Log manager setup
         self.log = log(self.LLManswer_textedit)
 
-    def on_text_changed(self, agent, text_edit):
-        ''' Update the agents internal "answer" variable with the current text '''
+    @staticmethod
+    def on_text_changed(agent, text_edit):
+        """ Update the agents internal "answer" variable with the current text """
         agent.answer = text_edit.toPlainText()
 
     def _run_asyncio_loop(self):
