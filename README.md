@@ -7,7 +7,7 @@ Access to GPT-4 is required so you need to create an account and ask for acces t
 
 ## GUI
 
-![GitHub Logo](./images/OntoGenix_GUI.png)
+![GitHub Logo](./images/GUI.png)
 
 ## Installation
 
