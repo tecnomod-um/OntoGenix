@@ -40,7 +40,7 @@ class Automaton:
         self.transitions.append(transition)
 
     def can_transition(self, from_state, to_state):
-        print("can_transition->", ' from_state ', from_state, from_state.name, ' to_state ', to_state, to_state.name )
+        print("can_transition ->", ' from_state ', from_state.name, ' to_state ', to_state.name )
         for transition in self.transitions:
             if (
                 transition.from_state.name == from_state.name
@@ -52,14 +52,11 @@ class Automaton:
         return False
 
     def perform_transition(self, to_state):
-        print('to_state: ', to_state, to_state.name)
         if self.can_transition(self.current_state, to_state):
             self._reached_states.add(to_state)
             self.current_state = to_state
-            print('realizo perform transition')
             return True
         else:
-            print('not perform transition')
             return False
 
     def possible_next_states(self):

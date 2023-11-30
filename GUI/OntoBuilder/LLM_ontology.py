@@ -5,10 +5,6 @@ import os
 
 from enum import Enum
 
-class OntologyState(Enum):
-    ONTOLOGY = "ONTOLOGY"
-    ONTOLOGY_ENTITY = "ONTOLOGY_ENTITY"
-
 class LlmOntology(AbstractLlm):
 
     def __init__(self, metadata: dict):
@@ -34,14 +30,14 @@ class LlmOntology(AbstractLlm):
                         json_data: str = None,
                         data_description: str = None,
                         entity: str = None,
-                        state: OntologyState = None):
+                        state: str = "ONTOLOGY"):
         try:
-            if state.value == OntologyState.ONTOLOGY.value:
+            if state == "ONTOLOGY":
                 self.current_prompt = self.ontology_instructions.format(
                     json_data=json_data,
                     data_description=data_description
                 )
-            elif state.value == OntologyState.ONTOLOGY_ENTITY.value:
+            elif state == "ONTOLOGY_ENTITY":
                 self.current_prompt = self.entity_improvement.format(
                     data_description=data_description,
                     entity=entity

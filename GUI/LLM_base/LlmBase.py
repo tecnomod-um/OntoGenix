@@ -2,7 +2,7 @@ from abc import ABC
 from openai import OpenAI
 import os
 from dotenv import dotenv_values
-
+import json
 
 class AbstractLlm(ABC):
 
@@ -16,6 +16,7 @@ class AbstractLlm(ABC):
         self.model = metadata['model']
         self.answer = ""
         self.tool_calls = None
+        self.available_functions = None
         # set utilities
         self.last_prompt = None
         self.current_prompt = None
@@ -102,7 +103,7 @@ class AbstractLlm(ABC):
         except ValueError as e:
             print(f"An error occurred while extracting text: {e}")
 
-    def _process_function_response(self):
+    async def _process_function_response(self):
         """Processes the response message from model and calls the intended function.
         :param function_callback: callback function which be called with the corresponding arguments.
         :return: the function to be returned
@@ -112,14 +113,15 @@ class AbstractLlm(ABC):
             print("function_name: ", function_name)
 
             # Check if the function exists in metadata
-            if function_name in metadata['available_functions']:
-                function_to_call = metadata['available_functions'][function_name]
+            if function_name in self.available_functions:
+                function_to_call = self.available_functions[function_name]
 
                 try:
                     # Assuming arguments are in JSON format
                     function_args = json.loads(tool_call.function.arguments)
+                    print("function arguments: ", function_args)
                     # Calling the function with unpacked arguments
-                    function_to_call(**function_args)
+                    await function_to_call(**function_args)
                 except json.JSONDecodeError as e:
                     print(f"Error decoding JSON: {e}")
                 except Exception as e:

@@ -70,10 +70,6 @@ tools=[
                     "prompt": {
                         "type": "string",
                         "description": "The user query.",
-                    },
-                    "entity": {
-                        "type": "string",
-                        "description": "The entity from the ontology to be enriched.",
                     }
                 },
                 "required": ["prompt", "entity"]
