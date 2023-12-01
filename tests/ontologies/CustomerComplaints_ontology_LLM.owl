@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://vocab.um.es#"
+     xml:base="https://vocab.um.es"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://vocab.um.es#hasCompanyResponse -->
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasCompanyResponse"/>
+    
+
+
+    <!-- https://vocab.um.es#hasProblem -->
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasProblem"/>
+    
+
+
+    <!-- https://vocab.um.es#hasProblemSubCategory -->
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasProblemSubCategory"/>
+    
+
+
+    <!-- https://vocab.um.es#hasResolution -->
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasResolution"/>
+    
+
+
+    <!-- https://vocab.um.es#hasSubProduct -->
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#hasSubProduct"/>
+    
+
+
+    <!-- https://vocab.um.es#involvesCompany -->
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#involvesCompany"/>
+    
+
+
+    <!-- https://vocab.um.es#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#locatedIn"/>
+    
+
+
+    <!-- https://vocab.um.es#relatedToProduct -->
+
+    <owl:ObjectProperty rdf:about="https://vocab.um.es#relatedToProduct"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://vocab.um.es#companyName -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#companyName"/>
+    
+
+
+    <!-- https://vocab.um.es#complaintID -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#complaintID"/>
+    
+
+
+    <!-- https://vocab.um.es#complaintNarrative -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#complaintNarrative"/>
+    
+
+
+    <!-- https://vocab.um.es#consentProvided -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#consentProvided"/>
+    
+
+
+    <!-- https://vocab.um.es#dateReceived -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#dateReceived"/>
+    
+
+
+    <!-- https://vocab.um.es#dateSentToCompany -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#dateSentToCompany"/>
+    
+
+
+    <!-- https://vocab.um.es#fairURI -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#fairURI"/>
+    
+
+
+    <!-- https://vocab.um.es#isDisputed -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#isDisputed"/>
+    
+
+
+    <!-- https://vocab.um.es#issueDescription -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#issueDescription"/>
+    
+
+
+    <!-- https://vocab.um.es#productType -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#productType"/>
+    
+
+
+    <!-- https://vocab.um.es#publicResponse -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#publicResponse"/>
+    
+
+
+    <!-- https://vocab.um.es#responseToConsumer -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#responseToConsumer"/>
+    
+
+
+    <!-- https://vocab.um.es#stateCode -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#stateCode"/>
+    
+
+
+    <!-- https://vocab.um.es#subIssueDescription -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#subIssueDescription"/>
+    
+
+
+    <!-- https://vocab.um.es#subProductType -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#subProductType"/>
+    
+
+
+    <!-- https://vocab.um.es#submissionMethod -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#submissionMethod"/>
+    
+
+
+    <!-- https://vocab.um.es#tags -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#tags"/>
+    
+
+
+    <!-- https://vocab.um.es#timelyResponse -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#timelyResponse"/>
+    
+
+
+    <!-- https://vocab.um.es#zipCode -->
+
+    <owl:DatatypeProperty rdf:about="https://vocab.um.es#zipCode"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://vocab.um.es#Company -->
+
+    <owl:Class rdf:about="https://vocab.um.es#Company"/>
+    
+
+
+    <!-- https://vocab.um.es#CompanyResponse -->
+
+    <owl:Class rdf:about="https://vocab.um.es#CompanyResponse"/>
+    
+
+
+    <!-- https://vocab.um.es#CustomerComplaint -->
+
+    <owl:Class rdf:about="https://vocab.um.es#CustomerComplaint"/>
+    
+
+
+    <!-- https://vocab.um.es#ProblemOfComplaint -->
+
+    <owl:Class rdf:about="https://vocab.um.es#ProblemOfComplaint"/>
+    
+
+
+    <!-- https://vocab.um.es#ProblemSubCategory -->
+
+    <owl:Class rdf:about="https://vocab.um.es#ProblemSubCategory"/>
+    
+
+
+    <!-- https://vocab.um.es#Product -->
+
+    <owl:Class rdf:about="https://vocab.um.es#Product"/>
+    
+
+
+    <!-- https://vocab.um.es#Resolution -->
+
+    <owl:Class rdf:about="https://vocab.um.es#Resolution"/>
+    
+
+
+    <!-- https://vocab.um.es#State -->
+
+    <owl:Class rdf:about="https://vocab.um.es#State"/>
+    
+
+
+    <!-- https://vocab.um.es#SubProduct -->
+
+    <owl:Class rdf:about="https://vocab.um.es#SubProduct"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

@@ -4,25 +4,22 @@
 
 | Dataset | Human generated ontology | LLM generated ontology |
 | ------- | ----------------------- | --------------------- |
-| [BigBasketProducts](https://www.kaggle.com/datasets/chinmayshanbhag/big-basket-products) | [mapping.csv.ttl](../../Transformation/BigBasketProductsCSV2RDF/Mappings/mapping.csv.ttl) | [mappingLLM.csv.ttl](../../Transformation/BigBasketProductsCSV2RDF/Mappings/mappingLLM.csv.ttl) |
-| [Walmart products](https://data.world/promptcloud/walmart-product-data-from-usa) | [mapping.csv.ttl](../../Transformation/WalmartProductDetails/Mappings/mapping.csv.ttl) | [mappingLLM.csv.ttl](../../Transformation/WalmartProductDetails/Mappings/mappingLLM.csv.ttl) |
-| [Brazilian e-commerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) | [mapping_customers.ttl](../../Transformation/BrazilianE-commerceCSV2RDF/Mappings/mapping_customers.ttl), [mapping_geolocation.ttl](../../Transformation/BrazilianE-commerceCSV2RDF/Mappings/mapping_geolocation.ttl), [mapping_order_items.ttl](../../Transformation/BrazilianE-commerceCSV2RDF/Mappings/mapping_order_items.ttl), [mapping_order_payments.ttl](../../Transformation/BrazilianE-commerceCSV2RDF/Mappings/mapping_order_payments.ttl), [mapping_order_reviews.ttl](../../Transformation/BrazilianE-commerceCSV2RDF/Mappings/mapping_order_reviews.ttl), [mapping_orders.ttl](../../Transformation/BrazilianE-commerceCSV2RDF/Mappings/mapping_orders.ttl), [mapping_products.ttl](../../Transformation/BrazilianE-commerceCSV2RDF/Mappings/mapping_products.ttl), [mapping_sellers.ttl](../../Transformation/BrazilianE-commerceCSV2RDF/Mappings/mapping_sellers.ttl), | [mappingLLM.csv.ttl](../../Transformation/BrazilianE-commerceCSV2RDF/Mappings/mappingLLM.csv.ttl) |
-| [eCommerce](https://www.kaggle.com/datasets/carrie1/ecommerce-data) | [mapping.csv.ttl](../../Transformation/eCommerceCSV2RDF/Mappings/mapping.csv.ttl) | [mappingLLM.csv.ttl](../../Transformation/eCommerceCSV2RDF/Mappings/mappingLLM.csv.ttl) |
-| [Airline customer satisfaction](https://www.kaggle.com/datasets/sjleshrac/airlines-customer-satisfaction) | [mapping.csv.ttl](../../Transformation/AirlinesCustomerSatisfactionCSV2RDF/Mappings/mapping.csv.ttl) | [mappingLLM.csv.ttl](../../Transformation/AirlinesCustomerSatisfactionCSV2RDF/Mappings/mappingLLM.csv.ttl) |
-| [Amazon rating](https://www.kaggle.com/datasets/skillsmuggler/amazon-ratings) | [AmazonRating.ttl](AmazonRatings/ontologies/AmazonRating.ttl) | [ontology_LLM.ttl](AmazonRatings/crafted/ontology_LLM.ttl) |
-| [Customer complaints](https://www.kaggle.com/datasets/utkarshx27/consumer-complaint) | [mapping.csv.ttl](../../Transformation/CustomerComplaintCSV2RDF/Mappings/mapping.csv.ttl) | [mappingLLM.csv.ttl](../../Transformation/CustomerComplaintCSV2RDF/Mappings/mappingLLM.csv.ttl) |
+| [BigBasketProducts](https://www.kaggle.com/datasets/chinmayshanbhag/big-basket-products) | [BigBasketProducts_ontology_human.owl](ontologies/BigBasketProducts_ontology_human.owl) | [BigBasketProducts_ontology_LLM.owl](ontologies/BigBasketProducts_ontology_LLM.owl) |
+| [Brazilian e-commerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) | [ontologies/BrazilianEcommerce_ontology_human.owl](ontologies/BrazilianEcommerce_ontology_human.owl) | [ontologies/BrazilianEcommerce_ontology_LLM.owl](ontologies/BrazilianEcommerce_ontology_LLM.owl) |
+| [eCommerce](https://www.kaggle.com/datasets/carrie1/ecommerce-data) | [eCommerce_ontology_human.owl](ontologies/eCommerce_ontology_human.owl) | [eCommerce_ontology_LLM.owl](ontologies/eCommerce_ontology_LLM.owl) |
+| [Airline customer satisfaction](https://www.kaggle.com/datasets/sjleshrac/airlines-customer-satisfaction) | [AirlinesCustomerSatisfaction_ontology_human.owl](ontologies/AirlinesCustomerSatisfaction_ontology_human.owl) | [AirlinesCustomerSatisfaction_ontology_LLM.owl](ontologies/AirlinesCustomerSatisfaction_ontology_LLM.owl) |
+| [Amazon rating](https://www.kaggle.com/datasets/skillsmuggler/amazon-ratings) | [AmazonRatings_ontology_human.owl](ontologies/AmazonRatings_ontology_human.owl) | [AmazonRatings_ontology_LLM.owl](ontologies/AmazonRatings_ontology_LLM.owl) |
+| [Customer complaints](https://www.kaggle.com/datasets/utkarshx27/consumer-complaint) | [CustomerComplaint_ontology_human.owl](ontologies/CustomerComplaint_ontology_human.owl) | [CustomerComplaints_ontology_LLM.owl](ontologies/CustomerComplaints_ontology_LLM.owl) |
 
 ## Results
 
 ### BigBasketProducts
 
-### WalmartProductDetails
-
-### AirlinesCustomerSatisfaction
-
 ### BrazilianEcommerce
 
 ### eCommerce
+
+### AirlinesCustomerSatisfaction
 
 ### AmazonRating
 
@@ -38,22 +35,7 @@
 
 In conclusion, while both ontologies have a similar structure in terms of classes and object properties, the human-generated ontology is more comprehensive and relevant to the CSV data due to its inclusion of specific data properties that align with the data attributes. This makes the human-generated ontology more suited for applications that require detailed representation and analysis of the data contained in the CSV file.
 
-
-
-
-
-
 ### CustomerComplaints
-
-
-
-
-
-
-
-
-
-
 
 ## Conclusions
 
