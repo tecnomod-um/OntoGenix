@@ -26,7 +26,7 @@
 
 ### AmazonRating
 
-* **Annotations:** The human generated ontology includes rdfs:label annotations fro classes and properties, making the ontology more understandable to human users.
+* **Annotations:** The human generated ontology includes rdfs:label annotations for classes and properties, making the ontology more understandable to human users.
 
 * **Classes:** Both ontologies have the same number of classes (3) and the same class names, indicating a similar high-level conceptualization of the domain.
 
