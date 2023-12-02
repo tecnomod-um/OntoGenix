@@ -21,33 +21,29 @@
 
 * **Object Properties:** The LLM-generated ontology presents more object properties, but the additional object properties should be modelled as data properties. In terms of axiomatic complexity in object properties, both ontologies are similar, with axioms for inverse object properties, domains and ranges.
 
-* **Data Properties:**
+* **Data Properties:** Data properties are similar in both ontologies, but human-generated ontologies present more properties from external ontologies, like schema.org
 
-* **Relevance to the CSV Data:**
+ Both ontologies present a similar coverage of the CSV data, but the human-generated ontology presents oportunities for a more detailed modelling.
 
 ### BrazilianEcommerce
 
-* **Annotations:**
+* **Annotations:** The human generated ontology includes rdfs:label annotations for classes and properties, making the ontology more understandable to human users.
 
-* **Classes:**
+* **Classes:** Both ontologies have exactly the same classes, but the human-generated ontology includes more complex axioms in the restricions.
 
-* **Object Properties:**
+* **Object Properties:** Both ontologies present the same object properties and similar domain/range axioms. However, the LLM-generated ontology includes a useless axiom, namely `range owl:Thing`. The human generated ontology includes annotations in the object properties.
 
-* **Data Properties:**
-
-* **Relevance to the CSV Data:**
+* **Data Properties:** Both ontologies present the same object properties. However, the LLM-generated repeats a property both as data property and object property.
 
 ### eCommerce
 
-* **Annotations:**
+* **Annotations:** The human generated ontology includes rdfs:label annotations for classes and properties, making the ontology more understandable to human users.
 
-* **Classes:**
+* **Classes:** Both ontologies have exactly the same classes, but the human-generated ontology includes more complex axioms in the restricions.
 
-* **Object Properties:**
+* **Object Properties:** Both ontologies present similar object properties.
 
-* **Data Properties:**
-
-* **Relevance to the CSV Data:**
+* **Data Properties:** The human generated ontology presents more data properties, related to the modelling presented in the classes hierarchy.
 
 ### AirlinesCustomerSatisfaction
 
@@ -59,8 +55,6 @@
 
 * **Data Properties:**
 
-* **Relevance to the CSV Data:**
-
 ### AmazonRating
 
 * **Annotations:** The human generated ontology includes rdfs:label annotations for classes and properties, making the ontology more understandable to human users.
@@ -71,10 +65,6 @@
 
 * **Data Properties:** This is a significant difference between the two ontologies. The LLM-generated ontology includes data properties that are unnecessary and redundant, like ProductId. Additionally, the DataType ranges are correctly assigned by the human (xsd:string, xsd:double and xsd:int) but the LLM only assignes xsd:string ranges
 
-* **Relevance to the CSV Data:** The human-generated ontology has a clear advantage in terms of relevance to the CSV data. It includes data properties that directly correspond to the columns in the CSV file, such as timestamp and has_rating_value. The LLM-generated ontology, while structurally similar in terms of classes and object properties, lacks data properties that would represent the detailed attributes of the entities (like ratings and timestamps) found in the CSV data.
-
-In conclusion, while both ontologies have a similar structure in terms of classes and object properties, the human-generated ontology is more comprehensive and relevant to the CSV data due to its inclusion of specific data properties that align with the data attributes. This makes the human-generated ontology more suited for applications that require detailed representation and analysis of the data contained in the CSV file.
-
 ### CustomerComplaints
 
 * **Annotations:**
@@ -84,8 +74,6 @@ In conclusion, while both ontologies have a similar structure in terms of classe
 * **Object Properties:**
 
 * **Data Properties:**
-
-* **Relevance to the CSV Data:**
 
 ## Conclusions
 
@@ -99,5 +87,10 @@ a deeper coveraghe of CSV data
 
 more complex axioms in object properties
 
-Hallucinations: repeated properties as both data and obkect properties
+In general humans entities of external ontologies (e.g. schema), being more interoperable.
+
+Hallucinations: 
+
+repeated properties as both data and obkect properties 
+useless axiom, namely `range owl:Thing`
 
