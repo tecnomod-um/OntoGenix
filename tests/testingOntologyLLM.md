@@ -15,11 +15,51 @@
 
 ### BigBasketProducts
 
+* **Annotations:** The human generated ontology includes rdfs:label annotations for classes and properties, making the ontology more understandable to human users.
+
+* **Classes:** Both ontologies have exactly the same classes, but the human-generated ontology includes more complex axioms in the restricions.
+
+* **Object Properties:** The LLM-generated ontology presents more object properties, but the additional object properties should be modelled as data properties. In terms of axiomatic complexity in object properties, both ontologies are similar, with axioms for inverse object properties, domains and ranges.
+
+* **Data Properties:**
+
+* **Relevance to the CSV Data:**
+
 ### BrazilianEcommerce
+
+* **Annotations:**
+
+* **Classes:**
+
+* **Object Properties:**
+
+* **Data Properties:**
+
+* **Relevance to the CSV Data:**
 
 ### eCommerce
 
+* **Annotations:**
+
+* **Classes:**
+
+* **Object Properties:**
+
+* **Data Properties:**
+
+* **Relevance to the CSV Data:**
+
 ### AirlinesCustomerSatisfaction
+
+* **Annotations:**
+
+* **Classes:**
+
+* **Object Properties:**
+
+* **Data Properties:**
+
+* **Relevance to the CSV Data:**
 
 ### AmazonRating
 
@@ -37,5 +77,27 @@ In conclusion, while both ontologies have a similar structure in terms of classe
 
 ### CustomerComplaints
 
+* **Annotations:**
+
+* **Classes:**
+
+* **Object Properties:**
+
+* **Data Properties:**
+
+* **Relevance to the CSV Data:**
+
 ## Conclusions
+
+In general terms, human generated ontologies include 
+
+more complex axioms in classes
+
+more human-friendly annotations
+
+a deeper coveraghe of CSV data
+
+more complex axioms in object properties
+
+Hallucinations: repeated properties as both data and obkect properties
 
