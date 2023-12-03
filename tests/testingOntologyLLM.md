@@ -67,13 +67,13 @@
 
 ### CustomerComplaints
 
-* **Annotations:**
+* **Annotations:** The human generated ontology includes `rdfs:label` and `rdfs:comment` annotations for classes and properties, making the ontology more understandable to human users.
 
-* **Classes:**
+* **Classes:** Both ontologies present the same classes, but the thuman-generated ontology presents further subsumption relationships between them.
 
-* **Object Properties:**
+* **Object Properties:** Both ontologies present the same object properties, but the human-generated ontology presents more domain/range axioms.
 
-* **Data Properties:**
+* **Data Properties:** Both ontologies present the same data properties, but the human-generated ontology presents more domain/range axioms.
 
 ## Conclusions
 
@@ -87,7 +87,7 @@ more complex axioms in object properties
 
 In general humans entities of external ontologies (e.g. schema), being more interoperable.
 
-Humans more nuanced understanding of OWL modelling (e.g. individual/class division)
+Humans more nuanced understanding of OWL modelling (e.g. individual/class division or when to add a subsumption relationship or n-ary relationship, or axioms)
 
 Hallucinations: 
 
