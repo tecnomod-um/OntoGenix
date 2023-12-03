@@ -1,11 +1,11 @@
-# Generation of mappings with OntoGenix
+# Generation of ontologies with OntoGenix
 
 ## Elements to compare
 
 | Dataset | Human generated ontology | LLM generated ontology |
 | ------- | ----------------------- | --------------------- |
 | [BigBasketProducts](https://www.kaggle.com/datasets/chinmayshanbhag/big-basket-products) | [BigBasketProducts_ontology_human.owl](ontologies/BigBasketProducts_ontology_human.owl) | [BigBasketProducts_ontology_LLM.owl](ontologies/BigBasketProducts_ontology_LLM.owl) |
-| [Brazilian e-commerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) | [ontologies/BrazilianEcommerce_ontology_human.owl](ontologies/BrazilianEcommerce_ontology_human.owl) | [ontologies/BrazilianEcommerce_ontology_LLM.owl](ontologies/BrazilianEcommerce_ontology_LLM.owl) |
+| [Brazilian e-commerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) | [BrazilianEcommerce_ontology_human.owl](ontologies/BrazilianEcommerce_ontology_human.owl) | [BrazilianEcommerce_ontology_LLM.owl](ontologies/BrazilianEcommerce_ontology_LLM.owl) |
 | [eCommerce](https://www.kaggle.com/datasets/carrie1/ecommerce-data) | [eCommerce_ontology_human.owl](ontologies/eCommerce_ontology_human.owl) | [eCommerce_ontology_LLM.owl](ontologies/eCommerce_ontology_LLM.owl) |
 | [Airline customer satisfaction](https://www.kaggle.com/datasets/sjleshrac/airlines-customer-satisfaction) | [AirlinesCustomerSatisfaction_ontology_human.owl](ontologies/AirlinesCustomerSatisfaction_ontology_human.owl) | [AirlinesCustomerSatisfaction_ontology_LLM.owl](ontologies/AirlinesCustomerSatisfaction_ontology_LLM.owl) |
 | [Amazon rating](https://www.kaggle.com/datasets/skillsmuggler/amazon-ratings) | [AmazonRatings_ontology_human.owl](ontologies/AmazonRatings_ontology_human.owl) | [AmazonRatings_ontology_LLM.owl](ontologies/AmazonRatings_ontology_LLM.owl) |
@@ -77,20 +77,14 @@
 
 ## Conclusions
 
-In general terms, human generated ontologies include 
+In general terms, human generated ontologies include:
 
-more complex axioms in classes
+* More human-friendly annotations.
+* Axioms of higher expressivity in class restrictions and properties.
+* More entities of external ontologies (e.g. schema), being more interoperable.
+* A more nuanced understanding of OWL modelling: instances vs classes, when to add a subsumption relationship, the need for N-ary relationships, etc.
 
-more human-friendly annotations
+Additionally, in some cases, LLM-generated ontologies include hallucinations:
 
-more complex axioms in object properties
-
-In general humans entities of external ontologies (e.g. schema), being more interoperable.
-
-Humans more nuanced understanding of OWL modelling (e.g. individual/class division or when to add a subsumption relationship or n-ary relationship, or axioms)
-
-Hallucinations: 
-
-repeated properties as both data and obkect properties 
-useless axiom, namely `range owl:Thing`
-
+* Entities modelled as both data and object properties.
+* Useless axioms like `range owl:Thing`.
