@@ -15,7 +15,7 @@
 
 ### BigBasketProducts
 
-* **Annotations:** The human generated ontology includes rdfs:label annotations for classes and properties, making the ontology more understandable to human users.
+* **Annotations:** The human generated ontology includes `rdfs:label` annotations for classes and properties, making the ontology more understandable to human users.
 
 * **Classes:** Both ontologies have exactly the same classes, but the human-generated ontology includes more complex axioms in the restricions.
 
@@ -27,7 +27,7 @@
 
 ### BrazilianEcommerce
 
-* **Annotations:** The human generated ontology includes rdfs:label annotations for classes and properties, making the ontology more understandable to human users.
+* **Annotations:** The human generated ontology includes `rdfs:label` annotations for classes and properties, making the ontology more understandable to human users.
 
 * **Classes:** Both ontologies have exactly the same classes, but the human-generated ontology includes more complex axioms in the restricions.
 
@@ -37,7 +37,7 @@
 
 ### eCommerce
 
-* **Annotations:** The human generated ontology includes rdfs:label annotations for classes and properties, making the ontology more understandable to human users.
+* **Annotations:** The human generated ontology includes `rdfs:label` annotations for classes and properties, making the ontology more understandable to human users.
 
 * **Classes:** Both ontologies have exactly the same classes, but the human-generated ontology includes more complex axioms in the restricions.
 
@@ -47,17 +47,17 @@
 
 ### AirlinesCustomerSatisfaction
 
-* **Annotations:**
+* **Annotations:** The human generated ontology includes `rdfs:label` annotations for classes and properties, making the ontology more understandable to human users.
 
-* **Classes:**
+* **Classes:** The human-generated ontology models some of the entities as individuals rather than classes, and it includes more entities, with a finer modelling, in doing so.
 
-* **Object Properties:**
+* **Object Properties:** Both ontologies present the same object properties, with identical domain/range.
 
-* **Data Properties:**
+* **Data Properties:** Both ontologies present the same data properties, with identical domain/range.
 
 ### AmazonRating
 
-* **Annotations:** The human generated ontology includes rdfs:label annotations for classes and properties, making the ontology more understandable to human users.
+* **Annotations:** The human generated ontology includes `rdfs:label` annotations for classes and properties, making the ontology more understandable to human users.
 
 * **Classes:** Both ontologies have the same number of classes (3) and the same class names, indicating a similar high-level conceptualization of the domain.
 
@@ -83,11 +83,11 @@ more complex axioms in classes
 
 more human-friendly annotations
 
-a deeper coveraghe of CSV data
-
 more complex axioms in object properties
 
 In general humans entities of external ontologies (e.g. schema), being more interoperable.
+
+Humans more nuanced understanding of OWL modelling (e.g. individual/class division)
 
 Hallucinations: 
 
