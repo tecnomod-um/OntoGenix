@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:dc11="http://purl.org/dc/elements/1.1/"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:prov="http://www.w3.org/ns/prov#">
+
+  <owl:Class rdf:about="https://vocab.um.es#SalesOrder">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://vocab.um.es#hasProduct"/>
+        <owl:onClass rdf:resource="https://vocab.um.es#SalesArticle"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://vocab.um.es#hasCustomer"/>
+        <owl:onClass rdf:resource="https://vocab.um.es#Customer"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="https://vocab.um.es#rating">
+            <rdfs:label xml:lang="en">Product Rating</rdfs:label>
+            <rdfs:comment xml:lang="en">An assessment score of a product given by a customer, ranging from 1 (worst) to 5 (best).</rdfs:comment>
+            <rdfs:domain rdf:resource="https://vocab.um.es#SalesOrder"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            <skos:altLabel xml:lang="en">Customer Rating</skos:altLabel>
+            <skos:altLabel xml:lang="en">Review Score</skos:altLabel>
+            <skos:altLabel xml:lang="en">Product Score</skos:altLabel>
+            <skos:altLabel xml:lang="en">Rating Value</skos:altLabel>
+            <skos:altLabel xml:lang="en">Assessment Score</skos:altLabel>
+            <rdfs:isDefinedBy rdf:resource="https://vocab.um.es/ontology#"/>
+            <dc11:description xml:lang="en">This property represents the rating given to a product within a sales order. It is an integer value that reflects the customer's satisfaction with the product.</dc11:description>
+            <owl:equivalentProperty rdf:resource="http://www.w3.org/2004/02/skos/core#notation"/>
+          </owl:DatatypeProperty>
+        </owl:onProperty>
+
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:withRestrictions>
+          <rdf:Description>
+            <rdf:first>
+              <rdf:Description>
+                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</xsd:minInclusive>
+              </rdf:Description>
+            </rdf:first>
+
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first>
+                  <rdf:Description>
+                    <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</xsd:maxInclusive>
+                  </rdf:Description>
+                </rdf:first>
+
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+
+          </rdf:Description>
+        </owl:withRestrictions>
+
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="https://vocab.um.es#timestamp">
+            <rdfs:label xml:lang="en">Timestamp</rdfs:label>
+            <rdfs:comment xml:lang="en">The Unix epoch time indicating when the rating was given for a sales order.</rdfs:comment>
+            <rdfs:domain rdf:resource="https://vocab.um.es#SalesOrder"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            <skos:altLabel xml:lang="en">Time of Rating</skos:altLabel>
+            <skos:altLabel xml:lang="en">Rating Timestamp</skos:altLabel>
+            <skos:altLabel xml:lang="en">Sales Order Time</skos:altLabel>
+            <skos:altLabel xml:lang="en">Order Timestamp</skos:altLabel>
+            <skos:altLabel xml:lang="en">Evaluation Time</skos:altLabel>
+            <dc:description xml:lang="en">This property represents the date and time when a customer's rating for a product was recorded, expressed in Unix epoch time.</dc:description>
+            <owl:equivalentProperty rdf:resource="http://purl.org/dc/terms/date"/>
+          </owl:DatatypeProperty>
+        </owl:onProperty>
+
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:withRestrictions>
+          <rdf:Description>
+            <rdf:first>
+              <rdf:Description>
+                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2004-04-13T00:00:00Z</xsd:minInclusive>
+              </rdf:Description>
+            </rdf:first>
+
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first>
+                  <rdf:Description>
+                    <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-07-21T23:59:59Z</xsd:maxInclusive>
+                  </rdf:Description>
+                </rdf:first>
+
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+
+          </rdf:Description>
+        </owl:withRestrictions>
+
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+  </owl:Class>
+
+  <owl:Class rdf:about="https://vocab.um.es#Customer">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://vocab.um.es#hasCustomer"/>
+        <owl:onClass rdf:resource="https://vocab.um.es#SalesOrder"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="https://vocab.um.es#hasCustomer">
+    <rdfs:domain rdf:resource="https://vocab.um.es#SalesOrder"/>
+    <rdfs:range rdf:resource="https://vocab.um.es#Customer"/>
+    <rdfs:label xml:lang="en">has customer</rdfs:label>
+    <rdfs:comment xml:lang="en">Associates a sales order with the customer who placed the order.</rdfs:comment>
+    <skos:altLabel xml:lang="en">customerOfOrder</skos:altLabel>
+    <skos:altLabel xml:lang="en">orderCustomer</skos:altLabel>
+    <skos:altLabel xml:lang="en">belongsToCustomer</skos:altLabel>
+    <skos:altLabel xml:lang="en">customerLink</skos:altLabel>
+    <skos:altLabel xml:lang="en">orderPlacedBy</skos:altLabel>
+    <dc11:description xml:lang="en">This property links a sales order to the respective customer, indicating the ownership of the order.</dc11:description>
+    <prov:wasDerivedFrom rdf:resource="http://schema.org/Customer"/>
+    <owl:equivalentProperty rdf:resource="http://schema.org/buyer"/>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="https://vocab.um.es#userId">
+    <rdfs:domain rdf:resource="https://vocab.um.es#Customer"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">User Identifier</rdfs:label>
+    <rdfs:comment xml:lang="en">A unique identifier for a user within the system.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://vocab.um.es/ontology#"/>
+    <dc11:description xml:lang="en">This property represents the unique identifier assigned to each customer or user of the service. It is used to link customer-specific data such as orders and reviews.</dc11:description>
+    <skos:altLabel xml:lang="en">Customer ID</skos:altLabel>
+    <skos:altLabel xml:lang="en">User ID</skos:altLabel>
+    <skos:altLabel xml:lang="en">Member Identifier</skos:altLabel>
+    <skos:altLabel xml:lang="en">Client ID</skos:altLabel>
+    <skos:altLabel xml:lang="en">Shopper ID</skos:altLabel>
+    <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/accountName"/>
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:about="https://vocab.um.es#SalesArticle">
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://vocab.um.es#productId">
+    <rdfs:domain rdf:resource="https://vocab.um.es#SalesArticle"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">Product ID</rdfs:label>
+    <rdfs:comment xml:lang="en">A unique identifier for a product within the sales system.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://vocab.um.es/ontology#"/>
+    <dc11:description xml:lang="en">This property represents the unique identifier assigned to each product in the catalog. It is used to track products and link them to sales orders.</dc11:description>
+    <skos:altLabel xml:lang="en">Item ID</skos:altLabel>
+    <skos:altLabel xml:lang="en">SKU</skos:altLabel>
+    <skos:altLabel xml:lang="en">Product Code</skos:altLabel>
+    <skos:altLabel xml:lang="en">Catalog Number</skos:altLabel>
+    <skos:altLabel xml:lang="en">Inventory ID</skos:altLabel>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="https://vocab.um.es#hasProduct">
+    <rdfs:domain rdf:resource="https://vocab.um.es#SalesOrder"/>
+    <rdfs:range rdf:resource="https://vocab.um.es#SalesArticle"/>
+    <owl:onProperty rdf:resource="https://vocab.um.es#hasProduct"/>
+    <owl:onClass rdf:resource="https://vocab.um.es#SalesArticle"/>
+    <rdfs:label xml:lang="en">has product</rdfs:label>
+    <rdfs:comment xml:lang="en">Associates a sales order with the product being purchased.</rdfs:comment>
+    <skos:altLabel xml:lang="en">contains product</skos:altLabel>
+    <skos:altLabel xml:lang="en">includes product</skos:altLabel>
+    <skos:altLabel xml:lang="en">product included</skos:altLabel>
+    <skos:altLabel xml:lang="en">product associated</skos:altLabel>
+    <skos:altLabel xml:lang="en">order product</skos:altLabel>
+    <dc11:description xml:lang="en">This property links a sales order to the specific product or products that are included in the order. It is used to identify which products are being transacted in each sales order.</dc11:description>
+    <owl:equivalentProperty rdf:resource="http://www.w3.org/2004/02/skos/core#related"/>
+  </owl:ObjectProperty>
+
+  <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#integer">
+  </rdfs:Datatype>
+
+  <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#dateTime">
+  </rdfs:Datatype>
+
+  <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string">
+  </rdfs:Datatype>
+
+</rdf:RDF>
