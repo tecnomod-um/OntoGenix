@@ -1,3 +1,4 @@
+
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -5,6 +6,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
 
 um:ZipCodePrefix a owl:Class ;
     rdfs:label "Zip Code Prefix"@en ;
@@ -61,16 +64,16 @@ um:City a owl:Class ;
   rdfs:isDefinedBy <https://vocab.um.es#> ;
   owl:equivalentClass [ a owl:Class ; owl:oneOf (um:City um:Town um:Municipality um:UrbanArea um:MetropolitanArea um:Locale) ] .
 
-:hasCustomerRef a owl:DatatypeProperty ;
+um:hasCustomerRef a owl:DatatypeProperty ;
     rdfs:label "customer reference"@en ;
     rdfs:comment "A unique identifier for a customer, possibly for internal use."@en ;
-    rdfs:domain :Customer ;
+    rdfs:domain um:Customer ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
     owl:equivalentProperty xsd:string ;
-    rdfs:seeAlso :customer_id ;
-    rdfs:seeAlso :customer_unique_id ;
-    rdfs:seeAlso :FAIR_URI ;
+    rdfs:seeAlso um:customer_id ;
+    rdfs:seeAlso um:customer_unique_id ;
+    rdfs:seeAlso um:FAIR_URI ;
     rdfs:subPropertyOf owl:topDataProperty .
 
 um:hasCustomerID a owl:DatatypeProperty ;
@@ -120,4 +123,3 @@ um:hasZipCodePrefix a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
     owl:equivalentProperty xsd:string ;
     rdfs:seeAlso <http://www.w3.org/2006/vcard/ns#postal-code> .
-
