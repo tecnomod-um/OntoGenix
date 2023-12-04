@@ -278,7 +278,7 @@
     dct:description "This property represents the legal name under which a company is registered and conducts business. It is used to identify the company in the context of a customer complaint."@en ;
     owl:equivalentProperty foaf:name .
 
-um:publicResponse a owl:DatatypeProperty ;
+:publicResponse a owl:DatatypeProperty ;
     rdfs:label "Public Response" ;
     rdfs:label "Public Reply" ;
     rdfs:label "Company's Public Statement" ;
@@ -289,7 +289,7 @@ um:publicResponse a owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://vocab.um.es/publicResponse> .
 
-um:responseToConsumer a owl:DatatypeProperty ;
+:responseToConsumer a owl:DatatypeProperty ;
     rdfs:label "Response to Consumer" ;
     rdfs:label "Consumer Response" ;
     rdfs:label "Reply to Customer" ;
