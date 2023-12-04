@@ -1,6 +1,3 @@
-
-
-```turtle
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -124,6 +121,3 @@ um:hasZipCodePrefix a owl:ObjectProperty ;
     owl:equivalentProperty xsd:string ;
     rdfs:seeAlso <http://www.w3.org/2006/vcard/ns#postal-code> .
 
-
-
-```
