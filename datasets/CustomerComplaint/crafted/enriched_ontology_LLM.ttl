@@ -5,6 +5,8 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
 
 ### Classes
 um:CustomerComplaint a owl:Class ;
@@ -12,7 +14,7 @@ um:CustomerComplaint a owl:Class ;
     rdfs:comment "A formal complaint lodged by a consumer against a company regarding a product or service." ;
     dc:description "This entity represents the details of a complaint made by a customer, including the narrative, response, and resolution status." ;
     rdfs:subClassOf owl:Thing ;
-    owl:equivalentClass :ConsumerGrievance, :ClientComplaint, :CustomerFeedback, :ConsumerFeedback, :ServiceComplaint ;
+    owl:equivalentClass um:ConsumerGrievance, um:ClientComplaint, um:CustomerFeedback, um:ConsumerFeedback, um:ServiceComplaint ;
     rdfs:isDefinedBy <https://vocab.um.es/CustomerComplaint> .
 
 um:State a owl:Class ;
@@ -32,12 +34,12 @@ um:Product a owl:Class ;
     rdfs:comment "A type of product related to a consumer complaint." ;
     rdfs:subClassOf owl:Thing ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
-    owl:equivalentClass [ a owl:Class ; owl:oneOf (:FinancialProduct :ConsumerGood :Service) ] ;
+    owl:equivalentClass [ a owl:Class ; owl:oneOf (um:FinancialProduct um:ConsumerGood um:Service) ] ;
     rdfs:seeAlso <http://purl.org/goodrelations/v1#ProductOrService> ;
     rdfs:subClassOf [
         a owl:Restriction ;
-        owl:onProperty :hasSubProduct ;
-        owl:someValuesFrom :SubProduct
+        owl:onProperty um:hasSubProduct ;
+        owl:someValuesFrom um:SubProduct
     ] .
 
 # Alternative labels for the Product entity
@@ -88,7 +90,7 @@ um:Resolution a owl:Class ;
     skos:prefLabel "Resolution" ;
     skos:altLabel "Settlement", "Outcome", "ResolutionResult", "ComplaintResolution", "DisputeResolution" ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
-    owl:equivalentClass :CompanyResponse ;
+    owl:equivalentClass um:CompanyResponse ;
     rdfs:subClassOf owl:Thing ;
     rdfs:seeAlso <http://purl.org/goodrelations/v1#Resolution> .
 
@@ -102,10 +104,10 @@ um:Resolution
     owl:versionInfo "1.1" .
 
 um:ProblemSubCategory a owl:Class ;
-    rdfs:subClassOf :ProblemOfComplaint ;
+    rdfs:subClassOf um:ProblemOfComplaint ;
     rdfs:label "Problem Subcategory" ;
     rdfs:comment "A more detailed issue related to the main problem of the consumer complaint."@en ;
-    owl:equivalentClass :IssueDetail ; # Assuming :IssueDetail is an existing equivalent class in the ontology
+    owl:equivalentClass um:IssueDetail ; # Assuming :IssueDetail is an existing equivalent class in the ontology
     rdfs:isDefinedBy <https://vocab.um.es/ProblemSubCategory> ;
     rdfs:seeAlso <http://www.w3.org/2004/02/skos/core#Concept> ;
     rdfs:label "Sub-issue"@en ;
@@ -115,7 +117,7 @@ um:ProblemSubCategory a owl:Class ;
     rdfs:label "Issue Specification"@en .
 
 um:SubProduct a owl:Class ;
-    rdfs:subClassOf :Product ;
+    rdfs:subClassOf um:Product ;
     rdfs:label "SubProduct" ;
     rdfs:label "Subcategory of Product" ;
     rdfs:label "Product Subtype" ;
@@ -124,7 +126,7 @@ um:SubProduct a owl:Class ;
     rdfs:comment "A more specific category of the product related to the consumer complaint."@en ;
     owl:equivalentClass [
         a owl:Class ;
-        owl:oneOf (:SubProductType1 :SubProductType2 :SubProductType3 :SubProductType4 :SubProductType5)
+        owl:oneOf (um:SubProductType1 um:SubProductType2 um:SubProductType3 um:SubProductType4 um:SubProductType5)
     ] ;
     rdfs:isDefinedBy <https://vocab.um.es#> .
 
@@ -132,10 +134,10 @@ um:SubProduct a owl:Class ;
 um:hasSubProduct a owl:ObjectProperty ;
     rdfs:label "has sub-product"@en ;
     rdfs:comment "Relates a product to its more specific sub-product category."@en ;
-    rdfs:domain :Product ;
-    rdfs:range :SubProduct ;
+    rdfs:domain um:Product ;
+    rdfs:range um:SubProduct ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
-    owl:equivalentProperty :hasSpecificProductCategory ;
+    owl:equivalentProperty um:hasSpecificProductCategory ;
     rdfs:subPropertyOf owl:topObjectProperty ;
     rdfs:seeAlso <http://www.w3.org/2004/02/skos/core#related> .
 
@@ -154,19 +156,19 @@ um:hasProblemSubCategory a owl:ObjectProperty ;
                "有问题子类别"@zh ;
     rdfs:comment "Relates a problem of complaint to its more specific subcategory."@en ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
-    owl:equivalentProperty :hasSubIssue ; # Assuming :hasSubIssue is a known equivalent property in the ontology
-    rdfs:domain :ProblemOfComplaint ;
-    rdfs:range :ProblemSubCategory ;
-    rdfs:seeAlso :issueDescription ;
+    owl:equivalentProperty um:hasSubIssue ; # Assuming :hasSubIssue is a known equivalent property in the ontology
+    rdfs:domain um:ProblemOfComplaint ;
+    rdfs:range um:ProblemSubCategory ;
+    rdfs:seeAlso um:issueDescription ;
     owl:versionInfo "1.0.0" ;
     rdfs:description "This property links a general problem category to a more detailed subcategory that provides additional specificity to the nature of the complaint."@en .
 
 um:hasResolution a owl:ObjectProperty ;
     rdfs:label "has resolution"@en ;
     rdfs:comment "Relates a company response to a resolution of a consumer complaint."@en ;
-    rdfs:domain :CompanyResponse ;
-    rdfs:range :Resolution ;
-    owl:equivalentProperty :hasOutcome ; # Assuming :hasOutcome is a known equivalent property in the ontology
+    rdfs:domain um:CompanyResponse ;
+    rdfs:range um:Resolution ;
+    owl:equivalentProperty um:hasOutcome ; # Assuming :hasOutcome is a known equivalent property in the ontology
     rdfs:isDefinedBy <https://vocab.um.es#> ;
     rdfs:seeAlso <http://www.w3.org/2006/vcard/ns#hasRelated> ; # Assuming this is a relevant external resource
     rdfs:subPropertyOf owl:topObjectProperty .
@@ -181,9 +183,9 @@ um:hasResolution rdfs:label "includes resolution"@en ;
 um:locatedIn a owl:ObjectProperty ;
     rdfs:label "located in"@en ;
     rdfs:comment "Relates a customer complaint to the state from which it was filed."@en ;
-    rdfs:domain :CustomerComplaint ;
-    rdfs:range :State ;
-    owl:equivalentProperty :filedInState ;
+    rdfs:domain um:CustomerComplaint ;
+    rdfs:range um:State ;
+    owl:equivalentProperty um:filedInState ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
     rdfs:seeAlso <http://www.w3.org/2006/vcard/ns#hasAddress> .
 
@@ -197,11 +199,11 @@ um:locatedIn rdfs:label "filed in"@en ;
 um:relatedToProduct a owl:ObjectProperty ;
     rdfs:label "related to product"@en ;
     rdfs:comment "Associates a customer complaint with a product involved in the complaint."@en ;
-    rdfs:domain :CustomerComplaint ;
-    rdfs:range :Product ;
-    owl:equivalentProperty :hasProduct ;
+    rdfs:domain um:CustomerComplaint ;
+    rdfs:range um:Product ;
+    owl:equivalentProperty um:hasProduct ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
-    rdfs:seeAlso :Product ;
+    rdfs:seeAlso um:Product ;
     rdfs:subPropertyOf owl:topObjectProperty .
 
 # Alternative labels for enhanced clarity and versatility
@@ -214,12 +216,12 @@ um:relatedToProduct rdfs:label "concerns product"@en ;
 um:involvesCompany a owl:ObjectProperty ;
     rdfs:label "involves company"@en ;
     rdfs:comment "Relates a customer complaint to the company involved in the complaint."@en ;
-    rdfs:domain :CustomerComplaint ;
-    rdfs:range :Company ;
+    rdfs:domain um:CustomerComplaint ;
+    rdfs:range um:Company ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
     dc:description "This property links a CustomerComplaint instance to the Company that is associated with the complaint."@en ;
     skos:altLabel "company involved"@en, "associated company"@en, "complaint's company"@en, "company in question"@en, "related company"@en ;
-    owl:equivalentProperty :hasCompanyInvolved .
+    owl:equivalentProperty um:hasCompanyInvolved .
 
 um:hasProblem a owl:ObjectProperty ;
     rdfs:label "has problem"@en ,
@@ -228,17 +230,17 @@ um:hasProblem a owl:ObjectProperty ;
                "a un problème"@fr ,
                "tem problema"@pt ;
     rdfs:comment "Relates a customer complaint to a specific problem described within the complaint."@en ;
-    rdfs:domain :CustomerComplaint ;
-    rdfs:range :ProblemOfComplaint ;
-    owl:equivalentProperty :involvesIssue ;
+    rdfs:domain um:CustomerComplaint ;
+    rdfs:range um:ProblemOfComplaint ;
+    owl:equivalentProperty um:involvesIssue ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
-    rdfs:seeAlso :issueDescription .
+    rdfs:seeAlso um:issueDescription .
 
 um:hasCompanyResponse a owl:ObjectProperty ;
     rdfs:label "has company response"@en ;
     rdfs:comment "Relates a customer complaint to the response provided by the company."@en ;
-    rdfs:domain :CustomerComplaint ;
-    rdfs:range :CompanyResponse ;
+    rdfs:domain um:CustomerComplaint ;
+    rdfs:range um:CompanyResponse ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
     dc:description "This property links a CustomerComplaint instance to the corresponding CompanyResponse instance, detailing the company's response to the consumer's complaint."@en ;
     skos:altLabel "company's response"@en ,
@@ -246,11 +248,11 @@ um:hasCompanyResponse a owl:ObjectProperty ;
                    "company reply"@en ,
                    "company feedback"@en ,
                    "response to complaint"@en ;
-    owl:equivalentProperty :responseProvidedByCompany .
+    owl:equivalentProperty um:responseProvidedByCompany .
 
 um:responseProvidedByCompany a owl:Class ;
     rdfs:label "Response Provided by Company" ;
-    rdfs:subClassOf :CompanyResponse ;
+    rdfs:subClassOf um:CompanyResponse ;
     rdfs:comment "A categorical representation of the response given by a company to a consumer's complaint." ;
     skos:prefLabel "Company's Response" ;
     skos:altLabel "Corporate Response" ;
@@ -260,7 +262,7 @@ um:responseProvidedByCompany a owl:Class ;
     skos:definition "The official statement or action taken by a company in reply to a consumer's complaint, which can be categorized and analyzed for consumer relations and regulatory compliance."@en ;
     owl:equivalentClass [
         a owl:Class ;
-        owl:oneOf (:publicResponse :responseToConsumer)
+        owl:oneOf (um:publicResponse um:responseToConsumer)
     ] .
 
 ### Data Type Properties
@@ -268,7 +270,7 @@ um:companyName a owl:DatatypeProperty ;
     rdfs:label "Company Name"@en ;
     rdfs:comment "The official registered name of a company involved in a consumer complaint."@en ;
     rdfs:isDefinedBy <https://vocab.um.es#Company> ;
-    rdfs:domain :Company ;
+    rdfs:domain um:Company ;
     rdfs:range xsd:string ;
     skos:altLabel "Business Name"@en ;
     skos:altLabel "Corporation Name"@en ;
@@ -303,11 +305,11 @@ um:responseToConsumer a owl:DatatypeProperty ;
 um:complaintNarrative a owl:DatatypeProperty ;
     rdfs:label "Consumer Complaint Narrative"@en ;
     rdfs:comment "A detailed narrative of the complaint submitted by the consumer."@en ;
-    rdfs:domain :CustomerComplaint ;
+    rdfs:domain um:CustomerComplaint ;
     rdfs:range xsd:string ;
     owl:equivalentProperty schema:description ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
-    rdfs:seeAlso :fairURI ;
+    rdfs:seeAlso um:fairURI ;
     skos:altLabel "Complaint Details"@en ,
                   "Complaint Story"@en ,
                   "Complaint Description"@en ,
@@ -317,11 +319,11 @@ um:complaintNarrative a owl:DatatypeProperty ;
 um:consentProvided a owl:DatatypeProperty ;
     rdfs:label "Consumer Consent Provided" ;
     rdfs:comment "Indicates whether the consumer provided consent for data sharing in the context of a customer complaint." ;
-    rdfs:domain :CustomerComplaint ;
+    rdfs:domain um:CustomerComplaint ;
     rdfs:range xsd:boolean ;
     owl:equivalentProperty owl:topDataProperty ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
-    rdfs:seeAlso :CustomerComplaint ;
+    rdfs:seeAlso um:CustomerComplaint ;
     skos:prefLabel "Consumer Consent" , "Data Sharing Consent" , "Consent for Data Use" , "Consent Status" , "Sharing Consent Given" ;
     skos:altLabel "Consent Provided by Consumer" , "Consumer Data Sharing Approval" , "Permission for Data Sharing" , "Consent to Share Data" , "Data Use Authorization" .
 
@@ -334,15 +336,15 @@ um:isDisputed a owl:DatatypeProperty ;
     rdfs:comment "Indicates whether the consumer disputed the complaint resolution."@en ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
     owl:equivalentProperty owl:topDataProperty ;
-    rdfs:domain :CustomerComplaint ;
+    rdfs:domain um:CustomerComplaint ;
     rdfs:range xsd:boolean .
 
 um:dateReceived a owl:DatatypeProperty ;
     rdfs:label "Date Received"@en ;
     rdfs:comment "The date on which the consumer complaint was received."@en ;
-    rdfs:domain :CustomerComplaint ;
+    rdfs:domain um:CustomerComplaint ;
     rdfs:range xsd:date ;
-    owl:equivalentProperty :complaintReceivedDate ;
+    owl:equivalentProperty um:complaintReceivedDate ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
     rdfs:seeAlso <http://purl.org/dc/terms/date> ;
     skos:altLabel "Complaint Reception Date"@en ,
@@ -358,11 +360,11 @@ um:dateSentToCompany a owl:DatatypeProperty ;
                "Data di Invio all'Azienda"@it ,
                "Unternehmenssendedatum"@de ;
     rdfs:comment "The date on which the consumer complaint was forwarded to the company."@en ;
-    rdfs:domain :CustomerComplaint ;
+    rdfs:domain um:CustomerComplaint ;
     rdfs:range xsd:date ;
     rdfs:isDefinedBy <https://vocab.um.es#dateSentToCompany> ;
-    owl:equivalentProperty :dateForwardedToCompany ;
-    rdfs:seeAlso :dateReceived ;
+    owl:equivalentProperty um:dateForwardedToCompany ;
+    rdfs:seeAlso um:dateReceived ;
     skos:definition "Represents the specific date when the complaint was sent from the consumer or intermediary to the company for further action."@en ;
     skos:historyNote "Introduced in version 1.0 of the consumer complaints ontology."@en ;
     skos:editorialNote "Ensure the date format follows the ISO 8601 standard (YYYY-MM-DD)."@en ;
@@ -375,7 +377,7 @@ um:dateSentToCompany a owl:DatatypeProperty ;
 um:fairURI a owl:DatatypeProperty ;
     rdfs:label "FAIR URI" ;
     rdfs:comment "A unique identifier for the consumer complaint record, adhering to the FAIR data principles." ;
-    rdfs:domain :CustomerComplaint ;
+    rdfs:domain um:CustomerComplaint ;
     rdfs:range xsd:anyURI ;
     owl:equivalentProperty owl:Thing ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
@@ -389,9 +391,9 @@ um:fairURI a owl:DatatypeProperty ;
 um:issueDescription a owl:DatatypeProperty ;
     rdfs:label "Issue Description" ;
     rdfs:comment "A textual description of the main issue described in the consumer complaint." ;
-    rdfs:domain :ProblemOfComplaint ;
+    rdfs:domain um:ProblemOfComplaint ;
     rdfs:range xsd:string ;
-    owl:equivalentProperty :problemStatement ;
+    owl:equivalentProperty um:problemStatement ;
     rdfs:isDefinedBy <https://vocab.um.es/ontology#> ;
     rdfs:seeAlso <http://purl.org/dc/terms/description> ;
     skos:altLabel "Complaint Issue" ;
@@ -403,7 +405,7 @@ um:issueDescription a owl:DatatypeProperty ;
 um:productType a owl:DatatypeProperty ;
     rdfs:label "product type" ;
     rdfs:comment "The type of product the complaint is related to." ;
-    rdfs:domain :Product ;
+    rdfs:domain um:Product ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
     owl:equivalentProperty <http://schema.org/category> .
@@ -423,14 +425,14 @@ um:subIssueDescription a owl:DatatypeProperty ;
                "Beschreibung des Teilproblems"@de ,
                "Descrizione del Sotto-problema"@it ;
     rdfs:comment "A textual description providing more details about a specific aspect of the main problem identified in a consumer complaint."@en ;
-    rdfs:domain :ProblemSubCategory ;
+    rdfs:domain um:ProblemSubCategory ;
     rdfs:range xsd:string ;
-    owl:equivalentProperty :detailedIssueDescription ;
+    owl:equivalentProperty um:detailedIssueDescription ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
-    rdfs:seeAlso :issueDescription .
+    rdfs:seeAlso um:issueDescription .
 
 um:subProductType a owl:DatatypeProperty ;
-    rdfs:domain :SubProduct ;
+    rdfs:domain um:SubProduct ;
     rdfs:range xsd:string ;
     rdfs:label "subProductType" ;
     rdfs:label "subtype" ;
@@ -438,15 +440,15 @@ um:subProductType a owl:DatatypeProperty ;
     rdfs:label "detailedProductCategory" ;
     rdfs:label "productSubcategory" ;
     rdfs:comment "The type of sub-product related to the consumer complaint."@en ;
-    owl:equivalentProperty :productSubType ;
+    owl:equivalentProperty um:productSubType ;
     rdfs:isDefinedBy <https://vocab.um.es#> .
 
 um:submissionMethod a owl:DatatypeProperty ;
     rdfs:label "Submission Method"@en ;
     rdfs:comment "The medium through which the complaint was submitted."@en ;
-    rdfs:domain :CustomerComplaint ;
+    rdfs:domain um:CustomerComplaint ;
     rdfs:range xsd:string ;
-    owl:equivalentProperty :submittedVia ;
+    owl:equivalentProperty um:submittedVia ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
     rdfs:seeAlso <http://purl.org/dc/terms/medium> ;
     skos:altLabel "Complaint Submission Channel"@en ,
@@ -458,7 +460,7 @@ um:submissionMethod a owl:DatatypeProperty ;
 um:tags a owl:DatatypeProperty ;
     rdfs:label "Tags"@en ;
     rdfs:comment "Additional categorical descriptors related to a customer complaint that provide context and facilitate complaint categorization and search."@en ;
-    rdfs:domain :CustomerComplaint ;
+    rdfs:domain um:CustomerComplaint ;
     rdfs:range xsd:string ;
     skos:altLabel "Keywords"@en ;
     skos:altLabel "Descriptors"@en ;
@@ -470,22 +472,22 @@ um:tags a owl:DatatypeProperty ;
 um:timelyResponse a owl:DatatypeProperty ;
     rdfs:label "Timely Response"@en ;
     rdfs:comment "Indicates whether the company responded to the consumer complaint in a timely manner."@en ;
-    rdfs:domain :CustomerComplaint ;
+    rdfs:domain um:CustomerComplaint ;
     rdfs:range xsd:boolean ;
-    owl:equivalentProperty :hasTimelyResponse ;
+    owl:equivalentProperty um:hasTimelyResponse ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
-    rdfs:seeAlso :CompanyResponse ;
+    rdfs:seeAlso um:CompanyResponse ;
     skos:prefLabel "Timely Response Indicator"@en ;
     skos:altLabel "Prompt Response"@en, "Response Timeliness"@en, "Quick Response"@en, "Response Promptness"@en, "Speed of Response"@en .
 
 um:complaintID a owl:DatatypeProperty ;
     rdfs:label "Complaint ID" ;
     rdfs:comment "A unique numerical identifier for the consumer complaint." ;
-    rdfs:domain :CustomerComplaint ;
+    rdfs:domain um:CustomerComplaint ;
     rdfs:range xsd:integer ;
-    owl:equivalentProperty :FAIR_URI ;
+    owl:equivalentProperty um:FAIR_URI ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
-    rdfs:seeAlso :fairURI ;
+    rdfs:seeAlso um:fairURI ;
     skos:altLabel "Complaint Number" ;
     skos:altLabel "Case ID" ;
     skos:altLabel "Issue ID" ;
@@ -495,9 +497,9 @@ um:complaintID a owl:DatatypeProperty ;
 um:zipCode a owl:DatatypeProperty ;
     rdfs:label "ZIP code"@en , "Postal code"@en , "ZIP"@en , "Postal ZIP code"@en , "Area code"@en ;
     rdfs:comment "The postal code from which the consumer complaint was filed. It is a numerical value representing a specific geographic region."@en ;
-    rdfs:domain :CustomerComplaint ;
+    rdfs:domain um:CustomerComplaint ;
     rdfs:range xsd:integer ;
-    owl:equivalentProperty :postalCode ;
+    owl:equivalentProperty um:postalCode ;
     rdfs:isDefinedBy <https://vocab.um.es#> ;
     rdfs:seeAlso <http://purl.org/goodrelations/v1#location> ;
     owl:versionInfo "1.0" ;
