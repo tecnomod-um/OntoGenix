@@ -2,6 +2,9 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 ### Classes
 um:Invoice a owl:Class ;
@@ -85,7 +88,8 @@ um:Country a owl:Class ;
     dc:description "This entity represents a country in the context of an invoice issuance location."@en ;
     rdfs:seeAlso <http://dbpedia.org/resource/Country> ;
     owl:equivalentClass schema:Country ;
-    rdfs:label "Nation"@en , "Pays"@fr , "País"@es , "Land"@de , "国家"@zh ;
+    rdfs:label "Nation"@en , "Pays"@fr , "País"@es , "Land"@de , "国家"@zh .
+
     um:country a owl:ObjectProperty ;
         rdfs:domain um:Invoice ;
         rdfs:range um:Country ;
@@ -173,7 +177,7 @@ um:InvoiceDate a owl:DatatypeProperty ;
     rdfs:domain um:Invoice ;
     rdfs:range xsd:string ;
     owl:sameAs schema:DateTime ;
-    rdfs:subPropertyOf schema:dateIssued
+    rdfs:subPropertyOf schema:dateIssued.
 
 um:Quantity a owl:DatatypeProperty ;
     rdfs:label "Quantity"@en ;
