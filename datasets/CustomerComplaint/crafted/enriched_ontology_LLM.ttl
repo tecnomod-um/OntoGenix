@@ -71,7 +71,7 @@
     rdfs:isDefinedBy <https://vocab.um.es#> ;
     owl:equivalentClass [ a owl:Class ; owl:oneOf (um:FinancialInstitution um:ServiceProvider um:RetailCompany) ] .
 
-um:CompanyResponse a owl:Class ;
+:CompanyResponse a owl:Class ;
     rdfs:label "Company Response" ;
     rdfs:label "Response by Company" ;
     rdfs:label "Corporate Reply" ;
