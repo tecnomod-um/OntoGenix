@@ -4,6 +4,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:<http://xmlns.com/foaf/0.1/> .
 
 ### Classes
 ### Entity: CustomerFeedback
@@ -181,7 +182,7 @@ um:FoodAndDrink rdf:type owl:Class ;
     rdfs:label "Food and Drink Rating"@en ;
     rdfs:comment "Represents the customer's rating for food and drink quality during the flight."@en ;
     owl:equivalentClass um:CateringServiceRating ;
-    rdfs:isDefinedBy <https://vocab.um.es/ontology#FoodAndDrink> .
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#FoodAndDrink> ;
 
 ### Alternative labels for enhanced clarity and versatility
 rdfs:label "Catering Rating"@en ;
@@ -238,7 +239,7 @@ um:OnlineBooking a owl:Class ;
         owl:oneOf (um:VeryDissatisfied um:Dissatisfied um:Neutral um:Satisfied um:VerySatisfied)
     ] ;
     rdfs:isDefinedBy <https://vocab.um.es/OnlineBooking> ;
-    rdfs:seeAlso <http://purl.org/goodrelations/v1#OnlineBooking> .
+    rdfs:seeAlso <http://purl.org/goodrelations/v1#OnlineBooking> ;
 
 ### Alternative labels for enhanced clarity and versatility
 rdfs:label "Web Booking"@en ;
@@ -400,7 +401,7 @@ um:hasTypeOfTravel rdf:type owl:ObjectProperty ;
                    owl:equivalentProperty um:travelType ;
                    rdfs:isDefinedBy <https://vocab.um.es/ontology#> .
 
-um:hasCustomerType rdf:type owl:ObjectProperty ;
+
     
 
 # Definition of the Entity
@@ -408,7 +409,7 @@ um:hasCustomerType a owl:ObjectProperty ;
     rdfs:label "customer type"@en , "tipo de cliente"@es , "type de client"@fr , "Kundentyp"@de , "tipo di cliente"@it ;
     rdfs:comment "Property representing the type of customer in a customer feedback context."@en ;
     rdfs:domain um:CustomerFeedback ;
-    rdfs:range um:CustomerType .
+    rdfs:range um:CustomerType ;
     rdfs:subPropertyOf owl:topDataProperty ;
     owl:equivalentProperty um:customerCategory ; # Assuming um:customerCategory is an equivalent property in the ontology
     rdfs:isDefinedBy <https://vocab.um.es/ontology#hasCustomerType> .
