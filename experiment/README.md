@@ -120,6 +120,7 @@ The LLM ontologies are richer in annotations.
 The next table shows for which metrics the LLM and the human ontologies got different scores for the metrics. A metric in a cell means which ontology got the higher score. We also show in the table who developed each ontology.
 
 | Dataset | LLM ontology | Human  ontology | Ontologist |
+| ------- | ----------------------- | --------------------- | ---------------------| 
 | Airlines Customer satisfaction  | RFCOnto, NOMOnto | WMCOnto2, NOCOnto, DITOnto, LCOMOnto | A |
 | Amazon Ratings  | RROnto, NOMOnto, INROnto | WMCOnto2, TMOnto2, TMOnto, PROnto, DITOnto, ANOnto | A|
 | BigBasket Products  | ANOnto | NOCOnto | B|
