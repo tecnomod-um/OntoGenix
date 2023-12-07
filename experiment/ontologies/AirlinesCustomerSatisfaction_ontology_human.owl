@@ -1,0 +1,270 @@
+@prefix : <http://www.semanticweb.org/juanm/ontologies/2023/5/untitled-ontology-17#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://vocab.um.es> .
+
+<https://vocab.um.es> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://vocab.um.es#has_customer_gender
+:has_customer_gender rdf:type owl:ObjectProperty ;
+                     rdfs:domain :CustomerFeedback ;
+                     rdfs:range :CustomerGender ;
+                     rdfs:label "has customer gender"@en .
+
+
+###  https://vocab.um.es#has_customer_satisfaction
+:has_customer_satisfaction rdf:type owl:ObjectProperty ;
+                           rdfs:domain :CustomerFeedback ;
+                           rdfs:range :Satisfaction ;
+                           rdfs:label "has customer satisfaction"@en .
+
+
+###  https://vocab.um.es#has_customer_type
+:has_customer_type rdf:type owl:ObjectProperty ;
+                   rdfs:domain :CustomerFeedback ;
+                   rdfs:range :CustomerType ;
+                   rdfs:label "has customer type"@en .
+
+
+###  https://vocab.um.es#has_evaluation_item
+:has_evaluation_item rdf:type owl:ObjectProperty ;
+                     rdfs:domain :CustomerFeedback ;
+                     rdfs:range :EvaluationItem ;
+                     rdfs:label "has evaluation item"@en .
+
+
+###  https://vocab.um.es#has_flight_class
+:has_flight_class rdf:type owl:ObjectProperty ;
+                  rdfs:domain :CustomerFeedback ;
+                  rdfs:range :FlightClass ;
+                  rdfs:label "has flight class"@en .
+
+
+###  https://vocab.um.es#has_type_of_travel
+:has_type_of_travel rdf:type owl:ObjectProperty ;
+                    rdfs:domain :CustomerFeedback ;
+                    rdfs:range :TypeOfTravel ;
+                    rdfs:label "has type of travel"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://vocab.um.es#has_customer_age
+:has_customer_age rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :CustomerFeedback ;
+                  rdfs:range xsd:integer ;
+                  rdfs:label "has customer age"@en .
+
+
+###  https://vocab.um.es#has_flight_distance
+:has_flight_distance rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :CustomerFeedback ;
+                     rdfs:range xsd:integer ;
+                     rdfs:label "has flight distance" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://vocab.um.es#CustomerFeedback
+:CustomerFeedback rdf:type owl:Class ;
+                  rdfs:label "customer feedback"@en .
+
+
+###  https://vocab.um.es#CustomerGender
+:CustomerGender rdf:type owl:Class ;
+                rdfs:label "customer gender"@en .
+
+
+###  https://vocab.um.es#CustomerType
+:CustomerType rdf:type owl:Class ;
+              rdfs:label "customer type"@en .
+
+
+###  https://vocab.um.es#EvaluationItem
+:EvaluationItem rdf:type owl:Class ;
+                rdfs:label "evaluation item"@en .
+
+
+###  https://vocab.um.es#FlightClass
+:FlightClass rdf:type owl:Class ;
+             rdfs:label "flight class"@en .
+
+
+###  https://vocab.um.es#Satisfaction
+:Satisfaction rdf:type owl:Class ;
+              rdfs:label "customer satisfaction"@en .
+
+
+###  https://vocab.um.es#TypeOfTravel
+:TypeOfTravel rdf:type owl:Class ;
+              rdfs:label "type of travel"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://vocab.um.es#ArrivalDelay
+:ArrivalDelay rdf:type owl:NamedIndividual ,
+                       :EvaluationItem ;
+              rdfs:comment "In minutes"@en ;
+              rdfs:label "arrival delay"@en .
+
+
+###  https://vocab.um.es#BaggageHandling
+:BaggageHandling rdf:type owl:NamedIndividual ,
+                          :EvaluationItem ;
+                 rdfs:label "baggage handling"@en .
+
+
+###  https://vocab.um.es#Business
+:Business rdf:type owl:NamedIndividual ,
+                   :FlightClass ;
+          rdfs:label "business"@en .
+
+
+###  https://vocab.um.es#BusinessTravel
+:BusinessTravel rdf:type owl:NamedIndividual ,
+                         :TypeOfTravel ;
+                rdfs:label "business travel"@en .
+
+
+###  https://vocab.um.es#CheckinService
+:CheckinService rdf:type owl:NamedIndividual ,
+                         :EvaluationItem ;
+                rdfs:label "checkin service"@en .
+
+
+###  https://vocab.um.es#Cleanliness
+:Cleanliness rdf:type owl:NamedIndividual ,
+                      :EvaluationItem ;
+             rdfs:label "cleanliness"@en .
+
+
+###  https://vocab.um.es#Departure
+:Departure rdf:type owl:NamedIndividual ,
+                    :EvaluationItem ;
+           rdfs:label "departure"@en .
+
+
+###  https://vocab.um.es#DepartureDelay
+:DepartureDelay rdf:type owl:NamedIndividual ,
+                         :EvaluationItem ;
+                rdfs:comment "In minutes"@en ;
+                rdfs:label "departure delay"@en .
+
+
+###  https://vocab.um.es#Eco
+:Eco rdf:type owl:NamedIndividual ,
+              :FlightClass ;
+     rdfs:label "eco"@en .
+
+
+###  https://vocab.um.es#Female
+:Female rdf:type owl:NamedIndividual ,
+                 :CustomerGender ;
+        rdfs:label "female"@en .
+
+
+###  https://vocab.um.es#FoodAndDrink
+:FoodAndDrink rdf:type owl:NamedIndividual ,
+                       :EvaluationItem ;
+              rdfs:label "food and drink"@en .
+
+
+###  https://vocab.um.es#GateLocation
+:GateLocation rdf:type owl:NamedIndividual ,
+                       :EvaluationItem ;
+              rdfs:label "gate location"@en .
+
+
+###  https://vocab.um.es#LegRoomService
+:LegRoomService rdf:type owl:NamedIndividual ,
+                         :EvaluationItem ;
+                rdfs:label "leg room service"@en .
+
+
+###  https://vocab.um.es#LoyalCustomer
+:LoyalCustomer rdf:type owl:NamedIndividual ,
+                        :CustomerType ;
+               rdfs:label "loyal customer"@en .
+
+
+###  https://vocab.um.es#Male
+:Male rdf:type owl:NamedIndividual ,
+               :CustomerGender ;
+      rdfs:label "male"@en .
+
+
+###  https://vocab.um.es#OnBoardService
+:OnBoardService rdf:type owl:NamedIndividual ,
+                         :EvaluationItem ;
+                rdfs:label "on-board service"@en .
+
+
+###  https://vocab.um.es#OnlineBoarding
+:OnlineBoarding rdf:type owl:NamedIndividual ,
+                         :EvaluationItem ;
+                rdfs:label "online boarding"@en .
+
+
+###  https://vocab.um.es#OnlineBooking
+:OnlineBooking rdf:type owl:NamedIndividual ,
+                        :EvaluationItem ;
+               rdfs:label "easy of online booking"@en .
+
+
+###  https://vocab.um.es#OnlineSupport
+:OnlineSupport rdf:type owl:NamedIndividual ,
+                        :EvaluationItem ;
+               rdfs:label "online support"@en .
+
+
+###  https://vocab.um.es#PersonalTravel
+:PersonalTravel rdf:type owl:NamedIndividual ,
+                         :TypeOfTravel ;
+                rdfs:label "personal travel"@en .
+
+
+###  https://vocab.um.es#SeatConfort
+:SeatConfort rdf:type owl:NamedIndividual ,
+                      :EvaluationItem ;
+             rdfs:label "seat confort"@en .
+
+
+###  https://vocab.um.es#Wifi
+:Wifi rdf:type owl:NamedIndividual ,
+               :EvaluationItem ;
+      rdfs:label "wifi"@en .
+
+
+###  https://vocab.um.es#disloyalCustomer
+:disloyalCustomer rdf:type owl:NamedIndividual ,
+                           :CustomerType ;
+                  rdfs:label "disloyal customer"@en .
+
+
+###  https://vocab.um.es#dissatisfied
+:dissatisfied rdf:type owl:NamedIndividual ,
+                       :Satisfaction ;
+              rdfs:label "customer dissatisfied"@en .
+
+
+###  https://vocab.um.es#satisfied
+:satisfied rdf:type owl:NamedIndividual ,
+                    :Satisfaction ;
+           rdfs:label "customer satisfied"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
