@@ -1,0 +1,170 @@
+
+
+
+
+
+object - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+object
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    object
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/object 
+
+Check for open issues.
+
+
+
+
+The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read a book.
+ 
+
+Values expected to be one of these types
+
+
+Thing
+
+
+
+Used on these types
+
+
+Action
+
+
+
+
+
+Sub-properties
+
+
+actionOption
+
+candidate
+
+followee
+
+question
+
+replacee
+
+replacer
+
+targetCollection
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,157 @@
+
+
+
+
+
+validIn - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+validIn
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    validIn
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/validIn 
+
+Check for open issues.
+
+
+
+
+The geographic area where a permit or similar thing is valid.
+ 
+
+Values expected to be one of these types
+
+
+AdministrativeArea
+
+
+
+Used on these types
+
+
+EducationalOccupationalCredential
+
+Permit
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1779
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

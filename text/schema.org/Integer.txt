@@ -1,0 +1,450 @@
+
+
+
+
+
+Integer - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+Integer
+A Schema.org Type
+
+
+
+
+
+DataType 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Number 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    Integer
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/Integer 
+
+Check for open issues.
+
+
+
+
+Data type: Integer.
+ 
+
+
+
+
+Instances of 
+    
+    
+    Integer  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+answerCount
+
+Question
+The number of answers this question has received.
+  
+
+artEdition
+
+VisualArtwork
+The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
+  
+
+byMonth
+
+Schedule
+Defines the month(s) of the year on which a recurring Event takes place. Specified as an Integer between 1-12. January is 1.
+  
+
+byMonthDay
+
+Schedule
+Defines the day(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-31.
+  
+
+byMonthWeek
+
+Schedule
+Defines the week(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-5. For clarity, byMonthWeek is best used in conjunction with byDay to indicate concepts like the first and third Mondays of a month.
+  
+
+clipNumber
+
+Clip
+Position of the clip within an ordered group of clips.
+  
+
+collectionSize
+
+Collection
+The number of items in the Collection.
+  
+
+commentCount
+
+CreativeWork
+The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
+  
+
+downvoteCount
+
+Comment
+The number of downvotes this question, answer or comment has received from the community.
+  
+
+episodeNumber
+
+Episode
+Position of the episode within an ordered group of episodes.
+  
+
+issueNumber
+
+PublicationIssue
+Identifies the issue of publication; for example, "iii" or "2".
+  
+
+maximumAttendeeCapacity
+
+Event  or 
+Place
+The total number of individuals that may attend an event or venue.
+  
+
+maximumEnrollment
+
+EducationalOccupationalProgram
+The maximum number of students who may be enrolled in the program.
+  
+
+maximumPhysicalAttendeeCapacity
+
+Event
+The maximum physical attendee capacity of an Event whose eventAttendanceMode is OfflineEventAttendanceMode (or the offline aspects, in the case of a MixedEventAttendanceMode).
+  
+
+maximumVirtualAttendeeCapacity
+
+Event
+The maximum virtual attendee capacity of an Event whose eventAttendanceMode is OnlineEventAttendanceMode (or the online aspects, in the case of a MixedEventAttendanceMode).
+  
+
+merchantReturnDays
+
+MerchantReturnPolicy  or 
+MerchantReturnPolicySeasonalOverride
+Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the returnPolicyCategory property is specified as MerchantReturnFiniteReturnWindow.
+  
+
+numAdults
+
+LodgingReservation
+The number of adults staying in the unit.
+  
+
+numChildren
+
+LodgingReservation
+The number of children staying in the unit.
+  
+
+numConstraints
+
+ConstraintNode
+Indicates the number of constraints property values defined for a particular ConstraintNode such as StatisticalVariable. This helps applications understand if they have access to a sufficiently complete description of a StatisticalVariable or other construct that is defined using properties on template-style nodes.
+  
+
+numTracks
+
+MusicPlaylist
+The number of tracks in this album or playlist.
+  
+
+numberOfBathroomsTotal
+
+Accommodation  or 
+FloorPlan
+The total integer number of bathrooms in some Accommodation, following real estate conventions as documented in RESO: "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also numberOfRooms.
+  
+
+numberOfCredits
+
+Course  or 
+EducationalOccupationalProgram
+The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
+  
+
+numberOfEpisodes
+
+CreativeWorkSeason  or 
+RadioSeries  or 
+TVSeries  or 
+VideoGameSeries
+The number of episodes in this season or series.
+  
+
+numberOfItems
+
+ItemList
+The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.
+  
+
+numberOfPages
+
+Book
+The number of pages in the book.
+  
+
+numberOfSeasons
+
+RadioSeries  or 
+TVSeries  or 
+VideoGameSeries
+The number of seasons in this series.
+  
+
+offerCount
+
+AggregateOffer
+The number of offers for the product.
+  
+
+pageEnd
+
+Article  or 
+Chapter  or 
+PublicationIssue  or 
+PublicationVolume
+The page on which the work ends; for example "138" or "xvi".
+  
+
+pageStart
+
+Article  or 
+Chapter  or 
+PublicationIssue  or 
+PublicationVolume
+The page on which the work starts; for example "135" or "xiii".
+  
+
+partySize
+
+FoodEstablishmentReservation  or 
+TaxiReservation
+Number of people the reservation should accommodate.
+  
+
+playersOnline
+
+GameServer
+Number of players on the server.
+  
+
+position
+
+CreativeWork  or 
+ListItem
+The position of an item in a series or sequence of items.
+  
+
+productReturnDays
+
+ProductReturnPolicy
+The productReturnDays property indicates the number of days (from purchase) within which relevant product return policy is applicable.
+  
+
+ratingCount
+
+AggregateRating
+The count of total number of ratings.
+  
+
+remainingAttendeeCapacity
+
+Event
+The number of attendee places for an event that remain unallocated.
+  
+
+repeatCount
+
+Schedule
+Defines the number of times a recurring Event will take place.
+  
+
+requiredMaxAge
+
+PeopleAudience
+Audiences defined by a person's maximum age.
+  
+
+requiredMinAge
+
+PeopleAudience
+Audiences defined by a person's minimum age.
+  
+
+reviewCount
+
+AggregateRating
+The count of total number of reviews.
+  
+
+seasonNumber
+
+CreativeWorkSeason
+Position of the season within an ordered group of seasons.
+  
+
+totalHistoricalEnrollment
+
+Course
+The total number of students that have enrolled in the history of the course.
+  
+
+totalJobOpenings
+
+JobPosting
+The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+  
+
+typicalCreditsPerTerm
+
+EducationalOccupationalProgram
+The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
+  
+
+upvoteCount
+
+Comment
+The number of upvotes this question, answer or comment has received from the community.
+  
+
+userInteractionCount
+
+InteractionCounter
+The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
+  
+
+volumeNumber
+
+PublicationVolume
+Identifies the volume of publication or multi-part work; for example, "iii" or "2".
+  
+
+wordCount
+
+Article
+The number of words in the text of the Article.
+  
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

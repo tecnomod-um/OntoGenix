@@ -1,0 +1,457 @@
+
+
+
+
+
+PaymentChargeSpecification - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+PaymentChargeSpecification
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StructuredValue 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    PriceSpecification 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    PaymentChargeSpecification
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/PaymentChargeSpecification 
+
+Check for open issues.
+
+
+
+
+The costs of settling the payment using a particular payment method.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    PaymentChargeSpecification
+
+appliesToDeliveryMethod
+
+DeliveryMethod
+The delivery method(s) to which the delivery charge or payment charge specification applies.
+                
+                
+                
+            
+
+
+appliesToPaymentMethod
+
+PaymentMethod
+The payment method(s) to which the payment charge specification applies.
+                
+                
+                
+            
+
+
+Properties from 
+    
+    
+    PriceSpecification
+
+eligibleQuantity
+
+QuantitativeValue
+The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+                
+                
+                
+            
+
+
+eligibleTransactionVolume
+
+PriceSpecification
+The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
+                
+                
+                
+            
+
+
+maxPrice
+
+Number
+The highest price if the price is a range.
+                
+                
+                
+            
+
+
+minPrice
+
+Number
+The lowest price if the price is a range.
+                
+                
+                
+            
+
+
+price
+
+Number  or 
+Text
+The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.
+
+Usage guidelines:
+
+Use the priceCurrency property (with standard formats: ISO 4217 currency format, e.g. "USD"; Ticker symbol for cryptocurrencies, e.g. "BTC"; well known names for Local Exchange Trading Systems (LETS) and other currency types, e.g. "Ithaca HOUR") instead of including ambiguous symbols such as '$' in the value.
+Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+Note that both RDFa and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.
+Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+
+
+
+
+priceCurrency
+
+Text
+The currency of the price, or a price component when attached to PriceSpecification and its subtypes.
+
+Use standard formats: ISO 4217 currency format, e.g. "USD"; Ticker symbol for cryptocurrencies, e.g. "BTC"; well known names for Local Exchange Trading Systems (LETS) and other currency types, e.g. "Ithaca HOUR".
+                
+                
+                
+            
+
+
+validFrom
+
+Date  or 
+DateTime
+The date when the item becomes valid.
+                
+                
+                
+            
+
+
+validThrough
+
+Date  or 
+DateTime
+The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+                
+                
+                
+            
+
+
+valueAddedTaxIncluded
+
+Boolean
+Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
+                
+                
+                
+            
+
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       GoodRelations Vocabulary Classes
+                    
+
+
+
+                    This class is derived from the GoodRelations Vocabulary for E-Commerce, created by Martin Hepp. GoodRelations is a data model for sharing e-commerce data on the Web that can be expressed in a variety of syntaxes, including RDFa and HTML5 Microdata. More information about GoodRelations can be found at http://purl.org/goodrelations/.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

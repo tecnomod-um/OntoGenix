@@ -1,0 +1,717 @@
+
+
+
+
+
+GeoCircle - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+GeoCircle
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StructuredValue 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    GeoShape 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    GeoCircle
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/GeoCircle 
+
+Check for open issues.
+
+
+
+
+A GeoCircle is a GeoShape representing a circular geographic area. As it is a GeoShape
+          it provides the simple textual property 'circle', but also allows the combination of postalCode alongside geoRadius.
+          The center of the circle can be indicated via the 'geoMidpoint' property, or more approximately using 'address', 'postalCode'.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    GeoCircle
+
+geoMidpoint
+
+GeoCoordinates
+Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
+                
+                
+                
+            
+
+
+geoRadius
+
+Distance  or 
+Number  or 
+Text
+Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+                
+                
+                
+            
+
+
+Properties from 
+    
+    
+    GeoShape
+
+address
+
+PostalAddress  or 
+Text
+Physical address of the item.
+                
+                
+                
+            
+
+
+addressCountry
+
+Country  or 
+Text
+The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+                
+                
+                
+            
+
+
+box
+
+Text
+A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
+                
+                
+                
+            
+
+
+circle
+
+Text
+A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
+                
+                
+                
+            
+
+
+elevation
+
+Number  or 
+Text
+The elevation of a location (WGS 84). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+                
+                
+                
+            
+
+
+line
+
+Text
+A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
+                
+                
+                
+            
+
+
+polygon
+
+Text
+A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
+                
+                
+                
+            
+
+
+postalCode
+
+Text
+The postal code. For example, 94043.
+                
+                
+                
+            
+
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Joes' Pizza
+123 Main Street
+Cambridge, MA 02142
+delivers within 5 km of its store with a minimum order of $20.
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/FoodEstablishment">
+  <span itemprop="name">Joe's Pizza</span>
+  <div itemprop="location" itemscope itemtype="https://schema.org/PostalAddress">
+    <span itemprop="streetAddress">123 Main Street</span>
+    <span itemprop="addressLocality">Cambridge</span>
+    <span itemprop="addressRegion">MA</span>
+    <span itemprop="postalCode">02142</span>
+  </div>
+  delivers within 5 km of its store
+  <div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
+    <div itemprop="eligibleRegion" itemscope itemtype="https://schema.org/GeoCircle">
+      <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <meta itemprop="streetAddress" content="123 Main Street" />
+        <meta itemprop="addressLocality" content="Cambridge" />
+        <meta itemprop="addressRegion" content="MA" />
+        <meta itemprop="postalCode" content="02142" />
+      </div>
+      <meta itemprop="geoRadius" content="5000" />
+    </div>
+
+    with a minium order of $20.
+    <div itemprop="priceSpecification" itemscope itemtype="https://schema.org/DeliveryChargeSpecification">
+      <meta itemprop="appliesToDeliveryMethod" link="http://purl.org/goodrelations/v1#DeliveryModeOwnFleet">
+      <div itemprop="eligibleTransactionVolume" itemscope itemtype="https://schema.org/PriceSpecification">
+        <meta itemprop="price" content="20.00" />
+        <meta itemprop="priceCurrency" content="USD" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="FoodEstablishment">
+  <span property="name">Joe's Pizza</span>
+  <div property="location" typeof="PostalAddress">
+    <span property="streetAddress">123 Main Street</span>
+    <span property="addressLocality">Cambridge</span>
+    <span property="addressRegion">MA</span>
+    <span property="postalCode">02142</span>
+  </div>
+  delivers within 5 km of its store with a minium order of $20.
+  <div property="makesOffer" typeof="Offer">
+    <div property="priceSpecification" typeof="DeliveryChargeSpecification">
+      <meta property="appliesToDeliveryMethod" link="http://purl.org/goodrelations/v1#DeliveryModeOwnFleet">
+      <div property="eligibleTransactionVolume" typeof="PriceSpecification">
+        <meta property="price" content="20.00" />
+        <meta property="priceCurrency" content="USD" />
+      </div>
+      <div property="eligibleRegion" typeof="GeoCircle">
+        <div property="address" typeof="PostalAddress">
+          <meta property="streetAddress" content="123 Main Street" />
+          <meta property="addressLocality" content="Cambridge" />
+          <meta property="addressRegion" content="MA" />
+          <meta property="postalCode" content="02142" />
+        </div>
+        <meta property="geoRadius" content="5000" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FoodEstablishment",
+    "name": "Joe's Pizza",
+    "location": {
+      "@type": "PostalAddress",
+      "@id": "http://example.com/address",
+      "streetAddress": "123 Main Street",
+      "addressLocality": "Cambridge",
+      "addressRegion": "MA",
+      "postalCode": "02142"
+    },
+    "makesOffer": {
+      "@type": "Offer",
+      "priceSpecification": {
+        "@type": "DeliveryChargeSpecification",
+        "appliesToDeliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet",
+        "eligibleTransactionVolume": {
+          "@type": "PriceSpecification",
+          "price": "20.00",
+          "priceCurrency": "USD"
+        },
+        "eligibleRegion": {
+          "@type": "GeoCircle",
+          "address": {
+            "@id": "http://www.example.com/address"
+          },
+          "geoRadius": "5000"
+        }
+      }
+    }
+  }
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+    "@context": "https://schema.org/",
+    "@type": "FoodEstablishment",
+    "name": "Joe's Pizza",
+    "location": {
+      "@type": "PostalAddress",
+      "@id": "http://example.com/address",
+      "streetAddress": "123 Main Street",
+      "addressLocality": "Cambridge",
+      "addressRegion": "MA",
+      "postalCode": "02142"
+    },
+    "makesOffer": {
+      "@type": "Offer",
+      "priceSpecification": {
+        "@type": "DeliveryChargeSpecification",
+        "appliesToDeliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet",
+        "eligibleTransactionVolume": {
+          "@type": "PriceSpecification",
+          "price": "20.00",
+          "priceCurrency": "USD"
+        },
+        "eligibleRegion": {
+          "@type": "GeoCircle",
+          "address": {
+            "@id": "http://www.example.com/address"
+          },
+          "geoRadius": "5000"
+        }
+      }
+    }
+  }
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Car for hire driver #123 is within 50 meters of a given location, but is moving.
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/TaxiService">
+  <div itemprop="provider" itemscope itemtype="https://schema.org/LocalBusiness">
+    <span itemprop="name">driver #123</span>
+    <div itemprop="location" itemscope itemtype="https://schema.org/Place">
+      <div itemprop="geo" itemscope itemtype="https://schema.org/GeoCircle">
+        <div itemprop="geoMidpoint" itemscope itemtype="https://schema.org/GeoCoordinates">
+          <meta itemprop="latitude" content="42.362757" />
+          <meta itemprop="longitude" content="-71.087109" />
+        </div>
+        <meta itemprop="geoRadius" content="50" />
+      </div>
+    </div>
+  </div>
+  <meta itemprop="providerMobility" content="dynamic" />
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="TaxiService">
+  <div property="provider" typeof="LocalBusiness">
+    <span property="name">driver #123</span>
+    <div property="location" typeof="Place">
+      <div property="geo" typeof="GeoCircle">
+        <div property="geoMidpoint" typeof="GeoCoordinates">
+          <meta property="latitude" content="42.362757" />
+          <meta property="longitude" content="-71.087109" />
+        </div>
+        <meta property="geoRadius" content="50" />
+      </div>
+    </div>
+  </div>
+  <meta property="providerMobility" content="dynamic" />
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "TaxiService",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "driver #123",
+      "location": {
+        "@type": "Place",
+        "geo": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": "42.362757",
+            "longitude": "-71.087109"
+          },
+          "geoRadius": "50"
+        }
+      }
+    },
+    "providerMobility": "dynamic"
+  }
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+    "@context": "https://schema.org/",
+    "@type": "TaxiService",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "driver #123",
+      "location": {
+        "@type": "Place",
+        "geo": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": "42.362757",
+            "longitude": "-71.087109"
+          },
+          "geoRadius": "50"
+        }
+      }
+    },
+    "providerMobility": "dynamic"
+  }
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

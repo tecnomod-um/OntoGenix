@@ -1,0 +1,508 @@
+
+
+
+
+
+MonetaryAmountDistribution - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+MonetaryAmountDistribution
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StructuredValue 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    QuantitativeValueDistribution 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    MonetaryAmountDistribution
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/MonetaryAmountDistribution 
+
+Check for open issues.
+
+
+
+
+A statistical distribution of monetary amounts.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    MonetaryAmountDistribution
+
+currency
+
+Text
+The currency in which the monetary amount is expressed.
+
+Use standard formats: ISO 4217 currency format, e.g. "USD"; Ticker symbol for cryptocurrencies, e.g. "BTC"; well known names for Local Exchange Trading Systems (LETS) and other currency types, e.g. "Ithaca HOUR".
+                
+                
+                
+            
+
+
+Properties from 
+    
+    
+    QuantitativeValueDistribution
+
+duration
+
+Duration
+The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.
+                
+                
+                
+            
+
+
+median
+
+Number
+The median value.
+                
+                
+                
+            
+
+
+percentile10
+
+Number
+The 10th percentile value.
+                
+                
+                
+            
+
+
+percentile25
+
+Number
+The 25th percentile value.
+                
+                
+                
+            
+
+
+percentile75
+
+Number
+The 75th percentile value.
+                
+                
+                
+            
+
+
+percentile90
+
+Number
+The 90th percentile value.
+                
+                
+                
+            
+
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    MonetaryAmountDistribution  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+estimatedSalary
+
+JobPosting  or 
+Occupation
+An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+  
+
+salaryUponCompletion
+
+EducationalOccupationalProgram
+The expected salary upon completing the training.
+  
+
+trainingSalary
+
+EducationalOccupationalProgram  or 
+WorkBasedProgram
+The estimated salary earned while in the program.
+  
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1698
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+See JSON example.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Occupation",
+  "name": "Nurse Practioner",
+  "educationRequirements": "Graduate degree in nursing",
+  "occupationalCategory": "29-1171.00",
+  "occupationLocation": {
+    "@type": "Country",
+    "name": "USA",
+    "sameAs": "https://www.wikidata.org/wiki/Q30"
+  },
+  "qualifications": "Registered nurse licensure in state where practicing",
+  "responsibilities": "Diagnose and treat acute, episodic, or chronic illness, independently or as part of a healthcare team.",
+  "skills": ["Active listening", "Critical thinking", "Social awareness"],
+  "estimatedSalary": {
+    "@type": "MonetaryAmountDistribution",
+    "duration": "1Y",
+    "currency": "USD",
+    "percentile10": 72000,
+    "percentile25": 86000,
+    "median": 109000,
+    "percentile75": 120000,
+    "percentile90": 140000
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "Occupation",
+  "name": "Nurse Practioner",
+  "educationRequirements": "Graduate degree in nursing",
+  "occupationalCategory": "29-1171.00",
+  "occupationLocation": {
+    "@type": "Country",
+    "name": "USA",
+    "sameAs": "https://www.wikidata.org/wiki/Q30"
+  },
+  "qualifications": "Registered nurse licensure in state where practicing",
+  "responsibilities": "Diagnose and treat acute, episodic, or chronic illness, independently or as part of a healthcare team.",
+  "skills": ["Active listening", "Critical thinking", "Social awareness"],
+  "estimatedSalary": {
+    "@type": "MonetaryAmountDistribution",
+    "duration": "1Y",
+    "currency": "USD",
+    "percentile10": 72000,
+    "percentile25": 86000,
+    "median": 109000,
+    "percentile75": 120000,
+    "percentile90": 140000
+  }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

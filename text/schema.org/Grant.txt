@@ -1,0 +1,874 @@
+
+
+
+
+
+Grant - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+Grant
+A Schema.org Type
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    Grant
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/Grant 
+
+Check for open issues.
+
+
+
+
+A grant, typically financial or otherwise quantifiable, of resources. Typically a funder sponsors some MonetaryAmount to an Organization or Person,
+    sometimes not necessarily via a dedicated or long-lived Project, resulting in one or more outputs, or fundedItems. For financial sponsorship, indicate the funder of a MonetaryGrant. For non-financial support, indicate sponsor of Grants of resources (e.g. office space).
+
+Grants support  activities directed towards some agreed collective goals, often but not always organized as Projects. Long-lived projects are sometimes sponsored by a variety of grants over time, but it is also common for a project to be associated with a single grant.
+
+The amount of a Grant is represented using amount as a MonetaryAmount.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    Grant
+
+fundedItem
+
+BioChemEntity  or 
+CreativeWork  or 
+Event  or 
+MedicalEntity  or 
+Organization  or 
+Person  or 
+Product
+Indicates something directly or indirectly funded or sponsored through a Grant. See also ownershipFundingInfo.
+                
+                
+                Inverse property: 
+    
+    
+    funding
+
+
+
+funder
+
+Organization  or 
+Person
+A person or organization that supports (sponsors) something through some kind of financial contribution.
+                
+                
+                
+            
+
+
+sponsor
+
+Organization  or 
+Person
+A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+                
+                
+                
+            
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    Grant  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+funding
+
+BioChemEntity  or 
+CreativeWork  or 
+Event  or 
+MedicalEntity  or 
+Organization  or 
+Person  or 
+Product
+A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.
+  
+
+
+
+
+More specific Types
+
+
+MonetaryGrant
+
+
+
+Source
+https://schema.org/docs/collab/FundInfoCollab
+https://github.com/schemaorg/schemaorg/issues/383
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Basic Grant example.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "https://doi.org/10.5061/dryad.m53r1",
+  "funding": {
+    "@type": "Grant",
+    "identifier": "1452510",
+    "funder": {
+      "@type": "Organization",
+      "name": "National Science Foundation",
+      "identifier": "https://doi.org/10.13039/100000001"
+     }
+   }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "https://doi.org/10.5061/dryad.m53r1",
+  "funding": {
+    "@type": "Grant",
+    "identifier": "1452510",
+    "funder": {
+      "@type": "Organization",
+      "name": "National Science Foundation",
+      "identifier": "https://doi.org/10.13039/100000001"
+     }
+   }
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Basic research output (dataset) example without detailed grant information.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "https://doi.org/10.5061/dryad.m53r1",
+  "funder": {
+     "@type": "Organization",
+     "name": "National Science Foundation",
+     "identifier": "https://doi.org/10.13039/100000001"
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "https://doi.org/10.5061/dryad.m53r1",
+  "funder": {
+     "@type": "Organization",
+     "name": "National Science Foundation",
+     "identifier": "https://doi.org/10.13039/100000001"
+  }
+}
+
+
+Example 3 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Showing funding of a researcher.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Turner, Caroline B.",
+  "givenName": "Caroline B.",
+  "familyName": "Turner",
+  "funding": {
+     "@type": "Grant",
+     "identifier": "1448821",
+     "funder": {
+       "@type": "Organization",
+       "name": "National Science Foundation",
+       "identifier": "https://doi.org/10.13039/100000001"
+     }
+   }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Turner, Caroline B.",
+  "givenName": "Caroline B.",
+  "familyName": "Turner",
+  "funding": {
+     "@type": "Grant",
+     "identifier": "1448821",
+     "funder": {
+       "@type": "Organization",
+       "name": "National Science Foundation",
+       "identifier": "https://doi.org/10.13039/100000001"
+     }
+   }
+}
+
+
+Example 4 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+A scientific dataset.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Turner, Caroline B.",
+  "givenName": "Caroline B.",
+  "familyName": "Turner",
+  "funding": {
+     "@type": "Grant",
+     "identifier": "1448821",
+     "funder": {
+       "@type": "Organization",
+       "name": "National Science Foundation",
+       "identifier": "https://doi.org/10.13039/100000001"
+     }
+   }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Turner, Caroline B.",
+  "givenName": "Caroline B.",
+  "familyName": "Turner",
+  "funding": {
+     "@type": "Grant",
+     "identifier": "1448821",
+     "funder": {
+       "@type": "Organization",
+       "name": "National Science Foundation",
+       "identifier": "https://doi.org/10.13039/100000001"
+     }
+   }
+}
+
+
+Example 5 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+EXample showing a research project that was funded by 3 grants.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "ResearchProject",
+  "name": "U.S. GLOBEC Southern Ocean",
+  "url": "https://www.bco-dmo.org/project/2039",
+  "funding": [
+    {
+      "@type": "MonetaryGrant",
+      "name": "Foraging Ecology of Crabeater Seals (Lobodon Carcinophagus)",
+      "alternateName": "ANT-9909933",
+      "url": "https://www.bco-dmo.org/award/54719",
+      "sameAs": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=9909933",
+      "funder": {
+        "@id": "https://doi.org/10.13039/100000162",
+        "@type": "FundingAgency",
+        "name": "NSF Antarctic Sciences",
+        "alternateName": "NSF ANT",
+        "url": "https://www.bco-dmo.org/funding-source/369",
+        "sameAs": "https://doi.org/10.13039/100000162",
+        "parentOrganization": {
+          "@type": "FundingAgency",
+          "name": "National Science Foundation",
+          "alternateName":  "NSF",
+          "sameAs": "https://doi.org/10.13039/100000001"
+        }
+      }
+    },
+    {
+      "@type": "MonetaryGrant",
+      "name": "GLOBEC: Sea Ice Microbial Communities",
+      "alternateName": "ANT-9910098",
+      "url": "https://www.bco-dmo.org/award/54688",
+      "sameAs": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=9910098",
+      "funder": {"@id": "https://doi.org/10.13039/100000162"}
+    },
+    {
+      "@type": "MonetaryGrant",
+      "name": "unknown SOGLOBEC NSF ANT",
+      "url": "https://www.bco-dmo.org/award/54617",
+      "funder": {"@id": "https://doi.org/10.13039/100000162"}
+    }
+  ]
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "ResearchProject",
+  "name": "U.S. GLOBEC Southern Ocean",
+  "url": "https://www.bco-dmo.org/project/2039",
+  "funding": [
+    {
+      "@type": "MonetaryGrant",
+      "name": "Foraging Ecology of Crabeater Seals (Lobodon Carcinophagus)",
+      "alternateName": "ANT-9909933",
+      "url": "https://www.bco-dmo.org/award/54719",
+      "sameAs": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=9909933",
+      "funder": {
+        "@id": "https://doi.org/10.13039/100000162",
+        "@type": "FundingAgency",
+        "name": "NSF Antarctic Sciences",
+        "alternateName": "NSF ANT",
+        "url": "https://www.bco-dmo.org/funding-source/369",
+        "sameAs": "https://doi.org/10.13039/100000162",
+        "parentOrganization": {
+          "@type": "FundingAgency",
+          "name": "National Science Foundation",
+          "alternateName":  "NSF",
+          "sameAs": "https://doi.org/10.13039/100000001"
+        }
+      }
+    },
+    {
+      "@type": "MonetaryGrant",
+      "name": "GLOBEC: Sea Ice Microbial Communities",
+      "alternateName": "ANT-9910098",
+      "url": "https://www.bco-dmo.org/award/54688",
+      "sameAs": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=9910098",
+      "funder": {"@id": "https://doi.org/10.13039/100000162"}
+    },
+    {
+      "@type": "MonetaryGrant",
+      "name": "unknown SOGLOBEC NSF ANT",
+      "url": "https://www.bco-dmo.org/award/54617",
+      "funder": {"@id": "https://doi.org/10.13039/100000162"}
+    }
+  ]
+}
+
+
+Example 6 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+A scientific dataset.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Turner, Caroline B.",
+  "givenName": "Caroline B.",
+  "familyName": "Turner",
+  "funding": {
+     "@type": "Grant",
+     "identifier": "1448821",
+     "funder": {
+       "@type": "Organization",
+       "name": "National Science Foundation",
+       "identifier": "https://doi.org/10.13039/100000001"
+     }
+   }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Turner, Caroline B.",
+  "givenName": "Caroline B.",
+  "familyName": "Turner",
+  "funding": {
+     "@type": "Grant",
+     "identifier": "1448821",
+     "funder": {
+       "@type": "Organization",
+       "name": "National Science Foundation",
+       "identifier": "https://doi.org/10.13039/100000001"
+     }
+   }
+}
+
+
+Example 7 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+EXample showing that a data repository was funded by the US National Science Foundation.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+
+{
+  "@context": "https://schema.org/",
+  "@id": "https://www.bco-dmo.org",
+  "@type": "Organization",
+  "name": "Biological and Chemical Oceanography Data Management Office",
+  "alternateName": "BCO-DMO",
+  "url": "https://www.bco-dmo.org",
+  "funding": {
+    "@type": "MonetaryGrant",
+    "name": "BCO-DMO: Accelerating Scientific Discovery through Adaptive Data Management",
+    "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1924618",
+    "funder": {
+      "@type": "FundingAgency",
+      "name": "National Science Foundation",
+      "alternateName":  "NSF",
+      "sameAs": "https://doi.org/10.13039/100000001"
+    }
+  }
+}
+
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@id": "https://www.bco-dmo.org",
+  "@type": "Organization",
+  "name": "Biological and Chemical Oceanography Data Management Office",
+  "alternateName": "BCO-DMO",
+  "url": "https://www.bco-dmo.org",
+  "funding": {
+    "@type": "MonetaryGrant",
+    "name": "BCO-DMO: Accelerating Scientific Discovery through Adaptive Data Management",
+    "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1924618",
+    "funder": {
+      "@type": "FundingAgency",
+      "name": "National Science Foundation",
+      "alternateName":  "NSF",
+      "sameAs": "https://doi.org/10.13039/100000001"
+    }
+  }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

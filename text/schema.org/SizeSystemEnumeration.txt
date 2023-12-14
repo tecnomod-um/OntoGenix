@@ -1,0 +1,371 @@
+
+
+
+
+
+SizeSystemEnumeration - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+SizeSystemEnumeration
+A Schema.org Enumeration Type
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    SizeSystemEnumeration
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/SizeSystemEnumeration 
+
+Check for open issues.
+
+
+
+
+Enumerates common size systems for different categories of products, for example "EN-13402" or "UK" for wearables or "Imperial" for screws.
+ 
+
+
+
+
+Instances of 
+    
+    
+    SizeSystemEnumeration  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+sizeSystem
+
+SizeSpecification
+The size system used to identify a product's size. Typically either a standard (for example, "GS1" or "ISO-EN13402"), country code (for example "US" or "JP"), or a measuring system (for example "Metric" or "Imperial").
+  
+
+
+
+
+Enumeration members
+
+
+SizeSystemImperial
+
+SizeSystemMetric
+
+
+
+
+Enumeration Subtypes
+
+
+WearableSizeSystemEnumeration
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2811
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Complete example for a men's jacket with comprehensive size specification:
+- Size system: US
+- Size group: Men's Big & Tall
+- Size code: 3XL
+- Jacket measurements: chest: 52 inches, and length 42 inches.
+- Suggested age group: 13 years and up
+- Suggested body measurements: chest: 51-54 inches; height: 6-6.3 feet
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "sku": "44E01-M11000",
+  "inProductGroupWithID": "44E01",
+  "gtin14": "98766051104218",
+  "image": "https://www.example.com/jacket_large_green.jpg",
+  "name": "Large green jacket",
+  "description": "Large wool green jacket for the winter months",
+  "brand": {
+    "@type": "Brand",
+    "name": "A fashion brand"
+  },
+  "color": "green",
+  "size": {
+    "@type": "SizeSpecification",
+    "sizeSystem": "https://schema.org/WearableSizeSystemUS",
+    "sizeGroup": [
+      "https://schema.org/WearableSizeGroupMens",
+      "https://schema.org/WearableSizeGroupBig",
+      "https://schema.org/WearableSizeGroupTall"
+    ],
+    "name": "3XL",
+    "hasMeasurement": [
+      {
+        "@type": "QuantitativeValue",
+        "valueReference": "https://schema.org/WearableMeasurementChestOrBust",
+        "unitCode": "INH",
+        "value": 52
+      },
+      {
+        "@type": "QuantitativeValue",
+        "valueReference": "https://schema.org/WearableMeasurementLength",
+        "unitCode": "INH",
+        "value": 42
+      }
+    ],
+    "suggestedGender": "male",
+    "suggestedAge": {
+      "@type": "QuantitativeValue",
+      "name": "adult",
+      "unitCode": "ANN",
+      "minValue": 13
+    },
+    "suggestedMeasurement": [
+      {
+        "@type": "QuantitativeValue",
+        "valueReference": "https://schema.org/BodyMeasurementChest",
+        "unitCode": "INH",
+        "minValue": 51,
+        "maxValue": 54
+      },
+      {
+        "@type": "QuantitativeValue",
+        "valueReference": "https://schema.org/BodyMeasurementHeight",
+        "unitCode": "FOT",
+        "minValue": 6,
+        "maxValue": 6.3
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.example.com/jacket?s=l&c=g",
+    "priceCurrency": "USD",
+    "price": 239.99,
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
+  }
+}
+
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "sku": "44E01-M11000",
+  "inProductGroupWithID": "44E01",
+  "gtin14": "98766051104218",
+  "image": "https://www.example.com/jacket_large_green.jpg",
+  "name": "Large green jacket",
+  "description": "Large wool green jacket for the winter months",
+  "brand": {
+    "@type": "Brand",
+    "name": "A fashion brand"
+  },
+  "color": "green",
+  "size": {
+    "@type": "SizeSpecification",
+    "sizeSystem": "https://schema.org/WearableSizeSystemUS",
+    "sizeGroup": [
+      "https://schema.org/WearableSizeGroupMens",
+      "https://schema.org/WearableSizeGroupBig",
+      "https://schema.org/WearableSizeGroupTall"
+    ],
+    "name": "3XL",
+    "hasMeasurement": [
+      {
+        "@type": "QuantitativeValue",
+        "valueReference": "https://schema.org/WearableMeasurementChestOrBust",
+        "unitCode": "INH",
+        "value": 52
+      },
+      {
+        "@type": "QuantitativeValue",
+        "valueReference": "https://schema.org/WearableMeasurementLength",
+        "unitCode": "INH",
+        "value": 42
+      }
+    ],
+    "suggestedGender": "male",
+    "suggestedAge": {
+      "@type": "QuantitativeValue",
+      "name": "adult",
+      "unitCode": "ANN",
+      "minValue": 13
+    },
+    "suggestedMeasurement": [
+      {
+        "@type": "QuantitativeValue",
+        "valueReference": "https://schema.org/BodyMeasurementChest",
+        "unitCode": "INH",
+        "minValue": 51,
+        "maxValue": 54
+      },
+      {
+        "@type": "QuantitativeValue",
+        "valueReference": "https://schema.org/BodyMeasurementHeight",
+        "unitCode": "FOT",
+        "minValue": 6,
+        "maxValue": 6.3
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.example.com/jacket?s=l&c=g",
+    "priceCurrency": "USD",
+    "price": 239.99,
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
+  }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

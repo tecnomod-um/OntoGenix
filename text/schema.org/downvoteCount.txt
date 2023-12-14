@@ -1,0 +1,152 @@
+
+
+
+
+
+downvoteCount - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+downvoteCount
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    downvoteCount
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/downvoteCount 
+
+Check for open issues.
+
+
+
+
+The number of downvotes this question, answer or comment has received from the community.
+ 
+
+Values expected to be one of these types
+
+
+Integer
+
+
+
+Used on these types
+
+
+Comment
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

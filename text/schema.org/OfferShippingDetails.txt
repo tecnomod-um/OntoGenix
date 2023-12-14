@@ -1,0 +1,562 @@
+
+
+
+
+
+OfferShippingDetails - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+OfferShippingDetails
+A Schema.org Type
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StructuredValue 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    OfferShippingDetails
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/OfferShippingDetails 
+
+Check for open issues.
+
+
+
+
+OfferShippingDetails represents information about shipping destinations.
+
+Multiple of these entities can be used to represent different shipping rates for different destinations:
+
+One entity for Alaska/Hawaii. A different one for continental US. A different one for all France.
+
+Multiple of these entities can be used to represent different shipping costs and delivery times.
+
+Two entities that are identical but differ in rate and time:
+
+E.g. Cheaper and slower: $5 in 5-7 days
+or Fast and expensive: $15 in 1-2 days.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    OfferShippingDetails
+
+deliveryTime
+
+ShippingDeliveryTime
+The total delay between the receipt of the order and the goods reaching the final customer.
+                
+                
+                
+            
+
+
+depth
+
+Distance  or 
+QuantitativeValue
+The depth of the item.
+                
+                
+                
+            
+
+
+doesNotShip
+
+Boolean
+Indicates when shipping to a particular shippingDestination is not available.
+                
+                
+                
+            
+
+
+height
+
+Distance  or 
+QuantitativeValue
+The height of the item.
+                
+                
+                
+            
+
+
+shippingDestination
+
+DefinedRegion
+indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
+                
+                
+                
+            
+
+
+shippingLabel
+
+Text
+Label to match an OfferShippingDetails with a ShippingRateSettings (within the context of a shippingSettingsLink cross-reference).
+                
+                
+                
+            
+
+
+shippingOrigin
+
+DefinedRegion
+Indicates the origin of a shipment, i.e. where it should be coming from.
+                
+                
+                
+            
+
+
+shippingRate
+
+MonetaryAmount
+The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the MonetaryAmount) are most appropriate.
+                
+                
+                
+            
+
+
+shippingSettingsLink
+
+URL
+Link to a page containing ShippingRateSettings and DeliveryTimeSettings details.
+                
+                
+                
+            
+
+
+transitTimeLabel
+
+Text
+Label to match an OfferShippingDetails with a DeliveryTimeSettings (within the context of a shippingSettingsLink cross-reference).
+                
+                
+                
+            
+
+
+weight
+
+QuantitativeValue
+The weight of the product or person.
+                
+                
+                
+            
+
+
+width
+
+Distance  or 
+QuantitativeValue
+The width of the item.
+                
+                
+                
+            
+
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    OfferShippingDetails  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+shippingDetails
+
+Offer
+Indicates information about the shipping policies and options associated with an Offer.
+  
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2506
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Offer shipping details example with nested delivery time(JSON-LD only).
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "OfferShippingDetails",
+        "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "businessDays": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "https://schema.org/Monday",
+                    "https://schema.org/Tuesday",
+                    "https://schema.org/Wednesday",
+                    "https://schema.org/Thursday",
+                    "https://schema.org/Friday"
+                ]
+            },
+            "cutoffTime": "12:00:15Z",
+            "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 1,
+                "maxValue": 2,
+                "unitCode": "d"
+            },
+            "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 1,
+                "maxValue": 10,
+                "unitCode": "d"
+            }
+        },
+        "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 4.95,
+            "currency": "USD"
+        }
+    }
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+        "@context": "https://schema.org",
+        "@type": "OfferShippingDetails",
+        "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "businessDays": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "https://schema.org/Monday",
+                    "https://schema.org/Tuesday",
+                    "https://schema.org/Wednesday",
+                    "https://schema.org/Thursday",
+                    "https://schema.org/Friday"
+                ]
+            },
+            "cutoffTime": "12:00:15Z",
+            "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 1,
+                "maxValue": 2,
+                "unitCode": "d"
+            },
+            "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 1,
+                "maxValue": 10,
+                "unitCode": "d"
+            }
+        },
+        "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 4.95,
+            "currency": "USD"
+        }
+    }
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

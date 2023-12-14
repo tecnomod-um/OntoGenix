@@ -1,0 +1,165 @@
+
+
+
+
+
+firstAppearance - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+firstAppearance
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    workExample 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    firstAppearance
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/firstAppearance 
+
+Check for open issues.
+
+
+
+
+Indicates the first known occurrence of a Claim in some CreativeWork.
+ 
+
+Values expected to be one of these types
+
+
+CreativeWork
+
+
+
+Used on these types
+
+
+Claim
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1828
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

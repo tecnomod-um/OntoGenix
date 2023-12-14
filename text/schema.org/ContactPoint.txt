@@ -1,0 +1,764 @@
+
+
+
+
+
+ContactPoint - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+ContactPoint
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StructuredValue 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    ContactPoint
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/ContactPoint 
+
+Check for open issues.
+
+
+
+
+A contact point—for example, a Customer Complaints department.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    ContactPoint
+
+areaServed
+
+AdministrativeArea  or 
+GeoShape  or 
+Place  or 
+Text
+The geographic area where a service or offered item is provided.
+                 Supersedes 
+                
+    
+    
+    serviceArea.
+                
+                
+            
+
+
+availableLanguage
+
+Language  or 
+Text
+A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage.
+                
+                
+                
+            
+
+
+contactOption
+
+ContactPointOption
+An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
+                
+                
+                
+            
+
+
+contactType
+
+Text
+A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
+                
+                
+                
+            
+
+
+email
+
+Text
+Email address.
+                
+                
+                
+            
+
+
+faxNumber
+
+Text
+The fax number.
+                
+                
+                
+            
+
+
+hoursAvailable
+
+OpeningHoursSpecification
+The hours during which this service or contact is available.
+                
+                
+                
+            
+
+
+productSupported
+
+Product  or 
+Text
+The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+                
+                
+                
+            
+
+
+telephone
+
+Text
+The telephone number.
+                
+                
+                
+            
+
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    ContactPoint  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+applicationContact
+
+JobPosting
+Contact details for further information relevant to this job posting.
+  
+
+bccRecipient
+
+Message
+A sub property of recipient. The recipient blind copied on a message.
+  
+
+ccRecipient
+
+Message
+A sub property of recipient. The recipient copied on a message.
+  
+
+contactPoint
+
+HealthInsurancePlan  or 
+Organization  or 
+Person
+A contact point for a person or organization.
+  
+
+contactPoints
+
+Organization  or 
+Person
+A contact point for a person or organization.
+  
+
+grantee
+
+DigitalDocumentPermission
+The person, organization, contact point, or audience that has been granted this permission.
+  
+
+homeLocation
+
+Person
+A contact location for a person's residence.
+  
+
+recipient
+
+AuthorizeAction  or 
+CommunicateAction  or 
+DonateAction  or 
+GiveAction  or 
+Message  or 
+PayAction  or 
+ReturnAction  or 
+SendAction  or 
+TipAction
+A sub property of participant. The participant who is at the receiving end of the action.
+  
+
+servicePhone
+
+ServiceChannel
+The phone number to use to access the service.
+  
+
+serviceSmsNumber
+
+ServiceChannel
+The number to access the service by text message.
+  
+
+toRecipient
+
+Message
+A sub property of recipient. The recipient who was directly sent the message.
+  
+
+workLocation
+
+Person
+A contact location for a person's place of work.
+  
+
+
+
+
+More specific Types
+
+
+PostalAddress
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+This example shows a JSON-LD description of services that do not necessarily have a direct
+human-oriented HTML description. It describes a GovernmentService named "Veterans Affairs Emergency Mental Health",
+its operator, service area and service details, such as its Veterans Crisis Line (including  phone contact line
+hours of operation, language and other details).
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GovernmentService",
+  "name": "Veterans Affairs Emergency Mental Health",
+  "serviceType": "Psychiatric Emergency Services",
+  "serviceOperator": {
+    "@type": "GovernmentOrganization",
+    "name": "US Department of Veterans Affairs"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Massachusetts"
+  },
+  "audience": {
+    "@type": "Audience",
+    "name": "Veterans"
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "name": "Urgent Care Clinic",
+    "availableLanguage": {
+      "@type": "Language",
+      "name": "Spanish",
+      "alternateName": "es"
+    },
+    "serviceLocation": {
+      "@type": "Hospital",
+      "name": "VA Boston -- West Roxbury",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1400 VFW Parkway",
+        "addressLocality": "West Roxbury",
+        "addressRegion": "MA",
+        "postalCode": "02132"
+      }
+    }
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "GovernmentService",
+  "name": "Veterans Affairs Emergency Mental Health",
+  "serviceType": "Psychiatric Emergency Services",
+  "serviceOperator": {
+    "@type": "GovernmentOrganization",
+    "name": "US Department of Veterans Affairs"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Massachusetts"
+  },
+  "audience": {
+    "@type": "Audience",
+    "name": "Veterans"
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "name": "Urgent Care Clinic",
+    "availableLanguage": {
+      "@type": "Language",
+      "name": "Spanish",
+      "alternateName": "es"
+    },
+    "serviceLocation": {
+      "@type": "Hospital",
+      "name": "VA Boston -- West Roxbury",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1400 VFW Parkway",
+        "addressLocality": "West Roxbury",
+        "addressRegion": "MA",
+        "postalCode": "02132"
+      }
+    }
+  }
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Example specifying one customer service phone number.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{ "@context" : "https://schema.org",
+  "@type" : "Organization",
+  "url" : "http://www.your-company-site.com",
+  "contactPoint" : [
+    { "@type" : "ContactPoint",
+      "telephone" : "+1-401-555-1212",
+      "contactType" : "customer service"
+    } ] }
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{ "@context" : "https://schema.org",
+  "@type" : "Organization",
+  "url" : "http://www.your-company-site.com",
+  "contactPoint" : [
+    { "@type" : "ContactPoint",
+      "telephone" : "+1-401-555-1212",
+      "contactType" : "customer service"
+    } ] }
+
+
+Example 3 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+A fuller example that illustrates multiple contact numbers for a company,
+including US toll-free numbers, a hearing-impaired number, and several contact categories.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{ "@context" : "https://schema.org",
+  "@type" : "Organization",
+  "url" : "http://www.t-mobile.com",
+  "contactPoint" : [
+    { "@type" : "ContactPoint",
+      "telephone" : "+1-877-746-0909",
+      "contactType" : "customer service",
+      "contactOption" : "TollFree",
+      "areaServed" : "US"
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-505-998-3793",
+      "contactType" : "customer service"
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-877-296-1018",
+      "contactType" : "customer service",
+      "contactOption" : ["HearingImpairedSupported","TollFree"] ,
+      "areaServed" : "US"
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-877-453-1304",
+      "contactType" : "technical support",
+      "contactOption" : "TollFree",
+      "areaServed" : ["US","CA"],
+      "availableLanguage" : ["English","French"]
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-877-453-1304",
+      "contactType" : "bill payment",
+      "contactOption" : "TollFree",
+      "areaServed" : ["US","CA"]
+    } ] }
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{ "@context" : "https://schema.org",
+  "@type" : "Organization",
+  "url" : "http://www.t-mobile.com",
+  "contactPoint" : [
+    { "@type" : "ContactPoint",
+      "telephone" : "+1-877-746-0909",
+      "contactType" : "customer service",
+      "contactOption" : "TollFree",
+      "areaServed" : "US"
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-505-998-3793",
+      "contactType" : "customer service"
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-877-296-1018",
+      "contactType" : "customer service",
+      "contactOption" : ["HearingImpairedSupported","TollFree"] ,
+      "areaServed" : "US"
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-877-453-1304",
+      "contactType" : "technical support",
+      "contactOption" : "TollFree",
+      "areaServed" : ["US","CA"],
+      "availableLanguage" : ["English","French"]
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-877-453-1304",
+      "contactType" : "bill payment",
+      "contactOption" : "TollFree",
+      "areaServed" : ["US","CA"]
+    } ] }
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

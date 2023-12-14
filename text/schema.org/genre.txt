@@ -1,0 +1,235 @@
+
+
+
+
+
+genre - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+genre
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    genre
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/genre 
+
+Check for open issues.
+
+
+
+
+Genre of the creative work, broadcast channel or group.
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+URL
+
+
+
+Used on these types
+
+
+BroadcastChannel
+
+CreativeWork
+
+MusicGroup
+
+
+
+
+
+Sub-properties
+
+
+legislationType
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<h1>The Madonna with the Long Neck</h1>
+Late Renaissance painting by Parmigianino
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Painting">
+  <h1><span itemprop="name">The Madonna with the Long Neck</span></h1>
+  <meta itemprop="genre" content="http://vocab.getty.edu/aat/300021143"/>Late Renaissance painting by
+  <span itemprop="creator">Parmigianino</span>.
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="Painting">
+  <h1><span property="name">The Madonna with the Long Neck</span></h1>
+  <span property="genre" content="http://vocab.getty.edu/aat/300021143">Late Renaissance</span> painting by
+  <span property="creator">Parmigianino</span>.
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Painting",
+  "name": "The Madonna with the Long Neck",
+  "genre": "http://vocab.getty.edu/aat/300021143"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Painting",
+  "name": "The Madonna with the Long Neck",
+  "genre": "http://vocab.getty.edu/aat/300021143"
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

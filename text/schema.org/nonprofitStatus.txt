@@ -1,0 +1,216 @@
+
+
+
+
+
+nonprofitStatus - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+nonprofitStatus
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    nonprofitStatus
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/nonprofitStatus 
+
+Check for open issues.
+
+
+
+
+nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business.
+ 
+
+Values expected to be one of these types
+
+
+NonprofitType
+
+
+
+Used on these types
+
+
+Organization
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2543
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Nonprofit organization coverage with internationally applicable nonprofit types.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Example Legal Aid Nonprofit",
+  "description": "A nonprofit statewide law firm dedicated to providing equal access to justice for low income people through quality advocacy and education.",
+  "nonprofitStatus" : "Nonprofit501c20",
+  "url":  "https://www.example.org/nonprofit/info",
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Idaho"
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Example Legal Aid Nonprofit",
+  "description": "A nonprofit statewide law firm dedicated to providing equal access to justice for low income people through quality advocacy and education.",
+  "nonprofitStatus" : "Nonprofit501c20",
+  "url":  "https://www.example.org/nonprofit/info",
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Idaho"
+  }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

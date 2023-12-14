@@ -1,0 +1,319 @@
+
+
+
+
+
+PronounceableText - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+PronounceableText
+A Schema.org Type
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+DataType 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Text 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    PronounceableText
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/PronounceableText 
+
+Check for open issues.
+
+
+
+
+Data type: PronounceableText.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    PronounceableText
+
+inLanguage
+
+Language  or 
+Text
+The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.
+                 Supersedes 
+                
+    
+    
+    language.
+                
+                
+            
+
+
+phoneticText
+
+Text
+Representation of a text textValue using the specified speechToTextMarkup. For example the city name of Houston in IPA: /ËhjuËstÉn/.
+                
+                
+                
+            
+
+
+speechToTextMarkup
+
+Text
+Form of markup used. eg. SSML or IPA.
+                
+                
+                
+            
+
+
+textValue
+
+Text
+Text value being annotated.
+                
+                
+                
+            
+
+
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2108
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+See JSON example.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "City",
+  "name": {
+    "@type": "PronounceableText",
+    "inLanguage": "en-US",
+    "textValue": "Worcester",
+    "speechToTextMarkup": "IPA",
+    "phoneticText": "/ËwÊstÉ/"
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "City",
+  "name": {
+    "@type": "PronounceableText",
+    "inLanguage": "en-US",
+    "textValue": "Worcester",
+    "speechToTextMarkup": "IPA",
+    "phoneticText": "/ËwÊstÉ/"
+  }
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+See JSON example.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "RadioStation",
+  "name": ["WKRP",
+      {
+        "@type": "PronounceableText",
+        "textValue": "WKRP",
+        "speechToTextMarkup": "SSML",
+        "phoneticText": "<speak><say-as interpret-as=\"characters\">WKRP</say-as>"
+      }
+  ]
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "RadioStation",
+  "name": ["WKRP",
+      {
+        "@type": "PronounceableText",
+        "textValue": "WKRP",
+        "speechToTextMarkup": "SSML",
+        "phoneticText": "<speak><say-as interpret-as=\"characters\">WKRP</say-as>"
+      }
+  ]
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

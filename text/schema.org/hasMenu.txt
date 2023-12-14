@@ -1,0 +1,160 @@
+
+
+
+
+
+hasMenu - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+hasMenu
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    hasMenu
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/hasMenu 
+
+Check for open issues.
+
+
+
+
+Either the actual menu as a structured representation, as text, or a URL of the menu.
+ 
+
+Values expected to be one of these types
+
+
+Menu
+
+Text
+
+URL
+
+
+
+Used on these types
+
+
+FoodEstablishment
+
+
+
+
+
+Supersedes
+
+menu
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

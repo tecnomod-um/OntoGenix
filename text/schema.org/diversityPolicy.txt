@@ -1,0 +1,177 @@
+
+
+
+
+
+diversityPolicy - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+diversityPolicy
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    diversityPolicy
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/diversityPolicy 
+
+Check for open issues.
+
+
+
+
+Statement on diversity policy by an Organization e.g. a NewsMediaOrganization. For a NewsMediaOrganization, a statement describing the newsroomâs diversity policy on both staffing and sources, typically providing staffing data.
+ 
+
+Values expected to be one of these types
+
+
+CreativeWork
+
+URL
+
+
+
+Used on these types
+
+
+NewsMediaOrganization
+
+Organization
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       The Trust Project
+                    
+
+
+
+                    This term and its definition is based upon the work of The Trust Project.
+                    
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1525
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

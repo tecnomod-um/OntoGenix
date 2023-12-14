@@ -1,0 +1,181 @@
+
+
+
+
+
+EnergyEfficiencyEnumeration - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+EnergyEfficiencyEnumeration
+A Schema.org Enumeration Type
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    EnergyEfficiencyEnumeration
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/EnergyEfficiencyEnumeration 
+
+Check for open issues.
+
+
+
+
+Enumerates energy efficiency levels (also known as "classes" or "ratings") and certifications that are part of several international energy efficiency standards.
+ 
+
+
+
+
+Instances of 
+    
+    
+    EnergyEfficiencyEnumeration  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+hasEnergyEfficiencyCategory
+
+EnergyConsumptionDetails
+Defines the energy efficiency Category (which could be either a rating out of range of values or a yes/no certification) for a product according to an international energy efficiency standard.
+  
+
+
+
+
+
+
+Enumeration Subtypes
+
+
+EUEnergyEfficiencyEnumeration
+
+EnergyStarEnergyEfficiencyEnumeration
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2670
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,152 @@
+
+
+
+
+
+procedureType - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+procedureType
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    procedureType
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/procedureType 
+
+Check for open issues.
+
+
+
+
+The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
+ 
+
+Values expected to be one of these types
+
+
+MedicalProcedureType
+
+
+
+Used on these types
+
+
+MedicalProcedure
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

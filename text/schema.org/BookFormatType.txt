@@ -1,0 +1,183 @@
+
+
+
+
+
+BookFormatType - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+BookFormatType
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    BookFormatType
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/BookFormatType 
+
+Check for open issues.
+
+
+
+
+The publication format of the book.
+ 
+
+
+
+
+Instances of 
+    
+    
+    BookFormatType  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+bookFormat
+
+Book
+The format of the book.
+  
+
+
+
+
+Enumeration members
+
+
+AudiobookFormat
+
+EBook
+
+GraphicNovel
+
+Hardcover
+
+Paperback
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

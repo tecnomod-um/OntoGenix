@@ -1,0 +1,156 @@
+
+
+
+
+
+byArtist - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+byArtist
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    byArtist
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/byArtist 
+
+Check for open issues.
+
+
+
+
+The artist that performed this album or recording.
+ 
+
+Values expected to be one of these types
+
+
+MusicGroup
+
+Person
+
+
+
+Used on these types
+
+
+MusicAlbum
+
+MusicRecording
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

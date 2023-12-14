@@ -1,0 +1,154 @@
+
+
+
+
+
+reviewedBy - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+reviewedBy
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    reviewedBy
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/reviewedBy 
+
+Check for open issues.
+
+
+
+
+People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
+ 
+
+Values expected to be one of these types
+
+
+Organization
+
+Person
+
+
+
+Used on these types
+
+
+WebPage
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

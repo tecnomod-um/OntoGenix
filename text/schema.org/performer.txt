@@ -1,0 +1,158 @@
+
+
+
+
+
+performer - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+performer
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    performer
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/performer 
+
+Check for open issues.
+
+
+
+
+A performer at the event—for example, a presenter, musician, musical group or actor.
+ 
+
+Values expected to be one of these types
+
+
+Organization
+
+Person
+
+
+
+Used on these types
+
+
+Event
+
+
+
+
+
+Supersedes
+
+performers
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

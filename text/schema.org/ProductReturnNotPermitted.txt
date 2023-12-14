@@ -1,0 +1,172 @@
+
+
+
+
+
+ProductReturnNotPermitted - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+ProductReturnNotPermitted
+A Schema.org Enumeration Member
+
+
+Note: This term has been superseded.
+Note: This term has been retired from the vocabulary.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    ProductReturnEnumeration 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    ProductReturnNotPermitted
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/ProductReturnNotPermitted 
+
+Check for open issues.
+
+
+
+
+ProductReturnNotPermitted: product returns are not permitted.
+ A member value for enumeration type: 
+    
+    
+    ProductReturnEnumeration
+ 
+
+
+SupersededBy
+
+MerchantReturnNotPermitted
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2288
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

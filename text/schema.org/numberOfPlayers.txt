@@ -1,0 +1,154 @@
+
+
+
+
+
+numberOfPlayers - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+numberOfPlayers
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    numberOfPlayers
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/numberOfPlayers 
+
+Check for open issues.
+
+
+
+
+Indicate how many people can play this game (minimum, maximum, or range).
+ 
+
+Values expected to be one of these types
+
+
+QuantitativeValue
+
+
+
+Used on these types
+
+
+Game
+
+VideoGameSeries
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

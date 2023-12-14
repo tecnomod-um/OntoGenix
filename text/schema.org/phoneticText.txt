@@ -1,0 +1,271 @@
+
+
+
+
+
+phoneticText - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+phoneticText
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    phoneticText
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/phoneticText 
+
+Check for open issues.
+
+
+
+
+Representation of a text textValue using the specified speechToTextMarkup. For example the city name of Houston in IPA: /ËhjuËstÉn/.
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+
+
+Used on these types
+
+
+PronounceableText
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2108
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+See JSON example.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "City",
+  "name": {
+    "@type": "PronounceableText",
+    "inLanguage": "en-US",
+    "textValue": "Worcester",
+    "speechToTextMarkup": "IPA",
+    "phoneticText": "/ËwÊstÉ/"
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "City",
+  "name": {
+    "@type": "PronounceableText",
+    "inLanguage": "en-US",
+    "textValue": "Worcester",
+    "speechToTextMarkup": "IPA",
+    "phoneticText": "/ËwÊstÉ/"
+  }
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+See JSON example.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "RadioStation",
+  "name": ["WKRP",
+      {
+        "@type": "PronounceableText",
+        "textValue": "WKRP",
+        "speechToTextMarkup": "SSML",
+        "phoneticText": "<speak><say-as interpret-as=\"characters\">WKRP</say-as>"
+      }
+  ]
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "RadioStation",
+  "name": ["WKRP",
+      {
+        "@type": "PronounceableText",
+        "textValue": "WKRP",
+        "speechToTextMarkup": "SSML",
+        "phoneticText": "<speak><say-as interpret-as=\"characters\">WKRP</say-as>"
+      }
+  ]
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,215 @@
+
+
+
+
+
+Genitourinary - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+Genitourinary
+A Schema.org Enumeration Member
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalEnumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    PhysicalExam 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    Genitourinary
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalEntity 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalProcedure 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    PhysicalExam 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    Genitourinary
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/Genitourinary 
+
+Check for open issues.
+
+
+
+
+Genitourinary system function assessment with clinical examination.
+ A member value for enumeration type: 
+    
+    
+    PhysicalExam
+ 
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

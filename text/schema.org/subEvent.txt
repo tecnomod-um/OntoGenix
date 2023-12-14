@@ -1,0 +1,161 @@
+
+
+
+
+
+subEvent - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+subEvent
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    subEvent
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/subEvent 
+
+Check for open issues.
+
+
+
+
+An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
+ 
+Inverse-property: 
+    
+    
+    superEvent
+
+
+Values expected to be one of these types
+
+
+Event
+
+
+
+Used on these types
+
+
+Event
+
+
+
+
+
+Supersedes
+
+subEvents
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

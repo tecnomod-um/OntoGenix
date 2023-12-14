@@ -1,0 +1,179 @@
+
+
+
+
+
+ItemListOrderType - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+ItemListOrderType
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    ItemListOrderType
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/ItemListOrderType 
+
+Check for open issues.
+
+
+
+
+Enumerated for values for itemListOrder for indicating how an ordered ItemList is organized.
+ 
+
+
+
+
+Instances of 
+    
+    
+    ItemListOrderType  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+itemListOrder
+
+ItemList
+Type of ordering (e.g. Ascending, Descending, Unordered).
+  
+
+
+
+
+Enumeration members
+
+
+ItemListOrderAscending
+
+ItemListOrderDescending
+
+ItemListUnordered
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

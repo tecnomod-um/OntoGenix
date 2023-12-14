@@ -1,0 +1,173 @@
+
+
+
+
+
+ActiveActionStatus - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+ActiveActionStatus
+A Schema.org Enumeration Member
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StatusEnumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    ActionStatusType 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    ActiveActionStatus
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/ActiveActionStatus 
+
+Check for open issues.
+
+
+
+
+An in-progress action (e.g., while watching the movie, or driving to a location).
+ A member value for enumeration type: 
+    
+    
+    ActionStatusType
+ 
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

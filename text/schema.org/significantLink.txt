@@ -1,0 +1,156 @@
+
+
+
+
+
+significantLink - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+significantLink
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    significantLink
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/significantLink 
+
+Check for open issues.
+
+
+
+
+One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+ 
+
+Values expected to be one of these types
+
+
+URL
+
+
+
+Used on these types
+
+
+WebPage
+
+
+
+
+
+Supersedes
+
+significantLinks
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

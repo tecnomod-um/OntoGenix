@@ -1,0 +1,152 @@
+
+
+
+
+
+evidenceOrigin - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+evidenceOrigin
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    evidenceOrigin
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/evidenceOrigin 
+
+Check for open issues.
+
+
+
+
+Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+
+
+Used on these types
+
+
+MedicalGuideline
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

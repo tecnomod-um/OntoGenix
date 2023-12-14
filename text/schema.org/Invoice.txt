@@ -1,0 +1,862 @@
+
+
+
+
+
+Invoice - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+Invoice
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    Invoice
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/Invoice 
+
+Check for open issues.
+
+
+
+
+A statement of the money due for goods or services; a bill.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    Invoice
+
+accountId
+
+Text
+The identifier for the account the payment will be applied to.
+                
+                
+                
+            
+
+
+billingPeriod
+
+Duration
+The time interval used to compute the invoice.
+                
+                
+                
+            
+
+
+broker
+
+Organization  or 
+Person
+An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+                 Supersedes 
+                
+    
+    
+    bookingAgent.
+                
+                
+            
+
+
+category
+
+CategoryCode  or 
+PhysicalActivityCategory  or 
+Text  or 
+Thing  or 
+URL
+A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+                
+                
+                
+            
+
+
+confirmationNumber
+
+Text
+A number that confirms the given order or payment has been received.
+                
+                
+                
+            
+
+
+customer
+
+Organization  or 
+Person
+Party placing the order or paying the invoice.
+                
+                
+                
+            
+
+
+minimumPaymentDue
+
+MonetaryAmount  or 
+PriceSpecification
+The minimum payment required at this time.
+                
+                
+                
+            
+
+
+paymentDueDate
+
+Date  or 
+DateTime
+The date that payment is due.
+                 Supersedes 
+                
+    
+    
+    paymentDue.
+                
+                
+            
+
+
+paymentMethod
+
+PaymentMethod
+The name of the credit card or other method of payment for the order.
+                
+                
+                
+            
+
+
+paymentMethodId
+
+Text
+An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+                
+                
+                
+            
+
+
+paymentStatus
+
+PaymentStatusType  or 
+Text
+The status of payment; whether the invoice has been paid or not.
+                
+                
+                
+            
+
+
+provider
+
+Organization  or 
+Person
+The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+                 Supersedes 
+                
+    
+    
+    carrier.
+                
+                
+            
+
+
+referencesOrder
+
+Order
+The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
+                
+                
+                
+            
+
+
+scheduledPaymentDate
+
+Date
+The date the invoice is scheduled to be paid.
+                
+                
+                
+            
+
+
+totalPaymentDue
+
+MonetaryAmount  or 
+PriceSpecification
+The total amount due.
+                
+                
+                
+            
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    Invoice  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+partOfInvoice
+
+Order
+The order is being paid as part of the referenced Invoice.
+  
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+An example of a credit card bill (invoice).
+
+ACME Bank
+Bill for: January 2015 Visa
+invoice link: http://www.acmebank.com/invoice.pdf
+Customer: Jane Doe
+account ID: xxxx-xxxx-xxxx-1234
+payment due: 2015-01-30
+minimum payment: $15.00
+total due: $200.00
+billing period: 2014-12-21 to 2015-01-20
+payment due
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Invoice">
+  <h1 itemprop="description">January 2015 Visa</h1>
+  <a itemprop="url" href="http://acmebank.com/invoice.pdf">Invoice PDF</a>
+  <div itemprop="broker" itemscope itemtype="https://schema.org/BankOrCreditUnion">
+    <b itemprop="name">ACME Bank</b>
+  </div>
+  <span itemprop="accountId">xxxx-xxxx-xxxx-1234</span>
+  <div itemprop="customer" itemscope itemtype="https://schema.org/Person">
+    <b itemprop="name">Jane Doe</b>
+  </div>
+  <time itemprop="paymentDueDate">2015-01-30</time>
+  <div itemprop="minimumPaymentDue" itemscope itemtype="https://schema.org/PriceSpecification">
+    <span itemprop="price">15.00</span>
+    <span itemprop="priceCurrency">USD</span>
+  </div>
+  <div itemprop="totalPaymentDue" itemscope itemtype="https://schema.org/PriceSpecification">
+    <span itemprop="price">200.00</span>
+    <span itemprop="priceCurrency">USD</span>
+  </div>
+  <meta itemprop="billingPeriod" content="P30D" />starts:2014-12-21 30 days
+  <link itemprop="paymentStatus" href="https://schema.org/PaymentDue" />
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="Invoice">
+  <h1 property="description">January 2015 Visa</h1>
+  <a property="url" href="http://acmebank.com/invoice.pdf">Invoice PDF</a>
+  <div property="broker" typeof="BankOrCreditUnion">
+    <b property="name">ACME Bank</b>
+  </div>
+  <span property="accountId">xxxx-xxxx-xxxx-1234</span>
+  <div property="customer" typeof="Person">
+    <b property="name">Jane Doe</b>
+  </div>
+  <time property="paymentDueDate">2015-01-30T12:00:00</time>
+  <div property="minimumPaymentDue" typeof="PriceSpecification">
+    <span property="price">15.00</span>
+    <span property="priceCurrency">USD</span>
+  </div>
+  <div property="totalPaymentDue" typeof="PriceSpecification">
+    <span property="price">200.00</span>
+    <span property="priceCurrency">USD</span>
+  </div>
+  <meta property="billingPeriod" content="P30D" />starts:2014-12-21 30 days
+  <link property="paymentStatus" href="PaymentDue" />
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org/",
+    "@type": "Invoice",
+    "description": "January 2015 Visa bill.",
+    "url": "http://acmebank.com/invoice.pdf",
+    "broker": {
+      "@type": "BankOrCreditUnion",
+      "name": "ACME Bank"
+    },
+    "accountId": "xxxx-xxxx-xxxx-1234",
+    "customer": {
+      "@type": "Person",
+      "name": "Jane Doe"
+    },
+    "paymentDueDate": "2015-01-30T12:00:00",
+    "minimumPaymentDue": {
+      "@type": "PriceSpecification",
+      "price": 15.00,
+      "priceCurrency": "USD"
+    },
+    "totalPaymentDue": {
+      "@type": "PriceSpecification",
+      "price": 200.00,
+      "priceCurrency": "USD"
+    },
+    "billingPeriod": "P30D",
+    "paymentStatus": "https://schema.org/PaymentDue"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+    "@context": "https://schema.org/",
+    "@type": "Invoice",
+    "description": "January 2015 Visa bill.",
+    "url": "http://acmebank.com/invoice.pdf",
+    "broker": {
+      "@type": "BankOrCreditUnion",
+      "name": "ACME Bank"
+    },
+    "accountId": "xxxx-xxxx-xxxx-1234",
+    "customer": {
+      "@type": "Person",
+      "name": "Jane Doe"
+    },
+    "paymentDueDate": "2015-01-30T12:00:00",
+    "minimumPaymentDue": {
+      "@type": "PriceSpecification",
+      "price": 15.00,
+      "priceCurrency": "USD"
+    },
+    "totalPaymentDue": {
+      "@type": "PriceSpecification",
+      "price": 200.00,
+      "priceCurrency": "USD"
+    },
+    "billingPeriod": "P30D",
+    "paymentStatus": "https://schema.org/PaymentDue"
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+An example of a invoice for a purchase and installation.
+
+ACME Home Heating
+Bill for: New furnace and installation
+Customer: Jane Doe
+payment due: 2015-01-30
+minimum payment: $0.00
+total due: $0.00
+payment status: paid
+order: furnace model ABC123
+order: installation labor
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Invoice">
+  <h1 itemprop="description">New furnace and installation</h1>
+  <div itemprop="broker" itemscope itemtype="https://schema.org/LocalBusiness">
+    <b itemprop="name">ACME Home Heating</b>
+  </div>
+  <div itemprop="customer" itemscope itemtype="https://schema.org/Person">
+    <b itemprop="name">Jane Doe</b>
+  </div>
+  <time itemprop="paymentDueDate">2015-01-30</time>
+  <div itemprop="minimumPaymentDue" itemscope itemtype="https://schema.org/PriceSpecification">
+    <span itemprop="price">0.00</span>
+    <span itemprop="priceCurrency">USD</span>
+  </div>
+  <div itemprop="totalPaymentDue" itemscope itemtype="https://schema.org/PriceSpecification">
+    <span itemprop="price">0.00</span>
+    <span itemprop="priceCurrency">USD</span>
+  </div>
+  <link itemprop="paymentStatus" href="https://schema.org/PaymentComplete" />
+  <div itemprop="referencesOrder" itemscope itemtype="https://schema.org/Order">
+    <span itemprop="description">furnace</span>
+    <time itemprop="orderDate">2014-12-01</time>
+    <span itemprop="orderNumber">123ABC</span>
+    <div itemprop="orderedItem" itemscope itemtype="https://schema.org/Product">
+      <span itemprop="name">ACME Furnace 3000</span>
+      <meta itemprop="productID" content="ABC123" />
+    </div>
+  </div>
+  <div itemprop="referencesOrder" itemscope itemtype="https://schema.org/Order">
+    <span itemprop="description">furnace installation</span>
+    <time itemprop="orderDate">2014-12-02</time>
+    <div itemprop="orderedItem" itemscope itemtype="https://schema.org/Service">
+      <span itemprop="description">furnace installation</span>
+    </div>
+  </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="Invoice">
+  <h1 property="description">New furnace and installation</h1>
+  <div property="broker" typeof="LocalBusiness">
+    <b property="name">ACME Home Heating</b>
+  </div>
+  <div property="customer" typeof="Person">
+    <b property="name">Jane Doe</b>
+  </div>
+  <time property="paymentDueDate">2015-01-30</time>
+  <div property="minimumPaymentDue" typeof="PriceSpecification">
+    <span property="price">0.00</span>
+    <span property="priceCurrency">USD</span>
+  </div>
+  <div property="totalPaymentDue" typeof="PriceSpecification">
+    <span property="price">0.00</span>
+    <span property="priceCurrency">USD</span>
+  </div>
+  <meta itemprop="paymentStatus" content="PaymentComplete" />
+  <div property="referencesOrder" typeof="Order">
+    <span property="description">furnace</span>
+    <time property="orderDate">2014-12-01</time>
+    <span property="orderNumber">123ABC</span>
+    <div property="orderedItem" typeof="Product">
+      <span property="name">ACME Furnace 3000</span>
+      <meta property="productID" content="ABC123" />
+    </div>
+  </div>
+  <div property="referencesOrder" typeof="Order">
+    <span property="description">furnace installation</span>
+    <time property="orderDate">2014-12-02</time>
+    <div property="orderedItem" typeof="Service">
+      <span property="description">furnace installation</span>
+    </div>
+  </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org/",
+    "@type": "Invoice",
+    "broker": {
+      "@type": "LocalBusiness",
+      "name": "ACME Home Heating"
+    },
+    "accountId": "xxxx-xxxx-xxxx-1234",
+    "customer": {
+      "@type": "Person",
+      "name": "Jane Doe"
+    },
+    "paymentDueDate": "2015-01-30",
+    "minimumPaymentDue": {
+      "@type": "PriceSpecification",
+      "price": 0.00,
+      "priceCurrency": "USD"
+    },
+    "totalPaymentDue": {
+      "@type": "PriceSpecification",
+      "price": 0.00,
+      "priceCurrency": "USD"
+    },
+    "paymentStatus": "https://schema.org/PaymentComplete",
+    "referencesOrder": [
+      {
+        "@type": "Order",
+        "description": "furnace",
+        "orderDate": "2014-12-01",
+        "orderNumber": "123ABC",
+        "paymentMethod": "http://purl.org/goodrelations/v1#ByInvoice",
+        "orderedItem": {
+          "@type": "Product",
+          "name": "ACME Furnace 3000",
+          "productID": "ABC123"
+        }
+      },
+      {
+        "@type": "Order",
+        "description": "furnace installation",
+        "orderDate": "2014-12-02",
+        "paymentMethod": "http://purl.org/goodrelations/v1#ByInvoice",
+        "orderedItem": {
+          "@type": "Service",
+          "description": "furnace installation"
+        }
+      }
+    ]
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+    "@context": "https://schema.org/",
+    "@type": "Invoice",
+    "broker": {
+      "@type": "LocalBusiness",
+      "name": "ACME Home Heating"
+    },
+    "accountId": "xxxx-xxxx-xxxx-1234",
+    "customer": {
+      "@type": "Person",
+      "name": "Jane Doe"
+    },
+    "paymentDueDate": "2015-01-30",
+    "minimumPaymentDue": {
+      "@type": "PriceSpecification",
+      "price": 0.00,
+      "priceCurrency": "USD"
+    },
+    "totalPaymentDue": {
+      "@type": "PriceSpecification",
+      "price": 0.00,
+      "priceCurrency": "USD"
+    },
+    "paymentStatus": "https://schema.org/PaymentComplete",
+    "referencesOrder": [
+      {
+        "@type": "Order",
+        "description": "furnace",
+        "orderDate": "2014-12-01",
+        "orderNumber": "123ABC",
+        "paymentMethod": "http://purl.org/goodrelations/v1#ByInvoice",
+        "orderedItem": {
+          "@type": "Product",
+          "name": "ACME Furnace 3000",
+          "productID": "ABC123"
+        }
+      },
+      {
+        "@type": "Order",
+        "description": "furnace installation",
+        "orderDate": "2014-12-02",
+        "paymentMethod": "http://purl.org/goodrelations/v1#ByInvoice",
+        "orderedItem": {
+          "@type": "Service",
+          "description": "furnace installation"
+        }
+      }
+    ]
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

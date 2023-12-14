@@ -1,0 +1,152 @@
+
+
+
+
+
+tributary - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+tributary
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    tributary
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/tributary 
+
+Check for open issues.
+
+
+
+
+The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
+ 
+
+Values expected to be one of these types
+
+
+AnatomicalStructure
+
+
+
+Used on these types
+
+
+Vein
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

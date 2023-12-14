@@ -1,0 +1,158 @@
+
+
+
+
+
+returnPolicyCountry - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+returnPolicyCountry
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    returnPolicyCountry
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/returnPolicyCountry 
+
+Check for open issues.
+
+
+
+
+The country where the product has to be sent to for returns, for example "Ireland" using the name property of Country. You can also provide the two-letter ISO 3166-1 alpha-2 country code. Note that this can be different from the country where the product was originally shipped from or sent to.
+ 
+
+Values expected to be one of these types
+
+
+Country
+
+Text
+
+
+
+Used on these types
+
+
+MerchantReturnPolicy
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2880
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

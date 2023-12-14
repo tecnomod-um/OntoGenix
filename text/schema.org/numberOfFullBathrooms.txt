@@ -1,0 +1,158 @@
+
+
+
+
+
+numberOfFullBathrooms - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+numberOfFullBathrooms
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    numberOfFullBathrooms
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/numberOfFullBathrooms 
+
+Check for open issues.
+
+
+
+
+Number of full bathrooms - The total number of full and Â¾ bathrooms in an Accommodation. This corresponds to the BathroomsFull field in RESO.
+ 
+
+Values expected to be one of these types
+
+
+Number
+
+
+
+Used on these types
+
+
+Accommodation
+
+FloorPlan
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2373
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,159 @@
+
+
+
+
+
+expectsAcceptanceOf - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+expectsAcceptanceOf
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    expectsAcceptanceOf
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/expectsAcceptanceOf 
+
+Check for open issues.
+
+
+
+
+An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
+ 
+
+Values expected to be one of these types
+
+
+Offer
+
+
+
+Used on these types
+
+
+ActionAccessSpecification
+
+ConsumeAction
+
+MediaSubscription
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1741
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

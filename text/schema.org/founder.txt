@@ -1,0 +1,156 @@
+
+
+
+
+
+founder - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+founder
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    founder
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/founder 
+
+Check for open issues.
+
+
+
+
+A person who founded this organization.
+ 
+
+Values expected to be one of these types
+
+
+Person
+
+
+
+Used on these types
+
+
+Organization
+
+
+
+
+
+Supersedes
+
+founders
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,152 @@
+
+
+
+
+
+postOfficeBoxNumber - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+postOfficeBoxNumber
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    postOfficeBoxNumber
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/postOfficeBoxNumber 
+
+Check for open issues.
+
+
+
+
+The post office box number for PO box addresses.
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+
+
+Used on these types
+
+
+PostalAddress
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

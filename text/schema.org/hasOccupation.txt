@@ -1,0 +1,155 @@
+
+
+
+
+
+hasOccupation - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+hasOccupation
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    hasOccupation
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/hasOccupation 
+
+Check for open issues.
+
+
+
+
+The Person's occupation. For past professions, use Role for expressing dates.
+ 
+
+Values expected to be one of these types
+
+
+Occupation
+
+
+
+Used on these types
+
+
+Person
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1698
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

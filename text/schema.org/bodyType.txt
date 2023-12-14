@@ -1,0 +1,174 @@
+
+
+
+
+
+bodyType - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+bodyType
+A Schema.org Property
+
+
+Defined in the auto section.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    bodyType
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/bodyType 
+
+Check for open issues.
+
+
+
+
+Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
+ 
+
+Values expected to be one of these types
+
+
+QualitativeValue
+
+Text
+
+URL
+
+
+
+Used on these types
+
+
+Vehicle
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       Automotive Ontology Working Group
+                    
+
+
+
+                    This element is based on the work of the Automotive Ontology Working Group, see www.automotive-ontology.org for details. Many class and property definitions are inspired by or based on abstracts from Wikipedia, the free encyclopedia.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

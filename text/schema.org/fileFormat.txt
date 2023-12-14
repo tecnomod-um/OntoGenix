@@ -1,0 +1,159 @@
+
+
+
+
+
+fileFormat - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+fileFormat
+A Schema.org Property
+
+
+Note: This term has been superseded.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    fileFormat
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/fileFormat 
+
+Check for open issues.
+
+
+
+
+Media type, typically MIME format (see IANA site) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+URL
+
+
+
+Used on these types
+
+
+CreativeWork
+
+
+
+
+
+SupersededBy
+
+encodingFormat
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,156 @@
+
+
+
+
+
+isAcceptingNewPatients - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+isAcceptingNewPatients
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    isAcceptingNewPatients
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/isAcceptingNewPatients 
+
+Check for open issues.
+
+
+
+
+Whether the provider is accepting new patients.
+ 
+
+Values expected to be one of these types
+
+
+Boolean
+
+
+
+Used on these types
+
+
+MedicalOrganization
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1062
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

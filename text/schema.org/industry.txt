@@ -1,0 +1,214 @@
+
+
+
+
+
+industry - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+industry
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    industry
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/industry 
+
+Check for open issues.
+
+
+
+
+The industry associated with the job position.
+ 
+
+Values expected to be one of these types
+
+
+DefinedTerm
+
+Text
+
+
+
+Used on these types
+
+
+JobPosting
+
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Systems Research Engineer at a Software Publishers (NAICS code 511210)
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": "Systems Research Engineer",
+  "industry": {
+    "@type": "DefinedTerm",
+    "termCode": "511210",
+    "name": "Software Publishers",
+    "url": "https://www.naics.com/naics-code-description/?code=511210",
+    "inDefinedTermSet": "NAICS (North American Industry Classification System)"
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": "Systems Research Engineer",
+  "industry": {
+    "@type": "DefinedTerm",
+    "termCode": "511210",
+    "name": "Software Publishers",
+    "url": "https://www.naics.com/naics-code-description/?code=511210",
+    "inDefinedTermSet": "NAICS (North American Industry Classification System)"
+  }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

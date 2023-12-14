@@ -1,0 +1,158 @@
+
+
+
+
+
+associatedAnatomy - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+associatedAnatomy
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    associatedAnatomy
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/associatedAnatomy 
+
+Check for open issues.
+
+
+
+
+The anatomy of the underlying organ system or structures associated with this entity.
+ 
+
+Values expected to be one of these types
+
+
+AnatomicalStructure
+
+AnatomicalSystem
+
+SuperficialAnatomy
+
+
+
+Used on these types
+
+
+MedicalCondition
+
+PhysicalActivity
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

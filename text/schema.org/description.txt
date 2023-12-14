@@ -1,0 +1,273 @@
+
+
+
+
+
+description - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+description
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    description
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/description 
+
+                Equivalent Property: dcterms:description
+                
+
+Check for open issues.
+
+
+
+
+A description of the item.
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+TextObject
+
+
+
+Used on these types
+
+
+Thing
+
+
+
+
+
+Sub-properties
+
+
+disambiguatingDescription
+
+interpretedAsClaim
+
+originalMediaContextDescription
+
+sha256
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<b>12oclock_girona.mp3</b>
+Total Time: 0m:15s - Recorded on a terrace of Girona a sunday morning
+composed by Roger
+
+ <script type="text/javascript">
+var fo = new FlashObject("http://google.com/flash/preview-player.swf", "flashPlayer_719", "358", "16", "6", "#FFFFFF");fo.addVariable("url", "http://media.freesound.org/data/0/previews/719__elmomo__12oclock_girona_preview.mp3");fo.addVariable("autostart", "0");fo.write("flashcontent_719");
+</script>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/AudioObject">
+  <span itemprop="name"><b>12oclock_girona.mp3</b></span>
+
+<script type="text/javascript">
+  var fo = new FlashObject("http://google.com/flash/preview-player.swf",
+  "flashPlayer_719", "358", "16", "6", "#FFFFFF");fo.addVariable("url","http://media.freesound.org/data/0/previews/719__elmomo__12oclock_girona_preview.mp3");fo.addVariable("autostart", "0");fo.write("flashcontent_719");
+</script>
+
+<meta itemprop="encodingFormat" content="audio/mpeg" />
+ <meta itemprop="contentUrl" content="http://media.freesound.org/data/0/previews/719__elmomo__12oclock_girona_preview.mp3" />
+
+<span class="description">
+      <meta itemprop="duration" content="T0M15S" />
+      <span itemprop="description">Recorded on a terrace of Girona a sunday morning</span>
+</span>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="AudioObject">
+  <span property="name"><b>12oclock_girona.mp3</b></span>
+
+<script type="text/javascript">
+  var fo = new FlashObject("http://google.com/flash/preview-player.swf",
+  "flashPlayer_719", "358", "16", "6", "#FFFFFF");fo.addVariable("url","http://media.freesound.org/data/0/previews/719__elmomo__12oclock_girona_preview.mp3");fo.addVariable("autostart", "0");fo.write("flashcontent_719");
+</script>
+
+<meta property="encodingFormat" content="audio/mpeg" />
+ <meta property="contentUrl" content="http://media.freesound.org/data/0/previews/719__elmomo__12oclock_girona_preview.mp3" />
+
+<span class="description">
+      <meta property="duration" content="T0M15S" />
+      <span property="description">Recorded on a terrace of Girona a sunday morning</span>
+</span>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AudioObject",
+  "contentUrl": "http://media.freesound.org/data/0/previews/719__elmomo__12oclock_girona_preview.mp3",
+  "description": "Recorded on a terrace of Girona a sunday morning",
+  "duration": "T0M15S",
+  "encodingFormat": "audio/mpeg",
+  "name": "12oclock_girona.mp3"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "AudioObject",
+  "contentUrl": "http://media.freesound.org/data/0/previews/719__elmomo__12oclock_girona_preview.mp3",
+  "description": "Recorded on a terrace of Girona a sunday morning",
+  "duration": "T0M15S",
+  "encodingFormat": "audio/mpeg",
+  "name": "12oclock_girona.mp3"
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,154 @@
+
+
+
+
+
+doseSchedule - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+doseSchedule
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    doseSchedule
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/doseSchedule 
+
+Check for open issues.
+
+
+
+
+A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
+ 
+
+Values expected to be one of these types
+
+
+DoseSchedule
+
+
+
+Used on these types
+
+
+Drug
+
+TherapeuticProcedure
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

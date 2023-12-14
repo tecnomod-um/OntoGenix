@@ -1,0 +1,152 @@
+
+
+
+
+
+isGift - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+isGift
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    isGift
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/isGift 
+
+Check for open issues.
+
+
+
+
+Indicates whether the offer was accepted as a gift for someone other than the buyer.
+ 
+
+Values expected to be one of these types
+
+
+Boolean
+
+
+
+Used on these types
+
+
+Order
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

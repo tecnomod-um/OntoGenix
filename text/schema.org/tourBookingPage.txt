@@ -1,0 +1,160 @@
+
+
+
+
+
+tourBookingPage - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+tourBookingPage
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    tourBookingPage
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/tourBookingPage 
+
+Check for open issues.
+
+
+
+
+A page providing information on how to book a tour of some Place, such as an Accommodation or ApartmentComplex in a real estate setting, as well as other kinds of tours as appropriate.
+ 
+
+Values expected to be one of these types
+
+
+URL
+
+
+
+Used on these types
+
+
+Accommodation
+
+ApartmentComplex
+
+Place
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2373
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,157 @@
+
+
+
+
+
+sampleType - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+sampleType
+A Schema.org Property
+
+
+Note: This term has been superseded.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    sampleType
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/sampleType 
+
+Check for open issues.
+
+
+
+
+What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+
+
+Used on these types
+
+
+SoftwareSourceCode
+
+
+
+
+
+SupersededBy
+
+codeSampleType
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

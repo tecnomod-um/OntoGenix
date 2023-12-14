@@ -1,0 +1,191 @@
+
+
+
+
+
+GameServerStatus - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+GameServerStatus
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StatusEnumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    GameServerStatus
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/GameServerStatus 
+
+Check for open issues.
+
+
+
+
+Status of a game server.
+ 
+
+
+
+
+Instances of 
+    
+    
+    GameServerStatus  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+serverStatus
+
+GameServer
+Status of a game server.
+  
+
+
+
+
+Enumeration members
+
+
+OfflinePermanently
+
+OfflineTemporarily
+
+Online
+
+OnlineFull
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

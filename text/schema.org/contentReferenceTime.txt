@@ -1,0 +1,214 @@
+
+
+
+
+
+contentReferenceTime - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+contentReferenceTime
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    contentReferenceTime
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/contentReferenceTime 
+
+Check for open issues.
+
+
+
+
+The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
+ 
+
+Values expected to be one of these types
+
+
+DateTime
+
+
+
+Used on these types
+
+
+CreativeWork
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1050
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+A JSON example for an Article about a particular event.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Article",
+  "name": "Apple announces iPhone SE",
+  "description": "New iPhone announced at 11:30 in California.",
+  "about": {
+    "@type": "Event",
+    "name": "Apple's March 21 Announcements"
+  },
+  "contentReferenceTime": "2016-03-21T11:30:00-07:00"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "Article",
+  "name": "Apple announces iPhone SE",
+  "description": "New iPhone announced at 11:30 in California.",
+  "about": {
+    "@type": "Event",
+    "name": "Apple's March 21 Announcements"
+  },
+  "contentReferenceTime": "2016-03-21T11:30:00-07:00"
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

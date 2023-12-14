@@ -1,0 +1,163 @@
+
+
+
+
+
+Female - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+Female
+A Schema.org Enumeration Member
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    GenderType 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    Female
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/Female 
+
+Check for open issues.
+
+
+
+
+The female gender.
+ A member value for enumeration type: 
+    
+    
+    GenderType
+ 
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

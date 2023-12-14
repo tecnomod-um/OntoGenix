@@ -1,0 +1,143 @@
+
+
+
+
+
+DataType - Schema.org Data Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+DataType
+A Schema.org Data Type
+
+
+
+
+
+DataType
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/DataType 
+
+Check for open issues.
+
+
+
+
+The basic data types such as Integers, Strings, etc.
+Subclass of:
+rdfs:Class
+
+ 
+
+
+
+
+
+
+
+More specific Data Types
+
+
+Number
+
+Date
+
+Time
+
+Boolean
+
+Text
+
+DateTime
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

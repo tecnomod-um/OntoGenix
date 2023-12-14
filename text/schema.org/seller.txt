@@ -1,0 +1,176 @@
+
+
+
+
+
+seller - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+seller
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    participant 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    seller
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/seller 
+
+Check for open issues.
+
+
+
+
+An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+ 
+
+Values expected to be one of these types
+
+
+Organization
+
+Person
+
+
+
+Used on these types
+
+
+BuyAction
+
+Demand
+
+Flight
+
+Offer
+
+Order
+
+
+
+
+
+Supersedes
+
+merchant 
+vendor
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

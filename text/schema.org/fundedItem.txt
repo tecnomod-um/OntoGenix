@@ -1,0 +1,191 @@
+
+
+
+
+
+fundedItem - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+fundedItem
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    fundedItem
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/fundedItem 
+
+Check for open issues.
+
+
+
+
+Indicates something directly or indirectly funded or sponsored through a Grant. See also ownershipFundingInfo.
+ 
+Inverse-property: 
+    
+    
+    funding
+
+
+Values expected to be one of these types
+
+
+BioChemEntity
+
+CreativeWork
+
+Event
+
+MedicalEntity
+
+Organization
+
+Person
+
+Product
+
+
+
+Used on these types
+
+
+Grant
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       The Trust Project
+                    
+
+
+
+                    This term and its definition is based upon the work of The Trust Project.
+                    
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1950
+https://github.com/schemaorg/schemaorg/issues/383
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

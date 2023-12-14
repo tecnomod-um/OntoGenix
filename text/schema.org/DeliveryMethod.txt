@@ -1,0 +1,232 @@
+
+
+
+
+
+DeliveryMethod - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+DeliveryMethod
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    DeliveryMethod
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/DeliveryMethod 
+
+Check for open issues.
+
+
+
+
+A delivery method is a standardized procedure for transferring the product or service to the destination of fulfillment chosen by the customer. Delivery methods are characterized by the means of transportation used, and by the organization or group that is the contracting party for the sending organization or person.
+
+Commonly used values:
+
+http://purl.org/goodrelations/v1#DeliveryModeDirectDownload
+http://purl.org/goodrelations/v1#DeliveryModeFreight
+http://purl.org/goodrelations/v1#DeliveryModeMail
+http://purl.org/goodrelations/v1#DeliveryModeOwnFleet
+http://purl.org/goodrelations/v1#DeliveryModePickUp
+http://purl.org/goodrelations/v1#DHL
+http://purl.org/goodrelations/v1#FederalExpress
+http://purl.org/goodrelations/v1#UPS
+
+ 
+
+
+
+
+Instances of 
+    
+    
+    DeliveryMethod  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+appliesToDeliveryMethod
+
+DeliveryChargeSpecification  or 
+PaymentChargeSpecification
+The delivery method(s) to which the delivery charge or payment charge specification applies.
+  
+
+availableDeliveryMethod
+
+Demand  or 
+Offer
+The delivery method(s) available for this offer.
+  
+
+deliveryMethod
+
+OrderAction  or 
+ReceiveAction  or 
+SendAction  or 
+TrackAction
+A sub property of instrument. The method of delivery.
+  
+
+hasDeliveryMethod
+
+DeliveryEvent  or 
+ParcelDelivery
+Method used for delivery or shipping.
+  
+
+
+
+
+Enumeration members
+
+
+LockerDelivery
+
+OnSitePickup
+
+ParcelService
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       GoodRelations Vocabulary Classes
+                    
+
+
+
+                    This class is derived from the GoodRelations Vocabulary for E-Commerce, created by Martin Hepp. GoodRelations is a data model for sharing e-commerce data on the Web that can be expressed in a variety of syntaxes, including RDFa and HTML5 Microdata. More information about GoodRelations can be found at http://purl.org/goodrelations/.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

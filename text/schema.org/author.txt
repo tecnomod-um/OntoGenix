@@ -1,0 +1,242 @@
+
+
+
+
+
+author - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+author
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    author
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/author 
+
+Check for open issues.
+
+
+
+
+The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+ 
+
+Values expected to be one of these types
+
+
+Organization
+
+Person
+
+
+
+Used on these types
+
+
+CreativeWork
+
+Rating
+
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Book series example with nested author(JSON-LD only).
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BookSeries",
+        "name": "The Hitchhiker's Guide to the Galaxy",
+        "genre": "comedy science fiction",
+        "startDate": "1979-10-12",
+        "endDate": "1992-10-12",
+        "abstract": "Earthman Arthur Dent is saved by his friend, Ford Prefectâan alien researcher for the titular Hitchhiker's Guide to the Galaxy, which provides info on every planet in the galaxyâfrom the Earth just before it is destroyed by the alien Vogons.",
+        "author": {
+            "@type": "Person",
+            "givenName": "Douglas",
+            "familyName": "Adams",
+            "additionalName": "Noel",
+            "birthDate": "1952-03-11",
+            "birthPlace": {
+                "@type": "Place",
+                "address": "Cambridge, Cambridgeshire, England"
+            },
+            "deathDate": "2001-05-11",
+            "deathPlace": {
+                "@type": "Place",
+                "address": "Highgate Cemetery, London, England"
+            }
+        }
+    }
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+        "@context": "https://schema.org",
+        "@type": "BookSeries",
+        "name": "The Hitchhiker's Guide to the Galaxy",
+        "genre": "comedy science fiction",
+        "startDate": "1979-10-12",
+        "endDate": "1992-10-12",
+        "abstract": "Earthman Arthur Dent is saved by his friend, Ford Prefectâan alien researcher for the titular Hitchhiker's Guide to the Galaxy, which provides info on every planet in the galaxyâfrom the Earth just before it is destroyed by the alien Vogons.",
+        "author": {
+            "@type": "Person",
+            "givenName": "Douglas",
+            "familyName": "Adams",
+            "additionalName": "Noel",
+            "birthDate": "1952-03-11",
+            "birthPlace": {
+                "@type": "Place",
+                "address": "Cambridge, Cambridgeshire, England"
+            },
+            "deathDate": "2001-05-11",
+            "deathPlace": {
+                "@type": "Place",
+                "address": "Highgate Cemetery, London, England"
+            }
+        }
+    }
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

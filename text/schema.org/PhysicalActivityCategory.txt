@@ -1,0 +1,194 @@
+
+
+
+
+
+PhysicalActivityCategory - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+PhysicalActivityCategory
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    PhysicalActivityCategory
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/PhysicalActivityCategory 
+
+Check for open issues.
+
+
+
+
+Categories of physical activity, organized by physiologic classification.
+ 
+
+
+
+
+Instances of 
+    
+    
+    PhysicalActivityCategory  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+category
+
+ActionAccessSpecification  or 
+Invoice  or 
+Offer  or 
+PhysicalActivity  or 
+Product  or 
+Recommendation  or 
+Service  or 
+SpecialAnnouncement
+A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+  
+
+
+
+
+Enumeration members
+
+
+AerobicActivity
+
+AnaerobicActivity
+
+Balance
+
+Flexibility
+
+LeisureTimeActivity
+
+OccupationalActivity
+
+StrengthTraining
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,677 @@
+
+
+
+
+
+MenuItem - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+MenuItem
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    MenuItem
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/MenuItem 
+
+Check for open issues.
+
+
+
+
+A food or drink item listed in a menu or menu section.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    MenuItem
+
+menuAddOn
+
+MenuItem  or 
+MenuSection
+Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+                
+                
+                
+            
+
+
+nutrition
+
+NutritionInformation
+Nutrition information about the recipe or menu item.
+                
+                
+                
+            
+
+
+offers
+
+Demand  or 
+Offer
+An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+                
+                
+                Inverse property: 
+    
+    
+    itemOffered
+
+
+
+suitableForDiet
+
+RestrictedDiet
+Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
+                
+                
+                
+            
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    MenuItem  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+hasMenuItem
+
+Menu  or 
+MenuSection
+A food or drink item contained in a menu or menu section.
+  
+
+itemOffered
+
+Demand  or 
+Offer
+An item being offered (or demanded). The transactional nature of the offer or demand is documented using businessFunction, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+  
+
+menuAddOn
+
+MenuItem
+Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+  
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+A simple menu example with a single menu section for tacos and a taco menu item.
+Note that additional menus are possible for specific languages using the
+inLanguage property.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+   "@context":"https://schema.org",
+   "@type":"Restaurant",
+   "url":"http://www.somerestaurant.com",
+   "name":"Some Restaurant",
+   "description":"This is the Some Restaurant located on 345 Spear St. San Francisco, 94105 CA. It serves Indian-Mexican fusion cuisine",
+   "servesCuisine":[
+      "Indian-Mexican Fusion"
+   ],
+   "hasMenu":{
+      "@type":"Menu",
+      "hasMenuSection":{
+         "@type":"MenuSection",
+         "name":"Tacos",
+         "description":"Tacos inspired by India cuisine.",
+         "image":[
+            "https://somerestaurant.com/some_tacos.jpg",
+            "https://somerestaurant.com/more_tacos.jpg"
+         ],
+         "offers":{
+            "@type":"Offer",
+            "availabilityEnds":"2017-03-02T08:22:00",
+            "availabilityStarts":"2017-03-02T08:22:00"
+         },
+         "hasMenuItem":{
+            "@type":"MenuItem",
+            "name":"Aloo Gobi Taco",
+            "description":"Mexico City-style street corn tortilla taco filled with a flavorful mixture of mildly south Indian spiced cauliflower, potato, tomato, onions and bell peppers.",
+            "offers":{
+               "@type":"Offer",
+               "price":"3.50",
+               "priceCurrency":"USD"
+            },
+            "nutrition":{
+               "@type":"NutritionInformation",
+               "calories":"170 calories",
+               "fatContent":"3 grams",
+               "fiberContent":"2 grams",
+               "proteinContent":"4 grams"
+            },
+            "suitableForDiet":"https://schema.org/GlutenFreeDiet"
+         }
+      },
+      "inLanguage":"English"
+   }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+   "@context":"https://schema.org",
+   "@type":"Restaurant",
+   "url":"http://www.somerestaurant.com",
+   "name":"Some Restaurant",
+   "description":"This is the Some Restaurant located on 345 Spear St. San Francisco, 94105 CA. It serves Indian-Mexican fusion cuisine",
+   "servesCuisine":[
+      "Indian-Mexican Fusion"
+   ],
+   "hasMenu":{
+      "@type":"Menu",
+      "hasMenuSection":{
+         "@type":"MenuSection",
+         "name":"Tacos",
+         "description":"Tacos inspired by India cuisine.",
+         "image":[
+            "https://somerestaurant.com/some_tacos.jpg",
+            "https://somerestaurant.com/more_tacos.jpg"
+         ],
+         "offers":{
+            "@type":"Offer",
+            "availabilityEnds":"2017-03-02T08:22:00",
+            "availabilityStarts":"2017-03-02T08:22:00"
+         },
+         "hasMenuItem":{
+            "@type":"MenuItem",
+            "name":"Aloo Gobi Taco",
+            "description":"Mexico City-style street corn tortilla taco filled with a flavorful mixture of mildly south Indian spiced cauliflower, potato, tomato, onions and bell peppers.",
+            "offers":{
+               "@type":"Offer",
+               "price":"3.50",
+               "priceCurrency":"USD"
+            },
+            "nutrition":{
+               "@type":"NutritionInformation",
+               "calories":"170 calories",
+               "fatContent":"3 grams",
+               "fiberContent":"2 grams",
+               "proteinContent":"4 grams"
+            },
+            "suitableForDiet":"https://schema.org/GlutenFreeDiet"
+         }
+      },
+      "inLanguage":"English"
+   }
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+An example of a menu with nested MenuSections.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+   "@context":"https://schema.org",
+   "@type":"Restaurant",
+   "url":"http://www.thisisarestaurant.com",
+   "name":"The Restaurant",
+   "image":"http://www.example.com/image-of-some-restaurant.jpg",
+   "description":"This is an example restaurant that serves American cuisine.",
+   "servesCuisine":[
+      "American cuisine"
+   ],
+   "hasMenu":{
+      "@type":"Menu",
+      "name":"Dine-In Menu",
+      "description":"Menu for in-restaurant dining only.",
+      "hasMenuSection":[
+         {
+            "@type":"MenuSection",
+            "name":"Dinner",
+            "description":"Dinner dishes",
+            "image":"https://thisisarestaurant.com/dinner_dishes.jpg",
+            "offers":{
+               "@type":"Offer",
+               "availabilityEnds":"2017-03-02T08:22:00",
+               "availabilityStarts":"2017-03-02T08:22:00"
+            },
+            "hasMenuSection":[
+               {
+                  "@type":"MenuSection",
+                  "name":"Starters",
+                  "description":"Appetizers and such",
+                  "image":"https://thisisarestaurant.com/starter_dishes.jpg",
+                  "offers":{
+                     "@type":"Offer",
+                     "availabilityEnds":"2017-03-02T08:22:00",
+                     "availabilityStarts":"2017-03-02T08:22:00"
+                  },
+                  "hasMenuItem":{
+                     "@type":"MenuItem",
+                     "name":"Potato Skins",
+                     "description":"Small serving of stuffed potato skins.",
+                     "offers":{
+                        "@type":"Offer",
+                        "price":"7.49",
+                        "priceCurrency":"USD"
+                     },
+                     "suitableForDiet":"https://schema.org/GlutenFreeDiet"
+                  }
+               },
+               {
+                  "@type":"MenuSection",
+                  "name":"Soups & Salads",
+                  "description":"Salads and a few choices of soup",
+                  "image":"https://thisisarestaurant.com/soup_and_salad_dishes.jpg",
+                  "offers":{
+                     "@type":"Offer",
+                     "availabilityEnds":"2017-03-02T08:22:00",
+                     "availabilityStarts":"2017-03-02T08:22:00"
+                  },
+                  "hasMenuItem":{
+                     "@type":"MenuItem",
+                     "name":"Pea Soup",
+                     "description":"Creamy pea soup topped with melted cheese and sourdough croutons.",
+                     "offers":{
+                        "@type":"Offer",
+                        "price":"3.49",
+                        "priceCurrency":"USD"
+                     }
+                  }
+               }
+            ]
+         }
+      ]
+   }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+   "@context":"https://schema.org",
+   "@type":"Restaurant",
+   "url":"http://www.thisisarestaurant.com",
+   "name":"The Restaurant",
+   "image":"http://www.example.com/image-of-some-restaurant.jpg",
+   "description":"This is an example restaurant that serves American cuisine.",
+   "servesCuisine":[
+      "American cuisine"
+   ],
+   "hasMenu":{
+      "@type":"Menu",
+      "name":"Dine-In Menu",
+      "description":"Menu for in-restaurant dining only.",
+      "hasMenuSection":[
+         {
+            "@type":"MenuSection",
+            "name":"Dinner",
+            "description":"Dinner dishes",
+            "image":"https://thisisarestaurant.com/dinner_dishes.jpg",
+            "offers":{
+               "@type":"Offer",
+               "availabilityEnds":"2017-03-02T08:22:00",
+               "availabilityStarts":"2017-03-02T08:22:00"
+            },
+            "hasMenuSection":[
+               {
+                  "@type":"MenuSection",
+                  "name":"Starters",
+                  "description":"Appetizers and such",
+                  "image":"https://thisisarestaurant.com/starter_dishes.jpg",
+                  "offers":{
+                     "@type":"Offer",
+                     "availabilityEnds":"2017-03-02T08:22:00",
+                     "availabilityStarts":"2017-03-02T08:22:00"
+                  },
+                  "hasMenuItem":{
+                     "@type":"MenuItem",
+                     "name":"Potato Skins",
+                     "description":"Small serving of stuffed potato skins.",
+                     "offers":{
+                        "@type":"Offer",
+                        "price":"7.49",
+                        "priceCurrency":"USD"
+                     },
+                     "suitableForDiet":"https://schema.org/GlutenFreeDiet"
+                  }
+               },
+               {
+                  "@type":"MenuSection",
+                  "name":"Soups & Salads",
+                  "description":"Salads and a few choices of soup",
+                  "image":"https://thisisarestaurant.com/soup_and_salad_dishes.jpg",
+                  "offers":{
+                     "@type":"Offer",
+                     "availabilityEnds":"2017-03-02T08:22:00",
+                     "availabilityStarts":"2017-03-02T08:22:00"
+                  },
+                  "hasMenuItem":{
+                     "@type":"MenuItem",
+                     "name":"Pea Soup",
+                     "description":"Creamy pea soup topped with melted cheese and sourdough croutons.",
+                     "offers":{
+                        "@type":"Offer",
+                        "price":"3.49",
+                        "priceCurrency":"USD"
+                     }
+                  }
+               }
+            ]
+         }
+      ]
+   }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

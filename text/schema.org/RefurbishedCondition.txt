@@ -1,0 +1,163 @@
+
+
+
+
+
+RefurbishedCondition - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+RefurbishedCondition
+A Schema.org Enumeration Member
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    OfferItemCondition 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    RefurbishedCondition
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/RefurbishedCondition 
+
+Check for open issues.
+
+
+
+
+Indicates that the item is refurbished.
+ A member value for enumeration type: 
+    
+    
+    OfferItemCondition
+ 
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

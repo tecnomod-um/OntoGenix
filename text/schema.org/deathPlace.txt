@@ -1,0 +1,152 @@
+
+
+
+
+
+deathPlace - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+deathPlace
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    deathPlace
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/deathPlace 
+
+Check for open issues.
+
+
+
+
+The place where the person died.
+ 
+
+Values expected to be one of these types
+
+
+Place
+
+
+
+Used on these types
+
+
+Person
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

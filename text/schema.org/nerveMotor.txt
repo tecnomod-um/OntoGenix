@@ -1,0 +1,152 @@
+
+
+
+
+
+nerveMotor - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+nerveMotor
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    nerveMotor
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/nerveMotor 
+
+Check for open issues.
+
+
+
+
+The neurological pathway extension that involves muscle control.
+ 
+
+Values expected to be one of these types
+
+
+Muscle
+
+
+
+Used on these types
+
+
+Nerve
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

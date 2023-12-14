@@ -1,0 +1,158 @@
+
+
+
+
+
+cvdCollectionDate - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+cvdCollectionDate
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    cvdCollectionDate
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/cvdCollectionDate 
+
+Check for open issues.
+
+
+
+
+collectiondate - Date for which patient counts are reported.
+ 
+
+Values expected to be one of these types
+
+
+DateTime
+
+Text
+
+
+
+Used on these types
+
+
+CDCPMDRecord
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2521
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

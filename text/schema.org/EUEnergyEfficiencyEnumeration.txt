@@ -1,0 +1,213 @@
+
+
+
+
+
+EUEnergyEfficiencyEnumeration - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+EUEnergyEfficiencyEnumeration
+A Schema.org Enumeration Type
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    EnergyEfficiencyEnumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    EUEnergyEfficiencyEnumeration
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/EUEnergyEfficiencyEnumeration 
+
+Check for open issues.
+
+
+
+
+Enumerates the EU energy efficiency classes A-G as well as A+, A++, and A+++ as defined in EU directive 2017/1369.
+ 
+
+
+
+
+Instances of 
+    
+    
+    EUEnergyEfficiencyEnumeration  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+energyEfficiencyScaleMax
+
+EnergyConsumptionDetails
+Specifies the most energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.
+  
+
+energyEfficiencyScaleMin
+
+EnergyConsumptionDetails
+Specifies the least energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.
+  
+
+
+
+
+Enumeration members
+
+
+EUEnergyEfficiencyCategoryA
+
+EUEnergyEfficiencyCategoryA1Plus
+
+EUEnergyEfficiencyCategoryA2Plus
+
+EUEnergyEfficiencyCategoryA3Plus
+
+EUEnergyEfficiencyCategoryB
+
+EUEnergyEfficiencyCategoryC
+
+EUEnergyEfficiencyCategoryD
+
+EUEnergyEfficiencyCategoryE
+
+EUEnergyEfficiencyCategoryF
+
+EUEnergyEfficiencyCategoryG
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2670
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

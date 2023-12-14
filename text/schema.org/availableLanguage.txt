@@ -1,0 +1,327 @@
+
+
+
+
+
+availableLanguage - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+availableLanguage
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    availableLanguage
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/availableLanguage 
+
+Check for open issues.
+
+
+
+
+A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage.
+ 
+
+Values expected to be one of these types
+
+
+Language
+
+Text
+
+
+
+Used on these types
+
+
+ContactPoint
+
+Course
+
+LodgingBusiness
+
+ServiceChannel
+
+TouristAttraction
+
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+This example is in microdata only.
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Hotel">
+  <h1><span itemprop="name">ACME Hotel Innsbruck</span></h1>
+  <span itemprop="description">A beautifully located business hotel right in the
+heart of the alps. Watch the sun rise over the scenic Inn valley while
+enjoying your morning coffee.</span>
+  We speak:
+  <ul>
+    <li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+      <span itemprop="name">English</span>
+    </li>
+    <li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+      <span itemprop="name">German</span>
+    </li>
+  </ul>
+</div>
+
+
+This example is in microdata only.
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<h1>Neuschwanstein Castle</h1>
+<div>Neuschwanstein Castle is a nineteenth-century Romanesque Revival palace in Schwangau, in southwest Bavaria, Germany.</div>
+<div>Guided tours in German and English.</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/TouristAttraction">
+	<h1><span itemprop="name">Neuschwanstein Castle</span></h1>
+	<div>It is a nineteenth-century Romanesque Revival palace in
+		<div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+			<span itemprop="addressLocality">Schwangau</span>, in
+			<span itemprop="addressCountry">Germany</span>.
+		</div>
+	</div>
+	<div>Guided tours in
+		<div itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+			<span itemprop="name">German</span>
+		</div> and
+		<div itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+			<span itemprop="name">English</span>.
+		</div>
+	</div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org" typeof="TouristAttraction">
+	<h1><span property="name">Neuschwanstein Castle</span></h1>
+	<div>It is a nineteenth-century Romanesque Revival palace in
+		<div property="address" typeof="PostalAddress">
+			<span property="addressLocality">Schwangau</span>, in
+			<span property="addressCountry">Germany</span>.
+		</div>
+	</div>
+	<div>Guided tours in
+		<div property="availableLanguage" typeof="Language">
+			<span property="name">German</span>
+		</div> and
+		<div property="availableLanguage" typeof="Language">
+			<span property="name">English</span>.
+		</div>
+	</div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "TouristAttraction",
+	"name": "Neuschwanstein Castle",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Schwangau",
+		"addressCountry": "Germany"
+	},
+	"availableLanguage": [
+		{
+			"@type": "Language",
+			"name": "German"
+		},
+		{
+			"@type": "Language",
+			"name": "English"
+		}
+	]
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+	"@context": "https://schema.org",
+	"@type": "TouristAttraction",
+	"name": "Neuschwanstein Castle",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Schwangau",
+		"addressCountry": "Germany"
+	},
+	"availableLanguage": [
+		{
+			"@type": "Language",
+			"name": "German"
+		},
+		{
+			"@type": "Language",
+			"name": "English"
+		}
+	]
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

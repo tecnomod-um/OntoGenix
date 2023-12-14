@@ -1,0 +1,156 @@
+
+
+
+
+
+courseWorkload - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+courseWorkload
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    courseWorkload
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/courseWorkload 
+
+Check for open issues.
+
+
+
+
+The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, "2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week".
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+
+
+Used on these types
+
+
+CourseInstance
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1909
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

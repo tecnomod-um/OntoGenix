@@ -1,0 +1,163 @@
+
+
+
+
+
+clipNumber - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+clipNumber
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    position 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    clipNumber
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/clipNumber 
+
+Check for open issues.
+
+
+
+
+Position of the clip within an ordered group of clips.
+ 
+
+Values expected to be one of these types
+
+
+Integer
+
+Text
+
+
+
+Used on these types
+
+
+Clip
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

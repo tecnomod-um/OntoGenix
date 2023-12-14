@@ -1,0 +1,152 @@
+
+
+
+
+
+messageAttachment - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+messageAttachment
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    messageAttachment
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/messageAttachment 
+
+Check for open issues.
+
+
+
+
+A CreativeWork attached to the message.
+ 
+
+Values expected to be one of these types
+
+
+CreativeWork
+
+
+
+Used on these types
+
+
+Message
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,152 @@
+
+
+
+
+
+targetProduct - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+targetProduct
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    targetProduct
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/targetProduct 
+
+Check for open issues.
+
+
+
+
+Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
+ 
+
+Values expected to be one of these types
+
+
+SoftwareApplication
+
+
+
+Used on these types
+
+
+SoftwareSourceCode
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

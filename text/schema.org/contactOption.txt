@@ -1,0 +1,152 @@
+
+
+
+
+
+contactOption - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+contactOption
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    contactOption
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/contactOption 
+
+Check for open issues.
+
+
+
+
+An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
+ 
+
+Values expected to be one of these types
+
+
+ContactPointOption
+
+
+
+Used on these types
+
+
+ContactPoint
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

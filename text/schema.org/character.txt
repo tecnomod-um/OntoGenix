@@ -1,0 +1,152 @@
+
+
+
+
+
+character - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+character
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    character
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/character 
+
+Check for open issues.
+
+
+
+
+Fictional person connected with a creative work.
+ 
+
+Values expected to be one of these types
+
+
+Person
+
+
+
+Used on these types
+
+
+CreativeWork
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

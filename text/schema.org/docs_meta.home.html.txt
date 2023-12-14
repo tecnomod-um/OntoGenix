@@ -1,0 +1,134 @@
+
+
+
+
+
+Schema.org - Schema.org 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+Schema.org Section: meta
+Schema.org is a set of extensible schemas that enables webmasters to embed structured data on their web pages for use by search engines and other applications.
+For more details, see the homepage.
+
+
+
+The meta section contains terms primarily designed to support the implementation of the Schema.org vocabulary itself. 
+It includes terms such as 
+    
+    
+    
+    
+    Class, 
+    
+    
+    
+    
+    Property, 
+    
+    
+    
+    
+    domainIncludes and 
+    
+    
+    
+    
+    supersededBy. 
+They are not currently advocated for widespread use across the web.
+
+
+6 Terms defined in the 'meta' section.
+ Types (2)
+Class, 
+    
+    
+    
+    
+    Property
+ Properties (4)
+domainIncludes, 
+    
+    
+    
+    
+    inverseOf, 
+    
+    
+    
+    
+    rangeIncludes, 
+    
+    
+    
+    
+    supersededBy
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+

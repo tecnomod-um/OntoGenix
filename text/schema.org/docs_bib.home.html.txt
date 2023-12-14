@@ -1,0 +1,225 @@
+
+
+
+
+
+Schema.org - Schema.org 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+Schema.org Section: bib
+Schema.org is a set of extensible schemas that enables webmasters to embed structured data on their web pages for use by search engines and other applications.
+For more details, see the homepage.
+
+
+
+The Bibliographic Section within schema.org defines terms such as 
+    
+    
+    
+    
+    Audiobook, 
+    
+    
+    
+    
+    Thesis, 
+    
+    
+    
+    
+    ComicStory, and 
+    
+    
+    
+    
+    workTranslation. 
+For more details see the W3C BibExtend Community Group's wiki.
+
+
+25 Terms defined in the 'bib' section.
+ Types (11)
+Atlas, 
+    
+    
+    
+    
+    Audiobook, 
+    
+    
+    
+    
+    Chapter, 
+    
+    
+    
+    
+    Collection, 
+    
+    
+    
+    
+    ComicCoverArt, 
+    
+    
+    
+    
+    ComicIssue, 
+    
+    
+    
+    
+    ComicSeries, 
+    
+    
+    
+    
+    ComicStory, 
+    
+    
+    
+    
+    CoverArt, 
+    
+    
+    
+    
+    Newspaper, 
+    
+    
+    
+    
+    Thesis
+ Properties (13)
+abridged, 
+    
+    
+    
+    
+    artist, 
+    
+    
+    
+    
+    colorist, 
+    
+    
+    
+    
+    inSupportOf, 
+    
+    
+    
+    
+    inker, 
+    
+    
+    
+    
+    letterer, 
+    
+    
+    
+    
+    penciler, 
+    
+    
+    
+    
+    publishedBy, 
+    
+    
+    
+    
+    publisherImprint, 
+    
+    
+    
+    
+    readBy, 
+    
+    
+    
+    
+    translationOfWork, 
+    
+    
+    
+    
+    variantCover, 
+    
+    
+    
+    
+    workTranslation
+ Enumeration Members (1)
+GraphicNovel
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+

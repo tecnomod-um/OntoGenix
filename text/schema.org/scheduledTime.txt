@@ -1,0 +1,154 @@
+
+
+
+
+
+scheduledTime - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+scheduledTime
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    scheduledTime
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/scheduledTime 
+
+Check for open issues.
+
+
+
+
+The time the object is scheduled to.
+ 
+
+Values expected to be one of these types
+
+
+Date
+
+DateTime
+
+
+
+Used on these types
+
+
+PlanAction
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

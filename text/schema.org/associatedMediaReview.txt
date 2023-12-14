@@ -1,0 +1,165 @@
+
+
+
+
+
+associatedMediaReview - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+associatedMediaReview
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    associatedReview 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    associatedMediaReview
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/associatedMediaReview 
+
+Check for open issues.
+
+
+
+
+An associated MediaReview, related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case relatedMediaReview would commonly be used on a ClaimReview, while relatedClaimReview would be used on MediaReview.
+ 
+
+Values expected to be one of these types
+
+
+Review
+
+
+
+Used on these types
+
+
+Review
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2450
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

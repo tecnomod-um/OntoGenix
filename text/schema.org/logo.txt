@@ -1,0 +1,231 @@
+
+
+
+
+
+logo - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+logo
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    image 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    logo
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/logo 
+
+Check for open issues.
+
+
+
+
+An associated logo.
+ 
+
+Values expected to be one of these types
+
+
+ImageObject
+
+URL
+
+
+
+Used on these types
+
+
+Brand
+
+Organization
+
+Place
+
+Product
+
+Service
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       GoodRelations Vocabulary Terms
+                    
+
+
+
+                    This term uses terminology from the GoodRelations Vocabulary for E-Commerce, created by Martin Hepp. GoodRelations is a data model for sharing e-commerce data on the Web. More information about GoodRelations can be found at http://purl.org/goodrelations/.
+                    
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<h1>ACME Hotel Innsbruck</h1>
+  <img src="../media/logo.png" alt="hotel logo" />
+  <span>A beautifully located business hotel right in the
+heart of the alps. Watch the sun rise over the scenic Inn valley while
+enjoying your morning coffee.</span>
+  <img src="../media/hotel_front.png" alt="Front view of the hotel" />
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Hotel">
+  <h1><span itemprop="name">ACME Hotel Innsbruck</span></h1>
+  <img itemprop="logo" src="../media/logo.png" alt="hotel logo" />
+  <span itemprop="description">A beautifully located business hotel right in the
+heart of the alps. Watch the sun rise over the scenic Inn valley while
+enjoying your morning coffee.</span>
+  <img itemprop="photo" src="../media/hotel_front.png" alt="Front view of the hotel" />
+</div>
+
+
+This example is in microdata only.
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

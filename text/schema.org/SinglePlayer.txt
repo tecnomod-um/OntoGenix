@@ -1,0 +1,163 @@
+
+
+
+
+
+SinglePlayer - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+SinglePlayer
+A Schema.org Enumeration Member
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    GamePlayMode 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    SinglePlayer
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/SinglePlayer 
+
+Check for open issues.
+
+
+
+
+Play mode: SinglePlayer. Which is played by a lone player.
+ A member value for enumeration type: 
+    
+    
+    GamePlayMode
+ 
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

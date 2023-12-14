@@ -1,0 +1,152 @@
+
+
+
+
+
+numberedPosition - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+numberedPosition
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    numberedPosition
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/numberedPosition 
+
+Check for open issues.
+
+
+
+
+A number associated with a role in an organization, for example, the number on an athlete's jersey.
+ 
+
+Values expected to be one of these types
+
+
+Number
+
+
+
+Used on these types
+
+
+OrganizationRole
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

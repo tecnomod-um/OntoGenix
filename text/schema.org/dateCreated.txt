@@ -1,0 +1,162 @@
+
+
+
+
+
+dateCreated - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+dateCreated
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    dateCreated
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/dateCreated 
+
+Check for open issues.
+
+
+
+
+The date on which the CreativeWork was created or the item was added to a DataFeed.
+ 
+
+Values expected to be one of these types
+
+
+Date
+
+DateTime
+
+
+
+Used on these types
+
+
+CreativeWork
+
+DataFeedItem
+
+
+
+
+
+Sub-properties
+
+
+legislationDate
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

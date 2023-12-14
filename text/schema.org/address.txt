@@ -1,0 +1,749 @@
+
+
+
+
+
+address - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+address
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    address
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/address 
+
+Check for open issues.
+
+
+
+
+Physical address of the item.
+ 
+
+Values expected to be one of these types
+
+
+PostalAddress
+
+Text
+
+
+
+Used on these types
+
+
+GeoCoordinates
+
+GeoShape
+
+Organization
+
+Person
+
+Place
+
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Jane Doe
+<img src="janedoe.jpg" alt="Photo of Jane Doe"/>
+
+Professor
+20341 Whitworth Institute
+405 Whitworth
+Seattle WA 98052
+(425) 123-4567
+<a href="mailto:jane-doe@xyz.edu">jane-doe@illinois.edu</a>
+
+Jane's home page:
+<a href="http://www.janedoe.com">janedoe.com</a>
+
+Graduate students:
+<a href="http://www.xyz.edu/students/alicejones.html">Alice Jones</a>
+<a href="http://www.xyz.edu/students/bobsmith.html">Bob Smith</a>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Person">
+  <span itemprop="name">Jane Doe</span>
+  <img src="janedoe.jpg" itemprop="image" alt="Photo of Jane Doe"/>
+
+  <span itemprop="jobTitle">Professor</span>
+  <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+    <span itemprop="streetAddress">
+      20341 Whitworth Institute
+      405 N. Whitworth
+    </span>
+    <span itemprop="addressLocality">Seattle</span>,
+    <span itemprop="addressRegion">WA</span>
+    <span itemprop="postalCode">98052</span>
+  </div>
+  <span itemprop="telephone">(425) 123-4567</span>
+  <a href="mailto:jane-doe@xyz.edu" itemprop="email">
+    jane-doe@xyz.edu</a>
+
+  Jane's home page:
+  <a href="http://www.janedoe.com" itemprop="url">janedoe.com</a>
+
+  Graduate students:
+  <a href="http://www.xyz.edu/students/alicejones.html" itemprop="colleague">
+    Alice Jones</a>
+  <a href="http://www.xyz.edu/students/bobsmith.html" itemprop="colleague">
+    Bob Smith</a>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="Person">
+  <span property="name">Jane Doe</span>
+  <img src="janedoe.jpg" property="image" alt="Photo of Jane Doe"/>
+
+  <span property="jobTitle">Professor</span>
+  <div property="address" typeof="PostalAddress">
+    <span property="streetAddress">
+      20341 Whitworth Institute
+      405 N. Whitworth
+    </span>
+    <span property="addressLocality">Seattle</span>,
+    <span property="addressRegion">WA</span>
+    <span property="postalCode">98052</span>
+  </div>
+  <span property="telephone">(425) 123-4567</span>
+  <a href="mailto:jane-doe@xyz.edu" property="email">
+    jane-doe@xyz.edu</a>
+
+  Jane's home page:
+  <a href="http://www.janedoe.com" property="url">janedoe.com</a>
+
+  Graduate students:
+  <a href="http://www.xyz.edu/students/alicejones.html" property="colleague">
+    Alice Jones</a>
+  <a href="http://www.xyz.edu/students/bobsmith.html" property="colleague">
+    Bob Smith</a>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Seattle",
+    "addressRegion": "WA",
+    "postalCode": "98052",
+    "streetAddress": "20341 Whitworth Institute 405 N. Whitworth"
+  },
+  "colleague": [
+    "http://www.xyz.edu/students/alicejones.html",
+    "http://www.xyz.edu/students/bobsmith.html"
+  ],
+  "email": "mailto:jane-doe@xyz.edu",
+  "image": "janedoe.jpg",
+  "jobTitle": "Professor",
+  "name": "Jane Doe",
+  "telephone": "(425) 123-4567",
+  "url": "http://www.janedoe.com"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Seattle",
+    "addressRegion": "WA",
+    "postalCode": "98052",
+    "streetAddress": "20341 Whitworth Institute 405 N. Whitworth"
+  },
+  "colleague": [
+    "http://www.xyz.edu/students/alicejones.html",
+    "http://www.xyz.edu/students/bobsmith.html"
+  ],
+  "email": "mailto:jane-doe@xyz.edu",
+  "image": "janedoe.jpg",
+  "jobTitle": "Professor",
+  "name": "Jane Doe",
+  "telephone": "(425) 123-4567",
+  "url": "http://www.janedoe.com"
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Google.Org
+
+Contact Details:
+Main address: 38 avenue de l'Opera, F-75002 Paris, France
+ Tel: ( 33 1) 42 68 53 00, Fax: ( 33 1) 42 68 53 01
+E-mail: secretariat (at) google.org
+URL: <a href="http://www.google.org">www.google.org</a>
+
+Members:
+- National Scientific Members in 100 countries and territories: Country1, Country2, ...
+- Scientific Union Members, 30 organizations listed in this Yearbook: Member 1, Member 2
+
+History:
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Organization">
+  <span itemprop="name">Google.org (GOOG)</span>
+
+Contact Details:
+  <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+    Main address:
+      <span itemprop="streetAddress">38 avenue de l'Opera</span>
+      <span itemprop="postalCode">F-75002</span>
+      <span itemprop="addressLocality">Paris, France</span>
+    ,
+  </div>
+    Tel:<span itemprop="telephone">( 33 1) 42 68 53 00 </span>,
+    Fax:<span itemprop="faxNumber">( 33 1) 42 68 53 01 </span>,
+    E-mail: <span itemprop="email">secretariat(at)google.org</span>
+
+Members:
+- National Scientific Members in 100 countries and territories: Country1, Country2, ...
+- Scientific Union Members, 30 organizations listed in this Yearbook:
+List of Alumni:
+ <span itemprop="alumni" itemscope itemtype="https://schema.org/Person">
+   <span itemprop="name">Jack Dan</span>
+ </span>,
+ <span itemprop="alumni" itemscope itemtype="https://schema.org/Person">
+   <span itemprop="name">John Smith</span>
+ </span>,
+
+History:
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="Organization">
+  <span property="name">Google.org (GOOG)</span>
+
+Contact Details:
+  <div property="address" typeof="PostalAddress">
+    Main address:
+      <span property="streetAddress">38 avenue de l'Opera</span>
+      <span property="postalCode">F-75002</span>
+      <span property="addressLocality">Paris, France</span>
+    ,
+  </div>
+    Tel:<span property="telephone">( 33 1) 42 68 53 00 </span>,
+    Fax:<span property="faxNumber">( 33 1) 42 68 53 01 </span>,
+    E-mail: <span property="email">secretariat(at)google.org</span>
+
+Members:
+- National Scientific Members in 100 countries and territories: Country1, Country2, ...
+- Scientific Union Members, 30 organizations listed in this Yearbook:
+List of Alumni:
+ <span property="alumni"  typeof="Person">
+   <span property="name">Jack Dan</span>
+ </span>,
+ <span property="alumni"  typeof="Person">
+   <span property="name">John Smith</span>
+ </span>
+History:
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Paris, France",
+    "postalCode": "F-75002",
+    "streetAddress": "38 avenue de l'Opera"
+  },
+  "email": "secretariat(at)google.org",
+  "faxNumber": "( 33 1) 42 68 53 01",
+  "member": [
+    {
+      "@type": "Organization"
+    },
+    {
+      "@type": "Organization"
+    }
+  ],
+  "alumni": [
+    {
+      "@type": "Person",
+      "name": "Jack Dan"
+    },
+    {
+      "@type": "Person",
+      "name": "John Smith"
+    }
+  ],
+  "name": "Google.org (GOOG)",
+  "telephone": "( 33 1) 42 68 53 00"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Paris, France",
+    "postalCode": "F-75002",
+    "streetAddress": "38 avenue de l'Opera"
+  },
+  "email": "secretariat(at)google.org",
+  "faxNumber": "( 33 1) 42 68 53 01",
+  "member": [
+    {
+      "@type": "Organization"
+    },
+    {
+      "@type": "Organization"
+    }
+  ],
+  "alumni": [
+    {
+      "@type": "Person",
+      "name": "Jack Dan"
+    },
+    {
+      "@type": "Person",
+      "name": "John Smith"
+    }
+  ],
+  "name": "Google.org (GOOG)",
+  "telephone": "( 33 1) 42 68 53 00"
+}
+
+
+Example 3 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<h1>Beachwalk Beachwear &amp; Giftware</h1>
+A superb collection of fine gifts and clothing to accent your stay in Mexico Beach.
+3102 Highway 98
+Mexico Beach, FL
+Phone: 850-648-4200
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/LocalBusiness">
+  <h1><span itemprop="name">Beachwalk Beachwear &amp; Giftware</span></h1>
+  <span itemprop="description"> A superb collection of fine gifts and clothing
+  to accent your stay in Mexico Beach.</span>
+  <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+    <span itemprop="streetAddress">3102 Highway 98</span>
+    <span itemprop="addressLocality">Mexico Beach</span>,
+    <span itemprop="addressRegion">FL</span>
+  </div>
+  Phone: <span itemprop="telephone">850-648-4200</span>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="LocalBusiness">
+  <h1><span property="name">Beachwalk Beachwear &amp; Giftware</span></h1>
+  <span property="description"> A superb collection of fine gifts and clothing
+  to accent your stay in Mexico Beach.</span>
+  <div property="address" typeof="PostalAddress">
+    <span property="streetAddress">3102 Highway 98</span>
+    <span property="addressLocality">Mexico Beach</span>,
+    <span property="addressRegion">FL</span>
+  </div>
+  Phone: <span property="telephone">850-648-4200</span>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mexico Beach",
+    "addressRegion": "FL",
+    "streetAddress": "3102 Highway 98"
+  },
+  "description": "A superb collection of fine gifts and clothing to accent your stay in Mexico Beach.",
+  "name": "Beachwalk Beachwear & Giftware",
+  "telephone": "850-648-4200"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mexico Beach",
+    "addressRegion": "FL",
+    "streetAddress": "3102 Highway 98"
+  },
+  "description": "A superb collection of fine gifts and clothing to accent your stay in Mexico Beach.",
+  "name": "Beachwalk Beachwear & Giftware",
+  "telephone": "850-648-4200"
+}
+
+
+Example 4 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<a href="nba-miami-philidelphia-game3.html">
+NBA Eastern Conference First Round Playoff Tickets:
+ Miami Heat at Philadelphia 76ers - Game 3 (Home Game 1)
+</a>
+
+Thu, 04/21/16
+8:00 p.m.
+
+<a href="wells-fargo-center.html">
+Wells Fargo Center
+</a>
+Philadelphia, PA
+
+Priced from: $35
+1938 tickets left
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Event">
+  <a itemprop="url" href="nba-miami-philidelphia-game3.html">
+  NBA Eastern Conference First Round Playoff Tickets:
+  <span itemprop="name"> Miami Heat at Philadelphia 76ers - Game 3 (Home Game 1) </span>
+  </a>
+
+  <meta itemprop="startDate" content="2016-04-21T20:00">
+    Thu, 04/21/16
+    8:00 p.m.
+
+  <div itemprop="location" itemscope itemtype="https://schema.org/Place">
+    <a itemprop="url" href="wells-fargo-center.html">
+    Wells Fargo Center
+    </a>
+    <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+      <span itemprop="addressLocality">Philadelphia</span>,
+      <span itemprop="addressRegion">PA</span>
+    </div>
+  </div>
+
+  <div itemprop="offers" itemscope itemtype="https://schema.org/AggregateOffer">
+  <meta itemprop="priceCurrency" content="USD" />
+    Priced from: <span itemprop="lowPrice" content="35">$35</span>
+    <span itemprop="offerCount">1938</span> tickets left
+  </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="Event">
+  <a property="url" href="nba-miami-philidelphia-game3.html">
+  NBA Eastern Conference First Round Playoff Tickets:
+  <span property="name"> Miami Heat at Philadelphia 76ers - Game 3 (Home Game 1) </span>
+  </a>
+
+  <meta property="startDate" content="2016-04-21T20:00">
+    Thu, 04/21/16
+    8:00 p.m.
+
+  <div property="location" typeof="Place">
+    <a property="url" href="wells-fargo-center.html">
+    Wells Fargo Center
+    </a>
+    <div property="address" typeof="PostalAddress">
+      <span property="addressLocality">Philadelphia</span>,
+      <span property="addressRegion">PA</span>
+    </div>
+  </div>
+
+  <div property="offers" typeof="AggregateOffer">
+    <meta property="priceCurrency" content="USD" />
+    Priced from: <span property="lowPrice" content="35">$35</span>
+    <span property="offerCount">1938</span> tickets left
+  </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Miami Heat at Philadelphia 76ers - Game 3 (Home Game 1)",
+  "location": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Philadelphia",
+      "addressRegion": "PA"
+    },
+    "url": "wells-fargo-center.html"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "35",
+    "offerCount": "1938"
+  },
+  "startDate": "2016-04-21T20:00",
+  "url": "nba-miami-philidelphia-game3.html"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Miami Heat at Philadelphia 76ers - Game 3 (Home Game 1)",
+  "location": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Philadelphia",
+      "addressRegion": "PA"
+    },
+    "url": "wells-fargo-center.html"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "35",
+    "offerCount": "1938"
+  },
+  "startDate": "2016-04-21T20:00",
+  "url": "nba-miami-philidelphia-game3.html"
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

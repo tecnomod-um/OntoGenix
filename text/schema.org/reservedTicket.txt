@@ -1,0 +1,152 @@
+
+
+
+
+
+reservedTicket - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+reservedTicket
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    reservedTicket
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/reservedTicket 
+
+Check for open issues.
+
+
+
+
+A ticket associated with the reservation.
+ 
+
+Values expected to be one of these types
+
+
+Ticket
+
+
+
+Used on these types
+
+
+Reservation
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

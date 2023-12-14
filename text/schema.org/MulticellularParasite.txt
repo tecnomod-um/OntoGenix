@@ -1,0 +1,173 @@
+
+
+
+
+
+MulticellularParasite - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+MulticellularParasite
+A Schema.org Enumeration Member
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalEnumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    InfectiousAgentClass 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    MulticellularParasite
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/MulticellularParasite 
+
+Check for open issues.
+
+
+
+
+Multicellular parasite that causes an infection.
+ A member value for enumeration type: 
+    
+    
+    InfectiousAgentClass
+ 
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

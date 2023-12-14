@@ -1,0 +1,158 @@
+
+
+
+
+
+itemCondition - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+itemCondition
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    itemCondition
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/itemCondition 
+
+Check for open issues.
+
+
+
+
+A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+ 
+
+Values expected to be one of these types
+
+
+OfferItemCondition
+
+
+
+Used on these types
+
+
+Demand
+
+MerchantReturnPolicy
+
+Offer
+
+Product
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

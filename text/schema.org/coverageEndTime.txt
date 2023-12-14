@@ -1,0 +1,152 @@
+
+
+
+
+
+coverageEndTime - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+coverageEndTime
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    coverageEndTime
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/coverageEndTime 
+
+Check for open issues.
+
+
+
+
+The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
+ 
+
+Values expected to be one of these types
+
+
+DateTime
+
+
+
+Used on these types
+
+
+LiveBlogPosting
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

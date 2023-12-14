@@ -1,0 +1,154 @@
+
+
+
+
+
+numChildren - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+numChildren
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    numChildren
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/numChildren 
+
+Check for open issues.
+
+
+
+
+The number of children staying in the unit.
+ 
+
+Values expected to be one of these types
+
+
+Integer
+
+QuantitativeValue
+
+
+
+Used on these types
+
+
+LodgingReservation
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

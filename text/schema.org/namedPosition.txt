@@ -1,0 +1,159 @@
+
+
+
+
+
+namedPosition - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+namedPosition
+A Schema.org Property
+
+
+Note: This term has been superseded.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    namedPosition
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/namedPosition 
+
+Check for open issues.
+
+
+
+
+A position played, performed or filled by a person or organization, as part of an organization. For example, an athlete in a SportsTeam might play in the position named 'Quarterback'.
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+URL
+
+
+
+Used on these types
+
+
+Role
+
+
+
+
+
+SupersededBy
+
+roleName
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

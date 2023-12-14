@@ -1,0 +1,160 @@
+
+
+
+
+
+hasMeasurement - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+hasMeasurement
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    hasMeasurement
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/hasMeasurement 
+
+Check for open issues.
+
+
+
+
+A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+ 
+
+Values expected to be one of these types
+
+
+QuantitativeValue
+
+
+
+Used on these types
+
+
+Offer
+
+Product
+
+SizeSpecification
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2811
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

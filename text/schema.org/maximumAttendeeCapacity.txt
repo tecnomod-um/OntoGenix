@@ -1,0 +1,154 @@
+
+
+
+
+
+maximumAttendeeCapacity - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+maximumAttendeeCapacity
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    maximumAttendeeCapacity
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/maximumAttendeeCapacity 
+
+Check for open issues.
+
+
+
+
+The total number of individuals that may attend an event or venue.
+ 
+
+Values expected to be one of these types
+
+
+Integer
+
+
+
+Used on these types
+
+
+Event
+
+Place
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

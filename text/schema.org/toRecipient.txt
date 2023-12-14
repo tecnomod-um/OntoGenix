@@ -1,0 +1,340 @@
+
+
+
+
+
+toRecipient - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+toRecipient
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    participant 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    recipient 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    toRecipient
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/toRecipient 
+
+Check for open issues.
+
+
+
+
+A sub property of recipient. The recipient who was directly sent the message.
+ 
+
+Values expected to be one of these types
+
+
+Audience
+
+ContactPoint
+
+Organization
+
+Person
+
+
+
+Used on these types
+
+
+Message
+
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+An message from Dom Portwood to Peter Gibbons about TPS reports, cc'ing Bill Lumbergh and bcc'ing tps-consulting@example.com
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/EmailMessage">
+  <div itemscope itemprop="sender" itemtype="https://schema.org/Person">
+    <meta itemprop="name" content="Dom Portwood" />
+    <span itemprop="email">dportwood@example.com</span>
+  </div>
+  <div itemscope itemprop="toRecipient" itemtype="https://schema.org/Person">
+    <meta itemprop="name" content="Peter Gibbons" />
+    <span itemprop="email">pgibbons@example.com</span>
+  </div>
+  <div itemscope itemprop="ccRecipient" itemtype="https://schema.org/Person">
+    <meta itemprop="name" content="Bill Lumbergh" />
+    <span itemprop="email">blumbergh@example.com</span>
+  </div>
+  <div itemscope itemprop="bccRecipient" itemtype="https://schema.org/ContactPoint">
+    <span itemprop="email">tps-consulting@example.com</span>
+  </div>
+  <div itemscope itemprop="about" itemtype="https://schema.org/Thing">
+    <meta itemprop="name" content="TPS reports" />
+  </div>
+  <meta itemprop="datePublished" content="2016-02-29" />
+  <meta itemprop="dateRead" content="2016-03-03" />
+  <div itemscope itemprop="messageAttachment" itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="name" content="New coversheet" />
+  </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="EmailMessage">
+  <div property="sender" typeof="Person">
+    <meta property="name" content="Dom Portwood" />
+    <span property="email">dportwood@example.com</span>
+  </div>
+  <div property="toRecipient" typeof="Person">
+    <meta property="name" content="Peter Gibbons" />
+    <span property="email">pgibbons@example.com</span>
+  </div>
+  <div property="ccRecipient" typeof="Person">
+    <meta property="name" content="Bill Lumbergh" />
+    <span property="email">blumbergh@example.com</span>
+  </div>
+  <div property="bccRecipient" typeof="ContactPoint">
+    <span property="email">tps-consulting@example.com</span>
+  </div>
+  <div property="about" typeof="Thing">
+    <meta property="name" content="TPS reports" />
+  </div>
+  <meta property="datePublished" content="2016-02-29" />
+  <meta property="dateRead" content="2016-03-03" />
+  <div property="messageAttachment" typeof="CreativeWork">
+    <meta property="name" content="New coversheet" />
+  </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "EmailMessage",
+  "sender": {
+    "@type": "Person",
+    "name": "Dom Portwood",
+    "email": "dportwood@example.com"
+  },
+  "toRecipient": {
+    "@type": "Person",
+    "name": "Peter Gibbons",
+    "email": "pgibbons@example.com"
+  },
+  "ccRecipient": {
+    "@type": "Person",
+    "name": "Bill Lumbergh",
+    "email": "blumbergh@example.com"
+  },
+  "ccRecipient": {
+    "@type": "ContactPoint",
+    "email": "tps-consulting@example.com"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "TPS reports"
+  },
+  "datePublished": "2016-02-29",
+  "dateRead": "2016-03-03",
+  "messageAttachment": {
+    "@type": "CreativeWork",
+    "name": "New coversheet"
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "EmailMessage",
+  "sender": {
+    "@type": "Person",
+    "name": "Dom Portwood",
+    "email": "dportwood@example.com"
+  },
+  "toRecipient": {
+    "@type": "Person",
+    "name": "Peter Gibbons",
+    "email": "pgibbons@example.com"
+  },
+  "ccRecipient": {
+    "@type": "Person",
+    "name": "Bill Lumbergh",
+    "email": "blumbergh@example.com"
+  },
+  "ccRecipient": {
+    "@type": "ContactPoint",
+    "email": "tps-consulting@example.com"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "TPS reports"
+  },
+  "datePublished": "2016-02-29",
+  "dateRead": "2016-03-03",
+  "messageAttachment": {
+    "@type": "CreativeWork",
+    "name": "New coversheet"
+  }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,154 @@
+
+
+
+
+
+activityDuration - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+activityDuration
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    activityDuration
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/activityDuration 
+
+Check for open issues.
+
+
+
+
+Length of time to engage in the activity.
+ 
+
+Values expected to be one of these types
+
+
+Duration
+
+QuantitativeValue
+
+
+
+Used on these types
+
+
+ExercisePlan
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

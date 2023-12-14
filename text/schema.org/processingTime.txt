@@ -1,0 +1,152 @@
+
+
+
+
+
+processingTime - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+processingTime
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    processingTime
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/processingTime 
+
+Check for open issues.
+
+
+
+
+Estimated processing time for the service using this channel.
+ 
+
+Values expected to be one of these types
+
+
+Duration
+
+
+
+Used on these types
+
+
+ServiceChannel
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

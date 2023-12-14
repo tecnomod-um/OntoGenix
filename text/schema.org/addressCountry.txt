@@ -1,0 +1,163 @@
+
+
+
+
+
+addressCountry - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+addressCountry
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    addressCountry
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/addressCountry 
+
+Check for open issues.
+
+
+
+
+The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+ 
+
+Values expected to be one of these types
+
+
+Country
+
+Text
+
+
+
+Used on these types
+
+
+DefinedRegion
+
+GeoCoordinates
+
+GeoShape
+
+PostalAddress
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2506
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

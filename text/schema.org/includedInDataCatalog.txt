@@ -1,0 +1,162 @@
+
+
+
+
+
+includedInDataCatalog - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+includedInDataCatalog
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    includedInDataCatalog
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/includedInDataCatalog 
+
+Check for open issues.
+
+
+
+
+A data catalog which contains this dataset.
+ 
+Inverse-property: 
+    
+    
+    dataset
+
+
+Values expected to be one of these types
+
+
+DataCatalog
+
+
+
+Used on these types
+
+
+Dataset
+
+
+
+
+
+Supersedes
+
+includedDataCatalog 
+catalog
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,167 @@
+
+
+
+
+
+acquireLicensePage - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+acquireLicensePage
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    usageInfo 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    acquireLicensePage
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/acquireLicensePage 
+
+Check for open issues.
+
+
+
+
+Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
+ 
+
+Values expected to be one of these types
+
+
+CreativeWork
+
+URL
+
+
+
+Used on these types
+
+
+CreativeWork
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2454
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

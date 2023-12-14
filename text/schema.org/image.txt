@@ -1,0 +1,587 @@
+
+
+
+
+
+image - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+image
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    image
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/image 
+
+Check for open issues.
+
+
+
+
+An image of the item. This can be a URL or a fully described ImageObject.
+ 
+
+Values expected to be one of these types
+
+
+ImageObject
+
+URL
+
+
+
+Used on these types
+
+
+Thing
+
+
+
+
+
+Sub-properties
+
+
+layoutImage
+
+logo
+
+photo
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<img src="dell-30in-lcd.jpg" alt="A Dell UltraSharp monitor" />
+Dell UltraSharp 30" LCD Monitor
+
+87 out of 100 based on 24 user ratings
+
+$1250 to $1495 from 8 sellers
+
+Sellers:
+<a href="save-a-lot-monitors.com/dell-30.html">
+  Save A Lot Monitors - $1250</a>
+<a href="jondoe-gadgets.com/dell-30.html">
+  Jon Doe's Gadgets - $1350</a>
+...
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Product">
+  <img itemprop="image" src="dell-30in-lcd.jpg" alt="A Dell UltraSharp monitor"/>
+  <span itemprop="name">Dell UltraSharp 30" LCD Monitor</span>
+
+  <div itemprop="aggregateRating"
+    itemscope itemtype="https://schema.org/AggregateRating">
+    <span itemprop="ratingValue">87</span>
+    out of <span itemprop="bestRating">100</span>
+    based on <span itemprop="ratingCount">24</span> user ratings
+  </div>
+
+  <div itemprop="offers" itemscope itemtype="https://schema.org/AggregateOffer">
+    <meta itemprop="priceCurrency" content="USD" />
+    <span itemprop="lowPrice" content="1250">$1250</span>
+    to <span itemprop="highPrice" content="1495">$1495</span>
+    from <span itemprop="offerCount">8</span> sellers
+
+    Sellers:
+    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+        <a itemprop="url" href="save-a-lot-monitors.com/dell-30.html">
+        Save A Lot Monitors - $1250</a>
+    </div>
+    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+        <a itemprop="url" href="jondoe-gadgets.com/dell-30.html">
+        Jon Doe's Gadgets - $1350</a>
+    </div>
+  </div>
+  ...
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="Product">
+    <img property="image" src="dell-30in-lcd.jpg" alt="A Dell UltraSharp monitor"> <span property="name">Dell UltraSharp 30" LCD Monitor</span>
+    <div property="aggregateRating" typeof="AggregateRating">
+        <span property="ratingValue">87</span> out of
+        <span property="bestRating">100</span> based on
+        <span property="ratingCount">24</span> user ratings
+    </div>
+    <div property="offers" typeof="AggregateOffer">
+        <meta property="priceCurrency" content="USD" />
+        <span property="lowPrice" content="1250">$1250</span> to
+        <span property="highPrice" content="1495">$1495</span> from
+        <span property="offerCount">8</span> sellers Sellers:
+        <div property="offers" typeof="Offer">
+            <a property="url" href="save-a-lot-monitors.com/dell-30.html">Save A Lot Monitors - $1250</a>
+        </div>
+        <div property="offers" typeof="Offer">
+            <a property="url" href="jondoe-gadgets.com/dell-30.html">Jon Doe's Gadgets - $1350</a>
+        </div>
+        ...
+    </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "bestRating": "100",
+    "ratingCount": "24",
+    "ratingValue": "87"
+  },
+  "image": "dell-30in-lcd.jpg",
+  "name": "Dell UltraSharp 30\" LCD Monitor",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "highPrice": "1495",
+    "lowPrice": "1250",
+    "offerCount": "8",
+    "offers": [
+      {
+        "@type": "Offer",
+        "url": "save-a-lot-monitors.com/dell-30.html"
+      },
+      {
+        "@type": "Offer",
+        "url": "jondoe-gadgets.com/dell-30.html"
+      }
+    ]
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "bestRating": "100",
+    "ratingCount": "24",
+    "ratingValue": "87"
+  },
+  "image": "dell-30in-lcd.jpg",
+  "name": "Dell UltraSharp 30\" LCD Monitor",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "highPrice": "1495",
+    "lowPrice": "1250",
+    "offerCount": "8",
+    "offers": [
+      {
+        "@type": "Offer",
+        "url": "save-a-lot-monitors.com/dell-30.html"
+      },
+      {
+        "@type": "Offer",
+        "url": "jondoe-gadgets.com/dell-30.html"
+      }
+    ]
+  }
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Mom's World Famous Banana Bread
+By John Smith, May 8, 2009
+<img src="bananabread.jpg" alt="Banana bread on a plate" />
+
+This classic banana bread recipe comes from my mom -- the walnuts add a nice
+ texture and flavor to the banana bread.
+
+Prep Time: 15 minutes
+Cook time: 1 hour
+Yield: 1 loaf
+Tags: Low fat
+
+Nutrition facts:
+240 calories, 9 grams fat
+
+Ingredients:
+- 3 or 4 ripe bananas, smashed
+- 1 egg
+- 3/4 cup of sugar
+...
+
+Instructions:
+ Preheat the oven to 350 degrees. Mix in the ingredients in a bowl. Add the
+ flour last. Pour the mixture into a loaf pan and bake for one hour.
+
+140 comments:
+From Janel, May 5 -- thank you, great recipe!
+...
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Recipe">
+  <span itemprop="name">Mom's World Famous Banana Bread</span>
+  By <span itemprop="author">John Smith</span>,
+  <meta itemprop="datePublished" content="2009-05-08">May 8, 2009
+  <img itemprop="image" src="bananabread.jpg"
+       alt="Banana bread on a plate" />
+
+  <span itemprop="description">This classic banana bread recipe comes
+  from my mom -- the walnuts add a nice texture and flavor to the banana
+  bread.</span>
+
+  Prep Time: <meta itemprop="prepTime" content="PT15M">15 minutes
+  Cook time: <meta itemprop="cookTime" content="PT1H">1 hour
+  Yield: <span itemprop="recipeYield">1 loaf</span>
+  Tags: <link itemprop="suitableForDiet" href="https://schema.org/LowFatDiet" />Low fat
+
+  <div itemprop="nutrition"
+    itemscope itemtype="https://schema.org/NutritionInformation">
+    Nutrition facts:
+    <span itemprop="calories">240 calories</span>,
+    <span itemprop="fatContent">9 grams fat</span>
+  </div>
+
+  Ingredients:
+  - <span itemprop="recipeIngredient">3 or 4 ripe bananas, smashed</span>
+  - <span itemprop="recipeIngredient">1 egg</span>
+  - <span itemprop="recipeIngredient">3/4 cup of sugar</span>
+  ...
+
+  Instructions:
+  <span itemprop="recipeInstructions">
+  Preheat the oven to 350 degrees. Mix in the ingredients in a bowl. Add
+  the flour last. Pour the mixture into a loaf pan and bake for one hour.
+  </span>
+
+  140 comments:
+  <div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+    <meta itemprop="interactionType" content="https://schema.org/CommentAction" />
+    <meta itemprop="userInteractionCount" content="140" />
+  </div>
+  From Janel, May 5 -- thank you, great recipe!
+  ...
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="Recipe">
+  <span property="name">Mom's World Famous Banana Bread</span>
+  By <span property="author">John Smith</span>,
+  <meta property="datePublished" content="2009-05-08">May 8, 2009
+  <img property="image" src="bananabread.jpg"
+    alt="Banana bread on a plate" />
+
+  <span property="description">This classic banana bread recipe comes
+  from my mom -- the walnuts add a nice texture and flavor to the banana
+  bread.</span>
+
+  Prep Time: <meta property="prepTime" content="PT15M">15 minutes
+  Cook time: <meta property="cookTime" content="PT1H">1 hour
+  Yield: <span property="recipeYield">1 loaf</span>
+  Tags: <link property="suitableForDiet" href="https://schema.org/LowFatDiet" />Low Fat
+
+  <div property="nutrition" typeof="NutritionInformation">
+    Nutrition facts:
+    <span property="calories">240 calories</span>,
+    <span property="fatContent">9 grams fat</span>
+  </div>
+
+  Ingredients:
+  - <span property="recipeIngredient">3 or 4 ripe bananas, smashed</span>
+  - <span property="recipeIngredient">1 egg</span>
+  - <span property="recipeIngredient">3/4 cup of sugar</span>
+  ...
+
+  Instructions:
+  <span property="recipeInstructions">
+  Preheat the oven to 350 degrees. Mix in the ingredients in a bowl. Add
+  the flour last. Pour the mixture into a loaf pan and bake for one hour.
+  </span>
+
+  140 comments:
+  <div property="interactionStatistic" typeof="InteractionCounter">
+    <meta property="interactionType" content="https://schema.org/CommentAction" />
+    <meta property="userInteractionCount" content="140" />
+  </div>
+  From Janel, May 5 -- thank you, great recipe!
+  ...
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "author": "John Smith",
+  "cookTime": "PT1H",
+  "datePublished": "2009-05-08",
+  "description": "This classic banana bread recipe comes from my mom -- the walnuts add a nice texture and flavor to the banana bread.",
+  "image": "bananabread.jpg",
+  "recipeIngredient": [
+    "3 or 4 ripe bananas, smashed",
+    "1 egg",
+    "3/4 cup of sugar"
+  ],
+  "interactionStatistic": {
+    "@type": "InteractionCounter",
+    "interactionType": "https://schema.org/Comment",
+    "userInteractionCount": "140"
+  },
+  "name": "Mom's World Famous Banana Bread",
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "240 calories",
+    "fatContent": "9 grams fat"
+  },
+  "prepTime": "PT15M",
+  "recipeInstructions": "Preheat the oven to 350 degrees. Mix in the ingredients in a bowl. Add the flour last. Pour the mixture into a loaf pan and bake for one hour.",
+  "recipeYield": "1 loaf",
+  "suitableForDiet": "https://schema.org/LowFatDiet"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "author": "John Smith",
+  "cookTime": "PT1H",
+  "datePublished": "2009-05-08",
+  "description": "This classic banana bread recipe comes from my mom -- the walnuts add a nice texture and flavor to the banana bread.",
+  "image": "bananabread.jpg",
+  "recipeIngredient": [
+    "3 or 4 ripe bananas, smashed",
+    "1 egg",
+    "3/4 cup of sugar"
+  ],
+  "interactionStatistic": {
+    "@type": "InteractionCounter",
+    "interactionType": "https://schema.org/Comment",
+    "userInteractionCount": "140"
+  },
+  "name": "Mom's World Famous Banana Bread",
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "240 calories",
+    "fatContent": "9 grams fat"
+  },
+  "prepTime": "PT15M",
+  "recipeInstructions": "Preheat the oven to 350 degrees. Mix in the ingredients in a bowl. Add the flour last. Pour the mixture into a loaf pan and bake for one hour.",
+  "recipeYield": "1 loaf",
+  "suitableForDiet": "https://schema.org/LowFatDiet"
+}
+
+
+Example 3 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<h1>ACME Hotel Innsbruck</h1>
+  <img src="../media/logo.png" alt="hotel logo" />
+  <span>A beautifully located business hotel right in the
+heart of the alps. Watch the sun rise over the scenic Inn valley while
+enjoying your morning coffee.</span>
+  <img src="../media/hotel_front.png" alt="Front view of the hotel" />
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Hotel">
+  <h1><span itemprop="name">ACME Hotel Innsbruck</span></h1>
+  <img itemprop="logo" src="../media/logo.png" alt="hotel logo" />
+  <span itemprop="description">A beautifully located business hotel right in the
+heart of the alps. Watch the sun rise over the scenic Inn valley while
+enjoying your morning coffee.</span>
+  <img itemprop="photo" src="../media/hotel_front.png" alt="Front view of the hotel" />
+</div>
+
+
+This example is in microdata only.
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

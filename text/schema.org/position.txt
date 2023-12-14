@@ -1,0 +1,170 @@
+
+
+
+
+
+position - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+position
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    position
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/position 
+
+Check for open issues.
+
+
+
+
+The position of an item in a series or sequence of items.
+ 
+
+Values expected to be one of these types
+
+
+Integer
+
+Text
+
+
+
+Used on these types
+
+
+CreativeWork
+
+ListItem
+
+
+
+
+
+Sub-properties
+
+
+clipNumber
+
+episodeNumber
+
+issueNumber
+
+seasonNumber
+
+volumeNumber
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

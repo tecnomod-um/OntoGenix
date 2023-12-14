@@ -1,0 +1,266 @@
+
+
+
+
+
+TollFree - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+TollFree
+A Schema.org Enumeration Member
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    ContactPointOption 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    TollFree
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/TollFree 
+
+Check for open issues.
+
+
+
+
+The associated telephone number is toll free.
+ A member value for enumeration type: 
+    
+    
+    ContactPointOption
+ 
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+A fuller example that illustrates multiple contact numbers for a company,
+including US toll-free numbers, a hearing-impaired number, and several contact categories.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{ "@context" : "https://schema.org",
+  "@type" : "Organization",
+  "url" : "http://www.t-mobile.com",
+  "contactPoint" : [
+    { "@type" : "ContactPoint",
+      "telephone" : "+1-877-746-0909",
+      "contactType" : "customer service",
+      "contactOption" : "TollFree",
+      "areaServed" : "US"
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-505-998-3793",
+      "contactType" : "customer service"
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-877-296-1018",
+      "contactType" : "customer service",
+      "contactOption" : ["HearingImpairedSupported","TollFree"] ,
+      "areaServed" : "US"
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-877-453-1304",
+      "contactType" : "technical support",
+      "contactOption" : "TollFree",
+      "areaServed" : ["US","CA"],
+      "availableLanguage" : ["English","French"]
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-877-453-1304",
+      "contactType" : "bill payment",
+      "contactOption" : "TollFree",
+      "areaServed" : ["US","CA"]
+    } ] }
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{ "@context" : "https://schema.org",
+  "@type" : "Organization",
+  "url" : "http://www.t-mobile.com",
+  "contactPoint" : [
+    { "@type" : "ContactPoint",
+      "telephone" : "+1-877-746-0909",
+      "contactType" : "customer service",
+      "contactOption" : "TollFree",
+      "areaServed" : "US"
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-505-998-3793",
+      "contactType" : "customer service"
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-877-296-1018",
+      "contactType" : "customer service",
+      "contactOption" : ["HearingImpairedSupported","TollFree"] ,
+      "areaServed" : "US"
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-877-453-1304",
+      "contactType" : "technical support",
+      "contactOption" : "TollFree",
+      "areaServed" : ["US","CA"],
+      "availableLanguage" : ["English","French"]
+    } , {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-877-453-1304",
+      "contactType" : "bill payment",
+      "contactOption" : "TollFree",
+      "areaServed" : ["US","CA"]
+    } ] }
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

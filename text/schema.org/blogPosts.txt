@@ -1,0 +1,157 @@
+
+
+
+
+
+blogPosts - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+blogPosts
+A Schema.org Property
+
+
+Note: This term has been superseded.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    blogPosts
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/blogPosts 
+
+Check for open issues.
+
+
+
+
+Indicates a post that is part of a Blog. Note that historically, what we term a "Blog" was once known as a "weblog", and that what we term a "BlogPosting" is now often colloquially referred to as a "blog".
+ 
+
+Values expected to be one of these types
+
+
+BlogPosting
+
+
+
+Used on these types
+
+
+Blog
+
+
+
+
+
+SupersededBy
+
+blogPost
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,658 @@
+
+
+
+
+
+touristType - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+touristType
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    touristType
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/touristType 
+
+Check for open issues.
+
+
+
+
+Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc.
+ 
+
+Values expected to be one of these types
+
+
+Audience
+
+Text
+
+
+
+Used on these types
+
+
+TouristAttraction
+
+TouristDestination
+
+TouristTrip
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       Future Internet Lab, Institute of Informatics and Telematics
+                    
+
+
+
+                    This element is based on work by the Web Applications for the Future Internet Lab, Institute of Informatics and Telematics, Pisa, Italy.
+                    
+
+
+
+
+
+
+
+                       Tourism Structured Web Data Community Group
+                    
+
+
+
+                    This element is based on the work of the Tourism Structured Web Data Community Group.
+                    
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<h1>Please Touch Museum</h1>
+<div>It is a children's museum located in Philadelphia, Pennsylvania, USA.</div>
+<div>The museum focuses on teaching children through interactive exhibits and special events.</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/TouristAttraction">
+    <link itemprop="additionalType" href="https://schema.org/Museum">
+    <h1>
+        <span itemprop="name">Please Touch Museum</span>
+    </h1>
+    <div>
+        It is a
+        <div itemprop="touristType" itemscope itemtype="https://schema.org/Audience">
+            <span itemprop="audienceType">children</span>
+        </div>'s museum located in
+        <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <div itemprop="addressLocality">
+                Philadelphia
+            </div>,
+            <div itemprop="addressCountry">
+                USA
+            </div>.
+        </div>
+    </div>
+    <div>
+        <span itemprop="description">The museum focuses on teaching children through interactive exhibits and special events.</span>
+    </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="TouristAttraction Museum">
+    <h1>
+        <span property="name">Please Touch Museum</span>
+    </h1>
+    <div>
+        It is a
+        <div property="touristType" typeof="Audience">
+            <span property="audienceType">children</span>
+        </div>'s museum located in
+        <div property="address" typeof="PostalAddress">
+            <div property="addressLocality">
+                Philadelphia
+            </div>,
+            <div property="addressCountry">
+                USA
+            </div>.
+        </div>
+    </div>
+    <div>
+        <span property="description">The museum focuses on teaching children through interactive exhibits and special events.</span>
+    </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": ["TouristAttraction","Museum"],
+	"name": "Please Touch Museum",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Philadelphia",
+		"addressCountry": "USA"
+	},
+	"touristType": {
+		"@type": "Audience",
+		"audienceType": "children"
+	},
+	"description": "The museum focuses on teaching children through interactive exhibits and special events."
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+	"@context": "https://schema.org",
+	"@type": ["TouristAttraction","Museum"],
+	"name": "Please Touch Museum",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Philadelphia",
+		"addressCountry": "USA"
+	},
+	"touristType": {
+		"@type": "Audience",
+		"audienceType": "children"
+	},
+	"description": "The museum focuses on teaching children through interactive exhibits and special events."
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Name: VillersâBretonneux Australian National Memorial
+Description: The Australian National Memorial, VillersâBretonneux is the main memorial to Australian military personnel killed on the Western Front during World War I.
+Address: Fouilloy, FR
+Geocoordinates: lat 49.8852515, lon 2.5106436
+Public Access: yes
+Is Accessible For Free: yes
+Tourist Audience: Memorial Tourism from Australia and New Zealand
+Image: https://commons.wikimedia.org/wiki/File%3AVillers-Bretonneux_m%C3%A9morial_australien_(tour_et_croix)_1.jpg
+Same As: https://www.wikidata.org/wiki/Q2544355
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div>
+  <div itemtype="https://schema.org/TouristAttraction" itemscope>
+    <link itemprop="additionalType" href="https://schema.org/Cemetery" />
+    <meta itemprop="name" content="VillersâBretonneux Australian National Memorial" />
+    <meta itemprop="description" content="The Australian National Memorial, VillersâBretonneux is the main memorial to Australian military personnel killed on the Western Front during World War I." />
+    <div itemprop="touristType" itemtype="https://schema.org/Audience" itemscope>
+      <meta itemprop="audienceType" content="Memorial Tourism" />
+      <div itemprop="geographicArea" itemtype="https://schema.org/AdministrativeArea" itemscope>
+        <meta itemprop="name" content="New Zealand" />
+      </div>
+      <div itemprop="geographicArea" itemtype="https://schema.org/AdministrativeArea" itemscope>
+        <meta itemprop="name" content="Australia" />
+      </div>
+    </div>
+    <div itemprop="address" itemtype="https://schema.org/PostalAddress" itemscope>
+      <meta itemprop="addressLocality" content="Fouilloy" />
+      <meta itemprop="addressCountry" content="FR" />
+    </div>
+    <div itemprop="geo" itemtype="https://schema.org/GeoCoordinates" itemscope>
+      <meta itemprop="latitude" content="49.8852515" />
+      <meta itemprop="longitude" content="2.5106436" />
+    </div>
+    <meta itemprop="publicAccess" content="true" />
+    <meta itemprop="isAccessibleForFree" content="true" />
+    <link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q2544355" />
+    <link itemprop="image" href="https://commons.wikimedia.org/wiki/File%3AVillers-Bretonneux_m%C3%A9morial_australien_(tour_et_croix)_1.jpg" />
+  </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="Cemetery TouristAttraction">
+    <div property="name" content="VillersâBretonneux Australian National Memorial"></div>
+    <div property="description" content="The Australian National Memorial, VillersâBretonneux is the main memorial to Australian military personnel killed on the Western Front during World War I."></div>
+    <div property="touristType" typeof="Audience">
+        <div property="audienceType" content="Memorial Tourism"></div>
+        <div property="geographicArea" typeof="AdministrativeArea">
+            &gt;
+            <div property="name" content="New Zealand"></div>
+        </div>
+        <div property="geographicArea" typeof="AdministrativeArea">
+            <div property="name" content="Australia"></div>
+        </div>
+    </div>
+</div>
+<div property="address" typeof="PostalAddress">
+    <div property="addressCountry" content="FR"></div>
+    <div property="addressLocality" content="Fouilloy"></div>
+</div>
+<div property="geo" typeof="GeoCoordinates">
+    <div property="latitude" content="49.8852515"></div>
+    <div property="longitude" content="2.5106436"></div>
+</div>
+<div property="publicAccess" datatype="xsd:boolean" content="true"></div>
+<div property="isAccessibleForFree" datatype="xsd:boolean" content="true">
+    <link property="sameAs" href="https://www.wikidata.org/wiki/Q2544355">
+    <link property="image" href="https://commons.wikimedia.org/wiki/File%3AVillers-Bretonneux_m%C3%A9morial_australien_(tour_et_croix)_1.jpg">
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org/",
+ "@type": [
+  "Cemetery",
+  "TouristAttraction"
+  ],
+ "name": "VillersâBretonneux Australian National Memorial",
+ "description": "The Australian National Memorial, VillersâBretonneux is the main memorial to Australian military personnel killed on the Western Front during World War I.",
+  "touristType": {
+    "@type": "Audience",
+    "audienceType" : "Memorial Tourism",
+    "geographicArea": [{
+      "@type": "AdministrativeArea",
+      "name": "Australia"
+    },{
+      "@type": "AdministrativeArea",
+      "name": "New Zealand"
+    }]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "FR",
+    "addressLocality":"Fouilloy"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "49.8852515",
+    "longitude": "2.5106436"
+  },
+  "publicAccess": true,
+  "isAccessibleForFree": true,
+  "sameAs":"https://www.wikidata.org/wiki/Q2544355",
+  "image":"https://commons.wikimedia.org/wiki/File%3AVillers-Bretonneux_m%C3%A9morial_australien_(tour_et_croix)_1.jpg"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+ "@context": "https://schema.org/",
+ "@type": [
+  "Cemetery",
+  "TouristAttraction"
+  ],
+ "name": "VillersâBretonneux Australian National Memorial",
+ "description": "The Australian National Memorial, VillersâBretonneux is the main memorial to Australian military personnel killed on the Western Front during World War I.",
+  "touristType": {
+    "@type": "Audience",
+    "audienceType" : "Memorial Tourism",
+    "geographicArea": [{
+      "@type": "AdministrativeArea",
+      "name": "Australia"
+    },{
+      "@type": "AdministrativeArea",
+      "name": "New Zealand"
+    }]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "FR",
+    "addressLocality":"Fouilloy"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "49.8852515",
+    "longitude": "2.5106436"
+  },
+  "publicAccess": true,
+  "isAccessibleForFree": true,
+  "sameAs":"https://www.wikidata.org/wiki/Q2544355",
+  "image":"https://commons.wikimedia.org/wiki/File%3AVillers-Bretonneux_m%C3%A9morial_australien_(tour_et_croix)_1.jpg"
+}
+
+
+Example 3 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Name: Bodegas Protos
+Description: Protos means âfirstâ in Greek, and since 1927 this centenary winery has embarked on the mission to be number one. This attitude has driven their search for constant improvement. The new facilities designed by prestigious architect and winner of the Priztker Award, Sir Richard Rogers, once again took the winery to the forefront of wine tourism. A tour around Protos includes a detailed visit to both the underground cellar dug into the hillside of PeÃ±afiel Castle and to the winery designed by celebrated architect Sir Richard Rogers. After completing the itinerary, visitors can taste 2 excellent Protos wines and will receive a gift. The visit lasts 1.5 hours (including the sampling).
+Opening Hours: Monday to Friday, 10:00-13:00 and 16:30-18:00
+Address: C/ Bodegas Protos, 24-28, 47300 - PeÃ±afiel, Spain
+Public Access: yes
+Tourist Audience: Wine tourism, Cultural tourism
+Available Languages: English, Spanish
+Telephone: +34983878011, +34659843463
+Same As: http://www.bodegasprotos.com
+Email: enoturismo@bodegasprotos.com
+Image: https://commons.wikimedia.org/wiki/File%3AFoto_Bodega_Rogers2.jpg
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div>
+  <div itemtype="https://schema.org/TouristAttraction" itemscope>
+    <link itemprop="additionalType" href="https://schema.org/Winery" />
+    <meta itemprop="name" content="Bodegas Protos" />
+    <meta itemprop="description" content="Protos means âfirstâ in Greek, and since 1927 this centenary winery has embarked on the mission to be number one. This attitude has driven their search for constant improvement. The new facilities designed by prestigious architect and winner of the Priztker Award, Sir Richard Rogers, once again took the winery to the forefront of wine tourism. A tour around Protos includes a detailed visit to both the underground cellar dug into the hillside of PeÃ±afiel Castle and to the winery designed by celebrated architect Sir Richard Rogers. After completing the itinerary, visitors can taste 2 excellent Protos wines and will receive a gift. The visit lasts 1.5 hours (including the sampling)." />
+    <div itemprop="address" itemtype="https://schema.org/PostalAddress" itemscope>
+      <meta itemprop="addressLocality" content="PeÃ±afiel" />
+      <meta itemprop="streetAddress" content="C/ Bodegas Protos, 24-28" />
+      <meta itemprop="postalCode" content="47300" />
+      <meta itemprop="addressCountry" content="ES" />
+    </div>
+    <meta itemprop="publicAccess" content="true" />
+    <meta itemprop="availableLanguage" content="English" />
+    <meta itemprop="availableLanguage" content="Spanish" />
+    <meta itemprop="openingHours" content="Mo-Fr 10:00-13:00" />
+    <meta itemprop="openingHours" content="Mo-Fr 16:30-18:00" />
+    <meta itemprop="touristType" content="Wine tourism" />
+    <meta itemprop="touristType" content="Cultural tourism" />
+    <meta itemprop="telephone" content="+34983878011" />
+    <meta itemprop="telephone" content="+34659843463" />
+    <link itemprop="sameAs" href="http://www.bodegasprotos.com/" />
+    <meta itemprop="email" content="enoturismo@bodegasprotos.com" />
+    <link itemprop="image" href="https://commons.wikimedia.org/wiki/File%3AFoto_Bodega_Rogers2.jpg" />
+  </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div>
+    <div vocab="https://schema.org/" typeof="Winery TouristAttraction">
+        <div property="name" content="Bodegas Protos"></div>
+        <div property="description" content="Protos means âfirstâ in Greek, and since 1927 this centenary winery has embarked on the mission to be number one. This attitude has driven their search for constant improvement. The new facilities designed by prestigious architect and winner of the Priztker Award, Sir Richard Rogers, once again took the winery to the forefront of wine tourism. A tour around Protos includes a detailed visit to both the underground cellar dug into the hillside of PeÃ±afiel Castle and to the winery designed by celebrated architect Sir Richard Rogers. After completing the itinerary, visitors can taste 2 excellent Protos wines and will receive a gift. The visit lasts 1.5 hours (including the sampling)."></div>
+        <div property="address" typeof="PostalAddress">
+            <div property="addressCountry" content="ES"></div>
+            <div property="addressLocality" content="PeÃ±afiel"></div>
+            <div property="postalCode" content="47300"></div>
+            <div property="streetAddress" content="C/ Bodegas Protos, 24-28"></div>
+        </div>
+        <div property="publicAccess" datatype="xsd:boolean" content="true"></div>
+        <div property="availableLanguage" content="English"></div>
+        <div property="availableLanguage" content="Spanish"></div>
+        <div property="openingHours" content="Mo-Fr 10:00-13:00"></div>
+        <div property="openingHours" content="Mo-Fr 16:30-18:00"></div>
+        <div property="touristType" content="Wine tourism"></div>
+        <div property="touristType" content="Cultural tourism"></div>
+        <div property="telephone" content="+34983878011"></div>
+        <div property="telephone" content="+34659843463"></div>
+        <link property="sameAs" href="http://www.bodegasprotos.com/">
+        <div property="email" content="enoturismo@bodegasprotos.com"></div>
+        <link property="image" href="https://commons.wikimedia.org/wiki/File%3AFoto_Bodega_Rogers2.jpg">
+    </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "Winery",
+    "TouristAttraction"],
+  "name": "Bodegas Protos",
+  "description": "Protos means âfirstâ in Greek, and since 1927 this centenary winery has embarked on the mission to be number one. This attitude has driven their search for constant improvement. The new facilities designed by prestigious architect and winner of the Priztker Award, Sir Richard Rogers, once again took the winery to the forefront of wine tourism. A tour around Protos includes a detailed visit to both the underground cellar dug into the hillside of PeÃ±afiel Castle and to the winery designed by celebrated architect Sir Richard Rogers. After completing the itinerary, visitors can taste 2 excellent Protos wines and will receive a gift. The visit lasts 1.5 hours (including the sampling).",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "PeÃ±afiel",
+    "addressCountry": "ES",
+    "postalCode": "47300",
+    "streetAddress": "C/ Bodegas Protos, 24-28"
+  },
+  "publicAccess": true,
+  "availableLanguage":[
+    "English",
+    "Spanish"
+  ],
+  "openingHours": [
+    "Mo-Fr 10:00-13:00",
+    "Mo-Fr 16:30-18:00"
+  ],
+  "touristType": [
+    "Wine tourism",
+    "Cultural tourism"
+  ],
+  "telephone": ["+34983878011","+34659843463"],
+  "sameAs": "http://www.bodegasprotos.com",
+  "email": "enoturismo@bodegasprotos.com",
+  "image": "https://commons.wikimedia.org/wiki/File%3AFoto_Bodega_Rogers2.jpg"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "Winery",
+    "TouristAttraction"],
+  "name": "Bodegas Protos",
+  "description": "Protos means âfirstâ in Greek, and since 1927 this centenary winery has embarked on the mission to be number one. This attitude has driven their search for constant improvement. The new facilities designed by prestigious architect and winner of the Priztker Award, Sir Richard Rogers, once again took the winery to the forefront of wine tourism. A tour around Protos includes a detailed visit to both the underground cellar dug into the hillside of PeÃ±afiel Castle and to the winery designed by celebrated architect Sir Richard Rogers. After completing the itinerary, visitors can taste 2 excellent Protos wines and will receive a gift. The visit lasts 1.5 hours (including the sampling).",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "PeÃ±afiel",
+    "addressCountry": "ES",
+    "postalCode": "47300",
+    "streetAddress": "C/ Bodegas Protos, 24-28"
+  },
+  "publicAccess": true,
+  "availableLanguage":[
+    "English",
+    "Spanish"
+  ],
+  "openingHours": [
+    "Mo-Fr 10:00-13:00",
+    "Mo-Fr 16:30-18:00"
+  ],
+  "touristType": [
+    "Wine tourism",
+    "Cultural tourism"
+  ],
+  "telephone": ["+34983878011","+34659843463"],
+  "sameAs": "http://www.bodegasprotos.com",
+  "email": "enoturismo@bodegasprotos.com",
+  "image": "https://commons.wikimedia.org/wiki/File%3AFoto_Bodega_Rogers2.jpg"
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

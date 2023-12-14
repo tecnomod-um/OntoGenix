@@ -1,0 +1,191 @@
+
+
+
+
+
+ReservationStatusType - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+ReservationStatusType
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StatusEnumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    ReservationStatusType
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/ReservationStatusType 
+
+Check for open issues.
+
+
+
+
+Enumerated status values for Reservation.
+ 
+
+
+
+
+Instances of 
+    
+    
+    ReservationStatusType  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+reservationStatus
+
+Reservation
+The current status of the reservation.
+  
+
+
+
+
+Enumeration members
+
+
+ReservationCancelled
+
+ReservationConfirmed
+
+ReservationHold
+
+ReservationPending
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

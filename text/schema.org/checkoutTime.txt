@@ -1,0 +1,194 @@
+
+
+
+
+
+checkoutTime - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+checkoutTime
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    checkoutTime
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/checkoutTime 
+
+Check for open issues.
+
+
+
+
+The latest someone may check out of a lodging establishment.
+ 
+
+Values expected to be one of these types
+
+
+DateTime
+
+Time
+
+
+
+Used on these types
+
+
+LodgingBusiness
+
+LodgingReservation
+
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+This example is in microdata only.
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Hotel">
+  <h1><span itemprop="name">ACME Hotel Innsbruck</span></h1>
+  <img itemprop="logo" src="../media/logo.png" alt="hotel logo" />
+  <span itemprop="description">A beautifully located business hotel right in the
+heart of the alps. Watch the sun rise over the scenic Inn valley while
+enjoying your morning coffee.</span>
+  Check-in: <meta itemprop="checkinTime" content="14:00:00">2:00 PM
+  Check-out: <meta itemprop="checkoutTime" content="11:00:00">11:00 AM
+</div>
+
+
+This example is in microdata only.
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

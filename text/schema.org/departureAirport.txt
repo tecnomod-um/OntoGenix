@@ -1,0 +1,152 @@
+
+
+
+
+
+departureAirport - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+departureAirport
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    departureAirport
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/departureAirport 
+
+Check for open issues.
+
+
+
+
+The airport where the flight originates.
+ 
+
+Values expected to be one of these types
+
+
+Airport
+
+
+
+Used on these types
+
+
+Flight
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

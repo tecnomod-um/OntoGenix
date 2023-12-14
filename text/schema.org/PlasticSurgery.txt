@@ -1,0 +1,309 @@
+
+
+
+
+
+PlasticSurgery - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+PlasticSurgery
+A Schema.org Enumeration Member
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Organization 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    LocalBusiness 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalBusiness 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    PlasticSurgery
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalEnumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalSpecialty 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    PlasticSurgery
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Place 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    LocalBusiness 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalBusiness 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    PlasticSurgery
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Specialty 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalSpecialty 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    PlasticSurgery
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/PlasticSurgery 
+
+Check for open issues.
+
+
+
+
+A specific branch of medical science that pertains to therapeutic or cosmetic repair or re-formation of missing, injured or malformed tissues or body parts by manual and instrumental means.
+ A member value for enumeration type: 
+    
+    
+    MedicalSpecialty
+ 
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

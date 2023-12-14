@@ -1,0 +1,167 @@
+
+
+
+
+
+OnlineEventAttendanceMode - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+OnlineEventAttendanceMode
+A Schema.org Enumeration Member
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    EventAttendanceModeEnumeration 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    OnlineEventAttendanceMode
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/OnlineEventAttendanceMode 
+
+Check for open issues.
+
+
+
+
+OnlineEventAttendanceMode - an event that is primarily conducted online.
+ A member value for enumeration type: 
+    
+    
+    EventAttendanceModeEnumeration
+ 
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1842
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

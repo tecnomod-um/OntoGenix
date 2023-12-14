@@ -1,0 +1,1404 @@
+
+
+
+
+
+PropertyValue - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+PropertyValue
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StructuredValue 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    PropertyValue
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/PropertyValue 
+
+Check for open issues.
+
+
+
+
+A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.
+
+Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    PropertyValue
+
+maxValue
+
+Number
+The upper value of some characteristic or property.
+                
+                
+                
+            
+
+
+measurementMethod
+
+DefinedTerm  or 
+MeasurementMethodEnum  or 
+Text  or 
+URL
+A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum.
+                
+                
+                
+            
+
+
+measurementTechnique
+
+DefinedTerm  or 
+MeasurementMethodEnum  or 
+Text  or 
+URL
+A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured; for Observation, a StatisticalVariable). Often but not necessarily each variableMeasured will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of variableMeasured called measuredProperty is applicable.
+
+The measurementTechnique property helps when extra clarification is needed about how a measuredProperty was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
+
+For example, if variableMeasured is: molecule concentration, measurementTechnique could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the variableMeasured is "depression rating", the measurementTechnique could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
+
+If there are several variableMeasured properties recorded for some given data object, use a PropertyValue for each variableMeasured and attach the corresponding measurementTechnique. The value can also be from an enumeration, organized as a MeasurementMetholdEnumeration.
+                
+                
+                
+            
+
+
+minValue
+
+Number
+The lower value of some characteristic or property.
+                
+                
+                
+            
+
+
+propertyID
+
+Text  or 
+URL
+A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
+(1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific ID of the property), or (3)
+a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
+Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
+                
+                
+                
+            
+
+
+unitCode
+
+Text  or 
+URL
+The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+                
+                
+                
+            
+
+
+unitText
+
+Text
+A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+unitCode.
+                
+                
+                
+            
+
+
+value
+
+Boolean  or 
+Number  or 
+StructuredValue  or 
+Text
+The value of a QuantitativeValue (including Observation) or property value node.
+
+For QuantitativeValue and MonetaryAmount, the recommended type for values is 'Number'.
+For PropertyValue, it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.
+Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+
+
+
+
+valueReference
+
+DefinedTerm  or 
+Enumeration  or 
+MeasurementTypeEnumeration  or 
+PropertyValue  or 
+QualitativeValue  or 
+QuantitativeValue  or 
+StructuredValue  or 
+Text
+A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+                
+                
+                
+            
+
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    PropertyValue  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+additionalProperty
+
+MerchantReturnPolicy  or 
+Place  or 
+Product  or 
+QualitativeValue  or 
+QuantitativeValue
+A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.
+
+Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+  
+
+associatedDisease
+
+BioChemEntity
+Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
+  
+
+exifData
+
+ImageObject
+exif data for this object.
+  
+
+hasMolecularFunction
+
+BioChemEntity
+Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
+  
+
+hasRepresentation
+
+BioChemEntity
+A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+  
+
+identifier
+
+Thing
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+  
+
+isInvolvedInBiologicalProcess
+
+BioChemEntity
+Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
+  
+
+isLocatedInSubcellularLocation
+
+BioChemEntity
+Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
+  
+
+taxonRank
+
+Taxon
+The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary â typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs.
+  
+
+valueReference
+
+PropertyValue  or 
+QualitativeValue  or 
+QuantitativeValue
+A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+  
+
+variableMeasured
+
+Dataset  or 
+Observation
+The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a StatisticalVariable.
+  
+
+variablesMeasured
+
+Dataset
+Originally named variablesMeasured, the variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.
+  
+
+
+
+
+More specific Types
+
+
+LocationFeatureSpecification
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       GoodRelations Vocabulary Classes
+                    
+
+
+
+                    This class is derived from the GoodRelations Vocabulary for E-Commerce, created by Martin Hepp. GoodRelations is a data model for sharing e-commerce data on the Web that can be expressed in a variety of syntaxes, including RDFa and HTML5 Microdata. More information about GoodRelations can be found at http://purl.org/goodrelations/.
+                    
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<h2>Beach in Mexico</h2>
+<img src="mexico-beach.jpg" alt="" />
+By Jane Doe
+Photographed in Puerto Vallarta, Mexico
+Date uploaded: Jan 25, 2008
+I took this picture while on vacation last year.
+<!-- We assume the following EXIF meta-data is available, but currently not shown:
+
+Exposure Time:    1/659 sec.
+FNumber:          f/4.0
+MaxApertureValue: 2.00
+Metering Mode:    Pattern
+Flash:            Flash did not fire.
+-->
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/ImageObject">
+  <h2 itemprop="name">Beach in Mexico</h2>
+  <img src="mexico-beach.jpg" alt="" itemprop="contentUrl" />
+  By <span itemprop="author">Jane Doe</span>
+  Photographed in
+    <span itemprop="contentLocation">Puerto Vallarta, Mexico</span>
+  Date uploaded:
+    <meta itemprop="datePublished" content="2008-01-25">Jan 25, 2008
+  <span itemprop="description">I took this picture while on vacation last year.</span>
+<!-- Note: We do not split value strings in unit and value information, since this the raw EXIF data does not provide this granularity. If you are able to separate the unit, you can use the unitText property -->
+  <div itemprop="exifData" itemscope itemtype="https://schema.org/PropertyValue">
+      <meta itemprop="name" content="Exposure Time">
+      <meta itemprop="value" content="1/659 sec.">
+  </div>
+  <div itemprop="exifData" itemscope itemtype="https://schema.org/PropertyValue">
+      <meta itemprop="name" content="FNumber">
+      <meta itemprop="value" content="f/4.0">
+  </div>
+  <div itemprop="exifData" itemscope itemtype="https://schema.org/PropertyValue">
+      <meta itemprop="name" content="MaxApertureValue">
+      <meta itemprop="value" content="2.00">
+  </div>
+  <div itemprop="exifData" itemscope itemtype="https://schema.org/PropertyValue">
+      <meta itemprop="name" content="Metering Mode">
+      <meta itemprop="value" content="Pattern">
+  </div>
+  <div itemprop="exifData" itemscope itemtype="https://schema.org/PropertyValue">
+      <meta itemprop="name" content="Flash">
+      <meta itemprop="value" content="Flash did not fire.">
+  </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="ImageObject">
+  <h2 property="name">Beach in Mexico</h2>
+  <img src="mexico-beach.jpg" alt="" property="contentUrl" />
+  By <span property="author">Jane Doe</span>
+  Photographed in
+    <span property="contentLocation">Puerto Vallarta, Mexico</span>
+  Date uploaded:
+    <meta property="datePublished" content="2008-01-25">Jan 25, 2008
+  <span property="description">I took this picture while on vacation last year.</span>
+<!-- Note: We do not split value strings in unit and value information, since this the raw EXIF data does not provide this granularity. If you are able to separate the unit, you can use the unitText property -->
+  <div property="exifData" typeOf="PropertyValue">
+      <meta property="name" content="Exposure Time">
+      <meta property="value" content="1/659 sec.">
+  </div>
+  <div property="exifData" typeOf="PropertyValue">
+      <meta property="name" content="FNumber">
+      <meta property="value" content="f/4.0">
+  </div>
+  <div property="exifData" typeOf="PropertyValue">
+      <meta property="name" content="MaxApertureValue">
+      <meta property="value" content="2.00">
+  </div>
+  <div property="exifData" typeOf="PropertyValue">
+      <meta property="name" content="Metering Mode">
+      <meta property="value" content="Pattern">
+  </div>
+  <div property="exifData" typeOf="PropertyValue">
+      <meta property="name" content="Flash">
+      <meta property="value" content="Flash did not fire.">
+  </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "author": "Jane Doe",
+  "contentLocation": "Puerto Vallarta, Mexico",
+  "contentUrl": "mexico-beach.jpg",
+  "datePublished": "2008-01-25",
+  "description": "I took this picture while on vacation last year.",
+  "name": "Beach in Mexico",
+  "exifData": [
+    {
+      "@type": "PropertyValue",
+      "name": "Exposure Time",
+      "value": "1/659 sec."
+    },
+    {
+     "@type": "PropertyValue",
+      "name": "FNumber",
+      "value": "f/4.0"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "MaxApertureValue",
+      "value": "2.00"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Metering Mode",
+      "value": "Pattern"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Flash",
+      "value": "Flash did not fire."
+    }
+  ]
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "author": "Jane Doe",
+  "contentLocation": "Puerto Vallarta, Mexico",
+  "contentUrl": "mexico-beach.jpg",
+  "datePublished": "2008-01-25",
+  "description": "I took this picture while on vacation last year.",
+  "name": "Beach in Mexico",
+  "exifData": [
+    {
+      "@type": "PropertyValue",
+      "name": "Exposure Time",
+      "value": "1/659 sec."
+    },
+    {
+     "@type": "PropertyValue",
+      "name": "FNumber",
+      "value": "f/4.0"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "MaxApertureValue",
+      "value": "2.00"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Metering Mode",
+      "value": "Pattern"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Flash",
+      "value": "Flash did not fire."
+    }
+  ]
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<!-- Product: Point Value, with unit as text -->
+<div>
+  <img src="camera123.jpg" alt="" />
+  <span>Digital Camera 123</span>
+  <div>
+      <span>Approx. Weight</span>
+      <span>450</span>
+      <span>gram</span>
+  </div>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<!-- Product: Point Value, with unit as text -->
+<div itemscope itemtype="https://schema.org/Product">
+  <img itemprop="image" src="camera123.jpg" alt="" />
+  <span itemprop="name">Digital Camera 123</span>
+  <div itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue">
+      <span itemprop="name">Approx. Weight</span>
+      <span itemprop="value">450</span>
+      <span itemprop="unitText">gram</span>
+  </div>
+</div>
+
+
+No JSON-LD
+
+
+Example 3 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<!-- Product: Point Value, with unit as UN/CEFACT Common Code to be added to the template -->
+<div>
+  <img src="camera123.jpg" alt="" />
+  <span>Digital Camera 123</span>
+  <div>
+      <span>Approx. Weight</span>
+      <span>450</span>g
+  </div>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<!-- Product: Point Value, with unit as UN/CEFACT Common Code -->
+<div itemscope itemtype="https://schema.org/Product">
+  <img itemprop="image" src="camera123.jpg" alt="" />
+  <span itemprop="name">Digital Camera 123</span>
+  <div itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue">
+      <span itemprop="name">Approx. Weight</span>
+      <span itemprop="value">450</span>
+      <meta itemprop="unitCode" content="GRM">g
+  </div>
+</div>
+
+
+No JSON-LD
+
+
+Example 4 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<!-- Product: Range, with unit as UN/CEFACT Common Code to be added to the template -->
+<div>
+  <img src="camera123.jpg" alt="" />
+  <span>Digital Camera 123</span>
+  <div>
+      <span>Operating Voltage</span>
+      <span>100</span>-
+      <span>250</span>
+      volts
+  </div>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<!-- Product: Range, with unit as UN/CEFACT Common Code -->
+<div itemscope itemtype="https://schema.org/Product">
+  <img itemprop="image" src="camera123.jpg" alt="" />
+  <span itemprop="name">Digital Camera 123</span>
+  <div itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue">
+      <span itemprop="name">Operating Voltage</span>
+      <span itemprop="minValue">100</span>-
+      <span itemprop="maxValue">250</span>
+      <meta itemprop="unitCode" content="VLT">volts
+  </div>
+</div>
+
+
+No JSON-LD
+
+
+Example 5 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<!-- Product: Open Interval, with unit as UN/CEFACT Common Code to be added to the template -->
+<div>
+  <img src="camera123.jpg" alt="" />
+  <span>Digital Camera 123</span>
+  <div>
+      <span>Wifi range</span>: up to
+      <span>30</span>
+      ft.
+  </div>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<!-- Product: Open Interval, with unit as UN/CEFACT Common Code -->
+<div itemscope itemtype="https://schema.org/Product">
+  <img itemprop="image" src="camera123.jpg" alt="" />
+  <span itemprop="name">Digital Camera 123</span>
+  <div itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue">
+      <span itemprop="name">Wifi range</span>: up to
+      <span itemprop="maxValue">30</span>
+<!-- Note: The UN/CEFACT Common Code for foot is FOT -->
+      <meta itemprop="unitCode" content="FOT">ft.
+  </div>
+</div>
+
+
+No JSON-LD
+
+
+Example 6 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<!-- Product: Multiple Intervals -->
+<div>
+  <img src="camera123.jpg" alt="" />
+  <span>Digital Camera 123</span>
+  <div>
+      <span>Operating voltage</span>:
+      <span>9-12</span> or
+      <span>100-250</span>
+      volts
+  </div>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<!-- Product: Multiple Intervals -->
+<div itemscope itemtype="https://schema.org/Product">
+  <img itemprop="image" src="camera123.jpg" alt="" />
+  <span itemprop="name">Digital Camera 123</span>
+  <div itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue">
+      <span itemprop="name">Operating voltage</span>:
+      <span itemprop="value">9-12</span> or
+      <span itemprop="value">100-250</span>
+      <meta itemprop="unitCode" content="VLT">volts
+  </div>
+</div>
+
+
+No JSON-LD
+
+
+Example 7 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<!-- Product: Range and Enumerated Values -->
+<div>
+  <img src="camera123.jpg" alt="" />
+  <span>Digital Camera 123</span>
+  <div>
+      <span>ISO Sensitivity</span>:
+      <span>100-6400</span>/
+      <span>12,800</span> (Hi-1)
+      <span>ISO</span>
+  </div>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<!-- Product: Range and Enumerated Values -->
+<div itemscope itemtype="https://schema.org/Product">
+  <img itemprop="image" src="camera123.jpg" alt="" />
+  <span itemprop="name">Digital Camera 123</span>
+  <div itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue">
+      <span itemprop="name">ISO Sensitivity</span>:
+      <span itemprop="value">100-6400</span>/
+      <span itemprop="value">12,800</span> (Hi-1)
+      <span itemprop="unitText">ISO</span>
+  </div>
+</div>
+
+
+No JSON-LD
+
+
+Example 8 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<!-- Product: Boolean Value -->
+<div>
+  <img src="camera123.jpg" alt="" />
+  <span>Digital Camera 123</span>
+  <div>
+      <span>USB interface</span>: Yes
+  </div>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<!-- Product: Boolean Value -->
+<div itemscope itemtype="https://schema.org/Product">
+  <img itemprop="image" src="camera123.jpg" alt="" />
+  <span itemprop="name">Digital Camera 123</span>
+  <div itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue">
+      <span itemprop="name">USB interface</span>:
+      <meta itemprop="value" content="True">Yes
+  </div>
+</div>
+
+
+No JSON-LD
+
+
+Example 9 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<!-- Product: Qualitative Value -->
+<div>
+  <img src="camera123.jpg" alt="" />
+  <span>Digital Camera 123</span>
+  <div>
+      <span>Interface</span>: <span>USB</span>
+  </div>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<!-- Product: Qualitative Value -->
+<div itemscope itemtype="https://schema.org/Product">
+  <img itemprop="image" src="camera123.jpg" alt="" />
+  <span itemprop="name">Digital Camera 123</span>
+  <div itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue">
+      <span itemprop="name">Interface</span>:
+      <span itemprop="value">USB</span>
+  </div>
+</div>
+
+
+No JSON-LD
+
+
+Example 10 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<!-- Product: Qualitative Value (multiple) -->
+<div>
+  <img src="camera123.jpg" alt="" />
+  <span>Digital Camera 123</span>
+  <div>
+      <span>Interfaces</span>:
+      <span>USB</span>,
+      <span>Ethernet</span>
+  </div>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<!-- Product: Qualitative Value (multiple) -->
+<div itemscope itemtype="https://schema.org/Product">
+  <img itemprop="image" src="camera123.jpg" alt="" />
+  <span itemprop="name">Digital Camera 123</span>
+  <div itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue">
+      <span itemprop="name">Interfaces</span>:
+      <span itemprop="value">USB</span>,
+      <span itemprop="value">Ethernet</span>
+  </div>
+</div>
+
+
+No JSON-LD
+
+
+Example 11 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<!-- Product: Property ID for clarifying the meaning of a property: URI from external vocabulary -->
+<!-- (see microdata example for comparison) -->
+<div>
+  <img src="station_waggon123.jpg" alt="" />
+  <span>Station Waggon 123</span>
+  <div>
+      <span>Luggage Capacity (seats folded)</span>:
+      <span>500</span>
+      liter
+  </div>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<!-- Product: Property ID for clarifying the meaning of a property: URI from external vocabulary -->
+<div itemscope itemtype="https://schema.org/Car">
+  <img itemprop="image" src="station_waggon123.jpg" alt="" />
+  <span itemprop="name">Station Waggon 123</span>
+  <div itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue">
+      <span itemprop="name">Luggage Capacity (seats folded)</span>:
+      <span itemprop="value">500</span>
+      <meta itemprop="unitCode" content="LTR">liter
+      <link itemprop="propertyID" href="http://purl.org/vvo/ns#luggageCapacitySeatsFolded" />
+  </div>
+</div>
+
+
+No JSON-LD
+
+
+Example 12 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<!-- Product: Property ID for clarifying the meaning of a property: Code from eCl@ss Standard -->
+<!-- The Property code 02-AAM226 is for "USB interface present" in eCl@ss 8.1
+(see microdata example for comparison) -->
+<div>
+  <img src="camera123.jpg" alt="" />
+  <span>Digital Camera 123</span>
+  <div>
+      <span>USB Interface</span>:Yes
+  </div>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<!-- Product: Property ID for clarifying the meaning of a property: Code from eCl@ss Standard -->
+<!-- The Property code 02-AAM226 is for "USB interface present" in eCl@ss 8.1 -->
+<div itemscope itemtype="https://schema.org/Product">
+  <img itemprop="image" src="camera123.jpg" alt="" />
+  <span itemprop="name">Digital Camera 123</span>
+  <div itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue">
+      <span itemprop="name">USB Interface</span>:
+      <meta itemprop="value" content="True">Yes
+      <meta itemprop="propertyID" content="eclass81:02-AAM226">
+  </div>
+</div>
+
+
+No JSON-LD
+
+
+Example 13 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<!-- Product: Value References -->
+<div>
+  <img src="camera123.jpg" alt="" />
+  <span>Digital Camera 123</span>
+  <div>
+      <span>Operating Voltage</span>
+      <span>100</span>-
+      <span>250</span>
+      volts
+      at
+      <div>
+         <span>50</span>
+         <span>Hz</span>
+      </div>
+  </div>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<!-- Product: Value References -->
+<div itemscope itemtype="https://schema.org/Product">
+  <img itemprop="image" src="camera123.jpg" alt="" />
+  <span itemprop="name">Digital Camera 123</span>
+  <div itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue">
+      <span itemprop="name">Operating Voltage</span>
+      <span itemprop="minValue">100</span>-
+      <span itemprop="maxValue">250</span>
+      <meta itemprop="unitCode" content="VLT">volts
+      at
+      <div itemprop="valueReference" itemscope itemtype="https://schema.org/PropertyValue">
+         <span itemprop="value">50</span>
+         <span itemprop="unitText">Hz</span>
+      </div>
+  </div>
+</div>
+
+
+No JSON-LD
+
+
+Example 14 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<!-- Product: Ratios -->
+<div>
+  <img src="station_waggon123.jpg" alt="" />
+  <span>Station Waggon 123</span>
+  <div>
+      <span>Fuel consumption</span>:
+      <span>5</span>
+      <meta>liter</span> /
+      <div>
+        <span>100</span>
+        <span>km</span>
+      </div>
+  </div>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<!-- Product: Ratios -->
+<div itemscope itemtype="https://schema.org/Car">
+  <img itemprop="image" src="station_waggon123.jpg" alt="" />
+  <span itemprop="name">Station Waggon 123</span>
+  <div itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue">
+      <span itemprop="name">Fuel consumption</span>:
+      <span itemprop="value">5</span>
+      <meta itemprop="unitCode" content="LTR">liter /
+      <div itemprop="valueReference" itemscope itemtype="https://schema.org/PropertyValue">
+        <span itemprop="value">100</span>
+        <span itemprop="unitText">km</span>
+      </div>
+  </div>
+</div>
+
+
+No JSON-LD
+
+
+Example 15 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<!-- Product: Grouping and Hierarchical Order of Properties -->
+<div>
+  <img src="camera123.jpg" alt="" />
+  <span>Digital Camera 123</span>
+  <div>
+      <strong>Focus/Autofocus</strong>
+      <div>
+        <span>Picture Control</span>
+        <span>Landscape</span>
+        <span>Monochrome</span>
+        <span>Portrait</span>
+      </div>
+      <div>
+        <span>Single-point AF Mode</span>: Yes
+      </div>
+  </div>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<!-- Product: Grouping and Hierarchical Order of Properties -->
+<div itemscope itemtype="https://schema.org/Product">
+  <img itemprop="image" src="camera123.jpg" alt="" />
+  <span itemprop="name">Digital Camera 123</span>
+  <div itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue">
+      <strong itemprop="name">Focus/Autofocus</strong>
+      <div itemprop="value" itemscope itemtype="https://schema.org/PropertyValue">
+        <span itemprop="name">Picture Control</span>
+        <span itemprop="value">Landscape</span>
+        <span itemprop="value">Monochrome</span>
+        <span itemprop="value">Portrait</span>
+      </div>
+      <div itemprop="value" itemscope itemtype="https://schema.org/PropertyValue">
+        <span itemprop="name">Single-point AF Mode</span>:
+        <meta itemprop="value" content="True">Yes
+      </div>
+  </div>
+</div>
+
+
+No JSON-LD
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

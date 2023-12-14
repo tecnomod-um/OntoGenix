@@ -1,0 +1,152 @@
+
+
+
+
+
+liveBlogUpdate - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+liveBlogUpdate
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    liveBlogUpdate
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/liveBlogUpdate 
+
+Check for open issues.
+
+
+
+
+An update to the LiveBlog.
+ 
+
+Values expected to be one of these types
+
+
+BlogPosting
+
+
+
+Used on these types
+
+
+LiveBlogPosting
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,202 @@
+
+
+
+
+
+WearableSizeSystemEnumeration - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+WearableSizeSystemEnumeration
+A Schema.org Enumeration Type
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    SizeSystemEnumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    WearableSizeSystemEnumeration
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/WearableSizeSystemEnumeration 
+
+Check for open issues.
+
+
+
+
+Enumerates common size systems specific for wearable products.
+ 
+
+
+
+
+
+
+
+Enumeration members
+
+
+WearableSizeSystemAU
+
+WearableSizeSystemBR
+
+WearableSizeSystemCN
+
+WearableSizeSystemContinental
+
+WearableSizeSystemDE
+
+WearableSizeSystemEN13402
+
+WearableSizeSystemEurope
+
+WearableSizeSystemFR
+
+WearableSizeSystemGS1
+
+WearableSizeSystemIT
+
+WearableSizeSystemJP
+
+WearableSizeSystemMX
+
+WearableSizeSystemUK
+
+WearableSizeSystemUS
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2811
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

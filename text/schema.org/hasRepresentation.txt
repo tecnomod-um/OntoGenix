@@ -1,0 +1,172 @@
+
+
+
+
+
+hasRepresentation - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+hasRepresentation
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    hasRepresentation
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/hasRepresentation 
+
+Check for open issues.
+
+
+
+
+A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+ 
+
+Values expected to be one of these types
+
+
+PropertyValue
+
+Text
+
+URL
+
+
+
+Used on these types
+
+
+BioChemEntity
+
+
+
+
+
+Sub-properties
+
+
+hasBioPolymerSequence
+
+inChI
+
+inChIKey
+
+smiles
+
+
+
+Source
+http://www.bioschemas.org
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,176 @@
+
+
+
+
+
+director - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+director
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    director
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/director 
+
+Check for open issues.
+
+
+
+
+A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+ 
+
+Values expected to be one of these types
+
+
+Person
+
+
+
+Used on these types
+
+
+Clip
+
+CreativeWorkSeason
+
+Episode
+
+Event
+
+Movie
+
+MovieSeries
+
+RadioSeries
+
+TVSeries
+
+VideoGame
+
+VideoGameSeries
+
+VideoObject
+
+
+
+
+
+Supersedes
+
+directors
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

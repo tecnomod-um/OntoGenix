@@ -1,0 +1,166 @@
+
+
+
+
+
+trailer - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+trailer
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    trailer
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/trailer 
+
+Check for open issues.
+
+
+
+
+The trailer of a movie or TV/radio series, season, episode, etc.
+ 
+
+Values expected to be one of these types
+
+
+VideoObject
+
+
+
+Used on these types
+
+
+CreativeWorkSeason
+
+Episode
+
+Movie
+
+MovieSeries
+
+RadioSeries
+
+TVSeries
+
+VideoGame
+
+VideoGameSeries
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

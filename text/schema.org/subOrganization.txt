@@ -1,0 +1,157 @@
+
+
+
+
+
+subOrganization - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+subOrganization
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    subOrganization
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/subOrganization 
+
+Check for open issues.
+
+
+
+
+A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
+ 
+Inverse-property: 
+    
+    
+    parentOrganization
+
+
+Values expected to be one of these types
+
+
+Organization
+
+
+
+Used on these types
+
+
+Organization
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

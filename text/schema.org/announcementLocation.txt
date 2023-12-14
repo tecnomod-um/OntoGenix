@@ -1,0 +1,176 @@
+
+
+
+
+
+announcementLocation - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+announcementLocation
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    contentLocation 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    spatialCoverage 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    announcementLocation
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/announcementLocation 
+
+Check for open issues.
+
+
+
+
+Indicates a specific CivicStructure or LocalBusiness associated with the SpecialAnnouncement. For example, a specific testing facility or business with special opening hours. For a larger geographic region like a quarantine of an entire region, use spatialCoverage.
+ 
+
+Values expected to be one of these types
+
+
+CivicStructure
+
+LocalBusiness
+
+
+
+Used on these types
+
+
+SpecialAnnouncement
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2514
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

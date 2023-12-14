@@ -1,0 +1,658 @@
+
+
+
+
+
+OrganizationRole - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+OrganizationRole
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Role 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    OrganizationRole
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/OrganizationRole 
+
+Check for open issues.
+
+
+
+
+A subclass of Role used to describe roles within organizations.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    OrganizationRole
+
+numberedPosition
+
+Number
+A number associated with a role in an organization, for example, the number on an athlete's jersey.
+                
+                
+                
+            
+
+
+Properties from 
+    
+    
+    Role
+
+endDate
+
+Date  or 
+DateTime
+The end date and time of the item (in ISO 8601 date format).
+                
+                
+                
+            
+
+
+roleName
+
+Text  or 
+URL
+A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.
+                 Supersedes 
+                
+    
+    
+    namedPosition.
+                
+                
+            
+
+
+startDate
+
+Date  or 
+DateTime
+The start date and time of the item (in ISO 8601 date format).
+                
+                
+                
+            
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+
+
+
+More specific Types
+
+
+EmployeeRole
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+A basic Role example in JSON that
+shows how to qualify the 'member' property
+by adding an intermediate Role entity.
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Organization">
+  <span itemprop="name">Cryptography Users</span>
+  <div itemprop="member" itemscope
+        itemtype="https://schema.org/OrganizationRole">
+    <div itemprop="member" itemscope
+            itemtype="https://schema.org/Person">
+      <span itemprop="name">Alice</span>
+    </div>
+    <span itemprop="startDate">1977</span>
+  </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="Organization">
+  <span property="name">Cryptography Users</span>
+  <div property="member" typeof="OrganizationRole">
+    <div property="member" typeof="Person">
+      <span property="name">Alice</span>
+    </div>
+    <span property="startDate">1977</span>
+  </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Cryptography Users",
+  "member": {
+    "@type": "OrganizationRole",
+    "member": {
+    "@type": "Person",
+    "name": "Alice"
+    },
+    "startDate": "1977"
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Cryptography Users",
+  "member": {
+    "@type": "OrganizationRole",
+    "member": {
+    "@type": "Person",
+    "name": "Alice"
+    },
+    "startDate": "1977"
+  }
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+A JSON example of an OrganizationRole being used to qualify
+the 'alumniOf' property (which is inverseOf 'alumni').
+
+Note that we use startDate to indicate when the alumniOf
+situation began, which was the date of leaving the organization.
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Person">
+    <span itemprop="name">Delia Derbyshire</span>
+    <link itemprop="sameAs" href="http://en.wikipedia.org/wiki/Delia_Derbyshire">
+    <div itemprop="alumniOf" itemscope itemtype="https://schema.org/OrganizationRole">
+        <div itemprop="alumniOf" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+            <span itemprop="name">University of Cambridge</span>
+            <link itemprop="sameAs" href="http://en.wikipedia.org/wiki/University_of_Cambridge">
+        </div>
+        <span itemprop="startDate">1959</span>
+    </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="Person">
+    <span property="name">Delia Derbyshire</span>
+    <link property="sameAs" href="http://en.wikipedia.org/wiki/Delia_Derbyshire">
+    <div property="alumniOf" typeof="OrganizationRole">
+        <div property="alumniOf" typeof="CollegeOrUniversity">
+            <span property="name">University of Cambridge</span>
+            <link property="sameAs" href="http://en.wikipedia.org/wiki/University_of_Cambridge">
+        </div>
+        <span property="startDate">1959</span>
+    </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Delia Derbyshire",
+    "sameAs": "http://en.wikipedia.org/wiki/Delia_Derbyshire",
+    "alumniOf": {
+        "@type": "OrganizationRole",
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Cambridge",
+            "sameAs": "http://en.wikipedia.org/wiki/University_of_Cambridge"
+        },
+        "startDate": "1959"
+    }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Delia Derbyshire",
+    "sameAs": "http://en.wikipedia.org/wiki/Delia_Derbyshire",
+    "alumniOf": {
+        "@type": "OrganizationRole",
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Cambridge",
+            "sameAs": "http://en.wikipedia.org/wiki/University_of_Cambridge"
+        },
+        "startDate": "1959"
+    }
+}
+
+
+Example 3 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+A JSON example of an OrganizationRole, showing information
+about a 'member' of a 'SportsTeam', including time qualfiers
+(when he began and ended that role).
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/SportsTeam">
+    <span itemprop="name">San Francisco 49ers</span>
+    <div itemprop="member" itemscope itemtype="https://schema.org/OrganizationRole">
+        <div itemprop="member" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Joe Montana</span>
+        </div>
+        <span itemprop="startDate">1979</span>
+        <span itemprop="endDate">1992</span>
+        <span itemprop="roleName">Quarterback</span>
+    </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="SportsTeam">
+    <span property="name">San Francisco 49ers</span>
+    <div property="member" typeof="OrganizationRole">
+        <div property="member" typeof="https://schema.org/Person">
+            <span property="name">Joe Montana</span>
+        </div>
+        <span property="startDate">1979</span>
+        <span property="endDate">1992</span>
+        <span property="roleName">Quarterback</span>
+    </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsTeam",
+  "name": "San Francisco 49ers",
+  "member": {
+    "@type": "OrganizationRole",
+    "member": {
+      "@type": "Person",
+      "name": "Joe Montana"
+    },
+    "startDate": "1979",
+    "endDate": "1992",
+    "roleName": "Quarterback"
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "SportsTeam",
+  "name": "San Francisco 49ers",
+  "member": {
+    "@type": "OrganizationRole",
+    "member": {
+      "@type": "Person",
+      "name": "Joe Montana"
+    },
+    "startDate": "1979",
+    "endDate": "1992",
+    "roleName": "Quarterback"
+  }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

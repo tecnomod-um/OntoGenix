@@ -1,0 +1,175 @@
+
+
+
+
+
+Specialty - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+Specialty
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    Specialty
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/Specialty 
+
+Check for open issues.
+
+
+
+
+Any branch of a field in which people typically develop specific expertise, usually after significant study, time, and effort.
+ 
+
+
+
+
+Instances of 
+    
+    
+    Specialty  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+specialty
+
+WebPage
+One of the domain specialities to which this web page's content applies.
+  
+
+
+
+
+
+
+Enumeration Subtypes
+
+
+MedicalSpecialty
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

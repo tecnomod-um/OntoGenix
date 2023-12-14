@@ -1,0 +1,156 @@
+
+
+
+
+
+sdDatePublished - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+sdDatePublished
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    sdDatePublished
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/sdDatePublished 
+
+Check for open issues.
+
+
+
+
+Indicates the date on which the current structured data was generated / published. Typically used alongside sdPublisher.
+ 
+
+Values expected to be one of these types
+
+
+Date
+
+
+
+Used on these types
+
+
+CreativeWork
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1886
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

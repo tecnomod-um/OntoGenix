@@ -1,0 +1,161 @@
+
+
+
+
+
+opponent - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+opponent
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    participant 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    opponent
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/opponent 
+
+Check for open issues.
+
+
+
+
+A sub property of participant. The opponent on this action.
+ 
+
+Values expected to be one of these types
+
+
+Person
+
+
+
+Used on these types
+
+
+ExerciseAction
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

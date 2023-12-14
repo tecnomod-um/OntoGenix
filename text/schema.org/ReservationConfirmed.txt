@@ -1,0 +1,173 @@
+
+
+
+
+
+ReservationConfirmed - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+ReservationConfirmed
+A Schema.org Enumeration Member
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StatusEnumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    ReservationStatusType 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    ReservationConfirmed
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/ReservationConfirmed 
+
+Check for open issues.
+
+
+
+
+The status of a confirmed reservation.
+ A member value for enumeration type: 
+    
+    
+    ReservationStatusType
+ 
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

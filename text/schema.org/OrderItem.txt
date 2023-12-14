@@ -1,0 +1,562 @@
+
+
+
+
+
+OrderItem - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+OrderItem
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    OrderItem
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/OrderItem 
+
+Check for open issues.
+
+
+
+
+An order item is a line of an order. It includes the quantity and shipping details of a bought offer.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    OrderItem
+
+orderDelivery
+
+ParcelDelivery
+The delivery of the parcel related to this order or order item.
+                
+                
+                
+            
+
+
+orderItemNumber
+
+Text
+The identifier of the order item.
+                
+                
+                
+            
+
+
+orderItemStatus
+
+OrderStatus
+The current status of the order item.
+                
+                
+                
+            
+
+
+orderQuantity
+
+Number
+The number of the item ordered. If the property is not set, assume the quantity is one.
+                
+                
+                
+            
+
+
+orderedItem
+
+OrderItem  or 
+Product  or 
+Service
+The item ordered.
+                
+                
+                
+            
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    OrderItem  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+orderedItem
+
+Order  or 
+OrderItem
+The item ordered.
+  
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+An example of an order for multiple items, shipped separately.
+
+ACME Supplies
+Customer: Jane Doe
+Order:
+  Item abc123: 1 Widget: delivered 2015-03-10
+  Item def456: 3 Widget accessories: shipped 2015-03-12
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Order">
+  <div itemprop="seller" itemscope itemtype="https://schema.org/Organization">
+    <b itemprop="name">ACME Supplies</b>
+  </div>
+  <div itemprop="customer" itemscope itemtype="https://schema.org/Person">
+    <b itemprop="name">Jane Doe</b>
+  </div>
+  <div itemprop="orderedItem" itemscope itemtype="https://schema.org/OrderItem">
+    Item number: <span itemprop="orderItemNumber">abc123</span>
+    <span itemprop="orderQuantity">1</span>
+    <div itemprop="orderedItem" itemscope itemtype="https://schema.org/Product">
+      <span itemprop="name">Widget</span>
+    </div>
+    <link itemprop="orderItemStatus" href="https://schema.org/OrderDelivered" />Delivered
+    <div itemprop="orderDelivery" itemscope itemtype="https://schema.org/ParcelDelivery">
+      <time itemprop="expectedArrivalFrom">2015-03-10</time>
+    </div>
+  </div>
+  <div itemprop="orderedItem" itemscope itemtype="https://schema.org/OrderItem">
+    Item number: <span itemprop="orderItemNumber">def456</span>
+    <span itemprop="orderQuantity">4</span>
+    <div itemprop="orderedItem" itemscope itemtype="https://schema.org/Product">
+      <span itemprop="name">Widget accessories</span>
+    </div>
+    <link itemprop="orderItemStatus" href="https://schema.org/OrderInTransit" />Shipped
+    <div itemprop="orderDelivery" itemscope itemtype="https://schema.org/ParcelDelivery">
+      <time itemprop="expectedArrivalFrom">2015-03-15</time>
+      <time itemprop="expectedArrivalUntil">2015-03-18</time>
+    </div>
+  </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="Order">
+  <div property="seller" typeof="Organization">
+    <b property="name">ACME Supplies</b>
+  </div>
+  <div property="customer" typeof="Person">
+    <b property="name">Jane Doe</b>
+  </div>
+  <div property="orderedItem" typeof="OrderItem">
+    Item number: <span property="orderItemNumber">abc123</span>
+    <span property="orderQuantity">1</span>
+    <div property="orderedItem" typeof="Product">
+      <span property="name">Widget</span>
+    </div>
+    <link property="orderItemStatus" href="https://schema.org/OrderDelivered" />Delivered
+    <div property="orderDelivery" typeof="ParcelDelivery">
+      <time property="expectedArrivalFrom">2015-03-10</time>
+    </div>
+  </div>
+  <div property="orderedItem" typeof="OrderItem">
+    Item number: <span property="orderItemNumber">def456</span>
+    <span property="orderQuantity">4</span>
+    <div property="orderedItem" typeof="Product">
+      <span property="name">Widget accessories</span>
+    </div>
+    <link property="orderItemStatus" href="https://schema.org/OrderInTransit" />Shipped
+    <div property="orderDelivery" typeof="ParcelDelivery">
+      <time property="expectedArrivalFrom">2015-03-15</time>
+      <time property="expectedArrivalUntil">2015-03-18</time>
+    </div>
+  </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Order",
+  "seller": {
+    "@type": "Organization",
+    "name": "ACME Supplies"
+  },
+  "customer": {
+    "@type": "Person",
+    "name": "Jane Doe"
+  },
+  "orderedItem": [
+    {
+      "@type": "OrderItem",
+      "orderItemNumber": "abc123",
+      "orderQuantity": 1,
+      "orderedItem": {
+        "@type": "Product",
+        "name": "Widget"
+      },
+      "orderItemStatus": "https://schema.org/OrderDelivered",
+      "orderDelivery": {
+        "@type": "ParcelDelivery",
+        "expectedArrivalFrom": "2015-03-10"
+      }
+    },
+    {
+      "@type": "OrderItem",
+      "orderItemNumber": "def456",
+      "orderQuantity": 3,
+      "orderedItem": {
+        "@type": "Product",
+        "name": "Widget accessories"
+      },
+      "orderItemStatus": "https://schema.org/OrderInTransit",
+      "orderDelivery": {
+        "@type": "ParcelDelivery",
+        "expectedArrivalFrom": "2015-03-15",
+        "expectedArrivalUntil": "2015-03-18"
+      }
+    }
+  ]
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "Order",
+  "seller": {
+    "@type": "Organization",
+    "name": "ACME Supplies"
+  },
+  "customer": {
+    "@type": "Person",
+    "name": "Jane Doe"
+  },
+  "orderedItem": [
+    {
+      "@type": "OrderItem",
+      "orderItemNumber": "abc123",
+      "orderQuantity": 1,
+      "orderedItem": {
+        "@type": "Product",
+        "name": "Widget"
+      },
+      "orderItemStatus": "https://schema.org/OrderDelivered",
+      "orderDelivery": {
+        "@type": "ParcelDelivery",
+        "expectedArrivalFrom": "2015-03-10"
+      }
+    },
+    {
+      "@type": "OrderItem",
+      "orderItemNumber": "def456",
+      "orderQuantity": 3,
+      "orderedItem": {
+        "@type": "Product",
+        "name": "Widget accessories"
+      },
+      "orderItemStatus": "https://schema.org/OrderInTransit",
+      "orderDelivery": {
+        "@type": "ParcelDelivery",
+        "expectedArrivalFrom": "2015-03-15",
+        "expectedArrivalUntil": "2015-03-18"
+      }
+    }
+  ]
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

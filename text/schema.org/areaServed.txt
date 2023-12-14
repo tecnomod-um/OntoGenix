@@ -1,0 +1,282 @@
+
+
+
+
+
+areaServed - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+areaServed
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    areaServed
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/areaServed 
+
+Check for open issues.
+
+
+
+
+The geographic area where a service or offered item is provided.
+ 
+
+Values expected to be one of these types
+
+
+AdministrativeArea
+
+GeoShape
+
+Place
+
+Text
+
+
+
+Used on these types
+
+
+ContactPoint
+
+DeliveryChargeSpecification
+
+Demand
+
+Offer
+
+Organization
+
+Service
+
+
+
+
+
+Sub-properties
+
+
+availableAtOrFrom
+
+eligibleRegion
+
+
+Supersedes
+
+serviceArea
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Police station example (JSON-LD only).
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "PoliceStation",
+        "name": "Youngstown Central Police Station",
+        "description": "Central police station",
+        "openingHours": "Mo-Su",
+        "telephone": "+13303301888",
+        "email": "ohio.police.example@example.com",
+        "image": "https://homepages.cae.wisc.edu/~ece533/images/lena.png",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Youngstown",
+            "addressRegion": "OH",
+            "postalCode": "44507",
+            "streetAddress": "270  Derek Drive"
+        },
+        "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": 41.108237,
+                "longitude": -80.642982
+            },
+            "geoRadius": 1000
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "bestRating": 100,
+            "worstRating": 0,
+            "ratingValue": 88,
+            "reviewCount": 122
+        }
+    }
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+        "@context": "https://schema.org",
+        "@type": "PoliceStation",
+        "name": "Youngstown Central Police Station",
+        "description": "Central police station",
+        "openingHours": "Mo-Su",
+        "telephone": "+13303301888",
+        "email": "ohio.police.example@example.com",
+        "image": "https://homepages.cae.wisc.edu/~ece533/images/lena.png",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Youngstown",
+            "addressRegion": "OH",
+            "postalCode": "44507",
+            "streetAddress": "270  Derek Drive"
+        },
+        "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": 41.108237,
+                "longitude": -80.642982
+            },
+            "geoRadius": 1000
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "bestRating": 100,
+            "worstRating": 0,
+            "ratingValue": 88,
+            "reviewCount": 122
+        }
+    }
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

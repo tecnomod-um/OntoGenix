@@ -1,0 +1,163 @@
+
+
+
+
+
+seasonNumber - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+seasonNumber
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    position 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    seasonNumber
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/seasonNumber 
+
+Check for open issues.
+
+
+
+
+Position of the season within an ordered group of seasons.
+ 
+
+Values expected to be one of these types
+
+
+Integer
+
+Text
+
+
+
+Used on these types
+
+
+CreativeWorkSeason
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

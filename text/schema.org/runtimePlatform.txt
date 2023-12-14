@@ -1,0 +1,156 @@
+
+
+
+
+
+runtimePlatform - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+runtimePlatform
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    runtimePlatform
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/runtimePlatform 
+
+Check for open issues.
+
+
+
+
+Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+
+
+Used on these types
+
+
+SoftwareSourceCode
+
+
+
+
+
+Supersedes
+
+runtime
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

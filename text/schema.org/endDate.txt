@@ -1,0 +1,169 @@
+
+
+
+
+
+endDate - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+endDate
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    endDate
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/endDate 
+
+Check for open issues.
+
+
+
+
+The end date and time of the item (in ISO 8601 date format).
+ 
+
+Values expected to be one of these types
+
+
+Date
+
+DateTime
+
+
+
+Used on these types
+
+
+CreativeWorkSeason
+
+CreativeWorkSeries
+
+EducationalOccupationalProgram
+
+Event
+
+MerchantReturnPolicySeasonalOverride
+
+Role
+
+Schedule
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2486
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

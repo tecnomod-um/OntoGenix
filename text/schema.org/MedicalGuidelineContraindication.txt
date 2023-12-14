@@ -1,0 +1,620 @@
+
+
+
+
+
+MedicalGuidelineContraindication - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+MedicalGuidelineContraindication
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalEntity 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalGuideline 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    MedicalGuidelineContraindication
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/MedicalGuidelineContraindication 
+
+Check for open issues.
+
+
+
+
+A guideline contraindication that designates a process as harmful and where quality of the data supporting the contraindication is sound.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+
+Properties from 
+    
+    
+    MedicalGuideline
+
+evidenceLevel
+
+MedicalEvidenceLevel
+Strength of evidence of the data used to formulate the guideline (enumerated).
+                
+                
+                
+            
+
+
+evidenceOrigin
+
+Text
+Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
+                
+                
+                
+            
+
+
+guidelineDate
+
+Date
+Date on which this guideline's recommendation was made.
+                
+                
+                
+            
+
+
+guidelineSubject
+
+MedicalEntity
+The medical conditions, treatments, etc. that are the subject of the guideline.
+                
+                
+                
+            
+
+
+Properties from 
+    
+    
+    MedicalEntity
+
+code
+
+MedicalCode
+A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+                
+                
+                
+            
+
+
+funding
+
+Grant
+A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.
+                
+                
+                Inverse property: 
+    
+    
+    fundedItem
+
+
+
+guideline
+
+MedicalGuideline
+A medical guideline related to this entity.
+                
+                
+                
+            
+
+
+legalStatus
+
+DrugLegalStatus  or 
+MedicalEnumeration  or 
+Text
+The drug or supplement's legal status, including any controlled substance schedules that apply.
+                
+                
+                
+            
+
+
+medicineSystem
+
+MedicineSystem
+The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
+                
+                
+                
+            
+
+
+recognizingAuthority
+
+Organization
+If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+                
+                
+                
+            
+
+
+relevantSpecialty
+
+MedicalSpecialty
+If applicable, a medical specialty in which this entity is relevant.
+                
+                
+                
+            
+
+
+study
+
+MedicalStudy
+A medical study or trial related to this entity.
+                
+                
+                
+            
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<h1>Guidelines</h1>
+<ul>
+  <li>Recommendation: NewvoDrug is indicated for initial treatment of cardiac
+  failure for all adult patients. (Strong recommendation;
+  Class I, based on multiple randomized clinical trials)</li>
+  <li>Contraindication: cardiac failure should never be treated with
+  appendectomy in adults. (Class III, standard of care)</li>
+</ul>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<h1>Guidelines</h1>
+<ul>
+  <li>Recommendation:
+  <span itemscope itemtype="https://schema.org/MedicalGuidelineRecommendation">
+    <span itemprop="guidelineSubject" itemscope itemtype="https://schema.org/Drug">
+      <span itemprop="name">NewvoDrug</span>
+    </span>
+    is indicated for initial treatment of
+    <span itemprop="guidelineSubject" itemscope itemtype="https://schema.org/MedicalCondition">
+      <span itemprop="name">cardiac failure</span>
+    </span>
+    for all adult patients.
+    (<span itemprop="recommendationStrength">Strong recommendation</span>;
+    <a itemprop="evidenceLevel" href="https://schema.org/EvidenceLevelA">Class I</a>,
+    based on
+    <span itemprop="evidenceOrigin">multiple randomized clinical trials</span>)
+  </span>
+  </li>
+  <li>Contraindication:
+  <span itemscope itemtype="https://schema.org/MedicalGuidelineContraindication">
+    <span itemprop="guidelineSubject" itemscope itemtype="https://schema.org/MedicalCondition">
+      <span itemprop="name">cardiac failure</span></span> should never
+    be treated with
+    <span itemprop="guidelineSubject" itemscope itemtype="https://schema.org/TherapeuticProcedure">
+      <span itemprop="name">appendectomy</span></span> in adults.
+    (Class III, <link itemprop="evidenceLevel" href="https://schema.org/EvidenceLevelC"/>
+    <span itemprop="evidenceOrigin">standard of care</span>)
+  </span></li>
+</ul>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<h1>Guidelines</h1>
+<ul>
+  <li>Recommendation:
+  <span  typeof="MedicalGuidelineRecommendation">
+    <span property="guidelineSubject"  typeof="Drug">
+      <span property="name">NewvoDrug</span>
+    </span>
+    is indicated for initial treatment of
+    <span property="guidelineSubject"  typeof="MedicalCondition">
+      <span property="name">cardiac failure</span>
+    </span>
+    for all adult patients.
+    (<span property="recommendationStrength">Strong recommendation</span>;
+    <a property="evidenceLevel" href="https://schema.org/EvidenceLevelA">
+      Class I</a>,
+    based on
+    <span property="evidenceOrigin">multiple randomized clinical trials</span>)
+  </span>
+  </li>
+  <li>Contraindication:
+  <span  typeof="MedicalGuidelineContraindication">
+    <span property="guidelineSubject"  typeof="MedicalCondition">
+      <span property="name">cardiac failure</span></span> should never
+    be treated with
+    <span property="guidelineSubject"  typeof="TherapeuticProcedure">
+      <span property="name">appendectomy</span></span> in adults.
+    (Class III, <link property="evidenceLevel" href="https://schema.org/EvidenceLevelC"/>
+    <span property="evidenceOrigin">standard of care</span>)
+  </span></li>
+</ul>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalGuidelineRecommendation",
+      "evidenceLevel": "https://schema.org/EvidenceLevelA",
+      "evidenceOrigin": "multiple randomized clinical trials",
+      "recommendationStrength": "Strong recommendation",
+      "guidelineSubject": [
+        {
+          "@type": "Drug",
+          "name": "NewvoDrug"
+        },
+        {
+          "@type": "MedicalCondition",
+          "name": "cardiac failure"
+        }
+      ]
+    },
+    {
+      "@type": "MedicalGuidelineContraindication",
+      "evidenceLevel": "https://schema.org/EvidenceLevelC",
+      "evidenceOrigin": "standard of care",
+      "guidelineSubject": [
+        {
+          "@type": "MedicalCondition",
+          "name": "cardiac failure"
+        },
+        {
+          "@type": "TherapeuticProcedure",
+          "name": "appendectomy"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalGuidelineRecommendation",
+      "evidenceLevel": "https://schema.org/EvidenceLevelA",
+      "evidenceOrigin": "multiple randomized clinical trials",
+      "recommendationStrength": "Strong recommendation",
+      "guidelineSubject": [
+        {
+          "@type": "Drug",
+          "name": "NewvoDrug"
+        },
+        {
+          "@type": "MedicalCondition",
+          "name": "cardiac failure"
+        }
+      ]
+    },
+    {
+      "@type": "MedicalGuidelineContraindication",
+      "evidenceLevel": "https://schema.org/EvidenceLevelC",
+      "evidenceOrigin": "standard of care",
+      "guidelineSubject": [
+        {
+          "@type": "MedicalCondition",
+          "name": "cardiac failure"
+        },
+        {
+          "@type": "TherapeuticProcedure",
+          "name": "appendectomy"
+        }
+      ]
+    }
+  ]
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

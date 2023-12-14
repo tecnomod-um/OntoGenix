@@ -1,0 +1,178 @@
+
+
+
+
+
+partOfTrip - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+partOfTrip
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    partOfTrip
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/partOfTrip 
+
+Check for open issues.
+
+
+
+
+Identifies that this Trip is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+ 
+Inverse-property: 
+    
+    
+    subTrip
+
+
+Values expected to be one of these types
+
+
+Trip
+
+
+
+Used on these types
+
+
+Trip
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       Tourism Structured Web Data Community Group
+                    
+
+
+
+                    This element is based on the work of the Tourism Structured Web Data Community Group.
+                    
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1810
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

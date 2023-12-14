@@ -1,0 +1,179 @@
+
+
+
+
+
+RsvpResponseType - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+RsvpResponseType
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    RsvpResponseType
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/RsvpResponseType 
+
+Check for open issues.
+
+
+
+
+RsvpResponseType is an enumeration type whose instances represent responding to an RSVP request.
+ 
+
+
+
+
+Instances of 
+    
+    
+    RsvpResponseType  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+rsvpResponse
+
+RsvpAction
+The response (yes, no, maybe) to the RSVP.
+  
+
+
+
+
+Enumeration members
+
+
+RsvpResponseMaybe
+
+RsvpResponseNo
+
+RsvpResponseYes
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

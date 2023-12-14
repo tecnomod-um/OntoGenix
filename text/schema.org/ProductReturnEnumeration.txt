@@ -1,0 +1,169 @@
+
+
+
+
+
+ProductReturnEnumeration - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+ProductReturnEnumeration
+A Schema.org Enumeration Type
+
+
+Note: This term has been superseded.
+Note: This term has been retired from the vocabulary.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    ProductReturnEnumeration
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/ProductReturnEnumeration 
+
+Check for open issues.
+
+
+
+
+ProductReturnEnumeration enumerates several kinds of product return policy. Note that this structure may not capture all aspects of the policy.
+ 
+
+
+
+
+
+
+
+Enumeration members
+
+
+
+
+
+SupersededBy
+
+MerchantReturnEnumeration
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2288
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

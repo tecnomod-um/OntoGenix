@@ -1,0 +1,152 @@
+
+
+
+
+
+specialty - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+specialty
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    specialty
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/specialty 
+
+Check for open issues.
+
+
+
+
+One of the domain specialities to which this web page's content applies.
+ 
+
+Values expected to be one of these types
+
+
+Specialty
+
+
+
+Used on these types
+
+
+WebPage
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

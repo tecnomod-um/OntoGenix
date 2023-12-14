@@ -1,0 +1,384 @@
+
+
+
+
+
+AMRadioChannel - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+AMRadioChannel
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    BroadcastChannel 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    RadioChannel 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    AMRadioChannel
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/AMRadioChannel 
+
+Check for open issues.
+
+
+
+
+A radio channel that uses AM.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+
+
+Properties from 
+    
+    
+    BroadcastChannel
+
+broadcastChannelId
+
+Text
+The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
+                
+                
+                
+            
+
+
+broadcastFrequency
+
+BroadcastFrequencySpecification  or 
+Text
+The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+                
+                
+                
+            
+
+
+broadcastServiceTier
+
+Text
+The type of service required to have access to the channel (e.g. Standard or Premium).
+                
+                
+                
+            
+
+
+genre
+
+Text  or 
+URL
+Genre of the creative work, broadcast channel or group.
+                
+                
+                
+            
+
+
+inBroadcastLineup
+
+CableOrSatelliteService
+The CableOrSatelliteService offering the channel.
+                
+                
+                
+            
+
+
+providesBroadcastService
+
+BroadcastService
+The BroadcastService offered on this channel.
+                
+                
+                Inverse property: 
+    
+    
+    hasBroadcastChannel
+
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1004
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

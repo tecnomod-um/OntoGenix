@@ -1,0 +1,152 @@
+
+
+
+
+
+availableTest - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+availableTest
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    availableTest
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/availableTest 
+
+Check for open issues.
+
+
+
+
+A diagnostic test or procedure offered by this lab.
+ 
+
+Values expected to be one of these types
+
+
+MedicalTest
+
+
+
+Used on these types
+
+
+DiagnosticLab
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

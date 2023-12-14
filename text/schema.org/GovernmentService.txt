@@ -1,0 +1,914 @@
+
+
+
+
+
+GovernmentService - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+GovernmentService
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Service 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    GovernmentService
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/GovernmentService 
+
+Check for open issues.
+
+
+
+
+A service provided by a government organization, e.g. food stamps, veterans benefits, etc.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    GovernmentService
+
+jurisdiction
+
+AdministrativeArea  or 
+Text
+Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
+                
+                
+                
+            
+
+
+serviceOperator
+
+Organization
+The operating organization, if different from the provider.  This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor.
+                
+                
+                
+            
+
+
+Properties from 
+    
+    
+    Service
+
+aggregateRating
+
+AggregateRating
+The overall rating, based on a collection of reviews or ratings, of the item.
+                
+                
+                
+            
+
+
+areaServed
+
+AdministrativeArea  or 
+GeoShape  or 
+Place  or 
+Text
+The geographic area where a service or offered item is provided.
+                 Supersedes 
+                
+    
+    
+    serviceArea.
+                
+                
+            
+
+
+audience
+
+Audience
+An intended audience, i.e. a group for whom something was created.
+                 Supersedes 
+                
+    
+    
+    serviceAudience.
+                
+                
+            
+
+
+availableChannel
+
+ServiceChannel
+A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+                
+                
+                
+            
+
+
+award
+
+Text
+An award won by or for this item.
+                 Supersedes 
+                
+    
+    
+    awards.
+                
+                
+            
+
+
+brand
+
+Brand  or 
+Organization
+The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+                
+                
+                
+            
+
+
+broker
+
+Organization  or 
+Person
+An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+                 Supersedes 
+                
+    
+    
+    bookingAgent.
+                
+                
+            
+
+
+category
+
+CategoryCode  or 
+PhysicalActivityCategory  or 
+Text  or 
+Thing  or 
+URL
+A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+                
+                
+                
+            
+
+
+hasOfferCatalog
+
+OfferCatalog
+Indicates an OfferCatalog listing for this Organization, Person, or Service.
+                
+                
+                
+            
+
+
+hoursAvailable
+
+OpeningHoursSpecification
+The hours during which this service or contact is available.
+                
+                
+                
+            
+
+
+isRelatedTo
+
+Product  or 
+Service
+A pointer to another, somehow related product (or multiple products).
+                
+                
+                
+            
+
+
+isSimilarTo
+
+Product  or 
+Service
+A pointer to another, functionally similar product (or multiple products).
+                
+                
+                
+            
+
+
+logo
+
+ImageObject  or 
+URL
+An associated logo.
+                
+                
+                
+            
+
+
+offers
+
+Demand  or 
+Offer
+An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+                
+                
+                Inverse property: 
+    
+    
+    itemOffered
+
+
+
+provider
+
+Organization  or 
+Person
+The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+                 Supersedes 
+                
+    
+    
+    carrier.
+                
+                
+            
+
+
+providerMobility
+
+Text
+Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
+                
+                
+                
+            
+
+
+review
+
+Review
+A review of the item.
+                 Supersedes 
+                
+    
+    
+    reviews.
+                
+                
+            
+
+
+serviceOutput
+
+Thing
+The tangible thing generated by the service, e.g. a passport, permit, etc.
+                 Supersedes 
+                
+    
+    
+    produces.
+                
+                
+            
+
+
+serviceType
+
+GovernmentBenefitsType  or 
+Text
+The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+                
+                
+                
+            
+
+
+slogan
+
+Text
+A slogan or motto associated with the item.
+                
+                
+                
+            
+
+
+termsOfService
+
+Text  or 
+URL
+Human-readable terms of service documentation.
+                
+                
+                
+            
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    GovernmentService  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+governmentBenefitsInfo
+
+SpecialAnnouncement
+governmentBenefitsInfo provides information about government benefits associated with a SpecialAnnouncement.
+  
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<div>
+NYC Food Service Establishment Permit, issued by Department of Health and Mental Hygiene.
+(issued through NYC Food Service Establishment Permit Service; valid in New York for 1 year).
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/GovernmentPermit">
+  <span itemprop="name">NYC Food Service Establishment Permit</span>
+  <div itemprop="issuedBy" itemscope itemtype="https://schema.org/GovernmentOrganization">
+    <span itemprop="name">Department of Health and Mental Hygiene"</span>
+  </div>
+  <div itemprop="issuedThrough" itemscope itemtype="https://schema.org/GovernmentService">
+    <span itemprop="name">NYC Food Service Establishment Permit Service</span>
+   </div>
+  <div itemprop="validIn" itemscope itemtype="https://schema.org/AdministrativeArea">
+    <span itemprop="name">New York</span>
+  </div>
+  <time itemprop="validFor" datetime="P1Y">1 year</time>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="GovernmentPermit">
+  <span property="name">NYC Food Service Establishment Permit</span>
+  <div property="issuedBy" typeof="GovernmentOrganization">
+    <span property="name">Department of Health and Mental Hygiene"</span>
+  </div>
+  <div property="issuedThrough" typeof="GovernmentService">
+    <span property="name">NYC Food Service Establishment Permit Service</span>
+   </div>
+  <div property="validIn" typeof="AdministrativeArea">
+    <span property="name">New York</span>
+  </div>
+  <time property="validFor" datetime="P1Y">1 Year</time>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GovernmentPermit",
+  "issuedBy": {
+    "@type": "GovernmentOrganization",
+    "name": "Department of Health and Mental Hygiene\""
+  },
+  "issuedThrough": {
+    "@type": "GovernmentService",
+    "name": "NYC Food Service Establishment Permit Service"
+  },
+  "name": "NYC Food Service Establishment Permit",
+  "validFor": "P1Y",
+  "validIn": {
+    "@type": "AdministrativeArea",
+    "name": "New York"
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "GovernmentPermit",
+  "issuedBy": {
+    "@type": "GovernmentOrganization",
+    "name": "Department of Health and Mental Hygiene\""
+  },
+  "issuedThrough": {
+    "@type": "GovernmentService",
+    "name": "NYC Food Service Establishment Permit Service"
+  },
+  "name": "NYC Food Service Establishment Permit",
+  "validFor": "P1Y",
+  "validIn": {
+    "@type": "AdministrativeArea",
+    "name": "New York"
+  }
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+This example shows a JSON-LD description of services that do not necessarily have a direct
+human-oriented HTML description. It describes a GovernmentService named "Veterans Affairs Emergency Mental Health",
+its operator, service area and service details, such as its Veterans Crisis Line (including  phone contact line
+hours of operation, language and other details).
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GovernmentService",
+  "name": "Veterans Affairs Emergency Mental Health",
+  "serviceType": "Psychiatric Emergency Services",
+  "serviceOperator": {
+    "@type": "GovernmentOrganization",
+    "name": "US Department of Veterans Affairs"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Massachusetts"
+  },
+  "audience": {
+    "@type": "Audience",
+    "name": "Veterans"
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "name": "Urgent Care Clinic",
+    "availableLanguage": {
+      "@type": "Language",
+      "name": "Spanish",
+      "alternateName": "es"
+    },
+    "serviceLocation": {
+      "@type": "Hospital",
+      "name": "VA Boston -- West Roxbury",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1400 VFW Parkway",
+        "addressLocality": "West Roxbury",
+        "addressRegion": "MA",
+        "postalCode": "02132"
+      }
+    }
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "GovernmentService",
+  "name": "Veterans Affairs Emergency Mental Health",
+  "serviceType": "Psychiatric Emergency Services",
+  "serviceOperator": {
+    "@type": "GovernmentOrganization",
+    "name": "US Department of Veterans Affairs"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Massachusetts"
+  },
+  "audience": {
+    "@type": "Audience",
+    "name": "Veterans"
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "name": "Urgent Care Clinic",
+    "availableLanguage": {
+      "@type": "Language",
+      "name": "Spanish",
+      "alternateName": "es"
+    },
+    "serviceLocation": {
+      "@type": "Hospital",
+      "name": "VA Boston -- West Roxbury",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1400 VFW Parkway",
+        "addressLocality": "West Roxbury",
+        "addressRegion": "MA",
+        "postalCode": "02132"
+      }
+    }
+  }
+}
+
+
+Example 3 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Government benefits coverage for SpecialAnnouncement pertaining to the covid-19 situation.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SpecialAnnouncement",
+  "name": "New Paycheck Protection Program for small business",
+  "text": "Example Administration announces a new loan that helps small businesses keep their workforce employed during the Coronavirus (COVID-19) crisis.",
+  "datePosted": "2020-03-30T08:00",
+  "expires": "2020-04-24T23:59",
+  "category": "https://www.wikidata.org/wiki/Q81068910",
+  "spatialCoverage":
+      {
+        "type": "Country",
+        "name": "US"
+      },
+  "governmentBenefitsInfo": {
+    "@type": "GovernmentService",
+    "name": "Paycheck Protection Program",
+    "url":  "https://www.sba.gov/funding-programs/loans/coronavirus-relief-options/paycheck-protection-program-ppp",
+    "provider": {
+      "@type": "GovernmentOrganization",
+      "name": "US Small Business Administration"
+     },
+    "serviceType": "https://schema.org/BusinessSupport",
+    "audience": {
+      "@type": "Audience",
+      "name": "Small businesses"
+     }
+   }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "SpecialAnnouncement",
+  "name": "New Paycheck Protection Program for small business",
+  "text": "Example Administration announces a new loan that helps small businesses keep their workforce employed during the Coronavirus (COVID-19) crisis.",
+  "datePosted": "2020-03-30T08:00",
+  "expires": "2020-04-24T23:59",
+  "category": "https://www.wikidata.org/wiki/Q81068910",
+  "spatialCoverage":
+      {
+        "type": "Country",
+        "name": "US"
+      },
+  "governmentBenefitsInfo": {
+    "@type": "GovernmentService",
+    "name": "Paycheck Protection Program",
+    "url":  "https://www.sba.gov/funding-programs/loans/coronavirus-relief-options/paycheck-protection-program-ppp",
+    "provider": {
+      "@type": "GovernmentOrganization",
+      "name": "US Small Business Administration"
+     },
+    "serviceType": "https://schema.org/BusinessSupport",
+    "audience": {
+      "@type": "Audience",
+      "name": "Small businesses"
+     }
+   }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

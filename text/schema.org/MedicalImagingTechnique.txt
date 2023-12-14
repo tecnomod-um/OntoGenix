@@ -1,0 +1,195 @@
+
+
+
+
+
+MedicalImagingTechnique - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+MedicalImagingTechnique
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalEnumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    MedicalImagingTechnique
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/MedicalImagingTechnique 
+
+Check for open issues.
+
+
+
+
+Any medical imaging modality typically used for diagnostic purposes. Enumerated type.
+ 
+
+
+
+
+Instances of 
+    
+    
+    MedicalImagingTechnique  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+imagingTechnique
+
+ImagingTest
+Imaging technique used.
+  
+
+
+
+
+Enumeration members
+
+
+CT
+
+MRI
+
+PET
+
+Radiography
+
+Ultrasound
+
+XRay
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,162 @@
+
+
+
+
+
+teaches - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+teaches
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    teaches
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/teaches 
+
+Check for open issues.
+
+
+
+
+The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
+ 
+
+Values expected to be one of these types
+
+
+DefinedTerm
+
+Text
+
+
+
+Used on these types
+
+
+CreativeWork
+
+EducationEvent
+
+LearningResource
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2427
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

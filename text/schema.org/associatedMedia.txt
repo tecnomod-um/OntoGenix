@@ -1,0 +1,156 @@
+
+
+
+
+
+associatedMedia - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+associatedMedia
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    associatedMedia
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/associatedMedia 
+
+Check for open issues.
+
+
+
+
+A media object that encodes this CreativeWork. This property is a synonym for encoding.
+ 
+
+Values expected to be one of these types
+
+
+MediaObject
+
+
+
+Used on these types
+
+
+CreativeWork
+
+HyperToc
+
+HyperTocEntry
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

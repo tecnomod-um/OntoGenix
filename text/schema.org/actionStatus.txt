@@ -1,0 +1,152 @@
+
+
+
+
+
+actionStatus - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+actionStatus
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    actionStatus
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/actionStatus 
+
+Check for open issues.
+
+
+
+
+Indicates the current disposition of the Action.
+ 
+
+Values expected to be one of these types
+
+
+ActionStatusType
+
+
+
+Used on these types
+
+
+Action
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

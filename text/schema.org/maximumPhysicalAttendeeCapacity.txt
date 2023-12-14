@@ -1,0 +1,156 @@
+
+
+
+
+
+maximumPhysicalAttendeeCapacity - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+maximumPhysicalAttendeeCapacity
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    maximumPhysicalAttendeeCapacity
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/maximumPhysicalAttendeeCapacity 
+
+Check for open issues.
+
+
+
+
+The maximum physical attendee capacity of an Event whose eventAttendanceMode is OfflineEventAttendanceMode (or the offline aspects, in the case of a MixedEventAttendanceMode).
+ 
+
+Values expected to be one of these types
+
+
+Integer
+
+
+
+Used on these types
+
+
+Event
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1842
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

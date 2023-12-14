@@ -1,0 +1,258 @@
+
+
+
+
+
+jurisdiction - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+jurisdiction
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    jurisdiction
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/jurisdiction 
+
+Check for open issues.
+
+
+
+
+Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
+ 
+
+Values expected to be one of these types
+
+
+AdministrativeArea
+
+Text
+
+
+
+Used on these types
+
+
+GovernmentService
+
+Legislation
+
+
+
+
+
+Sub-properties
+
+
+legislationJurisdiction
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2534
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Government benefits coverage for SpecialAnnouncement pertaining to the covid-19 situation.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SpecialAnnouncement",
+  "name": "New Paycheck Protection Program for small business",
+  "text": "Example Administration announces a new loan that helps small businesses keep their workforce employed during the Coronavirus (COVID-19) crisis.",
+  "datePosted": "2020-03-30T08:00",
+  "expires": "2020-04-24T23:59",
+  "category": "https://www.wikidata.org/wiki/Q81068910",
+  "spatialCoverage":
+      {
+        "type": "Country",
+        "name": "US"
+      },
+  "governmentBenefitsInfo": {
+    "@type": "GovernmentService",
+    "name": "Paycheck Protection Program",
+    "url":  "https://www.sba.gov/funding-programs/loans/coronavirus-relief-options/paycheck-protection-program-ppp",
+    "provider": {
+      "@type": "GovernmentOrganization",
+      "name": "US Small Business Administration"
+     },
+    "serviceType": "https://schema.org/BusinessSupport",
+    "audience": {
+      "@type": "Audience",
+      "name": "Small businesses"
+     }
+   }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "SpecialAnnouncement",
+  "name": "New Paycheck Protection Program for small business",
+  "text": "Example Administration announces a new loan that helps small businesses keep their workforce employed during the Coronavirus (COVID-19) crisis.",
+  "datePosted": "2020-03-30T08:00",
+  "expires": "2020-04-24T23:59",
+  "category": "https://www.wikidata.org/wiki/Q81068910",
+  "spatialCoverage":
+      {
+        "type": "Country",
+        "name": "US"
+      },
+  "governmentBenefitsInfo": {
+    "@type": "GovernmentService",
+    "name": "Paycheck Protection Program",
+    "url":  "https://www.sba.gov/funding-programs/loans/coronavirus-relief-options/paycheck-protection-program-ppp",
+    "provider": {
+      "@type": "GovernmentOrganization",
+      "name": "US Small Business Administration"
+     },
+    "serviceType": "https://schema.org/BusinessSupport",
+    "audience": {
+      "@type": "Audience",
+      "name": "Small businesses"
+     }
+   }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

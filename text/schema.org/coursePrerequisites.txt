@@ -1,0 +1,156 @@
+
+
+
+
+
+coursePrerequisites - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+coursePrerequisites
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    coursePrerequisites
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/coursePrerequisites 
+
+Check for open issues.
+
+
+
+
+Requirements for taking the Course. May be completion of another Course or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using AlignmentObject.
+ 
+
+Values expected to be one of these types
+
+
+AlignmentObject
+
+Course
+
+Text
+
+
+
+Used on these types
+
+
+Course
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

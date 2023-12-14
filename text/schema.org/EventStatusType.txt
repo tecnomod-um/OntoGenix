@@ -1,0 +1,201 @@
+
+
+
+
+
+EventStatusType - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+EventStatusType
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StatusEnumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    EventStatusType
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/EventStatusType 
+
+Check for open issues.
+
+
+
+
+EventStatusType is an enumeration type whose instances represent several states that an Event may be in.
+ 
+
+
+
+
+Instances of 
+    
+    
+    EventStatusType  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+eventStatus
+
+Event
+An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
+  
+
+status
+
+MedicalCondition  or 
+MedicalProcedure  or 
+MedicalStudy
+The status of the study (enumerated).
+  
+
+
+
+
+Enumeration members
+
+
+EventCancelled
+
+EventMovedOnline
+
+EventPostponed
+
+EventRescheduled
+
+EventScheduled
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

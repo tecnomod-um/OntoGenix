@@ -1,0 +1,152 @@
+
+
+
+
+
+upvoteCount - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+upvoteCount
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    upvoteCount
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/upvoteCount 
+
+Check for open issues.
+
+
+
+
+The number of upvotes this question, answer or comment has received from the community.
+ 
+
+Values expected to be one of these types
+
+
+Integer
+
+
+
+Used on these types
+
+
+Comment
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

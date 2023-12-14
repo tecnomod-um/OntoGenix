@@ -1,0 +1,299 @@
+
+
+
+
+
+instructor - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+instructor
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    instructor
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/instructor 
+
+Check for open issues.
+
+
+
+
+A person assigned to instruct or provide instructional assistance for the CourseInstance.
+ 
+
+Values expected to be one of these types
+
+
+Person
+
+
+
+Used on these types
+
+
+CourseInstance
+
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<body>
+<!-- A MOOC created by an Institution, offered through a MOOC platform, with named instructor -->
+<!-- Based on https://www.coursera.org/course/datascitoolbox -->
+
+<main>
+  <h1>The Data Scientist's Toolbox</h1>
+  <h2>
+    Johns Hopkins University
+  </h2>
+  <h2>About this Course</h2>
+  <div>
+    <h2>Instructors</h2>
+    <div>
+      <a href="http://example.org/instructor/~315" >
+        <p>Jeff Leek, PhD</p>
+        <div>Associate Professor, Biostatistics</div>
+        <div>Bloomberg School of Public Health </div>
+      </a>
+    </div>
+  </div>
+</main>
+</body>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<body vocab="https://schema.org/">
+<!-- A MOOC created by an Institution, offered through a MOOC platform, with named instructor -->
+<!-- Based on https://www.coursera.org/course/datascitoolbox -->
+
+<main typeof="Course">
+  <h1 property="name">The Data Scientist's Toolbox</h1>
+  <h2 property="provider" typeof="EducationalOrganization">
+    <span property="name">Johns Hopkins University</span>
+  </h2>
+  <h2>About this Course</h2>
+  <div rel="hasCourseInstance" typeof="CourseInstance">
+    <meta property="courseMode" content="MOOC" />
+    <meta property="courseMode" content="online" />
+    <span rel="offers" typeOf="Offer">
+      <meta property="price" content="0" />
+      <meta property="offeredBy" content="Coursera">
+    </span>
+    <h2  >Instructors</h2>
+    <div property="instructor" typeof="Person">
+      <a property="url" href="http://example.org/instructor/~315" >
+        <p  property="name">Jeff Leek, PhD</p>
+        <div property="jobTitle" >Associate Professor, Biostatistics</div>
+        <div  property="worksFor" >Bloomberg School of Public Health </div>
+      </a>
+    </div>
+  </div>
+</main>
+</body>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Course",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": [
+      "MOOC",
+      "online"
+    ],
+    "instructor": {
+      "@type": "Person",
+      "jobTitle": "Associate Professor, Biostatistics",
+      "name": "Jeff Leek, PhD",
+      "url": {"@id": "http://example.org/instructor/~315"},
+      "worksFor": "Bloomberg School of Public Health "
+    },
+    "offers": {
+      "@type": "Offer",
+      "offeredBy": "Coursera",
+      "price": "0"
+    }
+  },
+  "name": "The Data Scientist's Toolbox",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Johns Hopkins University"
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "Course",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": [
+      "MOOC",
+      "online"
+    ],
+    "instructor": {
+      "@type": "Person",
+      "jobTitle": "Associate Professor, Biostatistics",
+      "name": "Jeff Leek, PhD",
+      "url": {"@id": "http://example.org/instructor/~315"},
+      "worksFor": "Bloomberg School of Public Health "
+    },
+    "offers": {
+      "@type": "Offer",
+      "offeredBy": "Coursera",
+      "price": "0"
+    }
+  },
+  "name": "The Data Scientist's Toolbox",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Johns Hopkins University"
+  }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

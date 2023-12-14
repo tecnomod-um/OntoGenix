@@ -1,0 +1,173 @@
+
+
+
+
+Developers - schema.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+Schema.org for Developers
+
+This page provides basic developer-oriented information about Schema.org. In particular it gives access to machine-readable representations of our schemas.
+
+Machine Readable Term Definitions
+
+  There are various ways to access machine-readable definitions of Schema.org terms.
+
+The underlying source files are all available in our
+    Github repository. Editorial work is conducted in Turtle format, and defined using an approach
+    based on RDF Schema.
+  
+Period releases are published on the Schema.org site, after staging on webschemas.org. The corresponding data files are linked below, and are also available at Github.
+Machine-readable definitions of individual terms are also available as JSON-LD, embedded into the term page HTML. Note that in many cases, it is more useful to consider schema.org as a whole.
+As noted in the FAQ,
+    the Schema.org URI is sometimes written with 'http', and sometimes with 'https'. Consuming applications are encouraged to accept both representations, and we now generate downloads in both "flavours" as a convenience. In editorial work "on disk" we use the 'https' form. However
+    other sites and applications are likely to be using 'http', especially in
+    RDF representations. Although we encourage a move towards 'https', note in
+    particular that the JSON-LD context file for Schema.org uses 'http', and we are unlikely to change this without a long warning period due to the impact it would have on deployed installations. Feedback on this is welcome, e.g.
+    in this github issue.
+  
+The JSON-LD context is available from https://schema.org/docs/jsonldcontext.json. Schema.org is typically deployed in JSON-LD 1.0, but the location of our context file is exposed via JSON-LD 1.1 conventions, as an HTTP link header (the commandline tool 'curl' can be useful, e.g. used with  -I -i arguments). We serve the same context description regardless of whether
+    the context is retrieved with http or https.
+
+Vocabulary Definition Files
+To assist developers, files containing the definition of the current version of the Schema.org vocabulary is available for download in common RDF formats. In addition to the links below, older release versions can be found (under data/releases/) in GitHub.
+
+Select the file and format required and click Download.  The CSV format downloads are split across two files: Types includes definitions of Types and Enumeration Values, including lists of associated properties; Properties contains property definitions.
+
+File schemaorg-current-https contains the definition of all terms in, all sections of, the vocabulary.  The file schemaorg-all-https contains the definition of all terms in, all sections of, the vocabulary, plus terms retired from the vocabulary (See the attic section for details).
+For those preferring to use http based definitions of Schema.org terms, these equivalent definitions are available in the schemaorg-current-http and schemaorg-all-http files. For more information on using https or http based terms see the FAQ for details.
+
+
+
+			File: 
+
+schemaorg-current-https
+schemaorg-all-https
+schemaorg-current-http
+schemaorg-all-http
+
+
+
+
+		Format: 
+
+JSON-LD
+Turtle
+Triples
+Quads
+RDF/XML
+CSV
+
+
+
+
+			For: 
+Types
+Properties
+
+
+
+
+
+
+
+
+
+
+
+Experimental
+The following representations are experimental and may change or be removed in future releases.
+D3 RDFS in JSON-LD
+
+    A simplification of the Schema.org type hierarchy, in which each type has at most one super-type, represented
+    in a hybrid format that combines JSON-LD, RDFS and D3: tree.jsonld.
+  
+
+    This file is made available to support developers using the D3 JavaScript library for manipulating documents based on data.
+    It uses JSON-LD to declare that D3's default "children" JSON field represents "subClassOf" relationships, but expressed in the
+    reverse direction (example usage).
+
+
+
+
+   OWL
+As an experimental feature, an OWL definition file schemaorg.owl is available. It includes
+        the core and all current extensions to the vocabulary.
+The structure of the file differs from the above vocabulary definition files, in that schema:domainIncludes and schema:rangeIncludes
+        values are converted into rdfs:domain and rdfs:range values using owl:unionOf to capture the multiplicity of values.
+        Included in the range values are the, implicit within the vocabulary, default values of Text, URL,
+        and Role.
+This file has been made available to enable the representation of the vocabulary in some OWL-based modeling tools.
+      The mapping into OWL is an approximation, and should not be considered an authoritative definition for Schema.org's terms; see datamodel page for details.
+      As an experimental feature, there are no expectations as to its interpretation by any third party tools.
+
+
+
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

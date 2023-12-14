@@ -1,0 +1,154 @@
+
+
+
+
+
+numberOfEmployees - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+numberOfEmployees
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    numberOfEmployees
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/numberOfEmployees 
+
+Check for open issues.
+
+
+
+
+The number of employees in an organization, e.g. business.
+ 
+
+Values expected to be one of these types
+
+
+QuantitativeValue
+
+
+
+Used on these types
+
+
+BusinessAudience
+
+Organization
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

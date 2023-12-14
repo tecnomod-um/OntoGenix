@@ -1,0 +1,173 @@
+
+
+
+
+
+CT - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+CT
+A Schema.org Enumeration Member
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalEnumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalImagingTechnique 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    CT
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/CT 
+
+Check for open issues.
+
+
+
+
+X-ray computed tomography imaging.
+ A member value for enumeration type: 
+    
+    
+    MedicalImagingTechnique
+ 
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

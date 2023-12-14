@@ -1,0 +1,215 @@
+
+
+
+
+
+DayOfWeek - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+DayOfWeek
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    DayOfWeek
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/DayOfWeek 
+
+Check for open issues.
+
+
+
+
+The day of the week, e.g. used to specify to which day the opening hours of an OpeningHoursSpecification refer.
+
+Originally, URLs from GoodRelations were used (for Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday plus a special entry for PublicHolidays); these have now been integrated directly into schema.org.
+ 
+
+
+
+
+Instances of 
+    
+    
+    DayOfWeek  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+byDay
+
+Schedule
+Defines the day(s) of the week on which a recurring Event takes place. May be specified using either DayOfWeek, or alternatively Text conforming to iCal's syntax for byDay recurrence rules.
+  
+
+dayOfWeek
+
+EducationalOccupationalProgram  or 
+OpeningHoursSpecification
+The day of the week for which these opening hours are valid.
+  
+
+
+
+
+Enumeration members
+
+
+Friday
+
+Monday
+
+PublicHolidays
+
+Saturday
+
+Sunday
+
+Thursday
+
+Tuesday
+
+Wednesday
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       GoodRelations Vocabulary Classes
+                    
+
+
+
+                    This class is derived from the GoodRelations Vocabulary for E-Commerce, created by Martin Hepp. GoodRelations is a data model for sharing e-commerce data on the Web that can be expressed in a variety of syntaxes, including RDFa and HTML5 Microdata. More information about GoodRelations can be found at http://purl.org/goodrelations/.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

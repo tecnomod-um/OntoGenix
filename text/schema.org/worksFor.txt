@@ -1,0 +1,152 @@
+
+
+
+
+
+worksFor - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+worksFor
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    worksFor
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/worksFor 
+
+Check for open issues.
+
+
+
+
+Organizations that the person works for.
+ 
+
+Values expected to be one of these types
+
+
+Organization
+
+
+
+Used on these types
+
+
+Person
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,152 @@
+
+
+
+
+
+availableChannel - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+availableChannel
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    availableChannel
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/availableChannel 
+
+Check for open issues.
+
+
+
+
+A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+ 
+
+Values expected to be one of these types
+
+
+ServiceChannel
+
+
+
+Used on these types
+
+
+Service
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

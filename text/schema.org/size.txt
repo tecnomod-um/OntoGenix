@@ -1,0 +1,164 @@
+
+
+
+
+
+size - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+size
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    size
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/size 
+
+Check for open issues.
+
+
+
+
+A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.
+ 
+
+Values expected to be one of these types
+
+
+DefinedTerm
+
+QuantitativeValue
+
+SizeSpecification
+
+Text
+
+
+
+Used on these types
+
+
+CreativeWork
+
+Product
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1797
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

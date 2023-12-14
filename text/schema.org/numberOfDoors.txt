@@ -1,0 +1,173 @@
+
+
+
+
+
+numberOfDoors - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+numberOfDoors
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    numberOfDoors
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/numberOfDoors 
+
+Check for open issues.
+
+
+
+
+The number of doors.
+
+Typical unit code(s): C62.
+ 
+
+Values expected to be one of these types
+
+
+Number
+
+QuantitativeValue
+
+
+
+Used on these types
+
+
+Vehicle
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       Automotive Ontology Working Group
+                    
+
+
+
+                    This element is based on the work of the Automotive Ontology Working Group, see www.automotive-ontology.org for details. Many class and property definitions are inspired by or based on abstracts from Wikipedia, the free encyclopedia.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

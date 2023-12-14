@@ -1,0 +1,162 @@
+
+
+
+
+
+height - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+height
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    height
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/height 
+
+Check for open issues.
+
+
+
+
+The height of the item.
+ 
+
+Values expected to be one of these types
+
+
+Distance
+
+QuantitativeValue
+
+
+
+Used on these types
+
+
+MediaObject
+
+OfferShippingDetails
+
+Person
+
+Product
+
+VisualArtwork
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

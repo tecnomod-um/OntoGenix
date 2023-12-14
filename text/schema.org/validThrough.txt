@@ -1,0 +1,183 @@
+
+
+
+
+
+validThrough - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+validThrough
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    validThrough
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/validThrough 
+
+Check for open issues.
+
+
+
+
+The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+ 
+
+Values expected to be one of these types
+
+
+Date
+
+DateTime
+
+
+
+Used on these types
+
+
+Demand
+
+JobPosting
+
+LocationFeatureSpecification
+
+MonetaryAmount
+
+Offer
+
+OpeningHoursSpecification
+
+PriceSpecification
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       GoodRelations Vocabulary Terms
+                    
+
+
+
+                    This term uses terminology from the GoodRelations Vocabulary for E-Commerce, created by Martin Hepp. GoodRelations is a data model for sharing e-commerce data on the Web. More information about GoodRelations can be found at http://purl.org/goodrelations/.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

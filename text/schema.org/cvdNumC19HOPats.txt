@@ -1,0 +1,156 @@
+
+
+
+
+
+cvdNumC19HOPats - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+cvdNumC19HOPats
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    cvdNumC19HOPats
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/cvdNumC19HOPats 
+
+Check for open issues.
+
+
+
+
+numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
+ 
+
+Values expected to be one of these types
+
+
+Number
+
+
+
+Used on these types
+
+
+CDCPMDRecord
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2521
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

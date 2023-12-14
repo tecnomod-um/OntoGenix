@@ -1,0 +1,290 @@
+
+
+
+
+
+positiveNotes - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+positiveNotes
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    positiveNotes
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/positiveNotes 
+
+Check for open issues.
+
+
+
+
+Provides positive considerations regarding something, for example product highlights or (alongside negativeNotes) pro/con lists for reviews.
+
+In the case of a Review, the property describes the itemReviewed from the perspective of the review; in the case of a Product, the product itself is being described.
+
+The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most positive is at the beginning of the list).
+ 
+
+Values expected to be one of these types
+
+
+ItemList
+
+ListItem
+
+Text
+
+WebContent
+
+
+
+Used on these types
+
+
+Product
+
+Review
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2832
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+See JSON-LD example.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "name": "Megaphone 11 review",
+  "description": "Megaphone 11 is the strongest phone in the line...",
+  "positiveNotes":
+  {
+    "@type": "ItemList",
+    "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Tougher and water resistant design."
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cheery bright colours and solid feel."
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Excellent amplification."
+    }
+  ]
+  },
+  "negativeNotes":
+  {
+    "@type": "ItemList",
+    "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "More expensive than its predecessor."
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Quite heavy material."
+    }
+  ]
+ }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "name": "Megaphone 11 review",
+  "description": "Megaphone 11 is the strongest phone in the line...",
+  "positiveNotes":
+  {
+    "@type": "ItemList",
+    "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Tougher and water resistant design."
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cheery bright colours and solid feel."
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Excellent amplification."
+    }
+  ]
+  },
+  "negativeNotes":
+  {
+    "@type": "ItemList",
+    "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "More expensive than its predecessor."
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Quite heavy material."
+    }
+  ]
+ }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,1210 @@
+
+
+
+
+
+JobPosting - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+JobPosting
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    JobPosting
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/JobPosting 
+
+Check for open issues.
+
+
+
+
+A listing that describes a job opening in a certain organization.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    JobPosting
+
+applicantLocationRequirements
+
+AdministrativeArea
+The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
+                
+                
+                
+            
+
+
+applicationContact
+
+ContactPoint
+Contact details for further information relevant to this job posting.
+                
+                
+                
+            
+
+
+baseSalary
+
+MonetaryAmount  or 
+Number  or 
+PriceSpecification
+The base salary of the job or of an employee in an EmployeeRole.
+                
+                
+                
+            
+
+
+datePosted
+
+Date  or 
+DateTime
+Publication date of an online listing.
+                
+                
+                
+            
+
+
+directApply
+
+Boolean
+Indicates whether an url that is associated with a JobPosting enables direct application for the job, via the posting website. A job posting is considered to have directApply of True if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of False is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+                
+                
+                
+            
+
+
+educationRequirements
+
+EducationalOccupationalCredential  or 
+Text
+Educational background needed for the position or Occupation.
+                
+                
+                
+            
+
+
+eligibilityToWorkRequirement
+
+Text
+The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
+                
+                
+                
+            
+
+
+employerOverview
+
+Text
+A description of the employer, career opportunities and work environment for this position.
+                
+                
+                
+            
+
+
+employmentType
+
+Text
+Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
+                
+                
+                
+            
+
+
+employmentUnit
+
+Organization
+Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.
+                
+                
+                
+            
+
+
+estimatedSalary
+
+MonetaryAmount  or 
+MonetaryAmountDistribution  or 
+Number
+An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+                
+                
+                
+            
+
+
+experienceInPlaceOfEducation
+
+Boolean
+Indicates whether a JobPosting will accept experience (as indicated by OccupationalExperienceRequirements) in place of its formal educational qualifications (as indicated by educationRequirements). If true, indicates that satisfying one of these requirements is sufficient.
+                
+                
+                
+            
+
+
+experienceRequirements
+
+OccupationalExperienceRequirements  or 
+Text
+Description of skills and experience needed for the position or Occupation.
+                
+                
+                
+            
+
+
+hiringOrganization
+
+Organization  or 
+Person
+Organization or Person offering the job position.
+                
+                
+                
+            
+
+
+incentiveCompensation
+
+Text
+Description of bonus and commission compensation aspects of the job.
+                 Supersedes 
+                
+    
+    
+    incentives.
+                
+                
+            
+
+
+industry
+
+DefinedTerm  or 
+Text
+The industry associated with the job position.
+                
+                
+                
+            
+
+
+jobBenefits
+
+Text
+Description of benefits associated with the job.
+                 Supersedes 
+                
+    
+    
+    benefits.
+                
+                
+            
+
+
+jobImmediateStart
+
+Boolean
+An indicator as to whether a position is available for an immediate start.
+                
+                
+                
+            
+
+
+jobLocation
+
+Place
+A (typically single) geographic location associated with the job position.
+                
+                
+                
+            
+
+
+jobLocationType
+
+Text
+A description of the job location (e.g. TELECOMMUTE for telecommute jobs).
+                
+                
+                
+            
+
+
+jobStartDate
+
+Date  or 
+Text
+The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
+                
+                
+                
+            
+
+
+occupationalCategory
+
+CategoryCode  or 
+Text
+A category describing the job, preferably using a term from a taxonomy such as BLS O*NET-SOC, ISCO-08 or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.
+
+Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+                
+                
+                
+            
+
+
+physicalRequirement
+
+DefinedTerm  or 
+Text  or 
+URL
+A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+                
+                
+                
+            
+
+
+qualifications
+
+EducationalOccupationalCredential  or 
+Text
+Specific qualifications required for this role or Occupation.
+                
+                
+                
+            
+
+
+relevantOccupation
+
+Occupation
+The Occupation for the JobPosting.
+                
+                
+                
+            
+
+
+responsibilities
+
+Text
+Responsibilities associated with this role or Occupation.
+                
+                
+                
+            
+
+
+salaryCurrency
+
+Text
+The currency (coded using ISO 4217) used for the main salary information in this job posting or for this employee.
+                
+                
+                
+            
+
+
+securityClearanceRequirement
+
+Text  or 
+URL
+A description of any security clearance requirements of the job.
+                
+                
+                
+            
+
+
+sensoryRequirement
+
+DefinedTerm  or 
+Text  or 
+URL
+A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+                
+                
+                
+            
+
+
+skills
+
+DefinedTerm  or 
+Text
+A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
+                
+                
+                
+            
+
+
+specialCommitments
+
+Text
+Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
+                
+                
+                
+            
+
+
+title
+
+Text
+The title of the job.
+                
+                
+                
+            
+
+
+totalJobOpenings
+
+Integer
+The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+                
+                
+                
+            
+
+
+validThrough
+
+Date  or 
+DateTime
+The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+                
+                
+                
+            
+
+
+workHours
+
+Text
+The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
+                
+                
+                
+            
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<div>
+  <h2>Software Engineer</h2>
+    <p><strong>Location:</strong>
+    Kirkland WA</p>
+  <p><strong>Industry:</strong> Computer Software
+  <br><strong>Occupational Category:</strong> 15-1132.00 Software Developers, Application
+  <br><strong>Hours:</strong> Full-time, 40 hours per week
+  <br><strong>Salary:</strong> USD 100000
+  </p>
+  <p>
+    <strong>Description:</strong> ABC Company Inc.
+    seeks a full-time mid-level software engineer to develop in-house tools.
+  </p>
+  <p><strong>Responsibilities:</strong></p>
+  <ul>
+    <li>Design and write specifications for tools for in-house customers</li>
+    <li>Build tools according to specifications</li>
+  </ul>
+  <p><strong>Educational requirements:</strong></p>
+  <ul>
+    <li>Bachelor's Degree in Computer Science, Information Systems or related fields of study.</li>
+  </ul>
+  <p><strong>Experience requirements:</strong></p>
+  <ul>
+   <li>Minumum 3 years experience as a software engineer</li>
+  </ul>
+  <p><strong>Desired Skills:</strong></p>
+  <ul>
+    <li>Web application development using Java/J2EE</li>
+    <li>Web application development using Python or familiarity with dynamic programming languages</li>
+  </ul>
+  <p><strong>Qualifications:</strong></p>
+  <ul>
+    <li>Ability to work in a team environment with members of varying skill levels.</li>
+    <li>Highly motivated.</li>
+    <li>Learns quickly.</li>
+  </ul>
+  <p><strong>Benefits:</strong></p>
+    <ul><li>ABC Corp provides top-tier employee compensation benefits and a relaxed, team-oriented work environment, including: Medical, Life, Dental</li>
+    </ul>
+      <p><strong>Incentives:</strong></p>
+        <ul><li>Performance-based annual bonus plan, project-completion bonuses</li>
+      </ul>
+  <p>If interested in this position, please email us your resume, along with salary requirements and a cover letter to Jobs@abc.123.</p>
+  <p>Date Posted: 2011-10-31</p>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/JobPosting">
+  <meta itemprop="specialCommitments" content="VeteranCommit" />
+  <h2 itemprop="title">Software Engineer</h2>
+  <span>
+    <p><strong>Location:</strong> <span itemprop="jobLocation" itemscope itemtype="https://schema.org/Place"><span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+    <span itemprop="addressLocality">Kirkland</span> <span itemprop="addressRegion">WA</span></span></span></p>
+  </span>
+
+  <p><strong>Industry:</strong> <span itemprop="industry">Computer Software</span>
+
+  <br><strong>Occupational Category:</strong> <span itemprop="occupationalCategory">15-1132.00 Software Developers, Application</span>
+
+  <br><strong>Hours:</strong> <span itemprop="employmentType">Full-time</span>, <span itemprop="workHours">40 hours per week</span>
+
+  <br><strong>Salary:</strong> <span itemprop="salaryCurrency">USD</span> <span itemprop="baseSalary">100000</span>
+  </p>
+
+  <p itemprop="description">
+    <strong>Description:</strong> <span itemprop="hiringOrganization" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">ABC Company Inc.</span>
+    seeks a full-time mid-level software engineer to develop in-house tools.</span>
+  </p>
+
+  <p><strong>Responsibilities:</strong></p>
+  <ul itemprop="responsibilities">
+    <li>Design and write specifications for tools for in-house customers</li>
+    <li>Build tools according to specifications</li>
+  </ul>
+
+  <p><strong>Educational requirements:</strong></p>
+  <ul itemprop="educationRequirements">
+    <li>Bachelor's Degree in Computer Science, Information Systems or related fields of study.</li>
+  </ul>
+
+  <p><strong>Experience requirements:</strong></p>
+  <ul itemprop="experienceRequirements">
+   <li>Minumum 3 years experience as a software engineer</li>
+  </ul>
+
+  <p><strong>Desired Skills:</strong></p>
+  <ul itemprop="skills">
+    <li>Web application development using Java/J2EE</li>
+    <li>Web application development using Python or familiarity with dynamic programming languages</li>
+  </ul>
+
+  <p><strong>Qualifications:</strong></p>
+  <ul itemprop="qualifications">
+    <li>Ability to work in a team environment with members of varying skill levels.</li>
+    <li>Highly motivated.</li>
+    <li>Learns quickly.</li>
+  </ul>
+
+  <p><strong>Benefits:</strong></p>
+    <ul><li>ABC Corp provides top-tier employee compensation benefits and a relaxed, team-oriented work environment, including:<span itemprop="jobBenefits"> Medical, Life, Dental</span></li>
+    </ul>
+
+      <p><strong>Incentives:</strong></p>
+        <ul><li><span itemprop="incentiveCompensation">Performance-based annual bonus plan, project-completion bonuses</span></li>
+      </ul>
+
+  <p>If interested in this position, please email us your resume, along with salary requirements and a cover letter to Jobs@abc.123.</p>
+  <p>Date Posted: <span itemprop="datePosted">2011-10-31</span></p>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="JobPosting">
+  <meta property="specialCommitments" content="VeteranCommit" />
+  <h2 property="title">Software Engineer</h2>
+  <span>
+    <p><strong>Location:</strong> <span property="jobLocation" typeof="Place"><span property="address" typeof="PostalAddress">
+    <span property="addressLocality">Kirkland</span> <span property="addressRegion">WA</span></span></span></p>
+  </span>
+
+  <p><strong>Industry:</strong> <span property="industry">Computer Software</span>
+
+  <br><strong>Occupational Category:</strong> <span property="occupationalCategory">15-1132.00 Software Developers, Application</span>
+
+  <br><strong>Hours:</strong> <span property="employmentType">Full-time</span>, <span property="workHours">40 hours per week</span>
+
+  <br><strong>Salary:</strong> <span property="salaryCurrency">USD</span> <span property="baseSalary">100000</span>
+  </p>
+
+  <p property="description">
+    <strong>Description:</strong> <span property="hiringOrganization" typeof="Organization"><span property="name">ABC Company Inc.</span>
+    seeks a full-time mid-level software engineer to develop in-house tools.</span>
+  </p>
+
+  <p><strong>Responsibilities:</strong></p>
+  <ul property="responsibilities">
+    <li>Design and write specifications for tools for in-house customers</li>
+    <li>Build tools according to specifications</li>
+  </ul>
+
+  <p><strong>Educational requirements:</strong></p>
+  <ul property="educationRequirements">
+    <li>Bachelor's Degree in Computer Science, Information Systems or related fields of study.</li>
+  </ul>
+
+  <p><strong>Experience requirements:</strong></p>
+  <ul property="experienceRequirements">
+   <li>Minumum 3 years experience as a software engineer</li>
+  </ul>
+
+  <p><strong>Desired Skills:</strong></p>
+  <ul property="skills">
+    <li>Web application development using Java/J2EE</li>
+    <li>Web application development using Python or familiarity with dynamic programming languages</li>
+  </ul>
+
+  <p><strong>Qualifications:</strong></p>
+  <ul property="qualifications">
+    <li>Ability to work in a team environment with members of varying skill levels.</li>
+    <li>Highly motivated.</li>
+    <li>Learns quickly.</li>
+  </ul>
+
+  <p><strong>Benefits:</strong></p>
+    <ul><li>ABC Corp provides top-tier employee compensation benefits and a relaxed, team-oriented work environment, including:<span property="jobBenefits"> Medical, Life, Dental</span></li>
+    </ul>
+
+      <p><strong>Incentives:</strong></p>
+        <ul><li><span property="incentiveCompensation">Performance-based annual bonus plan, project-completion bonuses</span></li>
+      </ul>
+
+  <p>If interested in this position, please email us your resume, along with salary requirements and a cover letter to Jobs@abc.123.</p>
+  <p>Date Posted: <span property="datePosted">2011-10-31</span></p>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "baseSalary": "100000",
+  "jobBenefits": "Medical, Life, Dental",
+  "datePosted": "2011-10-31",
+  "description": "Description: ABC Company Inc. seeks a full-time mid-level software engineer to develop in-house tools.",
+  "educationRequirements": "Bachelor's Degree in Computer Science, Information Systems or related fields of study.",
+  "employmentType": "Full-time",
+  "experienceRequirements": "Minumum 3 years experience as a software engineer",
+  "incentiveCompensation": "Performance-based annual bonus plan, project-completion bonuses",
+  "industry": "Computer Software",
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kirkland",
+      "addressRegion": "WA"
+    }
+  },
+  "occupationalCategory": "15-1132.00 Software Developers, Application",
+  "qualifications": "Ability to work in a team environment with members of varying skill levels. Highly motivated. Learns quickly.",
+  "responsibilities": "Design and write specifications for tools for in-house customers Build tools according to specifications",
+  "salaryCurrency": "USD",
+  "skills": "Web application development using Java/J2EE Web application development using Python or familiarity with dynamic programming languages",
+  "specialCommitments": "VeteranCommit",
+  "title": "Software Engineer",
+  "workHours": "40 hours per week"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "baseSalary": "100000",
+  "jobBenefits": "Medical, Life, Dental",
+  "datePosted": "2011-10-31",
+  "description": "Description: ABC Company Inc. seeks a full-time mid-level software engineer to develop in-house tools.",
+  "educationRequirements": "Bachelor's Degree in Computer Science, Information Systems or related fields of study.",
+  "employmentType": "Full-time",
+  "experienceRequirements": "Minumum 3 years experience as a software engineer",
+  "incentiveCompensation": "Performance-based annual bonus plan, project-completion bonuses",
+  "industry": "Computer Software",
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kirkland",
+      "addressRegion": "WA"
+    }
+  },
+  "occupationalCategory": "15-1132.00 Software Developers, Application",
+  "qualifications": "Ability to work in a team environment with members of varying skill levels. Highly motivated. Learns quickly.",
+  "responsibilities": "Design and write specifications for tools for in-house customers Build tools according to specifications",
+  "salaryCurrency": "USD",
+  "skills": "Web application development using Java/J2EE Web application development using Python or familiarity with dynamic programming languages",
+  "specialCommitments": "VeteranCommit",
+  "title": "Software Engineer",
+  "workHours": "40 hours per week"
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+See JSON example.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "name": "Mobile App Developer",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "ACME Software"
+  },
+  "relevantOccupation": {
+    "@type": "Occupation",
+    "name": "Software Developers, Applications",
+    "occupationalCategory": {
+             "@type": "CategoryCode",
+             "inCodeSet": {
+                  "@type": "CategoryCodeSet",
+                  "name": "O*Net-SOC",
+                  "dateModified": "2019",
+                  "url": "https://www.onetonline.org/"
+               },
+             "codeValue": "15-1132.00",
+             "name": "Software Developers, Applications",
+             "url": "https://www.onetonline.org/link/summary/15-1132.00"
+         }
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "name": "Mobile App Developer",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "ACME Software"
+  },
+  "relevantOccupation": {
+    "@type": "Occupation",
+    "name": "Software Developers, Applications",
+    "occupationalCategory": {
+             "@type": "CategoryCode",
+             "inCodeSet": {
+                  "@type": "CategoryCodeSet",
+                  "name": "O*Net-SOC",
+                  "dateModified": "2019",
+                  "url": "https://www.onetonline.org/"
+               },
+             "codeValue": "15-1132.00",
+             "name": "Software Developers, Applications",
+             "url": "https://www.onetonline.org/link/summary/15-1132.00"
+         }
+  }
+}
+
+
+Example 3 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+A job where one must be in the United States to apply.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "name": "Telecommute from anywhere in USA!",
+  "applicantLocationRequirements": {
+    "@type": "Country",
+    "sameAs": "https://www.wikidata.org/wiki/Q30",
+    "name": "USA"
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "name": "Telecommute from anywhere in USA!",
+  "applicantLocationRequirements": {
+    "@type": "Country",
+    "sameAs": "https://www.wikidata.org/wiki/Q30",
+    "name": "USA"
+  }
+}
+
+
+Example 4 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+JobPosting for a position that requires applicants
+to have a bachelor of science in computer science
+from a program accredited by ABET.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": "Systems Research Engineer",
+  "qualifications": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "Bachelor of Science",
+    "about": "Computer Science",
+    "recognizedBy": {
+      "@type": "Organization",
+      "name": "ABET",
+      "url": "https://www.abet.org/"
+    }
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": "Systems Research Engineer",
+  "qualifications": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "Bachelor of Science",
+    "about": "Computer Science",
+    "recognizedBy": {
+      "@type": "Organization",
+      "name": "ABET",
+      "url": "https://www.abet.org/"
+    }
+  }
+}
+
+
+Example 5 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Example of Job markup for experience standing in place of formal qualifications.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": "Software Engineer",
+  "educationRequirements": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "bachelor degree"
+  },
+  "experienceRequirements": {
+    "@type": "OccupationalExperienceRequirements",
+    "monthsOfExperience": "60"
+  },
+  "experienceInPlaceOfEducation": true
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": "Software Engineer",
+  "educationRequirements": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "bachelor degree"
+  },
+  "experienceRequirements": {
+    "@type": "OccupationalExperienceRequirements",
+    "monthsOfExperience": "60"
+  },
+  "experienceInPlaceOfEducation": true
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

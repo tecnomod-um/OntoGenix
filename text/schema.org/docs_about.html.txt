@@ -1,0 +1,169 @@
+
+
+
+
+
+about page - schema.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+About Schema.org
+
+Schema.org is a collaborative, community activity with a mission to create,
+maintain, and promote schemas for structured data on the Internet. In addition
+to people from the founding companies (Google, Microsoft, Yahoo and Yandex), there is  substantial participation by the
+larger Web community, through public mailing lists such as public-vocabs@w3.org
+and through GitHub. See the releases page for more details, and the
+FAQ for supporting information.
+ 
+Since April 2015, the W3C Schema.org Community Group is the main forum for schema collaboration, and provides the
+public-schemaorg@w3.org mailing list for discussions. Schema.org issues are tracked
+on GitHub.
+
+    The day to day operations of Schema.org, including decisions regarding the schema, are handled by a steering group,
+    which includes representatives of the founding companies, a representative of the W3C and a small
+    number of  individuals who have contributed substantially to Schema.org. Discussions of the steering group
+    are public.
+ 
+The People
+
+
+    A number of people have made substantial contributions to Schema.org over the years. These include:
+
+
+ Dan Brickley runs the daily operations for schema.org. He is on the steering group and Google's representative.
+ StÃ©phane Corlosquet was responsible for the integration of schema.org into Drupal and has been an active contributor via GitHub and serves on the steering group.
+ Jason Douglas coordinates the integration of schema.org into Google's search products.
+ R.V.Guha of Google initiated schema.org and is one of its co-founders. He currently heads the steering group.
+ Sam Goto of Google did much of the work being schema.org's Actions vocabulary.
+ Vicki Tardif of Google has worked on vocabularies for a lot of major topics on Schema.org. Together with Dan Brickley, she serves on the steering group and takes care of much of the day to day running of schema.org.
+ Martin Hepp, author of GoodRelations has worked closely with the community to integrate GoodRelations into schema.org. He served on the steering group 2014-2017. 
+ Charlie Jiang was the representative from Microsoft from 2011 to 2013.
+ Jason Johnson was the representative from Microsoft from 2013 to 2014 and contributed to the Actions and Sports vocabularies.
+ Steve Macbeth is one of the co-founders of schema.org and serves as Microsoft's executive sponsor.
+ Peter Mika led Yahoo's involvement in schema.org from 2011 to 2016.
+ Gaurav Mishra contributed to earlier versions of schema.org as Yahoo's representative until 2013.
+ Nicolas Torzec from Yahoo has been involved for years, and in 2016 became Yahoo's primary representative.
+ Scott Peterson (Google), David Rudin (Microsoft) and Erin Simon (Google) have taken care of the legal documents.
+ Alex Shubin has led Yandex's involvement in schema.org since 2011.
+ Yuliya Tikhokhod contributed to Yandex's work on schemas, particularly those for describing audiences and VideoGames.
+ Egor Antonov, Vladimir Gorovoy and Mikhail Senin of Yandex contributed to the schemas for audiences and for Actions.
+ Charles Nevile of Yandex contributed to the content accessibility work, and to liaison with W3C's Web Apps group.
+ Bill Coughran and Alan Eustace played a big role in creating schema.org.
+ Greg Grossmeier (while at Creative Commons), Phil Barker and many others worked on LRMI.
+ Evan Sandhaus, Andreas Gebhard and Stuart Myles led Schema.org's first partnership, working on rNews with the IPTC.
+ Aneesh Chopra, as Whitehouse CTO helped create and promote the Job Postings vocabulary.
+ Ralph Swick and Vint Cerf helped establish the relations between Schema.org and the W3C.
+Richard Wallis leads the bibliographic extensions group, as well as (while consulting for Google) implementing our extension-hosting infrastructure.
+ Many, many other individuals have contributed to schema.org discussions, proposals and schemas through W3C lists, Github and elsewhere, see the releases page for more details.
+           We are sorry that we haven't managed to acknowledge everyone individually here, but we are grateful for the energy, insight and collaboration that you have all shared.
+      
+
+Community Group and Steering Group
+
+
+Schema.org is organized via two groups: a small Steering Group responsible for high level oversight of the project (including approval of new releases),
+and a larger Community Group which handles the day to day activity of schema evolution, discussion and integration.
+Schema.org's Community Group prepares releases for the approval of the Steering Group. A schema.org project webmaster
+(currently Dan Brickley) assists the steering group with the implementation of this process. See how we work for more details on this workflow.
+
+
+The Schema.org Steering Group is chaired by R.V. Guha, who serves in an individual capacity.
+The regular Steering Group participants from the search engines are Peter Mika from Yahoo; Alex Shubin, Yuliya Tikhokhod and Charles Nevile from Yandex;
+Shankar Natarajan, Tom Marsh and Steve Macbeth from Microsoft; and Vicki Tardif Holand and Dan Brickley from Google.
+In April 2015 the Steering Group unanimously agreed to expand its membership to include StÃ©phane Corlosquet and Martin Hepp,
+and to offer a seat to a representative from W3C. The Steering Group has a
+mailing list
+- mostly used for scheduling periodic phone/skype/etc calls, whose notes are posted to public GitHub and linked from
+issue #1 in the project's issue tracker.
+
+
+
+The Schema.org Community Group is chaired by Dan Brickley, who acts in this
+capacity on behalf of the schema.org project rather than his employer, Google. It is open to any interested parties who have agreed to the
+W3C Community Contributor License Agreement.
+The role of the Community Group is to propose, discuss, prepare and review changes to schema.org, for final review and publication by the Steering Group.
+The Community Group also serves as a hub for discussion with other related communities, at W3C and elsewhere.
+The schema.org GitHub repository is considered a tool of the Community Group, and is currently
+the main focus for community discussion.
+
+In other words, the W3C schema.org Community Group is the main forum for the project -
+https://www.w3.org/community/schemaorg/.
+It is Github-based in the sense that its GitHub repository - https://github.com/schemaorg/schemaorg/ ...
+
+is where all the materials are - examples, schemas, documentation, software
+is where the project community develop more complex proposals as branches
+holds the issue tracker where changes are discussed
+issues #1 (planning), #2 (vocab changes) and #3 (tooling/infrastructure) provide some views into to the various fine-grained issues, as do the labels we attach e.g. cleanup.
+
+Note also that other W3C Community Groups exist that are focused partially or entirely on schema.org improvements, e.g. health and medicine,  sports,  archives,
+libraries and bibliography, autos... ...these groups have their own ways of working, and coordinate via the main Schema.org Community Group and its Github repository.
+
+
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

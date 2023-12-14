@@ -1,0 +1,528 @@
+
+
+
+
+
+mainEntity - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+mainEntity
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    about 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    mainEntity
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/mainEntity 
+
+Check for open issues.
+
+
+
+
+Indicates the primary entity described in some page or other CreativeWork.
+ 
+Inverse-property: 
+    
+    
+    mainEntityOfPage
+
+
+Values expected to be one of these types
+
+
+Thing
+
+
+
+Used on these types
+
+
+CreativeWork
+
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+     <div>
+      <h1>Cath's Cafe</h1>
+      <p>Open: Daily from 11:00am till 8pm</p>
+      <p>Phone: 555-0100-3344</p>
+      <p>View <a href="/menu">our menu</a>.</p>
+     </div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemid="http://cathscafe.example.com/" itemscope itemtype="https://schema.org/WebPage">
+    <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Restaurant" itemid="#thecafe">
+      <h1 itemprop="name">Cath's Cafe</h1>
+      <p>Open: <span itemprop="openingHours" content="Mo,Tu,We,Th,Fr,Sa,Su 11:00-20:00">Daily from 11:00am till 8pm</span></p>
+      <p>Phone: <span itemprop="telephone" content="+155501003344">555-0100-3344</span></p>
+      <p>View <a itemprop="hasMenu" href="/menu">our menu</a>.</p>
+    </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "http://cathscafe.example.com/",
+    "mainEntity": {
+      "@type": "Restaurant",
+      "name": "Cath's Cafe",
+      "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 11:00-20:00",
+      "telephone": "+155501003344",
+      "hasMenu": "/menu"
+    }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "http://cathscafe.example.com/",
+    "mainEntity": {
+      "@type": "Restaurant",
+      "name": "Cath's Cafe",
+      "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 11:00-20:00",
+      "telephone": "+155501003344",
+      "hasMenu": "/menu"
+    }
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<a href="category/books.html">Books</a> >
+ <a href="category/books-literature.html">Literature &amp; Fiction</a> >
+ <a href="category/books-classics">Classics</a>
+
+<img src="catcher-in-the-rye-book-cover.jpg"
+  alt="cover art: red horse, city in background"/>
+The Catcher in the Rye - Mass Market Paperback
+by <a href="/author/jd_salinger.html">J.D. Salinger</a>
+4 stars - 3077 reviews
+
+Price: $6.99
+In Stock
+
+Product details
+224 pages
+Publisher: Little, Brown, and Company - May 1, 1991
+Language: English
+ISBN-10: 0316769487
+
+Reviews:
+
+5 stars - <b>"A masterpiece of literature" </b>
+by John Doe. Written on May 4, 2006
+I really enjoyed this book. It captures the essential challenge people face
+as they try make sense of their lives and grow to adulthood.
+
+4 stars - <b>"love it LOLOL111!" </b>
+by Bob Smith, Written on June 15, 2006
+Catcher in the Rye is a fun book. It's a good book to read.
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<body itemscope itemtype="https://schema.org/WebPage">
+...
+<div itemprop="breadcrumb">
+  <a href="category/books.html">Books</a> >
+  <a href="category/books-literature.html">Literature &amp; Fiction</a> >
+  <a href="category/books-classics">Classics</a>
+</div>
+
+<div itemprop="mainEntity" itemscope itemtype="https://schema.org/Book">
+
+<img itemprop="image" src="catcher-in-the-rye-book-cover.jpg"
+     alt="cover art: red horse, city in background"/>
+<span itemprop="name">The Catcher in the Rye</span> -
+ <link itemprop="bookFormat" href="https://schema.org/Paperback">Mass Market Paperback
+by <a itemprop="author" href="/author/jd_salinger.html">J.D. Salinger</a>
+
+<div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+  <span itemprop="ratingValue">4</span> stars -
+  <span itemprop="reviewCount">3077</span> reviews
+</div>
+
+<div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+  Price: $<span itemprop="price">6.99</span>
+  <meta itemprop="priceCurrency" content="USD" />
+  <link itemprop="availability" href="https://schema.org/InStock">In Stock
+</div>
+
+Product details
+<span itemprop="numberOfPages">224</span> pages
+Publisher: <span itemprop="publisher">Little, Brown, and Company</span> -
+ <meta itemprop="datePublished" content="1991-05-01">May 1, 1991
+Language: <span itemprop="inLanguage">English</span>
+ISBN-10: <span itemprop="isbn">0316769487</span>
+
+Reviews:
+
+<div itemprop="review" itemscope itemtype="https://schema.org/Review">
+  <span itemprop="reviewRating">5</span> stars -
+  <b>"<span itemprop="name">A masterpiece of literature</span>"</b>
+  by <span itemprop="author">John Doe</span>,
+  Written on <meta itemprop="datePublished" content="2006-05-04">May 4, 2006
+  <span itemprop="reviewBody">I really enjoyed this book. It captures the essential
+  challenge people face as they try make sense of their lives and grow to adulthood.</span>
+</div>
+
+<div itemprop="review" itemscope itemtype="https://schema.org/Review">
+  <span itemprop="reviewRating">4</span> stars -
+  <b>"<span itemprop="name">A good read.</span>" </b>
+  by <span itemprop="author">Bob Smith</span>,
+  Written on <meta itemprop="datePublished" content="2006-06-15">June 15, 2006
+  <span itemprop="reviewBody">Catcher in the Rye is a fun book. It's a good book to read.</span>
+</div>
+
+</div>
+...
+</body>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<body vocab="https://schema.org/" typeof="WebPage">
+...
+<div property="breadcrumb">
+  <a href="category/books.html">Books</a> >
+  <a href="category/books-literature.html">Literature &amp; Fiction</a> >
+  <a href="category/books-classics">Classics</a>
+</div>
+
+<div property="mainEntity" typeof="Book">
+
+<img property="image" src="catcher-in-the-rye-book-cover.jpg"
+    alt="cover art: red horse, city in background"/>
+<span property="name">The Catcher in the Rye</span> -
+ <link property="bookFormat" href="https://schema.org/Paperback">Mass Market Paperback
+by <a property="author" href="/author/jd_salinger.html">J.D. Salinger</a>
+
+<div property="aggregateRating" typeof="AggregateRating">
+  <span property="ratingValue">4</span> stars -
+  <span property="reviewCount">3077</span> reviews
+</div>
+
+<div property="offers" typeof="Offer">
+  Price: $<span property="price">6.99</span>
+  <meta property="priceCurrency" content="USD" />
+  <link property="availability" href="https://schema.org/InStock">In Stock
+</div>
+
+Product details
+<span property="numberOfPages">224</span> pages
+Publisher: <span property="publisher">Little, Brown, and Company</span> -
+ <meta property="datePublished" content="1991-05-01">May 1, 1991
+Language: <span property="inLanguage">English</span>
+ISBN-10: <span property="isbn">0316769487</span>
+
+Reviews:
+
+<div property="review" typeof="Review">
+  <span property="reviewRating">5</span> stars -
+  <b>"<span property="name">A masterpiece of literature</span>"</b>
+  by <span property="author">John Doe</span>,
+  Written on <meta property="datePublished" content="2006-05-04">May 4, 2006
+  <span property="reviewBody">I really enjoyed this book. It captures the essential
+  challenge people face as they try make sense of their lives and grow to adulthood.</span>
+</div>
+
+<div property="review" typeof="Review">
+  <span property="reviewRating">4</span> stars -
+  <b>"<span property="name">A good read.</span>" </b>
+  by <span property="author">Bob Smith</span>,
+  Written on <meta property="datePublished" content="2006-06-15">June 15, 2006
+  <span property="reviewBody">Catcher in the Rye is a fun book. It's a good book to read.</span>
+</div>
+
+</div>
+...
+</body>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "breadcrumb": "Books > Literature & Fiction > Classics",
+  "mainEntity":{
+	  "@type": "Book",
+	  "author": "/author/jd_salinger.html",
+	  "bookFormat": "https://schema.org/Paperback",
+	  "datePublished": "1991-05-01",
+	  "image": "catcher-in-the-rye-book-cover.jpg",
+	  "inLanguage": "English",
+	  "isbn": "0316769487",
+	  "name": "The Catcher in the Rye",
+	  "numberOfPages": "224",
+	  "offers": {
+	    "@type": "Offer",
+	    "availability": "https://schema.org/InStock",
+	    "price": "6.99",
+	    "priceCurrency": "USD"
+	  },
+	  "publisher": "Little, Brown, and Company",
+	  "aggregateRating": {
+	    "@type": "AggregateRating",
+	    "ratingValue": "4",
+	    "reviewCount": "3077"
+	  },
+	  "review": [
+	    {
+	      "@type": "Review",
+	      "author": "John Doe",
+	      "datePublished": "2006-05-04",
+	      "name": "A masterpiece of literature",
+	      "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood.",
+	      "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+           }
+	    },
+	    {
+	      "@type": "Review",
+	      "author": "Bob Smith",
+	      "datePublished": "2006-06-15",
+	      "name": "A good read.",
+	      "reviewBody": "Catcher in the Rye is a fun book. It's a good book to read.",
+	      "reviewRating": "4"
+	    }
+	  ]
+  	}
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "breadcrumb": "Books > Literature & Fiction > Classics",
+  "mainEntity":{
+	  "@type": "Book",
+	  "author": "/author/jd_salinger.html",
+	  "bookFormat": "https://schema.org/Paperback",
+	  "datePublished": "1991-05-01",
+	  "image": "catcher-in-the-rye-book-cover.jpg",
+	  "inLanguage": "English",
+	  "isbn": "0316769487",
+	  "name": "The Catcher in the Rye",
+	  "numberOfPages": "224",
+	  "offers": {
+	    "@type": "Offer",
+	    "availability": "https://schema.org/InStock",
+	    "price": "6.99",
+	    "priceCurrency": "USD"
+	  },
+	  "publisher": "Little, Brown, and Company",
+	  "aggregateRating": {
+	    "@type": "AggregateRating",
+	    "ratingValue": "4",
+	    "reviewCount": "3077"
+	  },
+	  "review": [
+	    {
+	      "@type": "Review",
+	      "author": "John Doe",
+	      "datePublished": "2006-05-04",
+	      "name": "A masterpiece of literature",
+	      "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood.",
+	      "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+           }
+	    },
+	    {
+	      "@type": "Review",
+	      "author": "Bob Smith",
+	      "datePublished": "2006-06-15",
+	      "name": "A good read.",
+	      "reviewBody": "Catcher in the Rye is a fun book. It's a good book to read.",
+	      "reviewRating": "4"
+	    }
+	  ]
+  	}
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,218 @@
+
+
+
+
+
+termsOfService - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+termsOfService
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    termsOfService
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/termsOfService 
+
+Check for open issues.
+
+
+
+
+Human-readable terms of service documentation.
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+URL
+
+
+
+Used on these types
+
+
+Service
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1423
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+See JSON example.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "WebAPI",
+  "name": "Google Knowledge Graph Search API",
+  "description": "The Knowledge Graph Search API lets you find entities in the Google Knowledge Graph. The API uses standard schema.org types and is compliant with the JSON-LD specification.",
+  "documentation": "https://developers.google.com/knowledge-graph/",
+  "termsOfService": "https://developers.google.com/knowledge-graph/terms",
+  "provider": {
+    "@type": "Organization",
+    "name": "Google Inc."
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "WebAPI",
+  "name": "Google Knowledge Graph Search API",
+  "description": "The Knowledge Graph Search API lets you find entities in the Google Knowledge Graph. The API uses standard schema.org types and is compliant with the JSON-LD specification.",
+  "documentation": "https://developers.google.com/knowledge-graph/",
+  "termsOfService": "https://developers.google.com/knowledge-graph/terms",
+  "provider": {
+    "@type": "Organization",
+    "name": "Google Inc."
+  }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

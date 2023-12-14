@@ -1,0 +1,152 @@
+
+
+
+
+
+primaryPrevention - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+primaryPrevention
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    primaryPrevention
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/primaryPrevention 
+
+Check for open issues.
+
+
+
+
+A preventative therapy used to prevent an initial occurrence of the medical condition, such as vaccination.
+ 
+
+Values expected to be one of these types
+
+
+MedicalTherapy
+
+
+
+Used on these types
+
+
+MedicalCondition
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

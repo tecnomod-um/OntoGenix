@@ -1,0 +1,152 @@
+
+
+
+
+
+proteinContent - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+proteinContent
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    proteinContent
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/proteinContent 
+
+Check for open issues.
+
+
+
+
+The number of grams of protein.
+ 
+
+Values expected to be one of these types
+
+
+Mass
+
+
+
+Used on these types
+
+
+NutritionInformation
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

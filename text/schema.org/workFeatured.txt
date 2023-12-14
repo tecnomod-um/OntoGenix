@@ -1,0 +1,161 @@
+
+
+
+
+
+workFeatured - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+workFeatured
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    workFeatured
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/workFeatured 
+
+Check for open issues.
+
+
+
+
+A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+       Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
+ 
+
+Values expected to be one of these types
+
+
+CreativeWork
+
+
+
+Used on these types
+
+
+Event
+
+
+
+
+
+Sub-properties
+
+
+workPerformed
+
+workPresented
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,1008 @@
+
+
+
+
+
+QuantitativeValue - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+QuantitativeValue
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StructuredValue 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    QuantitativeValue
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/QuantitativeValue 
+
+Check for open issues.
+
+
+
+
+A point value or interval for product characteristics and other purposes.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    QuantitativeValue
+
+additionalProperty
+
+PropertyValue
+A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.
+
+Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+                
+                
+                
+            
+
+
+maxValue
+
+Number
+The upper value of some characteristic or property.
+                
+                
+                
+            
+
+
+minValue
+
+Number
+The lower value of some characteristic or property.
+                
+                
+                
+            
+
+
+unitCode
+
+Text  or 
+URL
+The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+                
+                
+                
+            
+
+
+unitText
+
+Text
+A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+unitCode.
+                
+                
+                
+            
+
+
+value
+
+Boolean  or 
+Number  or 
+StructuredValue  or 
+Text
+The value of a QuantitativeValue (including Observation) or property value node.
+
+For QuantitativeValue and MonetaryAmount, the recommended type for values is 'Number'.
+For PropertyValue, it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.
+Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+
+
+
+
+valueReference
+
+DefinedTerm  or 
+Enumeration  or 
+MeasurementTypeEnumeration  or 
+PropertyValue  or 
+QualitativeValue  or 
+QuantitativeValue  or 
+StructuredValue  or 
+Text
+A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+                
+                
+                
+            
+
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    QuantitativeValue  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+accelerationTime
+
+Vehicle
+The time needed to accelerate the vehicle from a given start velocity to a given target velocity.
+
+Typical unit code(s): SEC for seconds
+
+Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the name of the QuantitativeValue, or use valueReference with a QuantitativeValue of 0..60 mph or 0..100 km/h to specify the reference speeds.
+
+
+
+activityDuration
+
+ExercisePlan
+Length of time to engage in the activity.
+  
+
+activityFrequency
+
+ExercisePlan
+How often one should engage in the activity.
+  
+
+advanceBookingRequirement
+
+Demand  or 
+Offer
+The amount of time that is required between accepting the offer and the actual usage of the resource or service.
+  
+
+annualPercentageRate
+
+FinancialProduct
+The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+  
+
+billingDuration
+
+UnitPriceSpecification
+Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).
+  
+
+broadcastFrequencyValue
+
+BroadcastFrequencySpecification
+The frequency in MHz for a particular broadcast.
+  
+
+cargoVolume
+
+Vehicle
+The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.
+
+Typical unit code(s): LTR for liters, FTQ for cubic foot/feet
+
+Note: You can use minValue and maxValue to indicate ranges.
+  
+
+deliveryLeadTime
+
+Demand  or 
+Offer
+The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
+  
+
+depth
+
+OfferShippingDetails  or 
+Product  or 
+VisualArtwork
+The depth of the item.
+  
+
+durationOfWarranty
+
+WarrantyPromise
+The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
+  
+
+eligibleDuration
+
+Demand  or 
+Offer
+The duration for which the given offer is valid.
+  
+
+eligibleQuantity
+
+Demand  or 
+Offer  or 
+PriceSpecification
+The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+  
+
+engineDisplacement
+
+EngineSpecification
+The volume swept by all of the pistons inside the cylinders of an internal combustion engine in a single movement. 
+
+Typical unit code(s): CMQ for cubic centimeter, LTR for liters, INQ for cubic inches
+* Note 1: You can link to information about how the given value has been determined using the valueReference property.
+* Note 2: You can use minValue and maxValue to indicate ranges.
+  
+
+enginePower
+
+EngineSpecification
+The power of the vehicle's engine.
+    Typical unit code(s): KWT for kilowatt, BHP for brake horsepower, N12 for metric horsepower (PS, with 1 PS = 735,49875 W)
+
+Note 1: There are many different ways of measuring an engine's power. For an overview, see  http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes.
+Note 2: You can link to information about how the given value has been determined using the valueReference property.
+Note 3: You can use minValue and maxValue to indicate ranges.
+
+
+
+floorSize
+
+Accommodation  or 
+FloorPlan
+The size of the accommodation, e.g. in square meter or squarefoot.
+Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.
+  
+
+fuelCapacity
+
+Vehicle
+The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.
+
+Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
+  
+
+fuelConsumption
+
+Vehicle
+The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).
+
+Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use unitText to indicate the unit of measurement, e.g. L/100 km.
+Note 2: There are two ways of indicating the fuel consumption, fuelConsumption (e.g. 8 liters per 100 km) and fuelEfficiency (e.g. 30 miles per gallon). They are reciprocal.
+Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use valueReference to link the value for the fuel consumption to another value.
+
+
+
+fuelEfficiency
+
+Vehicle
+The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).
+
+Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use unitText to indicate the unit of measurement, e.g. mpg or km/L.
+Note 2: There are two ways of indicating the fuel consumption, fuelConsumption (e.g. 8 liters per 100 km) and fuelEfficiency (e.g. 30 miles per gallon). They are reciprocal.
+Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use valueReference to link the value for the fuel economy to another value.
+
+
+
+handlingTime
+
+ShippingDeliveryTime
+The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup. Typical properties: minValue, maxValue, unitCode (d for DAY).  This is by common convention assumed to mean business days (if a unitCode is used, coded as "d"), i.e. only counting days when the business normally operates.
+  
+
+hasMeasurement
+
+Offer  or 
+Product  or 
+SizeSpecification
+A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+  
+
+height
+
+MediaObject  or 
+OfferShippingDetails  or 
+Person  or 
+Product  or 
+VisualArtwork
+The height of the item.
+  
+
+intensity
+
+ExercisePlan
+Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.
+  
+
+interestRate
+
+FinancialProduct
+The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
+  
+
+inventoryLevel
+
+Demand  or 
+Offer  or 
+SomeProducts
+The current approximate inventory level for the item or items.
+  
+
+leaseLength
+
+Accommodation  or 
+Offer  or 
+RealEstateListing
+Length of the lease for some Accommodation, either particular to some Offer or in some cases intrinsic to the property.
+  
+
+loanTerm
+
+LoanOrCredit
+The duration of the loan or credit agreement.
+  
+
+marginOfError
+
+Observation
+A marginOfError for an Observation.
+  
+
+materialExtent
+
+CreativeWork
+The quantity of the materials being described or an expression of the physical space they occupy.
+  
+
+membershipPointsEarned
+
+ProgramMembership
+The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (E.g. stars, miles, etc.)
+  
+
+mileageFromOdometer
+
+Vehicle
+The total distance travelled by the particular vehicle since its initial production, as read from its odometer.
+
+Typical unit code(s): KMT for kilometers, SMI for statute miles.
+  
+
+molecularWeight
+
+MolecularEntity
+This is the molecular weight of the entity being described, not of the parent. Units should be included in the form '<Number> <unit>', for example '12 amu' or as '<QuantitativeValue>.
+  
+
+monoisotopicMolecularWeight
+
+MolecularEntity
+The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units in the form '<Number> <unit>', for example '770.230488 g/mol' or as '<QuantitativeValue>.
+  
+
+numAdults
+
+LodgingReservation
+The number of adults staying in the unit.
+  
+
+numChildren
+
+LodgingReservation
+The number of children staying in the unit.
+  
+
+numberOfAccommodationUnits
+
+ApartmentComplex  or 
+FloorPlan
+Indicates the total (available plus unavailable) number of accommodation units in an ApartmentComplex, or the number of accommodation units for a specific FloorPlan (within its specific ApartmentComplex). See also numberOfAvailableAccommodationUnits.
+  
+
+numberOfAvailableAccommodationUnits
+
+ApartmentComplex  or 
+FloorPlan
+Indicates the number of available accommodation units in an ApartmentComplex, or the number of accommodation units for a specific FloorPlan (within its specific ApartmentComplex). See also numberOfAccommodationUnits.
+  
+
+numberOfAxles
+
+Vehicle
+The number of axles.
+
+Typical unit code(s): C62.
+  
+
+numberOfBedrooms
+
+Accommodation  or 
+ApartmentComplex  or 
+FloorPlan
+The total integer number of bedrooms in a some Accommodation, ApartmentComplex or FloorPlan.
+  
+
+numberOfDoors
+
+Vehicle
+The number of doors.
+
+Typical unit code(s): C62.
+  
+
+numberOfEmployees
+
+BusinessAudience  or 
+Organization
+The number of employees in an organization, e.g. business.
+  
+
+numberOfForwardGears
+
+Vehicle
+The total number of forward gears available for the transmission system of the vehicle.
+
+Typical unit code(s): C62.
+  
+
+numberOfPlayers
+
+Game  or 
+VideoGameSeries
+Indicate how many people can play this game (minimum, maximum, or range).
+  
+
+numberOfPreviousOwners
+
+Vehicle
+The number of owners of the vehicle, including the current one.
+
+Typical unit code(s): C62.
+  
+
+numberOfRooms
+
+Accommodation  or 
+Apartment  or 
+FloorPlan  or 
+House  or 
+LodgingBusiness  or 
+SingleFamilyResidence  or 
+Suite
+The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+  
+
+occupancy
+
+Accommodation  or 
+Apartment  or 
+HotelRoom  or 
+SingleFamilyResidence  or 
+Suite
+The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).
+Typical unit code(s): C62 for person.
+  
+
+partySize
+
+FoodEstablishmentReservation  or 
+TaxiReservation
+Number of people the reservation should accommodate.
+  
+
+payload
+
+Vehicle
+The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.
+
+Typical unit code(s): KGM for kilogram, LBR for pound
+
+Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of weight and payload
+Note 2: You can indicate additional information in the name of the QuantitativeValue node.
+Note 3: You may also link to a QualitativeValue node that provides additional information using valueReference.
+Note 4: Note that you can use minValue and maxValue to indicate ranges.
+
+
+
+recipeYield
+
+Recipe
+The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+  
+
+referenceQuantity
+
+UnitPriceSpecification
+The reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh of electricity. This property is a replacement for unitOfMeasurement for the advanced cases where the price does not relate to a standard unit.
+  
+
+repetitions
+
+ExercisePlan
+Number of times one should repeat the activity.
+  
+
+requiredQuantity
+
+HowToItem
+The required quantity of the item(s).
+  
+
+restPeriods
+
+ExercisePlan
+How often one should break from the activity.
+  
+
+roofLoad
+
+BusOrCoach  or 
+Car
+The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.
+
+Typical unit code(s): KGM for kilogram, LBR for pound
+
+Note 1: You can indicate additional information in the name of the QuantitativeValue node.
+Note 2: You may also link to a QualitativeValue node that provides additional information using valueReference
+Note 3: Note that you can use minValue and maxValue to indicate ranges.
+
+
+
+seatingCapacity
+
+Vehicle
+The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.
+
+Typical unit code(s): C62 for persons.
+  
+
+size
+
+CreativeWork  or 
+Product
+A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.
+  
+
+speed
+
+Vehicle
+The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by maxValue) should be the maximum speed achievable under regular conditions.
+
+Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot
+
+*Note 1: Use minValue and maxValue to indicate the range. Typically, the minimal value is zero.
+* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the valueReference property.
+  
+
+stupidProperty
+
+StupidType  or 
+Vehicle
+This is a StupidProperty! - for testing only.
+  
+
+suggestedAge
+
+PeopleAudience  or 
+SizeSpecification
+The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+  
+
+suggestedMeasurement
+
+PeopleAudience  or 
+SizeSpecification
+A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+  
+
+tongueWeight
+
+Vehicle
+The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR).
+
+Typical unit code(s): KGM for kilogram, LBR for pound
+
+Note 1: You can indicate additional information in the name of the QuantitativeValue node.
+Note 2: You may also link to a QualitativeValue node that provides additional information using valueReference.
+Note 3: Note that you can use minValue and maxValue to indicate ranges.
+
+
+
+torque
+
+EngineSpecification
+The torque (turning force) of the vehicle's engine.
+
+Typical unit code(s): NU for newton metre (N m), F17 for pound-force per foot, or F48 for pound-force per inch
+
+Note 1: You can link to information about how the given value has been determined (e.g. reference RPM) using the valueReference property.
+Note 2: You can use minValue and maxValue to indicate ranges.
+
+
+
+trailerWeight
+
+Vehicle
+The permitted weight of a trailer attached to the vehicle.
+
+Typical unit code(s): KGM for kilogram, LBR for pound
+* Note 1: You can indicate additional information in the name of the QuantitativeValue node.
+* Note 2: You may also link to a QualitativeValue node that provides additional information using valueReference.
+* Note 3: Note that you can use minValue and maxValue to indicate ranges.
+  
+
+transitTime
+
+ShippingDeliveryTime
+The typical delay the order has been sent for delivery and the goods reach the final customer. Typical properties: minValue, maxValue, unitCode (d for DAY).
+  
+
+valueReference
+
+PropertyValue  or 
+QualitativeValue  or 
+QuantitativeValue
+A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+  
+
+vehicleSeatingCapacity
+
+Vehicle
+The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.
+
+Typical unit code(s): C62 for persons.
+  
+
+weight
+
+OfferShippingDetails  or 
+Person  or 
+Product
+The weight of the product or person.
+  
+
+weightTotal
+
+Vehicle
+The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.
+
+Typical unit code(s): KGM for kilogram, LBR for pound
+
+Note 1: You can indicate additional information in the name of the QuantitativeValue node.
+Note 2: You may also link to a QualitativeValue node that provides additional information using valueReference.
+Note 3: Note that you can use minValue and maxValue to indicate ranges.
+
+
+
+wheelbase
+
+Vehicle
+The distance between the centers of the front and rear wheels.
+
+Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet.
+  
+
+width
+
+MediaObject  or 
+OfferShippingDetails  or 
+Product  or 
+VisualArtwork
+The width of the item.
+  
+
+workload
+
+ExercisePlan
+Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.
+  
+
+yearlyRevenue
+
+BusinessAudience
+The size of the business in annual revenue.
+  
+
+yearsInOperation
+
+BusinessAudience
+The age of the business.
+  
+
+yield
+
+HowTo
+The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
+  
+
+
+
+
+More specific Types
+
+
+Observation
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       GoodRelations Vocabulary Classes
+                    
+
+
+
+                    This class is derived from the GoodRelations Vocabulary for E-Commerce, created by Martin Hepp. GoodRelations is a data model for sharing e-commerce data on the Web that can be expressed in a variety of syntaxes, including RDFa and HTML5 Microdata. More information about GoodRelations can be found at http://purl.org/goodrelations/.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

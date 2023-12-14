@@ -1,0 +1,598 @@
+
+
+
+
+
+HealthInsurancePlan - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+HealthInsurancePlan
+A Schema.org Type
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    HealthInsurancePlan
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/HealthInsurancePlan 
+
+Check for open issues.
+
+
+
+
+A US-style health insurance plan, including PPOs, EPOs, and HMOs.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    HealthInsurancePlan
+
+benefitsSummaryUrl
+
+URL
+The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
+                
+                
+                
+            
+
+
+contactPoint
+
+ContactPoint
+A contact point for a person or organization.
+                 Supersedes 
+                
+    
+    
+    contactPoints.
+                
+                
+            
+
+
+healthPlanDrugOption
+
+Text
+TODO.
+                
+                
+                
+            
+
+
+healthPlanDrugTier
+
+Text
+The tier(s) of drugs offered by this formulary or insurance plan.
+                
+                
+                
+            
+
+
+healthPlanId
+
+Text
+The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
+                
+                
+                
+            
+
+
+healthPlanMarketingUrl
+
+URL
+The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
+                
+                
+                
+            
+
+
+includesHealthPlanFormulary
+
+HealthPlanFormulary
+Formularies covered by this plan.
+                
+                
+                
+            
+
+
+includesHealthPlanNetwork
+
+HealthPlanNetwork
+Networks covered by this plan.
+                
+                
+                
+            
+
+
+usesHealthPlanIdStandard
+
+Text  or 
+URL
+The standard for interpreting the Plan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.
+                
+                
+                
+            
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    HealthInsurancePlan  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+includedInHealthInsurancePlan
+
+Drug
+The insurance plans that cover this drug.
+  
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1062
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+See JSON example.
+
+Background, https://docs.google.com/document/d/1LNew5OEon4uir2D5Zzp0AkUPA7c9nO8reJ_M1pOy-3s/edit#
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+
+    {
+        "@context": "http://health-lifesci.schema.org/",
+        "@type": "HealthInsurancePlan",
+        "usesHealthPlanIdType": "http://healthplan.schema.org/HealthPlanIdTypeHIOS",
+        "healthPlanId": "12345XX9876543",
+        "name": "Sample Gold Health Plan",
+        "summaryUrl": "http://url/to/summary/benefits/coverage",
+        "marketingUrl": "http://url/to/health/plan/information",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "email@address.com"
+        },
+        "healthPlanNetworkTiers": ["http://healthplan.schema.org/PreferredNetwork",
+                                  "http://healthplan.schema.org/NonPreferredNetwork"],
+        "includesHealthPlanFormulary": [
+            {
+                "@type": "HealthPlanFormulary",
+                "healthPlanDrugTier": "http://healthplan.schema.org/DrugTierGeneric",
+                "offersPrescriptionByMail": true,
+                "healthPlanCostSharing": [
+                    {
+                        "@type": "HealthPlanCostSharingSpecification",
+                        "healthPlanPharmacyType": "1-MONTH-IN-RETAIL",
+                        "healthPlanCopay": {
+                            "@type": "PriceSpecification",
+                            "price": 20,
+                            "currency": "USD"
+                        },
+                        "healthPlanCopayOption": "http://healthplan.schema.org/HealthPlanCopayAfterDeductable",
+                        "healthPlanCoinsuranceRate": 0.1,
+                        "healthPlanCoinsuranceOption": "http://healthplan.schema.org/HealthPlanCoinsuranceBeforeDeductable"
+                    },
+                    {
+                       "@type": "HealthPlanCostSharingSpecification",
+                        "healthPlanPharmacyType": "1-MONTH-IN-MAIL",
+                         "healthPlanCopay": {
+                            "@type": "PriceSpecification",
+                            "price": 0,
+                            "currency": "USD"
+                        },
+                        "healthPlanCopayOption": "http://healthplan.schema.org/HealthPlanCoPayNoCharge",
+                        "healthPlanCoinsuranceRate": 0.2,
+                        "healthPlanCoinsuranceOption": "http://healthplan.schema.org/HealthPlanCoinsuranceNone"
+                    }
+                ],
+                "healthPlanDrugTier": "http://healthplan.schema.org/DrugTierBrand",
+                "offersPrescriptionByMail": true,
+                "healthPlanCostSharing": [
+                    {
+                       "@type": "HealthPlanCostSharingSpecification",
+                        "healthPlanPharmacyType": "1-MONTH-IN-RETAIL",
+                        "healthPlanCopay": {
+                            "@type": "PriceSpecification",
+                            "price": 15,
+                            "currency": "USD"
+                        },
+                        "healthPlanCopayOption": "http://healthplan.schema.org/HealthPlanCopayNone",
+                        "healthPlanCoinsuranceRate": 0,
+                        "healthPlanCoinsuranceOption": "http://healthplan.schema.org/HealthPlanCoinsuranceNone"
+                    },
+                    {
+                       "@type": "HealthPlanCostSharingSpecification",
+                        "healthPlanPharmacyType": "1-MONTH-IN-MAIL",
+                        "healthPlanCopay": {
+                            "@type": "PriceSpecification",
+                            "price": 20,
+                            "currency": "USD"
+                        },
+                        "healthPlanCopayOption": "http://healthplan.schema.org/HealthPlanCopayAfterDeductible",
+                        "healthPlanCoinsuranceRate": 0.1,
+                        "healthPlanCoinsuranceOption": "http://healthplan.schema.org/HealthPlanCoinsuranceBeforeDeductible"
+                    }
+                ]
+            }
+        ]
+    }
+
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+        "@context": "http://health-lifesci.schema.org/",
+        "@type": "HealthInsurancePlan",
+        "usesHealthPlanIdType": "http://healthplan.schema.org/HealthPlanIdTypeHIOS",
+        "healthPlanId": "12345XX9876543",
+        "name": "Sample Gold Health Plan",
+        "summaryUrl": "http://url/to/summary/benefits/coverage",
+        "marketingUrl": "http://url/to/health/plan/information",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "email@address.com"
+        },
+        "healthPlanNetworkTiers": ["http://healthplan.schema.org/PreferredNetwork",
+                                  "http://healthplan.schema.org/NonPreferredNetwork"],
+        "includesHealthPlanFormulary": [
+            {
+                "@type": "HealthPlanFormulary",
+                "healthPlanDrugTier": "http://healthplan.schema.org/DrugTierGeneric",
+                "offersPrescriptionByMail": true,
+                "healthPlanCostSharing": [
+                    {
+                        "@type": "HealthPlanCostSharingSpecification",
+                        "healthPlanPharmacyType": "1-MONTH-IN-RETAIL",
+                        "healthPlanCopay": {
+                            "@type": "PriceSpecification",
+                            "price": 20,
+                            "currency": "USD"
+                        },
+                        "healthPlanCopayOption": "http://healthplan.schema.org/HealthPlanCopayAfterDeductable",
+                        "healthPlanCoinsuranceRate": 0.1,
+                        "healthPlanCoinsuranceOption": "http://healthplan.schema.org/HealthPlanCoinsuranceBeforeDeductable"
+                    },
+                    {
+                       "@type": "HealthPlanCostSharingSpecification",
+                        "healthPlanPharmacyType": "1-MONTH-IN-MAIL",
+                         "healthPlanCopay": {
+                            "@type": "PriceSpecification",
+                            "price": 0,
+                            "currency": "USD"
+                        },
+                        "healthPlanCopayOption": "http://healthplan.schema.org/HealthPlanCoPayNoCharge",
+                        "healthPlanCoinsuranceRate": 0.2,
+                        "healthPlanCoinsuranceOption": "http://healthplan.schema.org/HealthPlanCoinsuranceNone"
+                    }
+                ],
+                "healthPlanDrugTier": "http://healthplan.schema.org/DrugTierBrand",
+                "offersPrescriptionByMail": true,
+                "healthPlanCostSharing": [
+                    {
+                       "@type": "HealthPlanCostSharingSpecification",
+                        "healthPlanPharmacyType": "1-MONTH-IN-RETAIL",
+                        "healthPlanCopay": {
+                            "@type": "PriceSpecification",
+                            "price": 15,
+                            "currency": "USD"
+                        },
+                        "healthPlanCopayOption": "http://healthplan.schema.org/HealthPlanCopayNone",
+                        "healthPlanCoinsuranceRate": 0,
+                        "healthPlanCoinsuranceOption": "http://healthplan.schema.org/HealthPlanCoinsuranceNone"
+                    },
+                    {
+                       "@type": "HealthPlanCostSharingSpecification",
+                        "healthPlanPharmacyType": "1-MONTH-IN-MAIL",
+                        "healthPlanCopay": {
+                            "@type": "PriceSpecification",
+                            "price": 20,
+                            "currency": "USD"
+                        },
+                        "healthPlanCopayOption": "http://healthplan.schema.org/HealthPlanCopayAfterDeductible",
+                        "healthPlanCoinsuranceRate": 0.1,
+                        "healthPlanCoinsuranceOption": "http://healthplan.schema.org/HealthPlanCoinsuranceBeforeDeductible"
+                    }
+                ]
+            }
+        ]
+    }
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

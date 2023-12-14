@@ -1,0 +1,154 @@
+
+
+
+
+
+issuedBy - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+issuedBy
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    issuedBy
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/issuedBy 
+
+Check for open issues.
+
+
+
+
+The organization issuing the ticket or permit.
+ 
+
+Values expected to be one of these types
+
+
+Organization
+
+
+
+Used on these types
+
+
+Permit
+
+Ticket
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

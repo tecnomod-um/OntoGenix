@@ -1,0 +1,152 @@
+
+
+
+
+
+wordCount - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+wordCount
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    wordCount
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/wordCount 
+
+Check for open issues.
+
+
+
+
+The number of words in the text of the Article.
+ 
+
+Values expected to be one of these types
+
+
+Integer
+
+
+
+Used on these types
+
+
+Article
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

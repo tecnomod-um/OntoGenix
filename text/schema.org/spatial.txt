@@ -1,0 +1,156 @@
+
+
+
+
+
+spatial - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+spatial
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    spatial
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/spatial 
+
+                Equivalent Property: dcterms:spatial
+                
+
+Check for open issues.
+
+
+
+
+The "spatial" property can be used in cases when more specific properties
+(e.g. locationCreated, spatialCoverage, contentLocation) are not known to be appropriate.
+ 
+
+Values expected to be one of these types
+
+
+Place
+
+
+
+Used on these types
+
+
+CreativeWork
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,154 @@
+
+
+
+
+
+nutrition - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+nutrition
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    nutrition
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/nutrition 
+
+Check for open issues.
+
+
+
+
+Nutrition information about the recipe or menu item.
+ 
+
+Values expected to be one of these types
+
+
+NutritionInformation
+
+
+
+Used on these types
+
+
+MenuItem
+
+Recipe
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,158 @@
+
+
+
+
+
+gameLocation - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+gameLocation
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    gameLocation
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/gameLocation 
+
+Check for open issues.
+
+
+
+
+Real or fictional location of the game (or part of game).
+ 
+
+Values expected to be one of these types
+
+
+Place
+
+PostalAddress
+
+URL
+
+
+
+Used on these types
+
+
+Game
+
+VideoGameSeries
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,286 @@
+
+
+
+
+
+actor - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+actor
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    actor
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/actor 
+
+Check for open issues.
+
+
+
+
+An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+ 
+
+Values expected to be one of these types
+
+
+Person
+
+
+
+Used on these types
+
+
+Clip
+
+CreativeWorkSeason
+
+Episode
+
+Event
+
+Movie
+
+MovieSeries
+
+PodcastSeries
+
+RadioSeries
+
+TVSeries
+
+VideoGame
+
+VideoGameSeries
+
+VideoObject
+
+
+
+
+
+Sub-properties
+
+
+readBy
+
+
+Supersedes
+
+actors
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+A JSON example of a PerformanceRole, in which
+the Role represents the acting contribution made by
+Bill Murray in the film Ghostbusters. The Role entity
+allows us to additional information, such as the
+character's name that he played in the film.
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Movie">
+  <span itemprop="name">Ghostbusters</span>
+  <link itemprop="sameAs" href="http://en.wikipedia.org/wiki/Ghostbusters"/>
+  <div itemprop="actor" itemscope
+        itemtype="https://schema.org/PerformanceRole">
+    <div itemprop="actor" itemscope
+            itemtype="https://schema.org/Person">
+      <span itemprop="name">Bill Murray</span>
+    </div>
+    <span itemprop="characterName">Dr. Peter Venkman</span>
+  </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="Movie">
+  <span property="name">Ghostbusters</span>
+  <link property="sameAs" href="http://en.wikipedia.org/wiki/Ghostbusters"/>
+  <div property="actor" typeof="PerformanceRole">
+    <div property="actor" typeof="Person">
+      <span property="name">Bill Murray</span>
+    </div>
+    <span property="characterName">Dr. Peter Venkman</span>
+  </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Movie",
+  "name": "Ghostbusters",
+  "sameAs": "http://en.wikipedia.org/wiki/Ghostbusters",
+  "actor": {
+    "@type": "PerformanceRole",
+    "actor": {
+      "@type": "Person",
+      "name": "Bill Murray"
+    },
+    "characterName": "Dr. Peter Venkman"
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Movie",
+  "name": "Ghostbusters",
+  "sameAs": "http://en.wikipedia.org/wiki/Ghostbusters",
+  "actor": {
+    "@type": "PerformanceRole",
+    "actor": {
+      "@type": "Person",
+      "name": "Bill Murray"
+    },
+    "characterName": "Dr. Peter Venkman"
+  }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

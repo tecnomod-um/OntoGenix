@@ -1,0 +1,154 @@
+
+
+
+
+
+doseValue - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+doseValue
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    doseValue
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/doseValue 
+
+Check for open issues.
+
+
+
+
+The value of the dose, e.g. 500.
+ 
+
+Values expected to be one of these types
+
+
+Number
+
+QualitativeValue
+
+
+
+Used on these types
+
+
+DoseSchedule
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

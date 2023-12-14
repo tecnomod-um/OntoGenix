@@ -1,0 +1,152 @@
+
+
+
+
+
+deliveryStatus - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+deliveryStatus
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    deliveryStatus
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/deliveryStatus 
+
+Check for open issues.
+
+
+
+
+New entry added as the package passes through each leg of its journey (from shipment to final delivery).
+ 
+
+Values expected to be one of these types
+
+
+DeliveryEvent
+
+
+
+Used on these types
+
+
+ParcelDelivery
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

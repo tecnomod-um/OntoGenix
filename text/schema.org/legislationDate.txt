@@ -1,0 +1,185 @@
+
+
+
+
+
+legislationDate - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+legislationDate
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    dateCreated 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    legislationDate
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/legislationDate 
+
+                Equivalent Property: http://data.europa.eu/eli/ontology#date_document
+                
+
+Check for open issues.
+
+
+
+
+The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force.
+ 
+
+Values expected to be one of these types
+
+
+Date
+
+
+
+Used on these types
+
+
+Legislation
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       ELI ontology
+                    
+
+
+
+                    This entry is derived from the ELI ontology (European Legislation Identifier). ELI is an initiative of some national legislation publishers endorsed by EU countries and Institutions, to identify, describe and link legislation on the web, and is led by the ELI taskforce.
+                    
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1156
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

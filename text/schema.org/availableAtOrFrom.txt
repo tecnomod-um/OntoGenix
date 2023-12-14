@@ -1,0 +1,180 @@
+
+
+
+
+
+availableAtOrFrom - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+availableAtOrFrom
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    areaServed 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    availableAtOrFrom
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/availableAtOrFrom 
+
+Check for open issues.
+
+
+
+
+The place(s) from which the offer can be obtained (e.g. store locations).
+ 
+
+Values expected to be one of these types
+
+
+Place
+
+
+
+Used on these types
+
+
+Demand
+
+Offer
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       GoodRelations Vocabulary Terms
+                    
+
+
+
+                    This term uses terminology from the GoodRelations Vocabulary for E-Commerce, created by Martin Hepp. GoodRelations is a data model for sharing e-commerce data on the Web. More information about GoodRelations can be found at http://purl.org/goodrelations/.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,243 @@
+
+
+
+
+
+PhysicalExam - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+PhysicalExam
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalEnumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    PhysicalExam
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalEntity 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalProcedure 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    PhysicalExam
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/PhysicalExam 
+
+Check for open issues.
+
+
+
+
+A type of physical examination of a patient performed by a physician.
+ 
+
+
+
+
+Instances of 
+    
+    
+    PhysicalExam  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+identifyingExam
+
+MedicalSign
+A physical examination that can identify this sign.
+  
+
+
+
+
+Enumeration members
+
+
+Abdomen
+
+Appearance
+
+CardiovascularExam
+
+Ear
+
+Eye
+
+Genitourinary
+
+Head
+
+Lung
+
+MusculoskeletalExam
+
+Neck
+
+Neuro
+
+Nose
+
+Skin
+
+Throat
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,152 @@
+
+
+
+
+
+suggestedMaxAge - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+suggestedMaxAge
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    suggestedMaxAge
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/suggestedMaxAge 
+
+Check for open issues.
+
+
+
+
+Maximum recommended age in years for the audience or user.
+ 
+
+Values expected to be one of these types
+
+
+Number
+
+
+
+Used on these types
+
+
+PeopleAudience
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

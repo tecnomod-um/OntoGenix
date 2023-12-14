@@ -1,0 +1,161 @@
+
+
+
+
+
+question - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+question
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    object 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    question
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/question 
+
+Check for open issues.
+
+
+
+
+A sub property of object. A question.
+ 
+
+Values expected to be one of these types
+
+
+Question
+
+
+
+Used on these types
+
+
+AskAction
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

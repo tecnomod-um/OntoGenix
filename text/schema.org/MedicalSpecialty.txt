@@ -1,0 +1,316 @@
+
+
+
+
+
+MedicalSpecialty - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+MedicalSpecialty
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalEnumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    MedicalSpecialty
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Specialty 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    MedicalSpecialty
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/MedicalSpecialty 
+
+Check for open issues.
+
+
+
+
+Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type.
+ 
+
+
+
+
+Instances of 
+    
+    
+    MedicalSpecialty  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+medicalSpecialty
+
+Hospital  or 
+MedicalClinic  or 
+MedicalOrganization  or 
+Physician
+A medical specialty of the provider.
+  
+
+relevantSpecialty
+
+MedicalEntity
+If applicable, a medical specialty in which this entity is relevant.
+  
+
+
+
+
+Enumeration members
+
+
+Anesthesia
+
+Cardiovascular
+
+CommunityHealth
+
+Dentistry
+
+Dermatology
+
+DietNutrition
+
+Emergency
+
+Endocrine
+
+Gastroenterologic
+
+Genetic
+
+Geriatric
+
+Gynecologic
+
+Hematologic
+
+Infectious
+
+LaboratoryScience
+
+Midwifery
+
+Musculoskeletal
+
+Neurologic
+
+Nursing
+
+Obstetric
+
+Oncologic
+
+Optometric
+
+Otolaryngologic
+
+Pathology
+
+Pediatric
+
+PharmacySpecialty
+
+Physiotherapy
+
+PlasticSurgery
+
+Podiatric
+
+PrimaryCare
+
+Psychiatric
+
+PublicHealth
+
+Pulmonary
+
+Radiography
+
+Renal
+
+RespiratoryTherapy
+
+Rheumatologic
+
+SpeechPathology
+
+Surgical
+
+Toxicologic
+
+Urologic
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

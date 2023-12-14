@@ -1,0 +1,164 @@
+
+
+
+
+
+material - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+material
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    material
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/material 
+
+Check for open issues.
+
+
+
+
+A material that something is made from, e.g. leather, wool, cotton, paper.
+ 
+
+Values expected to be one of these types
+
+
+Product
+
+Text
+
+URL
+
+
+
+Used on these types
+
+
+CreativeWork
+
+Product
+
+
+
+
+
+Sub-properties
+
+
+artMedium
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

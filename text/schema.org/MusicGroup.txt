@@ -1,0 +1,2255 @@
+
+
+
+
+
+MusicGroup - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+MusicGroup
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Organization 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    PerformingGroup 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    MusicGroup
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/MusicGroup 
+
+Check for open issues.
+
+
+
+
+A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    MusicGroup
+
+album
+
+MusicAlbum
+A music album.
+                 Supersedes 
+                
+    
+    
+    albums.
+                
+                
+            
+
+
+genre
+
+Text  or 
+URL
+Genre of the creative work, broadcast channel or group.
+                
+                
+                
+            
+
+
+track
+
+ItemList  or 
+MusicRecording
+A music recording (track)—usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+                 Supersedes 
+                
+    
+    
+    tracks.
+                
+                
+            
+
+
+
+Properties from 
+    
+    
+    Organization
+
+actionableFeedbackPolicy
+
+CreativeWork  or 
+URL
+For a NewsMediaOrganization or other news-related Organization, a statement about public engagement activities (for news media, the newsroomâs), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+                
+                
+                
+            
+
+
+address
+
+PostalAddress  or 
+Text
+Physical address of the item.
+                
+                
+                
+            
+
+
+agentInteractionStatistic
+
+InteractionCounter
+The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+                
+                
+                
+            
+
+
+aggregateRating
+
+AggregateRating
+The overall rating, based on a collection of reviews or ratings, of the item.
+                
+                
+                
+            
+
+
+alumni
+
+Person
+Alumni of an organization.
+                
+                
+                Inverse property: 
+    
+    
+    alumniOf
+
+
+
+areaServed
+
+AdministrativeArea  or 
+GeoShape  or 
+Place  or 
+Text
+The geographic area where a service or offered item is provided.
+                 Supersedes 
+                
+    
+    
+    serviceArea.
+                
+                
+            
+
+
+award
+
+Text
+An award won by or for this item.
+                 Supersedes 
+                
+    
+    
+    awards.
+                
+                
+            
+
+
+brand
+
+Brand  or 
+Organization
+The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+                
+                
+                
+            
+
+
+contactPoint
+
+ContactPoint
+A contact point for a person or organization.
+                 Supersedes 
+                
+    
+    
+    contactPoints.
+                
+                
+            
+
+
+correctionsPolicy
+
+CreativeWork  or 
+URL
+For an Organization (e.g. NewsMediaOrganization), a statement describing (in news media, the newsroomâs) disclosure and correction policy for errors.
+                
+                
+                
+            
+
+
+department
+
+Organization
+A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+                
+                
+                
+            
+
+
+dissolutionDate
+
+Date
+The date that this organization was dissolved.
+                
+                
+                
+            
+
+
+diversityPolicy
+
+CreativeWork  or 
+URL
+Statement on diversity policy by an Organization e.g. a NewsMediaOrganization. For a NewsMediaOrganization, a statement describing the newsroomâs diversity policy on both staffing and sources, typically providing staffing data.
+                
+                
+                
+            
+
+
+diversityStaffingReport
+
+Article  or 
+URL
+For an Organization (often but not necessarily a NewsMediaOrganization), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+                
+                
+                
+            
+
+
+duns
+
+Text
+The Dun & Bradstreet DUNS number for identifying an organization or business person.
+                
+                
+                
+            
+
+
+email
+
+Text
+Email address.
+                
+                
+                
+            
+
+
+employee
+
+Person
+Someone working for this organization.
+                 Supersedes 
+                
+    
+    
+    employees.
+                
+                
+            
+
+
+ethicsPolicy
+
+CreativeWork  or 
+URL
+Statement about ethics policy, e.g. of a NewsMediaOrganization regarding journalistic and publishing practices, or of a Restaurant, a page describing food source policies. In the case of a NewsMediaOrganization, an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+                
+                
+                
+            
+
+
+event
+
+Event
+Upcoming or past event associated with this place, organization, or action.
+                 Supersedes 
+                
+    
+    
+    events.
+                
+                
+            
+
+
+faxNumber
+
+Text
+The fax number.
+                
+                
+                
+            
+
+
+founder
+
+Person
+A person who founded this organization.
+                 Supersedes 
+                
+    
+    
+    founders.
+                
+                
+            
+
+
+foundingDate
+
+Date
+The date that this organization was founded.
+                
+                
+                
+            
+
+
+foundingLocation
+
+Place
+The place where the Organization was founded.
+                
+                
+                
+            
+
+
+funder
+
+Organization  or 
+Person
+A person or organization that supports (sponsors) something through some kind of financial contribution.
+                
+                
+                
+            
+
+
+funding
+
+Grant
+A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.
+                
+                
+                Inverse property: 
+    
+    
+    fundedItem
+
+
+
+globalLocationNumber
+
+Text
+The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+                
+                
+                
+            
+
+
+hasCredential
+
+EducationalOccupationalCredential
+A credential awarded to the Person or Organization.
+                
+                
+                
+            
+
+
+hasMerchantReturnPolicy
+
+MerchantReturnPolicy
+Specifies a MerchantReturnPolicy that may be applicable.
+                 Supersedes 
+                
+    
+    
+    hasProductReturnPolicy.
+                
+                
+            
+
+
+hasOfferCatalog
+
+OfferCatalog
+Indicates an OfferCatalog listing for this Organization, Person, or Service.
+                
+                
+                
+            
+
+
+hasPOS
+
+Place
+Points-of-Sales operated by the organization or person.
+                
+                
+                
+            
+
+
+interactionStatistic
+
+InteractionCounter
+The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+                 Supersedes 
+                
+    
+    
+    interactionCount.
+                
+                
+            
+
+
+isicV4
+
+Text
+The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+                
+                
+                
+            
+
+
+iso6523Code
+
+Text
+An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as leiCode, duns and vatID can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly.
+                
+                
+                
+            
+
+
+keywords
+
+DefinedTerm  or 
+Text  or 
+URL
+Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+                
+                
+                
+            
+
+
+knowsAbout
+
+Text  or 
+Thing  or 
+URL
+Of a Person, and less typically of an Organization, to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or JobPosting descriptions.
+                
+                
+                
+            
+
+
+knowsLanguage
+
+Language  or 
+Text
+Of a Person, and less typically of an Organization, to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the IETF BCP 47 standard.
+                
+                
+                
+            
+
+
+legalName
+
+Text
+The official name of the organization, e.g. the registered company name.
+                
+                
+                
+            
+
+
+leiCode
+
+Text
+An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+                
+                
+                
+            
+
+
+location
+
+Place  or 
+PostalAddress  or 
+Text  or 
+VirtualLocation
+The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+                
+                
+                
+            
+
+
+logo
+
+ImageObject  or 
+URL
+An associated logo.
+                
+                
+                
+            
+
+
+makesOffer
+
+Offer
+A pointer to products or services offered by the organization or person.
+                
+                
+                Inverse property: 
+    
+    
+    offeredBy
+
+
+
+member
+
+Organization  or 
+Person
+A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+                 Supersedes 
+                
+    
+    
+    musicGroupMember, 
+                
+    
+    
+    members.
+                
+                Inverse property: 
+    
+    
+    memberOf
+
+
+
+memberOf
+
+Organization  or 
+ProgramMembership
+An Organization (or ProgramMembership) to which this Person or Organization belongs.
+                
+                
+                Inverse property: 
+    
+    
+    member
+
+
+
+naics
+
+Text
+The North American Industry Classification System (NAICS) code for a particular organization or business person.
+                
+                
+                
+            
+
+
+nonprofitStatus
+
+NonprofitType
+nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business.
+                
+                
+                
+            
+
+
+numberOfEmployees
+
+QuantitativeValue
+The number of employees in an organization, e.g. business.
+                
+                
+                
+            
+
+
+ownershipFundingInfo
+
+AboutPage  or 
+CreativeWork  or 
+Text  or 
+URL
+For an Organization (often but not necessarily a NewsMediaOrganization), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the funder is also available and can be used to make basic funder information machine-readable.
+                
+                
+                
+            
+
+
+owns
+
+OwnershipInfo  or 
+Product
+Products owned by the organization or person.
+                
+                
+                
+            
+
+
+parentOrganization
+
+Organization
+The larger organization that this organization is a subOrganization of, if any.
+                 Supersedes 
+                
+    
+    
+    branchOf.
+                
+                Inverse property: 
+    
+    
+    subOrganization
+
+
+
+publishingPrinciples
+
+CreativeWork  or 
+URL
+The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork.
+
+While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.
+                
+                
+                
+            
+
+
+review
+
+Review
+A review of the item.
+                 Supersedes 
+                
+    
+    
+    reviews.
+                
+                
+            
+
+
+seeks
+
+Demand
+A pointer to products or services sought by the organization or person (demand).
+                
+                
+                
+            
+
+
+slogan
+
+Text
+A slogan or motto associated with the item.
+                
+                
+                
+            
+
+
+sponsor
+
+Organization  or 
+Person
+A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+                
+                
+                
+            
+
+
+subOrganization
+
+Organization
+A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
+                
+                
+                Inverse property: 
+    
+    
+    parentOrganization
+
+
+
+taxID
+
+Text
+The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+                
+                
+                
+            
+
+
+telephone
+
+Text
+The telephone number.
+                
+                
+                
+            
+
+
+unnamedSourcesPolicy
+
+CreativeWork  or 
+URL
+For an Organization (typically a NewsMediaOrganization), a statement about policy on use of unnamed sources and the decision process required.
+                
+                
+                
+            
+
+
+vatID
+
+Text
+The Value-added Tax ID of the organization or person.
+                
+                
+                
+            
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    MusicGroup  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+byArtist
+
+MusicAlbum  or 
+MusicRecording
+The artist that performed this album or recording.
+  
+
+musicBy
+
+Clip  or 
+Episode  or 
+Movie  or 
+MovieSeries  or 
+RadioSeries  or 
+TVSeries  or 
+VideoGame  or 
+VideoGameSeries  or 
+VideoObject
+The composer of the soundtrack.
+  
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<h1>Foo Fighters</h1>
+
+<h2>Video: Interview with the Foo Fighters</h2>
+<object ...>
+  <param ...>
+  <embed type="application/x-shockwave-flash" ...>
+</object>
+Catch this exclusive interview with Dave Grohl and the Foo Fighters
+ about their new album, Rope.
+
+<h2>Songs</h2>
+
+Rope
+ Length: 4:05 - 14300 plays
+<a href="foo-fighters-rope-play.html">Play</a>
+<a href="foo-fighters-rope-buy.html">Buy</a>
+From album: <a href="foo-fighters-wasting-light.html">Wasting Light</a>
+
+Everlong
+ Length: 6:33 - 11700 plays
+<a href="foo-fighters-everlong-play.html">Play</a>
+<a href="foo-fighters-everlong-buy.html">Buy</a>
+From album: <a href="foo-fighters-color-and-shape.html">The Color And The Shape</a>
+
+<h2>Upcoming shows</h2>
+
+<a href="foo-fighters-may20-fedexforum">FedExForum</a>
+Memphis, TN, US
+May 20
+<a href="ticketworlds.com/foofighters/may20-2011">Buy tickets</a>
+
+<a href="foo-fighters-may23-midamericacenter">Mid America Center</a>
+Council Bluffs, IA, US
+May 23
+<a href="ticketworlds.com/foofighters/may23-2011">Buy tickets</a>
+
+<h2><a href="foo-fighters-photos">28 Photos</a></h2>
+<a href="foofighters-1.jpg"><img
+alt="Thumbnail and linked photo of Foo Fighters band"
+src="foofighters-thumb1.jpg" /></a>
+<a href="foofighters-2.jpg"><img
+alt="Thumbnail and linked photo of Foo Fighters band"
+src="foofighters-thumb2.jpg" /></a>
+<a href="foofighters-3.jpg"><img
+alt="Thumbnail and linked photo of Foo Fighters band"
+src="foofighters-thumb3.jpg" /></a>
+
+<h2>Comments:</h2>
+Excited about seeing them in concert next week. -Lawrence , Jan 23
+I dig their latest single. -Mary, Jan 19
+Showing 1-2 of 18 comments. <a href="foofighters-comments">More</a>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/MusicGroup">
+    <h1 itemprop="name">
+        Foo Fighters
+    </h1>
+    <div itemprop="subjectOf" itemscope itemtype="https://schema.org/VideoObject">
+        <h2>
+            Video: <span itemprop="name">Interview with the Foo Fighters</span>
+        </h2>
+        <meta itemprop="duration" content="PT1M33S">
+        <meta itemprop="thumbnail" content="foo-fighters-interview-thumb.jpg"><object>
+            <param>
+             <embed type="application/x-shockwave-flash">
+        </object> <span itemprop="description">Catch this exclusive interview with Dave Grohl and the Foo Fighters about their new album, Rope.</span>
+        <h3>
+            Comments:
+        </h3>Excited about seeing them in concert next week. -Lawrence , Jan 23 I dig their latest single. -Mary, Jan 19
+        <div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="https://schema.org/CommentAction">
+            <meta itemprop="userInteractionCount" content="18">
+        </div>Showing 1-2 of 18 comments. <a href="foofighters-comments">More</a>
+        </div>
+    <h2>
+        Songs
+    </h2>
+    <div itemprop="track" itemscope itemtype="https://schema.org/MusicRecording">
+        <span itemprop="name">Rope</span>
+        <link itemprop="url" href="foo-fighters-rope.html">Length:
+        <meta itemprop="duration" content="PT4M5S">4:05 - 14300 plays
+        <div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="https://schema.org/ListenAction">
+            <meta itemprop="userInteractionCount" content="14300">
+        </div><a href="foo-fighters-rope-play.html" itemprop="audio">Play</a> <a href="foo-fighters-rope-buy.html" itemprop="offers">Buy</a> From album: <a href="foo-fighters-wasting-light.html" itemprop="inAlbum">Wasting Light</a>
+    </div>
+    <div itemprop="track" itemscope itemtype="https://schema.org/MusicRecording">
+        <span itemprop="name">Everlong</span>
+        <link itemprop="url" href="foo-fighters-everlong.html">Length:
+        <meta itemprop="duration" content="PT6M33S">6:33 - 11700 plays
+        <div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="https://schema.org/ListenAction">
+            <meta itemprop="userInteractionCount" content="11700">
+        </div><a href="foo-fighters-everlong-play.html" itemprop="audio">Play</a> <a href="foo-fighters-everlong-buy.html" itemprop="offers">Buy</a> From album: <a href="foo-fighters-color-and-shape.html" itemprop="inAlbum">The Color And The Shape</a>
+    </div>
+    <h2>
+        Upcoming shows
+    </h2>
+    <div itemprop="event" itemscope itemtype="https://schema.org/Event">
+        <a href="foo-fighters-may20-fedexforum" itemprop="url"><span itemprop="name">FedExForum</span></a> <span itemprop="location">Memphis, TN, US</span>
+        <meta itemprop="startDate" content="2011-05-20">May 20 <a href="ticketmaster.com/foofighters/may20-2011" itemprop="offers">Buy tickets</a>
+    </div>
+    <div itemprop="event" itemscope itemtype="https://schema.org/Event">
+        <a href="foo-fighters-may23-midamericacenter" itemprop="url"><span itemprop="name">Mid America Center</span></a> <span itemprop="location">Council Bluffs, IA, US</span>
+        <meta itemprop="startDate" content="2011-05-23">May 23 <a href="ticketmaster.com/foofighters/may23-2011" itemprop="offers">Buy tickets</a>
+    </div>
+    <h2>
+        <a href="foo-fighters-photos">28 Photos</a>
+    </h2><a href="foofighters-1.jpg" itemprop="image"><img alt="Thumbnail and linked photo of Foo Fighters band" src="foofighters-thumb1.jpg"></a> <a href="foofighters-2.jpg" itemprop="image"><img alt="Thumbnail and linked photo of Foo Fighters band" src="foofighters-thumb2.jpg"></a> <a href="foofighters-3.jpg" itemprop="image"><img alt="Thumbnail and linked photo of Foo Fighters band" src="foofighters-thumb3.jpg"></a>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="MusicGroup">
+    <h1 property="name">
+        Foo Fighters
+    </h1>
+    <div property="subjectOf" typeof="VideoObject">
+        <h2>
+            Video: <span property="name">Interview with the Foo Fighters</span>
+        </h2>
+        <meta property="duration" content="PT1M33S">
+        <meta property="thumbnail" content="foo-fighters-interview-thumb.jpg"><object>
+            <param>
+             <embed type="application/x-shockwave-flash">
+        </object> <span property="description">Catch this exclusive interview with Dave Grohl and the Foo Fighters about their new album, Rope.</span>
+        <h3>
+            Comments:
+        </h3>Excited about seeing them in concert next week. -Lawrence , Jan 23 I dig their latest single. -Mary, Jan 19
+        <div property="interactionStatistic" typeof="https://schema.org/InteractionCounter">
+            <meta property="interactionType" content="https://schema.org/CommentAction">
+            <meta property="userInteractionCount" content="18">
+        </div>Showing 1-2 of 18 comments. <a href="foofighters-comments">More</a>
+    </div>
+    <h2>
+        Songs
+    </h2>
+    <div property="track" typeof="MusicRecording">
+        <span property="name">Rope</span>
+        <link property="url" href="foo-fighters-rope.html">Length:
+        <meta property="duration" content="PT4M5S">4:05 - 14300 plays
+        <div property="interactionStatistic" typeof="https://schema.org/InteractionCounter">
+            <meta property="interactionType" content="https://schema.org/ListenAction">
+            <meta property="userInteractionCount" content="14300">
+        </div><a href="foo-fighters-rope-play.html" property="audio">Play</a> <a href="foo-fighters-rope-buy.html" property="offers">Buy</a> From album: <a href="foo-fighters-wasting-light.html" property="inAlbum">Wasting Light</a>
+    </div>
+    <div property="track" typeof="MusicRecording">
+        <span property="name">Everlong</span>
+        <link property="url" href="foo-fighters-everlong.html">Length:
+        <meta property="duration" content="PT6M33S">6:33 - 11700 plays
+        <div property="interactionStatistic" typeof="https://schema.org/InteractionCounter">
+            <meta property="interactionType" content="https://schema.org/ListenAction">
+            <meta property="userInteractionCount" content="11700">
+        </div><a href="foo-fighters-everlong-play.html" property="audio">Play</a> <a href="foo-fighters-everlong-buy.html" property="offers">Buy</a> From album: <a href="foo-fighters-color-and-shape.html" property="inAlbum">The Color And The Shape</a>
+    </div>
+    <h2>
+        Upcoming shows
+    </h2>
+    <div property="event" typeof="Event">
+        <a href="foo-fighters-may20-fedexforum" property="url"><span property="name">FedExForum</span></a> <span property="location">Memphis, TN, US</span>
+        <meta property="startDate" content="2011-05-20">May 20 <a href="ticketmaster.com/foofighters/may20-2011" property="offers">Buy tickets</a>
+    </div>
+    <div property="event" typeof="Event">
+        <a href="foo-fighters-may23-midamericacenter" property="url"><span property="name">Mid America Center</span></a> <span property="location">Council Bluffs, IA, US</span>
+        <meta property="startDate" content="2011-05-23">May 23 <a href="ticketmaster.com/foofighters/may23-2011" property="offers">Buy tickets</a>
+    </div>
+    <h2>
+        <a href="foo-fighters-photos">28 Photos</a>
+    </h2><a href="foofighters-1.jpg" property="image"><img alt="Thumbnail and linked photo of Foo Fighters band" src="foofighters-thumb1.jpg"></a> <a href="foofighters-2.jpg" property="image"><img alt="Thumbnail and linked photo of Foo Fighters band" src="foofighters-thumb2.jpg"></a> <a href="foofighters-3.jpg" property="image"><img alt="Thumbnail and linked photo of Foo Fighters band" src="foofighters-thumb3.jpg"></a>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "event": [
+        {
+            "@type": "Event",
+            "location": "Memphis, TN, US",
+            "offers": "ticketmaster.com/foofighters/may20-2011",
+            "startDate": "2011-05-20",
+            "url": "foo-fighters-may20-fedexforum"
+        },
+        {
+            "@type": "Event",
+            "location": "Council Bluffs, IA, US",
+            "offers": "ticketmaster.com/foofighters/may23-2011",
+            "startDate": "2011-05-23",
+            "url": "foo-fighters-may23-midamericacenter"
+        }
+    ],
+    "image": [
+        "foofighters-1.jpg",
+        "foofighters-2.jpg",
+        "foofighters-3.jpg"
+    ],
+    "name": "Foo Fighters",
+    "track": [
+        {
+            "@type": "MusicRecording",
+            "audio": "foo-fighters-rope-play.html",
+            "duration": "PT4M5S",
+            "inAlbum": "foo-fighters-wasting-light.html",
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/ListenAction",
+                "userInteractionCount": "14300"
+            },
+            "name": "Rope",
+            "offers": "foo-fighters-rope-buy.html",
+            "url": "foo-fighters-rope.html"
+        },
+        {
+            "@type": "MusicRecording",
+            "audio": "foo-fighters-everlong-play.html",
+            "duration": "PT6M33S",
+            "inAlbum": "foo-fighters-color-and-shape.html",
+            "name": "Everlong",
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/ListenAction",
+                "userInteractionCount": "11700"
+            },
+            "offers": "foo-fighters-everlong-buy.html",
+            "url": "foo-fighters-everlong.html"
+        }
+    ],
+    "subjectOf": {
+        "@type": "VideoObject",
+        "description": "Catch this exclusive interview with Dave Grohl and the Foo Fighters about their new album, Rope.",
+        "duration": "PT1M33S",
+        "name": "Interview with the Foo Fighters",
+        "thumbnail": "foo-fighters-interview-thumb.jpg",
+        "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/CommentAction",
+            "userInteractionCount": "18"
+        }
+    }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "event": [
+        {
+            "@type": "Event",
+            "location": "Memphis, TN, US",
+            "offers": "ticketmaster.com/foofighters/may20-2011",
+            "startDate": "2011-05-20",
+            "url": "foo-fighters-may20-fedexforum"
+        },
+        {
+            "@type": "Event",
+            "location": "Council Bluffs, IA, US",
+            "offers": "ticketmaster.com/foofighters/may23-2011",
+            "startDate": "2011-05-23",
+            "url": "foo-fighters-may23-midamericacenter"
+        }
+    ],
+    "image": [
+        "foofighters-1.jpg",
+        "foofighters-2.jpg",
+        "foofighters-3.jpg"
+    ],
+    "name": "Foo Fighters",
+    "track": [
+        {
+            "@type": "MusicRecording",
+            "audio": "foo-fighters-rope-play.html",
+            "duration": "PT4M5S",
+            "inAlbum": "foo-fighters-wasting-light.html",
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/ListenAction",
+                "userInteractionCount": "14300"
+            },
+            "name": "Rope",
+            "offers": "foo-fighters-rope-buy.html",
+            "url": "foo-fighters-rope.html"
+        },
+        {
+            "@type": "MusicRecording",
+            "audio": "foo-fighters-everlong-play.html",
+            "duration": "PT6M33S",
+            "inAlbum": "foo-fighters-color-and-shape.html",
+            "name": "Everlong",
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/ListenAction",
+                "userInteractionCount": "11700"
+            },
+            "offers": "foo-fighters-everlong-buy.html",
+            "url": "foo-fighters-everlong.html"
+        }
+    ],
+    "subjectOf": {
+        "@type": "VideoObject",
+        "description": "Catch this exclusive interview with Dave Grohl and the Foo Fighters about their new album, Rope.",
+        "duration": "PT1M33S",
+        "name": "Interview with the Foo Fighters",
+        "thumbnail": "foo-fighters-interview-thumb.jpg",
+        "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/CommentAction",
+            "userInteractionCount": "18"
+        }
+    }
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+JSON-LD description of a scheduled Event with limited ticket availability and performer details indicated using sameAs.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context" : "https://schema.org",
+  "@type" : "Event",
+  "name" : "Typhoon with Radiation City",
+  "startDate" : "2013-09-14T21:30",
+  "location" : {
+    "@type" : "Place",
+    "sameAs" : "http://www.hi-dive.com",
+    "name" : "The Hi-Dive",
+    "address" : {
+      "@type" : "PostalAddress",
+      "streetAddress" : "7 S. Broadway",
+      "addressLocality" : "Denver",
+      "addressRegion" : "CO",
+      "postalCode" : "80209" }
+  },
+  "performer" : [
+    { "@type" : "MusicGroup",
+      "name" : "Typhoon",
+      "sameAs" : "http://en.wikipedia.org/wiki/Typhoon_(American_band)" },
+    { "@type" : "MusicGroup",
+      "name" : "RadiationCity",
+      "sameAs" : "http://en.wikipedia.org/wiki/Radiation_City" }],
+  "offers" : {
+    "@type" : "Offer",
+    "availability" : "https://schema.org/LimitedAvailability",
+    "priceCurrency": "USD",
+    "price" : "13.00",
+    "url" : "http://www.ticketfly.com/purchase/309433" },
+  "typicalAgeRange" : "18+"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context" : "https://schema.org",
+  "@type" : "Event",
+  "name" : "Typhoon with Radiation City",
+  "startDate" : "2013-09-14T21:30",
+  "location" : {
+    "@type" : "Place",
+    "sameAs" : "http://www.hi-dive.com",
+    "name" : "The Hi-Dive",
+    "address" : {
+      "@type" : "PostalAddress",
+      "streetAddress" : "7 S. Broadway",
+      "addressLocality" : "Denver",
+      "addressRegion" : "CO",
+      "postalCode" : "80209" }
+  },
+  "performer" : [
+    { "@type" : "MusicGroup",
+      "name" : "Typhoon",
+      "sameAs" : "http://en.wikipedia.org/wiki/Typhoon_(American_band)" },
+    { "@type" : "MusicGroup",
+      "name" : "RadiationCity",
+      "sameAs" : "http://en.wikipedia.org/wiki/Radiation_City" }],
+  "offers" : {
+    "@type" : "Offer",
+    "availability" : "https://schema.org/LimitedAvailability",
+    "priceCurrency": "USD",
+    "price" : "13.00",
+    "url" : "http://www.ticketfly.com/purchase/309433" },
+  "typicalAgeRange" : "18+"
+}
+
+
+Example 3 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<div>
+  <h2>Shostakovich Leningrad</h2>
+  <div>
+    <div>May<span>23</span></div>
+    <div>8:00 PM</div>
+    <div>
+      <strong>Britten, Shostakovich</strong>
+    </div>
+  </div>
+  <div>
+    <p>Jaap van Zweden conducts two World War II-era pieces showcasing the glorious sound of the CSO.</p>
+  </div>
+
+  <div>
+    <h3>Program</h3>
+    <ul>
+      <li>
+        <link href="http://en.wikipedia.org/wiki/Peter_Grimes" />
+        <span><strong>Britten</strong> Four Sea Interludes and Passacaglia from <em>Peter Grimes</em></span>
+  </li>
+      <li>
+      <link href="http://en.wikipedia.org/wiki/Symphony_No._7_(Shostakovich)" />
+      <span><strong>Shostakovich</strong> Symphony No. 7 <em>(Leningrad)</em></span>
+  </li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Performers</h3>
+    <div>
+      <img src="/examples/cso_c_logo_s.jpg" alt="Chicago Symphony Orchestra" />
+      <link href="http://cso.org/" />
+      <link href="http://en.wikipedia.org/wiki/Chicago_Symphony_Orchestra" />
+      <div>
+        <a href="examples/Performer?id=4434">Chicago Symphony Orchestra</a>
+      </div>
+    </div>
+
+    <div>
+      <link href="http://www.jaapvanzweden.com/" />
+      <img src="/examples/jvanzweden_s.jpg" alt="Jaap van Zweden"/>
+      <div>
+        <a href="/examples/Performer.aspx?id=11324">Jaap van Zweden</a>
+      </div>
+      <div>conductor</div>
+    </div>
+  </div>
+
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope="" itemtype="https://schema.org/MusicEvent">
+
+  <div itemprop="location" itemscope="" itemtype="https://schema.org/MusicVenue">
+    <meta itemprop="name" content="Chicago Symphony Center"/>
+    <link itemprop="sameAs" href="http://en.wikipedia.org/wiki/Symphony_Center"/>
+    <meta itemprop="address" content="220 S. Michigan Ave, Chicago, Illinois, USA"/>
+  </div>
+
+  <div itemprop="offers" itemscope="" itemtype="https://schema.org/Offer">
+    <link itemprop="url" href="/examples/ticket/12341234" />
+    <meta itemprop="price" content="40"/>
+    <meta itemprop="priceCurrency" content="USD" />
+    <link itemprop="availability" href="https://schema.org/InStock"/>
+  </div>
+
+  <h2 itemprop="name">Shostakovich Leningrad</h2>
+  <div>
+    <div itemprop="startDate" content="2014-05-23T20:00">May<span>23</span></div>
+    <div>8:00 PM</div>
+    <div>
+      <strong>Britten, Shostakovich</strong>
+    </div>
+  </div>
+  <div>
+    <p>Jaap van Zweden conducts two World War II-era pieces showcasing the glorious sound of the CSO.</p>
+  </div>
+
+  <div>
+    <h3>Program</h3>
+    <ul>
+      <li itemprop="workPerformed" itemscope="" itemtype="https://schema.org/CreativeWork">
+        <link itemprop="sameAs" href="http://en.wikipedia.org/wiki/Peter_Grimes" />
+        <span itemprop="name"><strong>Britten</strong> Four Sea Interludes and Passacaglia from <em itemprop="name">Peter Grimes</em></span>
+  </li>
+      <li itemprop="workPerformed" itemscope="" itemtype="https://schema.org/CreativeWork">
+      <link itemprop="sameAs" href="http://en.wikipedia.org/wiki/Symphony_No._7_(Shostakovich)" />
+      <span itemprop="name"><strong>Shostakovich</strong> Symphony No. 7 <em>(Leningrad)</em></span>
+  </li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Performers</h3>
+    <div itemprop="performer" itemscope="" itemtype="https://schema.org/MusicGroup">
+      <img src="/examples/cso_c_logo_s.jpg" alt="Chicago Symphony Orchestra" />
+      <link itemprop="sameAs" href="http://cso.org/" />
+      <link itemprop="sameAs" href="http://en.wikipedia.org/wiki/Chicago_Symphony_Orchestra" />
+      <div>
+        <a href="examples/Performer?id=4434"><span itemprop="name">Chicago Symphony Orchestra</span></a>
+      </div>
+    </div>
+
+    <div itemprop="performer" itemscope="" itemtype="https://schema.org/Person">
+      <link itemprop="sameAs" href="http://www.jaapvanzweden.com/" />
+      <img itemprop="image" src="/examples/jvanzweden_s.jpg" alt="Jaap van Zweden"/>
+      <div>
+        <a href="/examples/Performer.aspx?id=11324"><span itemprop="name">Jaap van Zweden</span></a>
+      </div>
+      <div>conductor</div>
+    </div>
+  </div>
+
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="MusicEvent">
+
+  <div property="location" typeof="MusicVenue">
+    <meta property="name" content="Chicago Symphony Center"/>
+    <link property="sameAs" href="http://en.wikipedia.org/wiki/Symphony_Center"/>
+    <meta property="address" content="220 S. Michigan Ave, Chicago, Illinois, USA"/>
+  </div>
+
+  <div property="offers" typeof="Offer">
+    <link property="url" href="/examples/ticket/12341234"/>
+    <meta property="priceCurrency" content="USD" />$
+    <meta property="price" content="40"/>40.00
+    <link property="availability" href="https://schema.org/InStock"/>
+  </div>
+
+  <h2 property="name">Shostakovich Leningrad</h2>
+  <div>
+    <div property="startDate" content="2014-05-23T20:00">May<span>23</span></div>
+    <div>8:00 PM</div>
+    <div>
+      <strong>Britten, Shostakovich</strong>
+    </div>
+  </div>
+  <div>
+    <p>Jaap van Zweden conducts two World War II-era pieces showcasing the glorious sound of the CSO.</p>
+  </div>
+
+  <div>
+    <h3>Program</h3>
+    <ul>
+      <li property="workPerformed" typeof="CreativeWork">
+        <link href="http://en.wikipedia.org/wiki/Peter_Grimes" property="sameAs"/>
+        <span property="name"><strong>Britten</strong> Four Sea Interludes and Passacaglia from <em property="name">Peter Grimes</em></span>
+  </li>
+      <li property="workPerformed" typeof="CreativeWork">
+      <link href="http://en.wikipedia.org/wiki/Symphony_No._7_(Shostakovich)" property="sameAs"/>
+      <span property="name"><strong>Shostakovich</strong> Symphony No. 7 <em>(Leningrad)</em></span>
+  </li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Performers</h3>
+    <div property="performer" typeof="MusicGroup">
+      <img src="/examples/cso_c_logo_s.jpg" alt="Chicago Symphony Orchestra"/>
+      <link href="http://cso.org/" property="sameAs"/>
+      <link href="http://en.wikipedia.org/wiki/Chicago_Symphony_Orchestra" property="sameAs"/>
+      <a property="name" href="examples/Performer?id=4434">Chicago Symphony Orchestra</a>
+    </div>
+
+    <div property="performer" typeof="Person">
+      <link href="http://www.jaapvanzweden.com/" property="sameAs"/>
+      <img src="/examples/jvanzweden_s.jpg" alt="Jaap van Zweden" property="image"/>
+      <a property="name" href="/examples/Performer.aspx?id=11324">Jaap van Zweden</a>
+      <div>conductor</div>
+    </div>
+  </div>
+
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicEvent",
+  "location": {
+    "@type": "MusicVenue",
+    "name": "Chicago Symphony Center",
+    "address": "220 S. Michigan Ave, Chicago, Illinois, USA"
+  },
+  "name": "Shostakovich Leningrad",
+  "offers": {
+    "@type": "Offer",
+    "url": "/examples/ticket/12341234",
+    "price": "40",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "performer": [
+    {
+      "@type": "MusicGroup",
+      "name": "Chicago Symphony Orchestra",
+      "sameAs": [
+        "http://cso.org/",
+        "http://en.wikipedia.org/wiki/Chicago_Symphony_Orchestra"
+      ]
+    },
+    {
+      "@type": "Person",
+      "image": "/examples/jvanzweden_s.jpg",
+      "name": "Jaap van Zweden",
+      "sameAs": "http://www.jaapvanzweden.com/"
+    }
+  ],
+  "startDate": "2014-05-23T20:00",
+  "workPerformed": [
+    {
+      "@type": "CreativeWork",
+      "name": "Britten Four Sea Interludes and Passacaglia from Peter Grimes",
+      "sameAs": "http://en.wikipedia.org/wiki/Peter_Grimes"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Shostakovich Symphony No. 7 (Leningrad)",
+      "sameAs": "http://en.wikipedia.org/wiki/Symphony_No._7_(Shostakovich)"
+    }
+  ]
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "MusicEvent",
+  "location": {
+    "@type": "MusicVenue",
+    "name": "Chicago Symphony Center",
+    "address": "220 S. Michigan Ave, Chicago, Illinois, USA"
+  },
+  "name": "Shostakovich Leningrad",
+  "offers": {
+    "@type": "Offer",
+    "url": "/examples/ticket/12341234",
+    "price": "40",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "performer": [
+    {
+      "@type": "MusicGroup",
+      "name": "Chicago Symphony Orchestra",
+      "sameAs": [
+        "http://cso.org/",
+        "http://en.wikipedia.org/wiki/Chicago_Symphony_Orchestra"
+      ]
+    },
+    {
+      "@type": "Person",
+      "image": "/examples/jvanzweden_s.jpg",
+      "name": "Jaap van Zweden",
+      "sameAs": "http://www.jaapvanzweden.com/"
+    }
+  ],
+  "startDate": "2014-05-23T20:00",
+  "workPerformed": [
+    {
+      "@type": "CreativeWork",
+      "name": "Britten Four Sea Interludes and Passacaglia from Peter Grimes",
+      "sameAs": "http://en.wikipedia.org/wiki/Peter_Grimes"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Shostakovich Symphony No. 7 (Leningrad)",
+      "sameAs": "http://en.wikipedia.org/wiki/Symphony_No._7_(Shostakovich)"
+    }
+  ]
+}
+
+
+Example 4 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+An example of a more fully specified MusicEvent, including a tour image,
+full venue address, multiple performers, and multiple ticket classes.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+[{
+    "@context" : "https://schema.org",
+    "@type" : "MusicEvent",
+    "name" : "B.B. King with Jonathon \"Boogie\" Long",
+    "image" : "http://www.bbking.com/gallery/b-b-king-live.jpg",
+    "url" : "http://www.bbking.com/events/apr12-providence.html",
+    "startDate" : "2014-04-12T19:30",
+    "doorTime" : "18:30:00",
+    "endDate" : "2014-04-12T22:00",
+    "location" : {
+        "@type" : "Place",
+        "name" : "Lupo's Heartbreak Hotel",
+        "sameAs" : "http://lupos.com/",
+        "address" : {
+            "@type" : "PostalAddress",
+            "streetAddress" : "79 Washington St.",
+            "addressLocality" : "Providence",
+            "addressRegion" : "RI",
+            "postalCode" : "02903",
+            "addressCountry" : "US"
+        }
+    },
+    "offers" : [ {
+        "@type" : "Offer",
+        "name" : "General Admission",
+        "priceCurrency": "USD",
+        "price" : "63.25",
+        "availability" : "SoldOut",
+        "url" : "http://www.ticketmaster.com/event/17004C29"
+    },{
+        "@type" : "Offer",
+        "name" : "VIP Experience",
+        "url" : "http://www.example.com/Abcde12345",
+        "priceCurrency": "USD",
+        "price" : "299.00",
+        "validFrom" : "2014-02-05T10:00",
+        "validThrough" : "2014-03-19T23:59"
+    } ],
+    "performer" : [ {
+        "@type" : "MusicGroup",
+        "name" : "B.B. King",
+        "sameAs" : "http://en.wikipedia.org/wiki/B.B._King"
+    },{
+        "@type" : "MusicGroup",
+        "name" : "Jonathon \"Boogie\" Long",
+        "sameAs" : "http://jonathonboogielong.com/"
+    } ],
+    "eventStatus" : "EventRescheduled",
+    "previousStartDate" : "2013-09-30T19:30",
+    "typicalAgeRange" : "18+"
+}]
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+[{
+    "@context" : "https://schema.org",
+    "@type" : "MusicEvent",
+    "name" : "B.B. King with Jonathon \"Boogie\" Long",
+    "image" : "http://www.bbking.com/gallery/b-b-king-live.jpg",
+    "url" : "http://www.bbking.com/events/apr12-providence.html",
+    "startDate" : "2014-04-12T19:30",
+    "doorTime" : "18:30:00",
+    "endDate" : "2014-04-12T22:00",
+    "location" : {
+        "@type" : "Place",
+        "name" : "Lupo's Heartbreak Hotel",
+        "sameAs" : "http://lupos.com/",
+        "address" : {
+            "@type" : "PostalAddress",
+            "streetAddress" : "79 Washington St.",
+            "addressLocality" : "Providence",
+            "addressRegion" : "RI",
+            "postalCode" : "02903",
+            "addressCountry" : "US"
+        }
+    },
+    "offers" : [ {
+        "@type" : "Offer",
+        "name" : "General Admission",
+        "priceCurrency": "USD",
+        "price" : "63.25",
+        "availability" : "SoldOut",
+        "url" : "http://www.ticketmaster.com/event/17004C29"
+    },{
+        "@type" : "Offer",
+        "name" : "VIP Experience",
+        "url" : "http://www.example.com/Abcde12345",
+        "priceCurrency": "USD",
+        "price" : "299.00",
+        "validFrom" : "2014-02-05T10:00",
+        "validThrough" : "2014-03-19T23:59"
+    } ],
+    "performer" : [ {
+        "@type" : "MusicGroup",
+        "name" : "B.B. King",
+        "sameAs" : "http://en.wikipedia.org/wiki/B.B._King"
+    },{
+        "@type" : "MusicGroup",
+        "name" : "Jonathon \"Boogie\" Long",
+        "sameAs" : "http://jonathonboogielong.com/"
+    } ],
+    "eventStatus" : "EventRescheduled",
+    "previousStartDate" : "2013-09-30T19:30",
+    "typicalAgeRange" : "18+"
+}]
+
+
+Example 5 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+An example of possible JSON-LD for Let It Be by the Beatles.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "MusicAlbum",
+    "@id": "http://musicbrainz.org/release-group/bff544a7-56e0-3ed6-9e0f-3b676cca9111",
+    "name": "Let It Be",
+    "sameAs": [
+        "http://en.wikipedia.org/wiki/Let_It_Be",
+        "http://www.wikidata.org/wiki/Q199585"
+    ],
+    "image": "http://coverartarchive.org/release-group/bff544a7-56e0-3ed6-9e0f-3b676cca9111/front.jpg",
+    "albumProductionType": "https://schema.org/StudioAlbum",
+    "albumReleaseType": "https://schema.org/AlbumRelease",
+    "genre": "rock",
+    "byArtist": {
+        "@type": "MusicGroup",
+        "name": "The Beatles",
+        "@id": "http://musicbrainz.org/artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d"
+    },
+    "albumRelease": {
+        "@type": "MusicRelease",
+        "name": "Let It Be",
+        "@id": "http://musicbrainz.org/release/8d5347a5-9ecb-44be-a213-860aaaf5d0b8"
+    },
+    "track": {
+	    "@type": "ItemList",
+	    "numberOfItems": 12,
+	    "itemListElement": [
+		    {
+		      "@type": "ListItem",
+		      "position": 1,
+		      "item": {
+			      "@type": "MusicRecording",
+			      "name": "Two Of Us"
+		      }
+		    },
+		    {
+		      "@type": "ListItem",
+		      "position": 2,
+		      "item": {
+			      "@type": "MusicRecording",
+			      "name": "Dig a Pony"
+		      }
+		    },
+		    {
+		      "@type": "ListItem",
+		      "position": 3,
+		      "item": {
+			      "@type": "MusicRecording",
+			      "name": "Across the Universe"
+		      }
+		    }
+	    ]
+    }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+    "@context": "https://schema.org",
+    "@type": "MusicAlbum",
+    "@id": "http://musicbrainz.org/release-group/bff544a7-56e0-3ed6-9e0f-3b676cca9111",
+    "name": "Let It Be",
+    "sameAs": [
+        "http://en.wikipedia.org/wiki/Let_It_Be",
+        "http://www.wikidata.org/wiki/Q199585"
+    ],
+    "image": "http://coverartarchive.org/release-group/bff544a7-56e0-3ed6-9e0f-3b676cca9111/front.jpg",
+    "albumProductionType": "https://schema.org/StudioAlbum",
+    "albumReleaseType": "https://schema.org/AlbumRelease",
+    "genre": "rock",
+    "byArtist": {
+        "@type": "MusicGroup",
+        "name": "The Beatles",
+        "@id": "http://musicbrainz.org/artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d"
+    },
+    "albumRelease": {
+        "@type": "MusicRelease",
+        "name": "Let It Be",
+        "@id": "http://musicbrainz.org/release/8d5347a5-9ecb-44be-a213-860aaaf5d0b8"
+    },
+    "track": {
+	    "@type": "ItemList",
+	    "numberOfItems": 12,
+	    "itemListElement": [
+		    {
+		      "@type": "ListItem",
+		      "position": 1,
+		      "item": {
+			      "@type": "MusicRecording",
+			      "name": "Two Of Us"
+		      }
+		    },
+		    {
+		      "@type": "ListItem",
+		      "position": 2,
+		      "item": {
+			      "@type": "MusicRecording",
+			      "name": "Dig a Pony"
+		      }
+		    },
+		    {
+		      "@type": "ListItem",
+		      "position": 3,
+		      "item": {
+			      "@type": "MusicRecording",
+			      "name": "Across the Universe"
+		      }
+		    }
+	    ]
+    }
+}
+
+
+Example 6 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+MusicGroup Example.
+
+Sample JSON-LD for the Beatles as described by MusicBrainz.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "@id": "http://musicbrainz.org/artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
+    "name": "Beatles",
+    "sameAs": "http://www.thebeatles.com",
+    "foundingLocation": {
+        "@type": "City",
+        "name": "Liverpool"
+    },
+    "foundingDate": "1957",
+    "dissolutionDate": "1970",
+    "genre": "Rock",
+    "album": {
+        "@type": "MusicAlbum",
+        "name": "The Beatles",
+        "alternateName": "The White Album",
+        "@id": "http://musicbrainz.org/release-group/055be730-dcad-31bf-b550-45ba9c202aa3",
+        "datePublished": "1968"
+    },
+    "member": [
+      {
+        "@type": "OrganizationRole",
+        "member": {
+          "@type": "Person",
+          "name": "John Lennon"
+        },
+        "startDate": "1957",
+        "endDate": "1970",
+        "roleName": ["guitar", "lead vocals"]
+      },
+      {
+        "@type": "OrganizationRole",
+        "member": {
+          "@type": "Person",
+          "name": "Paul McCartney"
+        },
+        "startDate": "1957",
+        "endDate": "1970",
+        "roleName": ["bass guitar", "lead vocals"]
+      },
+      {
+        "@type": "OrganizationRole",
+        "member": {
+          "@type": "Person",
+          "name": "George Harrison"
+        },
+        "startDate": "1958",
+        "endDate": "1970",
+        "roleName": ["guitar", "lead vocals"]
+      },
+      {
+        "@type": "OrganizationRole",
+        "member": {
+          "@type": "Person",
+          "name": "Ringo Starr"
+        },
+        "startDate": "1962",
+        "endDate": "1970",
+        "roleName": "drums"
+      }
+    ]
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "@id": "http://musicbrainz.org/artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
+    "name": "Beatles",
+    "sameAs": "http://www.thebeatles.com",
+    "foundingLocation": {
+        "@type": "City",
+        "name": "Liverpool"
+    },
+    "foundingDate": "1957",
+    "dissolutionDate": "1970",
+    "genre": "Rock",
+    "album": {
+        "@type": "MusicAlbum",
+        "name": "The Beatles",
+        "alternateName": "The White Album",
+        "@id": "http://musicbrainz.org/release-group/055be730-dcad-31bf-b550-45ba9c202aa3",
+        "datePublished": "1968"
+    },
+    "member": [
+      {
+        "@type": "OrganizationRole",
+        "member": {
+          "@type": "Person",
+          "name": "John Lennon"
+        },
+        "startDate": "1957",
+        "endDate": "1970",
+        "roleName": ["guitar", "lead vocals"]
+      },
+      {
+        "@type": "OrganizationRole",
+        "member": {
+          "@type": "Person",
+          "name": "Paul McCartney"
+        },
+        "startDate": "1957",
+        "endDate": "1970",
+        "roleName": ["bass guitar", "lead vocals"]
+      },
+      {
+        "@type": "OrganizationRole",
+        "member": {
+          "@type": "Person",
+          "name": "George Harrison"
+        },
+        "startDate": "1958",
+        "endDate": "1970",
+        "roleName": ["guitar", "lead vocals"]
+      },
+      {
+        "@type": "OrganizationRole",
+        "member": {
+          "@type": "Person",
+          "name": "Ringo Starr"
+        },
+        "startDate": "1962",
+        "endDate": "1970",
+        "roleName": "drums"
+      }
+    ]
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

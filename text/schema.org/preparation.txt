@@ -1,0 +1,154 @@
+
+
+
+
+
+preparation - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+preparation
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    preparation
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/preparation 
+
+Check for open issues.
+
+
+
+
+Typical preparation that a patient must undergo before having the procedure performed.
+ 
+
+Values expected to be one of these types
+
+
+MedicalEntity
+
+Text
+
+
+
+Used on these types
+
+
+MedicalProcedure
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

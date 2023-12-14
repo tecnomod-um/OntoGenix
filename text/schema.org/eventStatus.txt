@@ -1,0 +1,152 @@
+
+
+
+
+
+eventStatus - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+eventStatus
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    eventStatus
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/eventStatus 
+
+Check for open issues.
+
+
+
+
+An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
+ 
+
+Values expected to be one of these types
+
+
+EventStatusType
+
+
+
+Used on these types
+
+
+Event
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

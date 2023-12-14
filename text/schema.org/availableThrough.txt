@@ -1,0 +1,152 @@
+
+
+
+
+
+availableThrough - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+availableThrough
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    availableThrough
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/availableThrough 
+
+Check for open issues.
+
+
+
+
+After this date, the item will no longer be available for pickup.
+ 
+
+Values expected to be one of these types
+
+
+DateTime
+
+
+
+Used on these types
+
+
+DeliveryEvent
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,177 @@
+
+
+
+
+
+EUEnergyEfficiencyCategoryF - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+EUEnergyEfficiencyCategoryF
+A Schema.org Enumeration Member
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    EnergyEfficiencyEnumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    EUEnergyEfficiencyEnumeration 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    EUEnergyEfficiencyCategoryF
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/EUEnergyEfficiencyCategoryF 
+
+Check for open issues.
+
+
+
+
+Represents EU Energy Efficiency Class F as defined in EU energy labeling regulations.
+ A member value for enumeration type: 
+    
+    
+    EUEnergyEfficiencyEnumeration
+ 
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2670
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

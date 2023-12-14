@@ -1,0 +1,309 @@
+
+
+
+
+
+Geriatric - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+Geriatric
+A Schema.org Enumeration Member
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Organization 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    LocalBusiness 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalBusiness 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    Geriatric
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalEnumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalSpecialty 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    Geriatric
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Place 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    LocalBusiness 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalBusiness 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    Geriatric
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Specialty 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalSpecialty 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    Geriatric
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/Geriatric 
+
+Check for open issues.
+
+
+
+
+A specific branch of medical science that is concerned with the diagnosis and treatment of diseases, debilities and provision of care to the aged.
+ A member value for enumeration type: 
+    
+    
+    MedicalSpecialty
+ 
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

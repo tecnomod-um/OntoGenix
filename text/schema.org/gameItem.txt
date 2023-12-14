@@ -1,0 +1,154 @@
+
+
+
+
+
+gameItem - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+gameItem
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    gameItem
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/gameItem 
+
+Check for open issues.
+
+
+
+
+An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
+ 
+
+Values expected to be one of these types
+
+
+Thing
+
+
+
+Used on these types
+
+
+Game
+
+VideoGameSeries
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

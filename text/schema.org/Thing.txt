@@ -1,0 +1,549 @@
+
+
+
+
+
+Thing - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+Thing
+A Schema.org Type
+
+
+
+
+
+Thing
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/Thing 
+
+Check for open issues.
+
+
+
+
+The most generic type of item.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    Thing  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+about
+
+CommunicateAction  or 
+CreativeWork  or 
+Event
+The subject matter of the content.
+  
+
+actionOption
+
+ChooseAction
+A sub property of object. The options subject to this action.
+  
+
+category
+
+ActionAccessSpecification  or 
+Invoice  or 
+Offer  or 
+PhysicalActivity  or 
+Product  or 
+Recommendation  or 
+Service  or 
+SpecialAnnouncement
+A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+  
+
+characterAttribute
+
+Game  or 
+VideoGameSeries
+A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).
+  
+
+collection
+
+UpdateAction
+A sub property of object. The collection target of the action.
+  
+
+dataFeedElement
+
+DataFeed
+An item within a data feed. Data feeds may have many elements.
+  
+
+defaultValue
+
+PropertyValueSpecification
+The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+  
+
+error
+
+Action
+For failed actions, more information on the cause of the failure.
+  
+
+gameItem
+
+Game  or 
+VideoGameSeries
+An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
+  
+
+gamePlatform
+
+VideoGame  or 
+VideoGameSeries
+The electronic systems used to play video games.
+  
+
+instrument
+
+Action
+The object that helped the agent perform the action. E.g. John wrote a book with a pen.
+  
+
+item
+
+DataFeedItem  or 
+ListItem
+An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
+  
+
+itemListElement
+
+ItemList
+For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.
+
+Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.
+
+Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
+  
+
+itemReviewed
+
+AggregateRating  or 
+Review
+The item that is being reviewed/rated.
+  
+
+knowsAbout
+
+Organization  or 
+Person
+Of a Person, and less typically of an Organization, to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or JobPosting descriptions.
+  
+
+mainEntity
+
+CreativeWork
+Indicates the primary entity described in some page or other CreativeWork.
+  
+
+mentions
+
+CreativeWork
+Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
+  
+
+object
+
+Action
+The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read a book.
+  
+
+observationAbout
+
+Observation
+The observationAbout property identifies an entity, often a Place, associated with an Observation.
+  
+
+option
+
+ChooseAction
+A sub property of object. The options subject to this action.
+  
+
+produces
+
+Service
+The tangible thing generated by the service, e.g. a passport, permit, etc.
+  
+
+quest
+
+Game  or 
+VideoGameSeries
+The task that a player-controlled character, or group of characters may complete in order to gain a reward.
+  
+
+replacee
+
+ReplaceAction
+A sub property of object. The object that is being replaced.
+  
+
+replacer
+
+ReplaceAction
+A sub property of object. The object that replaces.
+  
+
+requiredCollateral
+
+LoanOrCredit
+Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
+  
+
+reservationFor
+
+Reservation
+The thing -- flight, event, restaurant, etc. being reserved.
+  
+
+result
+
+Action
+The result produced in the action. E.g. John wrote a book.
+  
+
+serviceOutput
+
+Service
+The tangible thing generated by the service, e.g. a passport, permit, etc.
+  
+
+targetCollection
+
+UpdateAction
+A sub property of object. The collection target of the action.
+  
+
+
+
+
+More specific Types
+
+
+Action
+
+BioChemEntity
+
+CreativeWork
+
+Event
+
+Intangible
+
+MedicalEntity
+
+Organization
+
+Person
+
+Place
+
+Product
+
+Taxon
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+See JSON example.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Thing",
+  "name": "Schema.org Ontology",
+  "subjectOf": {
+    "@type": "Book",
+    "name": "The Complete History of Schema.org"
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "Thing",
+  "name": "Schema.org Ontology",
+  "subjectOf": {
+    "@type": "Book",
+    "name": "The Complete History of Schema.org"
+  }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

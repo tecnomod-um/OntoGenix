@@ -1,0 +1,152 @@
+
+
+
+
+
+guidelineDate - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+guidelineDate
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    guidelineDate
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/guidelineDate 
+
+Check for open issues.
+
+
+
+
+Date on which this guideline's recommendation was made.
+ 
+
+Values expected to be one of these types
+
+
+Date
+
+
+
+Used on these types
+
+
+MedicalGuideline
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

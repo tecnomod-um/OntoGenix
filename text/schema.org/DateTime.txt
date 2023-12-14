@@ -1,0 +1,502 @@
+
+
+
+
+
+DateTime - Schema.org Data Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+DateTime
+A Schema.org Data Type
+
+
+
+
+
+DataType 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    DateTime
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/DateTime 
+
+Check for open issues.
+
+
+
+
+A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] (see Chapter 5.4 of ISO 8601).
+ 
+
+
+
+
+Instances of 
+    
+    
+    DateTime  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+arrivalTime
+
+Trip
+The expected arrival time.
+  
+
+availabilityEnds
+
+ActionAccessSpecification  or 
+Demand  or 
+Offer
+The end of the availability of the product or service included in the offer.
+  
+
+availabilityStarts
+
+ActionAccessSpecification  or 
+Demand  or 
+Offer
+The beginning of the availability of the product or service included in the offer.
+  
+
+availableFrom
+
+DeliveryEvent
+When the item is available for pickup from the store, locker, etc.
+  
+
+availableThrough
+
+DeliveryEvent
+After this date, the item will no longer be available for pickup.
+  
+
+bookingTime
+
+Reservation
+The date and time the reservation was booked.
+  
+
+checkinTime
+
+LodgingBusiness  or 
+LodgingReservation
+The earliest someone may check into a lodging establishment.
+  
+
+checkoutTime
+
+LodgingBusiness  or 
+LodgingReservation
+The latest someone may check out of a lodging establishment.
+  
+
+commentTime
+
+UserComments
+The time at which the UserComment was made.
+  
+
+contentReferenceTime
+
+CreativeWork
+The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
+  
+
+coverageEndTime
+
+LiveBlogPosting
+The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
+  
+
+coverageStartTime
+
+LiveBlogPosting
+The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
+  
+
+cvdCollectionDate
+
+CDCPMDRecord
+collectiondate - Date for which patient counts are reported.
+  
+
+datasetTimeInterval
+
+Dataset
+The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).
+  
+
+dateCreated
+
+CreativeWork  or 
+DataFeedItem
+The date on which the CreativeWork was created or the item was added to a DataFeed.
+  
+
+dateDeleted
+
+DataFeedItem
+The datetime the item was removed from the DataFeed.
+  
+
+dateIssued
+
+Ticket
+The date the ticket was issued.
+  
+
+dateModified
+
+CreativeWork  or 
+DataFeedItem
+The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+  
+
+datePosted
+
+CDCPMDRecord  or 
+JobPosting  or 
+RealEstateListing  or 
+SpecialAnnouncement
+Publication date of an online listing.
+  
+
+datePublished
+
+CreativeWork
+Date of first broadcast/publication.
+  
+
+dateRead
+
+Message
+The date/time at which the message has been read by the recipient if a single recipient exists.
+  
+
+dateReceived
+
+Message
+The date/time the message was received if a single recipient exists.
+  
+
+dateSent
+
+Message
+The date/time at which the message was sent.
+  
+
+departureTime
+
+Trip
+The expected departure time.
+  
+
+doorTime
+
+Event
+The time admission will commence.
+  
+
+dropoffTime
+
+RentalCarReservation
+When a rental car can be dropped off.
+  
+
+endDate
+
+CreativeWorkSeason  or 
+CreativeWorkSeries  or 
+DatedMoneySpecification  or 
+EducationalOccupationalProgram  or 
+Event  or 
+MerchantReturnPolicySeasonalOverride  or 
+Role  or 
+Schedule
+The end date and time of the item (in ISO 8601 date format).
+  
+
+endTime
+
+Action  or 
+FoodEstablishmentReservation  or 
+InteractionCounter  or 
+MediaObject  or 
+Schedule
+The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to December. For media, including audio and video, it's the time offset of the end of a clip within a larger file.
+
+Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+  
+
+exceptDate
+
+Schedule
+Defines a Date or DateTime during which a scheduled Event will not take place. The property allows exceptions to
+      a Schedule to be specified. If an exception is specified as a DateTime then only the event that would have started at that specific date and time
+      should be excluded from the schedule. If an exception is specified as a Date then any event that is scheduled for that 24 hour period should be
+      excluded from the schedule. This allows a whole day to be excluded from the schedule without having to itemise every scheduled event.
+  
+
+expectedArrivalFrom
+
+ParcelDelivery
+The earliest date the package may arrive.
+  
+
+expectedArrivalUntil
+
+ParcelDelivery
+The latest date the package may arrive.
+  
+
+expires
+
+CreativeWork
+Date the content expires and is no longer useful or available. For example a VideoObject or NewsArticle whose availability or relevance is time-limited, or a ClaimReview fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
+  
+
+merchantReturnDays
+
+MerchantReturnPolicy  or 
+MerchantReturnPolicySeasonalOverride
+Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the returnPolicyCategory property is specified as MerchantReturnFiniteReturnWindow.
+  
+
+modifiedTime
+
+Reservation
+The date and time the reservation was modified.
+  
+
+observationDate
+
+Observation
+The observationDate of an Observation.
+  
+
+orderDate
+
+Order
+Date order was placed.
+  
+
+ownedFrom
+
+OwnershipInfo
+The date and time of obtaining the product.
+  
+
+ownedThrough
+
+OwnershipInfo
+The date and time of giving up ownership on the product.
+  
+
+paymentDue
+
+Invoice  or 
+Order
+The date that payment is due.
+  
+
+paymentDueDate
+
+Invoice  or 
+Order
+The date that payment is due.
+  
+
+pickupTime
+
+RentalCarReservation  or 
+TaxiReservation
+When a taxi will pick up a passenger or a rental car can be picked up.
+  
+
+scheduledTime
+
+PlanAction
+The time the object is scheduled to.
+  
+
+startDate
+
+CreativeWorkSeason  or 
+CreativeWorkSeries  or 
+DatedMoneySpecification  or 
+EducationalOccupationalProgram  or 
+Event  or 
+MerchantReturnPolicySeasonalOverride  or 
+Role  or 
+Schedule
+The start date and time of the item (in ISO 8601 date format).
+  
+
+startTime
+
+Action  or 
+FoodEstablishmentReservation  or 
+InteractionCounter  or 
+MediaObject  or 
+Schedule
+The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.
+
+Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+  
+
+temporal
+
+CreativeWork
+The "temporal" property can be used in cases where more specific properties
+(e.g. temporalCoverage, dateCreated, dateModified, datePublished) are not known to be appropriate.
+  
+
+temporalCoverage
+
+CreativeWork
+The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in ISO 8601 time interval format. In
+      the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+      Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+
+Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+  
+
+uploadDate
+
+MediaObject
+Date (including time if available) when this media object was uploaded to this site.
+  
+
+validFrom
+
+Demand  or 
+LocationFeatureSpecification  or 
+MonetaryAmount  or 
+Offer  or 
+OpeningHoursSpecification  or 
+Permit  or 
+PriceSpecification
+The date when the item becomes valid.
+  
+
+validThrough
+
+Demand  or 
+JobPosting  or 
+LocationFeatureSpecification  or 
+MonetaryAmount  or 
+Offer  or 
+OpeningHoursSpecification  or 
+PriceSpecification
+The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+  
+
+webCheckinTime
+
+Flight
+The time when a passenger can check into the flight online.
+  
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,3566 @@
+
+
+
+
+
+Text - Schema.org Data Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+Text
+A Schema.org Data Type
+
+
+
+
+
+DataType 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    Text
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/Text 
+
+Check for open issues.
+
+
+
+
+Data type: Text.
+ 
+
+
+
+
+Instances of 
+    
+    
+    Text  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+abstract
+
+CreativeWork
+An abstract is a short description that summarizes a CreativeWork.
+  
+
+acceptsReservations
+
+FoodEstablishment
+Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings Yes or No.
+  
+
+accessCode
+
+DeliveryEvent
+Password, PIN, or access code needed for delivery (e.g. from a locker).
+  
+
+accessMode
+
+CreativeWork
+The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the approved vocabulary.
+  
+
+accessibilityAPI
+
+CreativeWork
+Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the approved vocabulary.
+  
+
+accessibilityControl
+
+CreativeWork
+Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the approved vocabulary.
+  
+
+accessibilityFeature
+
+CreativeWork
+Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the approved vocabulary.
+  
+
+accessibilityHazard
+
+CreativeWork
+A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the approved vocabulary.
+  
+
+accessibilitySummary
+
+CreativeWork
+A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".
+  
+
+accommodationCategory
+
+Accommodation
+Category of an Accommodation, following real estate conventions, e.g. RESO (see PropertySubType, and PropertyType fields  for suggested values).
+  
+
+accountId
+
+Invoice
+The identifier for the account the payment will be applied to.
+  
+
+acrissCode
+
+BusOrCoach  or 
+Car
+The ACRISS Car Classification Code is a code used by many car rental companies, for classifying vehicles. ACRISS stands for Association of Car Rental Industry Systems and Standards.
+  
+
+actionOption
+
+ChooseAction
+A sub property of object. The options subject to this action.
+  
+
+actionPlatform
+
+EntryPoint
+The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
+  
+
+activeIngredient
+
+DietarySupplement  or 
+Drug  or 
+DrugStrength  or 
+Substance
+An active ingredient, typically chemical compounds and/or biologic substances.
+  
+
+activityFrequency
+
+ExercisePlan
+How often one should engage in the activity.
+  
+
+additionalName
+
+Person
+An additional name for a Person, can be used for a middle name.
+  
+
+additionalType
+
+Thing
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+  
+
+additionalVariable
+
+ExercisePlan
+Any additional component of the exercise prescription that may need to be articulated to the patient. This may include the order of exercises, the number of repetitions of movement, quantitative distance, progressions over time, etc.
+  
+
+address
+
+GeoCoordinates  or 
+GeoShape  or 
+Organization  or 
+Person  or 
+Place
+Physical address of the item.
+  
+
+addressCountry
+
+DefinedRegion  or 
+GeoCoordinates  or 
+GeoShape  or 
+PostalAddress
+The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+  
+
+addressLocality
+
+PostalAddress
+The locality in which the street address is, and which is in the region. For example, Mountain View.
+  
+
+addressRegion
+
+DefinedRegion  or 
+PostalAddress
+The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division.
+  
+
+administrationRoute
+
+Drug
+A route by which this drug may be administered, e.g. 'oral'.
+  
+
+aircraft
+
+Flight
+The kind of aircraft (e.g., "Boeing 747").
+  
+
+alcoholWarning
+
+Drug
+Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
+  
+
+algorithm
+
+MedicalRiskScore
+The algorithm or rules to follow to compute the score.
+  
+
+alignmentType
+
+AlignmentObject
+A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
+  
+
+alternateName
+
+Thing
+An alias for the item.
+  
+
+alternativeHeadline
+
+CreativeWork
+A secondary title of the CreativeWork.
+  
+
+applicableCountry
+
+MerchantReturnPolicy
+A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
+  
+
+applicationCategory
+
+SoftwareApplication
+Type of software application, e.g. 'Game, Multimedia'.
+  
+
+applicationSubCategory
+
+SoftwareApplication
+Subcategory of the application, e.g. 'Arcade Game'.
+  
+
+applicationSuite
+
+SoftwareApplication
+The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
+  
+
+areaServed
+
+ContactPoint  or 
+DeliveryChargeSpecification  or 
+Demand  or 
+Offer  or 
+Organization  or 
+Service
+The geographic area where a service or offered item is provided.
+  
+
+arrivalGate
+
+Flight
+Identifier of the flight's arrival gate.
+  
+
+arrivalPlatform
+
+TrainTrip
+The platform where the train arrives.
+  
+
+arrivalTerminal
+
+Flight
+Identifier of the flight's arrival terminal.
+  
+
+artEdition
+
+VisualArtwork
+The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
+  
+
+artMedium
+
+VisualArtwork
+The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
+  
+
+artform
+
+VisualArtwork
+e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
+  
+
+articleBody
+
+Article
+The actual body of the article.
+  
+
+articleSection
+
+Article
+Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc.
+  
+
+artworkSurface
+
+VisualArtwork
+The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
+  
+
+asin
+
+Demand  or 
+Offer  or 
+Product
+An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from Wikipedia's article).
+
+Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
+ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
+  
+
+aspect
+
+MedicalWebPage
+An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
+  
+
+assembly
+
+APIReference
+Library file name, e.g., mscorlib.dll, system.web.dll.
+  
+
+assemblyVersion
+
+APIReference
+Associated product/technology version. E.g., .NET Framework 4.5.
+  
+
+assesses
+
+CreativeWork  or 
+EducationEvent  or 
+LearningResource
+The item being described is intended to assess the competency or learning outcome defined by the referenced term.
+  
+
+associatedPathophysiology
+
+AnatomicalStructure  or 
+AnatomicalSystem  or 
+SuperficialAnatomy
+If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+  
+
+audienceType
+
+Audience
+The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
+  
+
+availableLanguage
+
+ContactPoint  or 
+Course  or 
+LodgingBusiness  or 
+ServiceChannel  or 
+TouristAttraction
+A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage.
+  
+
+availableOnDevice
+
+SoftwareApplication
+Device required to run the application. Used in cases where a specific make/model is required to run the application.
+  
+
+award
+
+CreativeWork  or 
+Organization  or 
+Person  or 
+Product  or 
+Service
+An award won by or for this item.
+  
+
+awards
+
+CreativeWork  or 
+Organization  or 
+Person  or 
+Product
+Awards won by or for this item.
+  
+
+backstory
+
+Article
+For an Article, typically a NewsArticle, the backstory property provides a textual summary giving a brief explanation of why and how an article was created. In a journalistic setting this could include information about reporting process, methods, interviews, data sources, etc.
+  
+
+bankAccountType
+
+BankAccount
+The type of a bank account.
+  
+
+bed
+
+Accommodation  or 
+HotelRoom  or 
+Suite
+The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
+      If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
+  
+
+beneficiaryBank
+
+MoneyTransfer
+A bank or bankâs branch, financial institution or international financial institution operating the beneficiaryâs bank account or releasing funds for the beneficiary.
+  
+
+benefits
+
+JobPosting
+Description of benefits associated with the job.
+  
+
+bestRating
+
+Rating
+The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+  
+
+biomechnicalClass
+
+Joint
+The biomechanical properties of the bone.
+  
+
+bitrate
+
+MediaObject
+The bitrate of the media object.
+  
+
+boardingGroup
+
+FlightReservation
+The airline-specific indicator of boarding order / preference.
+  
+
+bodyLocation
+
+AnatomicalStructure  or 
+MedicalProcedure
+Location in the body of the anatomical structure.
+  
+
+bodyType
+
+Vehicle
+Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
+  
+
+bookEdition
+
+Book
+The edition of the book.
+  
+
+box
+
+GeoShape
+A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
+  
+
+branchCode
+
+Place
+A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.
+
+For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+  
+
+breadcrumb
+
+WebPage
+A set of links that can help a user understand and navigate a website hierarchy.
+  
+
+breastfeedingWarning
+
+Drug
+Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
+  
+
+broadcastChannelId
+
+BroadcastChannel
+The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
+  
+
+broadcastDisplayName
+
+BroadcastService
+The name displayed in the channel guide. For many US affiliates, it is the network name.
+  
+
+broadcastFrequency
+
+BroadcastChannel  or 
+BroadcastService
+The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+  
+
+broadcastServiceTier
+
+BroadcastChannel
+The type of service required to have access to the channel (e.g. Standard or Premium).
+  
+
+broadcastSignalModulation
+
+BroadcastFrequencySpecification
+The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
+  
+
+broadcastSubChannel
+
+BroadcastFrequencySpecification
+The subchannel used for the broadcast.
+  
+
+broadcastTimezone
+
+BroadcastService
+The timezone in ISO 8601 format for which the service bases its broadcasts.
+  
+
+browserRequirements
+
+WebApplication
+Specifies browser requirements in human-readable text. For example, 'requires HTML5 support'.
+  
+
+busName
+
+BusTrip
+The name of the bus (e.g. Bolt Express).
+  
+
+busNumber
+
+BusTrip
+The unique identifier for the bus.
+  
+
+byDay
+
+Schedule
+Defines the day(s) of the week on which a recurring Event takes place. May be specified using either DayOfWeek, or alternatively Text conforming to iCal's syntax for byDay recurrence rules.
+  
+
+callSign
+
+BroadcastService  or 
+Person  or 
+Vehicle
+A callsign, as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+  
+
+caption
+
+AudioObject  or 
+ImageObject  or 
+VideoObject
+The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the encodingFormat.
+  
+
+carrierRequirements
+
+MobileApplication
+Specifies specific carrier(s) requirements for the application (e.g. an application may only work on a specific carrier network).
+  
+
+catalogNumber
+
+MusicRelease
+The catalog number for the release.
+  
+
+category
+
+ActionAccessSpecification  or 
+Invoice  or 
+Offer  or 
+PhysicalActivity  or 
+Product  or 
+Recommendation  or 
+Service  or 
+SpecialAnnouncement
+A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+  
+
+characterName
+
+PerformanceRole
+The name of a character played in some acting or performing role, i.e. in a PerformanceRole.
+  
+
+checkoutPageURLTemplate
+
+Offer
+A URL template (RFC 6570) for a checkout page for an offer. This approach allows merchants to specify a URL for online checkout of the offered product, by interpolating parameters such as the logged in user ID, product ID, quantity, discount code etc. Parameter naming and standardization are not specified here.
+  
+
+chemicalComposition
+
+ChemicalSubstance
+The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.
+  
+
+childTaxon
+
+Taxon
+Closest child taxa of the taxon in question.
+  
+
+circle
+
+GeoShape
+A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
+  
+
+citation
+
+CreativeWork
+A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
+  
+
+claimReviewed
+
+ClaimReview
+A short summary of the specific claims reviewed in a ClaimReview.
+  
+
+clincalPharmacology
+
+Drug
+Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+  
+
+clinicalPharmacology
+
+Drug
+Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+  
+
+clipNumber
+
+Clip
+Position of the clip within an ordered group of clips.
+  
+
+codeSampleType
+
+SoftwareSourceCode
+What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
+  
+
+codeValue
+
+CategoryCode  or 
+MedicalCode
+A short textual code that uniquely identifies the value.
+  
+
+codingSystem
+
+MedicalCode
+The coding system, e.g. 'ICD-10'.
+  
+
+color
+
+Product
+The color of the product.
+  
+
+commentText
+
+UserComments
+The text of the UserComment.
+  
+
+competencyRequired
+
+EducationalOccupationalCredential  or 
+LearningResource
+Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
+  
+
+conditionsOfAccess
+
+CreativeWork
+Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an ArchiveComponent held by an ArchiveOrganization. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.
+
+For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ".
+  
+
+confirmationNumber
+
+Invoice  or 
+Order
+A number that confirms the given order or payment has been received.
+  
+
+contactType
+
+ContactPoint
+A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
+  
+
+contentRating
+
+CreativeWork
+Official rating of a piece of content—for example, 'MPAA PG-13'.
+  
+
+contentSize
+
+MediaObject
+File size in (mega/kilo)bytes.
+  
+
+contentType
+
+EntryPoint
+The supported content type(s) for an EntryPoint response.
+  
+
+contraindication
+
+MedicalDevice  or 
+MedicalTherapy
+A contraindication for this therapy.
+  
+
+cookingMethod
+
+Recipe
+The method of cooking, such as Frying, Steaming, ...
+  
+
+copyrightNotice
+
+CreativeWork
+Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
+  
+
+correction
+
+CreativeWork
+Indicates a correction to a CreativeWork, either via a CorrectionComment, textually or in another document.
+  
+
+costCurrency
+
+DrugCost
+The currency (in 3-letter) of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217.
+  
+
+costOrigin
+
+DrugCost
+Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
+  
+
+costPerUnit
+
+DrugCost
+The cost per unit of the drug.
+  
+
+countriesNotSupported
+
+SoftwareApplication
+Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+  
+
+countriesSupported
+
+SoftwareApplication
+Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+  
+
+countryOfAssembly
+
+Product
+The place where the product was assembled.
+  
+
+countryOfLastProcessing
+
+Product
+The place where the item (typically Product) was last processed and tested before importation.
+  
+
+courseCode
+
+Course
+The identifier for the Course used by the course provider (e.g. CS101 or 6.001).
+  
+
+courseMode
+
+CourseInstance
+The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous).
+  
+
+coursePrerequisites
+
+Course
+Requirements for taking the Course. May be completion of another Course or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using AlignmentObject.
+  
+
+courseWorkload
+
+CourseInstance
+The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, "2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week".
+  
+
+creativeWorkStatus
+
+CreativeWork
+The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
+  
+
+credentialCategory
+
+EducationalOccupationalCredential
+The category or type of credential being described, for example "degreeâ, âcertificateâ, âbadgeâ, or more specific term.
+  
+
+creditText
+
+CreativeWork
+Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
+  
+
+currenciesAccepted
+
+LocalBusiness
+The currency accepted.
+
+Use standard formats: ISO 4217 currency format, e.g. "USD"; Ticker symbol for cryptocurrencies, e.g. "BTC"; well known names for Local Exchange Trading Systems (LETS) and other currency types, e.g. "Ithaca HOUR".
+  
+
+currency
+
+DatedMoneySpecification  or 
+ExchangeRateSpecification  or 
+LoanOrCredit  or 
+MonetaryAmount  or 
+MonetaryAmountDistribution
+The currency in which the monetary amount is expressed.
+
+Use standard formats: ISO 4217 currency format, e.g. "USD"; Ticker symbol for cryptocurrencies, e.g. "BTC"; well known names for Local Exchange Trading Systems (LETS) and other currency types, e.g. "Ithaca HOUR".
+  
+
+cvdCollectionDate
+
+CDCPMDRecord
+collectiondate - Date for which patient counts are reported.
+  
+
+cvdFacilityCounty
+
+CDCPMDRecord
+Name of the County of the NHSN facility that this data record applies to. Use cvdFacilityId to identify the facility. To provide other details, healthcareReportingData can be used on a Hospital entry.
+  
+
+cvdFacilityId
+
+CDCPMDRecord
+Identifier of the NHSN facility that this data record applies to. Use cvdFacilityCounty to indicate the county. To provide other details, healthcareReportingData can be used on a Hospital entry.
+  
+
+dataFeedElement
+
+DataFeed
+An item within a data feed. Data feeds may have many elements.
+  
+
+dateline
+
+NewsArticle
+A dateline is a brief piece of text included in news articles that describes where and when the story was written or filed though the date is often omitted. Sometimes only a placename is provided.
+
+Structured representations of dateline-related information can also be expressed more explicitly using locationCreated (which represents where a work was created, e.g. where a news report was written).  For location depicted or described in the content, use contentLocation.
+
+Dateline summaries are oriented more towards human readers than towards automated processing, and can vary substantially. Some examples: "BEIRUT, Lebanon, June 2.", "Paris, France", "December 19, 2017 11:43AM Reporting from Washington", "Beijing/Moscow", "QUEZON CITY, Philippines".
+  
+
+defaultValue
+
+PropertyValueSpecification
+The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+  
+
+departureGate
+
+Flight
+Identifier of the flight's departure gate.
+  
+
+departurePlatform
+
+TrainTrip
+The platform from which the train departs.
+  
+
+departureTerminal
+
+Flight
+Identifier of the flight's departure terminal.
+  
+
+dependencies
+
+TechArticle
+Prerequisites needed to fulfill steps in article.
+  
+
+description
+
+Thing
+A description of the item.
+  
+
+device
+
+SoftwareApplication
+Device required to run the application. Used in cases where a specific make/model is required to run the application.
+  
+
+dietFeatures
+
+Diet
+Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
+  
+
+disambiguatingDescription
+
+Thing
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+  
+
+discount
+
+Order
+Any discount applied (to an Order).
+  
+
+discountCode
+
+Order
+Code used to redeem a discount.
+  
+
+discountCurrency
+
+Order
+The currency of the discount.
+
+Use standard formats: ISO 4217 currency format, e.g. "USD"; Ticker symbol for cryptocurrencies, e.g. "BTC"; well known names for Local Exchange Trading Systems (LETS) and other currency types, e.g. "Ithaca HOUR".
+  
+
+dosageForm
+
+Drug
+A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
+  
+
+doseUnit
+
+DoseSchedule
+The unit of the dose, e.g. 'mg'.
+  
+
+driveWheelConfiguration
+
+Vehicle
+The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
+  
+
+drugUnit
+
+Drug  or 
+DrugCost
+The unit in which the drug is measured, e.g. '5 mg tablet'.
+  
+
+duns
+
+Organization  or 
+Person
+The Dun & Bradstreet DUNS number for identifying an organization or business person.
+  
+
+editEIDR
+
+CreativeWork
+An EIDR (Entertainment Identifier Registry) identifier representing a specific edit / edition for a work of film or television.
+
+For example, the motion picture known as "Ghostbusters" whose titleEIDR is "10.5240/7EC7-228A-510A-053E-CBB8-J" has several edits, e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
+
+Since schema.org types like Movie and TVEpisode can be used for both works and their multiple expressions, it is possible to use titleEIDR alone (for a general description), or alongside editEIDR for a more edit-specific description.
+  
+
+eduQuestionType
+
+Question  or 
+SolveMathAction
+For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".
+  
+
+educationRequirements
+
+JobPosting  or 
+Occupation
+Educational background needed for the position or Occupation.
+  
+
+educationalCredentialAwarded
+
+Course  or 
+EducationalOccupationalProgram
+A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+  
+
+educationalFramework
+
+AlignmentObject
+The framework to which the resource being described is aligned.
+  
+
+educationalLevel
+
+CreativeWork  or 
+EducationEvent  or 
+EducationalOccupationalCredential  or 
+LearningResource
+The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+  
+
+educationalProgramMode
+
+EducationalOccupationalProgram
+Similar to courseMode, the medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+  
+
+educationalRole
+
+EducationalAudience
+An educationalRole of an EducationalAudience.
+  
+
+educationalUse
+
+CreativeWork  or 
+LearningResource
+The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+  
+
+elevation
+
+GeoCoordinates  or 
+GeoShape
+The elevation of a location (WGS 84). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+  
+
+eligibilityToWorkRequirement
+
+JobPosting
+The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
+  
+
+eligibleRegion
+
+ActionAccessSpecification  or 
+DeliveryChargeSpecification  or 
+Demand  or 
+Offer
+The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.
+
+See also ineligibleRegion.
+  
+
+email
+
+ContactPoint  or 
+Organization  or 
+Person
+Email address.
+  
+
+embeddedTextCaption
+
+AudioObject  or 
+ImageObject  or 
+VideoObject
+Represents textual captioning from a MediaObject, e.g. text of a 'meme'.
+  
+
+employerOverview
+
+JobPosting
+A description of the employer, career opportunities and work environment for this position.
+  
+
+employmentType
+
+JobPosting
+Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
+  
+
+encodingFormat
+
+CreativeWork  or 
+MediaObject
+Media type typically expressed using a MIME format (see IANA site and MDN reference), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
+
+In cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information.
+
+Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+  
+
+encodingType
+
+EntryPoint
+The supported encoding type(s) for an EntryPoint request.
+  
+
+engineType
+
+EngineSpecification
+The type of engine or engines powering the vehicle.
+  
+
+epidemiology
+
+MedicalCondition  or 
+PhysicalActivity
+The characteristics of associated patients, such as age, gender, race etc.
+  
+
+episodeNumber
+
+Episode
+Position of the episode within an ordered group of episodes.
+  
+
+estimatedCost
+
+HowTo  or 
+HowToSupply
+The estimated cost of the supply or supplies consumed when performing instructions.
+  
+
+estimatedFlightDuration
+
+Flight
+The estimated time the flight will take.
+  
+
+evidenceOrigin
+
+MedicalGuideline
+Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
+  
+
+executableLibraryName
+
+APIReference
+Library file name, e.g., mscorlib.dll, system.web.dll.
+  
+
+exerciseType
+
+ExerciseAction  or 
+ExercisePlan
+Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
+  
+
+exifData
+
+ImageObject
+exif data for this object.
+  
+
+expectedPrognosis
+
+MedicalCondition
+The likely outcome in either the short term or long term of the medical condition.
+  
+
+experienceRequirements
+
+JobPosting  or 
+Occupation
+Description of skills and experience needed for the position or Occupation.
+  
+
+expertConsiderations
+
+Diet
+Medical expert advice related to the plan.
+  
+
+familyName
+
+Person
+Family name. In the U.S., the last name of a Person.
+  
+
+faxNumber
+
+ContactPoint  or 
+Organization  or 
+Person  or 
+Place
+The fax number.
+  
+
+featureList
+
+SoftwareApplication
+Features or modules provided by this application (and possibly required by other applications).
+  
+
+feesAndCommissionsSpecification
+
+FinancialProduct  or 
+FinancialService
+Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+  
+
+fileFormat
+
+CreativeWork
+Media type, typically MIME format (see IANA site) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+  
+
+fileSize
+
+SoftwareApplication
+Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
+  
+
+financialAidEligible
+
+Course  or 
+EducationalOccupationalProgram
+A financial aid type or program which students may use to pay for tuition or fees associated with the program.
+  
+
+flightDistance
+
+Flight
+The distance of the flight.
+  
+
+flightNumber
+
+Flight
+The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+  
+
+floorLevel
+
+Accommodation
+The floor level for an Accommodation in a multi-storey building. Since counting
+  systems vary internationally, the local system should be used where possible.
+  
+
+followup
+
+MedicalProcedure
+Typical or recommended followup care after the procedure is performed.
+  
+
+foodWarning
+
+Drug
+Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
+  
+
+frequency
+
+DoseSchedule
+How often the dose is taken, e.g. 'daily'.
+  
+
+fuelType
+
+EngineSpecification  or 
+Vehicle
+The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
+  
+
+functionalClass
+
+Joint
+The degree of mobility the joint allows.
+  
+
+gameAvailabilityType
+
+PlayGameAction
+Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.
+  
+
+gameEdition
+
+VideoGame
+The edition of a video game.
+  
+
+gamePlatform
+
+VideoGame  or 
+VideoGameSeries
+The electronic systems used to play video games.
+  
+
+gender
+
+Person  or 
+SportsTeam
+Gender of something, typically a Person, but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The gender property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender SportsTeam can be indicated with a text value of "Mixed".
+  
+
+genre
+
+BroadcastChannel  or 
+CreativeWork  or 
+MusicGroup
+Genre of the creative work, broadcast channel or group.
+  
+
+geoRadius
+
+GeoCircle
+Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+  
+
+givenName
+
+Person
+Given name. In the U.S., the first name of a Person.
+  
+
+globalLocationNumber
+
+Organization  or 
+Person  or 
+Place
+The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+  
+
+gtin
+
+Demand  or 
+Offer  or 
+Product
+A Global Trade Item Number (GTIN). GTINs identify trade items, including products and services, using numeric identification codes.
+
+The GS1 digital link specifications express GTINs as URLs (URIs, IRIs, etc.). Details including regular expression examples can be found in, Section 6 of the GS1 URI Syntax specification; see also schema.org tracking issue for schema.org-specific discussion. A correct gtin value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a valid GS1 check digit and meet the other rules for valid GTINs. See also GS1's GTIN Summary and Wikipedia for more details. Left-padding of the gtin values is not required or encouraged. The gtin property generalizes the earlier gtin8, gtin12, gtin13, and gtin14 properties.
+
+Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.
+  
+
+gtin12
+
+Demand  or 
+Offer  or 
+Product
+The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See GS1 GTIN Summary for more details.
+  
+
+gtin13
+
+Demand  or 
+Offer  or 
+Product
+The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See GS1 GTIN Summary for more details.
+  
+
+gtin14
+
+Demand  or 
+Offer  or 
+Product
+The GTIN-14 code of the product, or the product to which the offer refers. See GS1 GTIN Summary for more details.
+  
+
+gtin8
+
+Demand  or 
+Offer  or 
+Product
+The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See GS1 GTIN Summary for more details.
+  
+
+hasBioPolymerSequence
+
+Gene  or 
+Protein
+A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
+  
+
+hasMenu
+
+FoodEstablishment
+Either the actual menu as a structured representation, as text, or a URL of the menu.
+  
+
+hasRepresentation
+
+BioChemEntity
+A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+  
+
+headline
+
+CreativeWork
+Headline of the article.
+  
+
+healthPlanCoinsuranceOption
+
+HealthPlanCostSharingSpecification
+Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
+  
+
+healthPlanCopayOption
+
+HealthPlanCostSharingSpecification
+Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
+  
+
+healthPlanDrugOption
+
+HealthInsurancePlan
+TODO.
+  
+
+healthPlanDrugTier
+
+HealthInsurancePlan  or 
+HealthPlanFormulary
+The tier(s) of drugs offered by this formulary or insurance plan.
+  
+
+healthPlanId
+
+HealthInsurancePlan
+The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
+  
+
+healthPlanNetworkId
+
+HealthPlanNetwork  or 
+MedicalOrganization
+Name or unique ID of network. (Networks are often reused across different insurance plans.)
+  
+
+healthPlanNetworkTier
+
+HealthPlanNetwork
+The tier(s) for this network.
+  
+
+healthPlanPharmacyCategory
+
+HealthPlanCostSharingSpecification
+The category or type of pharmacy associated with this cost sharing.
+  
+
+highPrice
+
+AggregateOffer
+The highest price of all offers available.
+
+Usage guidelines:
+
+Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+
+
+
+honorificPrefix
+
+Person
+An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+  
+
+honorificSuffix
+
+Person
+An honorific suffix following a Person's name such as M.D./PhD/MSCSW.
+  
+
+howPerformed
+
+MedicalProcedure
+How the procedure is performed.
+  
+
+httpMethod
+
+EntryPoint
+An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP.
+  
+
+iataCode
+
+Airline  or 
+Airport
+IATA identifier for an airline or airport.
+  
+
+icaoCode
+
+Airport
+ICAO identifier for an airport.
+  
+
+identifier
+
+Thing
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+  
+
+inChI
+
+MolecularEntity
+Non-proprietary identifier for molecular entity that can be used in printed and electronic data sources thus enabling easier linking of diverse data compilations.
+  
+
+inChIKey
+
+MolecularEntity
+InChIKey is a hashed version of the full InChI (using the SHA-256 algorithm).
+  
+
+inLanguage
+
+BroadcastService  or 
+CommunicateAction  or 
+CreativeWork  or 
+Event  or 
+LinkRole  or 
+PronounceableText  or 
+WriteAction
+The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage.
+  
+
+inProductGroupWithID
+
+Product
+Indicates the productGroupID for a ProductGroup that this product isVariantOf.
+  
+
+inSupportOf
+
+Thesis
+Qualification, candidature, degree, application that Thesis supports.
+  
+
+incentiveCompensation
+
+JobPosting
+Description of bonus and commission compensation aspects of the job.
+  
+
+incentives
+
+JobPosting
+Description of bonus and commission compensation aspects of the job.
+  
+
+industry
+
+JobPosting
+The industry associated with the job position.
+  
+
+ineligibleRegion
+
+ActionAccessSpecification  or 
+DeliveryChargeSpecification  or 
+Demand  or 
+MediaObject  or 
+Offer
+The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.
+
+See also eligibleRegion.
+  
+
+infectiousAgent
+
+InfectiousDisease
+The actual infectious agent, such as a specific bacterium.
+  
+
+ingredients
+
+Recipe
+A single ingredient used in the recipe, e.g. sugar, flour or garlic.
+  
+
+intensity
+
+ExercisePlan
+Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.
+  
+
+interactivityType
+
+CreativeWork
+The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
+  
+
+isbn
+
+Book
+The ISBN of the book.
+  
+
+isicV4
+
+Organization  or 
+Person  or 
+Place
+The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+  
+
+iso6523Code
+
+Organization
+An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as leiCode, duns and vatID can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly.
+  
+
+isrcCode
+
+MusicRecording
+The International Standard Recording Code for the recording.
+  
+
+issn
+
+Blog  or 
+CreativeWorkSeries  or 
+Dataset  or 
+WebSite
+The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+  
+
+issueNumber
+
+PublicationIssue
+Identifies the issue of publication; for example, "iii" or "2".
+  
+
+iswcCode
+
+MusicComposition
+The International Standard Musical Work Code for the composition.
+  
+
+itemListElement
+
+ItemList
+For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.
+
+Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.
+
+Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
+  
+
+itemListOrder
+
+ItemList
+Type of ordering (e.g. Ascending, Descending, Unordered).
+  
+
+itemLocation
+
+ArchiveComponent
+Current location of the item.
+  
+
+iupacName
+
+MolecularEntity
+Systematic method of naming chemical compounds as recommended by the International Union of Pure and Applied Chemistry (IUPAC).
+  
+
+jobBenefits
+
+JobPosting
+Description of benefits associated with the job.
+  
+
+jobLocationType
+
+JobPosting
+A description of the job location (e.g. TELECOMMUTE for telecommute jobs).
+  
+
+jobStartDate
+
+JobPosting
+The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
+  
+
+jobTitle
+
+Person
+The job title of the person (for example, Financial Manager).
+  
+
+jurisdiction
+
+GovernmentService  or 
+Legislation
+Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
+  
+
+keywords
+
+CreativeWork  or 
+Event  or 
+Organization  or 
+Place  or 
+Product
+Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+  
+
+knownVehicleDamages
+
+Vehicle
+A textual description of known damages, both repaired and unrepaired.
+  
+
+knowsAbout
+
+Organization  or 
+Person
+Of a Person, and less typically of an Organization, to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or JobPosting descriptions.
+  
+
+knowsLanguage
+
+Organization  or 
+Person
+Of a Person, and less typically of an Organization, to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the IETF BCP 47 standard.
+  
+
+latitude
+
+GeoCoordinates  or 
+Place
+The latitude of a location. For example 37.42242 (WGS 84).
+  
+
+learningResourceType
+
+CreativeWork  or 
+LearningResource
+The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+  
+
+legalName
+
+Organization
+The official name of the organization, e.g. the registered company name.
+  
+
+legalStatus
+
+DietarySupplement  or 
+Drug  or 
+MedicalEntity
+The drug or supplement's legal status, including any controlled substance schedules that apply.
+  
+
+legislationIdentifier
+
+Legislation
+An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.
+  
+
+legislationJurisdiction
+
+Legislation
+The jurisdiction from which the legislation originates.
+  
+
+legislationType
+
+Legislation
+The type of the legislation. Examples of values are "law", "act", "directive", "decree", "regulation", "statutory instrument", "loi organique", "rÃ¨glement grand-ducal", etc., depending on the country.
+  
+
+leiCode
+
+Organization
+An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+  
+
+line
+
+GeoShape
+A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
+  
+
+linkRelationship
+
+LinkRole
+Indicates the relationship type of a Web link.
+  
+
+loanType
+
+LoanOrCredit
+The type of a loan or credit.
+  
+
+location
+
+Action  or 
+Event  or 
+InteractionCounter  or 
+Organization
+The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+  
+
+lodgingUnitDescription
+
+LodgingReservation
+A full description of the lodging unit.
+  
+
+lodgingUnitType
+
+LodgingReservation
+Textual description of the unit type (including suite vs. room, size of bed, etc.).
+  
+
+longitude
+
+GeoCoordinates  or 
+Place
+The longitude of a location. For example -122.08585 (WGS 84).
+  
+
+lowPrice
+
+AggregateOffer
+The lowest price of all offers available.
+
+Usage guidelines:
+
+Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+
+
+
+material
+
+CreativeWork  or 
+Product
+A material that something is made from, e.g. leather, wool, cotton, paper.
+  
+
+materialExtent
+
+CreativeWork
+The quantity of the materials being described or an expression of the physical space they occupy.
+  
+
+mathExpression
+
+MathSolver
+A mathematical expression (e.g. 'x^2-3x=0') that may be solved for a specific variable, simplified, or transformed. This can take many formats, e.g. LaTeX, Ascii-Math, or math as you would write with a keyboard.
+  
+
+mealService
+
+Flight
+Description of the meals that will be provided or available for purchase.
+  
+
+measurementMethod
+
+DataCatalog  or 
+DataDownload  or 
+Dataset  or 
+Observation  or 
+PropertyValue  or 
+StatisticalVariable
+A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum.
+  
+
+measurementTechnique
+
+DataCatalog  or 
+DataDownload  or 
+Dataset  or 
+Observation  or 
+PropertyValue  or 
+StatisticalVariable
+A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured; for Observation, a StatisticalVariable). Often but not necessarily each variableMeasured will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of variableMeasured called measuredProperty is applicable.
+
+The measurementTechnique property helps when extra clarification is needed about how a measuredProperty was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
+
+For example, if variableMeasured is: molecule concentration, measurementTechnique could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the variableMeasured is "depression rating", the measurementTechnique could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
+
+If there are several variableMeasured properties recorded for some given data object, use a PropertyValue for each variableMeasured and attach the corresponding measurementTechnique. The value can also be from an enumeration, organized as a MeasurementMetholdEnumeration.
+  
+
+mechanismOfAction
+
+DietarySupplement  or 
+Drug
+The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
+  
+
+meetsEmissionStandard
+
+Vehicle
+Indicates that the vehicle meets the respective emission standard.
+  
+
+membershipNumber
+
+ProgramMembership
+A unique identifier for the membership.
+  
+
+memoryRequirements
+
+SoftwareApplication
+Minimum memory requirements.
+  
+
+menu
+
+FoodEstablishment
+Either the actual menu as a structured representation, as text, or a URL of the menu.
+  
+
+mobileUrl
+
+Offer  or 
+Product
+The mobileUrl property is provided for specific situations in which data consumers need to determine whether one of several provided URLs is a dedicated 'mobile site'.
+
+To discourage over-use, and reflecting intial usecases, the property is expected only on Product and Offer, rather than Thing. The general trend in web technology is towards responsive design in which content can be flexibly adapted to a wide range of browsing environments. Pages and sites referenced with the long-established url property should ideally also be usable on a wide variety of devices, including mobile phones. In most cases, it would be pointless and counter productive to attempt to update all url markup to use mobileUrl for more mobile-oriented pages. The property is intended for the case when items (primarily Product and Offer) have extra URLs hosted on an additional "mobile site" alongside the main one. It should not be taken as an endorsement of this publication style.
+  
+
+model
+
+Product
+The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
+  
+
+molecularFormula
+
+MolecularEntity
+The empirical formula is the simplest whole number ratio of all the atoms in a molecule.
+  
+
+molecularWeight
+
+MolecularEntity
+This is the molecular weight of the entity being described, not of the parent. Units should be included in the form '<Number> <unit>', for example '12 amu' or as '<QuantitativeValue>.
+  
+
+monoisotopicMolecularWeight
+
+MolecularEntity
+The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units in the form '<Number> <unit>', for example '770.230488 g/mol' or as '<QuantitativeValue>.
+  
+
+mpn
+
+Demand  or 
+Offer  or 
+Product
+The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+  
+
+muscleAction
+
+Muscle
+The movement the muscle generates.
+  
+
+musicCompositionForm
+
+MusicComposition
+The type of composition (e.g. overture, sonata, symphony, etc.).
+  
+
+musicalKey
+
+MusicComposition
+The key, mode, or scale this composition uses.
+  
+
+naics
+
+Organization  or 
+Person
+The North American Industry Classification System (NAICS) code for a particular organization or business person.
+  
+
+name
+
+Thing
+The name of the item.
+  
+
+namedPosition
+
+Role
+A position played, performed or filled by a person or organization, as part of an organization. For example, an athlete in a SportsTeam might play in the position named 'Quarterback'.
+  
+
+naturalProgression
+
+MedicalCondition
+The expected progression of the condition if it is not treated and allowed to progress naturally.
+  
+
+negativeNotes
+
+Product  or 
+Review
+Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside positiveNotes). For symmetry 
+
+In the case of a Review, the property describes the itemReviewed from the perspective of the review; in the case of a Product, the product itself is being described. Since product descriptions 
+tend to emphasise positive claims, it may be relatively unusual to find negativeNotes used in this way. Nevertheless for the sake of symmetry, negativeNotes can be used on Product.
+
+The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
+  
+
+nonProprietaryName
+
+DietarySupplement  or 
+Drug
+The generic name of this drug or supplement.
+  
+
+normalRange
+
+MedicalTest
+Range of acceptable values for a typical patient, when applicable.
+  
+
+nsn
+
+Product
+Indicates the NATO stock number (nsn) of a Product.
+  
+
+numberOfAirbags
+
+Vehicle
+The number or type of airbags in the vehicle.
+  
+
+observationPeriod
+
+Observation
+The length of time an Observation took place over. The format follows P[0-9]*[Y|M|D|h|m|s]. For example, P1Y is Period 1 Year, P3M is Period 3 Months, P3h is Period 3 hours.
+  
+
+occupationalCategory
+
+EducationalOccupationalProgram  or 
+JobPosting  or 
+Occupation  or 
+WorkBasedProgram
+A category describing the job, preferably using a term from a taxonomy such as BLS O*NET-SOC, ISCO-08 or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.
+
+Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+  
+
+occupationalCredentialAwarded
+
+Course  or 
+EducationalOccupationalProgram
+A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+  
+
+openingHours
+
+CivicStructure  or 
+LocalBusiness
+The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.
+
+Days are specified using the following two-letter combinations: Mo, Tu, We, Th, Fr, Sa, Su.
+Times are specified using 24:00 format. For example, 3pm is specified as 15:00, 10am as 10:00. 
+Here is an example: <time itemprop="openingHours" datetime="Tu,Th 16:00-20:00">Tuesdays and Thursdays 4-8pm</time>.
+If a business is open 7 days a week, then it can be specified as <time itemprop="openingHours" datetime="Mo-Su">Monday through Sunday, all day</time>.
+
+
+
+operatingSystem
+
+SoftwareApplication
+Operating systems supported (Windows 7, OS X 10.6, Android 1.6).
+  
+
+option
+
+ChooseAction
+A sub property of object. The options subject to this action.
+  
+
+orderItemNumber
+
+OrderItem
+The identifier of the order item.
+  
+
+orderNumber
+
+Order
+The identifier of the transaction.
+  
+
+originalMediaContextDescription
+
+MediaReview
+Describes, in a MediaReview when dealing with DecontextualizedContent, background information that can contribute to better interpretation of the MediaObject.
+  
+
+overdosage
+
+Drug
+Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
+  
+
+ownershipFundingInfo
+
+NewsMediaOrganization  or 
+Organization
+For an Organization (often but not necessarily a NewsMediaOrganization), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the funder is also available and can be used to make basic funder information machine-readable.
+  
+
+pageEnd
+
+Article  or 
+Chapter  or 
+PublicationIssue  or 
+PublicationVolume
+The page on which the work ends; for example "138" or "xvi".
+  
+
+pageStart
+
+Article  or 
+Chapter  or 
+PublicationIssue  or 
+PublicationVolume
+The page on which the work starts; for example "135" or "xiii".
+  
+
+pagination
+
+Article  or 
+Chapter  or 
+PublicationIssue  or 
+PublicationVolume
+Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
+  
+
+parentTaxon
+
+Taxon
+Closest parent taxon of the taxon in question.
+  
+
+passengerPriorityStatus
+
+FlightReservation
+The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
+  
+
+passengerSequenceNumber
+
+FlightReservation
+The passenger's sequence number as assigned by the airline.
+  
+
+pathophysiology
+
+MedicalCondition  or 
+PhysicalActivity
+Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
+  
+
+pattern
+
+CreativeWork  or 
+Product
+A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+  
+
+paymentAccepted
+
+LocalBusiness
+Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
+  
+
+paymentMethodId
+
+Invoice  or 
+Order
+An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+  
+
+paymentStatus
+
+Invoice
+The status of payment; whether the invoice has been paid or not.
+  
+
+permissions
+
+SoftwareApplication
+Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
+  
+
+permittedUsage
+
+Accommodation
+Indications regarding the permitted usage of the accommodation.
+  
+
+petsAllowed
+
+Accommodation  or 
+ApartmentComplex  or 
+FloorPlan  or 
+LodgingBusiness
+Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+  
+
+phoneticText
+
+PronounceableText
+Representation of a text textValue using the specified speechToTextMarkup. For example the city name of Houston in IPA: /ËhjuËstÉn/.
+  
+
+physicalRequirement
+
+JobPosting
+A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+  
+
+physiologicalBenefits
+
+Diet
+Specific physiologic benefits associated to the plan.
+  
+
+playerType
+
+MediaObject
+Player type required—for example, Flash or Silverlight.
+  
+
+polygon
+
+GeoShape
+A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
+  
+
+position
+
+CreativeWork  or 
+ListItem
+The position of an item in a series or sequence of items.
+  
+
+positiveNotes
+
+Product  or 
+Review
+Provides positive considerations regarding something, for example product highlights or (alongside negativeNotes) pro/con lists for reviews.
+
+In the case of a Review, the property describes the itemReviewed from the perspective of the review; in the case of a Product, the product itself is being described.
+
+The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most positive is at the beginning of the list).
+  
+
+possibleComplication
+
+MedicalCondition
+A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc.
+  
+
+postOfficeBoxNumber
+
+PostalAddress
+The post office box number for PO box addresses.
+  
+
+postOp
+
+MedicalDevice
+A description of the postoperative procedures, care, and/or followups for this device.
+  
+
+postalCode
+
+DefinedRegion  or 
+GeoCoordinates  or 
+GeoShape  or 
+PostalAddress
+The postal code. For example, 94043.
+  
+
+postalCodeBegin
+
+PostalCodeRangeSpecification
+First postal code in a range (included).
+  
+
+postalCodeEnd
+
+PostalCodeRangeSpecification
+Last postal code in the range (included). Needs to be after postalCodeBegin.
+  
+
+postalCodePrefix
+
+DefinedRegion
+A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.
+  
+
+preOp
+
+MedicalDevice
+A description of the workup, testing, and other preparations required before implanting this device.
+  
+
+pregnancyWarning
+
+Drug
+Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
+  
+
+preparation
+
+MedicalProcedure
+Typical preparation that a patient must undergo before having the procedure performed.
+  
+
+prescriptionStatus
+
+Drug
+Indicates the status of drug prescription, e.g. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
+  
+
+price
+
+Offer  or 
+PriceSpecification  or 
+TradeAction
+The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.
+
+Usage guidelines:
+
+Use the priceCurrency property (with standard formats: ISO 4217 currency format, e.g. "USD"; Ticker symbol for cryptocurrencies, e.g. "BTC"; well known names for Local Exchange Trading Systems (LETS) and other currency types, e.g. "Ithaca HOUR") instead of including ambiguous symbols such as '$' in the value.
+Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+Note that both RDFa and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.
+Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+
+
+
+priceCurrency
+
+Offer  or 
+PriceSpecification  or 
+Reservation  or 
+Ticket  or 
+TradeAction
+The currency of the price, or a price component when attached to PriceSpecification and its subtypes.
+
+Use standard formats: ISO 4217 currency format, e.g. "USD"; Ticker symbol for cryptocurrencies, e.g. "BTC"; well known names for Local Exchange Trading Systems (LETS) and other currency types, e.g. "Ithaca HOUR".
+  
+
+priceRange
+
+LocalBusiness
+The price range of the business, for example $$$.
+  
+
+priceType
+
+CompoundPriceSpecification  or 
+UnitPriceSpecification
+Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the priceType property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
+  
+
+printColumn
+
+NewsArticle
+The number of the column in which the NewsArticle appears in the print edition.
+  
+
+printEdition
+
+NewsArticle
+The edition of the print product in which the NewsArticle appears.
+  
+
+printPage
+
+NewsArticle
+If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
+  
+
+printSection
+
+NewsArticle
+If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
+  
+
+procedure
+
+MedicalDevice
+A description of the procedure involved in setting up, using, and/or installing the device.
+  
+
+processorRequirements
+
+SoftwareApplication
+Processor architecture required to run the application (e.g. IA64).
+  
+
+productGroupID
+
+ProductGroup
+Indicates a textual identifier for a ProductGroup.
+  
+
+productID
+
+Product
+The product identifier, such as ISBN. For example: meta itemprop="productID" content="isbn:123-456-789".
+  
+
+productSupported
+
+ContactPoint
+The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+  
+
+proficiencyLevel
+
+TechArticle
+Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
+  
+
+programName
+
+ProgramMembership
+The program providing the membership.
+  
+
+programPrerequisites
+
+EducationalOccupationalProgram
+Prerequisites for enrolling in the program.
+  
+
+programType
+
+EducationalOccupationalProgram
+The type of educational or occupational program. For example, classroom, internship, alternance, etc.
+  
+
+programmingLanguage
+
+SoftwareSourceCode
+The computer programming language.
+  
+
+programmingModel
+
+APIReference
+Indicates whether API is managed or unmanaged.
+  
+
+propertyID
+
+PropertyValue
+A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
+(1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific ID of the property), or (3)
+a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
+Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
+  
+
+proprietaryName
+
+DietarySupplement  or 
+Drug
+Proprietary name given to the diet plan, typically by its originator or creator.
+  
+
+providerMobility
+
+Service
+Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
+  
+
+publicationType
+
+MedicalScholarlyArticle
+The type of the medical article, taken from the US NLM MeSH publication type catalog. See also MeSH documentation.
+  
+
+qualifications
+
+JobPosting  or 
+Occupation
+Specific qualifications required for this role or Occupation.
+  
+
+query
+
+SearchAction
+A sub property of instrument. The query used on this action.
+  
+
+ratingExplanation
+
+Rating
+A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using ClaimReview.
+  
+
+ratingValue
+
+Rating
+The rating for the content.
+
+Usage guidelines:
+
+Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+
+
+
+recipeCategory
+
+Recipe
+The category of the recipeâfor example, appetizer, entree, etc.
+  
+
+recipeCuisine
+
+Recipe
+The cuisine of the recipe (for example, French or Ethiopian).
+  
+
+recipeIngredient
+
+Recipe
+A single ingredient used in the recipe, e.g. sugar, flour or garlic.
+  
+
+recipeInstructions
+
+Recipe
+A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
+  
+
+recipeYield
+
+Recipe
+The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+  
+
+recommendationStrength
+
+MedicalGuidelineRecommendation
+Strength of the guideline's recommendation (e.g. 'class I').
+  
+
+releaseNotes
+
+SoftwareApplication
+Description of what changed in this version.
+  
+
+repeatFrequency
+
+Schedule
+Defines the frequency at which Events will occur according to a schedule Schedule. The intervals between
+      events should be defined as a Duration of time.
+  
+
+reportNumber
+
+Report
+The number or other unique designator assigned to a Report by the publishing organization.
+  
+
+requiredCollateral
+
+LoanOrCredit
+Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
+  
+
+requiredGender
+
+PeopleAudience
+Audiences defined by a person's gender.
+  
+
+requiredQuantity
+
+HowToItem
+The required quantity of the item(s).
+  
+
+requirements
+
+SoftwareApplication
+Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).
+  
+
+reservationId
+
+Reservation
+A unique identifier for the reservation.
+  
+
+responsibilities
+
+JobPosting  or 
+Occupation
+Responsibilities associated with this role or Occupation.
+  
+
+restPeriods
+
+ExercisePlan
+How often one should break from the activity.
+  
+
+returnPolicyCountry
+
+MerchantReturnPolicy
+The country where the product has to be sent to for returns, for example "Ireland" using the name property of Country. You can also provide the two-letter ISO 3166-1 alpha-2 country code. Note that this can be different from the country where the product was originally shipped from or sent to.
+  
+
+reviewAspect
+
+Guide  or 
+Rating  or 
+Review
+This Review or Rating is relevant to this part or facet of the itemReviewed.
+  
+
+reviewBody
+
+Review
+The actual body of the review.
+  
+
+risks
+
+Diet
+Specific physiologic risks associated to the diet plan.
+  
+
+roleName
+
+Role
+A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.
+  
+
+runtime
+
+SoftwareSourceCode
+Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
+  
+
+runtimePlatform
+
+SoftwareSourceCode
+Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
+  
+
+rxcui
+
+Drug
+The RxCUI drug identifier from RXNORM.
+  
+
+safetyConsideration
+
+DietarySupplement
+Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
+  
+
+salaryCurrency
+
+EmployeeRole  or 
+JobPosting
+The currency (coded using ISO 4217) used for the main salary information in this job posting or for this employee.
+  
+
+sampleType
+
+SoftwareSourceCode
+What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
+  
+
+scheduleTimezone
+
+Schedule
+Indicates the timezone for which the time(s) indicated in the Schedule are given. The value provided should be among those listed in the IANA Time Zone Database.
+  
+
+schemaVersion
+
+CreativeWork
+Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+    indicate the use of a specific schema.org release, e.g. 10.0 as a simple string, or more explicitly via URL, https://schema.org/docs/releases.html#v10.0. There may be situations in which other schemas might usefully be referenced this way, e.g. http://dublincore.org/specifications/dublin-core/dces/1999-07-02/ but this has not been carefully explored in the community.
+  
+
+seasonNumber
+
+CreativeWorkSeason
+Position of the season within an ordered group of seasons.
+  
+
+seatNumber
+
+Seat
+The location of the reserved seat (e.g., 27).
+  
+
+seatRow
+
+Seat
+The row location of the reserved seat (e.g., B).
+  
+
+seatSection
+
+Seat
+The section location of the reserved seat (e.g. Orchestra).
+  
+
+seatingType
+
+Seat
+The type/class of the seat.
+  
+
+securityClearanceRequirement
+
+JobPosting
+A description of any security clearance requirements of the job.
+  
+
+securityScreening
+
+FlightReservation
+The type of security screening the passenger is subject to.
+  
+
+sensoryRequirement
+
+JobPosting
+A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+  
+
+serialNumber
+
+Demand  or 
+IndividualProduct  or 
+Offer
+The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
+  
+
+servesCuisine
+
+FoodEstablishment
+The cuisine of the restaurant.
+  
+
+serviceType
+
+Service
+The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+  
+
+servingSize
+
+NutritionInformation
+The serving size, in terms of the number of volume or mass.
+  
+
+sha256
+
+MediaObject
+The SHA-2 SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'.
+  
+
+shippingLabel
+
+OfferShippingDetails  or 
+ShippingRateSettings
+Label to match an OfferShippingDetails with a ShippingRateSettings (within the context of a shippingSettingsLink cross-reference).
+  
+
+significance
+
+SuperficialAnatomy
+The significance associated with the superficial anatomy; as an example, how characteristics of the superficial anatomy can suggest underlying medical conditions or courses of treatment.
+  
+
+size
+
+CreativeWork  or 
+Product
+A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.
+  
+
+sizeGroup
+
+SizeSpecification
+The size group (also known as "size type") for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example "men's big and tall", "petite maternity" or "regular".
+  
+
+sizeSystem
+
+SizeSpecification
+The size system used to identify a product's size. Typically either a standard (for example, "GS1" or "ISO-EN13402"), country code (for example "US" or "JP"), or a measuring system (for example "Metric" or "Imperial").
+  
+
+skills
+
+JobPosting  or 
+Occupation
+A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
+  
+
+sku
+
+Demand  or 
+Offer  or 
+Product
+The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+  
+
+slogan
+
+Brand  or 
+Organization  or 
+Place  or 
+Product  or 
+Service
+A slogan or motto associated with the item.
+  
+
+smiles
+
+MolecularEntity
+A specification in form of a line notation for describing the structure of chemical species using short ASCII strings.  Double bond stereochemistry \ indicators may need to be escaped in the string in formats where the backslash is an escape character.
+  
+
+softwareRequirements
+
+SoftwareApplication
+Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime).
+  
+
+softwareVersion
+
+SoftwareApplication
+Version of the software instance.
+  
+
+specialCommitments
+
+JobPosting
+Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
+  
+
+speechToTextMarkup
+
+PronounceableText
+Form of markup used. eg. SSML or IPA.
+  
+
+sport
+
+SportsEvent  or 
+SportsOrganization
+A type of sport (e.g. Baseball).
+  
+
+statType
+
+StatisticalVariable
+Indicates the kind of statistic represented by a StatisticalVariable, e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. count, median, marginOfError, maxValue, minValue) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org.
+  
+
+status
+
+MedicalCondition  or 
+MedicalProcedure  or 
+MedicalStudy
+The status of the study (enumerated).
+  
+
+step
+
+HowTo
+A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+  
+
+steps
+
+HowTo  or 
+HowToSection
+A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
+  
+
+storageRequirements
+
+SoftwareApplication
+Storage requirements (free space required).
+  
+
+streetAddress
+
+PostalAddress
+The street address. For example, 1600 Amphitheatre Pkwy.
+  
+
+strengthUnit
+
+DrugStrength
+The units of an active ingredient's strength, e.g. mg.
+  
+
+structuralClass
+
+Joint
+The name given to how bone physically connects to each other.
+  
+
+subStageSuffix
+
+MedicalConditionStage
+The substage, e.g. 'a' for Stage IIIa.
+  
+
+subtitleLanguage
+
+BroadcastEvent  or 
+Movie  or 
+ScreeningEvent  or 
+TVEpisode
+Languages in which subtitles/captions are available, in IETF BCP 47 standard format.
+  
+
+suggestedGender
+
+PeopleAudience  or 
+SizeSpecification
+The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+  
+
+supply
+
+HowTo  or 
+HowToDirection
+A sub-property of instrument. A supply consumed when performing instructions or a direction.
+  
+
+surface
+
+VisualArtwork
+A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+  
+
+targetDescription
+
+AlignmentObject
+The description of a node in an established educational framework.
+  
+
+targetName
+
+AlignmentObject
+The name of a node in an established educational framework.
+  
+
+targetPlatform
+
+APIReference
+Type of app development: phone, Metro style, desktop, XBox, etc.
+  
+
+targetPopulation
+
+DietarySupplement  or 
+DoseSchedule
+Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+  
+
+taxID
+
+Organization  or 
+Person
+The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+  
+
+taxonRank
+
+Taxon
+The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary â typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs.
+  
+
+taxonomicRange
+
+BioChemEntity
+The taxonomic grouping of the organism that expresses, encodes, or in some way related to the BioChemEntity.
+  
+
+teaches
+
+CreativeWork  or 
+EducationEvent  or 
+LearningResource
+The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
+  
+
+telephone
+
+ContactPoint  or 
+Organization  or 
+Person  or 
+Place
+The telephone number.
+  
+
+temporal
+
+CreativeWork
+The "temporal" property can be used in cases where more specific properties
+(e.g. temporalCoverage, dateCreated, dateModified, datePublished) are not known to be appropriate.
+  
+
+temporalCoverage
+
+CreativeWork
+The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in ISO 8601 time interval format. In
+      the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+      Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+
+Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+  
+
+termCode
+
+DefinedTerm
+A code that identifies this DefinedTerm within a DefinedTermSet.
+  
+
+termsOfService
+
+Service
+Human-readable terms of service documentation.
+  
+
+text
+
+CreativeWork
+The textual content of this CreativeWork.
+  
+
+textValue
+
+PronounceableText
+Text value being annotated.
+  
+
+tickerSymbol
+
+Corporation
+The exchange traded instrument associated with a Corporation object. The tickerSymbol is expressed as an exchange and an instrument name separated by a space character. For the exchange component of the tickerSymbol attribute, we recommend using the controlled vocabulary of Market Identifier Codes (MIC) specified in ISO 15022.
+  
+
+ticketNumber
+
+Ticket
+The unique identifier for the ticket.
+  
+
+ticketToken
+
+Ticket
+Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
+  
+
+timeOfDay
+
+EducationalOccupationalProgram
+The time of day the program normally runs. For example, "evenings".
+  
+
+tissueSample
+
+PathologyTest
+The type of tissue sample required for the test.
+  
+
+title
+
+JobPosting
+The title of the job.
+  
+
+titleEIDR
+
+Movie  or 
+TVEpisode  or 
+TVSeason  or 
+TVSeries
+An EIDR (Entertainment Identifier Registry) identifier representing at the most general/abstract level, a work of film or television.
+
+For example, the motion picture known as "Ghostbusters" has a titleEIDR of  "10.5240/7EC7-228A-510A-053E-CBB8-J". This title (or work) may have several variants, which EIDR calls "edits". See editEIDR.
+
+Since schema.org types like Movie, TVEpisode, TVSeason, and TVSeries can be used for both works and their multiple expressions, it is possible to use titleEIDR alone (for a general description), or alongside editEIDR for a more edit-specific description.
+  
+
+tool
+
+HowTo  or 
+HowToDirection
+A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+  
+
+totalPrice
+
+Reservation  or 
+Ticket
+The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+
+Usage guidelines:
+
+Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+
+
+
+touristType
+
+TouristAttraction  or 
+TouristDestination  or 
+TouristTrip
+Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc.
+  
+
+trackingNumber
+
+ParcelDelivery
+Shipper tracking number.
+  
+
+trainName
+
+TrainTrip
+The name of the train (e.g. The Orient Express).
+  
+
+trainNumber
+
+TrainTrip
+The unique identifier for the train.
+  
+
+transcript
+
+AudioObject  or 
+VideoObject
+If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
+  
+
+transitTimeLabel
+
+DeliveryTimeSettings  or 
+OfferShippingDetails
+Label to match an OfferShippingDetails with a DeliveryTimeSettings (within the context of a shippingSettingsLink cross-reference).
+  
+
+transmissionMethod
+
+InfectiousDisease
+How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc.
+  
+
+typeOfBed
+
+BedDetails
+The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+  
+
+typicalAgeRange
+
+CreativeWork  or 
+Event
+The typical expected age range, e.g. '7-9', '11-'.
+  
+
+unitCode
+
+PropertyValue  or 
+QuantitativeValue  or 
+TypeAndQuantityNode  or 
+UnitPriceSpecification
+The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+  
+
+unitText
+
+PropertyValue  or 
+QuantitativeValue  or 
+TypeAndQuantityNode  or 
+UnitPriceSpecification
+A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+unitCode.
+  
+
+urlTemplate
+
+EntryPoint
+An url template (RFC6570) that will be used to construct the target of the execution of the action.
+  
+
+usesHealthPlanIdStandard
+
+HealthInsurancePlan
+The standard for interpreting the Plan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.
+  
+
+utterances
+
+HyperTocEntry
+Text of an utterances (spoken words, lyrics etc.) that occurs at a certain section of a media object, represented as a HyperTocEntry.
+  
+
+value
+
+MonetaryAmount  or 
+PropertyValue  or 
+QuantitativeValue
+The value of a QuantitativeValue (including Observation) or property value node.
+
+For QuantitativeValue and MonetaryAmount, the recommended type for values is 'Number'.
+For PropertyValue, it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.
+Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+
+
+
+valueName
+
+PropertyValueSpecification
+Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
+  
+
+valuePattern
+
+PropertyValueSpecification
+Specifies a regular expression for testing literal values according to the HTML spec.
+  
+
+valueReference
+
+PropertyValue  or 
+QualitativeValue  or 
+QuantitativeValue
+A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+  
+
+variableMeasured
+
+Dataset  or 
+Observation
+The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a StatisticalVariable.
+  
+
+variablesMeasured
+
+Dataset
+Originally named variablesMeasured, the variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.
+  
+
+variantCover
+
+ComicIssue
+A description of the variant cover
+        for the issue, if the issue is a variant printing. For example, "Bryan Hitch
+        Variant Cover" or "2nd Printing Variant".
+  
+
+variesBy
+
+ProductGroup
+Indicates the property or properties by which the variants in a ProductGroup vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. "color"; terms defined elsewhere can be referenced with their URIs.
+  
+
+vatID
+
+Organization  or 
+Person
+The Value-added Tax ID of the organization or person.
+  
+
+vehicleConfiguration
+
+Vehicle
+A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
+  
+
+vehicleIdentificationNumber
+
+Vehicle
+The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
+  
+
+vehicleInteriorColor
+
+Vehicle
+The color or color combination of the interior of the vehicle.
+  
+
+vehicleInteriorType
+
+Vehicle
+The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
+  
+
+vehicleSpecialUsage
+
+Vehicle
+Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
+  
+
+vehicleTransmission
+
+Vehicle
+The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+  
+
+version
+
+CreativeWork
+The version of the CreativeWork embodied by a specified resource.
+  
+
+videoFormat
+
+BroadcastEvent  or 
+BroadcastService  or 
+ScreeningEvent
+The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+  
+
+videoFrameSize
+
+VideoObject
+The frame size of the video.
+  
+
+videoQuality
+
+VideoObject
+The quality of the video.
+  
+
+volumeNumber
+
+PublicationVolume
+Identifies the volume of publication or multi-part work; for example, "iii" or "2".
+  
+
+warning
+
+Drug
+Any FDA or other warnings about the drug (text or URL).
+  
+
+workHours
+
+JobPosting
+The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
+  
+
+worstRating
+
+Rating
+The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+  
+
+yield
+
+HowTo
+The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
+  
+
+
+
+
+More specific Data Types
+
+
+CssSelectorType
+
+PronounceableText
+
+URL
+
+XPathType
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

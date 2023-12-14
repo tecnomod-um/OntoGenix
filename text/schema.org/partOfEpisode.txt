@@ -1,0 +1,161 @@
+
+
+
+
+
+partOfEpisode - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+partOfEpisode
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    isPartOf 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    partOfEpisode
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/partOfEpisode 
+
+Check for open issues.
+
+
+
+
+The episode to which this clip belongs.
+ 
+
+Values expected to be one of these types
+
+
+Episode
+
+
+
+Used on these types
+
+
+Clip
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

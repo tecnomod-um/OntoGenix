@@ -1,0 +1,234 @@
+
+
+
+
+
+publicAccess - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+publicAccess
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    publicAccess
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/publicAccess 
+
+Check for open issues.
+
+
+
+
+A flag to signal that the Place is open to public visitors.  If this property is omitted there is no assumed default boolean value.
+ 
+
+Values expected to be one of these types
+
+
+Boolean
+
+
+
+Used on these types
+
+
+Place
+
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<h1>Leaning Tower of Pisa</h1>
+<div>It is a twelfth-thirteenth century Romanesque tower started building by Bonanno Pisano.</div>
+<div>Public access: yes</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/TouristAttraction">
+	<h1><span itemprop="name">Leaning Tower of Pisa</span></h1>
+	<div>
+		<span itemprop="description">It is a twelfth-thirteenth century Romanesque tower started building by Bonanno Pisano.</span>
+	</div>
+	<div>
+		<meta itemprop="publicAccess" content="true"/>Public access: yes
+	</div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="TouristAttraction">
+	<h1><span property="name">Leaning Tower of Pisa</span></h1>
+	<div>
+		<span property="description">It is a twelfth-thirteenth century Romanesque tower started building by Bonanno Pisano.</span>
+	</div>
+	<div>
+		<meta property="publicAccess" content="true"/>Public access: yes
+	</div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "TouristAttraction",
+	"name": "Leaning Tower of Pisa",
+	"publicAccess": true,
+	"description": "It is a twelfth-thirteenth century Romanesque tower started building by Bonanno Pisano."
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+	"@context": "https://schema.org",
+	"@type": "TouristAttraction",
+	"name": "Leaning Tower of Pisa",
+	"publicAccess": true,
+	"description": "It is a twelfth-thirteenth century Romanesque tower started building by Bonanno Pisano."
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

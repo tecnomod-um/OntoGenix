@@ -1,0 +1,152 @@
+
+
+
+
+
+copyrightYear - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+copyrightYear
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    copyrightYear
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/copyrightYear 
+
+Check for open issues.
+
+
+
+
+The year during which the claimed copyright for the CreativeWork was first asserted.
+ 
+
+Values expected to be one of these types
+
+
+Number
+
+
+
+Used on these types
+
+
+CreativeWork
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

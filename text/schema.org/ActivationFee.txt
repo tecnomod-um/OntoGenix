@@ -1,0 +1,167 @@
+
+
+
+
+
+ActivationFee - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+ActivationFee
+A Schema.org Enumeration Member
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    PriceComponentTypeEnumeration 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    ActivationFee
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/ActivationFee 
+
+Check for open issues.
+
+
+
+
+Represents the activation fee part of the total price for an offered product, for example a cellphone contract.
+ A member value for enumeration type: 
+    
+    
+    PriceComponentTypeEnumeration
+ 
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2689
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,466 @@
+
+
+
+
+
+GeoShape - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+GeoShape
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StructuredValue 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    GeoShape
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/GeoShape 
+
+Check for open issues.
+
+
+
+
+The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    GeoShape
+
+address
+
+PostalAddress  or 
+Text
+Physical address of the item.
+                
+                
+                
+            
+
+
+addressCountry
+
+Country  or 
+Text
+The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+                
+                
+                
+            
+
+
+box
+
+Text
+A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
+                
+                
+                
+            
+
+
+circle
+
+Text
+A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
+                
+                
+                
+            
+
+
+elevation
+
+Number  or 
+Text
+The elevation of a location (WGS 84). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+                
+                
+                
+            
+
+
+line
+
+Text
+A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
+                
+                
+                
+            
+
+
+polygon
+
+Text
+A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
+                
+                
+                
+            
+
+
+postalCode
+
+Text
+The postal code. For example, 94043.
+                
+                
+                
+            
+
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    GeoShape  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+areaServed
+
+ContactPoint  or 
+DeliveryChargeSpecification  or 
+Demand  or 
+Offer  or 
+Organization  or 
+Service
+The geographic area where a service or offered item is provided.
+  
+
+eligibleRegion
+
+ActionAccessSpecification  or 
+DeliveryChargeSpecification  or 
+Demand  or 
+Offer
+The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.
+
+See also ineligibleRegion.
+  
+
+geo
+
+Place
+The geo coordinates of the place.
+  
+
+ineligibleRegion
+
+ActionAccessSpecification  or 
+DeliveryChargeSpecification  or 
+Demand  or 
+MediaObject  or 
+Offer
+The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.
+
+See also eligibleRegion.
+  
+
+serviceArea
+
+ContactPoint  or 
+Organization  or 
+Service
+The geographic area where the service is provided.
+  
+
+
+
+
+More specific Types
+
+
+GeoCircle
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       IPTC rNews properties
+                    
+
+
+
+                    This class contains derivatives of IPTC rNews properties. rNews is a data model of publishing metadata with serializations currently available for RDFa as well as HTML5 Microdata. More information about the IPTC and rNews can be found at rnews.org.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

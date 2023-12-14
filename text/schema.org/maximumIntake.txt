@@ -1,0 +1,158 @@
+
+
+
+
+
+maximumIntake - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+maximumIntake
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    maximumIntake
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/maximumIntake 
+
+Check for open issues.
+
+
+
+
+Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+ 
+
+Values expected to be one of these types
+
+
+MaximumDoseSchedule
+
+
+
+Used on these types
+
+
+DietarySupplement
+
+Drug
+
+DrugStrength
+
+Substance
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

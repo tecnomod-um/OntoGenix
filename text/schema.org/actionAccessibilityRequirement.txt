@@ -1,0 +1,155 @@
+
+
+
+
+
+actionAccessibilityRequirement - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+actionAccessibilityRequirement
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    actionAccessibilityRequirement
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/actionAccessibilityRequirement 
+
+Check for open issues.
+
+
+
+
+A set of requirements that must be fulfilled in order to perform an Action. If more than one value is specified, fulfilling one set of requirements will allow the Action to be performed.
+ 
+
+Values expected to be one of these types
+
+
+ActionAccessSpecification
+
+
+
+Used on these types
+
+
+ConsumeAction
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1741
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

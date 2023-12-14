@@ -1,0 +1,220 @@
+
+
+
+
+
+startOffset - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+startOffset
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    startOffset
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/startOffset 
+
+Check for open issues.
+
+
+
+
+The start time of the clip expressed as the number of seconds from the beginning of the work.
+ 
+
+Values expected to be one of these types
+
+
+HyperTocEntry
+
+Number
+
+
+
+Used on these types
+
+
+Clip
+
+SeekToAction
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2021
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+A Clip from a longer video.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "VideoObject",
+  "name": "Cat video",
+  "duration": "P10M",
+  "hasPart": {
+    "@type": "Clip",
+    "name": "Segment where cat jumps",
+    "startOffset": 30,
+    "endOffset": 45
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "VideoObject",
+  "name": "Cat video",
+  "duration": "P10M",
+  "hasPart": {
+    "@type": "Clip",
+    "name": "Segment where cat jumps",
+    "startOffset": 30,
+    "endOffset": 45
+  }
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

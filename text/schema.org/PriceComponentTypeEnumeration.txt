@@ -1,0 +1,189 @@
+
+
+
+
+
+PriceComponentTypeEnumeration - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+PriceComponentTypeEnumeration
+A Schema.org Enumeration Type
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    PriceComponentTypeEnumeration
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/PriceComponentTypeEnumeration 
+
+Check for open issues.
+
+
+
+
+Enumerates different price components that together make up the total price for an offered product.
+ 
+
+
+
+
+Instances of 
+    
+    
+    PriceComponentTypeEnumeration  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+priceComponentType
+
+UnitPriceSpecification
+Identifies a price component (for example, a line item on an invoice), part of the total price for an offer.
+  
+
+
+
+
+Enumeration members
+
+
+ActivationFee
+
+CleaningFee
+
+DistanceFee
+
+Downpayment
+
+Installment
+
+Subscription
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2689
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

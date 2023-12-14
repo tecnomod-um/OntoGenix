@@ -1,0 +1,180 @@
+
+
+
+
+
+GamePlayMode - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+GamePlayMode
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    GamePlayMode
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/GamePlayMode 
+
+Check for open issues.
+
+
+
+
+Indicates whether this game is multi-player, co-op or single-player.
+ 
+
+
+
+
+Instances of 
+    
+    
+    GamePlayMode  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+playMode
+
+VideoGame  or 
+VideoGameSeries
+Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
+  
+
+
+
+
+Enumeration members
+
+
+CoOp
+
+MultiPlayer
+
+SinglePlayer
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

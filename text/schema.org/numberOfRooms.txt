@@ -1,0 +1,260 @@
+
+
+
+
+
+numberOfRooms - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+numberOfRooms
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    numberOfRooms
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/numberOfRooms 
+
+Check for open issues.
+
+
+
+
+The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+ 
+
+Values expected to be one of these types
+
+
+Number
+
+QuantitativeValue
+
+
+
+Used on these types
+
+
+Accommodation
+
+Apartment
+
+FloorPlan
+
+House
+
+LodgingBusiness
+
+SingleFamilyResidence
+
+Suite
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       STI Accommodation Ontology
+                    
+
+
+
+                    This element is based on the STI Accommodation Ontology, see http://ontologies.sti-innsbruck.at/acco/ns.html for details.    Many class and property definitions are inspired by or based on abstracts from Wikipedia, the free encyclopedia.
+                    
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+This example is in microdata only.
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Hotel">
+  <h1><span itemprop="name">ACME Hotel Innsbruck</span></h1>
+  <span itemprop="description">A beautifully located business hotel right in the
+heart of the alps. Watch the sun rise over the scenic Inn valley while
+enjoying your morning coffee.</span>
+  <span itemprop="numberOfRooms">60</span> rooms.
+</div>
+
+
+This example is in microdata only.
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+This example is in microdata only.
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Hotel">
+  <h1><span itemprop="name">ACME Hotel Innsbruck</span></h1>
+  <span itemprop="description">A beautifully located business hotel right in the
+heart of the alps. Watch the sun rise over the scenic Inn valley while
+enjoying your morning coffee.</span>
+  <span itemprop="numberOfRooms" itemscope itemtype="https://schema.org/QuantitativeValue">
+     <span itemprop="value">45</span>
+     <span itemprop="unitText">double rooms</span>
+  </span>
+  <span itemprop="numberOfRooms" itemscope itemtype="https://schema.org/QuantitativeValue">
+     <span itemprop="value">15</span>
+     <span itemprop="unitText">single rooms</span>
+  </span>
+</div>
+
+
+This example is in microdata only.
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

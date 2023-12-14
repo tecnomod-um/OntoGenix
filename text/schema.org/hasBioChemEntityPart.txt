@@ -1,0 +1,161 @@
+
+
+
+
+
+hasBioChemEntityPart - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+hasBioChemEntityPart
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    hasBioChemEntityPart
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/hasBioChemEntityPart 
+
+Check for open issues.
+
+
+
+
+Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part.
+ 
+Inverse-property: 
+    
+    
+    isPartOfBioChemEntity
+
+
+Values expected to be one of these types
+
+
+BioChemEntity
+
+
+
+Used on these types
+
+
+BioChemEntity
+
+
+
+
+
+
+Source
+http://www.bioschemas.org
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

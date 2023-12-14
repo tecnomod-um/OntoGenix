@@ -1,0 +1,156 @@
+
+
+
+
+
+arterialBranch - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+arterialBranch
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    arterialBranch
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/arterialBranch 
+
+Check for open issues.
+
+
+
+
+The branches that comprise the arterial structure.
+ 
+
+Values expected to be one of these types
+
+
+AnatomicalStructure
+
+
+
+Used on these types
+
+
+Artery
+
+
+
+
+
+Supersedes
+
+branch
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

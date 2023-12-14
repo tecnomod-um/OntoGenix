@@ -1,0 +1,156 @@
+
+
+
+
+
+hasDriveThroughService - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+hasDriveThroughService
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    hasDriveThroughService
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/hasDriveThroughService 
+
+Check for open issues.
+
+
+
+
+Indicates whether some facility (e.g. FoodEstablishment, CovidTestingFacility) offers a service that can be used by driving through in a car. In the case of CovidTestingFacility such facilities could potentially help with social distancing from other potentially-infected users.
+ 
+
+Values expected to be one of these types
+
+
+Boolean
+
+
+
+Used on these types
+
+
+Place
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2490
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

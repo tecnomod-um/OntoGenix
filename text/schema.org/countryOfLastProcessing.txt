@@ -1,0 +1,156 @@
+
+
+
+
+
+countryOfLastProcessing - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+countryOfLastProcessing
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    countryOfLastProcessing
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/countryOfLastProcessing 
+
+Check for open issues.
+
+
+
+
+The place where the item (typically Product) was last processed and tested before importation.
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+
+
+Used on these types
+
+
+Product
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/991
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

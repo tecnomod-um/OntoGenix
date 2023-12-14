@@ -1,0 +1,187 @@
+
+
+
+
+
+issn - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+issn
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    identifier 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    issn
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/issn 
+
+                Equivalent Property: http://purl.org/ontology/bibo/issn
+                
+
+Check for open issues.
+
+
+
+
+The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+
+
+Used on these types
+
+
+Blog
+
+CreativeWorkSeries
+
+Dataset
+
+WebSite
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       Schema Bib Extend Group
+                    
+
+
+
+                    The W3C Schema Bib Extend (BibEx) group led the work to improve schema.org for bibliographic information, including terms for periodicals, articles and multi-volume works. The design was inspired in places (e.g. pageStart, pageEnd, pagination) by the Bibliographic Ontology, 'bibo'.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

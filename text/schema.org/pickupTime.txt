@@ -1,0 +1,154 @@
+
+
+
+
+
+pickupTime - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+pickupTime
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    pickupTime
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/pickupTime 
+
+Check for open issues.
+
+
+
+
+When a taxi will pick up a passenger or a rental car can be picked up.
+ 
+
+Values expected to be one of these types
+
+
+DateTime
+
+
+
+Used on these types
+
+
+RentalCarReservation
+
+TaxiReservation
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

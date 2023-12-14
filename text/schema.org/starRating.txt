@@ -1,0 +1,260 @@
+
+
+
+
+
+starRating - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+starRating
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    starRating
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/starRating 
+
+Check for open issues.
+
+
+
+
+An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
+ 
+
+Values expected to be one of these types
+
+
+Rating
+
+
+
+Used on these types
+
+
+FoodEstablishment
+
+LodgingBusiness
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       STI Accommodation Ontology
+                    
+
+
+
+                    This element is based on the STI Accommodation Ontology, see http://ontologies.sti-innsbruck.at/acco/ns.html for details.    Many class and property definitions are inspired by or based on abstracts from Wikipedia, the free encyclopedia.
+                    
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<h1>ACME Hotel Innsbruck</h1>
+<span>A beautifully located business hotel right in the
+heart of the alps. Watch the sun rise over the scenic Inn valley while
+enjoying your morning coffee.</span>
+  Star rating: ****
+  Room rates: $100 - $240
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Hotel">
+  <h1><span itemprop="name">ACME Hotel Innsbruck</span></h1>
+  <span itemprop="description">A beautifully located business hotel right in the
+heart of the alps. Watch the sun rise over the scenic Inn valley while
+enjoying your morning coffee.</span>
+  Star rating: <span itemprop="starRating" itemscope itemtype="https://schema.org/Rating">
+    <meta itemprop="ratingValue" content="4">****</span>
+  Room rates: <span itemprop="priceRange">$100 - $240</span>
+</div>
+
+
+This example is in microdata only.
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+<h1>ACME Hotel Innsbruck</h1>
+<span>A beautifully located business hotel right in the
+heart of the alps. Watch the sun rise over the scenic Inn valley while
+enjoying your morning coffee.</span>
+  Star rating: **** (DEHOGA)
+  Room rates: $100 - $240
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Hotel">
+  <h1><span itemprop="name">ACME Hotel Innsbruck</span></h1>
+  <span itemprop="description">A beautifully located business hotel right in the
+heart of the alps. Watch the sun rise over the scenic Inn valley while
+enjoying your morning coffee.</span>
+  Star rating: <span itemprop="starRating" itemscope itemtype="https://schema.org/Rating">
+    <span itemprop="author" itemscope itemtype="https://schema.org/Organization">
+      <span itemprop="name">DEHOGA</span>
+    </span>
+    <meta itemprop="ratingValue" content="4">****
+  </span>
+  Room rates: <span itemprop="priceRange">$100 - $240</span>
+</div>
+
+
+This example is in microdata only.
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

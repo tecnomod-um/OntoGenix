@@ -1,0 +1,161 @@
+
+
+
+
+
+exerciseRelatedDiet - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+exerciseRelatedDiet
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    instrument 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    exerciseRelatedDiet
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/exerciseRelatedDiet 
+
+Check for open issues.
+
+
+
+
+A sub property of instrument. The diet used in this action.
+ 
+
+Values expected to be one of these types
+
+
+Diet
+
+
+
+Used on these types
+
+
+ExerciseAction
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

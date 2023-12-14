@@ -1,0 +1,215 @@
+
+
+
+
+
+Throat - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+Throat
+A Schema.org Enumeration Member
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalEnumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    PhysicalExam 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    Throat
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalEntity 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalProcedure 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    PhysicalExam 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    Throat
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/Throat 
+
+Check for open issues.
+
+
+
+
+Throat assessment with  clinical examination.
+ A member value for enumeration type: 
+    
+    
+    PhysicalExam
+ 
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

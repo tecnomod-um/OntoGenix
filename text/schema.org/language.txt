@@ -1,0 +1,168 @@
+
+
+
+
+
+language - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+language
+A Schema.org Property
+
+
+Note: This term has been superseded.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    instrument 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    language
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/language 
+
+Check for open issues.
+
+
+
+
+A sub property of instrument. The language used on this action.
+ 
+
+Values expected to be one of these types
+
+
+Language
+
+
+
+Used on these types
+
+
+CommunicateAction
+
+WriteAction
+
+
+
+
+
+SupersededBy
+
+inLanguage
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

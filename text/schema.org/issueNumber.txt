@@ -1,0 +1,183 @@
+
+
+
+
+
+issueNumber - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+issueNumber
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    position 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    issueNumber
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/issueNumber 
+
+                Equivalent Property: http://purl.org/ontology/bibo/issue
+                
+
+Check for open issues.
+
+
+
+
+Identifies the issue of publication; for example, "iii" or "2".
+ 
+
+Values expected to be one of these types
+
+
+Integer
+
+Text
+
+
+
+Used on these types
+
+
+PublicationIssue
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       Schema Bib Extend Group
+                    
+
+
+
+                    The W3C Schema Bib Extend (BibEx) group led the work to improve schema.org for bibliographic information, including terms for periodicals, articles and multi-volume works. The design was inspired in places (e.g. pageStart, pageEnd, pagination) by the Bibliographic Ontology, 'bibo'.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

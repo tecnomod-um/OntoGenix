@@ -1,0 +1,152 @@
+
+
+
+
+
+potentialAction - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+potentialAction
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    potentialAction
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/potentialAction 
+
+Check for open issues.
+
+
+
+
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+ 
+
+Values expected to be one of these types
+
+
+Action
+
+
+
+Used on these types
+
+
+Thing
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

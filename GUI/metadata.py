@@ -12,7 +12,7 @@ class MetadataManager:
 
     genie_metadata = {
         'role': "you are a powerful ontology engineer that must select the appropriate function to be called.",
-        'instructions': "./testing/gui_manager_role.prompt",
+        'instructions': "./GUI/GuiManager/gui_manager_role.prompt",
         'model': 'gpt-4-1106-preview',
         'api_key_path': "./GUI/.env",
         'available_functions': available_functions,

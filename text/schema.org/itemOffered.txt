@@ -1,0 +1,171 @@
+
+
+
+
+
+itemOffered - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+itemOffered
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    itemOffered
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/itemOffered 
+
+Check for open issues.
+
+
+
+
+An item being offered (or demanded). The transactional nature of the offer or demand is documented using businessFunction, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+ 
+Inverse-property: 
+    
+    
+    offers
+
+
+Values expected to be one of these types
+
+
+AggregateOffer
+
+CreativeWork
+
+Event
+
+MenuItem
+
+Product
+
+Service
+
+Trip
+
+
+
+Used on these types
+
+
+Demand
+
+Offer
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

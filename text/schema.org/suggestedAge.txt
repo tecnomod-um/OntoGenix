@@ -1,0 +1,158 @@
+
+
+
+
+
+suggestedAge - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+suggestedAge
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    suggestedAge
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/suggestedAge 
+
+Check for open issues.
+
+
+
+
+The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+ 
+
+Values expected to be one of these types
+
+
+QuantitativeValue
+
+
+
+Used on these types
+
+
+PeopleAudience
+
+SizeSpecification
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2811
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

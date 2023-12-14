@@ -1,0 +1,169 @@
+
+
+
+
+
+serviceArea - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+serviceArea
+A Schema.org Property
+
+
+Note: This term has been superseded.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    serviceArea
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/serviceArea 
+
+Check for open issues.
+
+
+
+
+The geographic area where the service is provided.
+ 
+
+Values expected to be one of these types
+
+
+AdministrativeArea
+
+GeoShape
+
+Place
+
+
+
+Used on these types
+
+
+ContactPoint
+
+Organization
+
+Service
+
+
+
+
+
+Supersedes
+
+area
+
+SupersededBy
+
+areaServed
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

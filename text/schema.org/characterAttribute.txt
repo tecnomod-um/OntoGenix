@@ -1,0 +1,154 @@
+
+
+
+
+
+characterAttribute - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+characterAttribute
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    characterAttribute
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/characterAttribute 
+
+Check for open issues.
+
+
+
+
+A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).
+ 
+
+Values expected to be one of these types
+
+
+Thing
+
+
+
+Used on these types
+
+
+Game
+
+VideoGameSeries
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

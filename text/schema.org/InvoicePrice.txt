@@ -1,0 +1,167 @@
+
+
+
+
+
+InvoicePrice - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+InvoicePrice
+A Schema.org Enumeration Member
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    PriceTypeEnumeration 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    InvoicePrice
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/InvoicePrice 
+
+Check for open issues.
+
+
+
+
+Represents the invoice price of an offered product.
+ A member value for enumeration type: 
+    
+    
+    PriceTypeEnumeration
+ 
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2712
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

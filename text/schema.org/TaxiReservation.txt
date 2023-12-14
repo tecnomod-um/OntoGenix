@@ -1,0 +1,585 @@
+
+
+
+
+
+TaxiReservation - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+TaxiReservation
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Reservation 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    TaxiReservation
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/TaxiReservation 
+
+Check for open issues.
+
+
+
+
+A reservation for a taxi.
+
+Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use Offer.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    TaxiReservation
+
+partySize
+
+Integer  or 
+QuantitativeValue
+Number of people the reservation should accommodate.
+                
+                
+                
+            
+
+
+pickupLocation
+
+Place
+Where a taxi will pick up a passenger or a rental car can be picked up.
+                
+                
+                
+            
+
+
+pickupTime
+
+DateTime
+When a taxi will pick up a passenger or a rental car can be picked up.
+                
+                
+                
+            
+
+
+Properties from 
+    
+    
+    Reservation
+
+bookingTime
+
+DateTime
+The date and time the reservation was booked.
+                
+                
+                
+            
+
+
+broker
+
+Organization  or 
+Person
+An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+                 Supersedes 
+                
+    
+    
+    bookingAgent.
+                
+                
+            
+
+
+modifiedTime
+
+DateTime
+The date and time the reservation was modified.
+                
+                
+                
+            
+
+
+priceCurrency
+
+Text
+The currency of the price, or a price component when attached to PriceSpecification and its subtypes.
+
+Use standard formats: ISO 4217 currency format, e.g. "USD"; Ticker symbol for cryptocurrencies, e.g. "BTC"; well known names for Local Exchange Trading Systems (LETS) and other currency types, e.g. "Ithaca HOUR".
+                
+                
+                
+            
+
+
+programMembershipUsed
+
+ProgramMembership
+Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
+                
+                
+                
+            
+
+
+provider
+
+Organization  or 
+Person
+The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+                 Supersedes 
+                
+    
+    
+    carrier.
+                
+                
+            
+
+
+reservationFor
+
+Thing
+The thing -- flight, event, restaurant, etc. being reserved.
+                
+                
+                
+            
+
+
+reservationId
+
+Text
+A unique identifier for the reservation.
+                
+                
+                
+            
+
+
+reservationStatus
+
+ReservationStatusType
+The current status of the reservation.
+                
+                
+                
+            
+
+
+reservedTicket
+
+Ticket
+A ticket associated with the reservation.
+                
+                
+                
+            
+
+
+totalPrice
+
+Number  or 
+PriceSpecification  or 
+Text
+The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+
+Usage guidelines:
+
+Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
+Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+
+
+
+
+underName
+
+Organization  or 
+Person
+The person or organization the reservation or ticket is for.
+                
+                
+                
+            
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Taxi reservation #546323
+Customer: John Smith
+Taxi service: Checker Cab
+Pickup location: Boston Marriott Cambridge
+50 Broadway
+Cambridge, MA 02142
+
+Pickup time: 2017-08-05T16:00:00-07:00
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TaxiReservation",
+  "reservationId": "546323",
+  "reservationStatus": "https://schema.org/ReservationConfirmed",
+
+  "underName": {
+    "@type": "Person",
+    "name": "John Smith"
+  },
+  "reservationFor": {
+    "@type": "TaxiService",
+    "provider": {
+      "@type": "Organization",
+      "name": "Checker Cab"
+    }
+  },
+  "pickupLocation": {
+    "@type": "Place",
+    "name": "Boston Marriott Cambridge",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "50 Broadway",
+      "addressLocality": "Cambridge",
+      "addressRegion": "MA",
+      "postalCode": "02142",
+      "addressCountry": "US"
+    }
+  },
+  "pickupTime": "2017-08-05T16:00:00-07:00"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "TaxiReservation",
+  "reservationId": "546323",
+  "reservationStatus": "https://schema.org/ReservationConfirmed",
+
+  "underName": {
+    "@type": "Person",
+    "name": "John Smith"
+  },
+  "reservationFor": {
+    "@type": "TaxiService",
+    "provider": {
+      "@type": "Organization",
+      "name": "Checker Cab"
+    }
+  },
+  "pickupLocation": {
+    "@type": "Place",
+    "name": "Boston Marriott Cambridge",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "50 Broadway",
+      "addressLocality": "Cambridge",
+      "addressRegion": "MA",
+      "postalCode": "02142",
+      "addressCountry": "US"
+    }
+  },
+  "pickupTime": "2017-08-05T16:00:00-07:00"
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

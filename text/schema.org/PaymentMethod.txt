@@ -1,0 +1,219 @@
+
+
+
+
+
+PaymentMethod - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+PaymentMethod
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    PaymentMethod
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/PaymentMethod 
+
+Check for open issues.
+
+
+
+
+A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.
+
+Commonly used values:
+
+http://purl.org/goodrelations/v1#ByBankTransferInAdvance
+http://purl.org/goodrelations/v1#ByInvoice
+http://purl.org/goodrelations/v1#Cash
+http://purl.org/goodrelations/v1#CheckInAdvance
+http://purl.org/goodrelations/v1#COD
+http://purl.org/goodrelations/v1#DirectDebit
+http://purl.org/goodrelations/v1#GoogleCheckout
+http://purl.org/goodrelations/v1#PayPal
+http://purl.org/goodrelations/v1#PaySwarm
+
+ 
+
+
+
+
+Instances of 
+    
+    
+    PaymentMethod  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+acceptedPaymentMethod
+
+Demand  or 
+Offer
+The payment method(s) accepted by seller for this offer.
+  
+
+appliesToPaymentMethod
+
+PaymentChargeSpecification
+The payment method(s) to which the payment charge specification applies.
+  
+
+paymentMethod
+
+Invoice  or 
+Order
+The name of the credit card or other method of payment for the order.
+  
+
+
+
+
+
+
+Enumeration Subtypes
+
+
+PaymentCard
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       GoodRelations Vocabulary Classes
+                    
+
+
+
+                    This class is derived from the GoodRelations Vocabulary for E-Commerce, created by Martin Hepp. GoodRelations is a data model for sharing e-commerce data on the Web that can be expressed in a variety of syntaxes, including RDFa and HTML5 Microdata. More information about GoodRelations can be found at http://purl.org/goodrelations/.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

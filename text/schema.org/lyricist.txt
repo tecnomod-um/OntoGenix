@@ -1,0 +1,169 @@
+
+
+
+
+
+lyricist - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+lyricist
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    lyricist
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/lyricist 
+
+Check for open issues.
+
+
+
+
+The person who wrote the words.
+ 
+
+Values expected to be one of these types
+
+
+Person
+
+
+
+Used on these types
+
+
+MusicComposition
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       MusicBrainz Project
+                    
+
+
+
+                    This vocabulary was improved through collaboration with the MusicBrainz project    (www.musicbrainz.org), and is partially inspired by the MusicBrainz and    Music Ontology schemas.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

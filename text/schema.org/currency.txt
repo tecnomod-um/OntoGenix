@@ -1,0 +1,163 @@
+
+
+
+
+
+currency - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+currency
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    currency
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/currency 
+
+Check for open issues.
+
+
+
+
+The currency in which the monetary amount is expressed.
+
+Use standard formats: ISO 4217 currency format, e.g. "USD"; Ticker symbol for cryptocurrencies, e.g. "BTC"; well known names for Local Exchange Trading Systems (LETS) and other currency types, e.g. "Ithaca HOUR".
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+
+
+Used on these types
+
+
+ExchangeRateSpecification
+
+LoanOrCredit
+
+MonetaryAmount
+
+MonetaryAmountDistribution
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1253
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

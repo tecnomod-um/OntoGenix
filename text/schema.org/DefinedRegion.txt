@@ -1,0 +1,451 @@
+
+
+
+
+
+DefinedRegion - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+DefinedRegion
+A Schema.org Type
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StructuredValue 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    DefinedRegion
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/DefinedRegion 
+
+Check for open issues.
+
+
+
+
+A DefinedRegion is a geographic area defined by potentially arbitrary (rather than political, administrative or natural geographical) criteria. Properties are provided for defining a region by reference to sets of postal codes.
+
+Examples: a delivery destination when shopping. Region where regional pricing is configured.
+
+Requirement 1:
+Country: US
+States: "NY", "CA"
+
+Requirement 2:
+Country: US
+PostalCode Set: { [94000-94585], [97000, 97999], [13000, 13599]}
+{ [12345, 12345], [78945, 78945], }
+Region = state, canton, prefecture, autonomous community...
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    DefinedRegion
+
+addressCountry
+
+Country  or 
+Text
+The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+                
+                
+                
+            
+
+
+addressRegion
+
+Text
+The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division.
+                
+                
+                
+            
+
+
+postalCode
+
+Text
+The postal code. For example, 94043.
+                
+                
+                
+            
+
+
+postalCodePrefix
+
+Text
+A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.
+                
+                
+                
+            
+
+
+postalCodeRange
+
+PostalCodeRangeSpecification
+A defined range of postal codes.
+                
+                
+                
+            
+
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    DefinedRegion  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+shippingDestination
+
+DeliveryTimeSettings  or 
+OfferShippingDetails  or 
+ShippingRateSettings
+indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
+  
+
+shippingOrigin
+
+OfferShippingDetails
+Indicates the origin of a shipment, i.e. where it should be coming from.
+  
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2506
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+Defined region example (JSON-LD only).
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DefinedRegion",
+        "addressCountry": "US",
+        "addressRegion": "CA",
+        "postalCodeRange": {
+            "@type": "PostalCodeRangeSpecification",
+            "postalCodeBegin": "90001",
+            "postalCodeEnd": "96162"
+        }
+    }
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+        "@context": "https://schema.org",
+        "@type": "DefinedRegion",
+        "addressCountry": "US",
+        "addressRegion": "CA",
+        "postalCodeRange": {
+            "@type": "PostalCodeRangeSpecification",
+            "postalCodeBegin": "90001",
+            "postalCodeEnd": "96162"
+        }
+    }
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

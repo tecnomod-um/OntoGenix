@@ -1,0 +1,159 @@
+
+
+
+
+
+tracks - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+tracks
+A Schema.org Property
+
+
+Note: This term has been superseded.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    tracks
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/tracks 
+
+Check for open issues.
+
+
+
+
+A music recording (track)—usually a single song.
+ 
+
+Values expected to be one of these types
+
+
+MusicRecording
+
+
+
+Used on these types
+
+
+MusicGroup
+
+MusicPlaylist
+
+
+
+
+
+SupersededBy
+
+track
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,231 @@
+
+
+
+
+
+Time - Schema.org Data Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+Time
+A Schema.org Data Type
+
+
+
+
+
+DataType 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    Time
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/Time 
+
+Check for open issues.
+
+
+
+
+A point in time recurring on multiple days in the form hh:mm:ss[Z|(+|-)hh:mm] (see XML schema for details).
+ 
+
+
+
+
+Instances of 
+    
+    
+    Time  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+arrivalTime
+
+Trip
+The expected arrival time.
+  
+
+availabilityEnds
+
+ActionAccessSpecification  or 
+Demand  or 
+Offer
+The end of the availability of the product or service included in the offer.
+  
+
+availabilityStarts
+
+ActionAccessSpecification  or 
+Demand  or 
+Offer
+The beginning of the availability of the product or service included in the offer.
+  
+
+checkinTime
+
+LodgingBusiness  or 
+LodgingReservation
+The earliest someone may check into a lodging establishment.
+  
+
+checkoutTime
+
+LodgingBusiness  or 
+LodgingReservation
+The latest someone may check out of a lodging establishment.
+  
+
+closes
+
+OpeningHoursSpecification
+The closing hour of the place or service on the given day(s) of the week.
+  
+
+cutoffTime
+
+ShippingDeliveryTime
+Order cutoff time allows merchants to describe the time after which they will no longer process orders received on that day. For orders processed after cutoff time, one day gets added to the delivery time estimate. This property is expected to be most typically used via the ShippingRateSettings publication pattern. The time is indicated using the ISO-8601 Time format, e.g. "23:30:00-05:00" would represent 6:30 pm Eastern Standard Time (EST) which is 5 hours behind Coordinated Universal Time (UTC).
+  
+
+departureTime
+
+Trip
+The expected departure time.
+  
+
+doorTime
+
+Event
+The time admission will commence.
+  
+
+endTime
+
+Action  or 
+FoodEstablishmentReservation  or 
+InteractionCounter  or 
+MediaObject  or 
+Schedule
+The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to December. For media, including audio and video, it's the time offset of the end of a clip within a larger file.
+
+Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+  
+
+opens
+
+OpeningHoursSpecification
+The opening hour of the place or service on the given day(s) of the week.
+  
+
+startTime
+
+Action  or 
+FoodEstablishmentReservation  or 
+InteractionCounter  or 
+MediaObject  or 
+Schedule
+The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.
+
+Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+  
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

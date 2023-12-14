@@ -1,0 +1,523 @@
+
+
+
+
+
+GeoCoordinates - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+GeoCoordinates
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StructuredValue 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    GeoCoordinates
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/GeoCoordinates 
+
+Check for open issues.
+
+
+
+
+The geographic coordinates of a place or event.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    GeoCoordinates
+
+address
+
+PostalAddress  or 
+Text
+Physical address of the item.
+                
+                
+                
+            
+
+
+addressCountry
+
+Country  or 
+Text
+The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+                
+                
+                
+            
+
+
+elevation
+
+Number  or 
+Text
+The elevation of a location (WGS 84). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+                
+                
+                
+            
+
+
+latitude
+
+Number  or 
+Text
+The latitude of a location. For example 37.42242 (WGS 84).
+                
+                
+                
+            
+
+
+longitude
+
+Number  or 
+Text
+The longitude of a location. For example -122.08585 (WGS 84).
+                
+                
+                
+            
+
+
+postalCode
+
+Text
+The postal code. For example, 94043.
+                
+                
+                
+            
+
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    GeoCoordinates  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+geo
+
+Place
+The geo coordinates of the place.
+  
+
+geoMidpoint
+
+GeoCircle
+Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
+  
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<h1>What is the latitude and longitude of the Empire State Building?</h1>
+Answer:
+Latitude: 40 deg 44 min 54.36 sec N
+Longitude: 73 deg 59 min 8.5 sec W
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Place">
+  <h1>What is the latitude and longitude of the <span itemprop="name">Empire State Building</span>?</h1>
+  Answer:
+  <div itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
+    Latitude: 40 deg 44 min 54.36 sec N
+    Longitude: 73 deg 59 min 8.5 dec W
+    <meta itemprop="latitude" content="40.75" />
+    <meta itemprop="longitude" content="-73.98" />
+  </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="Place">
+  <h1>What is the latitude and longitude of the <span property="name">Empire State Building</span>?</h1>
+  Answer:
+  <div property="geo" typeof="GeoCoordinates">
+    Latitude: 40 deg 44 min 54.36 sec N
+    Longitude: 73 deg 59 min 8.5 dec W
+    <meta property="latitude" content="40.75" />
+    <meta property="longitude" content="-73.98" />
+  </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Place",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.75",
+    "longitude": "-73.98"
+  },
+  "name": "Empire State Building"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Place",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.75",
+    "longitude": "-73.98"
+  },
+  "name": "Empire State Building"
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+This example is in microdata only.
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Hotel">
+  <h1><span itemprop="name">ACME Hotel Innsbruck</span></h1>
+  <span itemprop="description">A beautifully located business hotel right in the
+heart of the alps. Watch the sun rise over the scenic Inn valley while
+enjoying your morning coffee.</span>
+  <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+    <span itemprop="streetAddress">Technikerstrasse 21</span>
+    <span itemprop="postalCode">6020</span>
+    <span itemprop="addressLocality">Innsbruck</span>
+    <span itemprop="addressRegion">Tyrol</span>,
+    <span itemprop="addressCountry">Austria</span>
+  </div>
+  <div itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
+    <meta itemprop="latitude" content="47.2649990" />
+    <meta itemprop="longitude" content="11.3428720" />
+  </div>
+</div>
+
+
+This example is in microdata only.
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

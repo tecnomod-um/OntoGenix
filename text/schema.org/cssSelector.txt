@@ -1,0 +1,251 @@
+
+
+
+
+
+cssSelector - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+cssSelector
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    cssSelector
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/cssSelector 
+
+Check for open issues.
+
+
+
+
+A CSS selector, e.g. of a SpeakableSpecification or WebPageElement. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
+ 
+
+Values expected to be one of these types
+
+
+CssSelectorType
+
+
+
+Used on these types
+
+
+SpeakableSpecification
+
+WebPageElement
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1389
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+An example of 'speakable' markup (JSON-LD only, initially).
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+{
+"@context": "https://schema.org/",
+"@type": "WebPage",
+"name": "Jane Doe's homepage",
+"speakable":
+{
+"@type": "SpeakableSpecification",
+"cssSelector": ["headline", "summary"]
+},
+"url": "http://www.janedoe.com"
+}
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+"@context": "https://schema.org/",
+"@type": "WebPage",
+"name": "Jane Doe's homepage",
+"speakable":
+{
+"@type": "SpeakableSpecification",
+"cssSelector": ["headline", "summary"]
+},
+"url": "http://www.janedoe.com"
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+
+
+Example notes or example HTML without markup.
+
+An example of speakable markup in Microdata in HTML head section.
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<!DOCTYPE html>
+<html>
+<head rel="home" href="/" itemid=""  itemscope itemtype="https://schema.org/SpeakableSpecification">
+<title>Example showing complex structures in HTML head</title>
+<meta itemprop="cssSelector" content=".title" />
+<meta itemprop="xpath" content="/html/body/h3" />
+</head>
+<body>
+<h1 class="title">Complex Microdata in HTML head</h1>
+<p>...</p>
+</body>
+</html>
+
+
+This example is in microdata only
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,179 @@
+
+
+
+
+
+DigitalDocumentPermissionType - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+DigitalDocumentPermissionType
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    DigitalDocumentPermissionType
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/DigitalDocumentPermissionType 
+
+Check for open issues.
+
+
+
+
+A type of permission which can be granted for accessing a digital document.
+ 
+
+
+
+
+Instances of 
+    
+    
+    DigitalDocumentPermissionType  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+permissionType
+
+DigitalDocumentPermission
+The type of permission granted the person, organization, or audience.
+  
+
+
+
+
+Enumeration members
+
+
+CommentPermission
+
+ReadPermission
+
+WritePermission
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

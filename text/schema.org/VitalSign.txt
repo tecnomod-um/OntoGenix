@@ -1,0 +1,618 @@
+
+
+
+
+
+VitalSign - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+VitalSign
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalEntity 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalCondition 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalSignOrSymptom 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    MedicalSign 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    VitalSign
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/VitalSign 
+
+Check for open issues.
+
+
+
+
+Vital signs are measures of various physiological functions in order to assess the most basic body functions.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+
+Properties from 
+    
+    
+    MedicalSign
+
+identifyingExam
+
+PhysicalExam
+A physical examination that can identify this sign.
+                
+                
+                
+            
+
+
+identifyingTest
+
+MedicalTest
+A diagnostic test that can identify this sign.
+                
+                
+                
+            
+
+
+Properties from 
+    
+    
+    MedicalSignOrSymptom
+
+possibleTreatment
+
+MedicalTherapy
+A possible treatment to address this condition, sign or symptom.
+                
+                
+                
+            
+
+
+Properties from 
+    
+    
+    MedicalCondition
+
+associatedAnatomy
+
+AnatomicalStructure  or 
+AnatomicalSystem  or 
+SuperficialAnatomy
+The anatomy of the underlying organ system or structures associated with this entity.
+                
+                
+                
+            
+
+
+differentialDiagnosis
+
+DDxElement
+One of a set of differential diagnoses for the condition. Specifically, a closely-related or competing diagnosis typically considered later in the cognitive process whereby this medical condition is distinguished from others most likely responsible for a similar collection of signs and symptoms to reach the most parsimonious diagnosis or diagnoses in a patient.
+                
+                
+                
+            
+
+
+drug
+
+Drug
+Specifying a drug or medicine used in a medication procedure.
+                
+                
+                
+            
+
+
+epidemiology
+
+Text
+The characteristics of associated patients, such as age, gender, race etc.
+                
+                
+                
+            
+
+
+expectedPrognosis
+
+Text
+The likely outcome in either the short term or long term of the medical condition.
+                
+                
+                
+            
+
+
+naturalProgression
+
+Text
+The expected progression of the condition if it is not treated and allowed to progress naturally.
+                
+                
+                
+            
+
+
+pathophysiology
+
+Text
+Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
+                
+                
+                
+            
+
+
+possibleComplication
+
+Text
+A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc.
+                
+                
+                
+            
+
+
+possibleTreatment
+
+MedicalTherapy
+A possible treatment to address this condition, sign or symptom.
+                
+                
+                
+            
+
+
+primaryPrevention
+
+MedicalTherapy
+A preventative therapy used to prevent an initial occurrence of the medical condition, such as vaccination.
+                
+                
+                
+            
+
+
+riskFactor
+
+MedicalRiskFactor
+A modifiable or non-modifiable factor that increases the risk of a patient contracting this condition, e.g. age,  coexisting condition.
+                
+                
+                
+            
+
+
+secondaryPrevention
+
+MedicalTherapy
+A preventative therapy used to prevent reoccurrence of the medical condition after an initial episode of the condition.
+                
+                
+                
+            
+
+
+signOrSymptom
+
+MedicalSignOrSymptom
+A sign or symptom of this condition. Signs are objective or physically observable manifestations of the medical condition while symptoms are the subjective experience of the medical condition.
+                
+                
+                
+            
+
+
+stage
+
+MedicalConditionStage
+The stage of the condition, if applicable.
+                
+                
+                
+            
+
+
+status
+
+EventStatusType  or 
+MedicalStudyStatus  or 
+Text
+The status of the study (enumerated).
+                
+                
+                
+            
+
+
+typicalTest
+
+MedicalTest
+A medical test typically performed given this condition.
+                
+                
+                
+            
+
+
+Properties from 
+    
+    
+    MedicalEntity
+
+code
+
+MedicalCode
+A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+                
+                
+                
+            
+
+
+funding
+
+Grant
+A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.
+                
+                
+                Inverse property: 
+    
+    
+    fundedItem
+
+
+
+guideline
+
+MedicalGuideline
+A medical guideline related to this entity.
+                
+                
+                
+            
+
+
+legalStatus
+
+DrugLegalStatus  or 
+MedicalEnumeration  or 
+Text
+The drug or supplement's legal status, including any controlled substance schedules that apply.
+                
+                
+                
+            
+
+
+medicineSystem
+
+MedicineSystem
+The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
+                
+                
+                
+            
+
+
+recognizingAuthority
+
+Organization
+If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+                
+                
+                
+            
+
+
+relevantSpecialty
+
+MedicalSpecialty
+If applicable, a medical specialty in which this entity is relevant.
+                
+                
+                
+            
+
+
+study
+
+MedicalStudy
+A medical study or trial related to this entity.
+                
+                
+                
+            
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

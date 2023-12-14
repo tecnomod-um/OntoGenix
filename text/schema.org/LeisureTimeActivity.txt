@@ -1,0 +1,163 @@
+
+
+
+
+
+LeisureTimeActivity - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+LeisureTimeActivity
+A Schema.org Enumeration Member
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    PhysicalActivityCategory 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    LeisureTimeActivity
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/LeisureTimeActivity 
+
+Check for open issues.
+
+
+
+
+Any physical activity engaged in for recreational purposes. Examples may include ballroom dancing, roller skating, canoeing, fishing, etc.
+ A member value for enumeration type: 
+    
+    
+    PhysicalActivityCategory
+ 
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

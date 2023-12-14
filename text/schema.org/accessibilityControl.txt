@@ -1,0 +1,594 @@
+
+
+
+
+
+accessibilityControl - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+accessibilityControl
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    accessibilityControl
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/accessibilityControl 
+
+Check for open issues.
+
+
+
+
+Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the approved vocabulary.
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+
+
+Used on these types
+
+
+CreativeWork
+
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<div>
+   <dl>
+      <dt>Name:</dt>
+      <dd>Holt Physical Science</dd>
+      <dt>Brief Synopsis:</dt>
+      <dd>NIMAC-sourced textbook</dd>
+      <dt>Long Synopsis:</dt>
+      <dd>N/A</dd>
+      <dt>Book Quality:</dt>
+      <dd>Publisher Quality</dd>
+      <dt>Book Size:</dt>
+      <dd>598 Pages</dd>
+      <dt>ISBN-13:</dt>
+      <dd>9780030426599</dd>
+      <dt>Publisher:</dt>
+      <dd >Holt, Rinehart and Winston</dd>
+      <dt>Date of Addition:</dt>
+      <dd>06/08/10</dd>
+      <dt>Copyright Date:</dt>
+      <dd>2007</dd>
+      <dt>Copyrighted By:</dt>
+      <dd>Holt, Rinehart and Winston</dd>
+      <dt>Adult content:</dt>
+      <dd>No</dd>
+      <dt>Language:</dt>
+      <dd>English US</dd>
+      <dt>Essential Images:</dt>
+      <dd>861</dd>
+      <dt>Described Images:</dt>
+      <dd>910</dd>
+      <dt>Categories:</dt>
+      <dd>Educational Materials</dd>
+      <dt>Grade Levels:</dt>
+      <dd>Sixth grade, Seventh grade, Eighth grade</dd>
+      <dt>Submitted By:</dt>
+      <dd>Bookshare Staff</dd>
+      <dt>NIMAC:</dt>
+      <dd>This book is currently only available to public K-12 schools and organizations in the
+      United States for use with students with an IEP, because it was created from files
+      supplied by the NIMAC under these restrictions. Learn more in the NIMAC Support Center.</dd>
+   </dl>
+   <div class="bookReviews">
+      <h2>Reviews of Holt Physical Science (0 reviews)</h2>
+      <div class="bookReviewScore">
+         <span>0 - No Rating Yet</span>
+      </div>
+   </div>
+</div>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<p>
+This example shows the addition of Accessibility metadata. Although these properties are not
+a formal enumeration, there is evolving consensus amongst accessibility experts for
+appropriate values for these properties. This example shows simple text values,
+as suggested by www.a11ymetadata.org.
+</p>
+
+<div itemscope="" itemtype="https://schema.org/Book">
+   <meta itemprop="bookFormat" content="EBook/DAISY3"/>
+   <meta itemprop="accessibilityFeature" content="largePrint/CSSEnabled"/>
+   <meta itemprop="accessibilityFeature" content="highContrast/CSSEnabled"/>
+   <meta itemprop="accessibilityFeature" content="resizeText/CSSEnabled"/>
+   <meta itemprop="accessibilityFeature" content="displayTransformability"/>
+   <meta itemprop="accessibilityFeature" content="longDescription"/>
+   <meta itemprop="accessibilityFeature" content="alternativeText"/>
+   <meta itemprop="accessibilityControl" content="fullKeyboardControl"/>
+   <meta itemprop="accessibilityControl" content="fullMouseControl"/>
+   <meta itemprop="accessibilityHazard" content="noFlashingHazard"/>
+   <meta itemprop="accessibilityHazard" content="noMotionSimulationHazard"/>
+   <meta itemprop="accessibilityHazard" content="noSoundHazard"/>
+   <meta itemprop="accessibilityAPI" content="ARIA"/>
+
+   <dl>
+      <dt>Name:</dt>
+      <dd itemprop="name">Holt Physical Science</dd>
+      <dt>Brief Synopsis:</dt>
+      <dd itemprop="description">NIMAC-sourced textbook</dd>
+      <dt>Long Synopsis:</dt>
+      <dd>N/A</dd>
+      <dt>Book Quality:</dt>
+      <dd>Publisher Quality</dd>
+      <dt>Book Size:</dt>
+      <dd><span itemprop="numberOfPages">598</span> Pages</dd>
+      <dt>ISBN-13:</dt>
+      <dd itemprop="isbn">9780030426599</dd>
+      <dt>Publisher:</dt>
+      <dd itemprop="publisher" itemtype="https://schema.org/Organization" itemscope=""><span itemprop="name">Holt, Rinehart and Winston</span></dd>
+      <dt>Date of Addition:</dt>
+      <dd>06/08/10</dd>
+      <dt>Copyright Date:</dt>
+      <dd itemprop="copyrightYear">2007</dd>
+      <dt>Copyrighted By:</dt>
+      <dd itemprop="copyrightHolder" itemtype="https://schema.org/Organization" itemscope=""><span itemprop="name">Holt, Rinehart and Winston</span></dd>
+      <dt>Adult content:</dt>
+      <dd><meta itemprop="isFamilyFriendly" content="true"/>No</dd>
+      <dt>Language:</dt>
+      <dd><meta itemprop="inLanguage" content="en-US"/>English US</dd>
+      <dt>Essential Images:</dt>
+      <dd>861</dd>
+      <dt>Described Images:</dt>
+      <dd>910</dd>
+      <dt>Categories:</dt>
+      <dd><span itemprop="genre">Educational Materials</span></dd>
+      <dt>Grade Levels:</dt>
+      <dd>Sixth grade, Seventh grade, Eighth grade</dd>
+      <dt>Submitted By:</dt>
+      <dd>Bookshare Staff</dd>
+      <dt>NIMAC:</dt>
+      <dd>This book is currently only available to public K-12 schools and organizations in the
+      United States for use with students with an IEP, because it was created from files
+      supplied by the NIMAC under these restrictions. Learn more in the NIMAC Support Center.</dd>
+   </dl>
+
+   <div class="bookReviews" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+      <h2>Reviews of Holt Physical Science (<span itemprop="reviewCount">0</span> reviews)</h2>
+
+      <div class="bookReviewScore">
+         <span><span itemprop="ratingValue">0</span> - No Rating Yet</span>
+      </div>
+   </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<p>
+This example shows the addition of Accessibility metadata. Although these properties are not
+a formal enumeration, there is evolving consensus amongst accessibility experts for
+appropriate values for these properties. This example shows simple text values,
+as suggested by www.a11ymetadata.org.
+</p>
+
+<div vocab="https://schema.org/" typeof="Book">
+   <meta property="bookFormat" content="EBook/DAISY3"/>
+   <meta property="accessibilityFeature" content="largePrint/CSSEnabled"/>
+   <meta property="accessibilityFeature" content="highContrast/CSSEnabled"/>
+   <meta property="accessibilityFeature" content="resizeText/CSSEnabled"/>
+   <meta property="accessibilityFeature" content="displayTransformability"/>
+   <meta property="accessibilityFeature" content="longDescription"/>
+   <meta property="accessibilityFeature" content="alternativeText"/>
+   <meta property="accessibilityControl" content="fullKeyboardControl"/>
+   <meta property="accessibilityControl" content="fullMouseControl"/>
+   <meta property="accessibilityHazard" content="noFlashingHazard"/>
+   <meta property="accessibilityHazard" content="noMotionSimulationHazard"/>
+   <meta property="accessibilityHazard" content="noSoundHazard"/>
+   <meta property="accessibilityAPI" content="ARIA"/>
+
+   <dl>
+      <dt>Name:</dt>
+      <dd property="name">Holt Physical Science</dd>
+      <dt>Brief Synopsis:</dt>
+      <dd property="description">NIMAC-sourced textbook</dd>
+      <dt>Long Synopsis:</dt>
+      <dd>N/A</dd>
+      <dt>Book Quality:</dt>
+      <dd>Publisher Quality</dd>
+      <dt>Book Size:</dt>
+      <dd><span property="numberOfPages">598</span> Pages</dd>
+      <dt>ISBN-13:</dt>
+      <dd property="isbn">9780030426599</dd>
+      <dt>Publisher:</dt>
+      <dd property="publisher" typeof="Organization"><span property="name">Holt, Rinehart and Winston</span></dd>
+      <dt>Date of Addition:</dt>
+      <dd>06/08/10</dd>
+      <dt>Copyright Date:</dt>
+      <dd property="copyrightYear">2007</dd>
+      <dt>Copyrighted By:</dt>
+      <dd property="copyrightHolder" typeof="Organization"><span property="name">Holt, Rinehart and Winston</span></dd>
+      <dt>Adult content:</dt>
+      <dd><meta property="isFamilyFriendly" content="true"/>No</dd>
+      <dt>Language:</dt>
+      <dd><meta property="inLanguage" content="en-US"/>English US</dd>
+      <dt>Essential Images:</dt>
+      <dd>861</dd>
+      <dt>Described Images:</dt>
+      <dd>910</dd>
+      <dt>Categories:</dt>
+      <dd><span property="genre">Educational Materials</span></dd>
+      <dt>Grade Levels:</dt>
+      <dd>Sixth grade, Seventh grade, Eighth grade</dd>
+      <dt>Submitted By:</dt>
+      <dd>Bookshare Staff</dd>
+      <dt>NIMAC:</dt>
+      <dd>This book is currently only available to public K-12 schools and organizations in the
+      United States for use with students with an IEP, because it was created from files
+      supplied by the NIMAC under these restrictions. Learn more in the NIMAC Support Center.</dd>
+   </dl>
+
+   <div class="bookReviews" property="aggregateRating" typeof="AggregateRating">
+      <h2>Reviews of Holt Physical Science (<span property="reviewCount">0</span> reviews)</h2>
+
+      <div class="bookReviewScore">
+         <span><span property="ratingValue">0</span> - No Rating Yet</span>
+      </div>
+   </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "accessibilityAPI": "ARIA",
+  "accessibilityControl": [
+    "fullKeyboardControl",
+    "fullMouseControl"
+  ],
+  "accessibilityFeature": [
+    "largePrint/CSSEnabled",
+    "highContrast/CSSEnabled",
+    "resizeText/CSSEnabled",
+    "displayTransformability",
+    "longDescription",
+    "alternativeText"
+  ],
+  "accessibilityHazard": [
+    "noFlashingHazard",
+    "noMotionSimulationHazard",
+    "noSoundHazard"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "reviewCount": "0"
+  },
+  "bookFormat": "EBook/DAISY3",
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "Holt, Rinehart and Winston"
+  },
+  "copyrightYear": "2007",
+  "description": "NIMAC-sourced textbook",
+  "genre": "Educational Materials",
+  "inLanguage": "en-US",
+  "isFamilyFriendly": "true",
+  "isbn": "9780030426599",
+  "name": "Holt Physical Science",
+  "numberOfPages": "598",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Holt, Rinehart and Winston"
+  }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "accessibilityAPI": "ARIA",
+  "accessibilityControl": [
+    "fullKeyboardControl",
+    "fullMouseControl"
+  ],
+  "accessibilityFeature": [
+    "largePrint/CSSEnabled",
+    "highContrast/CSSEnabled",
+    "resizeText/CSSEnabled",
+    "displayTransformability",
+    "longDescription",
+    "alternativeText"
+  ],
+  "accessibilityHazard": [
+    "noFlashingHazard",
+    "noMotionSimulationHazard",
+    "noSoundHazard"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "reviewCount": "0"
+  },
+  "bookFormat": "EBook/DAISY3",
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "Holt, Rinehart and Winston"
+  },
+  "copyrightYear": "2007",
+  "description": "NIMAC-sourced textbook",
+  "genre": "Educational Materials",
+  "inLanguage": "en-US",
+  "isFamilyFriendly": "true",
+  "isbn": "9780030426599",
+  "name": "Holt Physical Science",
+  "numberOfPages": "598",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Holt, Rinehart and Winston"
+  }
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+[A basic presentation in HTML]
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<main itemscope itemtype="https://schema.org/CreativeWork">
+   <meta itemprop="accessibilityHazard" content="FlashingHazard"/>
+   <meta itemprop="accessibilityHazard" content="noMotionSimulationHazard"/>
+   <meta itemprop="accessibilityHazard" content="noSoundHazard"/>
+   <meta itemprop="accessibilityFeature" content="longDescription"/>
+   <meta itemprop="accessibilityFeature" content="alternativeText"/>
+   <meta itemprop="encodingFormat" content="text/html"/>
+   <meta itemprop="encodingFormat" content="image/png"/>
+   <meta itemprop="encodingFormat" content="text/css"/>
+   <meta itemprop="encodingFormat" content="text/javascript"/>
+   <meta itemprop="accessibilityAPI" content="ARIA"/>
+   <meta itemprop="accessibilityAPI" content="UIA"/>
+   <meta itemprop="accessibilityControl" content="fullKeyboardControl"/>
+   <meta itemprop="accessibilityControl" content="fullKeyboardControl"/>
+   <meta itemprop="accessibilityControl" content="fullKeyboardControl"/>
+   <meta itemprop="accessibilityControl" content="fullMouseControl"/>
+ <!--...slide content...-->
+</main>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="CreativeWork">
+   <meta property="accessibilityHazard" content="FlashingHazard"/>
+   <meta property="accessibilityHazard" content="noMotionSimulationHazard"/>
+   <meta property="accessibilityHazard" content="noSoundHazard"/>
+   <meta property="accessibilityFeature" content="longDescription"/>
+   <meta property="accessibilityFeature" content="alternativeText"/>
+   <meta property="encodingFormat" content="text/html"/>
+   <meta property="encodingFormat" content="image/png"/>
+   <meta property="encodingFormat" content="text/css"/>
+   <meta property="encodingFormat" content="text/javascript"/>
+   <meta property="accessibilityAPI" content="ARIA"/>
+   <meta property="accessibilityAPI" content="UIA"/>
+   <meta property="accessibilityControl" content="fullKeyboardControl"/>
+   <meta property="accessibilityControl" content="fullKeyboardControl"/>
+   <meta property="accessibilityControl" content="fullKeyboardControl"/>
+   <meta property="accessibilityControl" content="fullMouseControl"/>
+ <!--...slide content...-->
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json"> {
+ "@context" :  "https://schema.org/" ,
+ "@type" : "CreativeWork" ,
+ "accessibilityHazard" :  [
+        "FlashingHazard" , "noSoundHazard" ,
+        "noMotionSimulationHazard" ] ,
+
+ "accessibilityFeature" : [
+        "alternativeText" , "longDescription" ] ,
+
+ "encodingFormat" : [
+        "text/html" , "image/png" ,
+        "text/javascript" , "text/css" ] ,
+
+ "accessibilityAPI" : [
+        "ARIA" , "UIA" ],
+ "accessibilityControl" : [
+        "fullKeyboardControl" , "fullTouchControl" ,
+        "fullVoiceControl" , "fullMouseControl" ]
+} </script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+ "@context" :  "https://schema.org/" ,
+ "@type" : "CreativeWork" ,
+ "accessibilityHazard" :  [
+        "FlashingHazard" , "noSoundHazard" ,
+        "noMotionSimulationHazard" ] ,
+
+ "accessibilityFeature" : [
+        "alternativeText" , "longDescription" ] ,
+
+ "encodingFormat" : [
+        "text/html" , "image/png" ,
+        "text/javascript" , "text/css" ] ,
+
+ "accessibilityAPI" : [
+        "ARIA" , "UIA" ],
+ "accessibilityControl" : [
+        "fullKeyboardControl" , "fullTouchControl" ,
+        "fullVoiceControl" , "fullMouseControl" ]
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,187 @@
+
+
+
+
+
+includesAttraction - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+includesAttraction
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    includesAttraction
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/includesAttraction 
+
+Check for open issues.
+
+
+
+
+Attraction located at destination.
+ 
+
+Values expected to be one of these types
+
+
+TouristAttraction
+
+
+
+Used on these types
+
+
+TouristDestination
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       Future Internet Lab, Institute of Informatics and Telematics
+                    
+
+
+
+                    This element is based on work by the Web Applications for the Future Internet Lab, Institute of Informatics and Telematics, Pisa, Italy.
+                    
+
+
+
+
+
+
+
+                       Tourism Structured Web Data Community Group
+                    
+
+
+
+                    This element is based on the work of the Tourism Structured Web Data Community Group.
+                    
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1810
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

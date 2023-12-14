@@ -1,0 +1,167 @@
+
+
+
+
+
+deliveryMethod - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+deliveryMethod
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    instrument 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    deliveryMethod
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/deliveryMethod 
+
+Check for open issues.
+
+
+
+
+A sub property of instrument. The method of delivery.
+ 
+
+Values expected to be one of these types
+
+
+DeliveryMethod
+
+
+
+Used on these types
+
+
+OrderAction
+
+ReceiveAction
+
+SendAction
+
+TrackAction
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

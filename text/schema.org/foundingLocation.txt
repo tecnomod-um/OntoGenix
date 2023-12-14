@@ -1,0 +1,152 @@
+
+
+
+
+
+foundingLocation - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+foundingLocation
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    foundingLocation
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/foundingLocation 
+
+Check for open issues.
+
+
+
+
+The place where the Organization was founded.
+ 
+
+Values expected to be one of these types
+
+
+Place
+
+
+
+Used on these types
+
+
+Organization
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

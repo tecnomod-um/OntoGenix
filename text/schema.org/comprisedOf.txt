@@ -1,0 +1,154 @@
+
+
+
+
+
+comprisedOf - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+comprisedOf
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    comprisedOf
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/comprisedOf 
+
+Check for open issues.
+
+
+
+
+Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system.
+ 
+
+Values expected to be one of these types
+
+
+AnatomicalStructure
+
+AnatomicalSystem
+
+
+
+Used on these types
+
+
+AnatomicalSystem
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

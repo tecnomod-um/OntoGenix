@@ -1,0 +1,162 @@
+
+
+
+
+
+subjectOf - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+subjectOf
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    subjectOf
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/subjectOf 
+
+Check for open issues.
+
+
+
+
+A CreativeWork or Event about this Thing.
+ 
+Inverse-property: 
+    
+    
+    about
+
+
+Values expected to be one of these types
+
+
+CreativeWork
+
+Event
+
+
+
+Used on these types
+
+
+Thing
+
+
+
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1670
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

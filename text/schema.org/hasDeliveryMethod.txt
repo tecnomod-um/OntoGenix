@@ -1,0 +1,154 @@
+
+
+
+
+
+hasDeliveryMethod - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+hasDeliveryMethod
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    hasDeliveryMethod
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/hasDeliveryMethod 
+
+Check for open issues.
+
+
+
+
+Method used for delivery or shipping.
+ 
+
+Values expected to be one of these types
+
+
+DeliveryMethod
+
+
+
+Used on these types
+
+
+DeliveryEvent
+
+ParcelDelivery
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

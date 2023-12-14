@@ -1,0 +1,152 @@
+
+
+
+
+
+availableStrength - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+availableStrength
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    availableStrength
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/availableStrength 
+
+Check for open issues.
+
+
+
+
+An available dosage strength for the drug.
+ 
+
+Values expected to be one of these types
+
+
+DrugStrength
+
+
+
+Used on these types
+
+
+Drug
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

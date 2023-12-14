@@ -1,0 +1,156 @@
+
+
+
+
+
+educationalUse - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+educationalUse
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    educationalUse
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/educationalUse 
+
+Check for open issues.
+
+
+
+
+The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+ 
+
+Values expected to be one of these types
+
+
+DefinedTerm
+
+Text
+
+
+
+Used on these types
+
+
+CreativeWork
+
+LearningResource
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

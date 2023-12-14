@@ -1,0 +1,285 @@
+
+
+
+
+
+item - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+item
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    item
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/item 
+
+Check for open issues.
+
+
+
+
+An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
+ 
+
+Values expected to be one of these types
+
+
+Thing
+
+
+
+Used on these types
+
+
+DataFeedItem
+
+ListItem
+
+
+
+
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<ol>
+  <li>
+    <a href="https://example.com/dresses">Dresses</a>
+  </li>
+  <li>
+    <a href="https://example.com/dresses/real">Real Dresses</a>
+  </li>
+</ol>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<ol itemscope itemtype="https://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope
+      itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="https://example.com/dresses">
+    <span itemprop="name">Dresses</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  <li itemprop="itemListElement" itemscope
+      itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="https://example.com/dresses/real">
+    <span itemprop="name">Real Dresses</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+</ol>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<ol vocab="https://schema.org/" typeof="BreadcrumbList">
+  <li property="itemListElement" typeof="ListItem">
+    <a property="item" typeof="WebPage" href="https://example.com/dresses">
+     <span property="name">Dresses</span></a>
+     <meta property="position" content="1">
+  </li>
+  <li property="itemListElement" typeof="ListItem">
+    <a property="item" typeof="WebPage" href="https://example.com/dresses/real">
+    <span property="name">Real Dresses</span></a>
+    <meta property="position" content="2">
+  </li>
+</ol>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement":
+ [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "item":
+   {
+    "@id": "https://example.com/dresses",
+    "name": "Dresses"
+    }
+  },
+  {
+   "@type": "ListItem",
+  "position": 2,
+  "item":
+   {
+     "@id": "https://example.com/dresses/real",
+     "name": "Real Dresses"
+   }
+  }
+ ]
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement":
+ [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "item":
+   {
+    "@id": "https://example.com/dresses",
+    "name": "Dresses"
+    }
+  },
+  {
+   "@type": "ListItem",
+  "position": 2,
+  "item":
+   {
+     "@id": "https://example.com/dresses/real",
+     "name": "Real Dresses"
+   }
+  }
+ ]
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,174 @@
+
+
+
+
+
+recordingOf - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+recordingOf
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    recordingOf
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/recordingOf 
+
+Check for open issues.
+
+
+
+
+The composition this track is a recording of.
+ 
+Inverse-property: 
+    
+    
+    recordedAs
+
+
+Values expected to be one of these types
+
+
+MusicComposition
+
+
+
+Used on these types
+
+
+MusicRecording
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       MusicBrainz Project
+                    
+
+
+
+                    This vocabulary was improved through collaboration with the MusicBrainz project    (www.musicbrainz.org), and is partially inspired by the MusicBrainz and    Music Ontology schemas.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

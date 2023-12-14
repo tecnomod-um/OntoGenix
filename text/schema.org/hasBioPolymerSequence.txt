@@ -1,0 +1,167 @@
+
+
+
+
+
+hasBioPolymerSequence - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+hasBioPolymerSequence
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    hasRepresentation 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    hasBioPolymerSequence
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/hasBioPolymerSequence 
+
+Check for open issues.
+
+
+
+
+A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+
+
+Used on these types
+
+
+Gene
+
+Protein
+
+
+
+
+
+
+Source
+http://www.bioschemas.org/Gene
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

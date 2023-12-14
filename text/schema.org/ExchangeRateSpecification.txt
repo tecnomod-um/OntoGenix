@@ -1,0 +1,542 @@
+
+
+
+
+
+ExchangeRateSpecification - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+ExchangeRateSpecification
+A Schema.org Type
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StructuredValue 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    ExchangeRateSpecification
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/ExchangeRateSpecification 
+
+Check for open issues.
+
+
+
+
+A structured value representing exchange rate.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    ExchangeRateSpecification
+
+currency
+
+Text
+The currency in which the monetary amount is expressed.
+
+Use standard formats: ISO 4217 currency format, e.g. "USD"; Ticker symbol for cryptocurrencies, e.g. "BTC"; well known names for Local Exchange Trading Systems (LETS) and other currency types, e.g. "Ithaca HOUR".
+                
+                
+                
+            
+
+
+currentExchangeRate
+
+UnitPriceSpecification
+The current price of a currency.
+                
+                
+                
+            
+
+
+exchangeRateSpread
+
+MonetaryAmount  or 
+Number
+The difference between the price at which a broker or other intermediary buys and sells foreign currency.
+                
+                
+                
+            
+
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       Financial Industry Business Ontology project
+                    
+
+
+
+                    This element is based on the work of the Financial Industry Business Ontology project (see http://www.fibo.org/schema for details), in support of the W3C Financial Industry Business Ontology Community Group (http://www.fibo.org/community). Many class and property definitions are inspired by or based on http://www.fibo.org.
+                    
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1253
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<body>
+<h1>Middle exchange rates of foreign currencies â table A</h1> <h2>Table No. 047/A/NBP/2016 of 2016-03-0</h2> <div> <table>
+  <tr>
+    <th>Currency</th>
+    <th>Code</th>
+    <th>Mid-rate </th>
+  </tr>
+  <tr>
+    <td>Euro</td>
+    <td>1 EUR</td>
+    <td>4.3215</td>
+  </tr>
+  <tr>
+    <td>Brazilian Real</td>
+    <td>1 BRL</td>
+    <td>1.0490</td>
+  </tr>
+</table>
+</div>
+</body>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<body itemscope itemtype="https://schema.org/WebPage">
+<h1 itemprop="name">Middle exchange rates of foreign currencies â table A</h1>
+<div itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
+<table>
+  <caption itemprop="name">Table No. 047/A/NBP/2016 of 2016-03-09</caption>
+  <tr>
+    <th>Currency</th>
+    <th>Code</th>
+    <th>Mid-rate </th>
+  </tr>
+  <tr itemprop="itemListElement" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+    <td itemprop="currency" content="EUR">Euro</td>
+    <td>1 EUR</td>
+    <td itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+      <span itemprop="price">4.3215</span>
+      <meta itemprop="priceCurrency" content="PLN"/>
+    </td>
+  </tr>
+  <tr itemprop="itemListElement" itemscope itemtype="https://schema.org/ExchangeRateSpecification">
+    <td itemprop="currency" content="BRL">Brazilian Real</td>
+    <td>1 BRL</td>
+    <td  itemprop="currentExchangeRate" itemscope itemtype="https://schema.org/UnitPriceSpecification">
+      <span itemprop="price">1.0490</span>
+      <meta itemprop="priceCurrency" content="PLN"/>
+    </td>
+  </tr>
+</table>
+</div>
+</body>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<body vocab="https://schema.org/" typeof="WebPage">
+<h1 property="name">Middle exchange rates of foreign currencies â table A</h1>
+<div property="mainEntity" typeof="ItemList">
+<table>
+  <caption property="name">Table No. 047/A/NBP/2016 of 2016-03-09</caption>
+  <tr>
+    <th>Currency</th>
+    <th>Code</th>
+    <th>Mid-rate </th>
+  </tr>
+  <tr property="itemListElement" typeof="ExchangeRateSpecification">
+    <td property="currency" content="EUR">Euro</td>
+    <td>1 EUR</td>
+    <td property="currentExchangeRate" typeof="UnitPriceSpecification">
+      <span property="price">4.3215</span>
+      <meta property="priceCurrency" content="PLN"/>
+    </td>
+  </tr>
+  <tr property="itemListElement" typeof="ExchangeRateSpecification">
+    <td property="currency" content="BRL">Brazilian Real</td>
+    <td>1 BRL</td>
+    <td  property="currentExchangeRate" typeof="UnitPriceSpecification">
+      <span property="price">1.0490</span>
+      <meta property="priceCurrency" content="PLN"/>
+    </td>
+  </tr>
+</table>
+</div>
+</body>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Middle exchange rates of foreign currencies â table A",
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Table No. 047/A/NBP/2016 of 2016-03-09",
+      "itemListElement": [
+          {
+            "@type": "ExchangeRateSpecification",
+            "currency":"EUR",
+            "currentExchangeRate":{
+              "@type": "UnitPriceSpecification",
+              "price": "4.3215",
+              "priceCurrency": "PLN"
+              }
+          },
+          {
+            "@type": "ExchangeRateSpecification",
+            "currency":"BRL",
+            "currentExchangeRate":{
+              "@type": "UnitPriceSpecification",
+              "price": "1.0490",
+              "priceCurrency": "PLN"
+              }
+          }
+      ]
+    }
+  }
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Middle exchange rates of foreign currencies â table A",
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Table No. 047/A/NBP/2016 of 2016-03-09",
+      "itemListElement": [
+          {
+            "@type": "ExchangeRateSpecification",
+            "currency":"EUR",
+            "currentExchangeRate":{
+              "@type": "UnitPriceSpecification",
+              "price": "4.3215",
+              "priceCurrency": "PLN"
+              }
+          },
+          {
+            "@type": "ExchangeRateSpecification",
+            "currency":"BRL",
+            "currentExchangeRate":{
+              "@type": "UnitPriceSpecification",
+              "price": "1.0490",
+              "priceCurrency": "PLN"
+              }
+          }
+      ]
+    }
+  }
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

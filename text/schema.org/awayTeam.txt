@@ -1,0 +1,163 @@
+
+
+
+
+
+awayTeam - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+awayTeam
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    competitor 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    awayTeam
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/awayTeam 
+
+Check for open issues.
+
+
+
+
+The away team in a sports event.
+ 
+
+Values expected to be one of these types
+
+
+Person
+
+SportsTeam
+
+
+
+Used on these types
+
+
+SportsEvent
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

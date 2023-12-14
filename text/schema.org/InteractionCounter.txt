@@ -1,0 +1,1290 @@
+
+
+
+
+
+InteractionCounter - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+InteractionCounter
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StructuredValue 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    InteractionCounter
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/InteractionCounter 
+
+Check for open issues.
+
+
+
+
+A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    InteractionCounter
+
+endTime
+
+DateTime  or 
+Time
+The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to December. For media, including audio and video, it's the time offset of the end of a clip within a larger file.
+
+Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+                
+                
+                
+            
+
+
+interactionService
+
+SoftwareApplication  or 
+WebSite
+The WebSite or SoftwareApplication where the interactions took place.
+                
+                
+                
+            
+
+
+interactionType
+
+Action
+The Action representing the type of interaction. For up votes, +1s, etc. use LikeAction. For down votes use DislikeAction. Otherwise, use the most specific Action.
+                
+                
+                
+            
+
+
+location
+
+Place  or 
+PostalAddress  or 
+Text  or 
+VirtualLocation
+The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+                
+                
+                
+            
+
+
+startTime
+
+DateTime  or 
+Time
+The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.
+
+Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+                
+                
+                
+            
+
+
+userInteractionCount
+
+Integer
+The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
+                
+                
+                
+            
+
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    InteractionCounter  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+agentInteractionStatistic
+
+Organization  or 
+Person
+The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+  
+
+interactionStatistic
+
+CreativeWork  or 
+Organization  or 
+Person
+The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+  
+
+
+
+
+Supersedes
+
+UserPageVisits 
+UserLikes 
+UserInteraction 
+UserBlocks 
+UserPlays 
+UserCheckins 
+UserComments 
+UserTweets 
+UserDownloads 
+UserPlusOnes
+
+
+
+
+
+Examples
+
+Example 1 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+<h1>Foo Fighters</h1>
+
+<h2>Video: Interview with the Foo Fighters</h2>
+<object ...>
+  <param ...>
+  <embed type="application/x-shockwave-flash" ...>
+</object>
+Catch this exclusive interview with Dave Grohl and the Foo Fighters
+ about their new album, Rope.
+
+<h2>Songs</h2>
+
+Rope
+ Length: 4:05 - 14300 plays
+<a href="foo-fighters-rope-play.html">Play</a>
+<a href="foo-fighters-rope-buy.html">Buy</a>
+From album: <a href="foo-fighters-wasting-light.html">Wasting Light</a>
+
+Everlong
+ Length: 6:33 - 11700 plays
+<a href="foo-fighters-everlong-play.html">Play</a>
+<a href="foo-fighters-everlong-buy.html">Buy</a>
+From album: <a href="foo-fighters-color-and-shape.html">The Color And The Shape</a>
+
+<h2>Upcoming shows</h2>
+
+<a href="foo-fighters-may20-fedexforum">FedExForum</a>
+Memphis, TN, US
+May 20
+<a href="ticketworlds.com/foofighters/may20-2011">Buy tickets</a>
+
+<a href="foo-fighters-may23-midamericacenter">Mid America Center</a>
+Council Bluffs, IA, US
+May 23
+<a href="ticketworlds.com/foofighters/may23-2011">Buy tickets</a>
+
+<h2><a href="foo-fighters-photos">28 Photos</a></h2>
+<a href="foofighters-1.jpg"><img
+alt="Thumbnail and linked photo of Foo Fighters band"
+src="foofighters-thumb1.jpg" /></a>
+<a href="foofighters-2.jpg"><img
+alt="Thumbnail and linked photo of Foo Fighters band"
+src="foofighters-thumb2.jpg" /></a>
+<a href="foofighters-3.jpg"><img
+alt="Thumbnail and linked photo of Foo Fighters band"
+src="foofighters-thumb3.jpg" /></a>
+
+<h2>Comments:</h2>
+Excited about seeing them in concert next week. -Lawrence , Jan 23
+I dig their latest single. -Mary, Jan 19
+Showing 1-2 of 18 comments. <a href="foofighters-comments">More</a>
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/MusicGroup">
+    <h1 itemprop="name">
+        Foo Fighters
+    </h1>
+    <div itemprop="subjectOf" itemscope itemtype="https://schema.org/VideoObject">
+        <h2>
+            Video: <span itemprop="name">Interview with the Foo Fighters</span>
+        </h2>
+        <meta itemprop="duration" content="PT1M33S">
+        <meta itemprop="thumbnail" content="foo-fighters-interview-thumb.jpg"><object>
+            <param>
+             <embed type="application/x-shockwave-flash">
+        </object> <span itemprop="description">Catch this exclusive interview with Dave Grohl and the Foo Fighters about their new album, Rope.</span>
+        <h3>
+            Comments:
+        </h3>Excited about seeing them in concert next week. -Lawrence , Jan 23 I dig their latest single. -Mary, Jan 19
+        <div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="https://schema.org/CommentAction">
+            <meta itemprop="userInteractionCount" content="18">
+        </div>Showing 1-2 of 18 comments. <a href="foofighters-comments">More</a>
+        </div>
+    <h2>
+        Songs
+    </h2>
+    <div itemprop="track" itemscope itemtype="https://schema.org/MusicRecording">
+        <span itemprop="name">Rope</span>
+        <link itemprop="url" href="foo-fighters-rope.html">Length:
+        <meta itemprop="duration" content="PT4M5S">4:05 - 14300 plays
+        <div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="https://schema.org/ListenAction">
+            <meta itemprop="userInteractionCount" content="14300">
+        </div><a href="foo-fighters-rope-play.html" itemprop="audio">Play</a> <a href="foo-fighters-rope-buy.html" itemprop="offers">Buy</a> From album: <a href="foo-fighters-wasting-light.html" itemprop="inAlbum">Wasting Light</a>
+    </div>
+    <div itemprop="track" itemscope itemtype="https://schema.org/MusicRecording">
+        <span itemprop="name">Everlong</span>
+        <link itemprop="url" href="foo-fighters-everlong.html">Length:
+        <meta itemprop="duration" content="PT6M33S">6:33 - 11700 plays
+        <div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+            <meta itemprop="interactionType" content="https://schema.org/ListenAction">
+            <meta itemprop="userInteractionCount" content="11700">
+        </div><a href="foo-fighters-everlong-play.html" itemprop="audio">Play</a> <a href="foo-fighters-everlong-buy.html" itemprop="offers">Buy</a> From album: <a href="foo-fighters-color-and-shape.html" itemprop="inAlbum">The Color And The Shape</a>
+    </div>
+    <h2>
+        Upcoming shows
+    </h2>
+    <div itemprop="event" itemscope itemtype="https://schema.org/Event">
+        <a href="foo-fighters-may20-fedexforum" itemprop="url"><span itemprop="name">FedExForum</span></a> <span itemprop="location">Memphis, TN, US</span>
+        <meta itemprop="startDate" content="2011-05-20">May 20 <a href="ticketmaster.com/foofighters/may20-2011" itemprop="offers">Buy tickets</a>
+    </div>
+    <div itemprop="event" itemscope itemtype="https://schema.org/Event">
+        <a href="foo-fighters-may23-midamericacenter" itemprop="url"><span itemprop="name">Mid America Center</span></a> <span itemprop="location">Council Bluffs, IA, US</span>
+        <meta itemprop="startDate" content="2011-05-23">May 23 <a href="ticketmaster.com/foofighters/may23-2011" itemprop="offers">Buy tickets</a>
+    </div>
+    <h2>
+        <a href="foo-fighters-photos">28 Photos</a>
+    </h2><a href="foofighters-1.jpg" itemprop="image"><img alt="Thumbnail and linked photo of Foo Fighters band" src="foofighters-thumb1.jpg"></a> <a href="foofighters-2.jpg" itemprop="image"><img alt="Thumbnail and linked photo of Foo Fighters band" src="foofighters-thumb2.jpg"></a> <a href="foofighters-3.jpg" itemprop="image"><img alt="Thumbnail and linked photo of Foo Fighters band" src="foofighters-thumb3.jpg"></a>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="MusicGroup">
+    <h1 property="name">
+        Foo Fighters
+    </h1>
+    <div property="subjectOf" typeof="VideoObject">
+        <h2>
+            Video: <span property="name">Interview with the Foo Fighters</span>
+        </h2>
+        <meta property="duration" content="PT1M33S">
+        <meta property="thumbnail" content="foo-fighters-interview-thumb.jpg"><object>
+            <param>
+             <embed type="application/x-shockwave-flash">
+        </object> <span property="description">Catch this exclusive interview with Dave Grohl and the Foo Fighters about their new album, Rope.</span>
+        <h3>
+            Comments:
+        </h3>Excited about seeing them in concert next week. -Lawrence , Jan 23 I dig their latest single. -Mary, Jan 19
+        <div property="interactionStatistic" typeof="https://schema.org/InteractionCounter">
+            <meta property="interactionType" content="https://schema.org/CommentAction">
+            <meta property="userInteractionCount" content="18">
+        </div>Showing 1-2 of 18 comments. <a href="foofighters-comments">More</a>
+    </div>
+    <h2>
+        Songs
+    </h2>
+    <div property="track" typeof="MusicRecording">
+        <span property="name">Rope</span>
+        <link property="url" href="foo-fighters-rope.html">Length:
+        <meta property="duration" content="PT4M5S">4:05 - 14300 plays
+        <div property="interactionStatistic" typeof="https://schema.org/InteractionCounter">
+            <meta property="interactionType" content="https://schema.org/ListenAction">
+            <meta property="userInteractionCount" content="14300">
+        </div><a href="foo-fighters-rope-play.html" property="audio">Play</a> <a href="foo-fighters-rope-buy.html" property="offers">Buy</a> From album: <a href="foo-fighters-wasting-light.html" property="inAlbum">Wasting Light</a>
+    </div>
+    <div property="track" typeof="MusicRecording">
+        <span property="name">Everlong</span>
+        <link property="url" href="foo-fighters-everlong.html">Length:
+        <meta property="duration" content="PT6M33S">6:33 - 11700 plays
+        <div property="interactionStatistic" typeof="https://schema.org/InteractionCounter">
+            <meta property="interactionType" content="https://schema.org/ListenAction">
+            <meta property="userInteractionCount" content="11700">
+        </div><a href="foo-fighters-everlong-play.html" property="audio">Play</a> <a href="foo-fighters-everlong-buy.html" property="offers">Buy</a> From album: <a href="foo-fighters-color-and-shape.html" property="inAlbum">The Color And The Shape</a>
+    </div>
+    <h2>
+        Upcoming shows
+    </h2>
+    <div property="event" typeof="Event">
+        <a href="foo-fighters-may20-fedexforum" property="url"><span property="name">FedExForum</span></a> <span property="location">Memphis, TN, US</span>
+        <meta property="startDate" content="2011-05-20">May 20 <a href="ticketmaster.com/foofighters/may20-2011" property="offers">Buy tickets</a>
+    </div>
+    <div property="event" typeof="Event">
+        <a href="foo-fighters-may23-midamericacenter" property="url"><span property="name">Mid America Center</span></a> <span property="location">Council Bluffs, IA, US</span>
+        <meta property="startDate" content="2011-05-23">May 23 <a href="ticketmaster.com/foofighters/may23-2011" property="offers">Buy tickets</a>
+    </div>
+    <h2>
+        <a href="foo-fighters-photos">28 Photos</a>
+    </h2><a href="foofighters-1.jpg" property="image"><img alt="Thumbnail and linked photo of Foo Fighters band" src="foofighters-thumb1.jpg"></a> <a href="foofighters-2.jpg" property="image"><img alt="Thumbnail and linked photo of Foo Fighters band" src="foofighters-thumb2.jpg"></a> <a href="foofighters-3.jpg" property="image"><img alt="Thumbnail and linked photo of Foo Fighters band" src="foofighters-thumb3.jpg"></a>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "event": [
+        {
+            "@type": "Event",
+            "location": "Memphis, TN, US",
+            "offers": "ticketmaster.com/foofighters/may20-2011",
+            "startDate": "2011-05-20",
+            "url": "foo-fighters-may20-fedexforum"
+        },
+        {
+            "@type": "Event",
+            "location": "Council Bluffs, IA, US",
+            "offers": "ticketmaster.com/foofighters/may23-2011",
+            "startDate": "2011-05-23",
+            "url": "foo-fighters-may23-midamericacenter"
+        }
+    ],
+    "image": [
+        "foofighters-1.jpg",
+        "foofighters-2.jpg",
+        "foofighters-3.jpg"
+    ],
+    "name": "Foo Fighters",
+    "track": [
+        {
+            "@type": "MusicRecording",
+            "audio": "foo-fighters-rope-play.html",
+            "duration": "PT4M5S",
+            "inAlbum": "foo-fighters-wasting-light.html",
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/ListenAction",
+                "userInteractionCount": "14300"
+            },
+            "name": "Rope",
+            "offers": "foo-fighters-rope-buy.html",
+            "url": "foo-fighters-rope.html"
+        },
+        {
+            "@type": "MusicRecording",
+            "audio": "foo-fighters-everlong-play.html",
+            "duration": "PT6M33S",
+            "inAlbum": "foo-fighters-color-and-shape.html",
+            "name": "Everlong",
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/ListenAction",
+                "userInteractionCount": "11700"
+            },
+            "offers": "foo-fighters-everlong-buy.html",
+            "url": "foo-fighters-everlong.html"
+        }
+    ],
+    "subjectOf": {
+        "@type": "VideoObject",
+        "description": "Catch this exclusive interview with Dave Grohl and the Foo Fighters about their new album, Rope.",
+        "duration": "PT1M33S",
+        "name": "Interview with the Foo Fighters",
+        "thumbnail": "foo-fighters-interview-thumb.jpg",
+        "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/CommentAction",
+            "userInteractionCount": "18"
+        }
+    }
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "event": [
+        {
+            "@type": "Event",
+            "location": "Memphis, TN, US",
+            "offers": "ticketmaster.com/foofighters/may20-2011",
+            "startDate": "2011-05-20",
+            "url": "foo-fighters-may20-fedexforum"
+        },
+        {
+            "@type": "Event",
+            "location": "Council Bluffs, IA, US",
+            "offers": "ticketmaster.com/foofighters/may23-2011",
+            "startDate": "2011-05-23",
+            "url": "foo-fighters-may23-midamericacenter"
+        }
+    ],
+    "image": [
+        "foofighters-1.jpg",
+        "foofighters-2.jpg",
+        "foofighters-3.jpg"
+    ],
+    "name": "Foo Fighters",
+    "track": [
+        {
+            "@type": "MusicRecording",
+            "audio": "foo-fighters-rope-play.html",
+            "duration": "PT4M5S",
+            "inAlbum": "foo-fighters-wasting-light.html",
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/ListenAction",
+                "userInteractionCount": "14300"
+            },
+            "name": "Rope",
+            "offers": "foo-fighters-rope-buy.html",
+            "url": "foo-fighters-rope.html"
+        },
+        {
+            "@type": "MusicRecording",
+            "audio": "foo-fighters-everlong-play.html",
+            "duration": "PT6M33S",
+            "inAlbum": "foo-fighters-color-and-shape.html",
+            "name": "Everlong",
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/ListenAction",
+                "userInteractionCount": "11700"
+            },
+            "offers": "foo-fighters-everlong-buy.html",
+            "url": "foo-fighters-everlong.html"
+        }
+    ],
+    "subjectOf": {
+        "@type": "VideoObject",
+        "description": "Catch this exclusive interview with Dave Grohl and the Foo Fighters about their new album, Rope.",
+        "duration": "PT1M33S",
+        "name": "Interview with the Foo Fighters",
+        "thumbnail": "foo-fighters-interview-thumb.jpg",
+        "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/CommentAction",
+            "userInteractionCount": "18"
+        }
+    }
+}
+
+
+Example 2 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+How to Tie a Reef Knot
+by John Doe
+This article has been tweeted 1203 times and contains 78 user comments.
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemscope itemtype="https://schema.org/Article">
+  <span itemprop="name">How to Tie a Reef Knot</span>
+  by <span itemprop="author">John Doe</span>
+  This article has been tweeted 1203 times and contains 78 user comments.
+  <div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+    <div itemprop="interactionService" itemscope itemid="http://www.twitter.com" itemtype="https://schema.org/WebSite">
+      <meta itemprop="name" content="Twitter" />
+    </div>
+    <meta itemprop="interactionType" content="https://schema.org/ShareAction"/>
+    <meta itemprop="userInteractionCount" content="1203" />
+  </div>
+  <div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+    <meta itemprop="interactionType" content="https://schema.org/CommentAction"/>
+    <meta itemprop="userInteractionCount" content="78" />
+  </div>
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="https://schema.org/" typeof="Article">
+  <span property="name">How to Tie a Reef Knot</span>
+  by <span property="author">John Doe</span>
+  This article has been tweeted 1203 times and contains 78 user comments.
+  <div property="interactionStatistic" typeof="InteractionCounter">
+    <div property="interactionService" typeof="WebSite">
+      <meta property="url" content="http://www.twitter.com"/>
+      <meta property="name" content="Twitter" />
+    </div>
+    <meta property="interactionType" content="https://schema.org/ShareAction"/>
+    <meta property="userInteractionCount" content="1203" />
+  </div>
+  <div property="interactionStatistic" typeof="InteractionCounter">
+    <meta property="interactionType" content="https://schema.org/CommentAction"/>
+    <meta property="userInteractionCount" content="78" />
+  </div>
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "author": "John Doe",
+  "interactionStatistic": [
+    {
+      "@type": "InteractionCounter",
+      "interactionService": {
+        "@type": "WebSite",
+        "name": "Twitter",
+        "url": "http://www.twitter.com"
+      },
+      "interactionType": "https://schema.org/ShareAction",
+      "userInteractionCount": "1203"
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/CommentAction",
+      "userInteractionCount": "78"
+    }
+  ],
+  "name": "How to Tie a Reef Knot"
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "author": "John Doe",
+  "interactionStatistic": [
+    {
+      "@type": "InteractionCounter",
+      "interactionService": {
+        "@type": "WebSite",
+        "name": "Twitter",
+        "url": "http://www.twitter.com"
+      },
+      "interactionType": "https://schema.org/ShareAction",
+      "userInteractionCount": "1203"
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/CommentAction",
+      "userInteractionCount": "78"
+    }
+  ],
+  "name": "How to Tie a Reef Knot"
+}
+
+
+Example 3 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+A media creator with a number of likes and follows.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Jane Doe",
+  "interactionStatistic": [
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": 1170
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/FollowAction",
+      "userInteractionCount": 145098
+    }
+  ]
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Jane Doe",
+  "interactionStatistic": [
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": 1170
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/FollowAction",
+      "userInteractionCount": 145098
+    }
+  ]
+}
+
+
+Example 4 
+
+
+
+Copied
+
+
+
+
+No Markup
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+An organization with a number of likes and follows.
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Organization",
+  "name": "ACME",
+  "interactionStatistic": [
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": 1170
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/FollowAction",
+      "userInteractionCount": 145098
+    }
+  ]
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "Organization",
+  "name": "ACME",
+  "interactionStatistic": [
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": 1170
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/FollowAction",
+      "userInteractionCount": 145098
+    }
+  ]
+}
+
+
+Example 5 
+
+
+
+Copied
+
+
+
+
+No Markup
+Microdata
+RDFa
+JSON-LD
+Structure
+
+
+Example notes or example HTML without markup.
+
+A video has the following interactions:
+YouTube: 512 up votes
+Twitter: 1024 up votes
+Twitter: 2345 tweets
+Facebook: 1024 likes
+4356 views
+
+
+
+Example encoded as Microdata embedded in HTML.
+
+<div itemid="http://videolectures.net/iswc2013_guha_tunnel/" itemscope itemtype="https://schema.org/VideoObject">
+  <h1 itemprop="name">Light at the End of the Tunnel</h1>
+  Author:
+    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+      <span itemprop="name">Ramanathan V. Guha</span>
+    </div>
+
+  <video controls>
+    <source src="http://videolectures.net/iswc2013_guha_tunnel/" />
+  </video>
+  Youtube Like Count:
+    <div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+      <div itemprop="interactionService" itemscope itemid="https://www.youtube.com" itemtype="https://schema.org/WebSite">
+        <meta itemprop="name" content="YouTube" />
+      </div>
+      <link itemprop="interactionType" href="https://schema.org/LikeAction"/>
+      <span itemprop="userInteractionCount">512</span>
+    </div>
+
+  Twitter Favorite Count:
+    <div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+      <div itemprop="interactionService" itemscope itemid="https://www.twitter.com" itemtype="https://schema.org/SoftwareApplication">
+        <meta itemprop="name" content="Twitter" />
+      </div>
+      <link itemprop="interactionType" href="https://schema.org/LikeAction"/>
+      <span itemprop="userInteractionCount" content="1024">1,024</span>
+    </div>
+
+  Twitter Tweet Count:
+    <div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+      <div itemprop="interactionService" itemscope itemid="https://twitter.com" itemtype="https://schema.org/SoftwareApplication">
+        <meta itemprop="name" content="Twitter" />
+      </div>
+      <link itemprop="interactionType" href="https://schema.org/ShareAction"/>
+      <span itemprop="userInteractionCount" content="2345">2,345</span>
+    </div>
+
+  Facebook Like Count:
+    <div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+      <div itemprop="interactionService" itemscope itemid="https://www.facebook.com" itemtype="https://schema.org/WebSite">
+        <meta itemprop="name" content="Facebook" />
+      </div>
+      <link itemprop="interactionType" href="https://schema.org/LikeAction"/>
+      <span itemprop="userInteractionCount" content="1024">1024</span>
+    </div>
+
+  View Count:
+    <div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+      <link itemprop="interactionType" href="https://schema.org/WatchAction"/>
+      <span itemprop="userInteractionCount" content="4356">4,356</span>
+    </div>
+
+</div>
+
+
+
+Example encoded as RDFa embedded in HTML.
+
+<div vocab="http://schema./org/" resource="http://videolectures.net/iswc2013_guha_tunnel/" typeof="VideoObject">
+  <h1 property="name">Light at the End of the Tunnel</h1>
+  Author:
+    <div property="author" typeof="Person">
+      <span property="name">Ramanathan V. Guha</span>
+    </div>
+
+  <video controls>
+    <source src="http://videolectures.net/iswc2013_guha_tunnel/" />
+  </video>
+  YouTube Like Count:
+    <div property="interactionStatistic" typeof="InteractionCounter">
+      <div property="interactionService" itemscope itemid="https://www.youtube.com" itemtype="https://schema.org/WebSite">
+        <meta property="name" content="YouTube" />
+      </div>
+      <link property="interactionType" href="https://schema.org/LikeAction"/>
+      <span property="userInteractionCount">512</span>
+    </div>
+
+  Twitter Favorite Count:
+    <div property="interactionStatistic" typeof="InteractionCounter">
+      <div property="interactionService" itemscope itemid="https://twitter.com" itemtype="https://schema.org/SoftwareApplication">
+        <meta property="name" content="Twitter" />
+      </div>
+      <link property="interactionType" href="https://schema.org/LikeAction"/>
+      <span property="userInteractionCount" content="1024">1024</span>
+    </div>
+
+  Twitter Tweet Count:
+    <div property="interactionStatistic" typeof="InteractionCounter">
+      <div property="interactionService" itemscope itemid="https://twitter.com" itemtype="https://schema.org/SoftwareApplication">
+        <meta property="name" content="Twitter" />
+      </div>
+      <link property="interactionType" href="https://schema.org/ShareAction"/>
+      <span property="userInteractionCount" content="2345">2345</span>
+    </div>
+
+  Facebook Like Count:
+    <div property="interactionStatistic" typeof="InteractionCounter">
+      <div property="interactionService" itemscope itemid="https://www.facebook.com" itemtype="https://schema.org/WebSite">
+        <meta property="name" content="Facebook" />
+      </div>
+      <link property="interactionType" href="https://schema.org/LikeAction"/>
+      <span property="userInteractionCount" content="1024">1024</span>
+    </div>
+
+  View Count:
+    <div property="interactionStatistic" typeof="InteractionCounter">
+      <link property="interactionType" href="https://schema.org/WatchAction"/>
+      <span property="userInteractionCount" content="4356">4356</span>
+    </div>
+
+</div>
+
+
+
+Example encoded as JSON-LD in a HTML script tag.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "VideoObject",
+  "name": "Light at the End of the Tunnel",
+  "@id": "http://videolectures.net/iswc2013_guha_tunnel/",
+  "datePublished": "2013-11-28",
+  "author": {
+    "@type": "Person",
+    "name": "Ramanathan V. Guha"
+  },
+  "interactionStatistic": [
+    {
+      "@type": "InteractionCounter",
+      "interactionService": {
+        "@type": "WebSite",
+        "name": "YouTube",
+        "@id": "https://youtube.com"
+      },
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": "512"
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionService": {
+        "@type": "SoftwareApplication",
+        "name": "Twitter",
+        "url": "https://www.twitter.com"
+      },
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": "1024"
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionService": {
+        "@type": "SoftwareApplication",
+        "name": "Twitter",
+        "url": "https://twitter.com"
+      },
+      "interactionType": "https://schema.org/ShareAction",
+      "userInteractionCount": "2345"
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionService": {
+        "@type": "WebSite",
+        "name": "Facebook",
+        "url": "https://www.facebook.com"
+      },
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": "1024"
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "4356"
+    }
+  ]
+}
+</script>
+
+
+
+Structured representation of the JSON-LD example.
+ 
+
+
+{
+  "@context": "https://schema.org/",
+  "@type": "VideoObject",
+  "name": "Light at the End of the Tunnel",
+  "@id": "http://videolectures.net/iswc2013_guha_tunnel/",
+  "datePublished": "2013-11-28",
+  "author": {
+    "@type": "Person",
+    "name": "Ramanathan V. Guha"
+  },
+  "interactionStatistic": [
+    {
+      "@type": "InteractionCounter",
+      "interactionService": {
+        "@type": "WebSite",
+        "name": "YouTube",
+        "@id": "https://youtube.com"
+      },
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": "512"
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionService": {
+        "@type": "SoftwareApplication",
+        "name": "Twitter",
+        "url": "https://www.twitter.com"
+      },
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": "1024"
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionService": {
+        "@type": "SoftwareApplication",
+        "name": "Twitter",
+        "url": "https://twitter.com"
+      },
+      "interactionType": "https://schema.org/ShareAction",
+      "userInteractionCount": "2345"
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionService": {
+        "@type": "WebSite",
+        "name": "Facebook",
+        "url": "https://www.facebook.com"
+      },
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": "1024"
+    },
+    {
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": "4356"
+    }
+  ]
+}
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

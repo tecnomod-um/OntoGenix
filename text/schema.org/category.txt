@@ -1,0 +1,184 @@
+
+
+
+
+
+category - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+category
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    category
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/category 
+
+Check for open issues.
+
+
+
+
+A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+ 
+
+Values expected to be one of these types
+
+
+CategoryCode
+
+PhysicalActivityCategory
+
+Text
+
+Thing
+
+URL
+
+
+
+Used on these types
+
+
+ActionAccessSpecification
+
+Invoice
+
+Offer
+
+PhysicalActivity
+
+Product
+
+Recommendation
+
+Service
+
+SpecialAnnouncement
+
+
+
+
+
+Sub-properties
+
+
+accommodationCategory
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1741
+https://github.com/schemaorg/schemaorg/issues/2490
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

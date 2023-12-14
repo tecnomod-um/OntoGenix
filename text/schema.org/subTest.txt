@@ -1,0 +1,152 @@
+
+
+
+
+
+subTest - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+subTest
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    subTest
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/subTest 
+
+Check for open issues.
+
+
+
+
+A component test of the panel.
+ 
+
+Values expected to be one of these types
+
+
+MedicalTest
+
+
+
+Used on these types
+
+
+MedicalTestPanel
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

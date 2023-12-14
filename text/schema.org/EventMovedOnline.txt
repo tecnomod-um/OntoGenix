@@ -1,0 +1,173 @@
+
+
+
+
+
+EventMovedOnline - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+EventMovedOnline
+A Schema.org Enumeration Member
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StatusEnumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    EventStatusType 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    EventMovedOnline
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/EventMovedOnline 
+
+Check for open issues.
+
+
+
+
+Indicates that the event was changed to allow online participation. See eventAttendanceMode for specifics of whether it is now fully or partially online.
+ A member value for enumeration type: 
+    
+    
+    EventStatusType
+ 
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

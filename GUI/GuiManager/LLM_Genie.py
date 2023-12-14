@@ -2,7 +2,7 @@ from abc import ABC
 from typing import Optional
 
 from GUI.LLM_base.LlmBase import AbstractLlm
-from GUI.Automata.automata_manager import Automata_Manager
+from GUI.GuiManager.automata_manager import Automata_Manager
 
 
 class Genie(AbstractLlm, ABC):

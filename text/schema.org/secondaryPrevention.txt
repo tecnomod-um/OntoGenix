@@ -1,0 +1,152 @@
+
+
+
+
+
+secondaryPrevention - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+secondaryPrevention
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    secondaryPrevention
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/secondaryPrevention 
+
+Check for open issues.
+
+
+
+
+A preventative therapy used to prevent reoccurrence of the medical condition after an initial episode of the condition.
+ 
+
+Values expected to be one of these types
+
+
+MedicalTherapy
+
+
+
+Used on these types
+
+
+MedicalCondition
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

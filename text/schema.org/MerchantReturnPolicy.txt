@@ -1,0 +1,542 @@
+
+
+
+
+
+MerchantReturnPolicy - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+MerchantReturnPolicy
+A Schema.org Type
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    MerchantReturnPolicy
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/MerchantReturnPolicy 
+
+Check for open issues.
+
+
+
+
+A MerchantReturnPolicy provides information about product return policies associated with an Organization, Product, or Offer.
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+Properties from 
+    
+    
+    MerchantReturnPolicy
+
+additionalProperty
+
+PropertyValue
+A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.
+
+Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+                
+                
+                
+            
+
+
+applicableCountry
+
+Country  or 
+Text
+A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
+                
+                
+                
+            
+
+
+customerRemorseReturnFees
+
+ReturnFeesEnumeration
+The type of return fees if the product is returned due to customer remorse.
+                
+                
+                
+            
+
+
+customerRemorseReturnLabelSource
+
+ReturnLabelSourceEnumeration
+The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
+                
+                
+                
+            
+
+
+customerRemorseReturnShippingFeesAmount
+
+MonetaryAmount
+The amount of shipping costs if a product is returned due to customer remorse. Applicable when property customerRemorseReturnFees equals ReturnShippingFees.
+                
+                
+                
+            
+
+
+inStoreReturnsOffered
+
+Boolean
+Are in-store returns offered? (For more advanced return methods use the returnMethod property.)
+                
+                
+                
+            
+
+
+itemCondition
+
+OfferItemCondition
+A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+                
+                
+                
+            
+
+
+itemDefectReturnFees
+
+ReturnFeesEnumeration
+The type of return fees for returns of defect products.
+                
+                
+                
+            
+
+
+itemDefectReturnLabelSource
+
+ReturnLabelSourceEnumeration
+The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
+                
+                
+                
+            
+
+
+itemDefectReturnShippingFeesAmount
+
+MonetaryAmount
+Amount of shipping costs for defect product returns. Applicable when property itemDefectReturnFees equals ReturnShippingFees.
+                
+                
+                
+            
+
+
+merchantReturnDays
+
+Date  or 
+DateTime  or 
+Integer
+Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the returnPolicyCategory property is specified as MerchantReturnFiniteReturnWindow.
+                 Supersedes 
+                
+    
+    
+    productReturnDays.
+                
+                
+            
+
+
+merchantReturnLink
+
+URL
+Specifies a Web page or service by URL, for product returns.
+                 Supersedes 
+                
+    
+    
+    productReturnLink.
+                
+                
+            
+
+
+refundType
+
+RefundTypeEnumeration
+A refund type, from an enumerated list.
+                
+                
+                
+            
+
+
+restockingFee
+
+MonetaryAmount  or 
+Number
+Use MonetaryAmount to specify a fixed restocking fee for product returns, or use Number to specify a percentage of the product price paid by the customer.
+                
+                
+                
+            
+
+
+returnFees
+
+ReturnFeesEnumeration
+The type of return fees for purchased products (for any return reason).
+                
+                
+                
+            
+
+
+returnLabelSource
+
+ReturnLabelSourceEnumeration
+The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.
+                
+                
+                
+            
+
+
+returnMethod
+
+ReturnMethodEnumeration
+The type of return method offered, specified from an enumeration.
+                
+                
+                
+            
+
+
+returnPolicyCategory
+
+MerchantReturnEnumeration
+Specifies an applicable return policy (from an enumeration).
+                
+                
+                
+            
+
+
+returnPolicyCountry
+
+Country  or 
+Text
+The country where the product has to be sent to for returns, for example "Ireland" using the name property of Country. You can also provide the two-letter ISO 3166-1 alpha-2 country code. Note that this can be different from the country where the product was originally shipped from or sent to.
+                
+                
+                
+            
+
+
+returnPolicySeasonalOverride
+
+MerchantReturnPolicySeasonalOverride
+Seasonal override of a return policy.
+                
+                
+                
+            
+
+
+returnShippingFeesAmount
+
+MonetaryAmount
+Amount of shipping costs for product returns (for any reason). Applicable when property returnFees equals ReturnShippingFees.
+                
+                
+                
+            
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    MerchantReturnPolicy  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+hasMerchantReturnPolicy
+
+Offer  or 
+Organization  or 
+Product
+Specifies a MerchantReturnPolicy that may be applicable.
+  
+
+
+
+
+Supersedes
+
+ProductReturnPolicy
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2288
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

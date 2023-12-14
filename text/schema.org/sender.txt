@@ -1,0 +1,167 @@
+
+
+
+
+
+sender - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+sender
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    participant 
+            
+                
+                     : 
+                
+            
+					
+    
+    
+    sender
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/sender 
+
+Check for open issues.
+
+
+
+
+A sub property of participant. The participant who is at the sending end of the action.
+ 
+
+Values expected to be one of these types
+
+
+Audience
+
+Organization
+
+Person
+
+
+
+Used on these types
+
+
+Message
+
+ReceiveAction
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

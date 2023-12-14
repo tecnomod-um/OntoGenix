@@ -1,0 +1,425 @@
+
+
+
+
+
+Duration - Schema.org Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+Duration
+A Schema.org Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Quantity 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    Duration
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/Duration 
+
+Check for open issues.
+
+
+
+
+Quantity: Duration (use ISO 8601 duration format).
+ 
+
+
+
+
+
+PropertyExpected TypeDescription
+
+
+
+
+
+Properties from 
+    
+    
+    Thing
+
+additionalType
+
+Text  or 
+URL
+An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.
+                
+                
+                
+            
+
+
+alternateName
+
+Text
+An alias for the item.
+                
+                
+                
+            
+
+
+description
+
+Text  or 
+TextObject
+A description of the item.
+                
+                
+                
+            
+
+
+disambiguatingDescription
+
+Text
+A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+                
+                
+                
+            
+
+
+identifier
+
+PropertyValue  or 
+Text  or 
+URL
+The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+                
+                
+                
+            
+
+
+image
+
+ImageObject  or 
+URL
+An image of the item. This can be a URL or a fully described ImageObject.
+                
+                
+                
+            
+
+
+mainEntityOfPage
+
+CreativeWork  or 
+URL
+Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details.
+                
+                
+                Inverse property: 
+    
+    
+    mainEntity
+
+
+
+name
+
+Text
+The name of the item.
+                
+                
+                
+            
+
+
+potentialAction
+
+Action
+Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+                
+                
+                
+            
+
+
+sameAs
+
+URL
+URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+                
+                
+                
+            
+
+
+subjectOf
+
+CreativeWork  or 
+Event
+A CreativeWork or Event about this Thing.
+                
+                
+                Inverse property: 
+    
+    
+    about
+
+
+
+url
+
+URL
+URL of the item.
+                
+                
+                
+            
+
+
+
+Instances of 
+    
+    
+    Duration  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+activityDuration
+
+ExercisePlan
+Length of time to engage in the activity.
+  
+
+billingDuration
+
+UnitPriceSpecification
+Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).
+  
+
+billingPeriod
+
+Invoice
+The time interval used to compute the invoice.
+  
+
+cookTime
+
+Recipe
+The time it takes to actually cook the dish, in ISO 8601 duration format.
+  
+
+duration
+
+Audiobook  or 
+Episode  or 
+Event  or 
+MediaObject  or 
+Movie  or 
+MusicRecording  or 
+MusicRelease  or 
+QuantitativeValueDistribution  or 
+Schedule
+The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.
+  
+
+estimatedFlightDuration
+
+Flight
+The estimated time the flight will take.
+  
+
+gracePeriod
+
+LoanOrCredit
+The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.
+  
+
+leaseLength
+
+Accommodation  or 
+Offer  or 
+RealEstateListing
+Length of the lease for some Accommodation, either particular to some Offer or in some cases intrinsic to the property.
+  
+
+performTime
+
+HowTo  or 
+HowToDirection
+The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in ISO 8601 duration format.
+  
+
+prepTime
+
+HowTo  or 
+HowToDirection
+The length of time it takes to prepare the items to be used in instructions or a direction, in ISO 8601 duration format.
+  
+
+processingTime
+
+ServiceChannel
+Estimated processing time for the service using this channel.
+  
+
+repeatFrequency
+
+Schedule
+Defines the frequency at which Events will occur according to a schedule Schedule. The intervals between
+      events should be defined as a Duration of time.
+  
+
+termDuration
+
+EducationalOccupationalProgram
+The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.
+  
+
+timeRequired
+
+CreativeWork
+Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.
+  
+
+timeToComplete
+
+EducationalOccupationalProgram
+The expected length of time to complete the program if attending full-time.
+  
+
+totalTime
+
+HowTo  or 
+HowToDirection
+The total time required to perform instructions or a direction (including time to prepare the supplies), in ISO 8601 duration format.
+  
+
+validFor
+
+EducationalOccupationalCredential  or 
+Permit
+The duration of validity of a permit or similar thing.
+  
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

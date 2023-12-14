@@ -1,0 +1,169 @@
+
+
+
+
+
+musicalKey - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+musicalKey
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    musicalKey
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/musicalKey 
+
+Check for open issues.
+
+
+
+
+The key, mode, or scale this composition uses.
+ 
+
+Values expected to be one of these types
+
+
+Text
+
+
+
+Used on these types
+
+
+MusicComposition
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       MusicBrainz Project
+                    
+
+
+
+                    This vocabulary was improved through collaboration with the MusicBrainz project    (www.musicbrainz.org), and is partially inspired by the MusicBrainz and    Music Ontology schemas.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

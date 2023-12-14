@@ -1,0 +1,175 @@
+
+
+
+
+
+cashBack - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+cashBack
+A Schema.org Property
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    cashBack
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/cashBack 
+
+Check for open issues.
+
+
+
+
+A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
+ 
+
+Values expected to be one of these types
+
+
+Boolean
+
+Number
+
+
+
+Used on these types
+
+
+PaymentCard
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       Financial Industry Business Ontology project
+                    
+
+
+
+                    This element is based on the work of the Financial Industry Business Ontology project (see http://www.fibo.org/schema for details), in support of the W3C Financial Industry Business Ontology Community Group (http://www.fibo.org/community). Many class and property definitions are inspired by or based on http://www.fibo.org.
+                    
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/1253
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

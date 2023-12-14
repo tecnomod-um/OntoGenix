@@ -1,0 +1,152 @@
+
+
+
+
+
+primaryImageOfPage - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+primaryImageOfPage
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    primaryImageOfPage
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/primaryImageOfPage 
+
+Check for open issues.
+
+
+
+
+Indicates the main image on the page.
+ 
+
+Values expected to be one of these types
+
+
+ImageObject
+
+
+
+Used on these types
+
+
+WebPage
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

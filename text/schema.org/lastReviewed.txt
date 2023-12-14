@@ -1,0 +1,152 @@
+
+
+
+
+
+lastReviewed - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+lastReviewed
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    lastReviewed
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/lastReviewed 
+
+Check for open issues.
+
+
+
+
+Date on which the content on this web page was last reviewed for accuracy and/or completeness.
+ 
+
+Values expected to be one of these types
+
+
+Date
+
+
+
+Used on these types
+
+
+WebPage
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

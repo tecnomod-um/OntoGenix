@@ -1,0 +1,152 @@
+
+
+
+
+
+relevantSpecialty - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+relevantSpecialty
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    relevantSpecialty
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/relevantSpecialty 
+
+Check for open issues.
+
+
+
+
+If applicable, a medical specialty in which this entity is relevant.
+ 
+
+Values expected to be one of these types
+
+
+MedicalSpecialty
+
+
+
+Used on these types
+
+
+MedicalEntity
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

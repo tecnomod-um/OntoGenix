@@ -1,0 +1,191 @@
+
+
+
+
+
+ActionStatusType - Schema.org Enumeration Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+ActionStatusType
+A Schema.org Enumeration Type
+
+
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    StatusEnumeration 
+            
+                
+                        
+                    
+				 > 
+            
+					
+    
+    
+    ActionStatusType
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/ActionStatusType 
+
+Check for open issues.
+
+
+
+
+The status of an Action.
+ 
+
+
+
+
+Instances of 
+    
+    
+    ActionStatusType  may appear as a value for the following properties
+
+PropertyOn TypesDescription
+
+actionStatus
+
+Action
+Indicates the current disposition of the Action.
+  
+
+
+
+
+Enumeration members
+
+
+ActiveActionStatus
+
+CompletedActionStatus
+
+FailedActionStatus
+
+PotentialActionStatus
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,177 @@
+
+
+
+
+
+WearableSizeSystemBR - Schema.org Enumeration Member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+WearableSizeSystemBR
+A Schema.org Enumeration Member
+
+
+This term is in the "new" area - implementation feedback and adoption from applications and websites can help improve our definitions.
+
+
+
+Thing 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Intangible 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    Enumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    SizeSystemEnumeration 
+            
+                
+                         > 
+                    
+				
+            
+					
+    
+    
+    WearableSizeSystemEnumeration 
+            
+                
+                        
+                    
+				 :: 
+            
+					
+    
+    
+    WearableSizeSystemBR
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/WearableSizeSystemBR 
+
+Check for open issues.
+
+
+
+
+Brazilian size system for wearables.
+ A member value for enumeration type: 
+    
+    
+    WearableSizeSystemEnumeration
+ 
+
+
+
+Source
+https://github.com/schemaorg/schemaorg/issues/2811
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

@@ -1,0 +1,154 @@
+
+
+
+
+
+isProprietary - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+isProprietary
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    isProprietary
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/isProprietary 
+
+Check for open issues.
+
+
+
+
+True if this item's name is a proprietary/brand name (vs. generic name).
+ 
+
+Values expected to be one of these types
+
+
+Boolean
+
+
+
+Used on these types
+
+
+DietarySupplement
+
+Drug
+
+
+
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

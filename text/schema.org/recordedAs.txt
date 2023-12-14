@@ -1,0 +1,174 @@
+
+
+
+
+
+recordedAs - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+recordedAs
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    recordedAs
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/recordedAs 
+
+Check for open issues.
+
+
+
+
+An audio recording of the work.
+ 
+Inverse-property: 
+    
+    
+    recordingOf
+
+
+Values expected to be one of these types
+
+
+MusicRecording
+
+
+
+Used on these types
+
+
+MusicComposition
+
+
+
+
+
+
+
+Acknowledgements
+
+
+
+
+
+                       MusicBrainz Project
+                    
+
+
+
+                    This vocabulary was improved through collaboration with the MusicBrainz project    (www.musicbrainz.org), and is partially inspired by the MusicBrainz and    Music Ontology schemas.
+                    
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+

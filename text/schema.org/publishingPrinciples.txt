@@ -1,0 +1,182 @@
+
+
+
+
+
+publishingPrinciples - Schema.org Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schema.org
+
+
+
+
+
+
+
+
+
+Docs
+
+
+Schemas
+
+
+Validate
+
+
+About
+
+
+
+ 
+
+
+
+
+
+
+
+
+Note: you are viewing the development
+    version of Schema.org.
+    See How we work for more details.
+  
+
+
+
+
+
+
+
+publishingPrinciples
+A Schema.org Property
+
+
+
+
+
+Thing 
+            
+                
+                     > 
+                
+            
+					
+    
+    
+    Property 
+            
+                
+                     :: 
+                
+            
+					
+    
+    
+    publishingPrinciples
+
+
+
+
+
+[more...]
+
+
+ Canonical URL: https://schema.org/publishingPrinciples 
+
+Check for open issues.
+
+
+
+
+The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork.
+
+While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.
+ 
+
+Values expected to be one of these types
+
+
+CreativeWork
+
+URL
+
+
+
+Used on these types
+
+
+CreativeWork
+
+Organization
+
+Person
+
+
+
+
+
+Sub-properties
+
+
+actionableFeedbackPolicy
+
+correctionsPolicy
+
+diversityStaffingReport
+
+masthead
+
+missionCoveragePrioritiesPolicy
+
+noBylinesPolicy
+
+ownershipFundingInfo
+
+unnamedSourcesPolicy
+
+verificationFactCheckingPolicy
+
+
+
+
+
+ 
+
+
+
+          V23.0
+          2023-10-17
+      
+Terms and conditions
+
+
+
+
+
