@@ -89,6 +89,7 @@ class GuiBehavior(QMainWindow):
 
         # Log manager setup
         self.log = log(self.LLManswer_textedit)
+        self._start_manage_action("Introduce yourself and explain your role to the future users.")
 
     @staticmethod
     def on_text_changed(agent, text_edit):
@@ -106,6 +107,7 @@ class GuiBehavior(QMainWindow):
 
     async def _manage_action(self, prompt: str) -> None:
         """Manage the user's prompt based on the current ontology state."""
+        self.LLManswer_textedit.setEnabled(False)
         self.log.append_log(message="\n\n------------- GUI MANAGER ----------------", level="manager", end="\n\n")
 
         async for chunk in self.genie.interaction(prompt=prompt):
@@ -113,6 +115,7 @@ class GuiBehavior(QMainWindow):
             QCoreApplication.processEvents()
 
         self.log.append_log(message="", level="manager", end="\n")
+        self.LLManswer_textedit.setEnabled(True)
 
     async def generate_crafted_prompt(self, prompt: str) -> None:
         """Helps the user to craft the best prompt."""
@@ -131,7 +134,9 @@ class GuiBehavior(QMainWindow):
         self.description_textEdit.clear()
         self.description_textEdit.setEnabled(False)
         self.OUTPUT_tab.setCurrentIndex(1)
-        async for chunk in self.plan_builder.interaction(input_task=prompt, json_data=self.json_data):
+
+        content = prompt + ' ' + self.query_prompt_textedit.toPlainText()
+        async for chunk in self.plan_builder.interaction(input_task=content, json_data=self.json_data):
             self.description_textEdit.insertPlainText(chunk)
             # Scroll to the bottom to ensure the latest message is visible
             self.description_textEdit.verticalScrollBar().setValue(
