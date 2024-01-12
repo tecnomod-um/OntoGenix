@@ -4,7 +4,6 @@ from typing import Optional
 from GUI.LLM_base.LlmBase import AbstractLlm
 from GUI.GuiManager.automata_manager import Automata_Manager
 
-
 class Genie(AbstractLlm, ABC):
     """
     This class represents a language learning model (LLM_base) ontology. It extends the AbstractLlm class and provides
@@ -15,38 +14,47 @@ class Genie(AbstractLlm, ABC):
 
     def __init__(self, metadata: dict):
         """
-        Initialize the LlmOntology object.
+        Initialize the Genie object.
 
         Parameters:
-        metadata (dict): A dictionary containing metadata for the LLM_base.
+        metadata (dict): A dictionary containing metadata for the Genie model.
         """
         super().__init__(metadata)
 
-        # initialize prompts
+        # Initialize prompts and other attributes
         self.instructions = self.load_string_from_file(metadata['instructions'])
         self.query = None
         self.available_functions = metadata['available_functions']
         self.tools = metadata['tools']
-        # Initialize automata
+        # Initialize automata manager
         self.automata = Automata_Manager()
 
     async def interaction(self, prompt: str = ""):
+        """
+        Perform an interaction with the Genie model.
+
+        Parameters:
+        prompt (str): The input prompt for the interaction.
+
+        Yields:
+        str: Chunks of the response from the Genie model.
+        """
         try:
             self.query = prompt
-            # format the current prompt
+            # Format the current prompt
             self.current_prompt = self.instructions.format(
                 prompt=prompt,
                 current_state=self.automata.droid.current_state.name,
                 transitions=self.automata.droid.possible_next_states()
             )
 
-            # Get the response from the LLM_base
+            # Get the response from the Genie model
             async for chunk in self.get_async_api_response(content=self.current_prompt):
                 yield chunk
 
-            # update the short term memory
+            # Update the short-term memory
             if self.update_memories(self.answer):
-                # let's perform the corresponding action.
+                # Perform the corresponding action
                 await self.select_process()
 
         except ValueError as e:
@@ -55,6 +63,9 @@ class Genie(AbstractLlm, ABC):
             self.last_prompt = self.current_prompt
 
     async def select_process(self):
+        """
+        Select and perform the appropriate action based on the Genie model's response.
+        """
         try:
             if self.automata.droid.action in self.available_functions.keys():
                 self.function_calling(
@@ -64,10 +75,18 @@ class Genie(AbstractLlm, ABC):
                 await self._process_function_response()
 
         except Exception as e:
-            print("Exception: {e}".format(e=e))
-
+            print(f"Exception: {e}")
 
     def update_memories(self, response: str):
+        """
+        Update the Genie model's short-term memory and perform a transition based on the response.
+
+        Parameters:
+        response (str): The response from the Genie model.
+
+        Returns:
+        bool: True if a transition was performed, False otherwise.
+        """
         try:
             self.automata.droid.action = self.extract_text(response, "Action:", "**Next state:**").strip()
             next_state = self.extract_text(response, "Next State:", "**Confirmation:**").strip()

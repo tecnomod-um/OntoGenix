@@ -4,6 +4,16 @@ import os
 from GUI.GuiManager.tools_definition import tools, available_functions
 
 class MetadataManager:
+    """
+    The MetadataManager class is responsible for managing metadata related to a dataset and API keys.
+
+    Attributes:
+        base_path (str, optional): The base path for the dataset and related files. Defaults to None.
+        dataset_folder (str, optional): The folder where the dataset is stored. Defaults to None.
+        dataset_file (str, optional): The file that contains the dataset. Defaults to None.
+        api_key_path (str): Path to the file containing the API key. Defaults to "./GUI/.env".
+        genie_metadata (dict): Metadata related to the 'genie' functionality, containing roles, instructions, and model information.
+    """
 
     base_path = None
     dataset_folder = None
