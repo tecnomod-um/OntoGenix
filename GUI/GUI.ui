@@ -123,7 +123,7 @@ p, li { white-space: pre-wrap; }
       <item row="0" column="1">
        <widget class="QTabWidget" name="OUTPUT_tab">
         <property name="currentIndex">
-         <number>4</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="CSV_tab">
          <attribute name="title">

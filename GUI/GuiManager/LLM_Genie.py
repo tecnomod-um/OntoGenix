@@ -4,6 +4,7 @@ from typing import Optional
 from GUI.LLM_base.LlmBase import AbstractLlm
 from GUI.GuiManager.automata_manager import Automata_Manager
 
+
 class Genie(AbstractLlm, ABC):
     """
     This class represents a language learning model (LLM_base) ontology. It extends the AbstractLlm class and provides

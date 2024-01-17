@@ -169,7 +169,7 @@ class GuiBehavior(QMainWindow):
         # Log the start of the prompt crafting process
         self.log.append_log(message="\n\n------------- GUI MANAGER ----------------", level="manager", end="\n\n")
 
-        content = self.query_prompt_textedit.toPlainText()
+        content = 'Query: ' + prompt + ': \n ' + self.query_prompt_textedit.toPlainText()
 
         # Process the content to craft a better prompt
         async for chunk in self.prompt_crafter.interaction(prompt=content, json_data=self.json_data):
