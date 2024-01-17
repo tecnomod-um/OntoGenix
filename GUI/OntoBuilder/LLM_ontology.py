@@ -55,6 +55,7 @@ class LlmOntology(AbstractLlm):
     async def interact(self,
                        json_data: Optional[str] = None,
                        data_description: Optional[str] = None,
+                       task: Optional[str] = None,
                        entity: Optional[str] = None,
                        state: str = "ONTOLOGY"):
         """
@@ -65,6 +66,7 @@ class LlmOntology(AbstractLlm):
         Args:
             json_data (Optional[str]): JSON formatted data for the interaction.
             data_description (Optional[str]): Description of the data.
+            task (Optional[str]): Instructions to improve the entity.
             entity (Optional[str]): The specific entity to be improved in the ontology.
             state (str): The current state of ontology interaction (e.g., "ONTOLOGY" or "ONTOLOGY_ENTITY").
 
@@ -82,6 +84,7 @@ class LlmOntology(AbstractLlm):
                 )
             elif state == "ONTOLOGY_ENTITY":
                 self.current_prompt = self.entity_improvement.format(
+                    task=task,
                     data_description=data_description,
                     entity=entity
                 )

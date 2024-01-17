@@ -72,7 +72,7 @@ class GuiBehavior(QMainWindow):
             "prompt_crafting": self.generate_crafted_prompt,
             "data_description": self.create_initial_context,
             "ontology_building": self.generate_ontology,
-            "ontology_entity_enrichment": self.generate_ontology,
+            "ontology_entity_enrichment": self.entity_enrichment,
             "mapping": self.create_mapping
         }
 
@@ -195,7 +195,7 @@ class GuiBehavior(QMainWindow):
         self.description_textEdit.setEnabled(False)
         self.OUTPUT_tab.setCurrentIndex(1)  # Switch to the appropriate tab in the GUI
 
-        content = prompt + ' ' + self.query_prompt_textedit.toPlainText()
+        content = 'Query: ' + prompt + ': \n ' + self.query_prompt_textedit.toPlainText()
 
         # Process the input to create initial context
         async for chunk in self.plan_builder.interaction(input_task=content, json_data=self.json_data):
@@ -209,7 +209,7 @@ class GuiBehavior(QMainWindow):
         # Re-enable the description text edit after processing
         self.description_textEdit.setEnabled(True)
 
-    async def generate_ontology(self, prompt: str) -> None:
+    async def generate_ontology(self) -> None:
         """
         Asynchronously generate the ontology based on the user's prompt.
 
@@ -219,7 +219,12 @@ class GuiBehavior(QMainWindow):
 
         Args:
             prompt (str): The user's prompt to guide the ontology generation.
+            :param prompt: The user query.
+            :param entity: The user queried entity.
+            :param state: Sets if the user query is for the ontology definition or entity enrichment.
+                          Can be One of the followings values: [ONTOLOGY, ONTOLOGY_ENTITY]
         """
+
         # Clear the ontology text edit and disable it during processing
         self.ontology_textedit.clear()
         self.ontology_textedit.setEnabled(False)
@@ -228,7 +233,9 @@ class GuiBehavior(QMainWindow):
         # Generate the ontology using the ontology_builder agent
         async for chunk in self.ontology_builder.interact(
                 json_data=self.json_data,
-                data_description=self.plan_builder.data_description):
+                data_description=self.plan_builder.data_description,
+                state="ONTOLOGY"):
+
             self.ontology_textedit.insertPlainText(chunk)
             # Scroll to the bottom to ensure the latest message is visible
             self.ontology_textedit.verticalScrollBar().setValue(
@@ -239,6 +246,45 @@ class GuiBehavior(QMainWindow):
         # Re-enable the ontology text edit after processing
         self.ontology_textedit.setEnabled(True)
 
+    async def entity_enrichment(self, prompt: str, entity: str) -> None:
+        """
+        Asynchronously generate the ontology based on the user's prompt.
+
+        This coroutine interacts with the ontology_builder agent to generate an ontology
+        using the provided data description from the plan_builder. The process involves
+        updating the ontology_textedit widget with the generated ontology.
+
+        Args:
+            prompt (str): The user's prompt to guide the ontology generation.
+            :param prompt: The user query.
+            :param entity: The user queried entity.
+        """
+        print('---------------------')
+        print(prompt)
+        print(entity)
+        # Clear the ontology text edit and disable it during processing
+        self.ontology_textedit.clear()
+        self.ontology_textedit.setEnabled(False)
+        self.OUTPUT_tab.setCurrentIndex(2)  # Switch to the appropriate tab in the GUI
+
+        content = 'Query: ' + prompt + ': \n ' + self.query_prompt_textedit.toPlainText()
+
+        # Generate the ontology using the ontology_builder agent
+        async for chunk in self.ontology_builder.interact(
+                task=content,
+                data_description=self.plan_builder.data_description,
+                entity=entity,
+                state="ONTOLOGY_ENTITY"):
+
+            self.ontology_textedit.insertPlainText(chunk)
+            # Scroll to the bottom to ensure the latest message is visible
+            self.ontology_textedit.verticalScrollBar().setValue(
+                self.ontology_textedit.verticalScrollBar().maximum()
+            )
+            QCoreApplication.processEvents()  # Process any pending GUI events
+
+        # Re-enable the ontology text edit after processing
+        self.ontology_textedit.setEnabled(True)
 
     async def create_mapping(self, prompt: str) -> None:
         """

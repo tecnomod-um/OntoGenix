@@ -4,10 +4,13 @@ the proposed ontology. Critically analyze the ontology, the data description, th
 and propose improvements to the given entity to ensure it aligns with the stated objective. I expect you to provide an
 improved version of the inputted entity.
 
+**Improvement Suggestions:**
+{task}
+
 **Input Related data description:**
 {data_description}
 
-**Next Entity:**
+**Entity to be improved:**
 {entity}
 
 **Output**

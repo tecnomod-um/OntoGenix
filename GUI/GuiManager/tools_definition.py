@@ -47,16 +47,6 @@ tools=[
         "function": {
             "name": "ontology_building",
             "description": "Define the ontology in turtle format.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "prompt": {
-                        "type": "string",
-                        "description": "The user query.",
-                    }
-                },
-                "required": ["prompt"]
-            }
         }
     },
     {
@@ -70,6 +60,10 @@ tools=[
                     "prompt": {
                         "type": "string",
                         "description": "The user query.",
+                    },
+                    "entity": {
+                        "type": "string",
+                        "description": "The entity to be enriched.",
                     }
                 },
                 "required": ["prompt", "entity"]
