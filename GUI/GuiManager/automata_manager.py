@@ -171,6 +171,7 @@ class Automata_Manager:
         self.droid.add_transition(ONTOLOGY, ONTOLOGY_ENTITY, "ontology_entity_enrichment", False)
         self.droid.add_transition(ONTOLOGY, MAPPING, "mapping", False)
 
+        self.droid.add_transition(ONTOLOGY_ENTITY, ONTOLOGY_ENTITY, "ontology_entity_enrichment", False)
         self.droid.add_transition(ONTOLOGY_ENTITY, PROMPT_CRAFT, "prompt_crafting", False)
         self.droid.add_transition(ONTOLOGY_ENTITY, HIGH_LEVEL_STRUCTURE, "data_description", False)
         self.droid.add_transition(ONTOLOGY_ENTITY, MAPPING, "mapping", False)

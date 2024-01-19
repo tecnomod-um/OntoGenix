@@ -1,0 +1,97 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix um: <https://vocab.um.es#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix schema: <http://schema.org/>.
+
+<#TriplesMapResource> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_ratings_Beauty.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Resource/{FAIR_URI}";
+        rr:class um:Resource;
+        rr:termType rr:IRI
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [ rr:column "FAIR_URI" ];
+    ].
+
+<#TriplesMapProduct> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_ratings_Beauty.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Product/{ProductId}";
+        rr:class um:Product;
+        rr:termType rr:IRI
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:productID;
+        rr:objectMap [ rr:column "ProductId" ];
+    ].
+
+<#TriplesMapUser> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_ratings_Beauty.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#User/{UserId}";
+        rr:class um:User;
+        rr:termType rr:IRI
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:identifier;
+        rr:objectMap [ rr:column "UserId" ];
+    ].
+
+<#TriplesMapRatingEvent> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_ratings_Beauty.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#RatingEvent/{FAIR_URI}";
+        rr:class um:RatingEvent;
+        rr:termType rr:IRI
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasRatingValue;
+        rr:objectMap [
+            rr:column "Rating";
+            rr:datatype xsd:int
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasTimestampValue;
+        rr:objectMap [
+            rr:column "Timestamp";
+            rr:datatype xsd:dateTime
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:ratedProduct;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapProduct>;
+            rr:joinCondition [
+                rr:child "ProductId";
+                rr:parent "ProductId"
+            ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasRating;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapUser>;
+            rr:joinCondition [
+                rr:child "UserId";
+                rr:parent "UserId"
+            ]
+        ]
+    ].
