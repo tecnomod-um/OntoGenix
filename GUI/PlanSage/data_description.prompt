@@ -11,7 +11,7 @@ Separate the columns synthesized descriptions by the possible relations with eac
 Summarize the provided json data content in a structured manner:
 
 **Foundational Prefix:**
-<If there is no foundational prefix proposed, add as a foundational prefix "https://vocab.um.es#" for the ontology to ensure a clear structure. Define it as an owl type.>
+<If there is no foundational prefix proposed, add as a foundational prefix "https://example.com#" for the ontology to ensure a clear structure. Define it as an owl type.>
 
 **Data Description:**
 <enumerate for each column in the json data: <column data name: type - short description of the column data meaning - posible range>
