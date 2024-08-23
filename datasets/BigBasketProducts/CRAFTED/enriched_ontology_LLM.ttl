@@ -1,0 +1,246 @@
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+### Classes
+um:sales_product a owl:Class ;
+    rdfs:subClassOf schema:Product ;
+    rdfs:label "Sales Product" ;
+    rdfs:comment "A product entity that represents an item for sale, including its metadata and commercial offers." ;
+    owl:equivalentClass schema:Product ;
+    rdfs:isDefinedBy <https://vocab.um.es/sales_product> ;
+    dc:description "This class encompasses all the characteristics of a product available for sale, such as its name, brand, category, and associated offers."@en ;
+    rdfs:seeAlso <https://schema.org/Product> .
+
+# Annotations for enhanced clarity and versatility
+um:sales_product rdfs:label "Product for Sale"@en ;
+    rdfs:label "Commodity"@en ;
+    rdfs:label "Merchandise"@en ;
+    rdfs:label "Retail Item"@en ;
+    rdfs:label "Trade Good"@en .
+
+schema:Offer a owl:Class ;
+    rdfs:label "Offer" ;
+    rdfs:subClassOf schema:Product ;
+    rdfs:comment "An offer to transfer some rights to an item or to provide a service for a certain price." ;
+    owl:equivalentClass um:sales_product ;
+    rdfs:isDefinedBy <https://vocab.um.es/Offer> ;
+    dc:description "This entity represents the details of an offer, including pricing information, associated with a product."@en ;
+    rdfs:seeAlso <http://schema.org/Offer> .
+
+### Object Properties
+um:BrandName a owl:DatatypeProperty ;
+    rdfs:label "Brand Name"@en ;
+    rdfs:comment "The name of the brand associated with the product."@en ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://vocab.um.es/BrandName> ;
+    owl:equivalentProperty schema:brand ;
+    dc:description "This property represents the textual name of a brand for a product. It is used to identify the manufacturer or company that created the product."@en ;
+    rdfs:subPropertyOf schema:name ;
+    rdfs:seeAlso <http://schema.org/brand> ;
+    owl:versionInfo "1.0" ;
+    rdfs:altLabel "Manufacturer Name"@en, "Brand Identifier"@en, "Company Name"@en, "Trade Name"@en, "Product Brand"@en .
+
+um:Brand a owl:ObjectProperty ;
+    rdfs:label "Brand" ;
+    rdfs:comment "The brand associated with a product, which is a name given by the maker or owner of the product." ;
+    skos:altLabel "Manufacturer" ;
+    skos:altLabel "Product Brand" ;
+    skos:altLabel "Trade Name" ;
+    skos:altLabel "Brand Name" ;
+    skos:altLabel "Maker's Mark" ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty schema:brand ;
+    rdfs:isDefinedBy <https://vocab.um.es/Brand> ;
+    rdfs:seeAlso schema:Product .
+
+um:Category a owl:ObjectProperty ;
+    rdfs:label "Product Category"@en ;
+    rdfs:comment "A category to which the product belongs within the predefined set of categories."@en ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://vocab.um.es#Category> ;
+    owl:equivalentProperty schema:category ;
+    rdfs:seeAlso <http://purl.org/goodrelations/v1#hasCategoryCode> ;
+    rdfs:subPropertyOf schema:category ;
+    owl:versionInfo "1.0" ;
+    rdfs:altLabel "Product Type"@en ;
+    rdfs:altLabel "Product Classification"@en ;
+    rdfs:altLabel "Product Segment"@en ;
+    rdfs:altLabel "Product Line"@en ;
+    rdfs:altLabel "Merchandise Category"@en .
+
+um:eligibleQuantity a owl:ObjectProperty ;
+    rdfs:label "eligible quantity"@en , "cantidad elegible"@es , "quantité éligible"@fr , "berechtigte Menge"@de , "quantità ammissibile"@it ;
+    rdfs:comment "The quantity of the product that is available for the offer."@en ;
+    rdfs:isDefinedBy <https://vocab.um.es/eligibleQuantity> ;
+    owl:equivalentProperty schema:eligibleQuantity ;
+    rdfs:domain schema:Offer ;
+    rdfs:range xsd:string ;
+    dc:description "This property specifies the quantity in which the product is available under a particular offer. It is a textual representation of the product's quantity, which may include units of measure."@en ;
+    rdfs:seeAlso <http://schema.org/eligibleQuantity> .
+
+um:SubCategory a owl:ObjectProperty ;
+    rdfs:label "SubCategory" ;
+    rdfs:comment "A more specific category that the product falls under within its broader category." ;
+    skos:altLabel "Product SubCategory" ;
+    skos:altLabel "Sub-Classification" ;
+    skos:altLabel "Niche Category" ;
+    skos:altLabel "Specialized Category" ;
+    skos:altLabel "Secondary Category" ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty schema:category ;
+    rdfs:isDefinedBy <https://vocab.um.es/SubCategory> ;
+    rdfs:seeAlso schema:Product .
+
+um:Image_Url a owl:DatatypeProperty ;
+    rdfs:label "Product Image URL"@en ;
+    rdfs:comment "A URL pointing to an image of the product. Provides a visual representation of the product."@en ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <https://vocab.um.es/sales_product#Image_Url> ;
+    owl:equivalentProperty schema:image ;
+    dc:description "This property represents the location on the web where an image of the product can be found. It is unique for each product and is used to visually identify products in digital platforms."@en ;
+    rdfs:seeAlso schema:Product ;
+    rdfs:subPropertyOf schema:url ;
+    owl:versionInfo "1.0" ;
+    rdfs:altLabel "Product Image"@en, "Product Picture URL"@en, "Product Photo Link"@en, "Product Image Link"@en, "Product Visual URL"@en .
+
+um:Absolute_Url a owl:DatatypeProperty ;
+    rdfs:label "Absolute URL" ;
+    rdfs:comment "The unique URL of a product, used to identify the product on the web." ;
+    rdfs:isDefinedBy <https://vocab.um.es/sales_product#Absolute_Url> ;
+    rdfs:seeAlso schema:url ;
+    owl:equivalentProperty schema:url ;
+    dc:description "This property represents the web address where a product can be found and is essential for online identification and retrieval." ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:anyURI ;
+    rdfs:subPropertyOf schema:url ;
+    owl:versionInfo "1.0" ;
+
+# Alternative labels for enhanced clarity and versatility
+rdfs:label "Product URL"@en ;
+rdfs:label "Product Web Address"@en ;
+rdfs:label "Product Unique Resource Locator"@en ;
+rdfs:label "Product Link"@en ;
+rdfs:label "Product Web Link"@en .
+
+um:hasOffer a owl:ObjectProperty ;
+    rdfs:label "has offer"@en, "tiene oferta"@es, "hat Angebot"@de, "a une offre"@fr, "有优惠"@zh ;
+    rdfs:comment "A relationship between a product and its sales offer."@en ;
+    rdfs:isDefinedBy <https://vocab.um.es/hasOffer> ;
+    owl:equivalentProperty schema:offers ;
+    rdfs:domain um:sales_product ;
+    rdfs:range schema:Offer ;
+    dc:description "This property links a sales product to the offer that applies to it, including details such as price and discounts."@en ;
+    rdfs:seeAlso schema:priceSpecification .
+
+### Data Type Properties
+um:Price a owl:DatatypeProperty ;
+    rdfs:label "Price" ;
+    rdfs:comment "The original price of the product before any discounts." ;
+    rdfs:domain schema:Offer ;
+    rdfs:range xsd:float ;
+    rdfs:isDefinedBy <https://vocab.um.es/Price> ;
+    owl:equivalentProperty schema:price ;
+    rdfs:subPropertyOf schema:priceSpecification ;
+    dc:description "This property represents the monetary cost of a product in a given currency."@en ;
+    rdfs:seeAlso <http://schema.org/price> ;
+    rdfs:altLabel "Cost" ;
+    rdfs:altLabel "ListPrice" ;
+    rdfs:altLabel "OriginalPrice" ;
+    rdfs:altLabel "RetailPrice" ;
+    rdfs:altLabel "StandardPrice" .
+
+um:DiscountPrice a owl:DatatypeProperty ;
+    rdfs:label "Discounted Price"@en ;
+    rdfs:comment "The discounted price at which the product is offered to the consumer."@en ;
+    skos:altLabel "Sale Price"@en ;
+    skos:altLabel "Offer Price"@en ;
+    skos:altLabel "Promotional Price"@en ;
+    skos:altLabel "Reduced Price"@en ;
+    skos:altLabel "Special Offer Price"@en ;
+    rdfs:domain schema:Offer ;
+    rdfs:range xsd:float ;
+    rdfs:isDefinedBy <https://vocab.um.es#DiscountPrice> ;
+    owl:equivalentProperty schema:priceSpecification .
+
+schema:priceCurrency a owl:DatatypeProperty ;
+    rdfs:label "Currency" ;
+    rdfs:comment "The currency (in 3-letter ISO 4217 format) of the price and price specification." ;
+    rdfs:domain schema:Offer ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <http://schema.org/priceCurrency> ;
+    owl:equivalentProperty schema:priceCurrency ;
+    dc:description "This property specifies the type of currency in which the price of the product is expressed." ;
+    rdfs:seeAlso <http://www.currency-iso.org/en/home/tables/table-a1.html> ;
+    rdfs:subPropertyOf schema:priceSpecification ;
+    owl:versionInfo "1.0" ;
+    rdfs:altLabel "CurrencyCode" ;
+    rdfs:altLabel "MonetaryCurrency" ;
+    rdfs:altLabel "PaymentCurrency" ;
+    rdfs:altLabel "TransactionCurrency" ;
+    rdfs:altLabel "PriceCurrencyCode" .
+
+# Defining data type properties for the sales_product entity
+um:FAIR_URI a owl:DatatypeProperty ;
+    rdfs:label "FAIR Unique Resource Identifier" ;
+    rdfs:comment "A globally unique identifier for a product that aligns with the FAIR data principles." ;
+    rdfs:isDefinedBy <https://vocab.um.es/FAIR_URI> ;
+    rdfs:seeAlso <http://purl.org/dc/terms/identifier> ;
+    owl:equivalentProperty schema:identifier ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:string ;
+    dc:description "This property represents the Findable, Accessible, Interoperable, and Reusable (FAIR) unique identifier for a product, which facilitates the discovery and integration of the product data across various platforms and systems." ;
+    rdfs:subPropertyOf dc:identifier ;
+
+# Alternative labels for enhanced clarity and versatility
+rdfs:label "Product FAIR Identifier"@en ;
+rdfs:label "Identificador FAIR del Producto"@es ;
+rdfs:label "Produkt FAIR-Kennung"@de ;
+rdfs:label "Identifiant FAIR du Produit"@fr ;
+rdfs:label "Identificativo FAIR del Prodotto"@it .
+
+um:ProductName a owl:DatatypeProperty ;
+    rdfs:label "Product Name"@en ;
+    rdfs:comment "The name of the product as it is labeled and marketed."@en ;
+    skos:altLabel "Item Name"@en ;
+    skos:altLabel "Product Title"@en ;
+    skos:altLabel "Goods Name"@en ;
+    skos:altLabel "Merchandise Name"@en ;
+    skos:altLabel "Trade Name"@en ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty schema:name ;
+    rdfs:isDefinedBy <https://vocab.um.es/ProductName> .
+
+um:Quantity a owl:DatatypeProperty ;
+    rdfs:label "Quantity" ;
+    rdfs:comment "The amount of the product that is available or in stock." ;
+    rdfs:domain schema:Offer ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://vocab.um.es/Quantity> ;
+    owl:equivalentProperty schema:eligibleQuantity ;
+    dc:description "This property represents the available quantity of a product. It is expressed as a text string that can include units of measure." ;
+    rdfs:seeAlso <http://schema.org/QuantitativeValue> ;
+    rdfs:subPropertyOf schema:eligibleQuantity ;
+    owl:versionInfo "1.0" ;
+    rdfs:altLabel "Available Quantity" ;
+    rdfs:altLabel "Stock Level" ;
+    rdfs:altLabel "Inventory Count" ;
+    rdfs:altLabel "In-Stock Quantity" ;
+    rdfs:altLabel "Quantity in Stock" .
+
+# Linking to external resources
+schema:Product owl:equivalentClass um:sales_product .
+schema:Offer owl:equivalentClass um:hasOffer .
+schema:priceSpecification owl:equivalentProperty um:Price .
+schema:priceSpecification owl:equivalentProperty um:DiscountPrice .
+schema:priceCurrency owl:equivalentProperty schema:priceCurrency .

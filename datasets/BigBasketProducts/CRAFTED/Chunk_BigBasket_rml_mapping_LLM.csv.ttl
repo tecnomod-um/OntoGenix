@@ -1,0 +1,87 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#TriplesMapSalesProduct> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_BigBasket.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/sales_product/{FAIR_URI}";
+        rr:class um:sales_product
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:BrandName;
+        rr:objectMap [ rml:reference "Brand" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:Category;
+        rr:objectMap [ rml:reference "Category" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:SubCategory;
+        rr:objectMap [ rml:reference "SubCategory" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:Image_Url;
+        rr:objectMap [
+            rr:datatype xsd:anyURI;
+            rml:reference "Image_Url"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:Absolute_Url;
+        rr:objectMap [
+            rr:datatype xsd:anyURI;
+            rml:reference "Absolute_Url"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasOffer;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapOffer>;
+        ]
+    ].
+
+<#TriplesMapOffer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_BigBasket.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Offer/{FAIR_URI}";
+        rr:class schema:Offer
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:Price;
+        rr:objectMap [
+            rr:datatype xsd:float;
+            rml:reference "Price"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:DiscountPrice;
+        rr:objectMap [
+            rr:datatype xsd:float;
+            rml:reference "DiscountPrice"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:priceCurrency;
+        rr:objectMap [
+            rr:constant "EUR";
+            rr:datatype xsd:string
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:eligibleQuantity;
+        rr:objectMap [
+            rr:datatype xsd:string;
+            rml:reference "Quantity"
+        ]
+    ].

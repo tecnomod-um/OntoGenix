@@ -1,0 +1,79 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix um: <https://vocab.um.es#> .
+
+### Classes
+um:Product rdf:type owl:Class .
+um:Brand rdf:type owl:Class .
+um:Category rdf:type owl:Class .
+um:SubCategory rdf:type owl:Class .
+um:PriceDetails rdf:type owl:Class .
+
+### Subclasses
+um:SubCategory rdfs:subClassOf um:Category .
+
+### Object Properties
+um:hasBrand rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range um:Brand .
+
+um:hasCategory rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range um:Category .
+
+um:hasSubCategory rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range um:SubCategory .
+
+um:hasPriceDetails rdf:type owl:ObjectProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range um:PriceDetails .
+
+### Data Type Properties
+um:hasAbsoluteUrl rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range xsd:anyURI ;
+    owl:equivalentProperty owl:sameAs .
+
+um:hasFAIRUri rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range xsd:anyURI ;
+    owl:equivalentProperty owl:sameAs .
+
+um:hasImageUrl rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range xsd:anyURI ;
+    owl:equivalentProperty owl:sameAs .
+
+um:hasProductName rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty rdfs:label .
+
+um:hasQuantity rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Product ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty schema:QuantitativeValue .
+
+um:hasDiscountPrice rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:PriceDetails ;
+    rdfs:range xsd:decimal ;
+    owl:equivalentProperty schema:OfferPriceSpecification .
+
+um:hasPrice rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:PriceDetails ;
+    rdfs:range xsd:decimal ;
+    owl:equivalentProperty schema:PriceSpecification .
+
+### Link of each entity to external resources
+um:hasBrand rdf:type owl:ObjectProperty ;
+    owl:equivalentProperty schema:Brand .
+
+um:hasCategory rdf:type owl:ObjectProperty ;
+    owl:equivalentProperty schema:Category .
+
+um:hasSubCategory rdf:type owl:ObjectProperty ;
+    owl:equivalentProperty schema:isPartOf .

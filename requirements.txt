@@ -1,0 +1,12 @@
+pyyaml
+numpy
+pandas
+openai
+python-dotenv
+lxml
+rdflib
+morph-kgc
+sklearn
+sentence_transformers
+PyQt5
+markdown

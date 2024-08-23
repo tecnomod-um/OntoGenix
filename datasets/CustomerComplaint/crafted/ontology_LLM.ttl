@@ -1,0 +1,124 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <https://vocab.um.es#> .
+
+### Classes
+:CustomerComplaint a owl:Class .
+:State a owl:Class .
+:Product a owl:Class .
+:ProblemOfComplaint a owl:Class .
+:Company a owl:Class .
+:CompanyResponse a owl:Class .
+:Resolution a owl:Class .
+:ProblemSubCategory a owl:Class ; owl:subClassOf :ProblemOfComplaint .
+:SubProduct a owl:Class ; owl:subClassOf :Product .
+
+### Object Properties
+:hasSubProduct a owl:ObjectProperty ;
+    owl:domain :Product ;
+    owl:range :SubProduct .
+
+:hasProblemSubCategory a owl:ObjectProperty ;
+    owl:domain :ProblemOfComplaint ;
+    owl:range :ProblemSubCategory .
+
+:hasResolution a owl:ObjectProperty ;
+    owl:domain :CompanyResponse ;
+    owl:range :Resolution .
+
+:locatedIn a owl:ObjectProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range :State .
+
+:relatedToProduct a owl:ObjectProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range :Product .
+
+:involvesCompany a owl:ObjectProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range :Company .
+
+:hasProblem a owl:ObjectProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range :ProblemOfComplaint .
+
+:hasCompanyResponse a owl:ObjectProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range :CompanyResponse .
+
+### Data Type Properties
+:companyName a owl:DatatypeProperty ;
+    owl:domain :Company ;
+    owl:range xsd:string .
+
+:publicResponse a owl:DatatypeProperty ;
+    owl:domain :CompanyResponse ;
+    owl:range xsd:string .
+
+:responseToConsumer a owl:DatatypeProperty ;
+    owl:domain :CompanyResponse ;
+    owl:range xsd:string .
+
+:complaintNarrative a owl:DatatypeProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range xsd:string .
+
+:consentProvided a owl:DatatypeProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range xsd:boolean .
+
+:isDisputed a owl:DatatypeProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range xsd:boolean .
+
+:dateReceived a owl:DatatypeProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range xsd:date .
+
+:dateSentToCompany a owl:DatatypeProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range xsd:date .
+
+:fairURI a owl:DatatypeProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range xsd:anyURI .
+
+:issueDescription a owl:DatatypeProperty ;
+    owl:domain :ProblemOfComplaint ;
+    owl:range xsd:string .
+
+:productType a owl:DatatypeProperty ;
+    owl:domain :Product ;
+    owl:range xsd:string .
+
+:stateCode a owl:DatatypeProperty ;
+    owl:domain :State ;
+    owl:range xsd:string .
+
+:subIssueDescription a owl:DatatypeProperty ;
+    owl:domain :ProblemSubCategory ;
+    owl:range xsd:string .
+
+:subProductType a owl:DatatypeProperty ;
+    owl:domain :SubProduct ;
+    owl:range xsd:string .
+
+:submissionMethod a owl:DatatypeProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range xsd:string .
+
+:tags a owl:DatatypeProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range xsd:string .
+
+:timelyResponse a owl:DatatypeProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range xsd:boolean .
+
+:complaintID a owl:DatatypeProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range xsd:integer .
+
+:zipCode a owl:DatatypeProperty ;
+    owl:domain :CustomerComplaint ;
+    owl:range xsd:integer .

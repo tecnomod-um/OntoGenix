@@ -1,0 +1,79 @@
+
+
+**Foundational Prefix:**
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+**Data Description:**
+1. Age: Numerical - Represents the age of the customer - Range: 7 to 80
+2. Arrival Delay in Minutes: Numerical - Time delay in minutes for arrival - Range: 0 to 438
+3. Baggage handling: Categorical - Rating for baggage handling - Range: 1 to 5
+4. Checkin service: Categorical - Rating for check-in service - Range: 1 to 5
+5. Cleanliness: Categorical - Rating for cleanliness - Range: 1 to 5
+6. Departure Delay in Minutes: Numerical - Time delay in minutes for departure - Range: 0 to 444
+7. Departure/Arrival time convenient: Categorical - Rating for convenience of departure/arrival time - Range: 0 to 5
+8. Ease of Online booking: Categorical - Rating for ease of online booking - Range: 1 to 5
+9. Flight Distance: Numerical - Distance of the flight in miles - Range: 53 to 5359
+10. Food and drink: Categorical - Rating for food and drink - Range: 0 to 5
+11. Gate location: Categorical - Rating for gate location - Range: 1 to 5
+12. Inflight entertainment: Categorical - Rating for inflight entertainment - Range: 0 to 5
+13. Inflight wifi service: Categorical - Rating for inflight wifi service - Range: 0 to 5
+14. Leg room service: Categorical - Rating for leg room service - Range: 0 to 5
+15. On-board service: Categorical - Rating for on-board service - Range: 1 to 5
+16. Online boarding: Categorical - Rating for online boarding - Range: 1 to 5
+17. Online support: Categorical - Rating for online support - Range: 1 to 5
+18. Seat comfort: Categorical - Rating for seat comfort - Range: 0 to 5
+19. Class: Categorical - Class of the flight ticket - Unique values: 3
+20. Customer Type: Categorical - Type of customer - Unique values: 2
+21. FAIR_URI: Text - Unique identifier for the feedback - Unique count: 1000
+22. Gender: Categorical - Gender of the customer - Unique values: 2
+23. Type of Travel: Categorical - Purpose of travel - Unique values: 2
+24. satisfaction: Categorical - Overall customer satisfaction - Unique values: 2
+
+**Classes:**
+1. CustomerFeedback
+2. EvaluationItem
+3. CustomerSatisfaction
+4. CustomerGender
+5. FlightClass
+6. TypeOfTravel
+7. CustomerType
+
+**Subclasses:**
+1. ArrivalDelay: subclassof -> EvaluationItem
+2. DepartureDelay: subclassof -> EvaluationItem
+3. OnlineBoarding: subclassof -> EvaluationItem
+4. SeatComfort: subclassof -> EvaluationItem
+5. Departure: subclassof -> EvaluationItem
+6. FoodAndDrink: subclassof -> EvaluationItem
+7. GateLocation: subclassof -> EvaluationItem
+8. Wifi: subclassof -> EvaluationItem
+9. OnlineSupport: subclassof -> EvaluationItem
+10. OnlineBooking: subclassof -> EvaluationItem
+11. LegRoomService: subclassof -> EvaluationItem
+12. CheckinService: subclassof -> EvaluationItem
+13. Cleanliness: subclassof -> EvaluationItem
+
+**Object Properties:**
+1. hasEvaluationItem: domain - CustomerFeedback, range - EvaluationItem
+2. hasCustomerSatisfaction: domain - CustomerFeedback, range - CustomerSatisfaction
+3. hasCustomerGender: domain - CustomerFeedback, range - CustomerGender
+4. hasFlightClass: domain - CustomerFeedback, range - FlightClass
+5. hasTypeOfTravel: domain - CustomerFeedback, range - TypeOfTravel
+6. hasCustomerType: domain - CustomerFeedback, range - CustomerType
+
+**Data Type Properties:**
+1. hasAge: domain - CustomerFeedback, range - xsd:integer
+2. hasFlightDistance: domain - CustomerFeedback, range - xsd:integer
+3. hasRating: domain - EvaluationItem, range - xsd:integer
+
+**Link of each entity to external resources:**
+- owl:Class
+- owl:ObjectProperty
+- owl:DatatypeProperty
+- xsd:integer
+- xsd:string
+- rdfs:subClassOf

@@ -1,0 +1,218 @@
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+### Classes
+um:Invoice a owl:Class ;
+    rdfs:label "Invoice" ;
+    rdfs:comment "A financial document issued by a seller to a buyer, relating to a sale transaction and indicating the products, quantities, and agreed prices." ;
+    owl:sameAs schema:Invoice ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty um:hasSalesArticle ;
+        owl:allValuesFrom um:SalesArticle
+    ],
+    [
+        a owl:Restriction ;
+        owl:onProperty um:customer ;
+        owl:allValuesFrom um:Customer
+    ],
+    [
+        a owl:Restriction ;
+        owl:onProperty um:country ;
+        owl:allValuesFrom um:Country
+    ] ;
+    # Alternative labels for enhanced clarity and versatility
+    rdfs:label "Billing Document"@en ;
+    rdfs:label "Payment Request"@en ;
+    rdfs:label "Purchase Invoice"@en ;
+    rdfs:label "Sales Invoice"@en ;
+    rdfs:label "Transaction Record"@en ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Invoice> .
+
+um:SalesArticle a owl:Class ;
+    rdfs:label "Sales Article" ;
+    rdfs:label "Product Item" ;
+    rdfs:label "Inventory Item" ;
+    rdfs:label "SKU" ;
+    rdfs:label "Stock Item" ;
+    rdfs:comment "A unique item of sale represented in an invoice." ;
+    rdfs:subClassOf schema:Product ;
+    owl:equivalentClass schema:Product ;
+    rdfs:isDefinedBy <https://vocab.um.es/SalesArticle> ;
+    owl:sameAs schema:Product ;
+    rdfs:seeAlso <http://example.org/externalResourceAboutSalesArticle> .
+
+um:Customer a owl:Class ;
+    rdfs:label "Customer" ;
+    rdfs:label "Client" ;
+    rdfs:label "Consumer" ;
+    rdfs:label "Buyer" ;
+    rdfs:label "Patron" ;
+    rdfs:comment "An individual or organization that purchases goods or services" ;
+    owl:sameAs schema:Person ;
+    rdfs:subClassOf schema:Person ;
+    owl:equivalentClass schema:Customer ;
+    rdfs:isDefinedBy <https://vocab.um.es/Customer> .
+
+### Object Properties related to Customer
+um:customer a owl:ObjectProperty ;
+    rdfs:label "customer" ;
+    rdfs:domain um:Invoice ;
+    rdfs:range um:Customer ;
+    rdfs:isDefinedBy <https://vocab.um.es/customer> .
+
+### Data Properties related to Customer
+um:CustomerID a owl:DatatypeProperty ;
+    rdfs:label "Customer ID" ;
+    rdfs:label "Client Identifier" ;
+    rdfs:label "Consumer ID" ;
+    rdfs:label "Buyer ID" ;
+    rdfs:label "Patron Identifier" ;
+    rdfs:comment "A unique identifier for the customer" ;
+    rdfs:domain um:Customer ;
+    rdfs:range xsd:integer ;
+    owl:equivalentProperty schema:identifier ;
+    rdfs:isDefinedBy <https://vocab.um.es/CustomerID> .
+
+um:Country a owl:Class ;
+    rdfs:subClassOf schema:Country ;
+    rdfs:label "Country" ;
+    rdfs:comment "A country where the invoice was issued." ;
+    owl:sameAs schema:Country ;
+    rdfs:isDefinedBy <https://vocab.um.es#> ;
+    dc:description "This entity represents a country in the context of an invoice issuance location."@en ;
+    rdfs:seeAlso <http://dbpedia.org/resource/Country> ;
+    owl:equivalentClass schema:Country ;
+    rdfs:label "Nation"@en , "Pays"@fr , "País"@es , "Land"@de , "国家"@zh .
+
+    um:country a owl:ObjectProperty ;
+        rdfs:domain um:Invoice ;
+        rdfs:range um:Country ;
+        rdfs:label "country of invoice" ;
+        owl:propertyDisjointWith um:customer, um:hasSalesArticle ;
+        rdfs:comment "Relates an invoice to the country where it was issued."@en .
+
+um:Product a owl:Class ;
+    rdfs:subClassOf um:SalesArticle ;
+    owl:sameAs schema:Product ;
+    rdfs:label "Product" ;
+    rdfs:label "Goods" ;
+    rdfs:label "Merchandise" ;
+    rdfs:label "Item" ;
+    rdfs:label "Commodity" ;
+    rdfs:comment "A product is an individual item for sale that is a subclass of SalesArticle."@en ;
+    dc:description "A product represents any item that can be offered to a market to satisfy the desire or need of a customer."@en ;
+    rdfs:isDefinedBy <https://vocab.um.es/Product> .
+
+um:UnitPriceSpecification a owl:Class ;
+    rdfs:subClassOf schema:PriceSpecification ;
+    owl:sameAs schema:UnitPriceSpecification ;
+    rdfs:label "Unit Price Specification"@en, "Especificación del Precio Unitario"@es, "Spezifikation des Einheitspreises"@de, "Spécification du Prix Unitaire"@fr, "Specifica del Prezzo Unitario"@it ;
+    rdfs:comment "A specification that defines the price per unit of a given product or service."@en ;
+    rdfs:isDefinedBy <https://vocab.um.es/UnitPriceSpecification> .
+
+### Annotations for UnitPriceSpecification
+um:UnitPriceSpecification rdfs:seeAlso <http://purl.org/goodrelations/v1#UnitPriceSpecification> ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q18534542> .
+
+
+### Object Properties
+um:hasSalesArticle a owl:ObjectProperty ;
+    rdfs:label "has sales article"@en ;
+    rdfs:comment "Relates an invoice to the sales article included in it."@en ;
+    skos:altLabel "contains product"@en , "includes item"@en , "article included"@en , "has item"@en , "contains article"@en ;
+    rdfs:domain um:Invoice ;
+    rdfs:range um:SalesArticle ;
+    owl:equivalentProperty schema:includesObject ;
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#> ;
+    skos:definition "An object property that associates an Invoice with its corresponding SalesArticle."@en ;
+    rdfs:seeAlso schema:Product .
+
+
+### Object Properties related to Product
+um:product a owl:ObjectProperty ;
+    rdfs:domain um:SalesArticle ;
+    rdfs:range um:Product ;
+    rdfs:label "product" ;
+    rdfs:comment "Relates a sales article to its more specific product classification."@en .
+
+um:InvoicePrice a owl:ObjectProperty ;
+    rdfs:label "Invoice Price" ;
+    rdfs:label "Price of Invoice" ;
+    rdfs:label "Billing Amount" ;
+    rdfs:label "Invoice Amount" ;
+    rdfs:label "Invoice Cost" ;
+    rdfs:comment "The price specification related to an invoice, detailing the total cost as per unit price." ;
+    rdfs:domain um:UnitPriceSpecification ;
+    rdfs:range xsd:decimal ;
+    owl:equivalentProperty schema:price ;
+    rdfs:isDefinedBy <https://vocab.um.es/InvoicePrice> ;
+    owl:sameAs schema:price .
+
+um:PriceType a owl:DatatypeProperty ;
+    rdfs:label "Price Type"@en, "Tipo de Precio"@es, "Preistyp"@de, "Type de Prix"@fr, "Tipo di Prezzo"@it ;
+    rdfs:comment "The type of price specification, such as 'Retail', 'Wholesale', or 'Discounted'."@en ;
+    rdfs:isDefinedBy <https://vocab.um.es#> ;
+    owl:equivalentProperty schema:priceType ;
+    rdfs:domain um:UnitPriceSpecification ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf schema:additionalType ;
+    owl:versionInfo "1.0" ;
+    rdfs:seeAlso <https://schema.org/priceType> .
+
+### Annotations and metadata for PriceType
+um:PriceType rdfs:seeAlso <http://purl.org/goodrelations/v1#PriceSpecification> ;
+    owl:versionInfo "This property was introduced in version 1.0 of the ontology and is aligned with schema.org's priceType property."@en ;
+    rdfs:isDefinedBy <https://vocab.um.es/UnitPriceSpecification#PriceType> .
+
+### Data Type Properties
+um:InvoiceDate a owl:DatatypeProperty ;
+    rdfs:label "invoice date" ;
+    rdfs:comment "The date when the invoice was issued." ;
+    rdfs:domain um:Invoice ;
+    rdfs:range xsd:string ;
+    owl:sameAs schema:DateTime ;
+    rdfs:subPropertyOf schema:dateIssued.
+
+um:Quantity a owl:DatatypeProperty ;
+    rdfs:label "Quantity"@en ;
+    rdfs:comment "The quantity of the sales article in the invoice."@en ;
+    skos:altLabel "Amount"@en ;
+    skos:altLabel "ItemCount"@en ;
+    skos:altLabel "Number of Items"@en ;
+    skos:altLabel "TotalQuantity"@en ;
+    skos:altLabel "Volume"@en ;
+    rdfs:domain um:SalesArticle ;
+    rdfs:range xsd:integer ;
+    owl:equivalentProperty schema:QuantitativeValue ;
+    rdfs:isDefinedBy <https://vocab.um.es/Quantity> ;
+    rdfs:seeAlso schema:QuantitativeValue ;
+    owl:sameAs schema:QuantitativeValue .
+
+um:Description a owl:DatatypeProperty ;
+    rdfs:label "Description" ;
+    rdfs:label "Article Description" ;
+    rdfs:label "Product Description" ;
+    rdfs:label "Sales Article Text" ;
+    rdfs:label "Invoice Item Description" ;
+    rdfs:comment "A textual description of the sales article or product."@en ;
+    rdfs:domain um:SalesArticle ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty schema:Description ;
+    rdfs:isDefinedBy <https://vocab.um.es/Description> ;
+    rdfs:seeAlso schema:Product ;
+    owl:sameAs schema:description .
+
+### Links to external resources
+um:CustomerID owl:sameAs schema:Person .
+um:Country owl:sameAs schema:Country .
+um:Product owl:sameAs schema:Product .
+um:UnitPriceSpecification owl:sameAs schema:UnitPriceSpecification .
+um:InvoiceDate owl:sameAs schema:DateTime .
+um:Quantity owl:sameAs schema:QuantitativeValue .
+um:Description owl:sameAs schema:Description .

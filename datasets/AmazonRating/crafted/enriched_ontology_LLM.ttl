@@ -1,0 +1,140 @@
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+### Classes
+um:SalesOrder rdf:type owl:Class ;
+              rdfs:subClassOf [
+                  rdf:type owl:Restriction ;
+                  owl:onProperty um:hasProduct ;
+                  owl:onClass um:SalesArticle
+              ] , [
+                  rdf:type owl:Restriction ;
+                  owl:onProperty um:hasCustomer ;
+                  owl:onClass um:Customer
+              ] , [
+                  rdf:type owl:Restriction ;
+                  owl:onProperty um:rating ;
+                  owl:onDataRange xsd:integer ;
+                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                  owl:withRestrictions (
+                      [ xsd:minInclusive "1"^^xsd:integer ]
+                      [ xsd:maxInclusive "5"^^xsd:integer ]
+                  )
+              ] , [
+                  rdf:type owl:Restriction ;
+                  owl:onProperty um:timestamp ;
+                  owl:onDataRange xsd:dateTime ;
+                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                  owl:withRestrictions (
+                      [ xsd:minInclusive "2004-04-13T00:00:00Z"^^xsd:dateTime ]
+                      [ xsd:maxInclusive "2014-07-21T23:59:59Z"^^xsd:dateTime ]
+                  )
+              ] .
+
+um:Customer rdf:type owl:Class .
+
+### Object Properties related to Customer
+um:hasCustomer rdf:type owl:ObjectProperty ;
+               rdfs:domain um:SalesOrder ;
+               rdfs:range um:Customer .
+
+### Data Properties related to Customer
+um:userId rdf:type owl:DatatypeProperty ;
+          rdfs:domain um:Customer ;
+          rdfs:range xsd:string .
+
+### Restrictions related to Customer
+_:customerRestriction rdf:type owl:Restriction ;
+                      owl:onProperty um:hasCustomer ;
+                      owl:onClass um:SalesOrder .
+
+### Class definition with restrictions for Customer
+um:Customer rdfs:subClassOf _:customerRestriction .
+
+um:SalesArticle rdf:type owl:Class .
+
+### Data properties for SalesArticle
+
+um:productId rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:SalesArticle ;
+    rdfs:range xsd:string .
+
+### Object properties involving SalesArticle
+
+um:hasProduct rdf:type owl:ObjectProperty ;
+    rdfs:domain um:SalesOrder ;
+    rdfs:range um:SalesArticle ;
+    owl:onProperty um:hasProduct ;
+    owl:onClass um:SalesArticle .
+
+### Object Properties
+um:hasProduct rdf:type owl:ObjectProperty ;
+    rdfs:domain um:SalesOrder ;
+    rdfs:range um:SalesArticle ;
+    rdfs:label "has product"@en ;
+    rdfs:comment "Associates a sales order with the product being purchased."@en ;
+    skos:altLabel "contains product"@en, "includes product"@en, "product included"@en, "product associated"@en, "order product"@en ;
+    dc:description "This property links a sales order to the specific product or products that are included in the order. It is used to identify which products are being transacted in each sales order."@en ;
+    owl:equivalentProperty skos:related .
+
+um:hasCustomer rdf:type owl:ObjectProperty ;
+    rdfs:domain um:SalesOrder ;
+    rdfs:range um:Customer ;
+    rdfs:label "has customer"@en ;
+    rdfs:comment "Associates a sales order with the customer who placed the order."@en ;
+    skos:altLabel "customerOfOrder"@en, "orderCustomer"@en, "belongsToCustomer"@en, "customerLink"@en, "orderPlacedBy"@en ;
+    dc:description "This property links a sales order to the respective customer, indicating the ownership of the order."@en ;
+    prov:wasDerivedFrom <http://schema.org/Customer> ;
+    owl:equivalentProperty <http://schema.org/buyer> .
+
+### Data Type Properties
+um:rating rdf:type owl:DatatypeProperty ;
+    rdfs:label "Product Rating"@en ;
+    rdfs:comment "An assessment score of a product given by a customer, ranging from 1 (worst) to 5 (best)."@en ;
+    rdfs:domain um:SalesOrder ;
+    rdfs:range xsd:integer ;
+    skos:altLabel "Customer Rating"@en, "Review Score"@en, "Product Score"@en, "Rating Value"@en, "Assessment Score"@en ;
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#> ;
+    dc:description "This property represents the rating given to a product within a sales order. It is an integer value that reflects the customer's satisfaction with the product."@en ;
+    owl:equivalentProperty skos:notation .
+
+um:timestamp rdf:type owl:DatatypeProperty ;
+    rdfs:label "Timestamp"@en ;
+    rdfs:comment "The Unix epoch time indicating when the rating was given for a sales order."@en ;
+    rdfs:domain um:SalesOrder ;
+    rdfs:range xsd:dateTime ;
+    skos:altLabel "Time of Rating"@en, "Rating Timestamp"@en, "Sales Order Time"@en, "Order Timestamp"@en, "Evaluation Time"@en ;
+    dct:description "This property represents the date and time when a customer's rating for a product was recorded, expressed in Unix epoch time."@en ;
+    owl:equivalentProperty dct:date .
+
+um:userId rdf:type owl:DatatypeProperty ;
+    rdfs:label "User Identifier"@en ;
+    rdfs:comment "A unique identifier for a user within the system."@en ;
+    rdfs:domain um:Customer ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#> ;
+    dc:description "This property represents the unique identifier assigned to each customer or user of the service. It is used to link customer-specific data such as orders and reviews."@en ;
+    skos:altLabel "Customer ID"@en, "User ID"@en, "Member Identifier"@en, "Client ID"@en, "Shopper ID"@en ;
+    owl:equivalentProperty foaf:accountName .
+
+um:productId a owl:DatatypeProperty ;
+    rdfs:label "Product ID"@en ;
+    rdfs:comment "A unique identifier for a product within the sales system."@en ;
+    rdfs:domain um:SalesArticle ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#> ;
+    dc:description "This property represents the unique identifier assigned to each product in the catalog. It is used to track products and link them to sales orders."@en ;
+    skos:altLabel "Item ID"@en, "SKU"@en, "Product Code"@en, "Catalog Number"@en, "Inventory ID"@en .
+
+### Datatypes
+xsd:integer rdf:type rdfs:Datatype .
+xsd:dateTime rdf:type rdfs:Datatype .
+xsd:string rdf:type rdfs:Datatype .

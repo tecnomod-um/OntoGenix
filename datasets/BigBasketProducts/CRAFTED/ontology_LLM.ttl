@@ -1,0 +1,66 @@
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+### Classes
+um:sales_product a owl:Class .
+schema:Offer a owl:Class .
+
+### Object Properties
+um:BrandName a owl:ObjectProperty ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:string .
+
+um:Brand a owl:ObjectProperty ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:string .
+
+um:Category a owl:ObjectProperty ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:string .
+
+um:eligibleQuantity a owl:ObjectProperty ;
+    rdfs:domain schema:Offer ;
+    rdfs:range xsd:string .
+
+um:SubCategory a owl:ObjectProperty ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:string .
+
+um:Image_Url a owl:ObjectProperty ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:anyURI .
+
+um:Absolute_Url a owl:ObjectProperty ;
+    rdfs:domain um:sales_product ;
+    rdfs:range xsd:anyURI .
+
+um:hasOffer a owl:ObjectProperty ;
+    rdfs:domain um:sales_product ;
+    rdfs:range schema:Offer ;
+    owl:inverseOf schema:offers .
+
+### Data Type Properties
+um:Price a owl:DatatypeProperty ;
+    rdfs:domain schema:Offer ;
+    rdfs:range xsd:float ;
+    owl:equivalentProperty schema:priceSpecification .
+
+um:DiscountPrice a owl:DatatypeProperty ;
+    rdfs:domain schema:Offer ;
+    rdfs:range xsd:float ;
+    owl:equivalentProperty schema:priceSpecification .
+
+schema:priceCurrency a owl:DatatypeProperty ;
+    rdfs:domain schema:Offer ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty schema:priceSpecification .
+
+um:Quantity a owl:DatatypeProperty ;
+    rdfs:domain schema:Offer ;
+    rdfs:range xsd:string .
+
+### Linking to External Resources
+um:sales_product owl:equivalentClass schema:Product .
+schema:Offer owl:equivalentClass schema:Offer .

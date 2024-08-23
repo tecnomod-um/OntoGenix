@@ -1,0 +1,52 @@
+
+
+**Foundational Prefix:**
+@prefix um: <https://vocab.um.es#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+
+**Data Description:**
+1. Country: text - The country where the invoice was issued - String
+2. Description: text - Textual description of the sales article - String
+3. FAIR_URI: text - A unique identifier for the resource within the FAIR data principles - String
+4. InvoiceDate: text - The date when the invoice was issued - String
+5. InvoiceNo: text - A unique identifier for the invoice - String
+6. StockCode: text - A unique identifier for the sales article - String
+7. CustomerID: Numerical - A unique identifier for the customer - Integer
+8. Quantity: Numerical - The quantity of the sales article in the invoice - Integer
+9. UnitPrice: Numerical - The price per unit of the sales article - Decimal
+
+**Classes:**
+1. Invoice
+2. SalesArticle
+3. Customer
+4. Country
+5. Product
+6. UnitPriceSpecification
+
+**Subclasses:**
+1. Product: subclassof -> SalesArticle
+2. UnitPriceSpecification: subclassof -> schema:PriceSpecification
+
+**Object Properties:**
+1. hasSalesArticle: domain - Invoice; range - SalesArticle
+2. customer: domain - Invoice; range - Customer
+3. country: domain - Invoice; range - Country
+4. product: domain - SalesArticle; range - Product
+5. UnitPriceSpecification: domain - SalesArticle; range - UnitPriceSpecification
+6. InvoicePrice: domain - UnitPriceSpecification; range - xsd:decimal
+7. PriceType: domain - UnitPriceSpecification; range - xsd:string
+
+**Data Type Properties:**
+1. InvoiceDate: domain - Invoice; range - xsd:string
+2. Quantity: domain - SalesArticle; range - xsd:integer
+3. Description: domain - SalesArticle; range - xsd:string
+
+**Link of each entity to external resources:**
+- CustomerID: owl:sameAs schema:Person
+- Country: owl:sameAs schema:Country
+- Product: owl:sameAs schema:Product
+- UnitPriceSpecification: owl:sameAs schema:UnitPriceSpecification
+- InvoicePrice: owl:sameAs schema:price
+- PriceType: owl:sameAs schema:priceType

@@ -1,0 +1,78 @@
+
+
+**Foundational Prefix:**
+<https://vocab.um.es#>
+
+**Data Description:**
+1. Age: Numerical - Represents the age of the passengers - Range: 7 to 80
+2. Arrival Delay in Minutes: Numerical - Time delay in minutes for arrival - Range: 0 to 438
+3. Baggage handling: Categorical - Rating for baggage handling service - Range: 1 to 5
+4. Checkin service: Categorical - Rating for check-in service - Range: 1 to 5
+5. Cleanliness: Categorical - Rating for cleanliness - Range: 1 to 5
+6. Departure Delay in Minutes: Numerical - Time delay in minutes for departure - Range: 0 to 444
+7. Departure/Arrival time convenient: Categorical - Rating for convenience of departure/arrival time - Range: 0 to 5
+8. Ease of Online booking: Categorical - Rating for ease of online booking - Range: 1 to 5
+9. Flight Distance: Numerical - Distance of the flight in miles - Range: 53 to 5359
+10. Food and drink: Categorical - Rating for food and drink - Range: 0 to 5
+11. Gate location: Categorical - Rating for gate location - Range: 1 to 5
+12. Inflight entertainment: Categorical - Rating for inflight entertainment - Range: 0 to 5
+13. Inflight wifi service: Categorical - Rating for inflight wifi service - Range: 0 to 5
+14. Leg room service: Categorical - Rating for leg room service - Range: 0 to 5
+15. On-board service: Categorical - Rating for on-board service - Range: 1 to 5
+16. Online boarding: Categorical - Rating for online boarding - Range: 1 to 5
+17. Online support: Categorical - Rating for online support - Range: 1 to 5
+18. Seat comfort: Categorical - Rating for seat comfort - Range: 0 to 5
+19. Class: Categorical - Class of the flight ticket - Unique values: 3
+20. Customer Type: Categorical - Type of customer - Unique values: 2
+21. FAIR_URI: Text - Unique identifier for each record - Unique values: 1000
+22. Gender: Categorical - Gender of the passenger - Unique values: 2
+23. Type of Travel: Categorical - Type of travel (business/personal) - Unique values: 2
+24. Satisfaction: Categorical - Overall passenger satisfaction - Unique values: 2
+
+**Classes:**
+1. Passenger
+2. Flight
+3. ServiceRating
+4. Travel
+
+**Subclasses:**
+1. Age: subclassof -> Passenger
+2. Gender: subclassof -> Passenger
+3. Customer Type: subclassof -> Passenger
+4. Class: subclassof -> Flight
+5. Flight Distance: subclassof -> Flight
+6. Arrival Delay: subclassof -> Flight
+7. Departure Delay: subclassof -> Flight
+8. ServiceRating: subclassof -> ServiceRating
+9. Travel: subclassof -> Travel
+
+**Object Properties:**
+1. hasServiceRating: domain - Passenger, range - ServiceRating
+2. hasTravelType: domain - Passenger, range - Travel
+3. hasFlightDetails: domain - Passenger, range - Flight
+
+**Data Type Properties:**
+1. ageValue: domain - Age, range - xsd:integer
+2. genderValue: domain - Gender, range - xsd:string
+3. customerTypeValue: domain - Customer Type, range - xsd:string
+4. classValue: domain - Class, range - xsd:string
+5. flightDistanceValue: domain - Flight Distance, range - xsd:integer
+6. arrivalDelayValue: domain - Arrival Delay, range - xsd:integer
+7. departureDelayValue: domain - Departure Delay, range - xsd:integer
+8. serviceRatingValue: domain - ServiceRating, range - xsd:integer
+9. travelTypeValue: domain - Travel, range - xsd:string
+10. satisfactionValue: domain - Passenger, range - xsd:string
+11. fairURIValue: domain - Passenger, range - xsd:string
+
+**Link of each entity to external resources:**
+- Age: xsd:integer
+- Gender: xsd:string
+- Customer Type: xsd:string
+- Class: xsd:string
+- Flight Distance: xsd:integer
+- Arrival Delay in Minutes: xsd:integer
+- Departure Delay in Minutes: xsd:integer
+- ServiceRating: xsd:integer
+- Travel Type: xsd:string
+- Satisfaction: xsd:string
+- FAIR_URI: xsd:string

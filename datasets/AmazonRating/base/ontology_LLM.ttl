@@ -1,0 +1,68 @@
+@prefix : <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:productId a owl:DatatypeProperty ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:string .
+
+:ratingValue a owl:DatatypeProperty ;
+    rdfs:domain :Assessment ;
+    rdfs:range xsd:integer .
+
+:timestampValue a owl:DatatypeProperty ;
+    rdfs:domain :TimePoint ;
+    rdfs:range xsd:dateTime .
+
+:userId a owl:DatatypeProperty ;
+    rdfs:domain :User ;
+    rdfs:range xsd:string .
+
+:fairURI a owl:DatatypeProperty ;
+    rdfs:domain :Record ;
+    rdfs:range xsd:anyURI .
+
+:hasAssessment a owl:ObjectProperty ;
+    rdfs:domain :Record ;
+    rdfs:range :Assessment .
+
+:hasProduct a owl:ObjectProperty ;
+    rdfs:domain :Record ;
+    rdfs:range :Product .
+
+:hasTimePoint a owl:ObjectProperty ;
+    rdfs:domain :Record ;
+    rdfs:range :TimePoint .
+
+:hasUser a owl:ObjectProperty ;
+    rdfs:domain :Record ;
+    rdfs:range :User .
+
+:Assessment a owl:Class ;
+    rdfs:subClassOf :Record .
+
+:Product a owl:Class .
+
+:TimePoint a owl:Class ;
+    rdfs:subClassOf :Record .
+
+:User a owl:Class .
+
+:Record a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass :Product ;
+            owl:onProperty :hasProduct ],
+        [ a owl:Restriction ;
+            owl:onClass :User ;
+            owl:onProperty :hasUser ],
+        [ a owl:Restriction ;
+            owl:onClass :Assessment ;
+            owl:onProperty :hasAssessment ],
+        [ a owl:Restriction ;
+            owl:onClass :TimePoint ;
+            owl:onProperty :hasTimePoint ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:anyURI ;
+            owl:onProperty :fairURI ] .
+

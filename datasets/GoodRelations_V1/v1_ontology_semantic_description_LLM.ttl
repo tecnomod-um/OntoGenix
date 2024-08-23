@@ -1,0 +1,7 @@
+{
+  "Timestamp_1038697_B003FBG7UI": "An individual of the class Timestamp, identified by the URI 'https://vocab.um.es#Timestamp_1038697_B003FBG7UI'.",
+  "ThasSalesArticle": "An object property that relates an instance of the class Invoice to an instance of the class SalesArticle.",
+  "User": "A class representing a user.",
+  "Rating_1038697_B003FBG7UI": "An individual of the class Rating, identified by the URI 'https://vocab.um.es#Rating_1038697_B003FBG7UI'. It has a user and a product associated with it.",
+  "Timestamp": "A class representing a timestamp."
+}

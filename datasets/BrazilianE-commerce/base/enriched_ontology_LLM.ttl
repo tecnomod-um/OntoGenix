@@ -1,0 +1,246 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix um: <https://vocab.um.es#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+um:Customer rdf:type owl:Class ;
+    rdfs:subClassOf schema:Person ;
+    rdfs:label "Customer" ;
+    skos:altLabel "Client" ;
+    skos:altLabel "Consumer" ;
+    skos:altLabel "Shopper" ;
+    skos:altLabel "Patron" ;
+    skos:altLabel "Buyer" ;
+    rdfs:comment "An individual who purchases goods and services from a business." ;
+    owl:equivalentClass schema:Individual ;
+    rdfs:isDefinedBy <https://vocab.um.es/Customer> ;
+    rdfs:subClassOf [
+              rdf:type owl:Restriction ;
+              owl:onProperty :hasAddress ;
+              owl:onClass :Address ;
+              owl:cardinality "1"^^xsd:nonNegativeInteger
+          ] ;
+          rdfs:subClassOf [
+              rdf:type owl:Restriction ;
+              owl:onProperty :hasIdentifier ;
+              owl:onClass :Identifier ;
+              owl:cardinality "1"^^xsd:nonNegativeInteger
+          ] .
+
+um:Address rdf:type owl:Class ;
+    rdfs:subClassOf schema:PostalAddress ;
+    rdfs:label "Address" ;
+    skos:prefLabel "Address" ;
+    skos:altLabel "Location" ;
+    skos:altLabel "Residence" ;
+    skos:altLabel "Domicile" ;
+    skos:altLabel "Place of Residence" ;
+    skos:altLabel "Habitat" ;
+    rdfs:comment "An entity representing the location details where a customer resides." ;
+    owl:equivalentClass schema:PostalAddress ;
+    rdfs:isDefinedBy <https://vocab.um.es#> ;
+         rdfs:subClassOf schema:PostalAddress ;
+         rdfs:subClassOf [
+             rdf:type owl:Restriction ;
+             owl:onProperty :hasCustomerCity ;
+             owl:onClass :City ;
+             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+         ] ;
+         rdfs:subClassOf [
+             rdf:type owl:Restriction ;
+             owl:onProperty :hasCustomerState ;
+             owl:onClass :State ;
+             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+         ] ;
+         rdfs:subClassOf [
+             rdf:type owl:Restriction ;
+             owl:onProperty :hasZipCodePrefix ;
+             owl:onDataRange xsd:integer ;
+             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+         ] .
+
+um:Identifier rdf:type owl:Class ;
+    rdfs:subClassOf schema:Thing ;
+    rdfs:label "Identifier" ;
+    rdfs:comment "A unique symbol or string that identifies a resource or entity within a specific context or system." ;
+    skos:altLabel "ID" ;
+    skos:altLabel "Unique Identifier" ;
+    skos:altLabel "Entity Identifier" ;
+    skos:altLabel "Resource Identifier" ;
+    skos:altLabel "Digital Identifier" ;
+    owl:equivalentClass schema:identifier ..
+
+um:Customer_ID rdf:type owl:Class ;
+               rdfs:subClassOf um:Identifier ;
+               rdfs:label "Customer ID" ;
+               rdfs:comment "A unique identifier for a customer within a specific system or context." ;
+               owl:equivalentClass schema:identifier ;
+               rdfs:isDefinedBy <https://vocab.um.es/Customer_ID> ;
+               rdfs:seeAlso <http://schema.org/identifier> .
+
+# Alternative labels for enhanced clarity and versatility
+um:Customer_ID rdfs:label "Client ID" ;
+               rdfs:label "Shopper Identifier" ;
+               rdfs:label "Consumer ID" ;
+               rdfs:label "Buyer ID" ;
+               rdfs:label "User ID" .
+
+um:Customer_Unique_ID rdf:type owl:Class ;
+    rdfs:subClassOf um:Identifier ;
+    rdfs:label "Customer Unique Identifier" ;
+    rdfs:comment "A unique identifier for a customer, used in a different system or context from the primary customer ID." ;
+    owl:equivalentClass schema:identifier ;
+    rdfs:isDefinedBy <https://vocab.um.es/Customer_Unique_ID> ;
+    rdfs:seeAlso <http://schema.org/identifier> ;
+    skos:altLabel "Client Unique ID" ;
+    skos:altLabel "Unique Customer Code" ;
+    skos:altLabel "Secondary Customer Identifier" ;
+    skos:altLabel "Customer Alt ID" ;
+    skos:altLabel "Customer Secondary ID" .
+
+um:State a owl:Class ;
+    rdfs:subClassOf um:Address ;
+    rdfs:label "State" ;
+    skos:prefLabel "State" ;
+    skos:altLabel "Region" ;
+    skos:altLabel "Province" ;
+    skos:altLabel "Territory" ;
+    skos:altLabel "Federal State" ;
+    skos:altLabel "Administrative Division" ;
+    rdfs:comment "A state within a country, representing a governmental administrative division. It is a region that is identified as a distinct entity in political geography." ;
+    owl:equivalentClass schema:State ;
+    rdfs:isDefinedBy <https://vocab.um.es/State> .
+
+um:City rdf:type owl:Class ;
+    rdfs:subClassOf um:Address ;
+    rdfs:label "City" ;
+    rdfs:comment "A city where the customer resides. It is a subclass of Address within the ontology." ;
+    owl:equivalentClass schema:City ;
+    rdfs:isDefinedBy <https://vocab.um.es#> ;
+    rdfs:seeAlso <http://dbpedia.org/resource/City> ;
+    skos:altLabel "Municipality", "Urban Area", "Metropolitan Area", "Town", "Borough" .
+
+um:Zip_Code_Prefix rdf:type owl:Class ;
+    rdfs:subClassOf um:Address ;
+    rdfs:label "Zip Code Prefix"@en ;
+    rdfs:comment "A numerical prefix of a zip code that indicates a specific geographical area within a customer's state or city."@en ;
+    owl:equivalentClass schema:PostalCodeArea ;
+    rdfs:isDefinedBy <https://vocab.um.es/Zip_Code_Prefix> .
+
+# Alternative labels for Zip_Code_Prefix
+um:Zip_Code_Prefix rdfs:label "Postal Code Prefix"@en ;
+    rdfs:label "ZIP Prefix"@en ;
+    rdfs:label "Postal Code Area Identifier"@en ;
+    rdfs:label "Area Code Prefix"@en ;
+    rdfs:label "Zip Area Prefix"@en .
+
+um:hasAddress a owl:ObjectProperty ;
+    rdfs:label "has address"@en , "tiene dirección"@es , "hat Adresse"@de , "a une adresse"@fr , "有地址"@zh ;
+    rdfs:comment "Relates a customer to their address, which includes city, state, and zip code prefix."@en ;
+    rdfs:domain um:Customer ;
+    rdfs:range um:Address ;
+    owl:equivalentProperty schema:address ;
+    rdfs:isDefinedBy <https://vocab.um.es#> ;
+    rdfs:seeAlso schema:PostalAddress .
+
+um:hasIdentifier rdf:type owl:ObjectProperty ;
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain <https://vocab.um.es#Customer> ;
+    rdfs:range <https://vocab.um.es#Identifier> ;
+    rdfs:label "has identifier"@en , "posee identificador"@es , "hat Kennzeichner"@de , "a un identifiant"@fr , "有标识符"@zh ;
+    rdfs:comment "Relates a customer to their respective identifier within a system."@en ;
+    skos:prefLabel "Customer Identifier"@en ;
+    skos:altLabel "Customer ID"@en , "Client Identifier"@en , "Customer Identity"@en , "Client ID"@en ;
+    owl:equivalentProperty schema:identifier ;
+    rdfs:isDefinedBy <https://vocab.um.es#> ;
+    rdfs:seeAlso <https://vocab.um.es#Customer_ID> , <https://vocab.um.es#Customer_Unique_ID> .
+
+um:hasFAIR_URI rdf:type owl:DatatypeProperty ;
+    rdfs:label "FAIR resource identifier"@en ,
+                                             "Identificador de recurso FAIR"@es ,
+                                             "Identifiant de ressource FAIR"@fr ,
+                                             "FAIR Ressourcen-Identifikator"@de ,
+                                             "Identificatore di risorsa FAIR"@it ;
+    rdfs:comment "A unique identifier for a resource that adheres to the FAIR data principles."@en ;
+    rdfs:isDefinedBy <https://vocab.um.es#> ;
+    rdfs:domain <https://vocab.um.es#Identifier> ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty schema:identifier .
+
+um:hasCustomerCity a owl:DatatypeProperty ;
+    rdfs:label "Customer City"@en ;
+    rdfs:comment "The city where the customer resides."@en ;
+    rdfs:domain um:City ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf schema:addressLocality ;
+    owl:equivalentProperty schema:addressLocality ;
+    rdfs:isDefinedBy <https://vocab.um.es#> ;
+    rdfs:seeAlso <http://schema.org/addressLocality> ;
+    skos:altLabel "City of Residence"@en, "Residential City"@en, "City"@en, "Customer's City"@en, "Municipality"@en .
+
+um:hasCustomerID a owl:DatatypeProperty ;
+    rdfs:label "Customer ID" ;
+    rdfs:comment "A unique identifier for a customer within the system." ;
+    rdfs:domain um:Customer_ID ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty schema:identifier ;
+    rdfs:isDefinedBy <https://vocab.um.es#> ;
+    rdfs:seeAlso <https://schema.org/identifier> ;
+    rdfs:subPropertyOf schema:propertyID ;
+    rdfs:altLabel "Client ID" ;
+    rdfs:altLabel "Customer Identifier" ;
+    rdfs:altLabel "Member ID" ;
+    rdfs:altLabel "User ID" ;
+    rdfs:altLabel "Shopper ID" .
+
+um:hasCustomerState a owl:DatatypeProperty ;
+    rdfs:label "Customer State" ;
+    rdfs:comment "The state where the customer resides." ;
+    rdfs:domain um:State ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://vocab.um.es#> ;
+    owl:equivalentProperty schema:addressRegion ;
+    rdfs:subPropertyOf schema:address ;
+    rdfs:seeAlso <https://schema.org/addressRegion> ;
+    skos:altLabel "State of Residence" ;
+    skos:altLabel "Customer's State" ;
+    skos:altLabel "State" ;
+    skos:altLabel "Residential State" ;
+    skos:altLabel "Billing State" .
+
+um:hasCustomerUniqueID a owl:DatatypeProperty ;
+    rdfs:label "Customer Unique Identifier"@en ;
+    rdfs:comment "A unique identifier for a customer, used in a different system or context."@en ;
+    rdfs:domain um:Customer_Unique_ID ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf schema:identifier ;
+    owl:equivalentProperty schema:identifier ;
+    rdfs:isDefinedBy <https://vocab.um.es#> ;
+    rdfs:seeAlso <https://schema.org/identifier> ;
+    skos:altLabel "Client Unique ID"@en, "Unique Customer ID"@en, "Member Unique Identifier"@en, "Unique Client Identifier"@en, "Customer ID"@en .
+
+um:hasZipCodePrefix rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:Zip_Code_Prefix ;
+    rdfs:range xsd:integer ;
+    rdfs:label "Zip Code Prefix"@en ,
+                                                   "Código Postal Prefijo"@es ,
+                                                   "Préfixe du code postal"@fr ,
+                                                   "Postleitzahl Präfix"@de ,
+                                                   "Prefisso del CAP"@it ;
+    rdfs:comment "The property that associates an address with its geographical area's zip code prefix."@en ;
+    skos:prefLabel "Zip Code Prefix"@en ;
+    skos:altLabel "Postal Code Prefix"@en ,
+                                                     "ZIP Prefix"@en ,
+                                                     "Postcode Area"@en ,
+                                                     "Geographical Area Code"@en ;
+    owl:equivalentProperty schema:postalCodePrefix ;
+    rdfs:isDefinedBy <https://vocab.um.es/hasZipCodePrefix> .
+
+xsd:string rdf:type rdfs:Datatype ;
+    owl:equivalentClass XMLSchema#string .
+
+xsd:integer rdf:type rdfs:Datatype ;
+    owl:equivalentClass XMLSchema#integer .

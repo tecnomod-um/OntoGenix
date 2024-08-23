@@ -1,0 +1,53 @@
+
+
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://vocab.um.es#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:ZipCodePrefix rdf:type owl:Class ;
+               rdfs:subClassOf owl:Thing .
+
+:State rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing .
+
+:Customer rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+:City rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+:hasCity rdf:type owl:ObjectProperty ;
+         rdfs:domain :State ;
+         rdfs:range :City .
+
+:hasZipCodePrefix rdf:type owl:ObjectProperty ;
+                  rdfs:domain :City ;
+                  rdfs:range :ZipCodePrefix .
+
+:hasState rdf:type owl:ObjectProperty ;
+          rdfs:domain :City ;
+          rdfs:range :State .
+
+:hasCity rdf:type owl:ObjectProperty ;
+         rdfs:domain :ZipCodePrefix ;
+         rdfs:range :City .
+
+:hasZipCodePrefix rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Customer ;
+                  rdfs:range :ZipCodePrefix .
+
+:hasCity rdf:type owl:ObjectProperty ;
+         rdfs:domain :Customer ;
+         rdfs:range :City .
+
+:hasCustomerRef rdf:type owl:ObjectProperty ;
+                rdfs:domain :Customer ;
+                rdfs:range owl:Thing .
+
+:hasCustomerRef rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Customer ;
+                rdfs:range xsd:string .
+```

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#eligibleCustomerTypes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#BusinessEntityType"/>
+    <rdfs:label xml:lang="en">eligible customer types (0..*)</rdfs:label>
+    <rdfs:domain rdf:nodeID="N673914e463d44af08104768fae2fec75"/>
+    <rdfs:comment xml:lang="en">The types of customers (gr:BusinessEntityType) for which the given gr:Offering is valid.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#DeliveryModeOwnFleet">
+    <rdf:type rdf:resource="http://purl.org/goodrelations/v1#DeliveryMethod"/>
+    <rdfs:comment xml:lang="en">Delivery of the goods by using a fleet of vehicles either owned and operated or subcontracted by the gr:BusinessEntity.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">Delivery mode own fleet (delivery method)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#hasPriceSpecification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+    <rdfs:label xml:lang="en">has price specification (0..*)</rdfs:label>
+    <rdfs:domain rdf:nodeID="N85d6dede617f4c29a055911cd5844232"/>
+    <rdfs:comment xml:lang="en">This links a gr:Offering to a gr:PriceSpecification or specifications. There can be unit price specifications, payment charge specifications, and delivery charge specifications. For each type, multiple specifications for the same gr:Offering are possible, e.g. for different quantity ranges or for different currencies, or for different combinations of gr:DeliveryMethod and target destinations.
+
+Recommended retail prices etc. can be marked by the gr:priceType property of the gr:UnitPriceSpecification.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#lesser">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#QualitativeValue"/>
+    <owl:inverseOf rdf:resource="http://purl.org/goodrelations/v1#greater"/>
+    <rdfs:label xml:lang="en">lesser (0..*)</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#QualitativeValue"/>
+    <rdfs:comment xml:lang="en">This ordering relation for gr:QualitativeValue pairs indicates that the subject is lesser than the object.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+</rdf:RDF>

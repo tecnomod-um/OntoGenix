@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://purl.org/goodrelations/v1#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#UPS">
+    <rdf:type rdf:resource="http://purl.org/goodrelations/v1#DeliveryModeParcelService"/>
+    <rdfs:comment xml:lang="en">Delivery via the parcel service UPS.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">UPS (delivery method)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#Saturday">
+    <rdf:type rdf:resource="http://purl.org/goodrelations/v1#DayOfWeek"/>
+    <ns1:hasNext rdf:resource="http://purl.org/goodrelations/v1#Sunday"/>
+    <ns1:hasPrevious rdf:resource="http://purl.org/goodrelations/v1#Friday"/>
+    <rdfs:label xml:lang="en">Saturday (day of week)</rdfs:label>
+    <rdfs:comment xml:lang="en">Saturday as a day of the week.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <ns1:displayPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</ns1:displayPosition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#CheckInAdvance">
+    <rdf:type rdf:resource="http://purl.org/goodrelations/v1#PaymentMethod"/>
+    <rdfs:comment xml:lang="en">Payment by sending a check in advance, i.e., the offering gr:BusinessEntity will deliver the goods upon receipt of a check over the due amount. There are variations in handling payment by check - sometimes, shipment will be upon receipt of the check as a document, sometimes the shipment will take place only upon successful crediting of the check.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">Check in advance (payment method)</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

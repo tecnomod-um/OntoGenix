@@ -1,0 +1,93 @@
+
+
+**Foundational Prefix:**
+<https://vocab.um.es#>
+
+**Data Description:**
+<1. Company: text - The name of the company involved in the consumer complaint - [String]>
+<2. Company public response: categorical - Public response provided by the company - [Categorical]>
+<3. Company response to consumer: categorical - Response given by the company to the consumer's complaint - [Categorical]>
+<4. Consumer complaint narrative: text - Detailed narrative of the complaint submitted by the consumer - [String]>
+<5. Consumer consent provided?: categorical - Indicates whether the consumer provided consent for data sharing - [Categorical]>
+<6. Consumer disputed?: categorical - Indicates whether the consumer disputed the complaint resolution - [Categorical]>
+<7. Date received: text - The date on which the complaint was received - [DateTime]>
+<8. Date sent to company: text - The date on which the complaint was forwarded to the company - [DateTime]>
+<9. FAIR_URI: text - A unique identifier for the complaint in the form of a URI - [URI]>
+<10. Issue: text - The specific issue or problem reported in the complaint - [String]>
+<11. Product: text - The type of product the complaint is related to - [String]>
+<12. State: text - The state from which the complaint was filed - [String]>
+<13. Sub-issue: text - More detailed issue related to the main issue - [String]>
+<14. Sub-product: text - The subcategory of the product related to the complaint - [String]>
+<15. Submitted via: categorical - The medium through which the complaint was submitted - [Categorical]>
+<16. Tags: categorical - Additional tags or labels associated with the complaint - [Categorical]>
+<17. Timely response?: categorical - Indicates whether the company responded in a timely manner - [Categorical]>
+<18. Complaint ID: Numerical - A unique identifier for each complaint - [Integer]>
+<19. ZIP code: Numerical - The postal code from which the complaint was filed - [Integer]>
+
+**Classes:**
+<1. Company>
+<2. Complaint>
+<3. Consumer>
+<4. Product>
+<5. Issue>
+<6. Response>
+<7. Submission>
+<8. Location>
+
+**Subclasses:**
+<PublicResponse: subclassof -> Response>
+<CompanyResponse: subclassof -> Response>
+<ConsumerNarrative: subclassof -> Issue>
+<Consent: subclassof -> Consumer>
+<Dispute: subclassof -> Consumer>
+<ComplaintDate: subclassof -> Complaint>
+<CompanyDate: subclassof -> Complaint>
+<SubProduct: subclassof -> Product>
+<Tag: subclassof -> Complaint>
+<Timely: subclassof -> Response>
+
+**Object Properties:**
+<hasPublicResponse: domain - Complaint, range - PublicResponse>
+<hasCompanyResponse: domain - Complaint, range - CompanyResponse>
+<hasNarrative: domain - Complaint, range - ConsumerNarrative>
+<hasConsent: domain - Complaint, range - Consent>
+<hasDispute: domain - Complaint, range - Dispute>
+<hasSubmission: domain - Complaint, range - Submission>
+<locatedIn: domain - Complaint, range - Location>
+<hasProduct: domain - Complaint, range - Product>
+<hasIssue: domain - Complaint, range - Issue>
+<hasTag: domain - Complaint, range - Tag>
+<hasTimelyResponse: domain - Complaint, range - Timely>
+
+**Data Type Properties:**
+<companyName: domain - Company, range - xsd:string>
+<issueDescription: domain - Issue, range - xsd:string>
+<productType: domain - Product, range - xsd:string>
+<subProductType: domain - SubProduct, range - xsd:string>
+<submissionMethod: domain - Submission, range - xsd:string>
+<stateName: domain - Location, range - xsd:string>
+<zipCode: domain - Location, range - xsd:integer>
+<complaintID: domain - Complaint, range - xsd:integer>
+<dateReceived: domain - ComplaintDate, range - xsd:dateTime>
+<dateSentToCompany: domain - CompanyDate, range - xsd:dateTime>
+<fairURI: domain - Complaint, range - xsd:anyURI>
+
+**Link of each entity to external resources:**
+<Company: owl:sameAs - schema:Organization>
+<Complaint: owl:sameAs - schema:Article>
+<Consumer: owl:sameAs - schema:Person>
+<Product: owl:sameAs - schema:Product>
+<Issue: owl:sameAs - schema:Thing>
+<Response: owl:sameAs - schema:ReplyAction>
+<Submission: owl:sameAs - schema:SendAction>
+<Location: owl:sameAs - schema:Place>
+<PublicResponse: owl:sameAs - schema:Comment>
+<CompanyResponse: owl:sameAs - schema:Comment>
+<ConsumerNarrative: owl:sameAs - schema:CreativeWork>
+<Consent: owl:sameAs - schema:AgreeAction>
+<Dispute: owl:sameAs - schema:DisagreeAction>
+<ComplaintDate: owl:sameAs - schema:DateTime>
+<CompanyDate: owl:sameAs - schema:DateTime>
+<SubProduct: owl:sameAs - schema:Product>
+<Tag: owl:sameAs - schema:Thing>
+<Timely: owl:sameAs - schema:Thing>

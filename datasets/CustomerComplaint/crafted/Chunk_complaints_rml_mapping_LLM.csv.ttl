@@ -1,0 +1,219 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix um: <https://vocab.um.es#>.
+
+<#TriplesMapCustomerComplaint> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#CustomerComplaint/{FAIR_URI}";
+        rr:class um:CustomerComplaint
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:complaintNarrative;
+        rr:objectMap [ rml:reference "Consumer complaint narrative"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:consentProvided;
+        rr:objectMap [ rml:reference "Consumer consent provided?"; rr:datatype xsd:boolean ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:isDisputed;
+        rr:objectMap [ rml:reference "Consumer disputed?"; rr:datatype xsd:boolean ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:dateReceived;
+        rr:objectMap [ rml:reference "Date received"; rr:datatype xsd:date ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:dateSentToCompany;
+        rr:objectMap [ rml:reference "Date sent to company"; rr:datatype xsd:date ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:fairURI;
+        rr:objectMap [ rml:reference "FAIR_URI"; rr:datatype xsd:anyURI ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:submissionMethod;
+        rr:objectMap [ rml:reference "Submitted via"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:tags;
+        rr:objectMap [ rml:reference "Tags"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:timelyResponse;
+        rr:objectMap [ rml:reference "Timely response?"; rr:datatype xsd:boolean ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:complaintID;
+        rr:objectMap [ rml:reference "Complaint ID"; rr:datatype xsd:integer ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:zipCode;
+        rr:objectMap [ rml:reference "ZIP code"; rr:datatype xsd:integer ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:locatedIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapState>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:relatedToProduct;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapProduct>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:involvesCompany;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCompany>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasProblem;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapProblemOfComplaint>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasCompanyResponse;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapCompanyResponse>;
+        ]
+    ].
+
+<#TriplesMapState> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#State/{State}";
+        rr:class um:State
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:stateCode;
+        rr:objectMap [ rml:reference "State"; rr:datatype xsd:string ]
+    ].
+
+<#TriplesMapProduct> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Product/{Product}{FAIR_URI}";
+        rr:class um:Product
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:productType;
+        rr:objectMap [ rml:reference "Product"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasSubProduct;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapSubProduct>;
+        ]
+    ].
+
+<#TriplesMapSubProduct> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#SubProduct/{Sub-product}{FAIR_URI}";
+        rr:class um:SubProduct
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:subProductType;
+        rr:objectMap [ rml:reference "Sub-product"; rr:datatype xsd:string ]
+    ].
+
+<#TriplesMapProblemOfComplaint> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#ProblemOfComplaint/{Issue}{FAIR_URI}";
+        rr:class um:ProblemOfComplaint
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:issueDescription;
+        rr:objectMap [ rml:reference "Issue"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasProblemSubCategory;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapProblemSubCategory>;
+        ]
+    ].
+
+<#TriplesMapProblemSubCategory> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#ProblemSubCategory/{Sub-issue}{FAIR_URI}";
+        rr:class um:ProblemSubCategory
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:subIssueDescription;
+        rr:objectMap [ rml:reference "Sub-issue"; rr:datatype xsd:string ]
+    ].
+
+<#TriplesMapCompany> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Company/{Company}{FAIR_URI}";
+        rr:class um:Company
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:companyName;
+        rr:objectMap [ rml:reference "Company"; rr:datatype xsd:string ]
+    ].
+
+<#TriplesMapCompanyResponse> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#CompanyResponse/{Company response to consumer}{FAIR_URI}";
+        rr:class um:CompanyResponse
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:publicResponse;
+        rr:objectMap [ rml:reference "Company public response"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:responseToConsumer;
+        rr:objectMap [ rml:reference "Company response to consumer"; rr:datatype xsd:string ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasResolution;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapResolution>;
+        ]
+    ].
+
+<#TriplesMapResolution> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Resolution/{Consumer disputed?}{FAIR_URI}";
+        rr:class um:Resolution
+    ].

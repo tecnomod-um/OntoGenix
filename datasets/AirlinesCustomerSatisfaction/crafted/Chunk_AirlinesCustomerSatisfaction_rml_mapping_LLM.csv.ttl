@@ -1,0 +1,120 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<#TriplesMapCustomerFeedback> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/CustomerFeedback/{FAIR_URI}";
+        rr:class um:CustomerFeedback
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasAge;
+        rr:objectMap [ rr:column "Age"; rr:datatype xsd:integer ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasFlightDistance;
+        rr:objectMap [ rr:column "Flight Distance"; rr:datatype xsd:integer ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasCustomerSatisfaction;
+        rr:objectMap [
+            rr:template "https://vocab.um.es/CustomerSatisfaction/{satisfaction}{FAIR_URI}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasCustomerGender;
+        rr:objectMap [
+            rr:template "https://vocab.um.es/CustomerGender/{Gender}{FAIR_URI}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasFlightClass;
+        rr:objectMap [
+            rr:template "https://vocab.um.es/FlightClass/{Class}{FAIR_URI}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasTypeOfTravel;
+        rr:objectMap [
+            rr:template "https://vocab.um.es/TypeOfTravel/{Type of Travel}{FAIR_URI}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasCustomerType;
+        rr:objectMap [
+            rr:template "https://vocab.um.es/CustomerType/{Customer Type}{FAIR_URI}";
+        ]
+    ].
+
+<#TriplesMapEvaluationItem> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/EvaluationItem/{FAIR_URI}";
+        rr:class um:EvaluationItem
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasRating;
+        rr:objectMap [ rr:column "Baggage handling"; rr:datatype xsd:integer ]
+    ].
+
+<#TriplesMapCustomerSatisfaction> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/CustomerSatisfaction/{satisfaction}{FAIR_URI}";
+        rr:class um:CustomerSatisfaction
+    ].
+
+<#TriplesMapCustomerGender> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/CustomerGender/{Gender}{FAIR_URI}";
+        rr:class um:CustomerGender
+    ].
+
+<#TriplesMapFlightClass> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/FlightClass/{Class}{FAIR_URI}";
+        rr:class um:FlightClass
+    ].
+
+<#TriplesMapTypeOfTravel> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/TypeOfTravel/{Type of Travel}{FAIR_URI}";
+        rr:class um:TypeOfTravel
+    ].
+
+<#TriplesMapCustomerType> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_AirlinesCustomerSatisfaction.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/CustomerType/{Customer Type}{FAIR_URI}";
+        rr:class um:CustomerType
+    ].

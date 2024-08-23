@@ -1,0 +1,75 @@
+@prefix um: <https://vocab.um.es#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+
+### Classes
+um:Invoice rdfs:subClassOf schema:Thing .
+um:Customer rdfs:subClassOf schema:Thing .
+um:Product rdfs:subClassOf schema:Thing .
+um:Transaction rdfs:subClassOf schema:Thing .
+
+um:InvoiceEntry rdfs:subClassOf um:Invoice .
+um:ProductDescription rdfs:subClassOf um:Product .
+um:ProductPrice rdfs:subClassOf um:Product .
+um:ProductStock rdfs:subClassOf um:Product .
+
+### Object Properties
+um:hasCustomer a owl:ObjectProperty ;
+    rdfs:domain um:Invoice ;
+    rdfs:range um:Customer .
+
+um:hasProduct a owl:ObjectProperty ;
+    rdfs:domain um:Invoice ;
+    rdfs:range um:Product .
+
+um:hasTransaction a owl:ObjectProperty ;
+    rdfs:domain um:Customer ;
+    rdfs:range um:Transaction .
+
+### Data Type Properties
+um:countryName a owl:DatatypeProperty ;
+    rdfs:domain um:Invoice ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf schema:Text .
+
+um:descriptionText a owl:DatatypeProperty ;
+    rdfs:domain um:ProductDescription ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf schema:Text .
+
+um:fairURI a owl:DatatypeProperty ;
+    rdfs:domain um:Invoice ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf schema:Text .
+
+um:invoiceDate a owl:DatatypeProperty ;
+    rdfs:domain um:Invoice ;
+    rdfs:range xsd:date ;
+    rdfs:subPropertyOf schema:Text .
+
+um:invoiceNumber a owl:DatatypeProperty ;
+    rdfs:domain um:Invoice ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf schema:Text .
+
+um:stockCode a owl:DatatypeProperty ;
+    rdfs:domain um:ProductStock ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf schema:Text .
+
+um:customerID a owl:DatatypeProperty ;
+    rdfs:domain um:Customer ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf schema:Number .
+
+um:quantity a owl:DatatypeProperty ;
+    rdfs:domain um:Transaction ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf schema:QuantitativeValue .
+
+um:unitPrice a owl:DatatypeProperty ;
+    rdfs:domain um:ProductPrice ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf schema:QuantitativeValue .

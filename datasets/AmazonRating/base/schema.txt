@@ -1,0 +1,55 @@
+
+
+**Foundational Prefix:**
+<https://vocab.um.es#>
+
+**Data Description:**
+<FAIR_URI: text - unique identifier for each record - any valid URI>
+<ProductId: text - identifier for a product - any valid text string>
+<Rating: categorical - assessment score given to a product - 1 to 5>
+<UserId: text - identifier for a user - any valid text string>
+<Timestamp: Numerical - point in time when the rating was given - Unix timestamp>
+
+**Classes:**
+<Record>
+<Product>
+<User>
+<Assessment>
+<TimePoint>
+
+**Subclasses:**
+<Assessment: subclassof -> Record>
+<TimePoint: subclassof -> Record>
+
+**Object Properties:**
+<hasProduct: domain - Record, range - Product>
+<hasUser: domain - Record, range - User>
+<hasAssessment: domain - Record, range - Assessment>
+<hasTimePoint: domain - Record, range - TimePoint>
+
+**Data Type Properties:**
+<fairURI: domain - Record, range - xsd:anyURI>
+<productId: domain - Product, range - xsd:string>
+<ratingValue: domain - Assessment, range - xsd:integer>
+<userId: domain - User, range - xsd:string>
+<timestampValue: domain - TimePoint, range - xsd:dateTime>
+
+**Link of each entity to external resources:**
+<Record: owl:Class>
+<Product: owl:Class>
+<User: owl:Class>
+<Assessment: owl:Class>
+<TimePoint: owl:Class>
+<hasProduct: owl:ObjectProperty>
+<hasUser: owl:ObjectProperty>
+<hasAssessment: owl:ObjectProperty>
+<hasTimePoint: owl:ObjectProperty>
+<fairURI: owl:DatatypeProperty>
+<productId: owl:DatatypeProperty>
+<ratingValue: owl:DatatypeProperty>
+<userId: owl:DatatypeProperty>
+<timestampValue: owl:DatatypeProperty>
+<xsd:anyURI: XMLSchema#>
+<xsd:string: XMLSchema#>
+<xsd:integer: XMLSchema#>
+<xsd:dateTime: XMLSchema#>

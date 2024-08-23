@@ -1,0 +1,43 @@
+
+
+**Foundational Prefix:**
+<https://vocab.um.es#>
+
+**Data Description:**
+1. <FAIR_URI: text - identifier for a resource within the FAIR data principles - unique for each entry>
+2. <customer_city: text - the city where the customer resides - multiple entries possible, 356 unique>
+3. <customer_id: text - unique identifier for a customer - unique for each entry>
+4. <customer_state: text - the state where the customer resides - multiple entries possible, 24 unique>
+5. <customer_unique_id: text - another unique identifier for a customer, possibly for a different system or context - unique for each entry>
+6. <customer_zip_code_prefix: Numerical - the prefix of the customer's zip code, indicating a geographical area - range from 1011 to 99435>
+
+**Classes:**
+1. <Customer>
+2. <Address>
+3. <Identifier>
+
+**Subclasses:**
+1. <Customer_ID: subclassof -> Identifier>
+2. <Customer_Unique_ID: subclassof -> Identifier>
+3. <State: subclassof -> Address>
+4. <City: subclassof -> Address>
+5. <Zip_Code_Prefix: subclassof -> Address>
+
+**Object Properties:**
+1. <hasAddress: domain - Customer; range - Address>
+2. <hasIdentifier: domain - Customer; range - Identifier>
+
+**Data Type Properties:**
+1. <hasFAIR_URI: domain - Identifier; range - xsd:string>
+2. <hasCustomerCity: domain - City; range - xsd:string>
+3. <hasCustomerID: domain - Customer_ID; range - xsd:string>
+4. <hasCustomerState: domain - State; range - xsd:string>
+5. <hasCustomerUniqueID: domain - Customer_Unique_ID; range - xsd:string>
+6. <hasZipCodePrefix: domain - Zip_Code_Prefix; range - xsd:integer>
+
+**Link of each entity to external resources:**
+1. <Identifier rdf:type owl:Class; rdfs:subClassOf schema:Thing>
+2. <Address rdf:type owl:Class; rdfs:subClassOf schema:PostalAddress>
+3. <Customer rdf:type owl:Class; rdfs:subClassOf schema:Person>
+4. <xsd:string rdf:type rdfs:Datatype; owl:equivalentClass XMLSchema#string>
+5. <xsd:integer rdf:type rdfs:Datatype; owl:equivalentClass XMLSchema#integer>

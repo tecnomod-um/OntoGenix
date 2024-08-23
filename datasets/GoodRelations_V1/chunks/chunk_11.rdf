@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#PaymentChargeSpecification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#UnitPriceSpecification"/>
+    <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#DeliveryChargeSpecification"/>
+    <rdfs:label xml:lang="en">Payment charge specification</rdfs:label>
+    <rdfs:comment xml:lang="en">A payment charge specification is a conceptual entity that specifies the additional costs asked for settling the payment after accepting a given gr:Offering using a particular gr:PaymentMethod. A payment charge specification is characterized by (1) a monetary amount per order specified as a literal value of type float in combination with a Currency, (2) the payment method, and (3) a whether this charge includes local sales taxes, namely VAT.
+A gr:Offering may be linked to multiple payment charge specifications that specify alternative charges for various payment methods.
+
+Examples: Payment by VISA or Mastercard costs a fee of 3 Euros including VAT, payment by bank transfer in advance is free of charge.
+
+The total amount of this surcharge is specified as a float value of the gr:hasCurrencyValue property. The currency is specified via the gr:hasCurrency datatype property. Whether the price includes VAT or not is indicated by the gr:valueAddedTaxIncluded datatype property. The gr:PaymentMethod to which this charge applies is specified using the gr:appliesToPaymentMethod object property.
+
+If the price can only be given as a range, use gr:hasMaxCurrencyValue and gr:hasMinCurrencyValue for the upper and lower bounds.
+
+Important: When querying for the price, always use gr:hasMaxCurrencyValue and gr:hasMinCurrencyValue.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#hasOpeningHoursDayOfWeek">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#DayOfWeek"/>
+    <rdfs:label xml:lang="en">has opening hours day of week (1..*)</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#OpeningHoursSpecification"/>
+    <rdfs:comment xml:lang="en">This specifies the gr:DayOfWeek to which the gr:OpeningHoursSpecification is related.
+
+Note: Use multiple instances of gr:OpeningHoursSpecification for specifying the opening hours for multiple days if the opening hours differ.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#DeliveryModeParcelService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A private parcel service as the delivery mode available for a certain offering.
+
+Examples: UPS, DHL</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#DeliveryMethod"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">Delivery mode parcel service</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

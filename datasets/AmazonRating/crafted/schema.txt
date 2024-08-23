@@ -1,0 +1,46 @@
+
+
+**Foundational Prefix:**
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+**Data Description:**
+1. FAIR_URI: text - A unique identifier for each entry - No range specified
+2. ProductId: text - Identifier for a product - No range specified
+3. Rating: categorical - Assessment score of a product - Range: 1 to 5
+4. UserId: text - Identifier for a user - No range specified
+5. Timestamp: Numerical - Unix epoch time indicating when the rating was given - Range: 1081900800 to 1405987200
+
+**Classes:**
+1. um:SalesOrder
+2. um:Customer
+3. um:SalesArticle
+
+**Subclasses:**
+<No subclasses defined>
+
+**Object Properties:**
+1. um:hasProduct: domain - um:SalesOrder; range - um:SalesArticle
+2. um:hasCustomer: domain - um:SalesOrder; range - um:Customer
+
+**Data Type Properties:**
+1. um:rating: domain - um:SalesOrder; range - xsd:integer
+2. um:timestamp: domain - um:SalesOrder; range - xsd:dateTime
+3. um:userId: domain - um:Customer; range - xsd:string
+4. um:productId: domain - um:SalesArticle; range - xsd:string
+
+**Link of each entity to external resources:**
+- um:SalesOrder rdf:type owl:Class .
+- um:Customer rdf:type owl:Class .
+- um:SalesArticle rdf:type owl:Class .
+- um:hasProduct rdf:type owl:ObjectProperty .
+- um:hasCustomer rdf:type owl:ObjectProperty .
+- um:rating rdf:type owl:DatatypeProperty .
+- um:timestamp rdf:type owl:DatatypeProperty .
+- um:userId rdf:type owl:DatatypeProperty .
+- um:productId rdf:type owl:DatatypeProperty .
+- xsd:integer rdf:type rdfs:Datatype .
+- xsd:dateTime rdf:type rdfs:Datatype .
+- xsd:string rdf:type rdfs:Datatype .

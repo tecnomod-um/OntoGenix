@@ -1,0 +1,53 @@
+
+
+**Foundational Prefix:**
+<https://vocab.um.es#>
+
+**Data Description:**
+<Absolute_Url: text - The full URL of a product - string>
+<Brand: text - The name of the brand associated with a product - string>
+<Category: text - The general category to which a product belongs - string>
+<FAIR_URI: text - A unique identifier for a product within a FAIR data system - string>
+<Image_Url: text - The URL of an image associated with a product - string>
+<ProductName: text - The name of a product - string>
+<Quantity: text - The available quantity of a product - string>
+<SubCategory: text - A more specific category within the general category of a product - string>
+<DiscountPrice: Numerical - The discounted price of a product - decimal>
+<Price: Numerical - The original price of a product - decimal>
+
+**Classes:**
+<Product>
+<Brand>
+<Category>
+<SubCategory>
+<PriceDetails>
+
+**Subclasses:**
+<SubCategory: subclassof -> Category>
+
+**Object Properties:**
+<hasBrand: domain - Product; range - Brand>
+<hasCategory: domain - Product; range - Category>
+<hasSubCategory: domain - Product; range - SubCategory>
+<hasPriceDetails: domain - Product; range - PriceDetails>
+
+**Data Type Properties:**
+<hasAbsoluteUrl: domain - Product; range - xsd:anyURI>
+<hasFAIRUri: domain - Product; range - xsd:anyURI>
+<hasImageUrl: domain - Product; range - xsd:anyURI>
+<hasProductName: domain - Product; range - xsd:string>
+<hasQuantity: domain - Product; range - xsd:string>
+<hasDiscountPrice: domain - PriceDetails; range - xsd:decimal>
+<hasPrice: domain - PriceDetails; range - xsd:decimal>
+
+**Link of each entity to external resources:**
+<hasAbsoluteUrl: type - owl:sameAs>
+<hasFAIRUri: type - owl:sameAs>
+<hasImageUrl: type - owl:sameAs>
+<hasProductName: type - rdfs:label>
+<hasBrand: type - schema:Brand>
+<hasCategory: type - schema:Category>
+<hasSubCategory: type - schema:isPartOf>
+<hasQuantity: type - schema:QuantitativeValue>
+<hasDiscountPrice: type - schema:OfferPriceSpecification>
+<hasPrice: type - schema:PriceSpecification>

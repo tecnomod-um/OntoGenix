@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:dc11="http://purl.org/dc/elements/1.1/"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <owl:Class rdf:about="https://vocab.um.es#Invoice">
+    <rdfs:label>Invoice</rdfs:label>
+    <rdfs:label xml:lang="en">Billing Document</rdfs:label>
+    <rdfs:label xml:lang="en">Payment Request</rdfs:label>
+    <rdfs:label xml:lang="en">Purchase Invoice</rdfs:label>
+    <rdfs:label xml:lang="en">Sales Invoice</rdfs:label>
+    <rdfs:label xml:lang="en">Transaction Record</rdfs:label>
+    <rdfs:comment>A financial document issued by a seller to a buyer, relating to a sale transaction and indicating the products, quantities, and agreed prices.</rdfs:comment>
+    <owl:sameAs rdf:resource="http://schema.org/Invoice"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://vocab.um.es#hasSalesArticle"/>
+        <owl:allValuesFrom rdf:resource="https://vocab.um.es#SalesArticle"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://vocab.um.es#customer"/>
+        <owl:allValuesFrom rdf:resource="https://vocab.um.es#Customer"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="https://vocab.um.es#country">
+            <rdfs:domain rdf:resource="https://vocab.um.es#Invoice"/>
+            <rdfs:range rdf:resource="https://vocab.um.es#Country"/>
+            <rdfs:label>country of invoice</rdfs:label>
+            <owl:propertyDisjointWith rdf:resource="https://vocab.um.es#customer"/>
+            <owl:propertyDisjointWith rdf:resource="https://vocab.um.es#hasSalesArticle"/>
+            <rdfs:comment xml:lang="en">Relates an invoice to the country where it was issued.</rdfs:comment>
+          </owl:ObjectProperty>
+        </owl:onProperty>
+
+        <owl:allValuesFrom rdf:resource="https://vocab.um.es#Country"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Invoice"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://vocab.um.es#SalesArticle">
+    <rdfs:label>Sales Article</rdfs:label>
+    <rdfs:label>Product Item</rdfs:label>
+    <rdfs:label>Inventory Item</rdfs:label>
+    <rdfs:label>SKU</rdfs:label>
+    <rdfs:label>Stock Item</rdfs:label>
+    <rdfs:comment>A unique item of sale represented in an invoice.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://schema.org/Product"/>
+    <owl:equivalentClass rdf:resource="http://schema.org/Product"/>
+    <rdfs:isDefinedBy rdf:resource="https://vocab.um.es/SalesArticle"/>
+    <owl:sameAs rdf:resource="http://schema.org/Product"/>
+    <rdfs:seeAlso rdf:resource="http://example.org/externalResourceAboutSalesArticle"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://vocab.um.es#Customer">
+    <rdfs:label>Customer</rdfs:label>
+    <rdfs:label>Client</rdfs:label>
+    <rdfs:label>Consumer</rdfs:label>
+    <rdfs:label>Buyer</rdfs:label>
+    <rdfs:label>Patron</rdfs:label>
+    <rdfs:comment>An individual or organization that purchases goods or services</rdfs:comment>
+    <owl:sameAs rdf:resource="http://schema.org/Person"/>
+    <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+    <owl:equivalentClass rdf:resource="http://schema.org/Customer"/>
+    <rdfs:isDefinedBy rdf:resource="https://vocab.um.es/Customer"/>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="https://vocab.um.es#customer">
+    <rdfs:label>customer</rdfs:label>
+    <rdfs:domain rdf:resource="https://vocab.um.es#Invoice"/>
+    <rdfs:range rdf:resource="https://vocab.um.es#Customer"/>
+    <rdfs:isDefinedBy rdf:resource="https://vocab.um.es/customer"/>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="https://vocab.um.es#CustomerID">
+    <rdfs:label>Customer ID</rdfs:label>
+    <rdfs:label>Client Identifier</rdfs:label>
+    <rdfs:label>Consumer ID</rdfs:label>
+    <rdfs:label>Buyer ID</rdfs:label>
+    <rdfs:label>Patron Identifier</rdfs:label>
+    <rdfs:comment>A unique identifier for the customer</rdfs:comment>
+    <rdfs:domain rdf:resource="https://vocab.um.es#Customer"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <owl:equivalentProperty rdf:resource="http://schema.org/identifier"/>
+    <rdfs:isDefinedBy rdf:resource="https://vocab.um.es/CustomerID"/>
+    <owl:sameAs rdf:resource="http://schema.org/Person"/>
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:about="https://vocab.um.es#Country">
+    <rdfs:subClassOf rdf:resource="http://schema.org/Country"/>
+    <rdfs:label>Country</rdfs:label>
+    <rdfs:label xml:lang="en">Nation</rdfs:label>
+    <rdfs:label xml:lang="fr">Pays</rdfs:label>
+    <rdfs:label xml:lang="es">País</rdfs:label>
+    <rdfs:label xml:lang="de">Land</rdfs:label>
+    <rdfs:label xml:lang="zh">国家</rdfs:label>
+    <rdfs:comment>A country where the invoice was issued.</rdfs:comment>
+    <owl:sameAs rdf:resource="http://schema.org/Country"/>
+    <rdfs:isDefinedBy rdf:resource="https://vocab.um.es#"/>
+    <dc11:description xml:lang="en">This entity represents a country in the context of an invoice issuance location.</dc11:description>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Country"/>
+    <owl:equivalentClass rdf:resource="http://schema.org/Country"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://vocab.um.es#Product">
+    <rdfs:subClassOf rdf:resource="https://vocab.um.es#SalesArticle"/>
+    <owl:sameAs rdf:resource="http://schema.org/Product"/>
+    <rdfs:label>Product</rdfs:label>
+    <rdfs:label>Goods</rdfs:label>
+    <rdfs:label>Merchandise</rdfs:label>
+    <rdfs:label>Item</rdfs:label>
+    <rdfs:label>Commodity</rdfs:label>
+    <rdfs:comment xml:lang="en">A product is an individual item for sale that is a subclass of SalesArticle.</rdfs:comment>
+    <dc11:description xml:lang="en">A product represents any item that can be offered to a market to satisfy the desire or need of a customer.</dc11:description>
+    <rdfs:isDefinedBy rdf:resource="https://vocab.um.es/Product"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://vocab.um.es#UnitPriceSpecification">
+    <rdfs:subClassOf rdf:resource="http://schema.org/PriceSpecification"/>
+    <owl:sameAs rdf:resource="http://schema.org/UnitPriceSpecification"/>
+    <rdfs:label xml:lang="en">Unit Price Specification</rdfs:label>
+    <rdfs:label xml:lang="es">Especificación del Precio Unitario</rdfs:label>
+    <rdfs:label xml:lang="de">Spezifikation des Einheitspreises</rdfs:label>
+    <rdfs:label xml:lang="fr">Spécification du Prix Unitaire</rdfs:label>
+    <rdfs:label xml:lang="it">Specifica del Prezzo Unitario</rdfs:label>
+    <rdfs:comment xml:lang="en">A specification that defines the price per unit of a given product or service.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://vocab.um.es/UnitPriceSpecification"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/goodrelations/v1#UnitPriceSpecification"/>
+    <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q18534542"/>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="https://vocab.um.es#hasSalesArticle">
+    <rdfs:label xml:lang="en">has sales article</rdfs:label>
+    <rdfs:comment xml:lang="en">Relates an invoice to the sales article included in it.</rdfs:comment>
+    <skos:altLabel xml:lang="en">contains product</skos:altLabel>
+    <skos:altLabel xml:lang="en">includes item</skos:altLabel>
+    <skos:altLabel xml:lang="en">article included</skos:altLabel>
+    <skos:altLabel xml:lang="en">has item</skos:altLabel>
+    <skos:altLabel xml:lang="en">contains article</skos:altLabel>
+    <rdfs:domain rdf:resource="https://vocab.um.es#Invoice"/>
+    <rdfs:range rdf:resource="https://vocab.um.es#SalesArticle"/>
+    <owl:equivalentProperty rdf:resource="http://schema.org/includesObject"/>
+    <rdfs:isDefinedBy rdf:resource="https://vocab.um.es/ontology#"/>
+    <skos:definition xml:lang="en">An object property that associates an Invoice with its corresponding SalesArticle.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://schema.org/Product"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://vocab.um.es#product">
+    <rdfs:domain rdf:resource="https://vocab.um.es#SalesArticle"/>
+    <rdfs:range rdf:resource="https://vocab.um.es#Product"/>
+    <rdfs:label>product</rdfs:label>
+    <rdfs:comment xml:lang="en">Relates a sales article to its more specific product classification.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://vocab.um.es#InvoicePrice">
+    <rdfs:label>Invoice Price</rdfs:label>
+    <rdfs:label>Price of Invoice</rdfs:label>
+    <rdfs:label>Billing Amount</rdfs:label>
+    <rdfs:label>Invoice Amount</rdfs:label>
+    <rdfs:label>Invoice Cost</rdfs:label>
+    <rdfs:comment>The price specification related to an invoice, detailing the total cost as per unit price.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://vocab.um.es#UnitPriceSpecification"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <owl:equivalentProperty rdf:resource="http://schema.org/price"/>
+    <rdfs:isDefinedBy rdf:resource="https://vocab.um.es/InvoicePrice"/>
+    <owl:sameAs rdf:resource="http://schema.org/price"/>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="https://vocab.um.es#PriceType">
+    <rdfs:label xml:lang="en">Price Type</rdfs:label>
+    <rdfs:label xml:lang="es">Tipo de Precio</rdfs:label>
+    <rdfs:label xml:lang="de">Preistyp</rdfs:label>
+    <rdfs:label xml:lang="fr">Type de Prix</rdfs:label>
+    <rdfs:label xml:lang="it">Tipo di Prezzo</rdfs:label>
+    <rdfs:comment xml:lang="en">The type of price specification, such as 'Retail', 'Wholesale', or 'Discounted'.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://vocab.um.es#"/>
+    <rdfs:isDefinedBy rdf:resource="https://vocab.um.es/UnitPriceSpecification#PriceType"/>
+    <owl:equivalentProperty rdf:resource="http://schema.org/priceType"/>
+    <rdfs:domain rdf:resource="https://vocab.um.es#UnitPriceSpecification"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://schema.org/additionalType"/>
+    <owl:versionInfo>1.0</owl:versionInfo>
+    <owl:versionInfo xml:lang="en">This property was introduced in version 1.0 of the ontology and is aligned with schema.org's priceType property.</owl:versionInfo>
+    <rdfs:seeAlso rdf:resource="https://schema.org/priceType"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://vocab.um.es#InvoiceDate">
+    <rdfs:label>invoice date</rdfs:label>
+    <rdfs:comment>The date when the invoice was issued.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://vocab.um.es#Invoice"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:sameAs rdf:resource="http://schema.org/DateTime"/>
+    <rdfs:subPropertyOf rdf:resource="http://schema.org/dateIssued"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://vocab.um.es#Quantity">
+    <rdfs:label xml:lang="en">Quantity</rdfs:label>
+    <rdfs:comment xml:lang="en">The quantity of the sales article in the invoice.</rdfs:comment>
+    <skos:altLabel xml:lang="en">Amount</skos:altLabel>
+    <skos:altLabel xml:lang="en">ItemCount</skos:altLabel>
+    <skos:altLabel xml:lang="en">Number of Items</skos:altLabel>
+    <skos:altLabel xml:lang="en">TotalQuantity</skos:altLabel>
+    <skos:altLabel xml:lang="en">Volume</skos:altLabel>
+    <rdfs:domain rdf:resource="https://vocab.um.es#SalesArticle"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <owl:equivalentProperty rdf:resource="http://schema.org/QuantitativeValue"/>
+    <rdfs:isDefinedBy rdf:resource="https://vocab.um.es/Quantity"/>
+    <rdfs:seeAlso rdf:resource="http://schema.org/QuantitativeValue"/>
+    <owl:sameAs rdf:resource="http://schema.org/QuantitativeValue"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://vocab.um.es#Description">
+    <rdfs:label>Description</rdfs:label>
+    <rdfs:label>Article Description</rdfs:label>
+    <rdfs:label>Product Description</rdfs:label>
+    <rdfs:label>Sales Article Text</rdfs:label>
+    <rdfs:label>Invoice Item Description</rdfs:label>
+    <rdfs:comment xml:lang="en">A textual description of the sales article or product.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://vocab.um.es#SalesArticle"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:equivalentProperty rdf:resource="http://schema.org/Description"/>
+    <rdfs:isDefinedBy rdf:resource="https://vocab.um.es/Description"/>
+    <rdfs:seeAlso rdf:resource="http://schema.org/Product"/>
+    <owl:sameAs rdf:resource="http://schema.org/description"/>
+    <owl:sameAs rdf:resource="http://schema.org/Description"/>
+  </owl:DatatypeProperty>
+
+</rdf:RDF>

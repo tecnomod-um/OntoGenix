@@ -1,0 +1,47 @@
+
+
+**Foundational Prefix:**
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+**Data Description:**
+1. Absolute_Url: text - URL of the product - unique for each product
+2. Brand: text - Name of the product brand - multiple products can have the same brand
+3. Category: text - Category of the product - limited to 11 unique categories
+4. FAIR_URI: text - Unique identifier for the product in a FAIR data context - unique for each product
+5. Image_Url: text - URL of the product image - unique for each product
+6. ProductName: text - Name of the product - mostly unique with some duplicates
+7. Quantity: text - Quantity in which the product is available - 224 unique quantities
+8. SubCategory: text - Subcategory of the product - 203 unique subcategories
+9. DiscountPrice: Numerical - Discounted price of the product - ranges from 9.5 to 3200
+10. Price: Numerical - Original price of the product - ranges from 12.86 to 7195
+
+**Classes:**
+1. um:sales_product
+2. schema:Offer
+
+**Subclasses:**
+<No subclasses defined>
+
+**Object Properties:**
+1. um:BrandName: domain - um:sales_product; range - xsd:string
+2. um:Brand: domain - um:sales_product; range - xsd:string
+3. um:Category: domain - um:sales_product; range - xsd:string
+4. um:eligibleQuantity: domain - schema:Offer; range - xsd:string
+5. um:SubCategory: domain - um:sales_product; range - xsd:string
+6. um:Image_Url: domain - um:sales_product; range - xsd:anyURI
+7. um:Absolute_Url: domain - um:sales_product; range - xsd:anyURI
+8. um:hasOffer: domain - um:sales_product; range - schema:Offer
+
+**Data Type Properties:**
+1. um:Price: domain - schema:Offer; range - xsd:float
+2. um:DiscountPrice: domain - schema:Offer; range - xsd:float
+3. schema:priceCurrency: domain - schema:Offer; range - xsd:string
+4. um:Quantity: domain - schema:Offer; range - xsd:string
+
+**Link of each entity to external resources:**
+- um:sales_product and um:hasOffer are linked to schema:Product and schema:Offer respectively.
+- Data type properties um:Price, um:DiscountPrice, and schema:priceCurrency are linked to schema:priceSpecification.
+- Object and data type properties use xsd datatypes where appropriate.

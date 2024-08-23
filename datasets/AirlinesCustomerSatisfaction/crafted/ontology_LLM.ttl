@@ -1,0 +1,66 @@
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+### Classes
+um:CustomerFeedback rdf:type owl:Class .
+um:EvaluationItem rdf:type owl:Class .
+um:CustomerSatisfaction rdf:type owl:Class .
+um:CustomerGender rdf:type owl:Class .
+um:FlightClass rdf:type owl:Class .
+um:TypeOfTravel rdf:type owl:Class .
+um:CustomerType rdf:type owl:Class .
+
+um:ArrivalDelay rdf:type owl:Class ; rdfs:subClassOf um:EvaluationItem .
+um:DepartureDelay rdf:type owl:Class ; rdfs:subClassOf um:EvaluationItem .
+um:OnlineBoarding rdf:type owl:Class ; rdfs:subClassOf um:EvaluationItem .
+um:SeatComfort rdf:type owl:Class ; rdfs:subClassOf um:EvaluationItem .
+um:Departure rdf:type owl:Class ; rdfs:subClassOf um:EvaluationItem .
+um:FoodAndDrink rdf:type owl:Class ; rdfs:subClassOf um:EvaluationItem .
+um:GateLocation rdf:type owl:Class ; rdfs:subClassOf um:EvaluationItem .
+um:Wifi rdf:type owl:Class ; rdfs:subClassOf um:EvaluationItem .
+um:OnlineSupport rdf:type owl:Class ; rdfs:subClassOf um:EvaluationItem .
+um:OnlineBooking rdf:type owl:Class ; rdfs:subClassOf um:EvaluationItem .
+um:LegRoomService rdf:type owl:Class ; rdfs:subClassOf um:EvaluationItem .
+um:CheckinService rdf:type owl:Class ; rdfs:subClassOf um:EvaluationItem .
+um:Cleanliness rdf:type owl:Class ; rdfs:subClassOf um:EvaluationItem .
+
+### Object Properties
+um:hasEvaluationItem rdf:type owl:ObjectProperty ;
+    rdfs:domain um:CustomerFeedback ;
+    rdfs:range um:EvaluationItem .
+
+um:hasCustomerSatisfaction rdf:type owl:ObjectProperty ;
+    rdfs:domain um:CustomerFeedback ;
+    rdfs:range um:CustomerSatisfaction .
+
+um:hasCustomerGender rdf:type owl:ObjectProperty ;
+    rdfs:domain um:CustomerFeedback ;
+    rdfs:range um:CustomerGender .
+
+um:hasFlightClass rdf:type owl:ObjectProperty ;
+    rdfs:domain um:CustomerFeedback ;
+    rdfs:range um:FlightClass .
+
+um:hasTypeOfTravel rdf:type owl:ObjectProperty ;
+    rdfs:domain um:CustomerFeedback ;
+    rdfs:range um:TypeOfTravel .
+
+um:hasCustomerType rdf:type owl:ObjectProperty ;
+    rdfs:domain um:CustomerFeedback ;
+    rdfs:range um:CustomerType .
+
+### Data Type Properties
+um:hasAge rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:CustomerFeedback ;
+    rdfs:range xsd:integer .
+
+um:hasFlightDistance rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:CustomerFeedback ;
+    rdfs:range xsd:integer .
+
+um:hasRating rdf:type owl:DatatypeProperty ;
+    rdfs:domain um:EvaluationItem ;
+    rdfs:range xsd:integer .

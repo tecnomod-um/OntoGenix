@@ -1,0 +1,448 @@
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:<http://xmlns.com/foaf/0.1/> .
+
+### Classes
+### Entity: CustomerFeedback
+um:CustomerFeedback rdf:type owl:Class ;
+                    rdfs:subClassOf owl:Thing ;
+                    rdfs:comment "Represents the feedback provided by a customer regarding their flight experience." .
+
+um:EvaluationItem rdf:type owl:Class ;
+                  rdfs:subClassOf um:CustomerFeedback ;
+                  rdfs:label "Evaluation Item"@en .
+
+### Object Property Restrictions for EvaluationItem
+
+### Assuming that EvaluationItem is linked to CustomerFeedback through hasEvaluationItem object property
+### and that the EvaluationItem class should not have any instances without being linked to a CustomerFeedback instance.
+
+um:hasEvaluationItem rdf:type owl:ObjectProperty ;
+                     rdfs:domain um:CustomerFeedback ;
+                     rdfs:range um:EvaluationItem ;
+                     owl:onClass um:EvaluationItem ;
+                     rdfs:label "has evaluation item"@en .
+
+### Data Type Property Restrictions for EvaluationItem
+
+### Assuming that the hasRating property should only allow integers from 0 to 5 for categorical ratings.
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty um:hasRating ;
+  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                    owl:oneOf (0 1 2 3 4 5) ] ;
+  rdfs:label "Rating range restriction"@en ] .
+
+### Entity: CustomerSatisfaction
+um:CustomerSatisfaction rdf:type owl:Class ;
+                        rdfs:subClassOf um:EvaluationItem ;
+                        rdfs:label "Customer Satisfaction"@en .
+
+um:CustomerGender rdf:type owl:Class ;
+                  rdfs:subClassOf um:EvaluationItem ;
+                  rdfs:label "Customer Gender"@en .
+
+### Restrictions related to CustomerGender
+
+um:CustomerFeedback owl:equivalentClass [
+    rdf:type owl:Class ;
+    owl:restriction [
+        rdf:type owl:Restriction ;
+        owl:onProperty um:hasCustomerGender ;
+        owl:onClass um:CustomerGender ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+    ]
+] .
+
+### Entity: FlightClass
+
+um:FlightClass rdf:type owl:Class ;
+               rdfs:subClassOf um:EvaluationItem ;
+               rdfs:label "Flight Class"@en ;
+               rdfs:comment "Class of the flight ticket which can be one of three unique values."@en .
+
+# Assuming there is a data property that captures the specific class value (e.g., Economy, Business, First)
+# and that the unique values are represented as strings.
+
+um:hasClassValue rdf:type owl:DatatypeProperty ;
+                 rdfs:domain um:FlightClass ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "has class value"@en ;
+                 rdfs:comment "The specific class of the flight ticket (e.g., Economy, Business, First)."@en .
+
+um:TypeOfTravel rdf:type owl:Class ;
+                rdfs:subClassOf um:CustomerFeedback ;
+                rdfs:label "Type of Travel"@en .
+
+um:CustomerType a owl:Class ;
+    rdfs:subClassOf um:CustomerFeedback ;
+    rdfs:label "Customer Type"@en .
+
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+um:ArrivalDelay a owl:Class ;
+    rdfs:subClassOf um:EvaluationItem ;
+    rdfs:label "Arrival Delay" ;
+    rdfs:comment "Represents the time delay in minutes for a customer's arrival." ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:oneOf (um:OnTime um:ShortDelay um:LongDelay)
+    ] ;
+    rdfs:isDefinedBy <https://vocab.um.es/ArrivalDelay> .
+
+### Alternative labels for enhanced clarity and versatility
+um:ArrivalDelay rdfs:label "Arrival Time Delay" .
+um:ArrivalDelay rdfs:label "Flight Arrival Lateness" .
+um:ArrivalDelay rdfs:label "Postponement of Arrival" .
+um:ArrivalDelay rdfs:label "Delay in Arrival" .
+um:ArrivalDelay rdfs:label "Lateness in Arrival" .
+
+### Metadata and annotations to provide context
+um:ArrivalDelay rdfs:seeAlso <https://vocab.um.es/ArrivalDelay#metadata> .
+um:ArrivalDelay owl:versionInfo "1.0" .
+um:ArrivalDelay rdfs:range xsd:integer .
+
+### Entity: DepartureDelay
+
+um:DepartureDelay rdf:type owl:Class ;
+    rdfs:subClassOf um:EvaluationItem ;
+    rdfs:label "Departure Delay" ;
+    rdfs:comment "Represents the time delay in minutes for a customer's departure." ;
+    owl:equivalentClass [
+        rdf:type owl:Class ;
+        owl:oneOf (um:ShortDepartureDelay um:MediumDepartureDelay um:LongDepartureDelay)
+    ] ;
+    rdfs:isDefinedBy <https://vocab.um.es/DepartureDelay> .
+
+### Alternative Labels for DepartureDelay
+
+um:DepartureDelay rdfs:label "Delay in Departure" ;
+    rdfs:label "Flight Departure Delay" ;
+    rdfs:label "Takeoff Delay" ;
+    rdfs:label "Delay at Departure Gate" ;
+    rdfs:label "Departure Time Delay" .
+
+### Metadata and Annotations for DepartureDelay
+
+um:DepartureDelay rdfs:seeAlso <https://vocab.um.es/DepartureDelay#metadata> ;
+    owl:versionInfo "1.0" ;
+    rdfs:seeAlso <http://purl.org/dc/terms/created> ;
+    rdfs:seeAlso <http://purl.org/dc/terms/creator> ;
+    rdfs:seeAlso <http://purl.org/dc/terms/description> .
+
+### Entity: OnlineBoarding
+um:OnlineBoarding rdf:type owl:Class ;
+    rdfs:subClassOf um:EvaluationItem ;
+    rdfs:label "Online Boarding" ;
+    rdfs:label "Web Check-in Service" ;
+    rdfs:label "Internet Boarding Process" ;
+    rdfs:label "Electronic Boarding Service" ;
+    rdfs:label "Self-Service Boarding" ;
+    rdfs:comment "Represents the customer's rating for the online boarding process of an airline."@en ;
+    owl:equivalentClass um:WebCheckinService ;
+    rdfs:isDefinedBy <https://vocab.um.es/OnlineBoarding> .
+
+### Alternative name for the entity
+um:WebCheckinService rdf:type owl:Class ;
+    owl:equivalentClass um:OnlineBoarding .
+
+um:SeatComfort a owl:Class ;
+    rdfs:subClassOf um:EvaluationItem ;
+    rdfs:label "Seat Comfort" ;
+    rdfs:comment "Represents the customer's rating for the comfort of their seat during the flight."@en ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:oneOf (um:VeryUncomfortable um:Uncomfortable um:Neutral um:Comfortable um:VeryComfortable)
+    ] ;
+    rdfs:isDefinedBy <https://vocab.um.es/SeatComfort> ;
+    skos:altLabel "Seat Rating"@en, "Comfort Rating"@en, "Seating Comfort"@en, "Chair Comfort"@en, "Comfort Level"@en .
+
+
+um:Departure a owl:Class ;
+    rdfs:subClassOf um:EvaluationItem ;
+    rdfs:label "Departure Delay Evaluation" ;
+    rdfs:comment "Represents the evaluation of the departure delay experienced by a customer." ;
+    skos:altLabel "Departure Delay Rating" ;
+    skos:altLabel "Departure Time Rating" ;
+    skos:altLabel "Departure Punctuality Assessment" ;
+    skos:altLabel "Departure Timeliness Feedback" ;
+    skos:altLabel "Flight Departure Delay Evaluation" ;
+    owl:equivalentClass um:DepartureDelay .
+
+um:FoodAndDrink rdf:type owl:Class ;
+    rdfs:subClassOf um:EvaluationItem ;
+    rdfs:label "Food and Drink Rating"@en ;
+    rdfs:comment "Represents the customer's rating for food and drink quality during the flight."@en ;
+    owl:equivalentClass um:CateringServiceRating ;
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#FoodAndDrink> ;
+
+### Alternative labels for enhanced clarity and versatility
+rdfs:label "Catering Rating"@en ;
+rdfs:label "Meal Quality Rating"@en ;
+rdfs:label "Beverage Quality Rating"@en ;
+rdfs:label "Inflight Meal Rating"@en ;
+rdfs:label "Inflight Catering Rating"@en .
+
+um:GateLocation a owl:Class ;
+    rdfs:subClassOf um:EvaluationItem ;
+    rdfs:label "Gate Location" ;
+    rdfs:comment "A categorical rating representing a customer's satisfaction with the location of the gate at the airport." ;
+    skos:altLabel "Airport Gate Position Rating" ;
+    skos:altLabel "Boarding Gate Satisfaction Level" ;
+    skos:altLabel "Rating for Boarding Gate Proximity" ;
+    skos:altLabel "Gate Proximity Rating" ;
+    skos:altLabel "Customer Gate Location Feedback" ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:oneOf (um:GateLocationRating1 um:GateLocationRating2 um:GateLocationRating3 um:GateLocationRating4 um:GateLocationRating5)
+    ] .
+
+###  Entity: Wifi
+um:Wifi rdf:type owl:Class ;
+    rdfs:subClassOf um:EvaluationItem ;
+    rdfs:label "Inflight Wifi Service" ;
+    rdfs:label "Wifi Service" ;
+    rdfs:label "Aircraft Internet Service" ;
+    rdfs:label "Onboard Wifi Service" ;
+    rdfs:label "Wireless Internet on Plane" ;
+    rdfs:comment "Represents the customer's rating for the inflight wifi service provided during the flight."@en ;
+    owl:equivalentClass um:InflightWifiService ;
+    rdfs:isDefinedBy <https://vocab.um.es/Wifi> .
+
+um:OnlineSupport a owl:Class ;
+    rdfs:subClassOf um:EvaluationItem ;
+    rdfs:label "Online Support" ;
+    rdfs:comment "Represents the customer's rating for the online support services provided by the airline."@en ;
+    owl:equivalentClass um:CustomerServiceRating ;
+    rdfs:isDefinedBy <https://vocab.um.es/OnlineSupport> ;
+    rdfs:seeAlso <http://purl.org/goodrelations/v1#AfterSalesService> ;
+    skos:altLabel "Web Support Rating"@en ;
+    skos:altLabel "Digital Support Evaluation"@en ;
+    skos:altLabel "Internet Customer Support Rating"@en ;
+    skos:altLabel "Online Helpdesk Feedback"@en ;
+    skos:altLabel "Virtual Support Assessment"@en .
+
+um:OnlineBooking a owl:Class ;
+    rdfs:subClassOf um:EvaluationItem ;
+    rdfs:label "Online Booking" ;
+    rdfs:comment "Represents the customer's rating for the ease of booking their flight online."@en ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:oneOf (um:VeryDissatisfied um:Dissatisfied um:Neutral um:Satisfied um:VerySatisfied)
+    ] ;
+    rdfs:isDefinedBy <https://vocab.um.es/OnlineBooking> ;
+    rdfs:seeAlso <http://purl.org/goodrelations/v1#OnlineBooking> ;
+
+### Alternative labels for enhanced clarity and versatility
+rdfs:label "Web Booking"@en ;
+rdfs:label "Internet Booking"@en ;
+rdfs:label "Digital Booking"@en ;
+rdfs:label "E-Booking"@en ;
+rdfs:label "Electronic Booking"@en .
+
+um:LegRoomService a owl:Class ;
+    rdfs:subClassOf um:EvaluationItem ;
+    rdfs:label "Leg Room Service" ;
+    rdfs:comment "Represents the customer's rating for the leg room service provided during the flight."@en ;
+    rdfs:isDefinedBy <https://vocab.um.es/LegRoomService> ;
+    owl:equivalentClass um:LegSpaceEvaluation ;
+    rdfs:seeAlso um:ComfortEvaluation ;
+    skos:altLabel "Leg Space Rating"@en, "Legroom Comfort Rating"@en, "Seat Leg Room Rating"@en, "Leg Space Service Evaluation"@en, "Passenger Leg Room Assessment"@en .
+
+um:CheckinService a owl:Class ;
+    rdfs:subClassOf um:EvaluationItem ;
+    rdfs:label "Check-in Service" ;
+    rdfs:comment "Represents the customer's rating for the check-in service experienced during their travel."@en ;
+    rdfs:isDefinedBy <https://vocab.um.es/CheckinService> ;
+    owl:equivalentClass [ a owl:Class ; owl:oneOf (um:PoorCheckinService um:AverageCheckinService um:GoodCheckinService um:ExcellentCheckinService um:OutstandingCheckinService) ] ;
+    rdfs:seeAlso <http://purl.org/goodrelations/v1#Service> .
+
+um:PoorCheckinService a owl:Class ;
+    rdfs:label "Poor Check-in Service" ;
+    rdfs:comment "Rating of 1 out of 5 for check-in service, indicating very low satisfaction."@en .
+
+um:AverageCheckinService a owl:Class ;
+    rdfs:label "Average Check-in Service" ;
+    rdfs:comment "Rating of 2 or 3 out of 5 for check-in service, indicating moderate satisfaction."@en .
+
+um:GoodCheckinService a owl:Class ;
+    rdfs:label "Good Check-in Service" ;
+    rdfs:comment "Rating of 4 out of 5 for check-in service, indicating high satisfaction."@en .
+
+um:ExcellentCheckinService a owl:Class ;
+    rdfs:label "Excellent Check-in Service" ;
+    rdfs:comment "Rating of 5 out of 5 for check-in service, indicating very high satisfaction."@en .
+
+um:OutstandingCheckinService a owl:Class ;
+    rdfs:label "Outstanding Check-in Service" ;
+    rdfs:comment "Rating of 5 out of 5 for check-in service, indicating the highest level of satisfaction."@en .
+
+# Alternative labels for CheckinService
+um:CheckinService rdfs:label "Check-in Rating"@en ;
+    rdfs:label "Airport Check-in Evaluation"@en ;
+    rdfs:label "Service at Check-in Counter"@en ;
+    rdfs:label "Check-in Desk Rating"@en ;
+    rdfs:label "Check-in Experience Rating"@en .
+
+um:Cleanliness a owl:Class ;
+    rdfs:subClassOf um:EvaluationItem ;
+    rdfs:label "Cleanliness" ;
+    rdfs:comment "Represents the customer's rating for the cleanliness of the airline services and facilities."@en ;
+    rdfs:isDefinedBy <https://vocab.um.es/Cleanliness> ;
+    owl:equivalentClass [ a owl:Class ; owl:oneOf (um:PoorCleanliness um:AverageCleanliness um:GoodCleanliness um:ExcellentCleanliness um:OutstandingCleanliness) ] ;
+    rdfs:seeAlso <http://purl.org/goodrelations/v1#hasQuality> .
+
+um:PoorCleanliness a um:Cleanliness ;
+    rdfs:label "Poor Cleanliness" ;
+    rdfs:comment "The lowest rating for cleanliness, indicating significant dissatisfaction."@en .
+
+um:AverageCleanliness a um:Cleanliness ;
+    rdfs:label "Average Cleanliness" ;
+    rdfs:comment "A moderate rating for cleanliness, indicating neither satisfaction nor significant dissatisfaction."@en .
+
+um:GoodCleanliness a um:Cleanliness ;
+    rdfs:label "Good Cleanliness" ;
+    rdfs:comment "A rating for cleanliness that indicates general satisfaction."@en .
+
+um:ExcellentCleanliness a um:Cleanliness ;
+    rdfs:label "Excellent Cleanliness" ;
+    rdfs:comment "A high rating for cleanliness, indicating above-average satisfaction."@en .
+
+um:OutstandingCleanliness a um:Cleanliness ;
+    rdfs:label "Outstanding Cleanliness" ;
+    rdfs:comment "The highest rating for cleanliness, indicating exceptional satisfaction."@en .
+
+um:hasRating a owl:DatatypeProperty ;
+    rdfs:domain um:Cleanliness ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has cleanliness rating" ;
+    rdfs:comment "The property that holds the cleanliness rating value for an evaluation item."@en .
+
+### Object Properties
+um:hasEvaluationItem a owl:ObjectProperty ;
+    rdfs:label "has evaluation item"@en ;
+    rdfs:comment "Relates a customer feedback to the evaluation items that the feedback addresses."@en ;
+    rdfs:domain um:CustomerFeedback ;
+    rdfs:range um:EvaluationItem ;
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#> ;
+    owl:equivalentProperty um:hasRatingAspect ; # Assuming um:hasRatingAspect is a known equivalent property in the ontology
+    rdfs:seeAlso um:CustomerFeedback ;
+    rdfs:seeAlso um:EvaluationItem ;
+    rdfs:subPropertyOf um:hasFeedbackDetail ; # Assuming um:hasFeedbackDetail is a broader property in the ontology
+    rdfs:subPropertyOf rdfs:member ; # Assuming rdfs:member is a relevant property to indicate membership in a collection
+    skos:altLabel "evaluation item linkage"@en ;
+    skos:altLabel "feedback evaluation aspect"@en ;
+    skos:altLabel "feedback item association"@en ;
+    skos:altLabel "feedback rating item"@en ;
+    skos:altLabel "customer feedback evaluation"@en .
+
+###  http://vocab.um.es#hasCustomerSatisfaction
+um:hasCustomerSatisfaction rdf:type owl:ObjectProperty ;
+                           rdfs:domain um:CustomerFeedback ;
+                           rdfs:range um:CustomerSatisfaction ;
+                           rdfs:label "customer satisfaction rating"@en ,
+                                       "évaluation de la satisfaction client"@fr ,
+                                       "Kundenzufriedenheitsbewertung"@de ,
+                                       "valoración de la satisfacción del cliente"@es ,
+                                       "valutazione della soddisfazione del cliente"@it ;
+                           rdfs:comment "Represents the overall satisfaction level expressed by the customer regarding their experience."@en ;
+                           owl:equivalentProperty um:hasOverallSatisfaction ;
+                           rdfs:isDefinedBy <https://vocab.um.es#> .
+
+um:hasCustomerGender rdf:type owl:ObjectProperty ;
+                     rdfs:domain um:CustomerFeedback ;
+                     rdfs:range um:CustomerGender ;
+                     owl:propertyDisjointWith um:hasEvaluationItem, um:hasCustomerSatisfaction, um:hasFlightClass, um:hasTypeOfTravel, um:hasCustomerType ;
+                     rdfs:label "has customer gender"@en ;
+                     rdfs:comment "The gender of the customer providing feedback."@en ;
+                     rdfs:isDefinedBy <https://vocab.um.es/CustomerFeedback#hasCustomerGender> ;
+                     rdfs:seeAlso <http://purl.org/goodrelations/v1#hasGender> ;
+                     skos:altLabel "gender"@en ,
+                                   "client gender"@en ,
+                                   "customer's gender"@en ,
+                                   "gender of respondent"@en ,
+                                   "feedback provider gender"@en .
+
+
+
+###  http://vocab.um.es#hasFlightClass
+um:hasFlightClass rdf:type owl:ObjectProperty ;
+                  rdfs:domain um:CustomerFeedback ;
+                  rdfs:range um:FlightClass ;
+                  rdfs:label "flight class" ;
+                  rdfs:comment "The class of the flight ticket as evaluated by the customer."@en ;
+                  skos:altLabel "airline class" ;
+                  skos:altLabel "ticket class" ;
+                  skos:altLabel "cabin class" ;
+                  skos:altLabel "service class" ;
+                  skos:altLabel "travel class" ;
+                  owl:equivalentProperty um:hasServiceClass ;
+                  rdfs:isDefinedBy <https://vocab.um.es#> .
+
+###  http://vocab.um.es#hasTypeOfTravel
+um:hasTypeOfTravel rdf:type owl:ObjectProperty ;
+                   rdfs:domain um:CustomerFeedback ;
+                   rdfs:range um:TypeOfTravel ;
+                   rdfs:label "type of travel" ;
+                   rdfs:comment "The property that associates a customer's feedback with the type of travel, such as business or personal."@en ;
+                   skos:altLabel "travel category" ;
+                   skos:altLabel "travel purpose" ;
+                   skos:altLabel "journey type" ;
+                   skos:altLabel "travel classification" ;
+                   skos:altLabel "travel nature" ;
+                   owl:equivalentProperty um:travelType ;
+                   rdfs:isDefinedBy <https://vocab.um.es/ontology#> .
+
+
+    
+
+# Definition of the Entity
+um:hasCustomerType a owl:ObjectProperty ;
+    rdfs:label "customer type"@en , "tipo de cliente"@es , "type de client"@fr , "Kundentyp"@de , "tipo di cliente"@it ;
+    rdfs:comment "Property representing the type of customer in a customer feedback context."@en ;
+    rdfs:domain um:CustomerFeedback ;
+    rdfs:range um:CustomerType ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    owl:equivalentProperty um:customerCategory ; # Assuming um:customerCategory is an equivalent property in the ontology
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#hasCustomerType> .
+
+# Metadata and Annotations
+um:hasCustomerType rdfs:seeAlso <https://example.com/contextual-information-about-customer-types> ;
+    owl:versionInfo "1.0" ;
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#hasCustomerType> .
+
+### Data Type Properties
+um:hasAge a owl:DatatypeProperty ;
+    rdfs:label "age"@en , "edad"@es , "âge"@fr , "Alter"@de , "età"@it ;
+    rdfs:comment "Property representing the age of a customer in a customer feedback context."@en ;
+    rdfs:domain um:CustomerFeedback ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    owl:equivalentProperty um:customerAge ; # Assuming um:customerAge is an equivalent property in the ontology
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#hasAge> .
+
+um:hasFlightDistance a owl:DatatypeProperty ;
+    rdfs:label "flight distance"@en , "distancia de vuelo"@es , "distance de vol"@fr , "Flugdistanz"@de , "distanza di volo"@it ;
+    rdfs:comment "Property representing the distance of a flight in miles in a customer feedback context."@en ;
+    rdfs:domain um:CustomerFeedback ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    owl:equivalentProperty um:travelDistance ; # Assuming um:travelDistance is an equivalent property in the ontology
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#hasFlightDistance> .
+
+um:hasRating a owl:DatatypeProperty ;
+    rdfs:label "rating"@en , "calificación"@es , "notation"@fr , "Bewertung"@de , "valutazione"@it ;
+    rdfs:comment "Property representing the rating given to an evaluation item in a customer feedback context."@en ;
+    rdfs:domain um:EvaluationItem ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    owl:equivalentProperty um:customerRating ; # Assuming um:customerRating is an equivalent property in the ontology
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#hasRating> .

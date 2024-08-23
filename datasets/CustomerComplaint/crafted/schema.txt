@@ -1,0 +1,73 @@
+
+
+**Foundational Prefix:**
+<https://vocab.um.es#>
+
+**Data Description:**
+1. Company: text - The name of the company involved in the consumer complaint - No range specified
+2. Company public response: categorical - Public response provided by the company - No range specified
+3. Company response to consumer: categorical - Response given by the company to the consumer's complaint - No range specified
+4. Consumer complaint narrative: text - Detailed narrative of the complaint submitted by the consumer - No range specified
+5. Consumer consent provided?: categorical - Indicates whether the consumer provided consent for data sharing - No range specified
+6. Consumer disputed?: categorical - Indicates whether the consumer disputed the complaint resolution - No range specified
+7. Date received: text - The date on which the complaint was received - No range specified
+8. Date sent to company: text - The date on which the complaint was forwarded to the company - No range specified
+9. FAIR_URI: text - A unique identifier for the complaint record - No range specified
+10. Issue: text - The main issue described in the consumer complaint - No range specified
+11. Product: text - The type of product the complaint is related to - No range specified
+12. State: text - The state from which the complaint was filed - No range specified
+13. Sub-issue: text - A more detailed issue related to the main problem of the complaint - No range specified
+14. Sub-product: text - A more specific category of the product related to the complaint - No range specified
+15. Submitted via: categorical - The medium through which the complaint was submitted - No range specified
+16. Tags: categorical - Additional tags related to the complaint - No range specified
+17. Timely response?: categorical - Indicates whether the company responded in a timely manner - No range specified
+18. Complaint ID: Numerical - A unique numerical identifier for the complaint - Range: 20587 to 6898616
+19. ZIP code: Numerical - The postal code from which the complaint was filed - Range: 745 to 99567
+
+**Classes:**
+1. CustomerComplaint
+2. State
+3. Product
+4. ProblemOfComplaint
+5. Company
+6. CompanyResponse
+7. Resolution
+
+**Subclasses:**
+1. ProblemSubCategory: subclassof -> ProblemOfComplaint
+2. SubProduct: subclassof -> Product
+
+**Object Properties:**
+1. hasSubProduct: domain - Product; range - SubProduct
+2. hasProblemSubCategory: domain - ProblemOfComplaint; range - ProblemSubCategory
+3. hasResolution: domain - CompanyResponse; range - Resolution
+4. locatedIn: domain - CustomerComplaint; range - State
+5. relatedToProduct: domain - CustomerComplaint; range - Product
+6. involvesCompany: domain - CustomerComplaint; range - Company
+7. hasProblem: domain - CustomerComplaint; range - ProblemOfComplaint
+8. hasCompanyResponse: domain - CustomerComplaint; range - CompanyResponse
+
+**Data Type Properties:**
+1. companyName: domain - Company; range - xsd:string
+2. publicResponse: domain - CompanyResponse; range - xsd:string
+3. responseToConsumer: domain - CompanyResponse; range - xsd:string
+4. complaintNarrative: domain - CustomerComplaint; range - xsd:string
+5. consentProvided: domain - CustomerComplaint; range - xsd:boolean
+6. isDisputed: domain - CustomerComplaint; range - xsd:boolean
+7. dateReceived: domain - CustomerComplaint; range - xsd:date
+8. dateSentToCompany: domain - CustomerComplaint; range - xsd:date
+9. fairURI: domain - CustomerComplaint; range - xsd:anyURI
+10. issueDescription: domain - ProblemOfComplaint; range - xsd:string
+11. productType: domain - Product; range - xsd:string
+12. stateCode: domain - State; range - xsd:string
+13. subIssueDescription: domain - ProblemSubCategory; range - xsd:string
+14. subProductType: domain - SubProduct; range - xsd:string
+15. submissionMethod: domain - CustomerComplaint; range - xsd:string
+16. tags: domain - CustomerComplaint; range - xsd:string
+17. timelyResponse: domain - CustomerComplaint; range - xsd:boolean
+18. complaintID: domain - CustomerComplaint; range - xsd:integer
+19. zipCode: domain - CustomerComplaint; range - xsd:integer
+
+**Link of each entity to external resources:**
+- xsd: <http://www.w3.org/2001/XMLSchema#>
+- owl: <http://www.w3.org/2002/07/owl#>

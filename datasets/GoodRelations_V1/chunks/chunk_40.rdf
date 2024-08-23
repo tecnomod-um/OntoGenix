@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#nonEqual">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#QualitativeValue"/>
+    <owl:inverseOf rdf:resource="http://purl.org/goodrelations/v1#nonEqual"/>
+    <rdfs:label xml:lang="en">non equal (0..*)</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#QualitativeValue"/>
+    <rdfs:comment xml:lang="en">This ordering relation for gr:QualitativeValue pairs indicates that the subject is not equal to the object.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#Business">
+    <rdf:type rdf:resource="http://purl.org/goodrelations/v1#BusinessEntityType"/>
+    <rdfs:comment xml:lang="en">The gr:BusinessEntityType representing such agents that are themselves offering commercial services or products on the market. Usually, businesses are characterized by the fact that they are officially registered with the public administration and strive for profits by their activities.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">Business (business entity type)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#DeliveryModePickUp">
+    <rdf:type rdf:resource="http://purl.org/goodrelations/v1#DeliveryMethod"/>
+    <rdfs:comment xml:lang="en">Delivery of the goods by picking them up at one of the stores etc. (gr:Location) during the opening hours as specified by respective instances of gr:OpeningHoursSpecification.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">Delivery mode pick up (delivery method)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#isConsumableFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+    <rdfs:label xml:lang="en">is consumable for (0..*)</rdfs:label>
+    <rdfs:domain rdf:nodeID="N19c40f8347054b5cbdd6e686fac50953"/>
+    <rdfs:comment xml:lang="en">This states that a particular gr:ProductOrService is a consumable for another product or service.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/subject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/productID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+</rdf:RDF>

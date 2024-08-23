@@ -1,0 +1,158 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+@prefix um: <https://vocab.um.es#>.
+
+<#TriplesMapCompany> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Company/{FAIR_URI}";
+        rr:class um:Company;
+        rr:termType rr:IRI
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:companyName;
+        rr:objectMap [ rml:reference "Company" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:Organization ]
+    ].
+
+<#TriplesMapComplaint> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Complaint/{FAIR_URI}";
+        rr:class um:Complaint;
+        rr:termType rr:IRI
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:complaintID;
+        rr:objectMap [ rml:reference "Complaint ID"; rr:datatype xsd:integer ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:fairURI;
+        rr:objectMap [ rml:reference "FAIR_URI"; rr:datatype xsd:anyURI ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:Article ]
+    ].
+
+<#TriplesMapConsumer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Consumer/{FAIR_URI}";
+        rr:class um:Consumer;
+        rr:termType rr:IRI
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:Person ]
+    ].
+
+<#TriplesMapProduct> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Product/{FAIR_URI}";
+        rr:class um:Product;
+        rr:termType rr:IRI
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:productType;
+        rr:objectMap [ rml:reference "Product" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:Product ]
+    ].
+
+<#TriplesMapIssue> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Issue/{FAIR_URI}";
+        rr:class um:Issue;
+        rr:termType rr:IRI
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:issueDescription;
+        rr:objectMap [ rml:reference "Issue" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:Thing ]
+    ].
+
+<#TriplesMapResponse> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Response/{FAIR_URI}";
+        rr:class um:Response;
+        rr:termType rr:IRI
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:ReplyAction ]
+    ].
+
+<#TriplesMapSubmission> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Submission/{FAIR_URI}";
+        rr:class um:Submission;
+        rr:termType rr:IRI
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:submissionMethod;
+        rr:objectMap [ rml:reference "Submitted via" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:SendAction ]
+    ].
+
+<#TriplesMapLocation> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_complaints.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Location/{FAIR_URI}";
+        rr:class um:Location;
+        rr:termType rr:IRI
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:stateName;
+        rr:objectMap [ rml:reference "State" ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:zipCode;
+        rr:objectMap [ rml:reference "ZIP code"; rr:datatype xsd:integer ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:sameAs;
+        rr:objectMap [ rr:constant schema:Place ]
+    ].

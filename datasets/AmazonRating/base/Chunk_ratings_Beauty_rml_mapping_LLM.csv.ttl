@@ -1,0 +1,103 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix um: <https://vocab.um.es#>.
+
+<#TriplesMapRecord> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_ratings_Beauty.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Record/{FAIR_URI}";
+        rr:class um:Record
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:fairURI;
+        rr:objectMap [ rr:column "FAIR_URI"; rr:datatype xsd:anyURI ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasProduct;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapProduct>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasUser;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapUser>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasAssessment;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapAssessment>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasTimePoint;
+        rr:objectMap [
+            rr:parentTriplesMap <#TriplesMapTimePoint>;
+        ]
+    ].
+
+<#TriplesMapProduct> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_ratings_Beauty.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Product/{ProductId}";
+        rr:class um:Product
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:productId;
+        rr:objectMap [ rr:column "ProductId"; rr:datatype xsd:string ]
+    ].
+
+<#TriplesMapUser> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_ratings_Beauty.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#User/{UserId}";
+        rr:class um:User
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:userId;
+        rr:objectMap [ rr:column "UserId"; rr:datatype xsd:string ]
+    ].
+
+<#TriplesMapAssessment> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_ratings_Beauty.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Assessment/{FAIR_URI}";
+        rr:class um:Assessment
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:ratingValue;
+        rr:objectMap [ rr:column "Rating"; rr:datatype xsd:integer ]
+    ].
+
+<#TriplesMapTimePoint> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_ratings_Beauty.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#TimePoint/{FAIR_URI}";
+        rr:class um:TimePoint
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:timestampValue;
+        rr:objectMap [
+            rr:column "Timestamp";
+            rr:datatype xsd:dateTime;
+            rr:termType rr:Literal
+        ]
+    ].

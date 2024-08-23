@@ -1,0 +1,77 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix um: <https://vocab.um.es#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+<#TriplesMapZipCodePrefix> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_olist_customers_dataset_no_quotes.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#ZipCodePrefix/{customer_zip_code_prefix}";
+        rr:class um:ZipCodePrefix
+    ].
+
+<#TriplesMapState> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_olist_customers_dataset_no_quotes.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#State/{customer_state}{FAIR_URI}";
+        rr:class um:State
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasCity;
+        rr:objectMap [
+            rr:template "https://vocab.um.es#City/{customer_city}{FAIR_URI}"
+        ]
+    ].
+
+<#TriplesMapCity> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_olist_customers_dataset_no_quotes.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#City/{customer_city}{FAIR_URI}";
+        rr:class um:City
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasZipCodePrefix;
+        rr:objectMap [
+            rr:template "https://vocab.um.es#ZipCodePrefix/{customer_zip_code_prefix}"
+        ];
+        rr:predicate um:hasState;
+        rr:objectMap [
+            rr:template "https://vocab.um.es#State/{customer_state}{FAIR_URI}"
+        ]
+    ].
+
+<#TriplesMapCustomer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_olist_customers_dataset_no_quotes.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es#Customer/{customer_unique_id}";
+        rr:class um:Customer
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasCustomerRef;
+        rr:objectMap [
+            rml:reference "customer_id";
+            rr:datatype xsd:string
+        ];
+        rr:predicate um:hasZipCodePrefix;
+        rr:objectMap [
+            rr:template "https://vocab.um.es#ZipCodePrefix/{customer_zip_code_prefix}"
+        ];
+        rr:predicate um:hasCity;
+        rr:objectMap [
+            rr:template "https://vocab.um.es#City/{customer_city}{FAIR_URI}"
+        ]
+    ].

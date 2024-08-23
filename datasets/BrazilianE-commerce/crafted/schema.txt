@@ -1,0 +1,40 @@
+
+
+**Foundational Prefix:**
+`https://vocab.um.es#`
+
+**Data Description:**
+1. FAIR_URI: text - A unique identifier for a resource - No range specified
+2. customer_city: text - The name of the city where the customer resides - No range specified
+3. customer_id: text - A unique identifier for a customer - No range specified
+4. customer_state: text - The name of the state where the customer resides - No range specified
+5. customer_unique_id: text - A unique identifier for a customer, possibly for internal use - No range specified
+6. customer_zip_code_prefix: Numerical - The prefix of the zip code for the customer's location - Range: 1011 to 99435
+
+**Classes:**
+1. ZipCodePrefix
+2. State
+3. Customer
+4. City
+
+**Subclasses:**
+<No subclasses defined>
+
+**Object Properties:**
+1. hasCity: State - City
+2. hasZipCodePrefix: City - ZipCodePrefix
+3. hasState: City - State
+4. hasCity: ZipCodePrefix - City
+5. hasZipCodePrefix: Customer - ZipCodePrefix
+6. hasCity: Customer - City
+7. hasCustomerRef: Customer - owl#Thing
+
+**Data Type Properties:**
+1. hasCustomerRef: Customer - xsd:string
+
+**Link of each entity to external resources:**
+- ZipCodePrefix: owl#Thing
+- State: owl#Thing
+- Customer: owl#Thing
+- City: owl#Thing
+- hasCustomerRef: XMLSchema#string

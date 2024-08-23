@@ -1,0 +1,150 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://vocab.um.es#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+
+um:Record a owl:Class ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty um:hasProduct ;
+        owl:onClass um:Product
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty um:hasUser ;
+        owl:onClass um:User
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty um:hasAssessment ;
+        owl:onClass um:Assessment
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty um:hasTimePoint ;
+        owl:onClass um:TimePoint
+    ] ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty um:fairURI ;
+        owl:onDataRange xsd:anyURI
+    ] .
+
+um:Product a owl:Class ;
+    rdfs:subClassOf um:Record ;
+    rdfs:label "Product" .
+
+um:User a owl:Class ;
+    rdfs:subClassOf um:Record ;
+    rdfs:label "User" .
+
+um:Assessment a owl:Class ;
+    rdfs:subClassOf um:Record ;
+    rdfs:label "Assessment" .
+
+um:TimePoint a owl:Class ;
+    rdfs:label "Time Point"@en ;
+    rdfs:comment "A specific point in time, often associated with an event in a record."@en ;
+    rdfs:subClassOf um:Record ;
+    rdfs:isDefinedBy um: ;
+    skos:altLabel "Timestamp"@en, "Event Time"@en, "Moment"@en, "Instant"@en, "DateTime"@en ;
+    dc:description "Represents a specific point in time when an event occurred, such as the creation of a record. It is typically expressed in a standard date and time format."@en .
+
+um:hasProduct a owl:ObjectProperty ;
+    rdfs:domain um:Record ;
+    rdfs:range um:Product ;
+    rdfs:label "has product"@en, "tiene producto"@es, "hat Produkt"@de, "possui produto"@pt, "有产品"@zh ;
+    rdfs:comment "Associates a record with the product being assessed."@en ;
+    owl:equivalentProperty schema:isRelatedTo ;
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#> .
+
+vocab:hasUser a owl:ObjectProperty ;
+    rdfs:domain vocab:Record ;
+    rdfs:range vocab:User ;
+    rdfs:label "has user"@en, "posee usuario"@es, "hat Benutzer"@de, "a un utilisateur"@fr, "有用户"@zh ;
+    rdfs:comment "Associates a record with the user who provided the rating."@en ;
+    owl:equivalentProperty <http://xmlns.com/foaf/0.1/accountName> .
+
+vocab:hasAssessment a owl:ObjectProperty ;
+    rdfs:domain vocab:Record ;
+    rdfs:range vocab:Assessment ;
+    rdfs:label "has assessment"@en, "tiene evaluación"@es, "hat Bewertung"@de, "a une évaluation"@fr, "有评估"@zh ;
+    rdfs:comment "Relates a record to its associated assessment."@en ;
+    owl:equivalentProperty <http://schema.org/review> ;
+    rdfs:isDefinedBy <https://vocab.um.es#> .
+
+um:hasTimePoint a owl:ObjectProperty ;
+    rdfs:label "has time point"@en ;
+    rdfs:comment "Associates a record with the point in time when an event occurred, such as a rating."@en ;
+    rdfs:domain um:Record ;
+    rdfs:range um:TimePoint ;
+    rdfs:isDefinedBy um: ;
+    skos:altLabel "timestamp association"@en, "event time link"@en, "rating time"@en, "record time point"@en, "associated time"@en ;
+    dc:description "This property links a record to a specific time point, which is represented as a TimePoint class instance. It is used to capture the exact moment when a record, such as a user's product rating, was created or logged."@en ;
+    prov:wasDerivedFrom <http://purl.org/dc/terms/created> .
+
+
+
+um:fairURI a owl:DatatypeProperty ;
+    rdfs:label "FAIR URI" ;
+    rdfs:comment "A unique identifier for each record conforming to FAIR data principles." ;
+    rdfs:domain um:Record ;
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <https://vocab.um.es#fairURI> ;
+    skos:altLabel "Record Identifier" ;
+    skos:altLabel "Unique Resource Identifier" ;
+    skos:altLabel "URI" ;
+    skos:altLabel "Dataset Identifier" ;
+    skos:altLabel "Resource ID" ;
+    dc:description "The FAIR URI is a globally unique identifier that enables the identification of a record and ensures it adheres to the Findability, Accessibility, Interoperability, and Reusability (FAIR) principles." ;
+    dcterms:issued "2023-01-01T00:00:00Z"^^xsd:dateTime ;
+    dcterms:creator "Ontology Engineering Group" .
+
+um:productId a owl:DatatypeProperty ;
+    rdfs:label "Product Identifier"@en ;
+    rdfs:comment "A unique identifier for a product within a record."@en ;
+    rdfs:domain um:Product ;
+    rdfs:range xsd:string ;
+    skos:altLabel "Product ID"@en, "Item Identifier"@en, "SKU"@en, "Product Code"@en, "Catalog Number"@en ;
+    vann:preferredNamespaceUri "https://vocab.um.es#" ;
+    dc:description "This property represents the unique text string identifier assigned to a product. It is used to distinguish between different products within the dataset."@en ;
+    owl:equivalentProperty dc:identifier .
+
+um:ratingValue a owl:DatatypeProperty ;
+    rdfs:domain um:Assessment ;
+    rdfs:range xsd:integer ;
+    rdfs:label "rating value" ;
+    rdfs:label "Rating Value"@en ;
+    rdfs:comment "An integer value from 1 to 5 representing the assessment score given to a product by a user."@en ;
+    skos:altLabel "Score"@en, "Product Rating"@en, "User Rating"@en, "Assessment Score"@en, "Rating Score"@en ;
+    rdfs:isDefinedBy <https://vocab.um.es/Assessment#ratingValue> ;
+    owl:equivalentProperty skos:notation ;
+    owl:onDataRange xsd:integer [
+        owl:withRestrictions (
+            [ xsd:minInclusive 1 ]
+            [ xsd:maxInclusive 5 ]
+        )
+    ] .
+
+
+vocab:userId a owl:DatatypeProperty ;
+    rdfs:label "User Identifier"@en ;
+    rdfs:comment "A unique identifier for a user within the system."@en ;
+    rdfs:domain vocab:User ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://vocab.um.es#userId> ;
+    dc:description "The userId is a textual string that uniquely identifies a user. It is used to link ratings and other user-related records in the ontology."@en ;
+    skos:altLabel "User ID"@en, "User handle"@en, "Member ID"@en, "Account ID"@en, "User code"@en ;
+    owl:equivalentProperty foaf:accountName .
+
+um:timestampValue a owl:DatatypeProperty ;
+    rdfs:label "Timestamp Value"@en ;
+    rdfs:comment "The point in time when the rating was given, represented as a Unix timestamp."@en ;
+    rdfs:domain um:TimePoint ;
+    rdfs:range xsd:dateTime ;
+    skos:altLabel "Rating Timestamp"@en, "Review Time"@en, "Assessment DateTime"@en, "Rating Date and Time"@en, "Recorded Time"@en ;
+    dct:description "This property represents the exact date and time when a user's rating for a product was recorded, using the Unix timestamp format."@en ;
+    owl:equivalentProperty dct:date .

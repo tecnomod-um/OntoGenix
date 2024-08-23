@@ -1,0 +1,77 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<#TriplesMapSalesOrder> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_ratings_Beauty.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/SalesOrder/{FAIR_URI}";
+        rr:class um:SalesOrder
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasProduct;
+        rr:objectMap [
+            rr:template "https://vocab.um.es/SalesArticle/{ProductId}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:hasCustomer;
+        rr:objectMap [
+            rr:template "https://vocab.um.es/Customer/{UserId}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:rating;
+        rr:objectMap [
+            rml:reference "Rating";
+            rr:datatype xsd:integer
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:timestamp;
+        rr:objectMap [
+            rml:reference "Timestamp";
+            rr:datatype xsd:dateTime
+        ]
+    ].
+
+<#TriplesMapCustomer> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_ratings_Beauty.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/Customer/{UserId}";
+        rr:class um:Customer
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:userId;
+        rr:objectMap [
+            rml:reference "UserId";
+            rr:datatype xsd:string
+        ]
+    ].
+
+<#TriplesMapSalesArticle> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source "Chunk_ratings_Beauty.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://vocab.um.es/SalesArticle/{ProductId}";
+        rr:class um:SalesArticle
+    ];
+    rr:predicateObjectMap [
+        rr:predicate um:productId;
+        rr:objectMap [
+            rml:reference "ProductId";
+            rr:datatype xsd:string
+        ]
+    ].

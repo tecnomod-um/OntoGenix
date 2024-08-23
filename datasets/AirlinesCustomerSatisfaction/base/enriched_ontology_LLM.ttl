@@ -1,0 +1,391 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix um: <https://vocab.um.es#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+:Passenger a owl:Class ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty :hasServiceRating ;
+        owl:onClass :ServiceRating ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty :hasTravelType ;
+        owl:onClass :Travel ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty :hasFlightDetails ;
+        owl:onClass :Flight ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+    ] ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty :ageValue ;
+        owl:onDataRange xsd:integer ;
+        owl:minInclusive 7 ;
+        owl:maxInclusive 80
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty :genderValue ;
+        owl:onDataRange xsd:string ;
+        owl:pattern "Male|Female"
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty :customerTypeValue ;
+        owl:onDataRange xsd:string ;
+        owl:pattern "Loyal|Disloyal"
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty :satisfactionValue ;
+        owl:onDataRange xsd:string ;
+        owl:pattern "Satisfied|Neutral|Dissatisfied"
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty :fairURIValue ;
+        owl:onDataRange xsd:string
+    ] .
+
+### Assuming that the unique values for Customer Type are "Loyal" and "Disloyal",
+### and for Satisfaction are "Satisfied", "Neutral", and "Dissatisfied".
+### The patterns for genderValue, customerTypeValue, and satisfactionValue are based on the unique values provided.
+### If the actual unique values differ, the patterns should be adjusted accordingly.
+
+:Flight a owl:Class ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty :hasFlightDetails ;
+        owl:onClass :Passenger ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+    ] .
+
+:ServiceRating a owl:Class ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty :hasServiceRating ;
+        owl:onClass :Passenger ;
+    ] .
+
+:baggageHandlingRating a owl:DatatypeProperty ;
+    rdfs:domain :ServiceRating ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :serviceRatingValue .
+
+:checkinServiceRating a owl:DatatypeProperty ;
+    rdfs:domain :ServiceRating ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :serviceRatingValue .
+
+:cleanlinessRating a owl:DatatypeProperty ;
+    rdfs:domain :ServiceRating ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :serviceRatingValue .
+
+:departureArrivalTimeConvenienceRating a owl:DatatypeProperty ;
+    rdfs:domain :ServiceRating ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :serviceRatingValue .
+
+:easeOfOnlineBookingRating a owl:DatatypeProperty ;
+    rdfs:domain :ServiceRating ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :serviceRatingValue .
+
+:foodAndDrinkRating a owl:DatatypeProperty ;
+    rdfs:domain :ServiceRating ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :serviceRatingValue .
+
+:gateLocationRating a owl:DatatypeProperty ;
+    rdfs:domain :ServiceRating ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :serviceRatingValue .
+
+:inflightEntertainmentRating a owl:DatatypeProperty ;
+    rdfs:domain :ServiceRating ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :serviceRatingValue .
+
+:inflightWifiServiceRating a owl:DatatypeProperty ;
+    rdfs:domain :ServiceRating ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :serviceRatingValue .
+
+:legRoomServiceRating a owl:DatatypeProperty ;
+    rdfs:domain :ServiceRating ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :serviceRatingValue .
+
+:onBoardServiceRating a owl:DatatypeProperty ;
+    rdfs:domain :ServiceRating ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :serviceRatingValue .
+
+:onlineBoardingRating a owl:DatatypeProperty ;
+    rdfs:domain :ServiceRating ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :serviceRatingValue .
+
+:onlineSupportRating a owl:DatatypeProperty ;
+    rdfs:domain :ServiceRating ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :serviceRatingValue .
+
+:seatComfortRating a owl:DatatypeProperty ;
+    rdfs:domain :ServiceRating ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :serviceRatingValue .
+
+:Travel a owl:Class ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty :hasTravelType ;
+        owl:onClass :Passenger ;
+    ] .
+
+:travelTypeValue a owl:DatatypeProperty ;
+    rdfs:domain :Travel ;
+    rdfs:range xsd:string .
+
+:Passenger a owl:Class .
+
+:hasTravelType a owl:ObjectProperty ;
+    rdfs:domain :Passenger ;
+    rdfs:range :Travel .
+
+um:Age rdf:type rdfs:Class ;
+    rdfs:subClassOf um:Passenger .
+
+um:Gender rdf:type rdfs:Class ;
+    rdfs:subClassOf um:Passenger .
+
+um:CustomerType rdf:type rdfs:Class ;
+    rdfs:subClassOf um:Passenger .
+
+um:Class rdf:type rdfs:Class ;
+    rdfs:subClassOf um:Flight .
+
+um:FlightDistance rdf:type rdfs:Class ;
+    rdfs:subClassOf um:Flight .
+
+um:ArrivalDelay rdf:type rdfs:Class ;
+    rdfs:subClassOf um:Flight .
+
+um:DepartureDelay rdf:type rdfs:Class ;
+    rdfs:subClassOf um:Flight .
+
+um:ServiceRating rdf:type rdfs:Class ;
+    rdfs:subClassOf um:ServiceRating .
+
+um:Travel rdf:type rdfs:Class ;
+    rdfs:subClassOf um:Travel .
+
+
+
+um:hasServiceRating a owl:ObjectProperty ;
+    rdfs:label "has service rating"@en ;
+    rdfs:comment "Associates a passenger with their service rating across various categories."@en ;
+    rdfs:domain um:Passenger ;
+    rdfs:range um:ServiceRating ;
+    rdfs:isDefinedBy <https://vocab.um.es#> ;
+    dc:description "This property links a passenger to a composite service rating that encompasses multiple service aspects such as baggage handling, check-in service, and cleanliness."@en ;
+    skos:altLabel "service rating association"@en, "passenger service rating"@en, "rating of service"@en, "service score"@en, "customer service rating"@en ;
+    owl:equivalentProperty um:serviceRatingValue .
+
+###  https://vocab.um.es#hasTravelType
+:hasTravelType rdf:type owl:ObjectProperty ;
+               rdfs:domain :Passenger ;
+               rdfs:range :Travel ;
+               rdfs:label "has travel type"@en ,
+                          "posee tipo de viaje"@es ,
+                          "hat Reiseart"@de ,
+                          "a le type de voyage"@fr ,
+                          "有旅行类型"@zh ;
+               rdfs:comment "Relates a passenger to their type of travel, such as business or personal."@en ;
+               skos:prefLabel "hasTravelType"@en ;
+               skos:altLabel "travelType"@en ,
+                             "typeOfTravel"@en ,
+                             "passengerTravelCategory"@en ,
+                             "travelClassification"@en ;
+               owl:equivalentProperty :travelTypeValue .
+
+###  http://vocab.um.es#hasFlightDetails
+:hasFlightDetails rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Passenger ;
+                  rdfs:range :Flight ;
+                  rdfs:label "has flight details"@en ,
+                             "tiene detalles del vuelo"@es ,
+                             "a des détails de vol"@fr ,
+                             "hat Flugdetails"@de ,
+                             "有航班详情"@zh ;
+                  rdfs:comment "Associates a passenger with the details of their flight, including class, distance, and delays."@en ,
+                               "Asocia un pasajero con los detalles de su vuelo, incluyendo clase, distancia y retrasos."@es ,
+                               "Associe un passager aux détails de son vol, y compris la classe, la distance et les retards."@fr ,
+                               "Verknüpft einen Passagier mit den Details seines Fluges, einschließlich Klasse, Entfernung und Verspätungen."@de ,
+                               "将乘客与其航班的详细信息关联起来，包括舱位、距离和延误。"@zh ;
+                  rdfs:isDefinedBy <https://vocab.um.es#> ;
+                  owl:equivalentProperty :flightDetailsOfPassenger ,
+                                         :passengerFlightInformation ,
+                                         :detailsOfFlightForPassenger ,
+                                         :flightInfoLinkedToPassenger ,
+                                         :associatedFlightDetails .
+
+
+
+
+
+um:ageValue a owl:DatatypeProperty ;
+    rdfs:label "Age value"@en ;
+    rdfs:comment "The age of the passenger in years."@en ;
+    rdfs:domain um:Age ;
+    rdfs:range xsd:integer ;
+    dc:description "Represents the numerical age of a passenger, ranging from 7 to 80 years old."@en ;
+    skos:altLabel "Passenger age"@en, "Age in years"@en, "Years of age"@en, "Passenger's age"@en, "Age category"@en ;
+    owl:equivalentProperty um:passengerAge ;
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#> .
+
+um:genderValue a owl:DatatypeProperty ;
+    rdfs:label "Gender" ;
+    rdfs:comment "The gender of the passenger as a string value." ;
+    rdfs:domain um:Gender ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Passenger Gender" ;
+    skos:altLabel "Sex", "Gender Identity", "Passenger Sex", "Passenger Gender Identity" ;
+    owl:equivalentProperty foaf:gender ;
+    dc:description "A property to specify the gender of a passenger. It accepts string values that represent the gender identity of the individual." .
+
+um:customerTypeValue a owl:DatatypeProperty ;
+    rdfs:label "Customer Type Value"@en ;
+    rdfs:comment "A categorical value representing the type of customer, such as 'Loyal' or 'First-time'."@en ;
+    rdfs:domain um:CustomerType ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#> ;
+    dc:description "This property captures the type of customer in a categorical form, which is used for analyzing customer behavior and segmentation in the context of airline services."@en ;
+    skos:altLabel "Client Category"@en ,
+                  "Passenger Type"@en ,
+                  "Traveler Classification"@en ,
+                  "Customer Classification"@en ,
+                  "Customer Segment"@en ;
+    owl:equivalentProperty skos:notation .
+
+um:classValue a owl:DatatypeProperty ;
+    rdfs:domain um:ClassValue ;
+    rdfs:range xsd:string ;
+    rdfs:label "class value" ;
+    rdfs:comment "The value indicating the class of the flight ticket." ;
+    skos:prefLabel "Flight Class Value" ;
+    skos:altLabel "Airline Ticket Class Value" ;
+    skos:altLabel "Cabin Class Value" ;
+    skos:altLabel "Ticket Class Value" ;
+    skos:altLabel "Travel Class Value" .
+
+um:flightDistanceValue a owl:DatatypeProperty ;
+    rdfs:label "Flight Distance Value"@en ;
+    rdfs:comment "The distance of a flight measured in miles."@en ;
+    rdfs:domain um:FlightDistance ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "Flight Mileage"@en, "Distance Flown"@en, "Air Miles"@en, "Flight Length"@en, "Travel Distance"@en ;
+    skos:altLabel "Flight Mileage Value"@en, "Flight Kilometers"@en, "Flight Distance in Miles"@en, "Air Travel Distance"@en, "Flight Range"@en ;
+    dct:description "Represents the total number of miles flown by a passenger on a single flight. It is a numerical value that falls within a specified range."@en ;
+    owl:equivalentProperty skos:exactMatch .
+
+
+###  https://vocab.um.es#arrivalDelayValue
+<https://vocab.um.es#arrivalDelayValue> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <https://vocab.um.es#ArrivalDelay> ;
+                                        rdfs:range xsd:integer ;
+                                        rdfs:label "Arrival Delay in Minutes" ;
+                                        rdfs:label "Arrival Lateness" ;
+                                        rdfs:label "Flight Arrival Delay" ;
+                                        rdfs:label "Postponement of Arrival" ;
+                                        rdfs:label "Delay Upon Arrival" ;
+                                        rdfs:comment "Represents the time delay in minutes for a flight's arrival. It is a numerical value ranging from 0 to 438 minutes."@en ;
+                                        skos:prefLabel "Arrival Delay in Minutes"@en ;
+                                        skos:altLabel "Lateness in Minutes"@en ;
+                                        skos:altLabel "Minutes Behind Schedule"@en ;
+                                        skos:altLabel "Arrival Postponement Duration"@en ;
+                                        skos:altLabel "Flight Tardiness"@en ;
+                                        owl:equivalentProperty <http://schema.org/arrivalDelay> .
+
+um:departureDelayValue a owl:DatatypeProperty ;
+    rdfs:label "Departure Delay in Minutes" ;
+    rdfs:comment "The time delay in minutes for a flight's departure from the scheduled time." ;
+    rdfs:domain um:DepartureDelay ;
+    rdfs:range xsd:integer ;
+    skos:altLabel "Departure Latency" ;
+    skos:altLabel "Delay at Departure" ;
+    skos:altLabel "Takeoff Delay" ;
+    skos:altLabel "Flight Departure Delay" ;
+    skos:altLabel "Delay in Departure Time" ;
+    owl:equivalentProperty um:departureDelayInMinutes ;
+    rdfs:isDefinedBy <https://vocab.um.es/ontologies/transport> ;
+    rdfs:seeAlso <http://purl.org/goodrelations/v1#hasEstimatedDepartureTime> .
+
+um:serviceRatingValue a owl:DatatypeProperty ;
+    rdfs:label "Service Rating Value"@en ;
+    rdfs:comment "A numerical rating value that represents a passenger's satisfaction with various aspects of the service provided during the flight."@en ;
+    rdfs:domain um:ServiceRating ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    skos:altLabel "Customer Service Score"@en ,
+                  "Passenger Service Rating"@en ,
+                  "Flight Service Evaluation"@en ,
+                  "Service Satisfaction Score"@en ,
+                  "Inflight Service Rating"@en ;
+    dc:description "This property captures the integer value that a passenger assigns to rate the quality of service experienced during a flight. It is part of the ServiceRating class and can range from 1 to 5, where 1 is the lowest and 5 is the highest rating."@en ;
+    owl:equivalentProperty um:baggageHandlingValue ,
+                           um:checkinServiceValue ,
+                           um:cleanlinessValue ,
+                           um:departureArrivalTimeConvenienceValue ,
+                           um:easeOfOnlineBookingValue ,
+                           um:foodAndDrinkValue ,
+                           um:gateLocationValue ,
+                           um:inflightEntertainmentValue ,
+                           um:inflightWifiServiceValue ,
+                           um:legRoomServiceValue ,
+                           um:onBoardServiceValue ,
+                           um:onlineBoardingValue ,
+                           um:onlineSupportValue ,
+                           um:seatComfortValue .
+
+um:travelTypeValue a owl:DatatypeProperty ;
+    rdfs:label "Travel Type Value"@en ;
+    rdfs:comment "The categorical value representing the type of travel, such as business or personal."@en ;
+    rdfs:domain um:Travel ;
+    rdfs:range xsd:string ;
+    skos:altLabel "Journey Category"@en ;
+    skos:altLabel "Trip Type"@en ;
+    skos:altLabel "Travel Category"@en ;
+    skos:altLabel "Travel Classification"@en ;
+    skos:altLabel "Type of Journey"@en ;
+    owl:equivalentProperty dc:type ;
+    rdfs:isDefinedBy <https://vocab.um.es/ontology#> .
+
+um:satisfactionValue a owl:DatatypeProperty ;
+    rdfs:label "Satisfaction Value"@en ;
+    rdfs:domain um:Passenger ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Represents the overall satisfaction level of the passenger as a categorical value."@en ;
+    dc:description "This property captures the overall satisfaction level expressed by the passenger, which can be a binary value such as satisfied or unsatisfied."@en ;
+    skos:altLabel "Passenger Satisfaction"@en ;
+    skos:altLabel "Satisfaction Rating"@en ;
+    skos:altLabel "Satisfaction Score"@en ;
+    skos:altLabel "Customer Satisfaction"@en ;
+    skos:altLabel "Satisfaction Index"@en ;
+    owl:equivalentProperty skos:prefLabel .
+
+um:fairURIValue a owl:DatatypeProperty ;
+    rdfs:label "FAIR URI Value"@en ;
+    rdfs:comment "A unique identifier for each passenger record in the dataset."@en ;
+    rdfs:domain um:Passenger ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://vocab.um.es#> ;
+    skos:altLabel "Record Identifier"@en, "Unique Passenger ID"@en, "Dataset Record URI"@en, "Passenger Record Reference"@en, "Unique Identifier"@en ;
+    owl:equivalentProperty dct:identifier ;
+    rdfs:subPropertyOf dct:identifier .
