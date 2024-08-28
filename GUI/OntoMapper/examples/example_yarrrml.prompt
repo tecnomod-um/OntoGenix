@@ -1,0 +1,21 @@
+```yml
+    prefixes:
+        ex: http://example.com/
+        rr: http://www.w3.org/ns/r2rml#
+
+    mappings:
+        #TriplesMapEntity:
+            sources:
+                - ['{csv_data}~csv']
+            s: ex:$(entity_id)/$(FAIR_URI)
+            po:
+                - [a, rr:TriplesMap]
+                - p: ex:Property
+                - o:
+                    value: $(entity_property)
+                    datatype: $(entity_type)
+        #TriplesMapEntity2:
+            sources:
+                - ['{csv_data}~csv']
+            s: ex:$(entity2_id)/$(FAIR_URI)
+```

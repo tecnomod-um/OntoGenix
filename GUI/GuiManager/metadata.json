@@ -1,0 +1,71 @@
+{
+    "genie_metadata" : {
+        "role": "you are a powerful ontology engineer that must select the appropriate function to be called.",
+        "instructions": "${base_path}/GuiManager/gui_manager_role.prompt",
+        "model": "${api_model}",
+        "api_key_path": "${base_path}/.env",
+        "client": "${client}",
+        "ssl_cert": "${ssl_cert}",
+        "seed": "${seed}"
+    },
+
+    "crafter_metadata" : {
+        "prompt_crafting": "${base_path}/PromptCrafter/prompt_crafting.prompt",
+        "role": "You are a powerful ontology engineer that helps to craft the perfect prompt to define the high level structure of the ontology.",
+        "model": "${api_model}",
+        "api_key_path": "${api_key_path}",
+        "client": "${client}",
+        "ssl_cert": "${ssl_cert}",
+        "seed": "${seed}"
+    },
+
+    "planner_metadata" : {
+        "instructions": "${base_path}/PlanSage/instructions.prompt",
+        "data_description": "${base_path}/PlanSage/data_description.prompt",
+        "interoperability_management": "${base_path}/PlanSage/interoperability_management.prompt",
+        "dataset": null,
+        "role": "You are a powerful ontology engineer that generates the reasoning steps needed to generate\nthe context needed to create an ontology from a json data table.",
+        "model": "${api_model}",
+        "api_key_path": "${api_key_path}",
+        "client": "${client}",
+        "ssl_cert": "${ssl_cert}",
+        "seed": "${seed}"
+    },
+
+    "onto_metadata" : {
+        "ontology_instructions": "${base_path}/OntoBuilder/ontology_instructions.prompt",
+        "ontology_instructions_error": "${base_path}/OntoBuilder/ontology_instructions_error.prompt",
+        "entity_improvement": "${base_path}/OntoBuilder/entity_improvement.prompt",
+        "dataset": null,
+        "role": "You are a powerful ontology engineer that generates OWL ontologies in ${ontology_extension} format.",
+        "model": "${api_model}",
+        "api_key_path": "${api_key_path}",
+        "client": "${client}",
+        "ssl_cert": "${ssl_cert}",
+        "seed": "${seed}"
+    },
+
+    "mapper_metadata" : {
+        "instructions": "${base_path}/OntoMapper/instructions.prompt",
+        "error_instructions": "${base_path}/OntoMapper/error_instructions.prompt",
+        "example_extension": "${base_path}/OntoMapper/examples/example_${mapping_extension}.prompt",
+        "dataset": null,
+        "role": "You are a powerful ontology engineer that generates mappings in ${mapping_extension} format.",
+        "model": "${api_model}",
+        "api_key_path": "${api_key_path}",
+        "client": "${client}",
+        "ssl_cert": "${ssl_cert}",
+        "seed": "${seed}"
+    },
+
+    "mermaid_metadata" : {
+        "instructions": "${base_path}/MermaidOntoFlow/instructions.prompt",
+        "examples": "${base_path}/MermaidOntoFlow/examples.prompt",
+        "role": "You are a mermaid diagramming engineer that generates class Diagrams.",
+        "model": "${api_model}",
+        "api_key_path": "${api_key_path}",
+        "client": "${client}",
+        "ssl_cert": "${ssl_cert}",
+        "seed": "${seed}"
+    }
+}

@@ -1,72 +1,53 @@
 from GUI.OntoMapper.LLM_ontomapper import LlmOntoMapper
+from GUI.PlanSage.LLM_planner import LlmPlanner
 from GUI.KG_Generator.KGEN import KGen
-from typing import Optional
+from GUI.GuiManager.metadata import DatasetMetadata
 
 class RAG_OntoMapper:
     """
-    Class for mapping ontologies and generating knowledge graphs (KGs).
-
-    Args:
-        ontology_mapper (LlmOntoMapper): An instance of LlmOntoMapper for ontology mapping.
-        planner_builder: An instance for building a planner (type can be specified).
-
-    Attributes:
-        planner_builder: An instance for building a planner.
-        ontology_mapper (LlmOntoMapper): An instance of LlmOntoMapper for ontology mapping.
-        max_iter (int): Maximum number of iterations.
-        kgen: An instance for generating the knowledge graph.
-        full_path (str): Full path to the dataset.
+        Undocumented.
+        TODO: Review current file name.
     """
 
-    def __init__(self, ontology_mapper: LlmOntoMapper, planner_builder: Optional[type]):
-        self.planner_builder = planner_builder
-        self.ontology_mapper = ontology_mapper
-        self.max_iter = 2
-        self.kgen = None
-        self.full_path = None
+    def __init__(self, ontology_mapper : LlmOntoMapper, planner_builder: LlmPlanner, max_iter : int = 2):
+        self.planner_builder : LlmPlanner = planner_builder
+        self.ontology_mapper : LlmOntoMapper = ontology_mapper
+        self.max_iter : int = max_iter
+        self.kgen : KGen = None
+        self.dataset_metadata : DatasetMetadata = None
 
-    def build_kgen(self, base_path: str, dataset_folder: str, dataset_file: str):
+    def build_kgen(self, dataset : DatasetMetadata = None):
         """
-        Build a knowledge graph generator (KGen) instance.
-
-        Args:
-            base_path (str): Base path for the dataset.
-            dataset_folder (str): Folder containing the dataset.
-            dataset_file (str): Dataset file name.
-
-        Raises:
-            Exception: If an error occurs during KGen initialization.
+            Builds the KGEN object from the dataset's metadata.
         """
         try:
-            self.full_path = f"{base_path}/{dataset_folder}/{dataset_file.split('.')[0]}"
+            self.dataset_metadata = dataset or self.dataset_metadata
             self.kgen = KGen(
-                dataset=f"{base_path}/{dataset_folder}/config.ini",
-                destination=f"{base_path}/{dataset_folder}/data.nt"
+                config_ini_file=self.dataset_metadata.dataset_config_path,  # Configuration file
+                dest_nt_file=self.dataset_metadata.dataset_triplets_path    # Triplets file
             )
-        except Exception as e:
-            print("Error building the kgen:", e)
+        except Exception as ex:
+            print("Error building the kgen:", ex)
 
     def generateKG(self):
         """
-        Generate the knowledge graph.
-
-        Raises:
-            Exception: If an error occurs during KG generation.
+            Generates the KGEN object from the RML and generates the mapping
         """
         try:
             print("################# dataset_path ##############################")
-            print(f"{self.full_path}_rml_mapping_LLM.csv.ttl")
+            print(self.dataset_metadata.dataset_mapping_path)
 
             self.ontology_mapper.save_response(
                 self.ontology_mapper.get_rml_codeblock(),
-                f"{self.full_path}_rml_mapping_LLM.csv.ttl",
+                self.dataset_metadata.dataset_mapping_path,
                 mode='w'
             )
             print("save is ok!")
-
+            # TODO: generate only the RML. It should be necessary to click on an additional button to generate the mapping (the most costly operation)
             self.kgen.run()
-        except Exception as e:
-            print("Error while writing the file:", e)
+        except Exception as e:  # Catching the exception and assigning it to variable 'e'.
+            print("error while writing the file:", e)
+            raise e
         finally:
             print("------------------------- OUTPUT -------------------------")
             print(self.kgen.error_feedback)

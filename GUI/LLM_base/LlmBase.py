@@ -1,59 +1,66 @@
-from abc import ABC
-from openai import OpenAI
-import os
-from dotenv import dotenv_values
+"""
+    Base class for the support of the different OntoGenix modules.
+    TODO: Document this
+"""
+
+import base64
 import json
+from abc import ABC
+
+from dotenv import dotenv_values
+from openai import AzureOpenAI, OpenAI
+from typing import Union
 
 class AbstractLlm(ABC):
-    """
-    Abstract base class for a Language Learning Model (LLM).
-    This class provides methods for interacting with the LLM using OpenAI's GPT-3.
-
-    Attributes:
-        client (OpenAI): An instance of the OpenAI client.
-        role (str): The role of the user in the conversation.
-        model (str): The name of the GPT-3 model to use.
-        answer (str): The response received from the LLM.
-        tool_calls (dict): Information about tool calls made during conversation.
-        available_functions (dict): A dictionary of available functions for processing tool calls.
-        last_prompt (str): The last prompt sent to the LLM.
-        current_prompt (str): The current prompt being used for interaction.
-    """
+    error_message = None
 
     def __init__(self, metadata: dict):
-        """
-        Initialize the AbstractLlm object.
-
-        Args:
-            metadata (dict): A dictionary containing metadata for the LLM.
-        """
-        # Load API key from environment variables
+        # set api key path
         config = dotenv_values(metadata['api_key_path'])
-        # Create a client with the provided API key
-        self.client = OpenAI(api_key=config['OPENAI_API_KEY'])
-        # Set client properties
+        # create a client with its api key
+        if metadata['client'] == "azure" and 'AZURE_OPENAI_ENDPOINT' in config.keys():
+            # We read the model and the api version either from the .env file or from the metadata dictionary
+            model = config['AZURE_DEPLOYMENT'] if config['AZURE_DEPLOYMENT'] is not None else metadata['model']
+            api_version = config['OPENAI_API_VERSION'] if config['OPENAI_API_VERSION'] is not None else metadata['api_model']
+            # We create an OpenAI Azure client (BASF)
+            self.client = AzureOpenAI(
+                api_key=config['OPENAI_API_KEY'],
+                azure_endpoint=config['AZURE_OPENAI_ENDPOINT'],
+                api_version=api_version,
+                azure_deployment=model
+            )
+        elif metadata['client'] == "azure" and 'AZURE_OPENAI_ENDPOINT' not in config.keys():
+            print("Detected Azure Client option but no AZURE_OPENAI_ENDPOINT value was specified in the .env file.")
+        elif metadata['client'] != "azure" and 'AZURE_OPENAI_ENDPOINT' in config.keys():
+            print("""
+                  Detected AZURE_OPENAI_ENDPOINT value specified in the .env file.\n
+                  If you want to change the client, please use the "-c azure" option.
+                  """)
+        else:
+            self.client = OpenAI(api_key = config['OPENAI_API_KEY'])
+        # TODO: error checking and logging here with API keys
+
+        #self.client = OpenAI(api_key = config['OPENAI_API_KEY'])
+        # set client properties
         self.role = metadata['role']
         self.model = metadata['model']
         self.answer = ""
+        #self.error_message = None
         self.tool_calls = None
         self.available_functions = None
-        # Set utilities
+        # set utilities
         self.last_prompt = None
         self.current_prompt = None
+        try:
+            # NOTE: https://cookbook.openai.com/examples/reproducible_outputs_with_the_seed_parameter
+            # NOTE: https://community.openai.com/t/is-the-seed-parameter-being-deprecated/578586/5
+            self.seed = int(metadata['seed'])
+        except:
+            self.seed = None
 
-    def get_api_response(self, content: str, temperature=0, max_tokens=None, stream=False):
-        """
-        Get a response from the LLM using the provided content.
-
-        Args:
-            content (str): The content of the message to send to the LLM.
-            temperature (float): The temperature for response generation.
-            max_tokens (int): The maximum number of tokens in the response.
-            stream (bool): Whether to stream the response.
-
-        Returns:
-            None
-        """
+    def get_api_response(self, content: str, temperature:int=0, max_tokens:Union[int|None]=None,
+                         #stream:Union[bool|None]=False, 
+                         seed:Union[int|None]=None):
         completion = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{
@@ -65,22 +72,81 @@ class AbstractLlm(ABC):
                 }],
                 temperature=temperature,
                 max_tokens=max_tokens,
-                stream=stream
+                stream=False,
+                seed=seed or self.seed
         )
 
-        self.answer = completion.choices[0].message.content
+        try:
+            self.answer = completion.choices[0].message.content
+            return self.answer
+        except:
+            #print(">>> empty chunk response")
+            return ""
 
-    def function_calling(self, content: str, tools=None):
-        """
-        Make a function call to the LLM using the provided content and tools.
 
-        Args:
-            content (str): The content of the message containing the function call.
-            tools (dict): Tools to be used in the function call.
+    async def get_async_api_response(self, content: str,temperature:int=0, max_tokens:Union[int|None]=None,
+                         #stream:Union[bool|None]=True, 
+                         seed:Union[int|None]=None):
+        self.answer = ""
+        completion = self.client.chat.completions.create(
+                model=self.model,
+                messages=[{
+                    'role': 'system',
+                    'content': self.role
+                }, {
+                    'role': 'user',
+                    'content': content,
+                }],
+                temperature=temperature,
+                max_tokens=max_tokens,
+                stream=True,
+                seed=seed or self.seed
+        )
 
-        Returns:
-            None
-        """
+        for chunk in completion:
+            try:
+                data = chunk.choices[0].delta.content
+                if data is not None:
+                    self.answer += data
+                    yield data
+            except:
+                #print(">>> empty chunk response")
+                yield ""
+
+    async def image_interpretation(self, content: str, image_file: str, seed:Union[int|None]=None):
+        base64_image, image_extension = self.image2base64(image_file)
+
+        # Create the API request
+        completion = self.client.chat.completions.create(
+            model="gpt-4-vision-preview",
+            messages=[{
+                    'role': 'system',
+                    'content': self.role
+                },{
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": content},
+                        {
+                            "type": "image_url",
+                            "image_url": f"data:image/{image_extension};base64,{base64_image}"
+                        },
+                    ],
+                }
+            ],
+            temperature=0,
+            max_tokens=1024,
+            stream=True,
+            seed=seed or self.seed
+        )
+
+        for chunk in completion:
+            data = chunk.choices[0].delta.content
+            if data is not None:
+                self.answer += data
+                yield data
+
+    def function_calling(self, content: str, tools=Union[list|None], seed:Union[int|None]=None):
+        # TODO: In Azure, for some reason, the "ontology_entity_enrichment" tool_call is None when trying to enrich the ontology
         response = self.client.chat.completions.create(
             model=self.model,
             messages=[{
@@ -91,108 +157,53 @@ class AbstractLlm(ABC):
                 'content': content,
             }],
             tools=tools,
-            temperature=0
+            temperature=0,
+            seed=seed or self.seed
         )
 
         self.tool_calls = response.choices[0].message.tool_calls
 
-    async def get_async_api_response(self, content: str, temperature=0, max_tokens=None, stream=True):
-        """
-        Get asynchronous API responses from the LLM.
-
-        Args:
-            content (str): The content of the message to send to the LLM.
-            temperature (float): The temperature for response generation.
-            max_tokens (int): The maximum number of tokens in the response.
-            stream (bool): Whether to stream the response.
-
-        Yields:
-            str: The chunks of response data as they are received.
-        """
-        self.answer = ""  # Initialize the answer as an empty string
-        completion = self.client.chat.completions.create(
-            model=self.model,
-            messages=[{
-                'role': 'system',
-                'content': self.role
-            }, {
-                'role': 'user',
-                'content': content,
-            }],
-            temperature=temperature,
-            max_tokens=max_tokens,
-            stream=stream
-        )
-
-        for chunk in completion:
-            data = chunk.choices[0].delta.content
-            if data is not None:
-                self.answer += data  # Append the data to the answer
-                yield data  # Yield the data chunk to the caller
-
     async def regenerate(self):
-        """
-        Reuse the last prompt and yield chunks of the regenerated response.
-
-        This method sends the last prompt to the LLM to regenerate a response and yields
-        chunks of the response data as they are received.
-
-        Yields:
-            str: The chunks of the regenerated response data.
-        """
         try:
-            # Reuse the last prompt by sending it to the LLM
+            # Reuse the last prompt
             async for chunk in self.get_async_api_response(self.current_prompt):
-                yield chunk  # Yield each chunk of the regenerated response
-
+                yield chunk
+        except GeneratorExit as ge:
+            print(f"Process stopped/cancelled by user: {ge}")
+            return
         except ValueError as e:
             print(f"An error occurred while extracting text: {e}")
         finally:
-            self.last_prompt = self.current_prompt  # Update the last prompt to the current prompt
+            self.last_prompt = self.current_prompt
 
     async def continue_writing(self):
-        """
-        Continue writing based on the last answer and yield chunks of the response.
-
-        This method generates a prompt that instructs the LLM to continue writing based on
-        the last answer. It then sends this prompt to the LLM and yields chunks of the
-        response data as they are received.
-
-        Yields:
-            str: The chunks of the continued writing response data.
-        """
         try:
-            # Construct the continue prompt to instruct the LLM
-            continue_prompt = f'''You did not finish your writing during your last answer.
+            continue_prompt = '''You did not finish your writing during your last answer.
 
-                                This is your last answer:
-                                {self.answer}
+                                        This is your last answer:
+                                        {answer}
 
-                                Complete the previous answer and continue from where you stopped.'''
-
-            # Reuse the last prompt by sending the continue prompt to the LLM
+                                        Complete the previous answer and continue from where you stopped.'''
+            continue_prompt.format(answer=self.answer)
+            # Reuse the last prompt
             async for chunk in self.get_async_api_response(continue_prompt):
-                yield chunk  # Yield each chunk of the continued writing response
-
+                yield chunk
+        except GeneratorExit as ge:
+            print(f"Process stopped/cancelled by user: {ge}")
+            return
         except ValueError as e:
             print(f"An error occurred while extracting text: {e}")
 
     async def _process_function_response(self):
+        """Processes the response message from model and calls the intended function.
+        :param function_callback: callback function which be called with the corresponding arguments.
+        :return: the function to be returned
         """
-        Processes the response message from the model and calls the intended function.
-
-        This method iterates through the tool calls received from the LLM model, extracts
-        the function name and its arguments, and attempts to call the corresponding function
-        defined in the metadata.
-
-        Raises:
-            json.JSONDecodeError: If there is an error decoding the function arguments as JSON.
-            Exception: If there is an error during the function call.
-
-        Note:
-            This method assumes that function arguments are provided in JSON format.
-
-        """
+        if not self.tool_calls:
+            raise ValueError("No tool_call available for the current action.")
+        elif not self.available_functions:
+            raise ValueError("No available_function available for the current tool_call.")
+        
         for tool_call in self.tool_calls:
             function_name = tool_call.function.name
             print("function_name: ", function_name)
@@ -200,7 +211,7 @@ class AbstractLlm(ABC):
             # Check if the function exists in metadata
             if function_name in self.available_functions:
                 function_to_call = self.available_functions[function_name]
-
+                print("function_to_call: ", function_to_call)
                 try:
                     # Assuming arguments are in JSON format
                     function_args = json.loads(tool_call.function.arguments)
@@ -215,24 +226,23 @@ class AbstractLlm(ABC):
                 print(f"Function {function_name} not found in metadata.")
 
     @staticmethod
-    def load_string_from_file(file_path: str) -> str:
-        """
-        Load a string from a text file.
+    def image2base64(image_file):
+        image_extension = image_file.split('.')[-1]
+        # Convert image to base64
+        with open(image_file, "rb") as image:
+            base64_image = base64.b64encode(image.read()).decode('utf-8')
 
-        This static method reads the contents of a text file located at the specified `file_path`
-        and returns its content as a string.
+        return base64_image, image_extension
 
-        Parameters:
-            file_path (str): The path to the text file to be loaded.
-
-        Returns:
-            str: The contents of the text file as a string.
-
-        Example:
-            content = MyClass.load_string_from_file('example.txt')
-        """
-        with open(file_path, 'r') as file:
-            return file.read()
+    @staticmethod
+    def load_string_from_file(file_path, encoding:str="utf-8"):
+        try:
+            with open(file_path, 'r', encoding=encoding) as file:
+                return file.read()
+        except Exception as e:
+            print(e)
+        return None
+    
 
     @staticmethod
     def extract_text(text: str, start_marker: str, end_marker: str) -> str:
@@ -252,7 +262,7 @@ class AbstractLlm(ABC):
         """
         start_index = text.find(start_marker) + len(start_marker)
         end_index = text.find(end_marker, start_index)
-        if start_index == -1:
+        if start_index == (len(start_marker) - 1):
             raise ValueError("Start marker not found in text.")
         elif end_index == -1:
             raise ValueError("End marker not found in text.")
@@ -260,20 +270,9 @@ class AbstractLlm(ABC):
 
     @staticmethod
     def save_response(response: str, file: str, mode: str = 'w'):
-        """
-        Save a response to a file.
-
-        Args:
-            response (str): The response text to be saved.
-            file (str): The path to the file where the response will be saved.
-            mode (str, optional): The mode in which the file will be opened ('w' for write, 'a' for append, etc.).
-                Defaults to 'w'.
-
-        Raises:
-            ValueError: If an error occurs while saving the response.
-        """
         try:
             with open(file, mode) as f:
                 f.write(response + '\n')
         except ValueError as e:
             print(f"An error occurred: {e}")
+

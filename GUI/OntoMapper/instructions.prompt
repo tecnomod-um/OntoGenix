@@ -1,51 +1,35 @@
-Hello, ChatGPT. As an expert in ontology translation, I need your assistance to generate a mapping in RML format.
-I'm providing you with an ontology and the rationale describing the json data source and the insights describing the semantic structure of the ontology.
-I want you to methodically follow the steps provided in the rationale.
+As an expert in ontology translation, I need your assistance to generate a mapping in {mapping_extension} format from a {ontology_extension} formated ontology.
+I'm providing you with an ontology (if present) and the rationale describing the json data source and the insights describing the semantic structure of the ontology.
+I want you to methodically follow the steps provided in the rationale (if present).
 
 The necessary inputs are as follows:
 {rationale}
 
+**Ontology:**
+```{ontology_extension}
+{ontology}
+```
+
 Structure your output in the following format:
 
-<Generate the RML content here:
-        Ensure that when creating the URIs of the instances, they are unique by using the column FAIR_URI in combination with the entity name.
-        Do not use "http://example.org".
-        Ensure you add all the necessary prefixes at the beginning of the RML.
-        Ensure you correctly add the references to the prefixes in each triple definition block.
-        IMPORTANT!! The rml mapping will reference a CSV file not a JSON.
-        Follow this format for the definition of classes mappings:
+<Generate the {mapping_extension} content here:
+    Ensure that when creating the URIs of the instances, they are unique by using the column FAIR_URI in combination with the entity name.
+    Ensure you add all the necessary prefixes at the beginning of the {mapping_extension}.
+    Ensure you correctly add the references to the prefixes in each triple definition block.
+    IMPORTANT! The {mapping_extension} mapping will reference a CSV file not a JSON.
 
-        ```turtle
-        <#TriplesMapEntity> a rr:TriplesMap;
-            rml:logicalSource [
-                rml:source "{csv_data}";
-                rml:referenceFormulation ql:CSV
-            ];
-            rr:subjectMap [
-                rr:template "EntityURI/{{Entity1}}{{FAIR_URI}}";
-            ];
-            rr:predicateObjectMap [
-                rr:predicate ex:Property;
-                rr:objectMap [
-                    rr:parentTriplesMap <#Property>;
-                ];
-            ].
+    Follow this example's format (if present) for the definition of classes mappings:
+    {example_extension}
 
-        <#TriplesMapEntity2> a rr:TriplesMap;
-            rml:logicalSource [
-                rml:source "{csv_data}";
-                rml:referenceFormulation ql:CSV
-            ];
-            rr:subjectMap [
-                rr:template "EntityURI/{{Entity2}}{{FAIR_URI}}";
-            ].
+    If not expressed otherwise, use `{csv_data}` as the input CSV file name for all the mappings.
+    Also, follow the following guidelines for the mapping creation:
 
-        >
-        ```
-Generate appropriate URIs and combine columns if necessary.
-Do not use "http://example.org" or "http://example.com" instead make use of the base prefix.
-Do not shorten your answer, finish completely the mapping definition!
-Do not shorten your answer with notes like this: "# Additional mappings for entities...would follow the same pattern as above."
-Do not explain your answer, just write the rml code.
-Do no write notes at the end of your writing.
-Please display the code as normal text in your response, without using the special block code format with triple quotes.
+    Create a mapping for each class. Generate appropriate URIs and taking into account the real name of the input file's column names.
+    Do not use "http://example.org" or "http://example.com" instead make use of the base prefix. Otherwise, do not use the prefix `base`.
+    Do not shorten your answer, finish completely the mapping definition!
+    Do not shorten your answer with notes like this: "# Additional mappings for entities...would follow the same pattern as above."
+    Do not explain your answer, just write the {mapping_extension} code.
+    Do not write any explanations or notes at the beginning of the writing.
+    Do not write any explanations or notes at the end of your writing.
+    Please display the code as normal text in your response, without using the special block code format with triple quotes.
+>

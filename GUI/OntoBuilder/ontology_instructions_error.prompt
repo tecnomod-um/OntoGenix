@@ -1,6 +1,9 @@
 I require your expert assistance to generate an ontology in TURTLE syntax from a provided JSON data table and a schema description.
 Ensure that you grasp the context from the JSON data and the schema description strictly adhering to these directives.
 
+IMPORTANT: The generated error is provided below. Your solution MUST address this error directly.
+{error}
+
 The input details for your task are as follows:
 
 **Json Data:**
@@ -10,7 +13,7 @@ The input details for your task are as follows:
 {data_description}
 
 **TURTLE ONTOLOGY:**
-    <Write the thorough and exhaustive TURTLE syntax content for the proposed ontology here, without
+    <Fix the thorough and exhaustive TURTLE syntax content for the proposed ontology here, without
     condensing or shortening any part of it, ensuring strict compliance with the instructions provided.
     Focus on the logical structure of the ontology at the level of classes and their corresponding object and data properties,
     therefore generate the properties for every class you define in order to get all the classes interconnected
@@ -21,7 +24,7 @@ The input details for your task are as follows:
     Remember to generate the restrictions for the ontology's classes taking into account the ObjectProperty's and DataProperty's domain and range, 
     using `rdf:subClassOf`. Restrictions are unique, so don't duplicate them.
     Do not generate empty classes that are equivalent to others, or at least add the `owl:equivalentClass` restriction.
-    Do not add instances. >
+    Do not add instances.>
 
 Do not write any introduction or explanations at the beginning or at the end of the writing.
 Do not add any note at the beginning or at the end of the writing.

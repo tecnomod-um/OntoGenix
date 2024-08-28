@@ -1,6 +1,12 @@
-from GUI.LLM_base.LlmBase import AbstractLlm
+"""
+   A class to manage ontology-related interactions with a language learning model.
+   @author: Mikel Val Calvo 
+"""
 from typing import Optional
-import os
+
+from GUI.LLM_base.LlmBase import AbstractLlm
+from GUI.tools.text_tools import extract_text
+
 
 class LlmOntology(AbstractLlm):
     """
@@ -15,6 +21,8 @@ class LlmOntology(AbstractLlm):
         _dataset_path (str): Path to the dataset used in interactions.
     """
 
+    name = 'OntoBuilder'
+
     def __init__(self, metadata: dict):
         """
         Initialize the LlmOntology object.
@@ -24,6 +32,7 @@ class LlmOntology(AbstractLlm):
         """
         super().__init__(metadata)
         self.ontology_instructions = self.load_string_from_file(metadata['ontology_instructions'])
+        self.ontology_instructions_error = self.load_string_from_file(metadata['ontology_instructions_error'])
         self.entity_improvement = self.load_string_from_file(metadata['entity_improvement'])
         self._dataset_path = metadata['dataset']
 
@@ -57,7 +66,8 @@ class LlmOntology(AbstractLlm):
                        data_description: Optional[str] = None,
                        task: Optional[str] = None,
                        entity: Optional[str] = None,
-                       state: str = "ONTOLOGY"):
+                       state: str = "ONTOLOGY",
+                       error: Optional[str] = None):
         """
         Perform an interaction with the LLM for ontology-related tasks.
 
@@ -76,22 +86,32 @@ class LlmOntology(AbstractLlm):
         Exceptions:
             ValueError: Catches and prints any ValueError that occurs during the interaction.
         """
+        error = error or self.error_message
         try:
-            if state == "ONTOLOGY":
+            if state == "ONTOLOGY" and not error:
                 self.current_prompt = self.ontology_instructions.format(
                     json_data=json_data,
                     data_description=data_description
                 )
+            elif state == "ONTOLOGY" and error:
+                self.current_prompt = self.ontology_instructions_error.format(
+                    json_data=json_data,
+                    data_description=data_description,
+                    error=error
+                )
+            # TODO: Handle errors in ONTOLOGY_ENTITY
             elif state == "ONTOLOGY_ENTITY":
                 self.current_prompt = self.entity_improvement.format(
                     task=task,
                     data_description=data_description,
                     entity=entity
                 )
-
+            # Get the response from the LLM_base
             async for chunk in self.get_async_api_response(self.current_prompt):
                 yield chunk
-
+        except GeneratorExit as ge:
+            print(f"Process stopped/cancelled by user: {ge}")
+            return
         except ValueError as e:
             print(f"An error occurred during interaction: {e}")
         finally:
@@ -104,4 +124,4 @@ class LlmOntology(AbstractLlm):
         Returns:
             str: The extracted XML code block from the LLM's response.
         """
-        return self.extract_text(self.answer, start_marker="```xml", end_marker="```")
+        return extract_text(self.answer, start_marker="```xml", end_marker="```")

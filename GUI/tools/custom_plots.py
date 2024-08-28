@@ -51,4 +51,3 @@ def plot_mermaid(diagram: str, path: str = None) -> None:
     except Exception as e:
         # Handle any exception that occurs during the diagram plotting process
         print(f"An error occurred: {str(e)}")
-

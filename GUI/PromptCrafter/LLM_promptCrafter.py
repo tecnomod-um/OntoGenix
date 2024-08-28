@@ -2,57 +2,59 @@ from abc import ABC
 from typing import Optional
 
 from GUI.LLM_base.LlmBase import AbstractLlm
+from GUI.tools.text_tools import extract_text
+
 
 class LlmPromptCrafter(AbstractLlm, ABC):
     """
-    A class representing a language learning model's ontology for prompt crafting.
+    This class represents a language learning model (LLM_base) ontology. It extends the AbstractLlm class and provides
+    methods for interacting with the model.
 
-    This class extends the AbstractLlm class and specializes in creating and managing prompts for
-    interaction with a language learning model. It's responsible for formatting and storing crafted prompts
-    based on input data and descriptions.
-
-    Attributes:
-        data_description_prompt (str): The template for crafting data description prompts.
-        crafted_prompt (Optional[str]): The last crafted prompt, stored after interactions.
+    TODO: the long_term_memory mechanism is not implemented.
     """
+    name = 'PromptCrafter'
 
     def __init__(self, metadata: dict):
         """
-        Initialize the LlmPromptCrafter object.
+        Initialize the LlmOntology object.
 
         Parameters:
-            metadata (dict): Metadata for the LLM, including file paths and configurations.
+        metadata (dict): A dictionary containing metadata for the LLM_base.
         """
         super().__init__(metadata)
+
+        # initialize prompts
         self.data_description_prompt = self.load_string_from_file(metadata['prompt_crafting'])
-        self.crafted_prompt = None  # Container for the crafted prompt
+        # initialize containers
+        self.crafted_prompt = None
+
 
     async def interaction(self, prompt: Optional[str] = None, json_data: Optional[str] = None):
         """
-        Perform interaction with the LLM, crafting and returning responses based on the provided prompt and data.
+        Perform the first interaction or a subsequent interaction with the LLM_base based on the arguments provided.
 
         Parameters:
-            prompt (Optional[str]): The initial input prompt for crafting.
-            json_data (Optional[str]): The input data in JSON format to be used in crafting the prompt.
-
+        input_task (str): The input message.
+        json_data (str): The input data in JSON format.
+        data_description (str): The description of the JSON data.
         Yields:
-            str: Chunks of the response from the LLM.
-
-        Exceptions:
-            ValueError: Catches and prints any ValueError that occurs during the interaction.
+        str: Chunks of the response from the LLM_base.
         """
         try:
+            # Act as first_interaction
             self.current_prompt = self.data_description_prompt.format(prompt=prompt, json_data=json_data)
-
+            # Get the response from the LLM_base
             async for chunk in self.get_async_api_response(self.current_prompt):
                 yield chunk
-
-            self.crafted_prompt = self.extract_text(
+            # permanently store the generated prompt
+            self.crafted_prompt = extract_text(
                 self.answer,
                 start_marker="**Prompt:**",
                 end_marker="**Critique:**"
             )
-
+        except GeneratorExit as ge:
+            print(f"Process stopped/cancelled by user: {ge}")
+            return
         except ValueError as e:
             print(f"An error occurred: {e}")
         finally:

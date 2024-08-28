@@ -26,7 +26,8 @@ Now start writing, organize your output by strictly following the output format 
         Summary: <string that explains the owl ontology>, around 10 to 20 sentences.
         Rational: <enumeration of the reasoning steps>, one enumerated sentence for each reasoning step.
 
-    Output Tasks: <MERMAID CLASS DIAGRAM syntax following the previous reasoning steps>
+    Output Tasks: <MERMAID CLASS DIAGRAM syntax following the previous reasoning steps.
+    Do not use any class in the mermaid diagram that is not defined in the classDiagram.>
 
 Very important:
 First analyze the ontology and consider an appropriate action to generate the response.

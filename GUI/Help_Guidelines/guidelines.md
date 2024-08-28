@@ -37,7 +37,7 @@
 ### **3.2. ONTOLOGY**
 
 - **Purpose**: This step is pivotal for creating the ontology's OWL definition, with a spotlight on classes and their associated object and data properties.
-  
+
 - **Note**: This process is automatic and doesn't require a prompt.
 
 ---
@@ -45,7 +45,7 @@
 ### **3.3. ONTOLOGY_ENTITY**
 
 - **Purpose**: Tailored to formulating the ontology's OWL definition for specific entities.
-  
+
 - **Important**: A carefully crafted prompt that vividly describes the task is essential for this step.
 
 ---
@@ -54,7 +54,7 @@
 
 **Example 1**: Improving a Class
 
-**prompt:**  
+**prompt:**
 Ensure you meticulously follow the guidelines laid out in the data description.
 Explicitly reference all object and data properties linked to the entity in question.
 Object property restrictions? Always use the "onClass" parameter.
@@ -65,7 +65,7 @@ All the above-mentioned tasks should be executed for the entity: `{EntityName}`
 
 **Example 2**: Enhancing Object/Data Type Properties
 
-**prompt:**  
+**prompt:**
 Enrich the entity with metadata and annotations to provide context, trace origin, and deliver deeper insights.
 Retain the foundational name of the entity.
 Include a descriptive field. Consider suggesting an alternative name and provide up to five alternative labels for enhanced clarity and versatility.

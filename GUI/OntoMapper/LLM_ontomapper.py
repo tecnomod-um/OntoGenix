@@ -1,80 +1,51 @@
 from GUI.LLM_base.LlmBase import AbstractLlm
-from typing import Optional
+from GUI.tools.text_tools import extract_text
 
 
 class LlmOntoMapper(AbstractLlm):
-    """
-    A class representing an ontology mapper using a language learning model.
-
-    This class extends the AbstractLlm class and specializes in ontology mapping tasks. It manages interactions
-    with the LLM using predefined prompts for generating RML code based on the provided rationale and error handling.
-
-    Attributes:
-        instructions (str): The template for generating instructions to the LLM.
-        error_instructions (str): The template for generating error handling instructions.
-        rml_codeblock (str): The generated RML code block after interaction with the LLM.
-        _dataset_path (str): The path to the dataset used in the LLM interactions.
-    """
-
+    name = 'OntoMapper'
     def __init__(self, metadata: dict):
-        """
-        Initialize the LlmOntoMapper object.
-
-        Parameters:
-            metadata (dict): Metadata for the LLM, including file paths and configurations.
-        """
         super().__init__(metadata)
+        # initialize prompts
         self.instructions = self.load_string_from_file(metadata['instructions'])
         self.error_instructions = self.load_string_from_file(metadata['error_instructions'])
+        self.example_extension = self.load_string_from_file(metadata['example_extension'])
+        # path setting to write outputs
         self._dataset_path = metadata['dataset']
+        # initialize memories
         self.rml_codeblock = None
 
     @property
     def dataset_path(self):
-        """
-        Getter for the dataset path.
-
-        Returns:
-            str: The path to the dataset.
-        """
         return self._dataset_path
 
+    # Setter for name
     @dataset_path.setter
-    def dataset_path(self, path: str):
-        """
-        Setter for the dataset path.
-
-        Parameters:
-            path (str): The new path for the dataset.
-
-        Raises:
-            ValueError: If the provided path is not a string.
-        """
+    def dataset_path(self, path):
         if not isinstance(path, str):
-            raise ValueError("Path must be a string!")
+            raise ValueError("Name must be a string!")
         self._dataset_path = path
 
-    async def interact(self, rationale: Optional[str] = None, error: Optional[str] = None):
-        """
-        Perform an interaction with the LLM for ontology mapping.
-
-        Parameters:
-            rationale (Optional[str]): The rationale for the mapping task.
-            error (Optional[str]): Any error information to be handled.
-
-        Yields:
-            str: Chunks of the response from the LLM.
-
-        Exceptions:
-            ValueError: Catches and prints any ValueError that occurs during the interaction.
-        """
+    async def interact(self, rationale: str=None, ontology:str=None, error: str=None,
+                       mapping_extension:str="RML", example_extension:str=None, 
+                       ontology_extension:str="TTL"):
         try:
-            csv_data = self._dataset_path.split('/')[-1]
-            if rationale and not error:
-                self.current_prompt = self.instructions.format(rationale=rationale, csv_data=csv_data)
-            elif rationale and error:
-                self.current_prompt = self.error_instructions.format(rationale=rationale, error=error, csv_data=csv_data)
-
+            csv_data = self._dataset_path
+            print("---------- csv_data ->", csv_data)
+            print("---------- error ->", error)
+            if not error:
+                self.current_prompt = self.instructions.format(
+                    rationale=rationale, ontology=ontology, csv_data=csv_data, 
+                    mapping_extension=mapping_extension, example_extension=example_extension,
+                    ontology_extension=ontology_extension
+                )
+            else:
+                self.current_prompt = self.error_instructions.format(
+                    rationale=rationale, error=error, ontology=ontology, csv_data=csv_data, 
+                    mapping_extension=mapping_extension, example_extension=example_extension,
+                    ontology_extension=ontology_extension
+                )
+            # Get the response from the LLM_base
             async for chunk in self.get_async_api_response(self.current_prompt):
                 yield chunk
 
@@ -84,10 +55,8 @@ class LlmOntoMapper(AbstractLlm):
             self.last_prompt = self.current_prompt
 
     def get_rml_codeblock(self):
-        """
-        Extract the RML code block from the LLM's response.
-
-        Returns:
-            str: The extracted RML code block.
-        """
-        return self.extract_text(self.answer, start_marker="```turtle", end_marker="```")
+        # NOTE: If the start mark is not found, we return the whole text
+        try:
+            return extract_text(self.answer, start_marker="```rml", end_marker="```")
+        except:
+            return self.answer

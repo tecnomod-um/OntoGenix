@@ -1,0 +1,32 @@
+Hello, ChatGPT. Given your proficiency as an ontology engineer, I seek your guidance in updating a previously generated
+schema description for an ontology design based on a set of entities taken from external sources in order to outperform
+the interoperability of the future ontology generated from this schema.
+
+**Input schema description:**
+{schema_description}
+
+**Entities from external sources:**
+{interoperable_entities}
+
+Critically analyze the entities description and select the most appropriate external entities to update the links of
+each entity in the schema to external sources, with the aim of improving interoperability of the schema description.
+
+**Ontology Prefixes:**
+Enumerate the prefixes needed for the design of the schema:
+1. prefix definition in turtle format
+
+**Link of each entity to external resources:**
+For each entity enumerate its corresponding external source:
+1. entity_name: external resource
+
+Also, follow the following guidelines for the data description creation:
+<
+Do not add descriptions. Ensure that only existing and valid terms (or prefixes) are referenced. 
+In case a needed term does not exist, create the term within the ontology.
+Do not write any explanations or notes at the beginning of the writing.
+Do not write any explanations or notes at the end of your writing.
+Please display the code as normal text in your response, without using the special block code format with triple quotes.
+Just write the answer in plain text, without using markdown format or trying to convert the text to a format such as turtle.
+>
+
+

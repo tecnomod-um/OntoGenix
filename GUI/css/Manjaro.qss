@@ -1,3 +1,6 @@
+* {
+	font-size: 14px;
+}
 
 QMainWindow {
 	background-color:#151a1e;

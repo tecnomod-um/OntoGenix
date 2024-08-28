@@ -1,0 +1,26 @@
+```ttl
+    <#TriplesMapEntity> a rr:TriplesMap;
+        rml:logicalSource [
+            rml:source "{csv_data}";
+            rml:referenceFormulation ql:CSV
+        ];
+        rr:subjectMap [
+            rr:template "EntityURI/{{Entity1}}{FAIR_URI}";
+        ];
+        rr:predicateObjectMap [
+            rr:predicate ex:Property;
+            rr:objectMap [
+                rr:parentTriplesMap <#Property>;
+            ]
+        ].
+
+    <#TriplesMapEntity2> a rr:TriplesMap;
+        rml:logicalSource [
+            rml:source "{csv_data}";
+            rml:referenceFormulation ql:CSV
+        ];
+        rr:subjectMap [
+            rr:template "EntityURI/{{Entity2}}{FAIR_URI}";
+        ].
+    >
+```
