@@ -1,0 +1,41 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: OntoGenix
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Mikel
+    family-names: Val Calvo
+    email: mikel1982mail@gmail.com
+    affiliation: University of Murcia
+  - given-names: Mikel
+    family-names: Egaña Aranguren
+    email: mikel.egana@ehu.eus
+    affiliation: University of Basque Country (UPV/EHU)
+    orcid: 'https://orcid.org/0000-0001-8081-1839'
+  - given-names: Jesualdo Tomas
+    family-names: Fernandez Breis
+    email: jfernand@um.es
+    affiliation: University of Murcia
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.13468051
+    description: Zenodo DOI
+repository-code: 'https://github.com/tecnomod-um/OntoGenix'
+abstract: >-
+  The project utilizes the OpenAI GPT-4 model to develop a
+  semi-automatic system that generates OWL ontologies and
+  RML mappings from CSV datasets using LLMs.
+keywords:
+  - OWL
+  - LLM
+  - RDF
+  - RML
+license: GPL-3.0
+commit: 9bf3c435656e4bf3a50e89604df7ab2ca2b8abca
+version: '1.2'
+date-released: '2024-08-29'
