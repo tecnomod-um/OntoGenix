@@ -1,13 +1,21 @@
-# Pasos:
-A partir del siguiente diagrama, realizamos los pasos para generar una ontología a partir de unos datos dados:
-![Diagrama de OntoGenix](test/OntoGenix.png)
-## Paso 1. Carga el GUI
+# Steps
+
+Following this diagram, we perform the following steps to create an ontology from a dataset:
+
+![OntoGenix diagram](test/OntoGenix.png)
+
+## Step 1: load the GUI
+
 ```{bash}
 python -m GUI
 ```
-## Paso 2. Indica el dataset a utilizar (?)
+
+## Step 2. Choose the dataset
+
 > e-commerce
-## Paso 3. Carga el dataset a utilizar y lo muestra en la pestaña "CSV Inspector"
+
+## Step 3. It loads the dataset and it is shown in the tab "CSV Inspector"
+
 [LOAD CSV] > AmazonRatings.csv
 
 ```json
@@ -74,7 +82,9 @@ python -m GUI
     }
 }
 ```
-## Paso 4. Transforma los datos de entrada en una descripción de alto nivel y la muestra en la pestaña "Description"
+
+## Step 4. It transforms the entered data into a high-level description that is shown in the tab "Description"
+
 > let's generate a high level structure definition for the provided data
 
 ```bash
@@ -126,12 +136,10 @@ python -m GUI
 - SalesOrderId: schema:Order/orderNumber
 - Timestamp: schema:DateTime
 ```
-## Paso 5. Define la ontología
+
+## Step 5. Define the ontology
+
 > define the ontology
-
-**NOTA:** La ontología definida es válida pero el prompt no está generando las comillas "```" para encerrar el turtle generado. Por ello, el siguiente paso a partir de este falla. De momento, hemos intentado colocar esas comillas a mano para generar el fichero `mermaid`.
-
-**NOTA:** Hay que revisar el prompt para la acción "ontology_building", para que regenere las comillas automáticamente.
 
 ```turtle
 @prefix base: <https://base_ontology.com#> .
@@ -201,8 +209,9 @@ base:SalesOrderId owl:sameAs schema:Order/orderNumber .
 base:Timestamp owl:sameAs schema:DateTime .
 ```
 
-## Paso 6. Generamos el diagrama mermaid haciendo click en el tab "mermaid" de la pestaña "Ontology". Esto generará el diagrama y se mostrará en la pestaña "Diagram".
-Diagrama generado:
+## Step 6. Generate the mermaid diagrama clicking on the tab "mermaid" of the tab "Ontology". This will generate the diagram and it will be shown in the tab "Diagram"
+
+Generated diagram:
 
 ```mermaid
 ProductId --|> Product : isA
@@ -217,26 +226,8 @@ SalesOrder "1" -- "0..*" Product : orderContainsProduct
 SalesOrder "1" -- "0..*" Event : eventOccurredAt
 ```
 
-A continuación, se muestra la imagen generada:
 ![Diagrama mermaid](test/mermaidTest.png)
 
-## Paso 7. Definimos el mapping (formato turtle). Esto generará el output en la pestaña "Mapping".
+## Step 7. We define the mapping (Turtle format). This will generate the output in the tab "Mapping"
+
 > define the mapping
-
-**NOTA:** Igual que en el paso 5. Las comillas "`" faltan y se produce el siguiente error:
-
-```bash
-function arguments:  {'prompt': 'define the mapping'}
-################# dataset_path ##############################
-.\datasets/AmazonRating/AmazonRating_data20k_rml_mapping_LLM.csv.ttl
-Error while writing the file: End marker not found in text.
-------------------------- OUTPUT -------------------------
-None
-Error during function call: can only concatenate str (not "NoneType") to str
-```
-
-**NOTA:** Esto provoca que se produzca un error en el programa y no permite guardar el output. Además, no deja modificar el contenido de la pestaña "Mapping", por lo que tampoco se puede añadir de forma manual las comillas que faltan. Así que, intentamos corregir esto directamente desde el prompt de entrada de usuario:
-
-> define the mapping. Don`t forget the three backticks at the beginning of the definition followed by the word "mermaid" and the three backticks at the end of the definition.
-
-Intentando generar de nuevo el mapping con el prompt anterior no realiza ninguna mejora. Por lo que debemos modificar a mano el prompt utilizado por OntoGenix por debajo para corregir este fallo.
