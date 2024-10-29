@@ -1,0 +1,38 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: General Module",
+            "type": "python",
+            "request": "launch",
+            "module": "GUI",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "subProcess": true,  // Enable debugging of sub-processes (useful for multi-threading)
+            "stopOnEntry": false,
+            //"pythonPath": "${config:python.pythonPath}",
+            "args": [],  // Any additional arguments the script needs
+            "env": {},  // Environment variables
+            "envFile": "${workspaceFolder}/.env",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Python: Async Module",
+            "type": "python",
+            "request": "launch",
+            "module": "GUI",
+            "console": "integratedTerminal",
+            "justMyCode": false,  // Set to false to step through all code including library code
+            "subProcess": true,
+            "stopOnEntry": false,
+            //"pythonPath": "${config:python.pythonPath}",
+            "args": ["-c azure"],
+            "env": {},
+            "envFile": "${workspaceFolder}/.env",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
